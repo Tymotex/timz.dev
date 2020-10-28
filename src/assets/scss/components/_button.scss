@@ -32,6 +32,9 @@
 		text-transform: uppercase;
 		white-space: nowrap;
 
+		margin: 0 auto;
+		max-width: 130px;
+
 		&:hover {
 			background-color: _palette(border-bg);
 		}
