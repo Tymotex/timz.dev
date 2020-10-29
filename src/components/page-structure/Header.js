@@ -11,9 +11,9 @@ const Header = (props) => (
             <div className="inner">
                 <h1>Tim Zhang</h1>
                 <p>
-                    Here is a description of who I am. Should think about adding that type/delete css animation here. 
+                    2nd year student studying electrical engineering and computer science at UNSW.
                     <br />
-                    Here is a description of who I am. Should think about adding that type/delete css animation here
+                    Aspiring full stack developer.
                 </p>
             </div>
         </div>

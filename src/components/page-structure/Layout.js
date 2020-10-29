@@ -37,13 +37,9 @@ const Layout = ({ children, location }) => {
             `}
             render={data => (
                 <div>
-                    <Helmet
-                        title={data.site.siteMetadata.title}
-                        meta={[
-							{ name: 'description', content: 'Sample' },
-                            { name: 'keywords', content: 'sample, something' },
-                        ]}
-						>
+                    <Helmet>
+                        <title>{data.site.siteMetadata.title}</title>
+                        <link rel="icon" type="image/png" href="https://cdn.jpegmini.com/user/images/slider_puffin_before_mobile.jpg" sizes="32x32" />
                         <html lang="en" />
                     </Helmet>
 					{content}
