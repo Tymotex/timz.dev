@@ -4,6 +4,7 @@ const NavItem = ({ onOpenArticle, nameID, text }) => {
     return (
         <li>
             <button
+                className="transparent-button"
                 onClick={() => {
                     onOpenArticle(nameID)
                 }}

@@ -23,10 +23,7 @@ const ResumeWindow = (props) => {
                 </div>
                 <ul className="actions">
                     <li>
-                        <input type="submit" value="Send Message" className="special" />
-                    </li>
-                    <li>
-                        <input type="reset" value="Reset" />
+                        <input className="transparent-button special" type="submit" value="Send" />
                     </li>
                 </ul>
             </form>

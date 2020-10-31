@@ -8,6 +8,7 @@ const BottomNav = (props) => {
                 {navLinks.map((eachItem, i) => (
                     <li key={i}>
                         <button
+                            className="transparent-button"
                             onClick={() => {
                                 props.onOpenArticle(eachItem.nameID)
                             }}

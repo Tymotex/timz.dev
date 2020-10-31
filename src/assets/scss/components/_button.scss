@@ -1,10 +1,7 @@
 
 /* Button */
 
-input[type="submit"],
-input[type="reset"],
-input[type="button"],
-button, .button {
+.transparent-button {
 	@include vendor('appearance', 'none');
 	@include vendor('transition', 'background-color #{_duration(transition)} ease-in-out, color #{_duration(transition)} ease-in-out');
 	background-color: transparent;
@@ -28,6 +25,8 @@ button, .button {
 
 	margin: 0 auto;
 	max-width: 130px;
+
+	line-height: calc(#{_size(element-height)} - 2px);
 
 	&:hover {
 		background-color: _palette(border-bg);
@@ -55,9 +54,8 @@ button, .button {
 		font-weight: _font(weight-bold);
 
 		&:hover {
-		}
-
-		&:active {
+			background-color: darkslategray;
+			color: _palette(fg-bold)!important;
 		}
 	}
 
@@ -67,11 +65,4 @@ button, .button {
 		cursor: default;
 		opacity: 0.25;
 	}
-}
-
-input[type="submit"],
-input[type="reset"],
-input[type="button"],
-button {
-	line-height: calc(#{_size(element-height)} - 2px);
 }

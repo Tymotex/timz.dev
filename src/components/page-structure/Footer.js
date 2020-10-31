@@ -10,11 +10,13 @@ const Footer = (props) => (
 
         <ul className="icons">
             <li>
-                <a
-                    href="https://github.com/Tymotex"
-                    className="icon fa-github"
-                >
+                <a href="https://github.com/Tymotex" className="icon fa-github">
                     <span className="label">GitHub</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/tim-zhang-7a8791175/" className="icon fa-linkedin">
+                    <span className="label">LinkedIn</span>
                 </a>
             </li>
             <li>
