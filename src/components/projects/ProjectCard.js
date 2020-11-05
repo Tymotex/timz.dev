@@ -35,9 +35,10 @@ const ProjectCard = ({ projectName, image, children }) => {
         </a>
       </CardActionArea>
       <CardContent className={windowStyles.cardContent}>
-        <Typography gutterBottom variant="h5" component="h2">
+        <Typography className={windowStyles.projectTitle} gutterBottom variant="h5" component="h2">
           {projectName}
         </Typography>
+        <hr className={windowStyles.thinHr} />
         {children}
       </CardContent>
     </Card>

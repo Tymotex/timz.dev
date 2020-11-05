@@ -13,36 +13,37 @@ const ProjectsWindow = (props) => {
             <hr className={windowStyles.thinHr} /> */}
             <Grid container spacing={3}>
                 {/* Techsuite */}
-                <Grid item xs={6}>
+                <Grid item xs={12} sm={6} lg={6}>
                     <ProjectCard 
                         projectName="Techsuite"
                         image="https://upload.wikimedia.org/wikipedia/commons/d/d9/Arduino_ftdi_chip-1.jpg"
                     >
                         <Typography variant="body2" component="p">
-                            A collaborative social app built with React.
+                            Techsuite is a collaborative social app built with React, Flask and PostgreSQL.
                         </Typography>
                         <Typography variant="h6" component="p">
-                            <a href="">Demo</a>
+                            <a href="">Visit</a>
                         </Typography>
                     </ProjectCard>
                 </Grid>
                 {/* Interactive Data Structures */}
-                <Grid item xs={6}>
+                <Grid item xs={12} sm={6} lg={6}>
                     <ProjectCard 
                         projectName="Interactive Data Structures"
                         summary=""
                         image="https://helpdeskgeek.com/wp-content/pictures/2019/10/code-1.jpg.optimal.jpg"
                     >
                         <Typography variant="body2" component="p">
-                            A suite of interactive data structures, written in C.
+                            Interactive-DS is a suite of interactive data structures written in C, developed
+                            as a learning resource for computer science students.
                         </Typography>
                         <Typography variant="h6" component="p">
-                            <a href="">Demo</a>
+                            <a href="">Visit</a>
                         </Typography>
                     </ProjectCard>
                 </Grid>
                 {/* Cosmica */}
-                <Grid item xs={6}>
+                <Grid item xs={12} sm={6} lg={6}>
                     <ProjectCard 
                         projectName="Cosmica"
                         summary=""
@@ -52,12 +53,12 @@ const ProjectsWindow = (props) => {
                             A cross-platform sci-fi strategy game written in C# and built with the Unity game engine.
                         </Typography>
                         <Typography variant="h6" component="p">
-                            <a href="">Demo</a>
+                            <a href="">Play Online</a>
                         </Typography>
                     </ProjectCard>
                 </Grid>
                 {/* Neural Networks? */}
-                <Grid item xs={6}>
+                <Grid item xs={12} sm={6} lg={6}>
                     <ProjectCard 
                         projectName="AI - Neural Networks"
                         summary=""
@@ -67,7 +68,7 @@ const ProjectsWindow = (props) => {
                             A collection of notes and example models built with PyTorch.
                         </Typography>
                         <Typography variant="h6" component="p">
-                            <a href="">Demo</a>
+                            <a href="">Visit</a>
                         </Typography>
                     </ProjectCard>
                 </Grid>
