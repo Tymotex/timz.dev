@@ -16,6 +16,7 @@ class Main extends React.Component {
                 id="main"
                 style={this.props.timeout ? { display: "flex" } : { display: "none" }}
             >
+                {/* Bottom navigation buttons */}
                 <AboutWindow {...this.props} nameID="about" text="About" />
                 <ProjectsWindow {...this.props} nameID="projects" text="Projects" />
                 <BlogsWindow {...this.props} nameID="blogs" text="Blogs" />
