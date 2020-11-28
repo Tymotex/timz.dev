@@ -5,9 +5,14 @@ const ResumeWindow = (props) => {
     return (
         <Window {...props}>
             <p>
-                Download my a<a download="toucan.png" href="toucan.png">resume</a> and <a href="">academic transcript</a>.
+                View my <a target="_blank" href="https://tymotex.github.io/timz.dev/public/resume/resume.pdf">
+                    <strong>resume</strong>
+                </a> and <a target="_blank" href="https://tymotex.github.io/timz.dev/public/resume/transcript.pdf">
+                    <strong>academic transcript</strong>
+                </a>.
             </p>
-            <h2 className="major">Contact</h2>
+            {/* TODO: Use nodemailer to do this */}
+            {/* <h2 className="major">Contact [Unimplemented]</h2>
             <form method="post" action="#">
                 <div className="field half first">
                     <label htmlFor="name">Name</label>
@@ -26,7 +31,7 @@ const ResumeWindow = (props) => {
                         <input className="transparent-button special" type="submit" value="Send" />
                     </li>
                 </ul>
-            </form>
+            </form> */}
         </Window>
     )
 }

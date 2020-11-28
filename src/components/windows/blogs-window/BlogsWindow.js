@@ -22,14 +22,14 @@ const BlogsWindow = (props) => {
     return (
         <Window {...props}>
             <p>
-                Blogs! Lorem
-                <ul>
+                Nothing here for now :)
+                {/* <ul>
                     {blogs.map((eachBlog, i) => (
                         <li>
                             {eachBlog.node.title}
                         </li>
                     ))}
-                </ul>
+                </ul> */}
             </p>
         </Window>
     )

@@ -5,7 +5,8 @@ const AboutWindow = (props) => {
     return (
         <Window {...props}>
             <p>
-                About me! Lorem
+                2nd year student studying electrical engineering and 
+                computer science at UNSW. Aspiring full stack developer.
             </p>
         </Window>
     )
