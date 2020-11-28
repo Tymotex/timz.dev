@@ -104,6 +104,15 @@ const miniProjects = [
         `,
         demoPromptText: "Try it out [unavailable]",
         demoLink: ""
+    },
+    {
+        title: "PyTorch Language Models",
+        thumbnail: "https://assets.newatlas.com/dims4/default/713adf9/2147483647/strip/true/crop/4000x2667+0+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2F3f%2Ffb%2Fa2c818ab43428d1e1a19b39eb9e4%2Fdepositphotos-31079473-xl-2015.jpeg",
+        description: `
+            Kuzushiji character recognition, document classification and sentiment analysis.
+        `,
+        demoPromptText: "Try it out [unavailable]",
+        demoLink: ""
     }
 ];
 

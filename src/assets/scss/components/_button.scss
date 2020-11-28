@@ -1,5 +1,7 @@
 
-/* Button */
+/* 
+	Nav button styles 
+*/
 
 .transparent-button {
 	@include vendor('appearance', 'none');
@@ -24,7 +26,7 @@
 	white-space: nowrap;
 
 	margin: 0 auto;
-	max-width: 130px;
+	width: 130px;
 
 	line-height: calc(#{_size(element-height)} - 2px);
 

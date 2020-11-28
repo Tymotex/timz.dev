@@ -70,12 +70,14 @@
     }
   }
 
+  // Main front page header content
   .content {
     border-style: solid;
     border-color: _palette(border);
     border-top-width: _size(border-width);
     border-bottom-width: _size(border-width);
     max-width: 100%;
+    text-transform: uppercase;
 
     .inner {
       @include vendor(
@@ -90,6 +92,10 @@
       padding: 3rem 2rem;
       max-height: 40rem;
       overflow: hidden;
+
+      p {
+        // text-transform: none!important;
+      }
 
       > :last-child {
         margin-bottom: 0;

@@ -5,7 +5,7 @@ const ResumeWindow = (props) => {
     return (
         <Window {...props}>
             <p>
-                My Resume! Lorem
+                Download my a<a download="toucan.png" href="toucan.png">resume</a> and <a href="">academic transcript</a>.
             </p>
             <h2 className="major">Contact</h2>
             <form method="post" action="#">
