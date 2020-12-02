@@ -35,7 +35,7 @@ const mainProjects = [
     },
     {
         title: "Cosmica",
-        thumbnail: "https://tymotex.github.io/timz.dev/public/cosmica-title.png",
+        thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/cosmica-title.png",
         description: `
             A cross-platform sci-fi strategy game written in C# and built with the Unity game engine.
         `,
@@ -142,7 +142,7 @@ const babyProjects = [
     },
     {
         title: "Fallout 4 Mods",
-        thumbnail: "https://tymotex.github.io/timz.dev/public/fallout-4-nuka-cola.png",
+        thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/fallout-4-nuka-cola.png",
         description: `
             A collection of mods I made which has collectively achieved over 80000+ downloads and
             4000+ endorsements in total.
