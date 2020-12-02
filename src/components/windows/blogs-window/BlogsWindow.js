@@ -22,7 +22,7 @@ const BlogsWindow = (props) => {
     return (
         <Window {...props}>
             <p>
-                Nothing here for now :)
+                Nothing here for now.
                 {/* <ul>
                     {blogs.map((eachBlog, i) => (
                         <li>

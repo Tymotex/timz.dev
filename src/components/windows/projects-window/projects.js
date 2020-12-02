@@ -35,7 +35,7 @@ const mainProjects = [
     },
     {
         title: "Cosmica",
-        thumbnail: "https://assets.newatlas.com/dims4/default/713adf9/2147483647/strip/true/crop/4000x2667+0+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2F3f%2Ffb%2Fa2c818ab43428d1e1a19b39eb9e4%2Fdepositphotos-31079473-xl-2015.jpeg",
+        thumbnail: "https://tymotex.github.io/timz.dev/public/cosmica-title.png",
         description: `
             A cross-platform sci-fi strategy game written in C# and built with the Unity game engine.
         `,
@@ -53,7 +53,7 @@ const ongoingProjects = [
 const miniProjects = [
     {
         title: "Hydroponix",
-        thumbnail: "https://assets.newatlas.com/dims4/default/713adf9/2147483647/strip/true/crop/4000x2667+0+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2F3f%2Ffb%2Fa2c818ab43428d1e1a19b39eb9e4%2Fdepositphotos-31079473-xl-2015.jpeg",
+        thumbnail: "https://miro.medium.com/max/12032/0*__5nhm_2qHSrTVoZ",
         description: `
             A Raspberry Pi project.
         `,
@@ -62,7 +62,7 @@ const miniProjects = [
     },
     {
         title: "Autonomous Deliv-O-Bot",
-        thumbnail: "https://assets.newatlas.com/dims4/default/713adf9/2147483647/strip/true/crop/4000x2667+0+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2F3f%2Ffb%2Fa2c818ab43428d1e1a19b39eb9e4%2Fdepositphotos-31079473-xl-2015.jpeg",
+        thumbnail: "https://miro.medium.com/max/12032/0*__5nhm_2qHSrTVoZ",
         description: `
             An autonomous delivery vehicle
         `,
@@ -71,7 +71,7 @@ const miniProjects = [
     },
     {
         title: "POSIX Shell to Perl 5 Transpiler",
-        thumbnail: "https://assets.newatlas.com/dims4/default/713adf9/2147483647/strip/true/crop/4000x2667+0+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2F3f%2Ffb%2Fa2c818ab43428d1e1a19b39eb9e4%2Fdepositphotos-31079473-xl-2015.jpeg",
+        thumbnail: "https://miro.medium.com/max/12032/0*__5nhm_2qHSrTVoZ",
         description: `
             A regex-based transpiler for mapping POSIX shell scripts to an equivalent Perl 5 script.  
         `,
@@ -80,7 +80,7 @@ const miniProjects = [
     },
     {
         title: "Darkshade Crypt",
-        thumbnail: "https://assets.newatlas.com/dims4/default/713adf9/2147483647/strip/true/crop/4000x2667+0+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2F3f%2Ffb%2Fa2c818ab43428d1e1a19b39eb9e4%2Fdepositphotos-31079473-xl-2015.jpeg",
+        thumbnail: "https://miro.medium.com/max/12032/0*__5nhm_2qHSrTVoZ",
         description: `
             A game built with Java and JavaFX.
         `,
@@ -89,7 +89,7 @@ const miniProjects = [
     },
     {
         title: "GitLite",
-        thumbnail: "https://assets.newatlas.com/dims4/default/713adf9/2147483647/strip/true/crop/4000x2667+0+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2F3f%2Ffb%2Fa2c818ab43428d1e1a19b39eb9e4%2Fdepositphotos-31079473-xl-2015.jpeg",
+        thumbnail: "https://miro.medium.com/max/12032/0*__5nhm_2qHSrTVoZ",
         description: `
             A lite version of the Git VCS, implemented entirely with POSIX shell scripts.
         `,
@@ -98,7 +98,7 @@ const miniProjects = [
     },
     {
         title: "Fractal Percussion",
-        thumbnail: "https://assets.newatlas.com/dims4/default/713adf9/2147483647/strip/true/crop/4000x2667+0+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2F3f%2Ffb%2Fa2c818ab43428d1e1a19b39eb9e4%2Fdepositphotos-31079473-xl-2015.jpeg",
+        thumbnail: "https://miro.medium.com/max/12032/0*__5nhm_2qHSrTVoZ",
         description: `
             A patatap clone using vector graphics and satisfying sound effects. Built with paper.js and howler.js.
         `,
@@ -107,7 +107,7 @@ const miniProjects = [
     },
     {
         title: "PyTorch Language Models",
-        thumbnail: "https://assets.newatlas.com/dims4/default/713adf9/2147483647/strip/true/crop/4000x2667+0+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2F3f%2Ffb%2Fa2c818ab43428d1e1a19b39eb9e4%2Fdepositphotos-31079473-xl-2015.jpeg",
+        thumbnail: "https://miro.medium.com/max/12032/0*__5nhm_2qHSrTVoZ",
         description: `
             Kuzushiji character recognition, document classification and sentiment analysis.
         `,
@@ -121,7 +121,7 @@ const miniProjects = [
 const babyProjects = [
     {
         title: "Astral Assault",
-        thumbnail: "https://assets.newatlas.com/dims4/default/713adf9/2147483647/strip/true/crop/4000x2667+0+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2F3f%2Ffb%2Fa2c818ab43428d1e1a19b39eb9e4%2Fdepositphotos-31079473-xl-2015.jpeg",
+        thumbnail: "https://miro.medium.com/max/12032/0*__5nhm_2qHSrTVoZ",
         description: `
             Astral Assault is a more dynamic, intensive take on the classic Space Invaders with flashier 
             visuals and a different game progression. Built with C# on the Unity game engine.
@@ -131,7 +131,7 @@ const babyProjects = [
     },
     {
         title: "Blitz Breach",
-        thumbnail: "https://assets.newatlas.com/dims4/default/713adf9/2147483647/strip/true/crop/4000x2667+0+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2F3f%2Ffb%2Fa2c818ab43428d1e1a19b39eb9e4%2Fdepositphotos-31079473-xl-2015.jpeg",
+        thumbnail: "https://miro.medium.com/max/12032/0*__5nhm_2qHSrTVoZ",
         description: `
             Blitz Breach is an extended version of an old classic, Arkanoid. The player controls a paddle 
             and must maneouver a ball to smash all the presented blocks without missing a return. Built 
@@ -142,7 +142,7 @@ const babyProjects = [
     },
     {
         title: "Fallout 4 Mods",
-        thumbnail: "https://www.pcgamesn.com/wp-content/uploads/2016/03/fallout-4-console-commands.jpg",
+        thumbnail: "https://tymotex.github.io/timz.dev/public/fallout-4-nuka-cola.png",
         description: `
             A collection of mods I made which has collectively achieved over 80000+ downloads and
             4000+ endorsements in total.
@@ -152,7 +152,7 @@ const babyProjects = [
     },
     {
         title: "Quote scraper",
-        thumbnail: "https://assets.newatlas.com/dims4/default/713adf9/2147483647/strip/true/crop/4000x2667+0+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2F3f%2Ffb%2Fa2c818ab43428d1e1a19b39eb9e4%2Fdepositphotos-31079473-xl-2015.jpeg",
+        thumbnail: "https://miro.medium.com/max/12032/0*__5nhm_2qHSrTVoZ",
         description: `
             A Python web scraper, built with the Selenium browser automation library.
         `,
