@@ -12,14 +12,16 @@ import {
     ongoingProjects
 } from './projects.js';
 
+const truncate = (input) => input.length > 250 ? `${input.substring(0, 250)}...` : input;
+
 const ProjectsWindow = (props) => {
     return (
         <Window {...props} >
             <div className={windowStyles.paddedContainer}>
                 <h3>Personal Projects</h3>
                 <p>
-                    A collection of personal projects that I spent significant 
-                    amounts of time and effort on.
+                    A collection of personal projects that I spent a significant 
+                    amount of time and effort on.
                 </p>
             </div>
             <Grid container spacing={3}>
@@ -30,11 +32,13 @@ const ProjectsWindow = (props) => {
                             image={eachProject.thumbnail}
                         >
                             <Typography variant="body2" component="p">
-                                {eachProject.description}    
+                                {truncate(eachProject.description)}    
                             </Typography>
-                            <Typography variant="h6" component="p">
-                                <a href={eachProject.demoLink}>{eachProject.demoPromptText}</a>
-                            </Typography>
+                            {eachProject.demoLink !== "" && (
+                                <Typography variant="h6" component="p">
+                                    <a href={eachProject.demoLink}>{eachProject.demoPromptText}</a>
+                                </Typography>
+                            )}
                         </ProjectCard>
                     </Grid>
                 ))}
@@ -57,11 +61,13 @@ const ProjectsWindow = (props) => {
                             image={eachProject.thumbnail}
                         >
                             <Typography variant="body2" component="p">
-                                {eachProject.description}    
+                                {truncate(eachProject.description)}    
                             </Typography>
-                            <Typography variant="h6" component="p">
-                                <a href={eachProject.demoLink}>{eachProject.demoPromptText}</a>
-                            </Typography>
+                            {eachProject.demoLink !== "" && (
+                                <Typography variant="h6" component="p">
+                                    <a href={eachProject.demoLink}>{eachProject.demoPromptText}</a>
+                                </Typography>
+                            )}
                         </ProjectCard>
                     </Grid>
                 ))}
@@ -85,11 +91,13 @@ const ProjectsWindow = (props) => {
                             image={eachProject.thumbnail}
                         >
                             <Typography variant="body2" component="p">
-                                {eachProject.description}    
+                                {truncate(eachProject.description)}    
                             </Typography>
-                            <Typography variant="h6" component="p">
-                                <a href={eachProject.demoLink}>{eachProject.demoPromptText}</a>
-                            </Typography>
+                            {eachProject.demoLink !== "" && (
+                                <Typography variant="h6" component="p">
+                                    <a href={eachProject.demoLink}>{eachProject.demoPromptText}</a>
+                                </Typography>
+                            )}
                         </ProjectCard>
                     </Grid>
                 ))}
@@ -101,7 +109,7 @@ const ProjectsWindow = (props) => {
                 <h3>About this site</h3>
                 <p>
                     This site was built with Gatsby, a React framework powered by GraphQL. 
-                    See the repository <a href="https://github.com/Tymotex/timz.dev">here</a>.
+                    See the repository for my frontend <a href="https://github.com/Tymotex/timz.dev">here</a>.
                 </p>
             </div>
         </Window>

@@ -26,7 +26,7 @@ const mainProjects = [
     },
     {
         title: "Tactile DS",
-        thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/tacile-ds-thumbnail.png",
+        thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/tactile-ds-thumbnail.png",
         description: `
             Tactile DS is a web-based terminal interface that allows you to experiment with a suite of interactive 
             data structures and algorithms written in C.
@@ -133,15 +133,15 @@ const babyProjects = [
         title: "Fallout 4 Mods",
         thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/fallout-4-nuka-cola.png",
         description: `
-            A collection of mods I made which has collectively achieved over 80000+ downloads and
-            4000+ endorsements in total.
+            A collection of Fallout 4 mods I made which has collectively achieved over 80000+ downloads and
+            4000+ endorsements in total on Nexusmods.
         `,
         demoPromptText: "View",
         demoLink: "https://www.nexusmods.com/fallout4/users/29182470?tab=user+files"
     },
     {
         title: "Quote scraper",
-        thumbnail: "https://miro.medium.com/max/12032/0*__5nhm_2qHSrTVoZ",
+        thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/quote-scraper-thumbnail.png",
         description: `
             A Python web scraper, built with the Selenium browser automation library.
         `,
