@@ -17,7 +17,7 @@
 const mainProjects = [
     {
         title: "Techsuite",
-        thumbnail: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Arduino_ftdi_chip-1.jpg",
+        thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/techsuite-thumbnail.png",
         description: `
             Techsuite is a collaborative social app built with React, Flask and PostgreSQL.
         `,
@@ -25,10 +25,11 @@ const mainProjects = [
         demoLink: "https://techsuite.dev"
     },
     {
-        title: "Interactive Data Structures",
-        thumbnail: "https://helpdeskgeek.com/wp-content/pictures/2019/10/code-1.jpg.optimal.jpg",
+        title: "Tactile DS",
+        thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/tacile-ds-thumbnail.png",
         description: `
-            Interactive-DS is a suite of interactive data structures and algorithms written in C.
+            Tactile DS is a web-based terminal interface that allows you to experiment with a suite of interactive 
+            data structures and algorithms written in C.
         `,
         demoPromptText: "Try it out",
         demoLink: "https://data-structures.xyz"
@@ -62,16 +63,19 @@ const miniProjects = [
     },
     {
         title: "Autonomous Deliv-O-Bot",
-        thumbnail: "https://miro.medium.com/max/12032/0*__5nhm_2qHSrTVoZ",
+        thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/deliv-o-bot-thumbnail.png",
         description: `
-            An autonomous delivery vehicle
+            An autonomous object delivery vehicle, built with the Arduino Uno Rev3. 
+            The vehicle determines where the delivery and pick-up points are using a sound sensor.
+            The reel and wheels of the vehicle use 5V stepper motors and the claw is operated by
+            a 6V metal gear servo motor. 
         `,
         demoPromptText: "View demo video",
         demoLink: "https://www.youtube.com/watch?v=ogIqlcZ1EoI"
     },
     {
         title: "POSIX Shell to Perl 5 Transpiler",
-        thumbnail: "https://miro.medium.com/max/12032/0*__5nhm_2qHSrTVoZ",
+        thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/shell-perl-transpiler-thumbnail.png",
         description: `
             A regex-based transpiler for mapping POSIX shell scripts to an equivalent Perl 5 script.  
         `,
@@ -80,30 +84,15 @@ const miniProjects = [
     },
     {
         title: "Darkshade Crypt",
-        thumbnail: "https://miro.medium.com/max/12032/0*__5nhm_2qHSrTVoZ",
+        thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/darkshade-crypt-thumbnail.png",
         description: `
-            A game built with Java and JavaFX.
+            A 2D dungeon crawler game, written in Java. This uni project involved implementing
+            several design patterns such as strategy, composite, observer and template from scratch. This game
+            also involved implementing dynamic pathfinding algorithms, unit testing with JUnit 5 and building
+            a GUI with JavaFX.     
         `,
         demoPromptText: "View demo",
         demoLink: "https://www.youtube.com/watch?v=MPnFIEm2_oM"
-    },
-    {
-        title: "GitLite",
-        thumbnail: "https://miro.medium.com/max/12032/0*__5nhm_2qHSrTVoZ",
-        description: `
-            A lite version of the Git VCS, implemented entirely with POSIX shell scripts.
-        `,
-        demoPromptText: "View demo [unavailable]",
-        demoLink: ""
-    },
-    {
-        title: "Fractal Percussion",
-        thumbnail: "https://miro.medium.com/max/12032/0*__5nhm_2qHSrTVoZ",
-        description: `
-            A patatap clone using vector graphics and satisfying sound effects. Built with paper.js and howler.js.
-        `,
-        demoPromptText: "Try it out [unavailable]",
-        demoLink: ""
     },
     {
         title: "PyTorch Language Models",
@@ -121,7 +110,7 @@ const miniProjects = [
 const babyProjects = [
     {
         title: "Astral Assault",
-        thumbnail: "https://miro.medium.com/max/12032/0*__5nhm_2qHSrTVoZ",
+        thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/astral-assault-thumbnail.png",
         description: `
             Astral Assault is a more dynamic, intensive take on the classic Space Invaders with flashier 
             visuals and a different game progression. Built with C# on the Unity game engine.
@@ -131,7 +120,7 @@ const babyProjects = [
     },
     {
         title: "Blitz Breach",
-        thumbnail: "https://miro.medium.com/max/12032/0*__5nhm_2qHSrTVoZ",
+        thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/blitz-breach-thumbnail.png",
         description: `
             Blitz Breach is an extended version of an old classic, Arkanoid. The player controls a paddle 
             and must maneouver a ball to smash all the presented blocks without missing a return. Built 
