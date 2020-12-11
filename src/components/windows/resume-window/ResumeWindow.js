@@ -11,9 +11,9 @@ const ResumeWindow = (props) => {
                     <strong>academic transcript</strong>
                 </a>.
             </p>
-            {/* TODO: Use nodemailer to do this */}
-            {/* <h2 className="major">Contact [Unimplemented]</h2>
-            <form method="post" action="#">
+            <h2 className="major">CONTACT</h2>
+            {/* Using Netlify's built-in form handling. See https://docs.netlify.com/forms/setup/#html-forms */}
+            <form method="post" data-netlify="true">
                 <div className="field half first">
                     <label htmlFor="name">Name</label>
                     <input type="text" name="name" id="name" />
@@ -26,12 +26,15 @@ const ResumeWindow = (props) => {
                     <label htmlFor="message">Message</label>
                     <textarea name="message" id="message" rows="4"></textarea>
                 </div>
+                <div className="field">
+                    <div data-netlify-recaptcha="true"></div>
+                </div>
                 <ul className="actions">
                     <li>
                         <input className="transparent-button special" type="submit" value="Send" />
                     </li>
                 </ul>
-            </form> */}
+            </form>
         </Window>
     )
 }

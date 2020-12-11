@@ -13,7 +13,7 @@ var navLinks = [
     },
     {
         nameID: "resume",
-        text: "Resume"
+        text: "Contact"
     }
 ];
 
