@@ -13,7 +13,7 @@ const ResumeWindow = (props) => {
             </p>
             <h2 className="major">CONTACT</h2>
             {/* Using Netlify's built-in form handling. See https://docs.netlify.com/forms/setup/#html-forms */}
-            <form method="post" data-netlify="true">
+            <form method="post" netlify netlify-honeypot="bot-field">
                 <div className="field half first">
                     <label htmlFor="name">Name</label>
                     <input type="text" name="name" id="name" />
@@ -25,9 +25,6 @@ const ResumeWindow = (props) => {
                 <div className="field">
                     <label htmlFor="message">Message</label>
                     <textarea name="message" id="message" rows="4"></textarea>
-                </div>
-                <div className="field">
-                    <div data-netlify-recaptcha="true"></div>
                 </div>
                 <ul className="actions">
                     <li>
