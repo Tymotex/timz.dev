@@ -31,6 +31,18 @@ export default function FormPage() {
 
   return (
     <div>
+        <form name="Contact Form" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="Contact Form" />
+      <div>
+        <label>Your Email:</label>
+        <input type="email" name="email" />
+      </div>
+      <div>
+        <label>Message:</label>
+        <textarea name="message" />
+      </div>
+      <button type="submit">Send</button>
+    </form>
       <h1>Contact</h1>
       <form
         name="contact"
@@ -38,7 +50,6 @@ export default function FormPage() {
         action="thanks"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
-        onSubmit={handleSubmit}
       >
         {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
         <input type="hidden" name="form-name" value="contact" />
