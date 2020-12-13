@@ -3,7 +3,7 @@ import {
 } from '@material-ui/core';
 import React from 'react';
 import Window from '../Window.js';
-import { ProjectCard } from '../../projects';
+import { ProjectCard } from './project-card';
 import windowStyles from '../Window.module.scss';
 import { 
     babyProjects,
@@ -35,8 +35,8 @@ const ProjectsWindow = (props) => {
                                 {truncate(eachProject.description)}    
                             </Typography>
                             {eachProject.demoLink !== "" && (
-                                <Typography variant="h6" component="p">
-                                    <a href={eachProject.demoLink}>{eachProject.demoPromptText}</a>
+                                <Typography className={windowStyles.demoLink} variant="h6" component="p">
+                                    <a className={windowStyles.demoLink} href={eachProject.demoLink}>{eachProject.demoPromptText}</a>
                                 </Typography>
                             )}
                         </ProjectCard>
