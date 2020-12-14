@@ -12,6 +12,8 @@
     Improve the description
     On hover, play animation? 
 */
+// TODO: restyle the project technology chips
+
 
 // A collection of personal projects that I spent significant amounts of time and effort on
 const mainProjects = [
@@ -22,7 +24,15 @@ const mainProjects = [
             Techsuite is a collaborative social app built with React, Flask and PostgreSQL.
         `,
         demoPromptText: "Try it out",
-        demoLink: "https://techsuite.dev"
+        demoLink: "https://techsuite.dev",
+        technologies: [
+            "react",
+            "flask",
+            "postgresql",
+            "python",
+            "javascript",
+            "sass"
+        ]
     },
     {
         title: "Tactile DS",
@@ -32,7 +42,15 @@ const mainProjects = [
             data structures and algorithms written in C.
         `,
         demoPromptText: "Try it out",
-        demoLink: "https://data-structures.xyz"
+        demoLink: "https://data-structures.xyz",
+        technologies: [
+            "react",
+            "flask",
+            "postgresql",
+            "python",
+            "javascript",
+            "sass"
+        ]
     },
     {
         title: "Cosmica",
@@ -41,7 +59,15 @@ const mainProjects = [
             A cross-platform sci-fi strategy game written in C# and built with the Unity game engine.
         `,
         demoPromptText: "Play online",
-        demoLink: "https://tymotex.github.io/Cosmica/"
+        demoLink: "https://tymotex.github.io/Cosmica/",
+        technologies: [
+            "react",
+            "flask",
+            "postgresql",
+            "python",
+            "javascript",
+            "sass"
+        ]
     }
 ];
 
@@ -59,7 +85,10 @@ const miniProjects = [
             A Raspberry Pi project.
         `,
         demoPromptText: "View demo [Unavailable]",
-        demoLink: ""
+        demoLink: "",
+        technologies: [
+
+        ]
     },
     {
         title: "Autonomous Deliv-O-Bot",
@@ -71,7 +100,10 @@ const miniProjects = [
             a 6V metal gear servo motor. 
         `,
         demoPromptText: "View demo video",
-        demoLink: "https://www.youtube.com/watch?v=ogIqlcZ1EoI"
+        demoLink: "https://www.youtube.com/watch?v=ogIqlcZ1EoI",
+        technologies: [
+            
+        ]
     },
     {
         title: "POSIX Shell to Perl 5 Transpiler",
@@ -80,7 +112,10 @@ const miniProjects = [
             A regex-based transpiler for mapping POSIX shell scripts to an equivalent Perl 5 script.  
         `,
         demoPromptText: "View demo [unavailable]",
-        demoLink: ""
+        demoLink: "",
+        technologies: [
+            
+        ]
     },
     {
         title: "Darkshade Crypt",
@@ -92,7 +127,10 @@ const miniProjects = [
             a GUI with JavaFX.     
         `,
         demoPromptText: "View demo",
-        demoLink: "https://www.youtube.com/watch?v=MPnFIEm2_oM"
+        demoLink: "https://www.youtube.com/watch?v=MPnFIEm2_oM",
+        technologies: [
+            
+        ]
     },
     {
         title: "PyTorch Language Models",
@@ -101,7 +139,10 @@ const miniProjects = [
             Kuzushiji character recognition, document classification and sentiment analysis.
         `,
         demoPromptText: "Try it out [unavailable]",
-        demoLink: ""
+        demoLink: "",
+        technologies: [
+            
+        ]
     }
 ];
 
@@ -116,7 +157,10 @@ const babyProjects = [
             visuals and a different game progression. Built with C# on the Unity game engine.
         `,
         demoPromptText: "Play online",
-        demoLink: "https://tymoteus.itch.io/astral-assault"
+        demoLink: "https://tymoteus.itch.io/astral-assault",
+        technologies: [
+            
+        ]
     },
     {
         title: "Blitz Breach",
@@ -127,7 +171,10 @@ const babyProjects = [
             with C# on the Unity game engine.
         `,
         demoPromptText: "Play online",
-        demoLink: "https://tymoteus.itch.io/blitz-breach"
+        demoLink: "https://tymoteus.itch.io/blitz-breach",
+        technologies: [
+            
+        ]
     },
     {
         title: "Fallout 4 Mods",
@@ -137,7 +184,10 @@ const babyProjects = [
             4000+ endorsements in total on Nexusmods.
         `,
         demoPromptText: "View",
-        demoLink: "https://www.nexusmods.com/fallout4/users/29182470?tab=user+files"
+        demoLink: "https://www.nexusmods.com/fallout4/users/29182470?tab=user+files",
+        technologies: [
+            
+        ]
     },
     {
         title: "Quote scraper",
@@ -146,7 +196,10 @@ const babyProjects = [
             A Python web scraper, built with the Selenium browser automation library.
         `,
         demoPromptText: "View demo video",
-        demoLink: "https://www.youtube.com/watch?v=5dCThWMT50o"
+        demoLink: "https://www.youtube.com/watch?v=5dCThWMT50o",
+        technologies: [
+            
+        ]
     }
 ];
 

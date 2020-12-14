@@ -8,7 +8,7 @@ import windowStyles from '../../Window.module.scss';
 import githubIcon from '../../../../images/github-icon.png';
 import { TechnologyList } from './technologies-list';
 
-const ProjectCard = ({ projectName, image, children }) => {
+const ProjectCard = ({ projectName, image, technologies, children }) => {
     return (
         <Card className={windowStyles.projectCard}>
             <CardActionArea>
@@ -44,7 +44,7 @@ const ProjectCard = ({ projectName, image, children }) => {
                 <Typography gutterBottom variant="h6" component="h2">
                     Technologies:
                 </Typography>
-                <TechnologyList />
+                <TechnologyList technologies={technologies}/>
             </CardContent>
         </Card>
     );

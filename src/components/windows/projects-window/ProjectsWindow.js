@@ -30,6 +30,7 @@ const ProjectsWindow = (props) => {
                         <ProjectCard 
                             projectName={eachProject.title}
                             image={eachProject.thumbnail}
+                            technologies={eachProject.technologies}
                         >
                             <Typography variant="body2" component="p">
                                 {truncate(eachProject.description)}    
@@ -59,6 +60,7 @@ const ProjectsWindow = (props) => {
                         <ProjectCard 
                             projectName={eachProject.title}
                             image={eachProject.thumbnail}
+                            technologies={eachProject.technologies}
                         >
                             <Typography variant="body2" component="p">
                                 {truncate(eachProject.description)}    
@@ -89,6 +91,7 @@ const ProjectsWindow = (props) => {
                         <ProjectCard 
                             projectName={eachProject.title}
                             image={eachProject.thumbnail}
+                            technologies={eachProject.technologies}
                         >
                             <Typography variant="body2" component="p">
                                 {truncate(eachProject.description)}    
