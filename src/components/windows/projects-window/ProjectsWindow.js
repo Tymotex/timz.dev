@@ -67,7 +67,7 @@ const ProjectsWindow = (props) => {
                             </Typography>
                             {eachProject.demoLink !== "" && (
                                 <Typography variant="h6" component="p">
-                                    <a href={eachProject.demoLink}>{eachProject.demoPromptText}</a>
+                                    <a className={windowStyles.demoLink} href={eachProject.demoLink}>{eachProject.demoPromptText}</a>
                                 </Typography>
                             )}
                         </ProjectCard>
@@ -98,7 +98,7 @@ const ProjectsWindow = (props) => {
                             </Typography>
                             {eachProject.demoLink !== "" && (
                                 <Typography variant="h6" component="p">
-                                    <a href={eachProject.demoLink}>{eachProject.demoPromptText}</a>
+                                    <a className={windowStyles.demoLink} href={eachProject.demoLink}>{eachProject.demoPromptText}</a>
                                 </Typography>
                             )}
                         </ProjectCard>

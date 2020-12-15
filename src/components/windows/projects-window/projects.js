@@ -14,6 +14,9 @@
 */
 // TODO: restyle the project technology chips
 // TODO: make the project window fatter
+// TODO: Fill out remaining project technologies 
+// TODO: update notion project page for timz.dev
+// TODO: make the on-hover image link customisable - make it take in an image, a link and a label text
 
 // A collection of personal projects that I spent significant amounts of time and effort on
 const mainProjects = [
@@ -81,7 +84,8 @@ const miniProjects = [
         demoPromptText: "View demo [Unavailable]",
         demoLink: "",
         technologies: [
-
+            "python",
+            "javascript"
         ]
     },
     {
@@ -96,7 +100,7 @@ const miniProjects = [
         demoPromptText: "View demo video",
         demoLink: "https://www.youtube.com/watch?v=ogIqlcZ1EoI",
         technologies: [
-            
+            "arduino"
         ]
     },
     {
@@ -108,7 +112,8 @@ const miniProjects = [
         demoPromptText: "View demo [unavailable]",
         demoLink: "",
         technologies: [
-            
+            "shell",
+            "perl"
         ]
     },
     {
@@ -123,7 +128,7 @@ const miniProjects = [
         demoPromptText: "View demo",
         demoLink: "https://www.youtube.com/watch?v=MPnFIEm2_oM",
         technologies: [
-            
+            "java"
         ]
     },
     {
@@ -135,7 +140,8 @@ const miniProjects = [
         demoPromptText: "Try it out [unavailable]",
         demoLink: "",
         technologies: [
-            
+            "pytorch",
+            "python"
         ]
     }
 ];
@@ -153,7 +159,8 @@ const babyProjects = [
         demoPromptText: "Play online",
         demoLink: "https://tymoteus.itch.io/astral-assault",
         technologies: [
-            
+            "c#",
+            "unity"   
         ]
     },
     {
@@ -167,7 +174,8 @@ const babyProjects = [
         demoPromptText: "Play online",
         demoLink: "https://tymoteus.itch.io/blitz-breach",
         technologies: [
-            
+            "c#",
+            "unity"   
         ]
     },
     {
@@ -179,9 +187,7 @@ const babyProjects = [
         `,
         demoPromptText: "View",
         demoLink: "https://www.nexusmods.com/fallout4/users/29182470?tab=user+files",
-        technologies: [
-            
-        ]
+        technologies: []
     },
     {
         title: "Quote scraper",
@@ -192,7 +198,7 @@ const babyProjects = [
         demoPromptText: "View demo video",
         demoLink: "https://www.youtube.com/watch?v=5dCThWMT50o",
         technologies: [
-            
+            "python"   
         ]
     }
 ];
