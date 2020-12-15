@@ -13,7 +13,6 @@
     On hover, play animation? 
 */
 // TODO: restyle the project technology chips
-// TODO: make the project window fatter
 // TODO: Fill out remaining project technologies 
 // TODO: update notion project page for timz.dev
 // TODO: make the on-hover image link customisable - make it take in an image, a link and a label text
