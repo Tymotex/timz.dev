@@ -13,7 +13,7 @@
     On hover, play animation? 
 */
 // TODO: restyle the project technology chips
-
+// TODO: make the project window fatter
 
 // A collection of personal projects that I spent significant amounts of time and effort on
 const mainProjects = [
@@ -28,9 +28,9 @@ const mainProjects = [
         technologies: [
             "react",
             "flask",
-            "postgresql",
+            "postgreSQL",
             "python",
-            "javascript",
+            "javaScript",
             "sass"
         ]
     },
@@ -44,12 +44,10 @@ const mainProjects = [
         demoPromptText: "Try it out",
         demoLink: "https://data-structures.xyz",
         technologies: [
-            "react",
-            "flask",
-            "postgresql",
-            "python",
-            "javascript",
-            "sass"
+            "c",
+            "ruby",
+            "perl",
+            "shell"
         ]
     },
     {
@@ -61,12 +59,8 @@ const mainProjects = [
         demoPromptText: "Play online",
         demoLink: "https://tymotex.github.io/Cosmica/",
         technologies: [
-            "react",
-            "flask",
-            "postgresql",
-            "python",
-            "javascript",
-            "sass"
+            "c#",
+            "unity"   
         ]
     }
 ];
