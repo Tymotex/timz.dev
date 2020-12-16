@@ -1,10 +1,9 @@
 // Collection of projects in JSON format
 
-// TODO: Add a technologies section to each project. Make it styled with pretty icons
 // TODO: Improve the GitHub hover text, or just get rid of it
 // TODO: Not all projects have a github link... What can I do instead?
 // TODO: Organise these todos better. Put them on your notion page
-// TODO: Make it so that clicking out of the window doesn't close it
+
 // TODO: Chore: go through each project, 
 /*
     Make it presentable -- Add demos where possible
@@ -12,6 +11,7 @@
     Improve the description
     On hover, play animation? 
 */
+
 // TODO: restyle the project technology chips
 // TODO: Fill out remaining project technologies 
 // TODO: update notion project page for timz.dev
@@ -34,7 +34,9 @@ const mainProjects = [
             "python",
             "javaScript",
             "sass"
-        ]
+        ],
+        overlayIcon: "",   // Import the icon png directly in this file
+        overlayLabel: ""   //
     },
     {
         title: "Tactile DS",

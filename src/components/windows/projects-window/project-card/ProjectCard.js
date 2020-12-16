@@ -7,6 +7,7 @@ import React from 'react';
 import windowStyles from '../../Window.module.scss';
 import githubIcon from '../../../../images/github-icon.png';
 import { TechnologyList } from './technologies-list';
+import HoverOverlay from './HoverOverlay.js';
 
 const ProjectCard = ({ projectName, image, technologies, children }) => {
     return (
@@ -23,14 +24,10 @@ const ProjectCard = ({ projectName, image, technologies, children }) => {
                                 title="Project"
                                 />
                         </div>
-                        <span className={windowStyles.overlay}>
-                            <img src={githubIcon} />
-                            <p>
-                                <strong>
-                                    View on GitHub
-                                </strong>
-                            </p>
-                        </span>
+                        <HoverOverlay 
+                            icon={githubIcon} 
+                            label="View on GitHub"
+                        />
                     </div>
                 </a>
             </CardActionArea>
