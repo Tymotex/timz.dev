@@ -80,13 +80,17 @@ const miniProjects = [
         title: "Hydroponix",
         thumbnail: "https://miro.medium.com/max/12032/0*__5nhm_2qHSrTVoZ",
         description: `
-            A Raspberry Pi project.
+            An IoT automated plant propagation system built with Python on the Raspberry Pi Zero W 
+            with InfluxDB, Flask and other libraries.
         `,
         demoPromptText: "View demo [Unavailable]",
         demoLink: "",
         technologies: [
+            "flask",
+            "influxdb",
             "python",
-            "javascript"
+            "javaScript",
+            "bootstrap"
         ]
     },
     {
@@ -199,7 +203,8 @@ const babyProjects = [
         demoPromptText: "View demo video",
         demoLink: "https://www.youtube.com/watch?v=5dCThWMT50o",
         technologies: [
-            "python"   
+            "python",
+            "selenium"
         ]
     }
 ];

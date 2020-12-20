@@ -40,9 +40,6 @@ const ProjectCard = ({ projectName, image, technologies, children }) => {
                 {technologies && technologies.length > 0 && (
                     <>
                         <hr className={windowStyles.thinHr} />
-                        <Typography gutterBottom variant="h6" component="h2">
-                            Technologies:
-                        </Typography>
                         <TechnologyList technologies={technologies}/>
                     </>
                 )}
