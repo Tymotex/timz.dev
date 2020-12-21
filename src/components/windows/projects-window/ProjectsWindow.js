@@ -18,7 +18,9 @@ const ProjectsWindow = (props) => {
     return (
         <Window {...props} >
             <div className={windowStyles.paddedContainer}>
-                <h3>Personal Projects</h3>
+                <Typography gutterBottom variant="h6" component="h2">
+                    Main Projects
+                </Typography>
                 <p>
                     A collection of personal projects that I spent a significant 
                     amount of time and effort on.
@@ -37,18 +39,22 @@ const ProjectsWindow = (props) => {
                             </Typography>
                             {eachProject.demoLink !== "" && (
                                 <Typography className={windowStyles.demoLink} variant="h6" component="p">
-                                    <a className={windowStyles.demoLink} href={eachProject.demoLink}>{eachProject.demoPromptText}</a>
+                                    <a className={windowStyles.demoLink} href={eachProject.demoLink}>
+                                        {eachProject.demoPromptText}
+                                    </a>
                                 </Typography>
                             )}
                         </ProjectCard>
                     </Grid>
                 ))}
             </Grid>
-            <hr className={windowStyles.thinHr} />
+            <hr className={windowStyles.lightHr} />
 
             {/* Other Projects */}
             <div className={windowStyles.paddedContainer}>
-                <h3>Other Projects</h3>
+                <Typography gutterBottom variant="h6" component="h2">
+                    More Projects
+                </Typography>
                 <p>
                     A collection of projects that were either university projects or smaller
                     personal projects.
@@ -74,13 +80,15 @@ const ProjectsWindow = (props) => {
                     </Grid>
                 ))}
             </Grid>
-            <hr className={windowStyles.thinHr} />
+            <hr className={windowStyles.lightHr} />
 
             {/* Babby projects 👶 */}
             <div className={windowStyles.paddedContainer}>
-                <h3>Baby Projects 👶</h3>
+                <Typography gutterBottom variant="h6" component="h2">
+                    Baby Projects 👶
+                </Typography>
                 <p>
-                    A collection of hobby projects that aren't too impressive. These projects
+                    A collection of personal hobby projects that aren't too impressive but which
                     gave rise to my interest in software engineering during my junior and
                     senior years at high school.
                 </p>
@@ -105,7 +113,7 @@ const ProjectsWindow = (props) => {
                     </Grid>
                 ))}
             </Grid>
-            <hr className={windowStyles.thinHr} />
+            <hr className={windowStyles.lightHr} />
 
             {/* About this site as a project */}
             <div className={windowStyles.paddedContainer}>

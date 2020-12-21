@@ -5,7 +5,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
 import windowStyles from '../../Window.module.scss';
-import githubIcon from '../../../../images/github-icon.png';
+import images from '../../../../images';
 import { TechnologyList } from './technologies-list';
 import HoverOverlay from './HoverOverlay.js';
 
@@ -25,7 +25,7 @@ const ProjectCard = ({ projectName, image, technologies, children }) => {
                                 />
                         </div>
                         <HoverOverlay 
-                            icon={githubIcon} 
+                            icon={images.github} 
                             label="View on GitHub"
                         />
                     </div>
