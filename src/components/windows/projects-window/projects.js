@@ -16,6 +16,11 @@
 // TODO: Fill out remaining project technologies 
 // TODO: update notion project page for timz.dev
 // TODO: make the on-hover image link customisable - make it take in an image, a link and a label text
+// TODO: add CS Nexus to this list, maybe on the resume as well even
+// TODO: investigate play on hover effect: https://codepen.io/QDeltaE/pen/VWGYOB
+
+// Importing a set of images to be displayed in the hover overlay
+import images from '../../../images';
 
 // A collection of personal projects that I spent significant amounts of time and effort on
 const mainProjects = [
@@ -35,8 +40,11 @@ const mainProjects = [
             "javaScript",
             "sass"
         ],
-        overlayIcon: "",   // Import the icon png directly in this file
-        overlayLabel: ""   //
+        overlay: {
+            icon: images.overlayImages.github,             // Importing the image to display in the hover overlay
+            label: "View on GitHub",                       // Text to be displayed on hovering over the project image 
+            link: "https://github.com/Tymotex/Techsuite"   // Hyperlink to open in a new tab when image is clicked
+        }
     },
     {
         title: "Tactile DS",
@@ -52,7 +60,12 @@ const mainProjects = [
             "ruby",
             "perl",
             "shell"
-        ]
+        ],
+        overlay: {
+            icon: images.overlayImages.github,                    
+            label: "View on GitHub",
+            link: "https://github.com/Tymotex/DataStructures"   
+        }
     },
     {
         title: "Cosmica",
@@ -65,7 +78,12 @@ const mainProjects = [
         technologies: [
             "c#",
             "unity"   
-        ]
+        ],
+        overlay: {
+            icon: images.overlayImages.github,                    
+            label: "View on GitHub",
+            link: "https://github.com/Tymotex/Cosmica"   
+        }
     }
 ];
 
@@ -91,7 +109,12 @@ const miniProjects = [
             "python",
             "javaScript",
             "bootstrap"
-        ]
+        ],
+        overlay: {
+            icon: images.overlayImages.github,                    
+            label: "View on GitHub",
+            link: "https://github.com/Tymotex/Hydroponix"   
+        }
     },
     {
         title: "Autonomous Deliv-O-Bot",
@@ -106,7 +129,12 @@ const miniProjects = [
         demoLink: "https://www.youtube.com/watch?v=ogIqlcZ1EoI",
         technologies: [
             "arduino"
-        ]
+        ],
+        overlay: {
+            icon: images.overlayImages.youtube,                    
+            label: "View on YouTube",
+            link: "https://www.youtube.com/watch?v=ogIqlcZ1EoI"   
+        }
     },
     {
         title: "POSIX Shell to Perl 5 Transpiler",
@@ -119,7 +147,12 @@ const miniProjects = [
         technologies: [
             "shell",
             "perl"
-        ]
+        ],
+        overlay: {
+            icon: images.overlayImages.github,                    
+            label: "View on GitHub",
+            link: "https://github.com/Tymotex/ShellPerlTranspiler"   
+        }
     },
     {
         title: "Darkshade Crypt",
@@ -134,21 +167,29 @@ const miniProjects = [
         demoLink: "https://www.youtube.com/watch?v=MPnFIEm2_oM",
         technologies: [
             "java"
-        ]
+        ],
+        overlay: {
+            icon: images.overlayImages.github,                    
+            label: "View on GitHub",
+            link: "https://github.com/Tymotex/DarkshadeCrypt"   
+        }
     },
-    {
-        title: "PyTorch Language Models",
-        thumbnail: "https://miro.medium.com/max/12032/0*__5nhm_2qHSrTVoZ",
-        description: `
-            Kuzushiji character recognition, document classification and sentiment analysis.
-        `,
-        demoPromptText: "Try it out [unavailable]",
-        demoLink: "",
-        technologies: [
-            "pytorch",
-            "python"
-        ]
-    }
+    // {
+    //     title: "PyTorch Language Models",
+    //     thumbnail: "https://miro.medium.com/max/12032/0*__5nhm_2qHSrTVoZ",
+    //     description: `
+    //         Kuzushiji character recognition, document classification and sentiment analysis.
+    //     `,
+    //     demoPromptText: "Try it out [unavailable]",
+    //     demoLink: "",
+    //     technologies: [
+    //         "pytorch",
+    //         "python"
+    //     ],
+    //     overlayIcon: images.overlayImages.github,                    
+    //     overlayLabel: "View on GitHub",
+    //     overlayLink: "https://github.com/Tymotex/DarkshadeCrypt"   
+    // }
 ];
 
 // A collection of projects that aren't too impressive but which gave rise to my interest in 
@@ -166,7 +207,12 @@ const babyProjects = [
         technologies: [
             "c#",
             "unity"   
-        ]
+        ],
+        overlay: {
+            icon: images.overlayImages.youtube,                    
+            label: "View on YouTube",
+            link: "https://www.youtube.com/watch?v=L5HmrpmQbec"   
+        }
     },
     {
         title: "Blitz Breach",
@@ -181,7 +227,12 @@ const babyProjects = [
         technologies: [
             "c#",
             "unity"   
-        ]
+        ],
+        overlay: {
+            icon: images.overlayImages.youtube,                    
+            label: "View on YouTube",
+            link: "https://www.youtube.com/watch?v=RtHD5X44K0M"   
+        }
     },
     {
         title: "Fallout 4 Mods",
@@ -192,7 +243,12 @@ const babyProjects = [
         `,
         demoPromptText: "View",
         demoLink: "https://www.nexusmods.com/fallout4/users/29182470?tab=user+files",
-        technologies: []
+        technologies: [],
+        overlay: {
+            icon: images.overlayImages.nexusmods,                    
+            label: "View on NexusMods",
+            link: "https://www.nexusmods.com/fallout4/users/29182470?tab=user+files"   
+        }
     },
     {
         title: "Quote scraper",
@@ -205,7 +261,12 @@ const babyProjects = [
         technologies: [
             "python",
             "selenium"
-        ]
+        ],
+        overlay: {
+            icon: images.overlayImages.youtube,                    
+            label: "View on YouTube",
+            link: "https://www.youtube.com/watch?v=RtHD5X44K0M"   
+        }
     }
 ];
 

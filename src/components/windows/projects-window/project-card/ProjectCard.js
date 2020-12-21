@@ -9,7 +9,13 @@ import images from '../../../../images';
 import { TechnologyList } from './technologies-list';
 import HoverOverlay from './HoverOverlay.js';
 
-const ProjectCard = ({ projectName, image, technologies, children }) => {
+const ProjectCard = ({ project, children }) => {
+    const { 
+        title,
+        thumbnail,
+        technologies,
+        overlay
+    } = project; 
     return (
         <Card className={windowStyles.projectCard}>
             <CardActionArea>
@@ -20,20 +26,20 @@ const ProjectCard = ({ projectName, image, technologies, children }) => {
                                 component="img"
                                 alt="Project"
                                 height="140"
-                                image={image}
+                                image={thumbnail}
                                 title="Project"
-                                />
+                            />
                         </div>
                         <HoverOverlay 
-                            icon={images.github} 
-                            label="View on GitHub"
+                            icon={project.overlay.icon} 
+                            label={project.overlay.label}
                         />
                     </div>
                 </a>
             </CardActionArea>
             <CardContent className={windowStyles.cardContent}>
                 <Typography className={windowStyles.projectTitle} gutterBottom variant="h5" component="h2">
-                    {projectName}
+                    {title}
                 </Typography>
                 <hr className={windowStyles.thinHr} />
                 {children}

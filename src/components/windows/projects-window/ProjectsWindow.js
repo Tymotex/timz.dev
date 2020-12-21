@@ -29,11 +29,7 @@ const ProjectsWindow = (props) => {
             <Grid container spacing={3}>
                 {mainProjects.map((eachProject) => (
                     <Grid item xs={12} sm={6} lg={4}>
-                        <ProjectCard 
-                            projectName={eachProject.title}
-                            image={eachProject.thumbnail}
-                            technologies={eachProject.technologies}
-                        >
+                        <ProjectCard project={eachProject}>
                             <Typography variant="body2" component="p">
                                 {truncate(eachProject.description)}    
                             </Typography>
@@ -63,11 +59,7 @@ const ProjectsWindow = (props) => {
             <Grid container spacing={3}>
                 {miniProjects.map((eachProject) => (
                     <Grid item xs={12} sm={6} lg={4}>
-                        <ProjectCard 
-                            projectName={eachProject.title}
-                            image={eachProject.thumbnail}
-                            technologies={eachProject.technologies}
-                        >
+                        <ProjectCard project={eachProject}>
                             <Typography variant="body2" component="p">
                                 {truncate(eachProject.description)}    
                             </Typography>
@@ -96,11 +88,7 @@ const ProjectsWindow = (props) => {
             <Grid container spacing={3}>
                 {babyProjects.map((eachProject) => (
                     <Grid item xs={12} sm={6} lg={4}>
-                        <ProjectCard 
-                            projectName={eachProject.title}
-                            image={eachProject.thumbnail}
-                            technologies={eachProject.technologies}
-                        >
+                        <ProjectCard project={eachProject}>
                             <Typography variant="body2" component="p">
                                 {truncate(eachProject.description)}    
                             </Typography>
