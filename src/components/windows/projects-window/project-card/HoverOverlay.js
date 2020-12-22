@@ -6,7 +6,7 @@ import windowStyles from '../../Window.module.scss';
 const HoverOverlay = ({ icon, label }) => {
     return (
         <span className={windowStyles.overlay}>
-            <img src={icon} />
+            <img src={icon} alt="linked site"/>
             <Typography className={overlayStyles.label} variant="h6" component="h2">
                 {label}
             </Typography>

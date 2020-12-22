@@ -12,6 +12,9 @@ const stringToIcon = (techName) => {
         case "c#":
             techName = "csharp";
             break;
+        case "nodejs":
+            techName = "node";
+            break
     }
     return images[techName];
 }
@@ -19,7 +22,7 @@ const stringToIcon = (techName) => {
 const TechnologyList = ({ technologies }) => {
     console.log(typeof(technologies));
     return (
-        <>
+        <div className={listStyles.techList}>
             {technologies.map((techItem) => {
                 return (
                     <TechnologyItem 
@@ -28,7 +31,7 @@ const TechnologyList = ({ technologies }) => {
                     />
                 );
             })} 
-        </>
+        </div>
     );
 }
 

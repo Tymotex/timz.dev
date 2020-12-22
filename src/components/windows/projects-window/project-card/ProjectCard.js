@@ -5,7 +5,6 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
 import windowStyles from '../../Window.module.scss';
-import images from '../../../../images';
 import { TechnologyList } from './technologies-list';
 import HoverOverlay from './HoverOverlay.js';
 
@@ -31,8 +30,8 @@ const ProjectCard = ({ project, children }) => {
                             />
                         </div>
                         <HoverOverlay 
-                            icon={project.overlay.icon} 
-                            label={project.overlay.label}
+                            icon={overlay.icon} 
+                            label={overlay.label}
                         />
                     </div>
                 </a>

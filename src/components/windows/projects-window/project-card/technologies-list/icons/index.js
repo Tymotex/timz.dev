@@ -6,7 +6,9 @@ import expressIcon from './express.png';
 import flaskIcon from './flask.png';
 import influxdbIcon from './influxdb.png';
 import javaIcon from './java.png';
+import javafxIcon from './javafx.png';
 import javascriptIcon from './javascript.png';
+import jqueryIcon from './jquery.png';
 import mongodbIcon from './mongodb.png';
 import nodeIcon from './node.png';
 import perlIcon from './perl.png';
@@ -29,7 +31,9 @@ const images = {
     "flask": flaskIcon,
     "influxdb": influxdbIcon,
     "java": javaIcon,
+    "javafx": javafxIcon,
     "javascript": javascriptIcon,
+    "jquery": jqueryIcon,
     "mongodb": mongodbIcon,
     "node": nodeIcon,
     "perl": perlIcon,

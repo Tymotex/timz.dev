@@ -18,7 +18,7 @@ const BlogsWindow = (props) => {
         }
     `);
     console.log(data);
-    const { edges: blogs } = data.allContentfulBlogPost;
+    // const { edges: blogs } = data.allContentfulBlogPost;
     return (
         <Window {...props}>
             <p>

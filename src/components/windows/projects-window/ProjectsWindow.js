@@ -5,12 +5,7 @@ import React from 'react';
 import Window from '../Window.js';
 import { ProjectCard } from './project-card';
 import windowStyles from '../Window.module.scss';
-import { 
-    babyProjects,
-    mainProjects,
-    miniProjects,
-    ongoingProjects
-} from './projects.js';
+import projects from './projects.js';
 
 const truncate = (input) => input.length > 250 ? `${input.substring(0, 250)}...` : input;
 
@@ -27,7 +22,7 @@ const ProjectsWindow = (props) => {
                 </p>
             </div>
             <Grid container spacing={3}>
-                {mainProjects.map((eachProject) => (
+                {projects.mainProjects.map((eachProject) => (
                     <Grid item xs={12} sm={6} lg={4}>
                         <ProjectCard project={eachProject}>
                             <Typography variant="body2" component="p">
@@ -57,7 +52,7 @@ const ProjectsWindow = (props) => {
                 </p>
             </div>
             <Grid container spacing={3}>
-                {miniProjects.map((eachProject) => (
+                {projects.miniProjects.map((eachProject) => (
                     <Grid item xs={12} sm={6} lg={4}>
                         <ProjectCard project={eachProject}>
                             <Typography variant="body2" component="p">
@@ -74,10 +69,10 @@ const ProjectsWindow = (props) => {
             </Grid>
             <hr className={windowStyles.lightHr} />
 
-            {/* Babby projects 👶 */}
+            {/* Babbi projects 👶 */}
             <div className={windowStyles.paddedContainer}>
                 <Typography gutterBottom variant="h6" component="h2">
-                    Baby Projects 👶
+                    Baby Projects <span role="img" aria-label="babyface">👶</span>
                 </Typography>
                 <p>
                     A collection of personal hobby projects that aren't too impressive but which
@@ -86,7 +81,7 @@ const ProjectsWindow = (props) => {
                 </p>
             </div>
             <Grid container spacing={3}>
-                {babyProjects.map((eachProject) => (
+                {projects.babyProjects.map((eachProject) => (
                     <Grid item xs={12} sm={6} lg={4}>
                         <ProjectCard project={eachProject}>
                             <Typography variant="body2" component="p">
