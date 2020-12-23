@@ -1,3 +1,4 @@
+$overlayTransDuration: 0.5s;
 
 // General Styling
 .centered-title {
@@ -45,14 +46,25 @@
     }
 
     .cardImage {
-        transition: all 1s;
         .image {
             > img {
                 border-radius: 0px;
                 height: 300px;
                 width: 100%;
                 position: relative;
-                transition: all 0.5s ease-in;
+                transition: $overlayTransDuration ease-in;
+                z-index: 0;
+            }
+            > .staticImage {
+                &:hover {
+                    opacity: 0;
+                    transition: $overlayTransDuration ease-in;
+                }
+            }
+            > .gifUnderlay {
+                position: absolute;
+                top: 0;
+                z-index: -1;
             }
         }
         .overlay {
@@ -67,7 +79,8 @@
             justify-content: center;
             opacity: 0;
             transform: translateY(60px) scale(0.5);
-            transition: all 0.5s ease-in;
+            transition: $overlayTransDuration ease-in;
+            z-index: 10;
 
             img {
                 height: 35%;
@@ -79,12 +92,13 @@
         }
         &:hover {
             .image {
-                filter: brightness(25%) blur(1px);
-                transition: all 0.5s ease-in;
+                filter: brightness(50%) blur(0px);
+                transition: all $overlayTransDuration ease-in;
             }
             .overlay {
                 transform: scale(1) translateY(25px);
                 opacity: 1;
+                pointer-events: none;
             }
         }
     }

@@ -82,7 +82,8 @@ const projects = {
                 icon: images.overlayImages.github,                    
                 label: "View on GitHub",
                 link: "https://github.com/Tymotex/Cosmica"   
-            }
+            },
+            gif: "https://github.com/Tymotex/Cosmica/blob/master/PublicImages/gameplay-demo.gif?raw=true"
         }
     ],
     ongoingProjects: {
@@ -170,7 +171,8 @@ const projects = {
                 icon: images.overlayImages.github,
                 label: "View on GitHub",
                 link: "https://github.com/Tymotex/CS-Nexus"
-            }
+            },
+            gif: "https://github.com/Tymotex/CS-Nexus/blob/master/public/cs-nexus-preview.gif?raw=true"
         },
         {
             title: "Darkshade Crypt",

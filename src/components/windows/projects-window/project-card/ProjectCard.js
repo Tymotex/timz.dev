@@ -13,26 +13,51 @@ const ProjectCard = ({ project, children }) => {
         title,
         thumbnail,
         technologies,
-        overlay
+        overlay,
+        gif
     } = project; 
     return (
         <Card className={windowStyles.projectCard}>
             <CardActionArea>
-                <a href="https://www.google.com">
+                <a href={overlay.link}>
                     <div className={windowStyles.cardImage}>
-                        <div className={windowStyles.image}>
-                            <CardMedia
-                                component="img"
-                                alt="Project"
-                                height="140"
-                                image={thumbnail}
-                                title="Project"
-                            />
-                        </div>
                         <HoverOverlay 
+                            style={{"height": "140px", "z-index": "10", "pointer-events": "none"}}
                             icon={overlay.icon} 
                             label={overlay.label}
                         />
+                        <div className={windowStyles.image}>
+                            {!gif && (
+                                <CardMedia
+                                    component="img"
+                                    alt="Project"
+                                    height="140"
+                                    image={thumbnail}
+                                    title="Project"
+                                />
+                            )}
+                            {gif && (
+                                <CardMedia
+                                    className={windowStyles.staticImage}
+                                    component="img"
+                                    alt="Project"
+                                    height="140"
+                                    image={thumbnail}
+                                    title="Project"
+                                />
+                            )}
+                            {gif && (
+                                <CardMedia
+                                className={windowStyles.gifUnderlay}
+                                component="img"
+                                alt="Project"
+                                height="140"
+                                image={gif}
+                                title="Project"
+                                />
+                            )}
+                        </div>
+                        
                     </div>
                 </a>
             </CardActionArea>

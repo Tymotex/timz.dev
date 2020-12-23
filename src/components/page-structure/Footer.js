@@ -14,16 +14,16 @@ const Footer = (props) => (
                     <span className="label">LinkedIn</span>
                 </a>
             </li>
-            {/* <li>
+            <li>
                 <a href="https://www.youtube.com/channel/UCIuefX9zQPux3lGCkDOdlIQ" className="icon fa-youtube">
                     <span className="label">YouTube</span>
                 </a>
-            </li> */}
-            <li>
+            </li>
+            {/* <li>
                 <a href="https://play.google.com/store/apps/developer?id=Tymoteus" className="icon fa-play">
                     <span className="label">Google Play</span>
                 </a>
-            </li>
+            </li> */}
         </ul>
     </footer>
 );

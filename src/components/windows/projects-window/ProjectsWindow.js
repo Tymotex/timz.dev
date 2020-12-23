@@ -17,7 +17,7 @@ const ProjectsWindow = (props) => {
                     Main Projects
                 </Typography>
                 <p>
-                    A collection of personal projects that I spent a significant 
+                    These are personal projects that I spent a significant 
                     amount of time and effort on.
                 </p>
             </div>
@@ -47,7 +47,7 @@ const ProjectsWindow = (props) => {
                     More Projects
                 </Typography>
                 <p>
-                    A collection of projects that were either university projects or smaller
+                    Projects that were either built in university or smaller
                     personal projects.
                 </p>
             </div>
@@ -75,7 +75,7 @@ const ProjectsWindow = (props) => {
                     Baby Projects <span role="img" aria-label="babyface">👶</span>
                 </Typography>
                 <p>
-                    A collection of personal hobby projects that aren't too impressive but which
+                    Personal hobby projects that aren't too impressive but which
                     gave rise to my interest in software engineering during my junior and
                     senior years at high school.
                 </p>

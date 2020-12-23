@@ -62,6 +62,7 @@
     line-height: 5.5rem;
     border: solid _size(border-width) _palette(border);
     border-radius: 100%;
+    background-color: rgba(20, 20, 20, 0.4);
 
     .icon {
       &:before {
@@ -78,6 +79,8 @@
     border-bottom-width: _size(border-width);
     max-width: 100%;
     text-transform: uppercase;
+    background-color: rgba(20, 20, 20, 0.4);
+    border-radius: 8px;
 
     .inner {
       @include vendor(
