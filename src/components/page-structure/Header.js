@@ -13,7 +13,6 @@ const Header = (props) => (
                 <p>
                     2nd year student studying electrical engineering and computer science at UNSW.
                     <br />
-                    Aspiring full stack developer.
                 </p>
             </div>
         </div>

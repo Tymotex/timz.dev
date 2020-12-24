@@ -17,6 +17,8 @@
 // TODO: make the on-hover image link customisable - make it take in an image, a link and a label text
 // TODO: add CS Nexus to this list, maybe on the resume as well even
 // TODO: investigate play on hover effect: https://codepen.io/QDeltaE/pen/VWGYOB
+// TODO: serve project images and gifs 'locally' rather than hotlinking 
+// TODO: get gifs for your projects wherever possible
 
 // Importing a set of images to be displayed in the hover overlay
 import images from '../../../images';
@@ -193,6 +195,23 @@ const projects = {
                 icon: images.overlayImages.github,                    
                 label: "View on GitHub",
                 link: "https://github.com/Tymotex/DarkshadeCrypt"   
+            }
+        },
+        {
+            title: "timz.dev",
+            thumbnail: "https://raw.githubusercontent.com/Tymotex/timz.dev/master/public/frontpage.png",
+            description: `
+                A portfolio site built with the React-based framework, Gatsby, sourcing blog posts from Contentful as a headless CMS.
+            `,
+            technologies: [
+                "react",
+                "gatsby",
+                "javaScript"
+            ],
+            overlay: {
+                icon: images.overlayImages.github,                    
+                label: "View on GitHub",
+                link: "https://github.com/Tymotex/timz.dev"   
             }
         },
         // {

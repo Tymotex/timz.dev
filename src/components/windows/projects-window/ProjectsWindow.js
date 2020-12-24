@@ -96,16 +96,6 @@ const ProjectsWindow = (props) => {
                     </Grid>
                 ))}
             </Grid>
-            <hr className={windowStyles.lightHr} />
-
-            {/* About this site as a project */}
-            <div className={windowStyles.paddedContainer}>
-                <h3>About this site</h3>
-                <p>
-                    This site was built with Gatsby, a React framework powered by GraphQL. 
-                    See the repository for my frontend <a href="https://github.com/Tymotex/timz.dev">here</a>.
-                </p>
-            </div>
         </Window>
     )
 }

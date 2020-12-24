@@ -4,6 +4,8 @@ import cSharpIcon from './csharp.png';
 import cIcon from './c.png';
 import expressIcon from './express.png';
 import flaskIcon from './flask.png';
+import gatsbyIcon from './gatsby.png';
+import graphqlIcon from './graphql.png';
 import influxdbIcon from './influxdb.png';
 import javaIcon from './java.png';
 import javafxIcon from './javafx.png';
@@ -29,6 +31,8 @@ const images = {
     "csharp": cSharpIcon,
     "express": expressIcon,
     "flask": flaskIcon,
+    "gatsby": gatsbyIcon,
+    "graphql": graphqlIcon,
     "influxdb": influxdbIcon,
     "java": javaIcon,
     "javafx": javafxIcon,
