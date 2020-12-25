@@ -92,7 +92,7 @@ $overlayTransDuration: 0.5s;
         }
         &:hover {
             .image {
-                filter: brightness(50%) blur(0px);
+                filter: brightness(50%) blur(1px);
                 transition: all $overlayTransDuration ease-in;
             }
             .overlay {

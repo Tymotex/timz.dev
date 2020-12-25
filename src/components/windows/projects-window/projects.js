@@ -3,20 +3,7 @@
 // TODO: Improve the GitHub hover text, or just get rid of it
 // TODO: Not all projects have a github link... What can I do instead?
 // TODO: Organise these todos better. Put them on your notion page
-
-// TODO: Chore: go through each project, 
-/*
-    Make it presentable -- Add demos where possible
-    Add screenshots
-    Improve the description
-    On hover, play animation? 
-*/
-
-// TODO: Fill out remaining project technologies 
 // TODO: update notion project page for timz.dev
-// TODO: make the on-hover image link customisable - make it take in an image, a link and a label text
-// TODO: add CS Nexus to this list, maybe on the resume as well even
-// TODO: investigate play on hover effect: https://codepen.io/QDeltaE/pen/VWGYOB
 // TODO: serve project images and gifs 'locally' rather than hotlinking 
 // TODO: get gifs for your projects wherever possible
 
@@ -45,7 +32,8 @@ const projects = {
                 icon: images.overlayImages.github,             // Importing the image to display in the hover overlay
                 label: "View on GitHub",                       // Text to be displayed on hovering over the project image 
                 link: "https://github.com/Tymotex/Techsuite"   // Hyperlink to open in a new tab when image is clicked
-            }
+            },
+            gif: "https://github.com/Tymotex/timz.dev/blob/master/public/project-images/techsuite-showcase.gif?raw=true"
         },
         {
             title: "Tactile DS",
@@ -66,7 +54,8 @@ const projects = {
                 icon: images.overlayImages.github,                    
                 label: "View on GitHub",
                 link: "https://github.com/Tymotex/DataStructures"   
-            }
+            },
+            gif: "https://github.com/Tymotex/timz.dev/blob/master/public/project-images/tactile-ds-showcase.gif?raw=true"
         },
         {
             title: "Cosmica",
@@ -85,7 +74,7 @@ const projects = {
                 label: "View on GitHub",
                 link: "https://github.com/Tymotex/Cosmica"   
             },
-            gif: "https://github.com/Tymotex/Cosmica/blob/master/PublicImages/gameplay-demo.gif?raw=true"
+            gif: "https://github.com/Tymotex/timz.dev/blob/master/public/project-images/cosmica-showcase.gif?raw=true"
         }
     ],
     ongoingProjects: {
@@ -132,7 +121,8 @@ const projects = {
                 icon: images.overlayImages.youtube,                    
                 label: "View on YouTube",
                 link: "https://www.youtube.com/watch?v=ogIqlcZ1EoI"   
-            }
+            },
+            gif: "https://github.com/Tymotex/timz.dev/blob/master/public/project-images/deliv-o-bot-showcase.gif?raw=true"
         },
         {
             title: "POSIX Shell to Perl 5 Transpiler",
@@ -195,7 +185,8 @@ const projects = {
                 icon: images.overlayImages.github,                    
                 label: "View on GitHub",
                 link: "https://github.com/Tymotex/DarkshadeCrypt"   
-            }
+            },
+            gif: "https://github.com/Tymotex/timz.dev/blob/master/public/project-images/darkshade-crypt-showcase.gif?raw=true"
         },
         {
             title: "timz.dev",
@@ -252,7 +243,8 @@ const projects = {
                 icon: images.overlayImages.youtube,                    
                 label: "View on YouTube",
                 link: "https://www.youtube.com/watch?v=L5HmrpmQbec"   
-            }
+            },
+            gif: "https://github.com/Tymotex/timz.dev/blob/master/public/project-images/astral-assault-showcase.gif?raw=true"
         },
         {
             title: "Blitz Breach",
@@ -272,11 +264,12 @@ const projects = {
                 icon: images.overlayImages.youtube,                    
                 label: "View on YouTube",
                 link: "https://www.youtube.com/watch?v=RtHD5X44K0M"   
-            }
+            },
+            gif: "https://github.com/Tymotex/timz.dev/blob/master/public/project-images/blitz-breach-showcase.gif?raw=true"
         },
         {
             title: "Fallout 4 Mods",
-            thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/fallout-4-nuka-cola.png",
+            thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/fallout-4-mod-thumbnail.png",
             description: `
                 A collection of Fallout 4 mods I made which has collectively achieved over 80000+ downloads and
                 4000+ endorsements in total on Nexusmods.
@@ -306,7 +299,8 @@ const projects = {
                 icon: images.overlayImages.youtube,                    
                 label: "View on YouTube",
                 link: "https://www.youtube.com/watch?v=RtHD5X44K0M"   
-            }
+            },
+            gif: "https://github.com/Tymotex/timz.dev/blob/master/public/project-images/quote-extractor-showcase.gif?raw=true"
         }
     ]
 }
