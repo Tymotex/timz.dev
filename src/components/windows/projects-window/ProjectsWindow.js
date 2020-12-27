@@ -1,17 +1,15 @@
-import {
-    Grid, Typography
-} from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import React from 'react';
 import Window from '../Window.js';
-import { ProjectCard } from './project-card';
 import windowStyles from '../Window.module.scss';
 import projects from './projects.js';
-
-const truncate = (input) => input.length > 250 ? `${input.substring(0, 250)}...` : input;
+import ProjectsGrid from './ProjectsGrid';
 
 const ProjectsWindow = (props) => {
     return (
         <Window {...props} >
+
+            {/* ===== Main Projects ===== */}
             <div className={windowStyles.paddedContainer}>
                 <Typography gutterBottom variant="h6" component="h2">
                     Main Projects
@@ -21,27 +19,10 @@ const ProjectsWindow = (props) => {
                     amount of time and effort on.
                 </p>
             </div>
-            <Grid container spacing={3}>
-                {projects.mainProjects.map((eachProject) => (
-                    <Grid item xs={12} sm={6} lg={4}>
-                        <ProjectCard project={eachProject}>
-                            <Typography variant="body2" component="p">
-                                {truncate(eachProject.description)}    
-                            </Typography>
-                            {eachProject.demoLink !== "" && (
-                                <Typography className={windowStyles.demoLink} variant="h6" component="p">
-                                    <a className={windowStyles.demoLink} href={eachProject.demoLink}>
-                                        {eachProject.demoPromptText}
-                                    </a>
-                                </Typography>
-                            )}
-                        </ProjectCard>
-                    </Grid>
-                ))}
-            </Grid>
+            <ProjectsGrid projects={projects.mainProjects} />
             <hr className={windowStyles.lightHr} />
 
-            {/* Other Projects */}
+            {/* ===== Other Projects ===== */}
             <div className={windowStyles.paddedContainer}>
                 <Typography gutterBottom variant="h6" component="h2">
                     More Projects
@@ -51,25 +32,10 @@ const ProjectsWindow = (props) => {
                     personal projects.
                 </p>
             </div>
-            <Grid container spacing={3}>
-                {projects.miniProjects.map((eachProject) => (
-                    <Grid item xs={12} sm={6} lg={4}>
-                        <ProjectCard project={eachProject}>
-                            <Typography variant="body2" component="p">
-                                {truncate(eachProject.description)}    
-                            </Typography>
-                            {eachProject.demoLink !== "" && (
-                                <Typography variant="h6" component="p">
-                                    <a className={windowStyles.demoLink} href={eachProject.demoLink}>{eachProject.demoPromptText}</a>
-                                </Typography>
-                            )}
-                        </ProjectCard>
-                    </Grid>
-                ))}
-            </Grid>
+            <ProjectsGrid projects={projects.miniProjects} />
             <hr className={windowStyles.lightHr} />
 
-            {/* Babbi projects 👶 */}
+            {/* ===== Babbi projects 👶 ===== */}
             <div className={windowStyles.paddedContainer}>
                 <Typography gutterBottom variant="h6" component="h2">
                     Baby Projects <span role="img" aria-label="babyface">👶</span>
@@ -80,24 +46,9 @@ const ProjectsWindow = (props) => {
                     senior years at high school.
                 </p>
             </div>
-            <Grid container spacing={3}>
-                {projects.babyProjects.map((eachProject) => (
-                    <Grid item xs={12} sm={6} lg={4}>
-                        <ProjectCard project={eachProject}>
-                            <Typography variant="body2" component="p">
-                                {truncate(eachProject.description)}    
-                            </Typography>
-                            {eachProject.demoLink !== "" && (
-                                <Typography variant="h6" component="p">
-                                    <a className={windowStyles.demoLink} href={eachProject.demoLink}>{eachProject.demoPromptText}</a>
-                                </Typography>
-                            )}
-                        </ProjectCard>
-                    </Grid>
-                ))}
-            </Grid>
+            <ProjectsGrid projects={projects.babyProjects} />
         </Window>
-    )
-}
+    );
+};
 
 export default ProjectsWindow;

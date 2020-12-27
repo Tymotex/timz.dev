@@ -5,7 +5,8 @@
 // TODO: Organise these todos better. Put them on your notion page
 // TODO: update notion project page for timz.dev
 // TODO: serve project images and gifs 'locally' rather than hotlinking 
-// TODO: get gifs for your projects wherever possible
+
+// TODO: Add a read more hyperlink that takes the user to a separate blog suburl. Use React Router and see if you can make it work here. Search up Gatsby React Router
 
 // Importing a set of images to be displayed in the hover overlay
 import images from '../../../images';
@@ -18,8 +19,12 @@ const projects = {
             description: `
                 Techsuite is a collaborative social app built with React, Flask and PostgreSQL.
             `,
-            demoPromptText: "Try it out",
-            demoLink: "https://techsuite.dev",
+            furtherLinks: [
+                {
+                    label: "Try it out",
+                    link: "https://techsuite.dev",
+                }
+            ],
             technologies: [
                 "react",
                 "flask",
@@ -42,8 +47,12 @@ const projects = {
                 Tactile DS is a web-based terminal interface that allows you to experiment with a suite of interactive 
                 data structures and algorithms written in C.
             `,
-            demoPromptText: "Try it out",
-            demoLink: "https://data-structures.xyz",
+            furtherLinks: [
+                {
+                    label: "Try it out",
+                    link: "https://data-structures.xyz",
+                }
+            ],
             technologies: [
                 "c",
                 "ruby",
@@ -63,8 +72,12 @@ const projects = {
             description: `
                 A cross-platform sci-fi strategy game written in C# and built with the Unity game engine.
             `,
-            demoPromptText: "Play online",
-            demoLink: "https://tymotex.github.io/Cosmica/",
+            furtherLinks: [
+                {
+                    label: "Play online",
+                    link: "https://tymotex.github.io/Cosmica/",
+                }
+            ],
             technologies: [
                 "c#",
                 "unity"   
@@ -88,8 +101,7 @@ const projects = {
                 An IoT automated plant propagation system built with Python on the Raspberry Pi Zero W 
                 with InfluxDB, Flask and other libraries.
             `,
-            demoPromptText: "View demo [Unavailable]",
-            demoLink: "",
+            furtherLinks: [],
             technologies: [
                 "flask",
                 "influxdb",
@@ -112,8 +124,12 @@ const projects = {
                 The reel and wheels of the vehicle use 5V stepper motors and the claw is operated by
                 a 6V metal gear servo motor. 
             `,
-            demoPromptText: "View demo video",
-            demoLink: "https://www.youtube.com/watch?v=ogIqlcZ1EoI",
+            furtherLinks: [
+                {
+                    label: "View demo video",
+                    link: "https://www.youtube.com/watch?v=ogIqlcZ1EoI"
+                }
+            ],
             technologies: [
                 "arduino"
             ],
@@ -130,8 +146,7 @@ const projects = {
             description: `
                 A regex-based transpiler for mapping POSIX shell scripts to an equivalent Perl 5 script.  
             `,
-            demoPromptText: "View demo [unavailable]",
-            demoLink: "",
+            furtherLinks: [],
             technologies: [
                 "shell",
                 "perl"
@@ -150,8 +165,7 @@ const projects = {
                 This includes an authentication system built using passport.js, a RESTful blog posting 
                 and comments posting API and more.
             `,
-            demoPromptText: "View demo",
-            demoLink: "",
+            furtherLinks: [],
             technologies: [
                 "mongodb",
                 "express",
@@ -175,8 +189,12 @@ const projects = {
                 also involved implementing dynamic pathfinding algorithms, unit testing with JUnit 5 and building
                 a GUI with JavaFX.     
             `,
-            demoPromptText: "View demo",
-            demoLink: "https://www.youtube.com/watch?v=MPnFIEm2_oM",
+            furtherLinks: [
+                {
+                    label: "View demo",
+                    link: "https://www.youtube.com/watch?v=MPnFIEm2_oM"
+                }
+            ],
             technologies: [
                 "java",
                 "javafx"
@@ -194,6 +212,7 @@ const projects = {
             description: `
                 A portfolio site built with the React-based framework, Gatsby, sourcing blog posts from Contentful as a headless CMS.
             `,
+            furtherLinks: [],
             technologies: [
                 "react",
                 "gatsby",
@@ -233,8 +252,12 @@ const projects = {
                 Astral Assault is a more dynamic, intensive take on the classic Space Invaders with flashier 
                 visuals and a different game progression. Built with C# on the Unity game engine.
             `,
-            demoPromptText: "Play online",
-            demoLink: "https://tymoteus.itch.io/astral-assault",
+            furtherLinks: [
+                {
+                    link: "Play online",
+                    label: "https://tymoteus.itch.io/astral-assault"
+                }
+            ],
             technologies: [
                 "c#",
                 "unity"   
@@ -254,8 +277,12 @@ const projects = {
                 and must maneouver a ball to smash all the presented blocks without missing a return. Built 
                 with C# on the Unity game engine.
             `,
-            demoPromptText: "Play online",
-            demoLink: "https://tymoteus.itch.io/blitz-breach",
+            furtherLinks: [
+                {
+                    link: "Play online",
+                    label: "https://tymoteus.itch.io/blitz-breach"
+                }
+            ],
             technologies: [
                 "c#",
                 "unity"   
@@ -274,8 +301,12 @@ const projects = {
                 A collection of Fallout 4 mods I made which has collectively achieved over 80000+ downloads and
                 4000+ endorsements in total on Nexusmods.
             `,
-            demoPromptText: "View",
-            demoLink: "https://www.nexusmods.com/fallout4/users/29182470?tab=user+files",
+            furtherLinks: [
+                {
+                    link: "View",
+                    label: "https://www.nexusmods.com/fallout4/users/29182470?tab=user+files"
+                }
+            ],
             technologies: [],
             overlay: {
                 icon: images.overlayImages.nexusmods,                    
@@ -289,8 +320,12 @@ const projects = {
             description: `
                 A Python web scraper, built with the Selenium browser automation library.
             `,
-            demoPromptText: "View demo video",
-            demoLink: "https://www.youtube.com/watch?v=5dCThWMT50o",
+            furtherLinks: [
+                {
+                    link: "View demo",
+                    label: "https://www.youtube.com/watch?v=5dCThWMT50o"
+                }
+            ],
             technologies: [
                 "python",
                 "selenium"
