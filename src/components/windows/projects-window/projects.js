@@ -254,8 +254,8 @@ const projects = {
             `,
             furtherLinks: [
                 {
-                    link: "Play online",
-                    label: "https://tymoteus.itch.io/astral-assault"
+                    label: "Play online",
+                    link: "https://tymoteus.itch.io/astral-assault"
                 }
             ],
             technologies: [
@@ -279,8 +279,8 @@ const projects = {
             `,
             furtherLinks: [
                 {
-                    link: "Play online",
-                    label: "https://tymoteus.itch.io/blitz-breach"
+                    label: "Play online",
+                    link: "https://tymoteus.itch.io/blitz-breach"
                 }
             ],
             technologies: [
@@ -303,8 +303,8 @@ const projects = {
             `,
             furtherLinks: [
                 {
-                    link: "View",
-                    label: "https://www.nexusmods.com/fallout4/users/29182470?tab=user+files"
+                    label: "View",
+                    link: "https://www.nexusmods.com/fallout4/users/29182470?tab=user+files"
                 }
             ],
             technologies: [],
@@ -322,8 +322,8 @@ const projects = {
             `,
             furtherLinks: [
                 {
-                    link: "View demo",
-                    label: "https://www.youtube.com/watch?v=5dCThWMT50o"
+                    label: "View demo",
+                    link: "https://www.youtube.com/watch?v=5dCThWMT50o"
                 }
             ],
             technologies: [

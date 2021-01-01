@@ -9,6 +9,8 @@
 	@include vendor('flex-direction', 'column');
 	position: relative;
 	min-width: 75%;
+	width: -webkit-fill-available;
+	max-width: 1080px;
 	z-index: 3;
 	display: none;
 
