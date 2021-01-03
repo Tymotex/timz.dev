@@ -90,9 +90,6 @@ const projects = {
             gif: "https://github.com/Tymotex/timz.dev/blob/master/public/project-images/cosmica-showcase.gif?raw=true"
         }
     ],
-    ongoingProjects: {
-
-    }, 
     miniProjects: [     // A collection of projects that were either university projects or smaller personal projects
         {
             title: "Hydroponix",

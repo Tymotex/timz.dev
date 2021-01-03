@@ -29,7 +29,7 @@ const ProjectsGrid = ({ projects }) => {
                             {requiresTruncation(eachProject.description) ? (
                                 <span>
                                     {`${truncate(eachProject.description)} `}
-                                    <a href="">Read more</a>
+                                    <a href="https://www.google.com">Read more</a>
                                 </span>
                             ) : (
                                 eachProject.description

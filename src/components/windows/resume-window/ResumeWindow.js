@@ -6,9 +6,9 @@ const ResumeWindow = (props) => {
     return (
         <Window {...props}>
             <p>
-                Resume available <a target="_blank" href="https://tymotex.github.io/timz.dev/public/resume/resume.pdf">
+                Resume available <a target="_blank" rel="noreferrer" href="https://tymotex.github.io/timz.dev/public/resume/resume.pdf">
                     <strong>here</strong>
-                </a>. Transcript available <a target="_blank" href="https://tymotex.github.io/timz.dev/public/resume/transcript.pdf">
+                </a>. Transcript available <a target="_blank" rel="noreferrer" href="https://tymotex.github.io/timz.dev/public/resume/transcript.pdf">
                     <strong>here</strong>
                 </a>.
             </p>

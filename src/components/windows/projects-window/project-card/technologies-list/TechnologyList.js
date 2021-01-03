@@ -14,7 +14,9 @@ const stringToIcon = (techName) => {
             break;
         case "nodejs":
             techName = "node";
-            break
+            break;
+        default:
+            break;
     }
     return images[techName];
 }
