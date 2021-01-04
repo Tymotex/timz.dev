@@ -1,3 +1,6 @@
+---
+title: My Very First Blog Post
+---
 # This is a test
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ornare quis nisl sed semper. Suspendisse lacinia in massa sed convallis. Vestibulum arcu lectus, suscipit finibus consectetur nec, condimentum a tortor. Sed id dignissim ante. Quisque eget lacus vestibulum magna auctor suscipit. Nullam pretium libero sit amet quam rutrum dapibus. Vivamus at cursus sapien, sed consectetur leo. Cras accumsan luctus viverra.
