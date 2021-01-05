@@ -13,6 +13,7 @@
     "gatsby-source-contentful": "^3.0.6",
     "gatsby-source-filesystem": "^2.9.0",
     "gatsby-transformer-remark": "^2.14.0",
+    "html-to-react": "^1.4.5",
     "node-sass": "^4.13.1",
     "nodemailer": "^6.4.16",
     "react": "^16.12.0",

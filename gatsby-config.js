@@ -1,7 +1,13 @@
-require("dotenv").config({
-  path: `.env`,
-})
 
+// Environment variables: https://www.gatsbyjs.com/docs/how-to/local-development/environment-variables/
+// When `gatsby develop` is run, process.env.NODE_ENV will have value 'production' and therefore
+// use variables declared in the .env.development file.
+// Production environment variables are kept in .env.production 
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
+// Metadata and plugin config:
 module.exports = {
   siteMetadata: {
     title: 'Tim Zhang',
