@@ -10,19 +10,22 @@
 
 // Importing a set of images to be displayed in the hover overlay
 import images from '../../../images';
+import descriptions from './project-descriptions';
 
 const projects = {
     mainProjects: [       // A collection of personal projects that I spent significant amounts of time and effort on
         {
             title: "Techsuite",
             thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/techsuite-thumbnail.png",
-            description: `
-                Techsuite is a collaborative social app built with React, Flask and PostgreSQL.
-            `,
+            description: descriptions.techsuite,
             furtherLinks: [
                 {
                     label: "Try it out",
                     link: "https://techsuite.dev",
+                },
+                {
+                    label: "Demo video",
+                    link: "https://www.google.com"
                 }
             ],
             technologies: [
@@ -43,10 +46,7 @@ const projects = {
         {
             title: "Tactile DS",
             thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/tactile-ds-thumbnail.png",
-            description: `
-                Tactile DS is a web-based terminal interface that allows you to experiment with a suite of interactive 
-                data structures and algorithms written in C.
-            `,
+            description: descriptions.tactileds,
             furtherLinks: [
                 {
                     label: "Try it out",
@@ -69,9 +69,7 @@ const projects = {
         {
             title: "Cosmica",
             thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/cosmica-title.png",
-            description: `
-                A cross-platform sci-fi strategy game written in C# and built with the Unity game engine.
-            `,
+            description: descriptions.cosmica,
             furtherLinks: [
                 {
                     label: "Play online",
@@ -93,13 +91,8 @@ const projects = {
     miniProjects: [     // A collection of projects that were either university projects or smaller personal projects
         {
             title: "Galactic Education",
-            thumbnail: "https://raw.githubusercontent.com/kishek2000/accentureHackathon/master/galactic-education/public/showcaseThumbnail.png",
-            description: `
-                An intelligent educational platform that tailors a curriculum for young children with ASD, built for the Autism Awareness charity
-                organisation. 
-                This prototype was built by a team of 4 in 24 hours and achieved 1st place in Accenture's 'Hack for Good' Hackathon (2021) out 
-                of 37 participating teams.
-            `,
+            thumbnail: "https://raw.githubusercontent.com/kishek2000/accentureHackathon/master/galactic-education/public/showcaseThumbnail.PNG",
+            description: descriptions.galacticed,
             furtherLinks: [],
             technologies: [
                 "javascript",
@@ -115,10 +108,7 @@ const projects = {
         {
             title: "Hydroponix",
             thumbnail: "https://raw.githubusercontent.com/Tymotex/Hydroponix/master/static/thumbnail.png",
-            description: `
-                An IoT automated plant propagation system built with Python on the Raspberry Pi Zero W 
-                with InfluxDB, Flask and other libraries.
-            `,
+            description: descriptions.hydroponix,
             furtherLinks: [],
             technologies: [
                 "flask",
@@ -136,12 +126,7 @@ const projects = {
         {
             title: "Autonomous Deliv-O-Bot",
             thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/deliv-o-bot-thumbnail.png",
-            description: `
-                An autonomous object delivery vehicle, built with the Arduino Uno Rev3. 
-                The vehicle determines where the delivery and pick-up points are using a sound sensor.
-                The reel and wheels of the vehicle use 5V stepper motors and the claw is operated by
-                a 6V metal gear servo motor. 
-            `,
+            description: descriptions.delivobot,
             furtherLinks: [
                 {
                     label: "View demo video",
@@ -161,9 +146,7 @@ const projects = {
         {
             title: "POSIX Shell to Perl 5 Transpiler",
             thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/shell-perl-transpiler-thumbnail.png",
-            description: `
-                A regex-based transpiler for mapping POSIX shell scripts to an equivalent Perl 5 script.  
-            `,
+            description: descriptions.shellPerlTranspiler,
             furtherLinks: [],
             technologies: [
                 "shell",
@@ -178,11 +161,7 @@ const projects = {
         {
             title: "CS Nexus",
             thumbnail: "https://raw.githubusercontent.com/Tymotex/CS-Nexus/master/public/thumbnail.png",
-            description: `
-                A personal blogging site, built with node.js, express, mongoDB, Bootstrap 4 and jQuery. 
-                This includes an authentication system built using passport.js, a RESTful blog posting 
-                and comments posting API and more.
-            `,
+            description: descriptions.csnexus,
             furtherLinks: [],
             technologies: [
                 "mongodb",
@@ -201,12 +180,7 @@ const projects = {
         {
             title: "Darkshade Crypt",
             thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/darkshade-crypt-thumbnail.png",
-            description: `
-                A 2D dungeon crawler game, written in Java. This uni project involved implementing
-                several design patterns such as strategy, composite, observer and template from scratch. This game
-                also involved implementing dynamic pathfinding algorithms, unit testing with JUnit 5 and building
-                a GUI with JavaFX.     
-            `,
+            description: descriptions.darkshadeCrypt,
             furtherLinks: [
                 {
                     label: "View demo",
@@ -227,9 +201,7 @@ const projects = {
         {
             title: "timz.dev",
             thumbnail: "https://raw.githubusercontent.com/Tymotex/timz.dev/master/public/frontpage.png",
-            description: `
-                A portfolio site built with the React-based framework, Gatsby, sourcing blog posts from Contentful as a headless CMS.
-            `,
+            description: descriptions.timzdev,
             furtherLinks: [],
             technologies: [
                 "react",
@@ -266,10 +238,7 @@ const projects = {
         {
             title: "Astral Assault",
             thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/astral-assault-thumbnail.png",
-            description: `
-                Astral Assault is a more dynamic, intensive take on the classic Space Invaders with flashier 
-                visuals and a different game progression. Built with C# on the Unity game engine.
-            `,
+            description: descriptions.astralAssault,
             furtherLinks: [
                 {
                     label: "Play online",
@@ -290,11 +259,7 @@ const projects = {
         {
             title: "Blitz Breach",
             thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/blitz-breach-thumbnail.png",
-            description: `
-                Blitz Breach is an extended version of an old classic, Arkanoid. The player controls a paddle 
-                and must maneouver a ball to smash all the presented blocks without missing a return. Built 
-                with C# on the Unity game engine.
-            `,
+            description: descriptions.blitzBreach,
             furtherLinks: [
                 {
                     label: "Play online",
@@ -315,10 +280,7 @@ const projects = {
         {
             title: "Fallout 4 Mods",
             thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/fallout-4-mod-thumbnail.png",
-            description: `
-                A collection of Fallout 4 mods I made which has collectively achieved over 80000+ downloads and
-                4000+ endorsements in total on Nexusmods.
-            `,
+            description: descriptions.fallout4Mods,
             furtherLinks: [
                 {
                     label: "View",
@@ -335,9 +297,7 @@ const projects = {
         {
             title: "Quote scraper",
             thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/quote-scraper-thumbnail.png",
-            description: `
-                A Python web scraper, built with the Selenium browser automation library.
-            `,
+            description: descriptions.quoteScraper,
             furtherLinks: [
                 {
                     label: "View demo",

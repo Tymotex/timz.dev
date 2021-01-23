@@ -4,7 +4,8 @@ import {
 import React from 'react';
 import windowStyles from '../Window.module.scss';
 import { ProjectCard } from './project-card';
-
+import ReactMarkdown from 'react-markdown';
+import descriptions from './project-descriptions/index.js'; 
 // Truncation utility functions
 
 // TODO: move this to a config file?
@@ -35,7 +36,9 @@ const ProjectsGrid = ({ projects }) => {
                                     <a href="https://www.google.com">Read more</a>
                                 </span>
                             ) : (
-                                eachProject.description
+                                <ReactMarkdown>
+                                    {eachProject.description}
+                                </ReactMarkdown>
                             )}    
                         </Typography>
                         {eachProject.furtherLinks.map((eachLink) => (

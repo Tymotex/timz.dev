@@ -51,3 +51,16 @@ module.exports.createPages = async ({ graphql, actions }) => {
         });
     })
 }
+
+module.exports.onCreateWebpackConfig = ({stage, rules, loaders, plugins, actions}) => {
+    actions.setWebpackConfig({
+        module: {
+            rules: [
+                {
+                    test: /\.md$/i,
+                    use: 'raw-loader',
+                }
+            ]
+        }
+    })
+}
