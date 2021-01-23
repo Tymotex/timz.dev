@@ -7,17 +7,20 @@ import { ProjectCard } from './project-card';
 
 // Truncation utility functions
 
-/**
- * Determines whether the given string needs to be truncated. Any string
- * greater than default 250 characters requires truncation 
- */
-const requiresTruncation = (input) => input.length > 250; 
+// TODO: move this to a config file?
+const maxCharLength = 400;
 
 /**
- * If the string requires truncation, returns a string truncated at 250 characters
+ * Determines whether the given string needs to be truncated. Any string
+ * greater than default 400 characters requires truncation 
+ */
+const requiresTruncation = (input) => input.length > maxCharLength; 
+
+/**
+ * If the string requires truncation, returns a string truncated at 400 characters
  * and with ellipses appended, otherwise returns the same input string 
  */
-const truncate = (input) => input.length > 250 ? `${input.substring(0, 250)}...` : input;
+const truncate = (input) => input.length > maxCharLength ? `${input.substring(0, maxCharLength)}...` : input;
 
 const ProjectsGrid = ({ projects }) => {
     return (

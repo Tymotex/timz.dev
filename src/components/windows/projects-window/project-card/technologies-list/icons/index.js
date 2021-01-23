@@ -12,6 +12,7 @@ import javafxIcon from './javafx.png';
 import javascriptIcon from './javascript.png';
 import jqueryIcon from './jquery.png';
 import mongodbIcon from './mongodb.png';
+import nextJsIcon from './nextjs.png';
 import nodeIcon from './node.png';
 import perlIcon from './perl.png';
 import postgresqlIcon from './postgresql.png';
@@ -39,6 +40,7 @@ const images = {
     "javascript": javascriptIcon,
     "jquery": jqueryIcon,
     "mongodb": mongodbIcon,
+    "nextjs": nextJsIcon,
     "node": nodeIcon,
     "perl": perlIcon,
     "postgresql": postgresqlIcon,

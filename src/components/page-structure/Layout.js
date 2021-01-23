@@ -39,7 +39,7 @@ const Layout = ({ children, location }) => {
                 <div>
                     <Helmet>
                         <title>{data.site.siteMetadata.title}</title>
-                        <link rel="icon" type="image/png" href="https://cdn.jpegmini.com/user/images/slider_puffin_before_mobile.jpg" sizes="32x32" />
+                        <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Tymotex/timz.dev/master/src/images/icon.png" sizes="32x32" />
                         <html lang="en" />
                     </Helmet>
 					{content}

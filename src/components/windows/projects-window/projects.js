@@ -92,6 +92,27 @@ const projects = {
     ],
     miniProjects: [     // A collection of projects that were either university projects or smaller personal projects
         {
+            title: "Galactic Education",
+            thumbnail: "https://raw.githubusercontent.com/kishek2000/accentureHackathon/master/galactic-education/public/showcaseThumbnail.png",
+            description: `
+                An intelligent educational platform that tailors a curriculum for young children with ASD, built for the Autism Awareness charity
+                organisation. 
+                This prototype was built by a team of 4 in 24 hours and achieved 1st place in Accenture's 'Hack for Good' Hackathon (2021) out 
+                of 37 participating teams.
+            `,
+            furtherLinks: [],
+            technologies: [
+                "javascript",
+                "nextJs",
+                "react"
+            ],
+            overlay: {
+                icon: images.overlayImages.github,                    
+                label: "View on GitHub",
+                link: "https://github.com/kishek2000/accentureHackathon"   
+            }
+        },
+        {
             title: "Hydroponix",
             thumbnail: "https://raw.githubusercontent.com/Tymotex/Hydroponix/master/static/thumbnail.png",
             description: `
