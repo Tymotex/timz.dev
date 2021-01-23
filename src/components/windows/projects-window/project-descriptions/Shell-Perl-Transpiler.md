@@ -1,1 +1,1 @@
-A regex-based transpiler for mapping POSIX shell scripts to an equivalent Perl 5 script. 
+A regex-based transpiler for mapping POSIX shell scripts to equivalent Perl 5 scripts. 

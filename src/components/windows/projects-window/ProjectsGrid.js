@@ -5,7 +5,9 @@ import React from 'react';
 import windowStyles from '../Window.module.scss';
 import { ProjectCard } from './project-card';
 import ReactMarkdown from 'react-markdown';
-import descriptions from './project-descriptions/index.js'; 
+import NeonButton from '../../buttons/neon-button/NeonButton';
+import { Container, Row, Col } from 'react-bootstrap';
+
 // Truncation utility functions
 
 // TODO: move this to a config file?
@@ -41,13 +43,17 @@ const ProjectsGrid = ({ projects }) => {
                                 </ReactMarkdown>
                             )}    
                         </Typography>
-                        {eachProject.furtherLinks.map((eachLink) => (
-                            <Typography className={windowStyles.demoLink} variant="h6" component="p">
-                                <a className={windowStyles.demoLink} href={eachLink.link}>
-                                    {eachLink.label}
-                                </a>
-                            </Typography>
-                        ))}
+                        <Container>
+                            <Row>
+                                {eachProject.furtherLinks.map((eachLink) => (
+                                    <Col xs={12} sm={12} md={12} lg={6} xl={6}>
+                                        <NeonButton link={eachLink.link}>
+                                            {eachLink.label}
+                                        </NeonButton>
+                                    </Col>
+                                ))}
+                            </Row>
+                        </Container>
                     </ProjectCard>
                 </Grid>
             ))}

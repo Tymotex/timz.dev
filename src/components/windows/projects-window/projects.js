@@ -20,11 +20,11 @@ const projects = {
             description: descriptions.techsuite,
             furtherLinks: [
                 {
-                    label: "Try it out",
+                    label: "Visit",
                     link: "https://techsuite.dev",
                 },
                 {
-                    label: "Demo video",
+                    label: "Demo",
                     link: "https://www.google.com"
                 }
             ],

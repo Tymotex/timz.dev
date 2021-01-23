@@ -105,12 +105,12 @@ $overlayTransDuration: 0.5s;
 
     .demoLink {
         text-decoration: none!important;
-        border: none;
+        border: none!important;
         color: rgba(154, 112, 251, 0.993);
 
         &:hover {
             color: rgb(110, 0, 212);
-        }
+        }  
     }
 }
 
