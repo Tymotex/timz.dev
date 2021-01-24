@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-pages-blog-js","path":"/blog/","result":{"pageContext":{}},"staticQueryHashes":[]}
+{"componentChunkName":"component---src-pages-blog-js","path":"/blog/","result":{"data":{"allContentfulBlogPost":{"edges":[{"node":{"title":"My First Blog Post","publishedDate":"2020-10-29T21:23+04:00"}}]}},"pageContext":{}},"staticQueryHashes":[]}

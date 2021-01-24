@@ -2,7 +2,6 @@ import {
     Grid, Typography
 } from '@material-ui/core';
 import React from 'react';
-import windowStyles from '../Window.module.scss';
 import { ProjectCard } from './project-card';
 import ReactMarkdown from 'react-markdown';
 import NeonButton from '../../buttons/neon-button/NeonButton';

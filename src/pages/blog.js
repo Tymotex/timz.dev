@@ -1,24 +1,30 @@
 import { graphql } from "gatsby";
 import React from "react";
-import HtmlToReact from "html-to-react"
 
-// export const query = graphql`
-//     query ($slug: String!) {
-//         markdownRemark (
-//             fields: {
-//                 slug: {
-//                     eq: $slug
-//                 }
-//             }
-//         ) {
-//             html,
-//             timeToRead,
-//             wordCount {
-//                 words
-//             }
-//         }
-//     }
-// `;
+export const query = graphql`
+    query {
+        allContentfulBlogPost {
+            edges {
+                node {
+                    title,
+                    publishedDate
+                }
+            }
+        }  
+    } 
+`;
+
+const Blog = ({ data, pageContext }) => {
+    return (
+        <div>
+            {data.allContentfulBlogPost.edges.forEach((eachEdge) => (
+                <div>
+                    {eachEdge.node.title}
+                </div>
+            ))}
+        </div>
+    );
+}
 
 // const Blog = ({ data, pageContext }) => {
 //     let parser = HtmlToReact.Parser;
@@ -36,7 +42,8 @@ import HtmlToReact from "html-to-react"
 //     );
 // }
 
-const Blog = () => {
-    return <div>Blog placeholder</div>
-}
+// const Blog = () => {
+//     return <div>Blog placeholder</div>
+// }
+
 export default Blog;
