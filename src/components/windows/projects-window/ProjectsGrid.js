@@ -6,23 +6,44 @@ import { ProjectCard } from './project-card';
 import ReactMarkdown from 'react-markdown';
 import NeonButton from '../../buttons/neon-button/NeonButton';
 import { Container, Row, Col } from 'react-bootstrap';
-
-// Truncation utility functions
-
-// TODO: move this to a config file?
-const maxCharLength = 400;
+import { truncate, requiresTruncation } from './truncation.js';
 
 /**
- * Determines whether the given string needs to be truncated. Any string
- * greater than default 400 characters requires truncation 
+ * Given an array of objects of shape: { link, label }, returns an array of
+ * Col Neon Button components that aims to fit the full number of columns when
+ * a button exists in its own row 
  */
-const requiresTruncation = (input) => input.length > maxCharLength; 
-
-/**
- * If the string requires truncation, returns a string truncated at 400 characters
- * and with ellipses appended, otherwise returns the same input string 
- */
-const truncate = (input) => input.length > maxCharLength ? `${input.substring(0, maxCharLength)}...` : input;
+const renderButtonGrid = (buttonDataArr) => {
+    if (!buttonDataArr || buttonDataArr.length <= 0) {
+        return [];
+    } else if (buttonDataArr.length === 1) {
+        // Return a list containing one element taking up maximum grid columns (12)
+        return [
+            <Col xs={12} xl={12}>
+                <NeonButton link={buttonDataArr[0].link}>
+                    {buttonDataArr[0].label}
+                </NeonButton>
+            </Col>
+        ];
+    } else {
+        // Render two buttons and recursively build the remaining array of buttons
+        const { link: firstLink, label: firstLabel } = buttonDataArr[0];
+        const { link: secondLink, label: secondLabel } = buttonDataArr[1];
+        return [
+            <Col xs={12} sm={12} md={12} lg={6} xl={6}>
+                <NeonButton link={firstLink}>
+                    {firstLabel}
+                </NeonButton>
+            </Col>,
+            <Col xs={12} sm={12} md={12} lg={6} xl={6}>
+                <NeonButton link={secondLink}>
+                    {secondLabel}
+                </NeonButton>
+            </Col>,
+            ...renderButtonGrid(buttonDataArr.slice(2))
+        ];
+    }
+};
 
 const ProjectsGrid = ({ projects }) => {
     return (
@@ -44,13 +65,8 @@ const ProjectsGrid = ({ projects }) => {
                         </Typography>
                         <Container>
                             <Row>
-                                {eachProject.furtherLinks.map((eachLink) => (
-                                    <Col xs={12} sm={12} md={12} lg={6} xl={6}>
-                                        <NeonButton link={eachLink.link}>
-                                            {eachLink.label}
-                                        </NeonButton>
-                                    </Col>
-                                ))}
+                                {/* Rendering a full-width button if there exists only 1 element */}
+                                {renderButtonGrid(eachProject.furtherLinks)}
                             </Row>
                         </Container>
                     </ProjectCard>

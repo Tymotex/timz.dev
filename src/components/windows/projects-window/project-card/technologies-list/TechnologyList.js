@@ -23,7 +23,6 @@ const stringToIcon = (techName) => {
 }
 
 const TechnologyList = ({ technologies }) => {
-    console.log(typeof(technologies));
     return (
         <div className={listStyles.techList}>
             {technologies.map((techItem) => {
