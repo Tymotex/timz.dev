@@ -11,7 +11,7 @@ const Header = (props) => (
             <div className="inner">
                 <h1>Tim Zhang</h1>
                 <p>
-                    2nd year student studying electrical engineering and computer science at UNSW.
+                    3rd year student studying software engineering and commerce at UNSW.
                     <br />
                 </p>
             </div>
