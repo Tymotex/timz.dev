@@ -26,6 +26,14 @@ const projects = {
                 {
                     label: "Demo",
                     link: "https://www.google.com"
+                },
+                {
+                    label: "Ass",
+                    link: "fuck"
+                },
+                {
+                    label: "Ass",
+                    link: "fuck"
                 }
             ],
             technologies: [
