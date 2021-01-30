@@ -1,23 +1,16 @@
-// Collection of projects in JSON format
-
-// TODO: Improve the GitHub hover text, or just get rid of it
-// TODO: Not all projects have a github link... What can I do instead?
-// TODO: Organise these todos better. Put them on your notion page
-// TODO: update notion project page for timz.dev
-// TODO: serve project images and gifs 'locally' rather than hotlinking 
-
-// TODO: Add a read more hyperlink that takes the user to a separate blog suburl. Use React Router and see if you can make it work here. Search up Gatsby React Router
+// Collection of my personal projects
 
 // Importing a set of images to be displayed in the hover overlay
 import images from '../../../images';
 import descriptions from './project-descriptions';
+import marked from 'marked';
 
 const projects = {
     mainProjects: [       // A collection of personal projects that I spent significant amounts of time and effort on
         {
             title: "Techsuite",
             thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/techsuite-thumbnail.png",
-            description: descriptions.techsuite,
+            description: marked(marked(descriptions.techsuite)),
             furtherLinks: [
                 {
                     label: "Visit",
@@ -50,7 +43,7 @@ const projects = {
         {
             title: "Tactile DS",
             thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/tactile-ds-thumbnail.png",
-            description: descriptions.tactileds,
+            description: marked(descriptions.tactileds),
             furtherLinks: [
                 {
                     label: "Visit",
@@ -81,7 +74,7 @@ const projects = {
         {
             title: "Cosmica",
             thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/cosmica-title.png",
-            description: descriptions.cosmica,
+            description: marked(descriptions.cosmica),
             furtherLinks: [
                 {
                     label: "Play Now",
@@ -90,6 +83,14 @@ const projects = {
                 {
                     label: "GitHub",
                     link: "https://github.com/Tymotex/Cosmica"
+                },
+                {
+                    label: "Demo",
+                    link: "https://www.youtube.com/watch?v=D7K1GOqns1w"
+                },
+                {
+                    label: "Google Play",
+                    link: "https://play.google.com/store/apps/details?id=com.Cosmica.Cosmica"
                 }
             ],
             technologies: [
@@ -108,7 +109,7 @@ const projects = {
         {
             title: "Galactic Education",
             thumbnail: "https://raw.githubusercontent.com/kishek2000/accentureHackathon/master/galactic-education/public/showcaseThumbnail.PNG",
-            description: descriptions.galacticed,
+            description: marked(descriptions.galacticed),
             furtherLinks: [
                 {
                     label: "Visit",
@@ -133,7 +134,7 @@ const projects = {
         {
             title: "Hydroponix",
             thumbnail: "https://raw.githubusercontent.com/Tymotex/Hydroponix/master/static/thumbnail.png",
-            description: descriptions.hydroponix,
+            description: marked(descriptions.hydroponix),
             furtherLinks: [
                 {
                     label: "GitHub",
@@ -156,7 +157,7 @@ const projects = {
         {
             title: "Autonomous Deliv-O-Bot",
             thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/deliv-o-bot-thumbnail.png",
-            description: descriptions.delivobot,
+            description: marked(descriptions.delivobot),
             furtherLinks: [
                 {
                     label: "Demo",
@@ -176,7 +177,7 @@ const projects = {
         {
             title: "POSIX Shell to Perl 5 Transpiler",
             thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/shell-perl-transpiler-thumbnail.png",
-            description: descriptions.shellPerlTranspiler,
+            description: marked(descriptions.shellPerlTranspiler),
             furtherLinks: [
                 {
                     label: "GitHub",
@@ -196,7 +197,7 @@ const projects = {
         {
             title: "CS Nexus",
             thumbnail: "https://raw.githubusercontent.com/Tymotex/CS-Nexus/master/public/thumbnail.png",
-            description: descriptions.csnexus,
+            description: marked(descriptions.csnexus),
             furtherLinks: [
                 {
                     label: "GitHub",
@@ -220,7 +221,7 @@ const projects = {
         {
             title: "Darkshade Crypt",
             thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/darkshade-crypt-thumbnail.png",
-            description: descriptions.darkshadeCrypt,
+            description: marked(descriptions.darkshadeCrypt),
             furtherLinks: [
                 {
                     label: "Demo",
@@ -241,7 +242,7 @@ const projects = {
         {
             title: "timz.dev",
             thumbnail: "https://raw.githubusercontent.com/Tymotex/timz.dev/master/public/frontpage.png",
-            description: descriptions.timzdev,
+            description: marked(descriptions.timzdev),
             furtherLinks: [
                 {
                     label: "Visit",
@@ -287,7 +288,7 @@ const projects = {
         {
             title: "Astral Assault",
             thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/astral-assault-thumbnail.png",
-            description: descriptions.astralAssault,
+            description: marked(descriptions.astralAssault),
             furtherLinks: [
                 {
                     label: "Play Now",
@@ -312,7 +313,7 @@ const projects = {
         {
             title: "Blitz Breach",
             thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/blitz-breach-thumbnail.png",
-            description: descriptions.blitzBreach,
+            description: marked(descriptions.blitzBreach),
             furtherLinks: [
                 {
                     label: "Play Now",
@@ -337,7 +338,7 @@ const projects = {
         {
             title: "Fallout 4 Mods",
             thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/fallout-4-mod-thumbnail.png",
-            description: descriptions.fallout4Mods,
+            description: marked(descriptions.fallout4Mods),
             furtherLinks: [
                 {
                     label: "Visit",
@@ -354,7 +355,7 @@ const projects = {
         {
             title: "Quote scraper",
             thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/quote-scraper-thumbnail.png",
-            description: descriptions.quoteScraper,
+            description: marked(descriptions.quoteScraper),
             furtherLinks: [
                 {
                     label: "Demo",

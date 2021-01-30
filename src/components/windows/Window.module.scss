@@ -104,6 +104,14 @@ $overlayTransDuration: 0.5s;
         }
     }
 
+    // ===== Project description styles =====
+    .descriptionContainer {
+        max-height: 200px;
+        overflow: hidden;
+        mask-image: linear-gradient(to bottom, black 40%, transparent 90%);
+        // margin-bottom: 15px;
+    }
+
     // ===== Hover overlay styles =====
     .demoLink {
         text-decoration: none !important;
