@@ -28,8 +28,8 @@ const ProjectsWindow = (props) => {
                     More Projects
                 </Typography>
                 <p>
-                    Projects that were either built in university or smaller
-                    personal projects.
+                    Projects that were either smaller personal projects or
+                    projects that were built in university.
                 </p>
             </div>
             <ProjectsGrid projects={projects.miniProjects} />

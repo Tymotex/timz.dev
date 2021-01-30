@@ -8,7 +8,7 @@ $overlayTransDuration: 0.5s;
 .lightHr {
     padding: 0;
     margin-bottom: 30px;
-    border-color: darkslategrey!important; 
+    border-color: darkslategrey !important;
 }
 
 .padded-container {
@@ -23,13 +23,12 @@ $overlayTransDuration: 0.5s;
     }
 }
 
-
 // ===== Project Window Styles =====
 .project-card {
     border-radius: 10px;
     margin: 0 auto;
-    background: rgba(44, 44, 44, 0.76)!important;
-    color: whitesmoke!important;
+    background: rgba(44, 44, 44, 0.76) !important;
+    color: whitesmoke !important;
     height: 100%;
 
     .project-title {
@@ -38,7 +37,7 @@ $overlayTransDuration: 0.5s;
 
     .thin-hr {
         width: 100%;
-        color: black!important;
+        color: black !important;
         padding: 0;
         margin: 10px auto;
         border-top: 1px solid rgba(0, 0, 0, 0.1);
@@ -90,6 +89,8 @@ $overlayTransDuration: 0.5s;
                 padding: 10px;
             }
         }
+
+        // ===== Hover overlay styles =====
         &:hover {
             .image {
                 filter: brightness(50%) blur(1px);
@@ -103,14 +104,14 @@ $overlayTransDuration: 0.5s;
         }
     }
 
+    // ===== Hover overlay styles =====
     .demoLink {
-        text-decoration: none!important;
-        border: none!important;
-        color: rgba(154, 112, 251, 0.993);
+        text-decoration: none !important;
+        border: none !important;
+        color: rgba(255, 255, 255, 0.993);
 
         &:hover {
-            color: rgb(110, 0, 212);
-        }  
+            color: rgb(144, 144, 144) !important;
+        }
     }
 }
-
