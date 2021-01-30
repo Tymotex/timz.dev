@@ -25,15 +25,11 @@ const projects = {
                 },
                 {
                     label: "Demo",
-                    link: "https://www.google.com"
+                    link: "https://www.youtube.com/watch?v=C4o2fOCq2cI"
                 },
                 {
-                    label: "Ass",
-                    link: "fuck"
-                },
-                {
-                    label: "Ass",
-                    link: "fuck"
+                    label: "GitHub",
+                    link: "https://github.com/Tymotex/Techsuite/"
                 }
             ],
             technologies: [
@@ -57,8 +53,16 @@ const projects = {
             description: descriptions.tactileds,
             furtherLinks: [
                 {
-                    label: "Try it out",
-                    link: "https://data-structures.xyz",
+                    label: "Visit",
+                    link: "https://data-structures.xyz"
+                },
+                {
+                    label: "Demo",
+                    link: "https://www.youtube.com/watch?v=iSJL-9pe-PY"
+                },
+                {
+                    label: "GitHub",
+                    link: "https://github.com/Tymotex/DataStructures"
                 }
             ],
             technologies: [
@@ -80,8 +84,12 @@ const projects = {
             description: descriptions.cosmica,
             furtherLinks: [
                 {
-                    label: "Play online",
+                    label: "Play Now",
                     link: "https://tymotex.github.io/Cosmica/",
+                },
+                {
+                    label: "GitHub",
+                    link: "https://github.com/Tymotex/Cosmica"
                 }
             ],
             technologies: [
@@ -101,7 +109,16 @@ const projects = {
             title: "Galactic Education",
             thumbnail: "https://raw.githubusercontent.com/kishek2000/accentureHackathon/master/galactic-education/public/showcaseThumbnail.PNG",
             description: descriptions.galacticed,
-            furtherLinks: [],
+            furtherLinks: [
+                {
+                    label: "Visit",
+                    link: "http://galactic-ed.xyz/"
+                },
+                {
+                    label: "GitHub",
+                    link: "https://github.com/kishek2000/accentureHackathon"
+                }
+            ],
             technologies: [
                 "javascript",
                 "nextJs",
@@ -117,7 +134,12 @@ const projects = {
             title: "Hydroponix",
             thumbnail: "https://raw.githubusercontent.com/Tymotex/Hydroponix/master/static/thumbnail.png",
             description: descriptions.hydroponix,
-            furtherLinks: [],
+            furtherLinks: [
+                {
+                    label: "GitHub",
+                    link: "https://github.com/Tymotex/Hydroponix"
+                }
+            ],
             technologies: [
                 "flask",
                 "influxdb",
@@ -137,7 +159,7 @@ const projects = {
             description: descriptions.delivobot,
             furtherLinks: [
                 {
-                    label: "View demo video",
+                    label: "Demo",
                     link: "https://www.youtube.com/watch?v=ogIqlcZ1EoI"
                 }
             ],
@@ -155,7 +177,12 @@ const projects = {
             title: "POSIX Shell to Perl 5 Transpiler",
             thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/shell-perl-transpiler-thumbnail.png",
             description: descriptions.shellPerlTranspiler,
-            furtherLinks: [],
+            furtherLinks: [
+                {
+                    label: "GitHub",
+                    link: "https://github.com/Tymotex/ShellPerlTranspiler"
+                }
+            ],
             technologies: [
                 "shell",
                 "perl"
@@ -170,7 +197,12 @@ const projects = {
             title: "CS Nexus",
             thumbnail: "https://raw.githubusercontent.com/Tymotex/CS-Nexus/master/public/thumbnail.png",
             description: descriptions.csnexus,
-            furtherLinks: [],
+            furtherLinks: [
+                {
+                    label: "GitHub",
+                    link: "https://github.com/Tymotex/CS-Nexus"
+                }
+            ],
             technologies: [
                 "mongodb",
                 "express",
@@ -191,7 +223,7 @@ const projects = {
             description: descriptions.darkshadeCrypt,
             furtherLinks: [
                 {
-                    label: "View demo",
+                    label: "Demo",
                     link: "https://www.youtube.com/watch?v=MPnFIEm2_oM"
                 }
             ],
@@ -210,7 +242,16 @@ const projects = {
             title: "timz.dev",
             thumbnail: "https://raw.githubusercontent.com/Tymotex/timz.dev/master/public/frontpage.png",
             description: descriptions.timzdev,
-            furtherLinks: [],
+            furtherLinks: [
+                {
+                    label: "Visit",
+                    link: "https://timz.dev"
+                },
+                {
+                    label: "GitHub",
+                    link: "https://github.com/Tymotex/timz.dev"
+                }
+            ],
             technologies: [
                 "react",
                 "gatsby",
@@ -249,8 +290,12 @@ const projects = {
             description: descriptions.astralAssault,
             furtherLinks: [
                 {
-                    label: "Play online",
+                    label: "Play Now",
                     link: "https://tymoteus.itch.io/astral-assault"
+                }, 
+                {
+                    label: "Demo",
+                    link: "https://www.youtube.com/watch?v=L5HmrpmQbec"
                 }
             ],
             technologies: [
@@ -270,8 +315,12 @@ const projects = {
             description: descriptions.blitzBreach,
             furtherLinks: [
                 {
-                    label: "Play online",
+                    label: "Play Now",
                     link: "https://tymoteus.itch.io/blitz-breach"
+                },
+                {
+                    label: "Demo",
+                    link: "https://www.youtube.com/watch?v=RtHD5X44K0M"
                 }
             ],
             technologies: [
@@ -291,7 +340,7 @@ const projects = {
             description: descriptions.fallout4Mods,
             furtherLinks: [
                 {
-                    label: "View",
+                    label: "Visit",
                     link: "https://www.nexusmods.com/fallout4/users/29182470?tab=user+files"
                 }
             ],
@@ -308,8 +357,12 @@ const projects = {
             description: descriptions.quoteScraper,
             furtherLinks: [
                 {
-                    label: "View demo",
+                    label: "Demo",
                     link: "https://www.youtube.com/watch?v=5dCThWMT50o"
+                },
+                {
+                    label: "GitHub",
+                    link: "https://github.com/Tymotex/Quote-Scraper"
                 }
             ],
             technologies: [
