@@ -29,7 +29,7 @@ $overlayTransDuration: 0.5s;
     margin: 0 auto;
     background: rgba(44, 44, 44, 0.76) !important;
     color: whitesmoke !important;
-    height: 100%;
+    // height: 100%;
 
     .project-title {
         text-align: center;
@@ -108,8 +108,34 @@ $overlayTransDuration: 0.5s;
     .descriptionContainer {
         max-height: 200px;
         overflow: hidden;
-        mask-image: linear-gradient(to bottom, black 40%, transparent 90%);
-        // margin-bottom: 15px;
+        mask-image: linear-gradient(
+            to bottom,
+            black 40%,
+            transparent 95%
+        ); // See: https://stackoverflow.com/questions/22808040/fading-out-text-on-overflow-with-css-if-the-text-is-bigger-than-allowed
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            letter-spacing: normal !important;
+        }
+
+        p {
+            margin: 0;
+            margin-bottom: 15px;
+        }
+    }
+
+    .readMore {
+        display: block;
+        margin-bottom: 20px;
+        text-decoration: none;
+        border: none;
+        text-align: center;
+        color: DeepSkyBlue;
     }
 
     // ===== Hover overlay styles =====

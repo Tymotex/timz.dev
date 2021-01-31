@@ -55,9 +55,12 @@ const ProjectsGrid = ({ projects }) => {
                 <Grid item xs={12} sm={6} lg={4}>
                     <ProjectCard project={eachProject}>
                         <Typography variant="body2" component="p">
-                            <div className={windowStyles.fade}>
-                                <div className={windowStyles.descriptionContainer} dangerouslySetInnerHTML={{__html: eachProject.description}} />
-                            </div>
+                            <div className={windowStyles.descriptionContainer} dangerouslySetInnerHTML={{__html: eachProject.description}} />
+                            <a
+                                className={windowStyles.readMore} 
+                                href="https://timz.dev/blogs">    {/* TODO: Add blog URL */}
+                                    <strong>Read more</strong>
+                            </a>
                         </Typography>
                         <Container>
                             <Row>
