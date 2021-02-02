@@ -3,11 +3,8 @@ import {
 } from '@material-ui/core';
 import React from 'react';
 import { ProjectCard } from './project-card';
-// import ReactMarkdown from 'react-markdown';
 import NeonButton from '../../buttons/neon-button/NeonButton';
-import { Container, Row, Col } from 'react-bootstrap';
 import windowStyles from '../Window.module.scss';
-import { Parser } from 'html-to-react';
 
 /**
  * Given an array of objects of shape: { link, label }, returns an array of
@@ -20,35 +17,33 @@ const renderButtonGrid = (buttonDataArr) => {
     } else if (buttonDataArr.length === 1) {
         // Return a list containing one element taking up maximum grid columns (12)
         return [
-            <Col xs={12} xl={12}>
+            <Grid item xs={12} xl={12}>
                 <NeonButton link={buttonDataArr[0].link}>
                     {buttonDataArr[0].label}
                 </NeonButton>
-            </Col>
+            </Grid>
         ];
     } else {
         // Render two buttons and recursively build the remaining array of buttons
         const { link: firstLink, label: firstLabel } = buttonDataArr[0];
         const { link: secondLink, label: secondLabel } = buttonDataArr[1];
         return [
-            <Col xs={12} sm={12} md={12} lg={6} xl={6}>
+            <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
                 <NeonButton link={firstLink}>
                     {firstLabel}
                 </NeonButton>
-            </Col>,
-            <Col xs={12} sm={12} md={12} lg={6} xl={6}>
+            </Grid>,
+            <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
                 <NeonButton link={secondLink}>
                     {secondLabel}
                 </NeonButton>
-            </Col>,
+            </Grid>,
             ...renderButtonGrid(buttonDataArr.slice(2))
         ];
     }
 };
 
 const ProjectsGrid = ({ projects }) => {
-    const parser = new Parser();
-
     return (
         <Grid container spacing={3}>
             {projects.map((eachProject) => (
@@ -62,12 +57,10 @@ const ProjectsGrid = ({ projects }) => {
                                     <strong>Read more</strong>
                             </a>
                         </Typography>
-                        <Container>
-                            <Row>
-                                {/* Rendering a full-width button if there exists only 1 element */}
-                                {renderButtonGrid(eachProject.furtherLinks)}
-                            </Row>
-                        </Container>
+                        <Grid container className={windowStyles.buttonGrid}>
+                            {/* Rendering a full-width button if there exists only 1 element */}
+                            {renderButtonGrid(eachProject.furtherLinks)}
+                        </Grid>
                     </ProjectCard>
                 </Grid>
             ))}

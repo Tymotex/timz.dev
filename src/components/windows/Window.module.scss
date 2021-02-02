@@ -12,7 +12,7 @@ $overlayTransDuration: 0.5s;
 }
 
 .padded-container {
-    padding-top: 30px;
+    padding-top: 10px;
 }
 
 // ===== Window Styles =====
@@ -147,5 +147,10 @@ $overlayTransDuration: 0.5s;
         &:hover {
             color: rgb(144, 144, 144) !important;
         }
+    }
+
+    // ===== Button grid styles =====
+    .buttonGrid > * {
+        padding: 0 8px;
     }
 }
