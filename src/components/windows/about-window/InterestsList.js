@@ -1,37 +1,40 @@
 import React from 'react';
-import {
-    CardColumns,
-    Card
-} from 'react-bootstrap';
- 
+import Grid from '@material-ui/core/Grid';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardMedia from '@material-ui/core/CardMedia';
+import Typography from '@material-ui/core/Typography';
+import styles from './Interests.module.scss'; 
+
 // TODO: documentation for 'interests' shape. What's the standard way to do this in react?
 const InterestsList = ({ interests }) => {
     return (
-        <CardColumns>
+        <Grid container>
             {interests.map((eachInterest) => (
-                <Card>
-                    <Card.Img variant="top" src="https://biologydictionary.net/wp-content/uploads/2020/09/Common-cuttlefish-1.jpg" />
-                    <Card.Body>
-                        <Card.Title>Card title that wraps to a new line</Card.Title>
-                        <Card.Text>
-                            This is a longer card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.
-                        </Card.Text>
-                    </Card.Body>
-                    <Card.Img variant="top" src="" />
-                    <Card.Body>
-                        <Card.Title>Card title</Card.Title>
-                        <Card.Text>
-                            This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.
-                        </Card.Text>
-                    </Card.Body>
-                    <Card.Footer>
-                        <small className="text-muted">Last updated 3 mins ago</small>
-                    </Card.Footer>
-                </Card>
+                <Grid item md={4} className={styles.gridItem}>
+                    <Card className={styles.interestCard} style={{"border": "6px solid rgba(34, 34, 34, 1)"}}>
+                        <CardActionArea>
+                            <CardMedia
+                                component="img"
+                                alt="Contemplative Reptile"
+                                height="140"
+                                image={eachInterest.image}
+                                title="Contemplative Reptile"
+                            />
+                            <CardContent className={styles.content}>
+                                <Typography className={styles.title} gutterBottom variant="h6" component="h5">
+                                    {eachInterest.name}
+                                </Typography>
+                                <Typography variant="body2" color="textSecondary" component="p">
+                                    {eachInterest.description}
+                                </Typography>
+                            </CardContent>
+                        </CardActionArea>
+                    </Card>
+                </Grid>
             ))}
-        </CardColumns>
+        </Grid>
     );
 }
 

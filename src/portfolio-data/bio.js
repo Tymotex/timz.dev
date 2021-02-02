@@ -1,4 +1,4 @@
-
+import interests from './interests-images';
 const bio = {
     frontPageSummary: `
         3rd year student studying software engineering and commerce at UNSW.
@@ -13,40 +13,46 @@ const bio = {
     `,
     interests: [
         {
-            name: "Fullstack engineering",
+            name: "Coding",
             description: `
-                Test
-            `
+                
+            `,
+            image: interests.coding
         },
         {
             name: "Deep learning",
             description: `
 
-            `
+            `,
+            image: interests.deepLearning
         },
         {
             name: "Electronics",
             description: `
             
-            `
+            `,
+            image: interests.electronics
         },
         {
             name: "Game development",
             description: `
             
-            `
+            `,
+            image: interests.gameDev
         },
         {
-            name: "Reading science books and biographies",
+            name: "Science books & biographies",
             description: `
             
-            `
+            `,
+            image: interests.reading
         },
         {
             name: "Fingerstyle guitar",
             description: `
             
-            `
+            `,
+            image: interests.guitar
         }
     ]
 };

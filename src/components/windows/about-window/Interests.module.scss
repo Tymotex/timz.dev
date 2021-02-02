@@ -1,0 +1,18 @@
+.gridItem {
+    padding: 10px;
+
+    .interestCard {
+        height: 100%;
+        border: 6px solid rgba(34, 34, 34, 1);
+        background: rgba(44, 44, 44, 1) !important;
+
+        .title {
+            text-align: center;
+        }
+
+        .content {
+            margin: 0 auto;
+            color: whitesmoke !important;
+        }
+    }
+}
