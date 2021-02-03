@@ -1,4 +1,5 @@
 const path = require('path');
+const colours = require('colors');
 
 /**
   * onCreateNode: https://www.gatsbyjs.com/docs/node-apis/#onCreateNode
@@ -23,9 +24,14 @@ module.exports.onCreateNode = ({ node, actions }) => {
  * Tell plugins to add pages. This extension point is called only after the initial
  * sourcing and transformation of nodes plus creation of the GraphQL schema are complete
  * so you can query your data in order to create pages.
+ * 
+ * NOTE: see the gatsby-source-filesystem plugin in gatsby-config.js. The graphql query
+ * for allMarkdownRemark will fetch .md files in that path specified in the config object
  */
 module.exports.createPages = async ({ graphql, actions }) => {
-    const blogTemplatePath = path.resolve("./src/pages/blog.js");
+    // Using src/components/templates/blog.js as the page component:
+    const blogTemplatePath = path.resolve("./src/components/templates/blog.js");
+
     const res = await graphql(`
         query {
             allMarkdownRemark {
@@ -42,9 +48,12 @@ module.exports.createPages = async ({ graphql, actions }) => {
         }
     `);
     res.data.allMarkdownRemark.edges.forEach((eachEdge) => {
+        const fileName = eachEdge.node.fields.slug;
+        console.log(` → Generating blog route: ${process.env.BASE_URL}/blogs/${fileName}`.magenta.bold);
         actions.createPage({
             component: blogTemplatePath,
-            path: `/blogs/${eachEdge.node.fields.slug}`,
+            // Generating routes: timz.dev/blogs/<BLOG NAME>
+            path: `/blogs/${fileName}`,
             context: {
                 slug: eachEdge.node.fields.slug
             }

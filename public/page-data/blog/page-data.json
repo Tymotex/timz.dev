@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-pages-blog-js","path":"/blog/","result":{"data":{"allContentfulBlogPost":{"edges":[{"node":{"title":"My First Blog Post","publishedDate":"2020-10-29T21:23+04:00"}}]}},"pageContext":{}},"staticQueryHashes":[]}
+{"componentChunkName":"component---src-pages-blog-js","path":"/blog/","result":{"errors":[{"message":"Variable \"$slug\" of required type \"String!\" was not provided.","locations":[{"line":1,"column":54}]}],"pageContext":{}},"staticQueryHashes":[]}

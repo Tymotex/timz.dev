@@ -43,7 +43,15 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `markdown`,
-        path: `${__dirname}/src/blogs/`,
+        path: `${__dirname}/src/blogs/`,       // This is the path of the blogs
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown`,
+        // This is the path of the project description markdown files
+        path: `${__dirname}/src/components/windows/projects-window/project-descriptions/`,       
       },
     },
     {

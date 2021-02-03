@@ -5,6 +5,7 @@
   "author": "Hunter Chang",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
+    "colors": "^1.4.0",
     "dotenv": "^8.2.0",
     "gatsby": "^2.19.5",
     "gatsby-plugin-manifest": "^2.2.38",
