@@ -4,6 +4,7 @@ import {
     graphql
 } from 'gatsby';
 import { BlogsList } from '../components/blogs';
+import { FadeInWrapper } from '../components/animations';
 
 const Blogs = () => {
     const data = useStaticQuery(graphql`
@@ -26,9 +27,9 @@ const Blogs = () => {
         };
     });
     return (
-        <div>
+        <FadeInWrapper duration={2.5}>
             <BlogsList blogs={blogs}/>   
-        </div>
+        </FadeInWrapper>
     );
 };
 
