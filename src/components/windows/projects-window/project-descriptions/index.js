@@ -3,15 +3,15 @@ import tactiledsDesc from './Tactile-DS.md';
 import cosmicaDesc from './Cosmica.md';
 import galacticEdDesc from './Galactic-Ed.md';
 import hydroponixDesc from './Hydroponix.md';
-import delivobotDesc from './Deliv-O-Bot.md';
+import delivobotDesc from './Autonomous-Deliv-O-Bot.md';
 import shellPerlTranspilerDesc from './Shell-Perl-Transpiler.md';
-import csNexusDesc from './CSNexus.md';
-import darkshadeCryptDesc from './DarkshadeCrypt.md';
+import csNexusDesc from './CS-Nexus.md';
+import darkshadeCryptDesc from './Darkshade-Crypt.md';
 import timzdevDesc from './TimzDev.md';
-import astralAssaultDesc from './AstralAssault.md';
-import blitzBreachDesc from './BlitzBreach.md';
-import fallout4ModsDesc from './Fallout4Mods.md';
-import quoteScraperDesc from './QuoteScraper.md';
+import astralAssaultDesc from './Astral-Assault.md';
+import blitzBreachDesc from './Blitz-Breach.md';
+import fallout4ModsDesc from './Fallout-4-Mods.md';
+import quoteScraperDesc from './Quote-Scraper.md';
 
 const descriptions = {
     "techsuite": techsuiteDesc,

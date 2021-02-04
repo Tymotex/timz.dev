@@ -48,7 +48,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
         }
     `);
     res.data.allMarkdownRemark.edges.forEach((eachEdge) => {
-        const fileName = eachEdge.node.fields.slug;
+        const fileName = eachEdge.node.fields.slug.toLowerCase();
         console.log(` → Generating blog route: ${process.env.BASE_URL}/blogs/${fileName}`.magenta.bold);
         actions.createPage({
             component: blogTemplatePath,

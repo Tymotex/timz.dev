@@ -136,6 +136,11 @@ $overlayTransDuration: 0.5s;
         border: none;
         text-align: center;
         color: DeepSkyBlue;
+        transition: 0.15s;
+
+        &:hover {
+            opacity: 0.5;
+        }
     }
 
     // ===== Hover overlay styles =====

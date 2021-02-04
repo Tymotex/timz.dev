@@ -5,6 +5,7 @@ import React from 'react';
 import { ProjectCard } from './project-card';
 import NeonButton from '../../buttons/neon-button/NeonButton';
 import windowStyles from '../Window.module.scss';
+import { convertValidURL } from './projects.js';
 
 /**
  * Given an array of objects of shape: { link, label }, returns an array of
@@ -53,7 +54,8 @@ const ProjectsGrid = ({ projects }) => {
                             <div className={windowStyles.descriptionContainer} dangerouslySetInnerHTML={{__html: eachProject.description}} />
                             <a
                                 className={windowStyles.readMore} 
-                                href="https://timz.dev/blogs">    {/* TODO: Add blog URL */}
+                                href={`${process.env.BASE_URL}/blogs/${convertValidURL(eachProject.title)}`}
+                                target="blank">    {/* TODO: Add blog URL */}
                                     <strong>Read more</strong>
                             </a>
                         </Typography>

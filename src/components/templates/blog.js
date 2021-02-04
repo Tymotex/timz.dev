@@ -1,7 +1,7 @@
 import { graphql } from "gatsby";
 import React from "react";
-import ReactMarkdown from 'react-markdown';
 import styles from './blog.module.scss';
+import marked from 'marked';
 
 // This GraphQL query gets run for every markdown file that exists in:
 // src/components/windows/project-window/project-descriptions 
@@ -24,11 +24,12 @@ export const query = graphql`
 `;
 
 const Blog = ({ data, pageContext }) => {
+    // The .md file content is first converted to HTML, then rendered using dangerouslySetInnerHTML 
+    const convertedHtml = marked(data.markdownRemark.rawMarkdownBody);
+    
     return (
         <div className={styles.blogContainer}>
-            <ReactMarkdown>
-                {data.markdownRemark.rawMarkdownBody}
-            </ReactMarkdown>
+            <div dangerouslySetInnerHTML={{__html: convertedHtml}} />
         </div>
     );
 }

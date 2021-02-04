@@ -5,12 +5,26 @@ import images from '../../../images';
 import descriptions from './project-descriptions';
 import marked from 'marked';
 
-const projects = {
+// Strips the frontmatter from the given markdown string
+const bypassFrontmatter = (markdownBody) => {
+    return markdownBody.replace(/^---$.*^---$/ms, '');
+}
+
+// Given a string like "Tactile DS", substitutes certain characters for dashes,
+// giving a URL friendly result: "Tactile-DS"
+// Eg. convertValidURL("Timz.dev") === "Timzdev"
+export const convertValidURL = (title) => {
+    return title.replace(/ /, "-")
+                .replace(/\./, "")
+                .toLowerCase();
+}
+
+export default {
     mainProjects: [       // A collection of personal projects that I spent significant amounts of time and effort on
         {
             title: "Techsuite",
             thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/techsuite-thumbnail.png",
-            description: marked(marked(descriptions.techsuite)),
+            description: marked(bypassFrontmatter(descriptions.techsuite)),
             furtherLinks: [
                 {
                     label: "Visit",
@@ -43,7 +57,7 @@ const projects = {
         {
             title: "Tactile DS",
             thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/tactile-ds-thumbnail.png",
-            description: marked(descriptions.tactileds),
+            description: marked(bypassFrontmatter(descriptions.tactileds)),
             furtherLinks: [
                 {
                     label: "Visit",
@@ -74,7 +88,7 @@ const projects = {
         {
             title: "Cosmica",
             thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/cosmica-title.png",
-            description: marked(descriptions.cosmica),
+            description: marked(bypassFrontmatter(descriptions.cosmica)),
             furtherLinks: [
                 {
                     label: "Play Now",
@@ -109,7 +123,7 @@ const projects = {
         {
             title: "Galactic Education",
             thumbnail: "https://raw.githubusercontent.com/kishek2000/accentureHackathon/master/galactic-education/public/showcaseThumbnail.PNG",
-            description: marked(descriptions.galacticed),
+            description: marked(bypassFrontmatter(descriptions.galacticed)),
             furtherLinks: [
                 {
                     label: "Visit",
@@ -134,7 +148,7 @@ const projects = {
         {
             title: "Hydroponix",
             thumbnail: "https://raw.githubusercontent.com/Tymotex/Hydroponix/master/static/thumbnail.png",
-            description: marked(descriptions.hydroponix),
+            description: marked(bypassFrontmatter(descriptions.hydroponix)),
             furtherLinks: [
                 {
                     label: "GitHub",
@@ -157,7 +171,7 @@ const projects = {
         {
             title: "Autonomous Deliv-O-Bot",
             thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/deliv-o-bot-thumbnail.png",
-            description: marked(descriptions.delivobot),
+            description: marked(bypassFrontmatter(descriptions.delivobot)),
             furtherLinks: [
                 {
                     label: "Demo",
@@ -177,7 +191,7 @@ const projects = {
         {
             title: "POSIX Shell to Perl 5 Transpiler",
             thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/shell-perl-transpiler-thumbnail.png",
-            description: marked(descriptions.shellPerlTranspiler),
+            description: marked(bypassFrontmatter(descriptions.shellPerlTranspiler)),
             furtherLinks: [
                 {
                     label: "GitHub",
@@ -197,7 +211,7 @@ const projects = {
         {
             title: "CS Nexus",
             thumbnail: "https://raw.githubusercontent.com/Tymotex/CS-Nexus/master/public/thumbnail.png",
-            description: marked(descriptions.csnexus),
+            description: marked(bypassFrontmatter(descriptions.csnexus)),
             furtherLinks: [
                 {
                     label: "GitHub",
@@ -221,7 +235,7 @@ const projects = {
         {
             title: "Darkshade Crypt",
             thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/darkshade-crypt-thumbnail.png",
-            description: marked(descriptions.darkshadeCrypt),
+            description: marked(bypassFrontmatter(descriptions.darkshadeCrypt)),
             furtherLinks: [
                 {
                     label: "Demo",
@@ -242,7 +256,7 @@ const projects = {
         {
             title: "timz.dev",
             thumbnail: "https://raw.githubusercontent.com/Tymotex/timz.dev/master/public/frontpage.png",
-            description: marked(descriptions.timzdev),
+            description: marked(bypassFrontmatter(descriptions.timzdev)),
             furtherLinks: [
                 {
                     label: "Visit",
@@ -288,7 +302,7 @@ const projects = {
         {
             title: "Astral Assault",
             thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/astral-assault-thumbnail.png",
-            description: marked(descriptions.astralAssault),
+            description: marked(bypassFrontmatter(descriptions.astralAssault)),
             furtherLinks: [
                 {
                     label: "Play Now",
@@ -313,7 +327,7 @@ const projects = {
         {
             title: "Blitz Breach",
             thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/blitz-breach-thumbnail.png",
-            description: marked(descriptions.blitzBreach),
+            description: marked(bypassFrontmatter(descriptions.blitzBreach)),
             furtherLinks: [
                 {
                     label: "Play Now",
@@ -338,7 +352,7 @@ const projects = {
         {
             title: "Fallout 4 Mods",
             thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/fallout-4-mod-thumbnail.png",
-            description: marked(descriptions.fallout4Mods),
+            description: marked(bypassFrontmatter(descriptions.fallout4Mods)),
             furtherLinks: [
                 {
                     label: "Visit",
@@ -355,7 +369,7 @@ const projects = {
         {
             title: "Quote scraper",
             thumbnail: "https://tymotex.github.io/timz.dev/public/project-images/quote-scraper-thumbnail.png",
-            description: marked(descriptions.quoteScraper),
+            description: marked(bypassFrontmatter(descriptions.quoteScraper)),
             furtherLinks: [
                 {
                     label: "Demo",
@@ -380,4 +394,3 @@ const projects = {
     ]
 }
 
-export default projects;
