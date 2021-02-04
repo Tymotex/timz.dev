@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types'; 
+import styles from './Blogs.module.scss';
 
 const BlogsList = ({ blogs }) => {
     console.log(blogs);
 
     return (
-        <ul>
+        <ul className={styles.blogList}>
             {blogs.map(blog => (
                 <li>
                     <h3>{blog.title}</h3>
