@@ -19,14 +19,12 @@ As the player progresses through levels, they can unlock up to 7 new types of de
 their own 3 stages of permanent upgrades which boosts the defender ship's stats makes them look more
 badass.
 
-### Links:
-
 -   <strong>Playable WebGL build <a href="https://tymotex.github.io/Cosmica/">here</a></strong>
 -   Google Play listing <a href="https://play.google.com/store/apps/details?id=com.Cosmica.Cosmica">here</a>.
 
 ### Gameplay Demo
 
-![Gameplay-demo](/PublicImages/gameplay-demo.gif)
+![Gameplay-demo](https://github.com/Tymotex/Cosmica/blob/master/PublicImages/gameplay-demo.gif?raw=true)
 
 ### YouTube
 
@@ -51,11 +49,10 @@ Pick and plan your battlefield with 7 different types of defenders, each with 3 
 
 Feel like a boss as you journey through a picturesque side-scrolling space environment listening to glorious sci-fi tunes!
 
-## Links:
-
--   Google Play listing: https://play.google.com/store/apps/details?id=com.Cosmica.Cosmica
--   Showcase/Trailer: https://www.youtube.com/watch?v=D7K1GOqns1w
--   Development showcase: https://www.youtube.com/watch?v=ganf7AlCvV0
+#### Links:
+-   <a href="https://play.google.com/store/apps/details?id=com.Cosmica.Cosmica">Google Play listing</a>
+-   <a href="https://www.youtube.com/watch?v=D7K1GOqns1w">Showcase/Trailer</a>
+-   <a href="https://www.youtube.com/watch?v=ganf7AlCvV0">Development showcase</a>
 
 <p float="left">
   <img src="https://github.com/Tymotex/Cosmica/blob/master/PublicImages/Thumbnail.PNG?raw=true" width="35%" />
