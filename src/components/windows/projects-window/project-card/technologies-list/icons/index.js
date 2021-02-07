@@ -11,6 +11,7 @@ import javaIcon from './java.png';
 import javafxIcon from './javafx.png';
 import javascriptIcon from './javascript.png';
 import jqueryIcon from './jquery.png';
+import materialUiIcon from './materialui.png'; 
 import mongodbIcon from './mongodb.png';
 import nextJsIcon from './nextjs.png';
 import nodeIcon from './node.png';
@@ -39,6 +40,7 @@ const images = {
     "javafx": javafxIcon,
     "javascript": javascriptIcon,
     "jquery": jqueryIcon,
+    "materialui": materialUiIcon,
     "mongodb": mongodbIcon,
     "nextjs": nextJsIcon,
     "node": nodeIcon,

@@ -28,7 +28,7 @@ const FadeInWrapper = ({ children, wrapperElement='div', direction=null, duratio
             opacity: 0,
             delay
         });
-    }, [compRef, fadeDirection, delay]);
+    }, [compRef, fadeDirection, delay, duration]);
     return (
         <Component ref={compRef} {...props}>
             {children}

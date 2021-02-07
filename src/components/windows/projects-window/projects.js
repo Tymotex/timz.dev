@@ -270,7 +270,8 @@ export default {
             technologies: [
                 "react",
                 "gatsby",
-                "javaScript"
+                "javaScript",
+                "materialUI"
             ],
             overlay: {
                 icon: images.overlayImages.github,                    
