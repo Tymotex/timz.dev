@@ -29,11 +29,13 @@ const Blogs = () => {
             title: eachEdge.node.frontmatter.title,
             link: `${process.env.BASE_URL}/blogs/${eachEdge.node.fields.slug.toLowerCase()}` 
         };
-    });
+	});
+	
+	const sortedBlogs = blogs.sort((blogA, blogB) => blogA.title.toLowerCase().localeCompare(blogB.title.toLowerCase()));
 
     return (
 		<BlogLayout>
-			<BlogsList blogs={blogs}/>  
+			<BlogsList blogs={sortedBlogs}/>  
 		</BlogLayout>
     );
 };

@@ -39,6 +39,11 @@ import { siteCookies } from '../constants';
 
 const drawerWidth = 240;
 
+
+
+// TODO: dark mode: https://stackoverflow.com/questions/55846691/react-material-ui-theme-change
+
+
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
@@ -155,7 +160,11 @@ const BlogLayout = ({ children }) => {
                                         Blogs
                                     </Typography>
                                     <IconButton onClick={() => setDarkModeActive(toggleDarkMode())}>
-                                        <NightsStay />
+                                        {(Cookies.get(siteCookies.DARK_MODE_ACTIVE) === "true" ? (
+                                            <NightsStay />
+                                            ) : (
+                                            <WbSunny />    
+                                        ))}
                                     </IconButton>
                                 </Toolbar>
                             </AppBar>
