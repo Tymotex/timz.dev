@@ -9,8 +9,7 @@ const BlogsList = ({ blogs }) => {
         <ul className={styles.blogList}>
             {blogs.map(blog => (
                 <li>
-                    <h3>{blog.title}</h3>
-                    <a href={blog.link}>link here!</a>
+                    <a href={blog.link}><h3>{blog.title}</h3></a>
                 </li>
             ))}
         </ul>       
