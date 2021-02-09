@@ -39,13 +39,13 @@ module.exports = {
     // Gatsby-source-filesystem + Gatsby-transformer-remark for dynamic .md blog 
     // post page generation.
     // https://stackoverflow.com/questions/57378950/gatsby-markdown-how-to-get-data-from-a-specific-markdown-file-into-a-single-p 
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `markdown`,
-        path: `${__dirname}/src/blogs/`,       // This is the path of the blogs
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `markdown`,
+    //     path: `${__dirname}/src/blogs/`,       // This is the path of the blogs
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
