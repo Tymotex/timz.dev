@@ -6,18 +6,13 @@ import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import { DrawerList } from './components';
 
 // Theme override
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
@@ -25,10 +20,10 @@ import {
     cyan, lightBlue
 } from '@material-ui/core/colors';
 
-import {
-    NightsStay,
-    WbSunny
-} from '@material-ui/icons';
+// import {
+//     NightsStay,
+//     WbSunny
+// } from '@material-ui/icons';
 
 // Hiding the top nav bar on scroll
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
@@ -39,10 +34,7 @@ import { siteCookies } from '../constants';
 
 const drawerWidth = 240;
 
-
-
 // TODO: dark mode: https://stackoverflow.com/questions/55846691/react-material-ui-theme-change
-
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -103,7 +95,7 @@ const useStyles = makeStyles((theme) => ({
 
 const theme = createMuiTheme({
     palette: {
-        type: Cookies.get(siteCookies.DARK_MODE_ACTIVE) === "true" ? "dark" : "light",
+        type: "dark", // Cookies.get(siteCookies.DARK_MODE_ACTIVE) === "true" ? "dark" : "light",
         primary: {
             main: cyan[900]        // See: https://material-ui.com/customization/color/
         },
@@ -132,7 +124,7 @@ const BlogLayout = ({ children }) => {
         setOpen(false);
     };
     
-    const trigger = useScrollTrigger({ target: window });
+    const trigger = useScrollTrigger({ target: typeof window !== 'undefined' ? window : null });
     
     return (
             <ThemeProvider theme={theme}>
@@ -160,11 +152,11 @@ const BlogLayout = ({ children }) => {
                                         Blogs
                                     </Typography>
                                     <IconButton onClick={() => setDarkModeActive(toggleDarkMode())}>
-                                        {(Cookies.get(siteCookies.DARK_MODE_ACTIVE) === "true" ? (
+                                        {/* {(Cookies.get(siteCookies.DARK_MODE_ACTIVE) === "true" ? (
                                             <NightsStay />
                                             ) : (
                                             <WbSunny />    
-                                        ))}
+                                        ))} */}
                                     </IconButton>
                                 </Toolbar>
                             </AppBar>
@@ -185,23 +177,9 @@ const BlogLayout = ({ children }) => {
                                 </IconButton>
                             </div>
                             <Divider />
-                            <List>
-                                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                                    <ListItem button key={text}>
-                                    <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                                    <ListItemText primary={text} />
-                                    </ListItem>
-                                ))}
-                            </List>
+                            <DrawerList /> 
                             <Divider />
-                            <List>
-                                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                                    <ListItem button key={text}>
-                                    <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                                    <ListItemText primary={text} />
-                                    </ListItem>
-                                ))}
-                            </List>
+                            
                         </Drawer>
                         <main
                             className={clsx(classes.content, {
