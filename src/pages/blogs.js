@@ -13,7 +13,8 @@ const Blogs = () => {
                 edges {
                     node {
                         frontmatter {
-                            title
+                            title,
+                            image
 						},
 						fields {
 							slug
@@ -27,6 +28,7 @@ const Blogs = () => {
     const blogs = data.allMarkdownRemark.edges.map(eachEdge => {
         return {
             title: eachEdge.node.frontmatter.title,
+            image: eachEdge.node.frontmatter.image,
             link: `${process.env.BASE_URL}/blogs/${eachEdge.node.fields.slug.toLowerCase()}` 
         };
 	});
