@@ -1,6 +1,8 @@
 ---
 title: Cosmica
+image: https://tymotex.github.io/timz.dev/public/project-images/cosmica-title.png
 ---
+
 _Cosmica_ is a cross-platform sci-fi strategy game written in C# and built with the Unity game engine.
 
 ### Overview of the game:
@@ -50,6 +52,7 @@ Pick and plan your battlefield with 7 different types of defenders, each with 3 
 Feel like a boss as you journey through a picturesque side-scrolling space environment listening to glorious sci-fi tunes!
 
 #### Links:
+
 -   <a href="https://play.google.com/store/apps/details?id=com.Cosmica.Cosmica">Google Play listing</a>
 -   <a href="https://www.youtube.com/watch?v=D7K1GOqns1w">Showcase/Trailer</a>
 -   <a href="https://www.youtube.com/watch?v=ganf7AlCvV0">Development showcase</a>

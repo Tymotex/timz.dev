@@ -1,6 +1,6 @@
 ---
 title: Astral Assault
-image: https://tymotex.github.io/timz.dev/public/project-images/cosmica-title.png
+image: https://tymotex.github.io/timz.dev/public/project-images/astral-assault-thumbnail.png
 ---
 
 Astral Assault is a more dynamic, intensive take on the classic Space Invaders with flashier

@@ -1,6 +1,82 @@
+$transitionDuration: 0.4s;
+$initialTextOffset: 60%;
+$textTranslateOffset: 50%;
+$brightnessOnHover: 40%;
+$minCardHeight: 180px;
+$scaleFactor: 1.04;
+
 .blogList {
     padding: 25px;
     & * {
         letter-spacing: normal;
+    }
+
+    .listTitle {
+        font-size: 200%;
+    }
+
+    .blogCard {
+        margin: 10px;
+        position: relative;
+        transition: $transitionDuration all ease-in;
+        min-height: $minCardHeight;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1),
+            0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1),
+            0 16px 16px rgba(0, 0, 0, 0.1);
+
+        .image {
+            & > img {
+                width: 100%;
+                display: block;
+            }
+            transition-duration: $transitionDuration;
+        }
+
+        .hoverContent {
+            position: absolute;
+            width: 100%;
+            top: $initialTextOffset;
+            text-align: center;
+
+            opacity: 0;
+            transition-duration: $transitionDuration;
+
+            .title {
+                text-align: center;
+            }
+
+            .description {
+                text-align: center;
+            }
+        }
+
+        &:hover {
+            transition-duration: $transitionDuration;
+            transform: scale($scaleFactor);
+
+            & > .image {
+                filter: brightness($brightnessOnHover);
+                &::after {
+                    display: block;
+                    position: relative;
+                    margin-top: -$minCardHeight;
+                    height: $minCardHeight;
+                    width: 100%;
+                    content: "";
+                    background-image: linear-gradient(
+                        to bottom,
+                        rgba(245, 246, 252, 0),
+                        rgba(0, 0, 0, 0.73)
+                    );
+                    transition-duration: $transitionDuration;
+                }
+            }
+
+            & > .hoverContent {
+                transform: translateY(-$textTranslateOffset);
+                opacity: 100%;
+                transition-duration: $transitionDuration;
+            }
+        }
     }
 }
