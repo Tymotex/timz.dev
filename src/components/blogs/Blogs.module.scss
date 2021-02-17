@@ -37,11 +37,16 @@ $scaleFactor: 1.04;
             width: 100%;
             top: $initialTextOffset;
             text-align: center;
+            text-shadow: white 0px 0px 10px;
+            color: white;
+            // text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black,
+            // 0 -0.07em black;
 
             opacity: 0;
             transition-duration: $transitionDuration;
 
             .title {
+                font-size: 200%;
                 text-align: center;
             }
 

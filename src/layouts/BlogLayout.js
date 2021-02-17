@@ -17,7 +17,7 @@ import { DrawerList } from './components';
 // Theme override
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import {
-    cyan, lightBlue
+    grey, lightBlue
 } from '@material-ui/core/colors';
 
 // import {
@@ -95,9 +95,9 @@ const useStyles = makeStyles((theme) => ({
 
 const theme = createMuiTheme({
     palette: {
-        type: "dark", // Cookies.get(siteCookies.DARK_MODE_ACTIVE) === "true" ? "dark" : "light",
+        type: "light", // Cookies.get(siteCookies.DARK_MODE_ACTIVE) === "true" ? "dark" : "light",
         primary: {
-            main: cyan[900]        // See: https://material-ui.com/customization/color/
+            main: grey[900]        // See: https://material-ui.com/customization/color/
         },
         secondary: {
             main: lightBlue[700]

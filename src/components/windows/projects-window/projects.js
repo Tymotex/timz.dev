@@ -117,11 +117,9 @@ export default {
                 link: "https://github.com/Tymotex/Cosmica"   
             },
             gif: "https://github.com/Tymotex/timz.dev/blob/master/public/project-images/cosmica-showcase.gif?raw=true"
-        }
-    ],
-    miniProjects: [     // A collection of projects that were either university projects or smaller personal projects
+        },
         {
-            title: "Galactic Education",
+            title: "Galactic Ed",
             thumbnail: "https://raw.githubusercontent.com/kishek2000/accentureHackathon/master/galactic-education/public/showcaseThumbnail.PNG",
             description: marked(bypassFrontmatter(descriptions.galacticed)),
             furtherLinks: [
@@ -144,7 +142,9 @@ export default {
                 label: "View on GitHub",
                 link: "https://github.com/kishek2000/accentureHackathon"   
             }
-        },
+        }
+    ],
+    miniProjects: [     // A collection of projects that were either university projects or smaller personal projects
         {
             title: "Hydroponix",
             thumbnail: "https://raw.githubusercontent.com/Tymotex/Hydroponix/master/static/thumbnail.png",
