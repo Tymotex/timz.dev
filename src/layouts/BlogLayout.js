@@ -12,18 +12,18 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import { Button } from '@material-ui/core';
 import { DrawerList } from './components';
+import styles from './BlogLayout.module.scss';
 
 // Theme override
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import {
-    grey, lightBlue
-} from '@material-ui/core/colors';
+import { lightTheme, darkTheme } from './themes';
 
-// import {
-//     NightsStay,
-//     WbSunny
-// } from '@material-ui/icons';
+import {
+    NightsStay,
+    WbSunny
+} from '@material-ui/icons';
 
 // Hiding the top nav bar on scroll
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
@@ -93,17 +93,8 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-const theme = createMuiTheme({
-    palette: {
-        type: "light", // Cookies.get(siteCookies.DARK_MODE_ACTIVE) === "true" ? "dark" : "light",
-        primary: {
-            main: grey[900]        // See: https://material-ui.com/customization/color/
-        },
-        secondary: {
-            main: lightBlue[700]
-        }
-    }
-});
+const lightMode = createMuiTheme(lightTheme);
+const darkMode = createMuiTheme(darkTheme);
 
 const toggleDarkMode = () => {
     const wasActive = Cookies.get(siteCookies.DARK_MODE_ACTIVE) === "true";
@@ -111,11 +102,11 @@ const toggleDarkMode = () => {
     return !wasActive;
 }
 
-const BlogLayout = ({ children }) => {
+const BlogLayout = ({ pageName="Blogs", children }) => {
     const classes = useStyles();
 	const [open, setOpen] = React.useState(false);
     const [darkModeActive, setDarkModeActive] = React.useState(Cookies.get(siteCookies.DARK_MODE_ACTIVE)); 
-    
+
 	const handleDrawerOpen = () => {
         setOpen(true);
 	};
@@ -127,7 +118,7 @@ const BlogLayout = ({ children }) => {
     const trigger = useScrollTrigger({ target: typeof window !== 'undefined' ? window : null });
     
     return (
-            <ThemeProvider theme={theme}>
+            <ThemeProvider theme={darkModeActive ? darkMode : lightMode}>
                 <Container>
                     <div className={classes.root}>
                         <CssBaseline />
@@ -149,15 +140,20 @@ const BlogLayout = ({ children }) => {
                                         <MenuIcon />
                                     </IconButton>
                                     <Typography variant="h6" noWrap>
-                                        Blogs
+                                        {pageName}
                                     </Typography>
-                                    <IconButton onClick={() => setDarkModeActive(toggleDarkMode())}>
-                                        {/* {(Cookies.get(siteCookies.DARK_MODE_ACTIVE) === "true" ? (
-                                            <NightsStay />
+                                    <div className={styles.rightContainer}>
+                                        <IconButton 
+                                            className={styles.darkModeButton}
+                                            onClick={() => setDarkModeActive(toggleDarkMode())}
+                                        >
+                                            {(Cookies.get(siteCookies.DARK_MODE_ACTIVE) === "true" ? (
+                                                <NightsStay className={styles.moon} />
                                             ) : (
-                                            <WbSunny />    
-                                        ))} */}
-                                    </IconButton>
+                                                <WbSunny className={styles.sun} />    
+                                            ))}
+                                        </IconButton>
+                                    </div>
                                 </Toolbar>
                             </AppBar>
                         </Slide>
@@ -173,13 +169,12 @@ const BlogLayout = ({ children }) => {
                         >
                             <div className={classes.drawerHeader}>
                                 <IconButton onClick={handleDrawerClose}>
-                                    {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+                                    {/* {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />} */}
                                 </IconButton>
                             </div>
                             <Divider />
                             <DrawerList /> 
                             <Divider />
-                            
                         </Drawer>
                         <main
                             className={clsx(classes.content, {

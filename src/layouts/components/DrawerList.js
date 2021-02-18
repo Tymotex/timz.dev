@@ -10,13 +10,18 @@ import {
 } from '@material-ui/core';
 
 import HomeWorkIcon from '@material-ui/icons/HomeWork';
-
+import BookIcon from '@material-ui/icons/Book';
 
 const drawerItems = [
     {
         icon: HomeWorkIcon,
         text: "Home",
         link: `${process.env.BASE_URL}`
+    },
+    {
+        icon: BookIcon,
+        text: "Blogs",
+        link: `${process.env.BASE_URL}/blogs`
     }
 ]
 

@@ -1,0 +1,28 @@
+$transitionDuration: 0.2s;
+
+.rightContainer {
+    position: absolute;
+    right: 0%;
+    margin-right: 15px;
+
+    .darkModeButton {
+        transform: scale(1.5);
+        .sun {
+            color: rgb(207, 212, 131) !important;
+            transition: all $transitionDuration ease-in;
+            &:hover {
+                filter: brightness(0.5);
+                transition: all $transitionDuration;
+            }
+        }
+
+        .moon {
+            color: rgb(184, 233, 255) !important;
+            transition: all $transitionDuration ease-in;
+            &:hover {
+                filter: brightness(0.5);
+                transition: all $transitionDuration;
+            }
+        }
+    }
+}
