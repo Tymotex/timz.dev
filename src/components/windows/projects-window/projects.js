@@ -135,12 +135,15 @@ export default {
             technologies: [
                 "javascript",
                 "nextJs",
-                "react"
+                "react",
+                "python",
+                "flask",
+                "mongodb"
             ],
             overlay: {
                 icon: images.overlayImages.github,                    
                 label: "View on GitHub",
-                link: "https://github.com/kishek2000/accentureHackathon"   
+                link: "https://raw.githubusercontent.com/kishek2000/accentureHackathon/master/frontend/public/showcaseThumbnail.png"   
             }
         }
     ],

@@ -15,7 +15,10 @@ const BlogCard = ({ blog }) => {
                 <div className={styles.hoverContent}>
                     <h3 className={styles.title}>{blog.title}</h3>
                     <p className={styles.description}>
-                        {blog.title}
+                        {blog.summary}
+                    </p>
+                    <p className={styles.footnote}>
+                        {`${blog.timeToRead} minute${blog.timeToRead === 1 ? "" : "s"} to read`}
                     </p>
                 </div>
             </div>

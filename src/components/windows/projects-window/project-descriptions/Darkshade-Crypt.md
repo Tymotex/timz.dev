@@ -1,6 +1,7 @@
 ---
 title: Darkshade Crypt
 image: https://tymotex.github.io/timz.dev/public/project-images/darkshade-crypt-thumbnail.png
+summary: A 2D dungeon crawler game, written from scratch in Java.
 ---
 
 A 2D dungeon crawler game, written from scratch in Java. This object oriented programming project involved implementing

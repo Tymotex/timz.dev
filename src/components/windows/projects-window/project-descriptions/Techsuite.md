@@ -1,6 +1,7 @@
 ---
 title: Techsuite
 image: https://tymotex.github.io/timz.dev/public/project-images/techsuite-thumbnail.png
+summary: Techsuite is a collaborative social app built with React, Flask and PostgreSQL.
 ---
 
 Techsuite is a collaborative social app built with React, Flask and PostgreSQL.

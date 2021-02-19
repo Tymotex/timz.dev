@@ -14,11 +14,13 @@ const Blogs = () => {
                     node {
                         frontmatter {
                             title,
-                            image
+                            image,
+                            summary
 						},
 						fields {
 							slug
-						}
+						},
+                        timeToRead
                     }
                 }
             }
@@ -26,10 +28,11 @@ const Blogs = () => {
 	`);
 
     const blogs = data.allMarkdownRemark.edges.map(eachEdge => {
+        const { title, image, summary } = eachEdge.node.frontmatter;
+        const link = `${process.env.BASE_URL}/blogs/${eachEdge.node.fields.slug.toLowerCase()}`;
+        const timeToRead = eachEdge.node.timeToRead;
         return {
-            title: eachEdge.node.frontmatter.title,
-            image: eachEdge.node.frontmatter.image,
-            link: `${process.env.BASE_URL}/blogs/${eachEdge.node.fields.slug.toLowerCase()}` 
+            title, image, summary, link, timeToRead
         };
 	});
 	

@@ -1,9 +1,10 @@
 $transitionDuration: 0.4s;
 $initialTextOffset: 60%;
-$textTranslateOffset: 50%;
+$textTranslateOffset: 55%;
 $brightnessOnHover: 40%;
 $minCardHeight: 180px;
 $scaleFactor: 1.04;
+$footnoteOpacity: 0.65;
 
 .blogList {
     padding: 25px;
@@ -13,6 +14,7 @@ $scaleFactor: 1.04;
 
     .listTitle {
         font-size: 200%;
+        text-align: center;
     }
 
     .blogCard {
@@ -23,8 +25,12 @@ $scaleFactor: 1.04;
         box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1),
             0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1),
             0 16px 16px rgba(0, 0, 0, 0.1);
+        background-size: cover;
+        background-position: center;
+        background-color: rgb(20, 20, 20);
 
         .image {
+            height: 100%;
             & > img {
                 width: 100%;
                 display: block;
@@ -46,12 +52,18 @@ $scaleFactor: 1.04;
             transition-duration: $transitionDuration;
 
             .title {
-                font-size: 200%;
+                font-size: 150%;
+                margin-bottom: 0;
                 text-align: center;
             }
 
             .description {
                 text-align: center;
+                margin: 0 15px;
+            }
+
+            .footnote {
+                opacity: $footnoteOpacity;
             }
         }
 

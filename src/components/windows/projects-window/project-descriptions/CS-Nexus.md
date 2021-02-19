@@ -1,6 +1,7 @@
 ---
 title: CS Nexus
 image: https://raw.githubusercontent.com/Tymotex/CS-Nexus/master/public/thumbnail.png
+summary: A personal blogging site, built with Node.js, Express, MongoDB, Bootstrap 4 and jQuery.
 ---
 
 A personal blogging site, built with Node.js, Express, MongoDB, Bootstrap 4 and jQuery.

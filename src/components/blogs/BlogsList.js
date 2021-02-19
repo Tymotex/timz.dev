@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import styles from './Blogs.module.scss';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import BlogCard from './BlogCard.js';
+import {
+    Divider
+} from '@material-ui/core';
 
 const BlogsList = ({ blogs }) => {
     return (
@@ -14,12 +17,14 @@ const BlogsList = ({ blogs }) => {
             <h2 className={styles.listTitle}>
                 Project Blogs
             </h2>
+            <Divider />
             <Masonry>
                 {blogs.map((eachBlog, i) => (
                     // TODO: Add spacing between grid items, add card text, clickable link
                     <BlogCard blog={eachBlog} key={i} />
                 ))}
             </Masonry>
+            <Divider />
         </ResponsiveMasonry>
     );
 };

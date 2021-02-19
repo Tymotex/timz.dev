@@ -1,6 +1,7 @@
 ---
 title: Deliv O Bot
 image: https://tymotex.github.io/timz.dev/public/project-images/deliv-o-bot-thumbnail.png
+summary: An autonomous object delivery vehicle, built with the Arduino Uno Rev3.
 ---
 
 An autonomous object delivery vehicle, built with the Arduino Uno Rev3.
