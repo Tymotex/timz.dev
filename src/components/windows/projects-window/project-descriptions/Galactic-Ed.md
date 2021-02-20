@@ -1,6 +1,6 @@
 ---
 title: Galactic Ed
-image: https://raw.githubusercontent.com/kishek2000/accentureHackathon/master/frontend/public/showcaseThumbnail.png
+image: https://raw.githubusercontent.com/kishek2000/accentureHackathon/master/images/showcaseThumbnail.png
 summary: An intelligent educational platform that tailors a curriculum for young children with ASD, built for the Autism Awareness charity organisation.
 ---
 
