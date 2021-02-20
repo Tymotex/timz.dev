@@ -120,7 +120,7 @@ export default {
         },
         {
             title: "Galactic Ed",
-            thumbnail: "https://raw.githubusercontent.com/kishek2000/accentureHackathon/master/galactic-education/public/showcaseThumbnail.PNG",
+            thumbnail: "https://raw.githubusercontent.com/kishek2000/accentureHackathon/master/images/showcaseThumbnail.png",
             description: marked(bypassFrontmatter(descriptions.galacticed)),
             furtherLinks: [
                 {
@@ -143,7 +143,7 @@ export default {
             overlay: {
                 icon: images.overlayImages.github,                    
                 label: "View on GitHub",
-                link: "https://raw.githubusercontent.com/kishek2000/accentureHackathon/master/frontend/public/showcaseThumbnail.png"   
+                link: "https://github.com/kishek2000/accentureHackathon"  
             }
         }
     ],

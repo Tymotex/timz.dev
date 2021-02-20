@@ -1,6 +1,7 @@
 const path = require('path');
 const colours = require('colors');
 
+
 /**
   * onCreateNode: https://www.gatsbyjs.com/docs/node-apis/#onCreateNode
   * Called when a new node is created. Plugins wishing to extend or transform
@@ -31,6 +32,13 @@ module.exports.onCreateNode = ({ node, actions }) => {
 module.exports.createPages = async ({ graphql, actions }) => {
     // Using src/components/templates/blog.js as the page component:
     const blogTemplatePath = path.resolve("./src/components/templates/blog.js");
+    const homePagePath = path.resolve("./src/pages/home.js");
+
+    actions.createPage({
+        path: `/home/:targetWindow`,
+        matchPath: `/home/:targetWindow`,
+        component: homePagePath
+    });
 
     const res = await graphql(`
         query {

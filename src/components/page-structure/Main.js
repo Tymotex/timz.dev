@@ -5,11 +5,12 @@ import {
     AboutWindow,
     ProjectsWindow,
     BlogsWindow,
-    ResumeWindow
+    ContactWindow
 } from "../windows";
 
 class Main extends React.Component {    
     render() {
+        // alert(`Main.article: ${this.props.article}`);
         return (
             <div
                 ref={this.props.setWrapperRef}
@@ -20,7 +21,7 @@ class Main extends React.Component {
                 <AboutWindow {...this.props} nameID="about" text="About" />
                 <ProjectsWindow {...this.props} nameID="projects" text="Projects" />
                 <BlogsWindow {...this.props} nameID="blogs" text="Blogs" />
-                <ResumeWindow {...this.props} nameID="resume" text="Resume" />
+                <ContactWindow {...this.props} nameID="contact" text="Contact" />
             </div>
         );
     }

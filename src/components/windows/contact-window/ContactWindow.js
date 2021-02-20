@@ -2,7 +2,7 @@ import React from 'react';
 import Window from '../Window.js';
 import ContactForm from './ContactForm';
 
-const ResumeWindow = (props) => {
+const ContactWindow = (props) => {
     return (
         <Window {...props}>
             <p>
@@ -18,4 +18,4 @@ const ResumeWindow = (props) => {
     )
 }
 
-export default ResumeWindow;
+export default ContactWindow;

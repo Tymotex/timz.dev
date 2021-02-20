@@ -3,6 +3,7 @@ import WindowCloseButton from './WindowCloseButton';
 import windowStyles from './Window.module.scss';
 
 const Window = ({ nameID, text, image, article, articleTimeout, onCloseArticle, children }) => {
+    console.log(`${article} is open`);
     return (
         <article
             id={nameID}

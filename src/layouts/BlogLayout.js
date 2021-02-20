@@ -12,7 +12,6 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import { Button } from '@material-ui/core';
 import { DrawerList } from './components';
 import styles from './BlogLayout.module.scss';
 
@@ -77,6 +76,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	content: {
         flexGrow: 1,
+        paddingTop: 20,
 		transition: theme.transitions.create('margin', {
             easing: theme.transitions.easing.sharp,
 			duration: theme.transitions.duration.leavingScreen,
@@ -168,7 +168,7 @@ const BlogLayout = ({ pageName="Blogs", children }) => {
                         >
                             <div className={classes.drawerHeader}>
                                 <IconButton onClick={handleDrawerClose}>
-                                    {/* {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />} */}
+                                    {open ? <ChevronLeftIcon /> : <ChevronRightIcon />}
                                 </IconButton>
                             </div>
                             <Divider />
