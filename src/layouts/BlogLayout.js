@@ -1,28 +1,41 @@
 import React from 'react';
 import { Container } from '@material-ui/core';
 import clsx from 'clsx';
-import { makeStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
+import { 
+    fade, 
+    makeStyles 
+} from '@material-ui/core/styles';
+import {
+    Drawer,
+    CssBaseline,
+    AppBar,
+    Toolbar,
+    Typography,
+    Divider,
+    InputBase,
+    Button
+} from '@material-ui/core';
+
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import { DrawerList } from './components';
+import {
+    NightsStay,
+    WbSunny,
+    Search
+} from '@material-ui/icons';
+
+import { 
+    DrawerList,
+    BlackOverlay
+} from './components';
 import styles from './BlogLayout.module.scss';
 
 // Theme override
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { lightTheme, darkTheme } from './themes';
 
-import {
-    NightsStay,
-    WbSunny
-} from '@material-ui/icons';
 
 // Hiding the top nav bar on scroll
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
@@ -83,13 +96,44 @@ const useStyles = makeStyles((theme) => ({
 		}),
 		marginLeft: -drawerWidth,
 	},
-	contentShift: {
-        transition: theme.transitions.create('margin', {
-            easing: theme.transitions.easing.easeOut,
-			duration: theme.transitions.duration.enteringScreen,
-		}),
-		marginLeft: 0,
-	},
+    search: {
+        position: 'relative',
+        borderRadius: theme.shape.borderRadius,
+        backgroundColor: fade(theme.palette.common.white, 0.15),
+        '&:hover': {
+            backgroundColor: fade(theme.palette.common.white, 0.25),
+        },
+        marginRight: theme.spacing(2),
+        marginLeft: 0,
+        width: '100%',
+        [theme.breakpoints.up('sm')]: {
+            marginLeft: theme.spacing(3),
+            width: 'auto',
+        },
+    },
+    searchIcon: {
+        padding: theme.spacing(0, 2),
+        height: '100%',
+        position: 'absolute',
+        right: '0',
+        pointerEvents: 'none',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    inputRoot: {
+        color: 'inherit',
+    },
+    inputInput: {
+        padding: theme.spacing(1, 1, 1, 0),
+        // vertical padding + font size from searchIcon
+        paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+        transition: theme.transitions.create('width'),
+        width: '100%',
+        [theme.breakpoints.up('md')]: {
+            width: '20ch',
+        },
+    }
 }));
 
 const lightMode = createMuiTheme(lightTheme);
@@ -141,6 +185,19 @@ const BlogLayout = ({ pageName="Blogs", children }) => {
                                     <Typography variant="h6" noWrap>
                                         {pageName}
                                     </Typography>
+                                    <div className={classes.search}>
+                                        <div className={classes.searchIcon}>
+                                            <Search />
+                                        </div>
+                                        <InputBase
+                                            placeholder="Search…"
+                                            classes={{
+                                                root: classes.inputRoot,
+                                                input: classes.inputInput,
+                                            }}
+                                            inputProps={{ 'aria-label': 'search' }}
+                                        />
+                                    </div>
                                     <div className={styles.rightContainer}>
                                         <IconButton 
                                             className={styles.darkModeButton}
@@ -176,10 +233,9 @@ const BlogLayout = ({ pageName="Blogs", children }) => {
                             <Divider />
                         </Drawer>
                         <main
-                            className={clsx(classes.content, {
-                                [classes.contentShift]: open,
-                            })}
+                            className={clsx(classes.content)}
                         >
+                            <BlackOverlay overlayActive={open} />
                             <div className={classes.drawerHeader} />
                             {children}
                         </main>
