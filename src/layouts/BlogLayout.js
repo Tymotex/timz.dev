@@ -12,8 +12,7 @@ import {
     Toolbar,
     Typography,
     Divider,
-    InputBase,
-    Button
+    InputBase
 } from '@material-ui/core';
 
 import IconButton from '@material-ui/core/IconButton';
@@ -45,8 +44,6 @@ import Cookies from 'js-cookie';
 import { siteCookies } from '../constants';
 
 const drawerWidth = 240;
-
-// TODO: dark mode: https://stackoverflow.com/questions/55846691/react-material-ui-theme-change
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -154,7 +151,7 @@ const BlogLayout = ({ pageName="Blogs", children }) => {
         setOpen(true);
 	};
     
-	const handleDrawerClose = () => {
+	const handleDrawerClose = (event) => {
         setOpen(false);
     };
     
@@ -234,6 +231,7 @@ const BlogLayout = ({ pageName="Blogs", children }) => {
                         </Drawer>
                         <main
                             className={clsx(classes.content)}
+                            onClick={handleDrawerClose}
                         >
                             <BlackOverlay overlayActive={open} />
                             <div className={classes.drawerHeader} />
