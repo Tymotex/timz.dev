@@ -7,7 +7,15 @@ import {
     Divider
 } from '@material-ui/core';
 
-const BlogsList = ({ blogs }) => {
+const applySearchFilter = (blogs, searchQuery) => {
+    return blogs.filter(
+        (eachBlog) => eachBlog.title.toLowerCase().includes(searchQuery)
+    );
+}
+
+const BlogsList = ({ blogs, searchQuery }) => {
+    // alert(`Searching for ${searchQuery}`);
+    const filteredBlogs = applySearchFilter(blogs, searchQuery);
     return (
         <ResponsiveMasonry 
             className={styles.blogList}      
@@ -19,7 +27,7 @@ const BlogsList = ({ blogs }) => {
             </h2>
             <Divider />
             <Masonry>
-                {blogs.map((eachBlog, i) => (
+                {filteredBlogs.map((eachBlog, i) => (
                     // TODO: Add spacing between grid items, add card text, clickable link
                     <BlogCard blog={eachBlog} key={i} />
                 ))}

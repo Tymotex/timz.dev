@@ -142,11 +142,13 @@ const toggleDarkMode = () => {
     return !wasActive;
 }
 
+
 const BlogLayout = ({ pageName="Blogs", children }) => {
     const classes = useStyles();
 	const [open, setOpen] = React.useState(false);
     const [darkModeActive, setDarkModeActive] = React.useState(Cookies.get(siteCookies.DARK_MODE_ACTIVE)); 
-
+    const [searchQuery, setSearchQuery] = React.useState("");
+    
 	const handleDrawerOpen = () => {
         setOpen(true);
 	};
@@ -155,6 +157,10 @@ const BlogLayout = ({ pageName="Blogs", children }) => {
         setOpen(false);
     };
     
+    const dynamicBlogSearch = (event) => {
+        setSearchQuery(event.target.value);
+    }
+
     const trigger = useScrollTrigger({ target: typeof window !== 'undefined' ? window : null });
     
     return (
@@ -182,12 +188,15 @@ const BlogLayout = ({ pageName="Blogs", children }) => {
                                     <Typography variant="h6" noWrap>
                                         {pageName}
                                     </Typography>
+                                    {/* Search bar */}
                                     <div className={classes.search}>
                                         <div className={classes.searchIcon}>
                                             <Search />
                                         </div>
                                         <InputBase
                                             placeholder="Search…"
+                                            onChange={dynamicBlogSearch}
+                                            id="blog-search-field" 
                                             classes={{
                                                 root: classes.inputRoot,
                                                 input: classes.inputInput,
@@ -196,6 +205,7 @@ const BlogLayout = ({ pageName="Blogs", children }) => {
                                         />
                                     </div>
                                     <div className={styles.rightContainer}>
+                                        {/* Dark mode toggler */}
                                         <IconButton 
                                             className={styles.darkModeButton}
                                             onClick={() => setDarkModeActive(toggleDarkMode())}
@@ -210,7 +220,7 @@ const BlogLayout = ({ pageName="Blogs", children }) => {
                                 </Toolbar>
                             </AppBar>
                         </Slide>
-
+                        {/* Nav bar drawer */}
                         <Drawer
                             className={classes.drawer}
                             variant="persistent"
@@ -232,10 +242,15 @@ const BlogLayout = ({ pageName="Blogs", children }) => {
                         <main
                             className={clsx(classes.content)}
                             onClick={handleDrawerClose}
+                            onKeyDown={handleDrawerClose}  // Silences the warning: "Visible, non-interactive elements with click handlers must have at least one keyboard listener"
+                            role="presentation"            // Silences the warning: "Non-interactive elements should not be assigned mouse or keyboard event listeners"
                         >
                             <BlackOverlay overlayActive={open} />
                             <div className={classes.drawerHeader} />
-                            {children}
+                            {React.Children.map(
+                                children, 
+                                (child) => React.cloneElement(child, { searchQuery: searchQuery })
+                            )}
                         </main>
                     </div>
                 </Container>

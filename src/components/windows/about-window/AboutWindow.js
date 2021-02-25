@@ -12,7 +12,7 @@ const AboutWindow = (props) => {
                 {aboutDescription}
             </p>
             <Typography gutterBottom variant="h5" component="h2">
-                Interests
+                Interests and Hobbies
             </Typography>
             <InterestsLists interests={interests}/>
         </Window>

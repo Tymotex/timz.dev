@@ -53,6 +53,27 @@ const bio = {
             
             `,
             image: interests.guitar
+        },
+        {
+            name: "Powerlifting",
+            description: `
+            
+            `,
+            image: interests.powerlifting
+        },
+        {
+            name: "Gardening",
+            description: `
+            
+            `,
+            image: interests.gardening
+        },
+        {
+            name: "Origami",
+            description: `
+            
+            `,
+            image: interests.origami
         }
     ]
 };

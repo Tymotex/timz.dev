@@ -4,7 +4,18 @@ import electronics from './electronics.png';
 import guitar from './fingerstyle-guitar.png';
 import gameDev from './game-dev.png';
 import reading from './reading.png';
+import origami from './origami.png';
+import powerlifting from './powerlifting.png';
+import gardening from './gardening.png';
 
 export default { 
-    coding, deepLearning, electronics, guitar, gameDev, reading 
+    coding,
+    deepLearning,
+    electronics,
+    guitar,
+    gameDev,
+    reading,
+    origami,
+    powerlifting,
+    gardening
 };
