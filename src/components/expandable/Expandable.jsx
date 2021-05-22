@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import Typography from '@material-ui/core/Typography';
-import ExpandButton from './ExpandButton';
-import styles from './Expandable.module.scss';
 import { Container } from '@material-ui/core';
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import { FadeInWrapper } from 'src/components/animations';
+import styles from './Expandable.module.scss';
+import ExpandButton from './ExpandButton';
 
 const Expandable = ({ text, children }) => {
     const [isExpanded, setIsExpanded] = useState(false);

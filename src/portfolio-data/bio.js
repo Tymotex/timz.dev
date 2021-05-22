@@ -3,6 +3,7 @@ import utils from './utils';
 import workExperience from './work-experience';
 
 const bio = {
+    name: 'Tim Zhang',
     frontPageSummary: `
         3rd year software engineering student at UNSW.
     `,

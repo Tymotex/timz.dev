@@ -1,12 +1,7 @@
-import PropTypes from "prop-types";
-import React from "react";
+import PropTypes from 'prop-types';
+import React from 'react';
 
-import {
-    AboutWindow,
-    ProjectsWindow,
-    BlogsWindow,
-    ContactWindow,
-} from "../windows";
+import { AboutWindow, ProjectsWindow, BlogsWindow, ContactWindow } from '../windows';
 
 class Main extends React.Component {
     render() {
@@ -14,25 +9,13 @@ class Main extends React.Component {
             <div
                 ref={this.props.setWrapperRef}
                 id="main"
-                style={
-                    this.props.timeout
-                        ? { display: "flex" }
-                        : { display: "none" }
-                }
+                style={this.props.timeout ? { display: 'flex' } : { display: 'none' }}
             >
                 {/* Bottom navigation buttons */}
                 <AboutWindow {...this.props} nameID="about" text="About" />
-                <ProjectsWindow
-                    {...this.props}
-                    nameID="projects"
-                    text="Projects"
-                />
+                <ProjectsWindow {...this.props} nameID="projects" text="Projects" />
                 <BlogsWindow {...this.props} nameID="blogs" text="Blogs" />
-                <ContactWindow
-                    {...this.props}
-                    nameID="contact"
-                    text="Contact"
-                />
+                <ContactWindow {...this.props} nameID="contact" text="Contact" />
             </div>
         );
     }

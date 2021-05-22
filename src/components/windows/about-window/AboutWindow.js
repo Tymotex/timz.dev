@@ -10,6 +10,14 @@ const AboutWindow = props => {
     return (
         <Window {...props}>
             <p>{aboutDescription}</p>
+            <ul>
+                <li>
+                    <a href={bio.resumeURL}>Resume</a>
+                </li>
+                <li>
+                    <a href={bio.transcriptURL}>Transcript</a>
+                </li>
+            </ul>
             <Expandable text="Work Experience">
                 <WorkExperience />
             </Expandable>
