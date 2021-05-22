@@ -1,11 +1,8 @@
 import React from 'react';
-import Window from '../Window.js';
-import {
-    useStaticQuery,
-    graphql
-} from 'gatsby';
+import Window from 'src/components/windows/Window.js';
+import { useStaticQuery, graphql } from 'gatsby';
 
-const BlogsWindow = (props) => {
+const BlogsWindow = props => {
     const data = useStaticQuery(graphql`
         query MyQuery {
             allContentfulBlogPost {
@@ -32,7 +29,7 @@ const BlogsWindow = (props) => {
                 </ul> */}
             </p>
         </Window>
-    )
-}
+    );
+};
 
 export default BlogsWindow;

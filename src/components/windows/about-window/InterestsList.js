@@ -5,15 +5,18 @@ import CardContent from '@material-ui/core/CardContent';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import styles from './Interests.module.scss'; 
+import styles from './Interests.module.scss';
 
 // TODO: documentation for 'interests' shape. What's the standard way to do this in react?
 const InterestsList = ({ interests }) => {
     return (
         <Grid container>
-            {interests.map((eachInterest) => (
+            {interests.map(eachInterest => (
                 <Grid item md={4} className={styles.gridItem}>
-                    <Card className={styles.interestCard} style={{"border": "6px solid rgba(34, 34, 34, 1)"}}>
+                    <Card
+                        className={styles.interestCard}
+                        style={{ border: '6px solid rgba(34, 34, 34, 1)' }}
+                    >
                         <CardActionArea>
                             <CardMedia
                                 component="img"
@@ -23,7 +26,12 @@ const InterestsList = ({ interests }) => {
                                 title="Contemplative Reptile"
                             />
                             <CardContent className={styles.content}>
-                                <Typography className={styles.title} gutterBottom variant="h6" component="h5">
+                                <Typography
+                                    className={styles.title}
+                                    gutterBottom
+                                    variant="h6"
+                                    component="h5"
+                                >
                                     {eachInterest.name}
                                 </Typography>
                                 <Typography variant="body2" color="textSecondary" component="p">
@@ -36,6 +44,6 @@ const InterestsList = ({ interests }) => {
             ))}
         </Grid>
     );
-}
+};
 
 export default InterestsList;

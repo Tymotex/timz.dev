@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const ContactForm = () => {
     // Using Netlify's built-in form handling. See https://docs.netlify.com/forms/setup/#html-forms
@@ -23,7 +23,7 @@ const ContactForm = () => {
                 </li>
             </ul>
         </form>
-    )
+    );
 };
 
 export default ContactForm;

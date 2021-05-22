@@ -1,8 +1,9 @@
-import PropTypes from 'prop-types'
-import React from 'react'
+import PropTypes from 'prop-types';
+import React from 'react';
 import BottomNav from './BottomNav';
+import { bio } from 'src/portfolio-data';
 
-const Header = (props) => (
+const Header = props => (
     <header id="header" style={props.timeout ? { display: 'none' } : {}}>
         <div className="logo">
             <span className="icon fa-code"></span>
@@ -11,20 +12,18 @@ const Header = (props) => (
             <div className="inner">
                 <h1>Tim Zhang</h1>
                 <p>
-                    3rd year student studying software engineering and commerce at UNSW.
+                    {bio.frontPageSummary}
                     <br />
                 </p>
             </div>
         </div>
         <BottomNav {...props} />
     </header>
-)
-
+);
 
 Header.propTypes = {
     onOpenArticle: PropTypes.func,
     timeout: PropTypes.bool,
-}
+};
 
-
-export default Header
+export default Header;

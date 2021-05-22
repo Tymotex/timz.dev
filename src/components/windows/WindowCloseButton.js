@@ -1,6 +1,4 @@
-import {
-    Tooltip
-} from '@material-ui/core';
+import { Tooltip } from '@material-ui/core';
 import React from 'react';
 
 const WindowCloseButton = ({ onCloseArticle }) => {
@@ -10,17 +8,17 @@ const WindowCloseButton = ({ onCloseArticle }) => {
                 className="close"
                 role="button"
                 onClick={() => {
-                    onCloseArticle()
+                    onCloseArticle();
                 }}
                 onKeyDown={() => {
-                    onCloseArticle()
+                    onCloseArticle();
                 }}
-                tabIndex={0} 
+                tabIndex={0}
             >
                 Close
             </div>
         </Tooltip>
     );
-}
+};
 
 export default WindowCloseButton;

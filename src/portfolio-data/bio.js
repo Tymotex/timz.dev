@@ -1,7 +1,8 @@
-import interests from './interests-images';
+import interests from "./interests-images";
+
 const bio = {
     frontPageSummary: `
-        3rd year student studying software engineering and commerce at UNSW.
+        3rd year software engineering student at UNSW.
     `,
     aboutDescription: `
         Hi! I'm Tim, a 3rd year student studying software engineering and 
@@ -17,65 +18,73 @@ const bio = {
             description: `
                 
             `,
-            image: interests.coding
+            image: interests.coding,
         },
         {
             name: "Deep learning",
             description: `
 
             `,
-            image: interests.deepLearning
+            image: interests.deepLearning,
         },
         {
             name: "Electronics",
             description: `
             
             `,
-            image: interests.electronics
+            image: interests.electronics,
         },
         {
             name: "Game development",
             description: `
             
             `,
-            image: interests.gameDev
+            image: interests.gameDev,
         },
         {
             name: "Science books & biographies",
             description: `
             
             `,
-            image: interests.reading
+            image: interests.reading,
         },
         {
             name: "Fingerstyle guitar",
             description: `
             
             `,
-            image: interests.guitar
+            image: interests.guitar,
         },
         {
             name: "Powerlifting",
             description: `
             
             `,
-            image: interests.powerlifting
+            image: interests.powerlifting,
         },
         {
             name: "Gardening",
             description: `
             
             `,
-            image: interests.gardening
+            image: interests.gardening,
         },
         {
             name: "Origami",
             description: `
             
             `,
-            image: interests.origami
-        }
-    ]
+            image: interests.origami,
+        },
+    ],
+    workExperience: [
+        {
+            name: "UNSW - Academic Tutor for COMP2521",
+            description: `
+                
+            `,
+        },
+    ],
 };
 
 export default bio;

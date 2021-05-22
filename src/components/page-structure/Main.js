@@ -1,32 +1,42 @@
-import PropTypes from "prop-types"
-import React from "react"
+import PropTypes from "prop-types";
+import React from "react";
 
-import { 
+import {
     AboutWindow,
     ProjectsWindow,
     BlogsWindow,
-    ContactWindow
+    ContactWindow,
 } from "../windows";
 
-class Main extends React.Component {    
+class Main extends React.Component {
     render() {
-        // alert(`Main.article: ${this.props.article}`);
         return (
             <div
                 ref={this.props.setWrapperRef}
                 id="main"
-                style={this.props.timeout ? { display: "flex" } : { display: "none" }}
+                style={
+                    this.props.timeout
+                        ? { display: "flex" }
+                        : { display: "none" }
+                }
             >
                 {/* Bottom navigation buttons */}
                 <AboutWindow {...this.props} nameID="about" text="About" />
-                <ProjectsWindow {...this.props} nameID="projects" text="Projects" />
+                <ProjectsWindow
+                    {...this.props}
+                    nameID="projects"
+                    text="Projects"
+                />
                 <BlogsWindow {...this.props} nameID="blogs" text="Blogs" />
-                <ContactWindow {...this.props} nameID="contact" text="Contact" />
+                <ContactWindow
+                    {...this.props}
+                    nameID="contact"
+                    text="Contact"
+                />
             </div>
         );
     }
 }
-
 
 Main.propTypes = {
     route: PropTypes.object,
@@ -35,7 +45,6 @@ Main.propTypes = {
     onCloseArticle: PropTypes.func,
     timeout: PropTypes.bool,
     setWrapperRef: PropTypes.func.isRequired,
-}
+};
 
-
-export default Main
+export default Main;
