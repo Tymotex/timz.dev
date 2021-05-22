@@ -117,13 +117,35 @@ export default {
                 link: 'https://github.com/kishek2000/accentureHackathon',
             },
         },
+        {
+            title: 'Employ.me',
+            thumbnail:
+                'https://raw.githubusercontent.com/Tymotex/JobTracker/master/SourceCode_and_Documentation/images/screenshots/dashboard-index.png',
+            description: utils.renderMarkdown(descriptions.employMe),
+            furtherLinks: [
+                {
+                    label: 'Demo',
+                    link: 'https://youtu.be/VoWjZLe-DFs',
+                },
+                {
+                    label: 'GitHub',
+                    link: 'https://github.com/Tymotex/JobTracker',
+                },
+                {
+                    label: 'Visit',
+                    link: 'https://employ-me.netlify.app/',
+                },
+            ],
+            technologies: ['javascript', 'react', 'python', 'flask', 'mongodb', 'materialUI'],
+            overlay: {
+                icon: images.overlayImages.github,
+                label: 'View on GitHub',
+                link: 'https://github.com/Tymotex/JobTracker',
+            },
+        },
     ],
     miniProjects: [
         // A collection of projects that were either university projects or smaller personal projects
-        // {
-        //     title: "Get2Gether",
-        //     description: utils.renderMarkdown(descriptions.get2gether),
-        // },
         {
             title: 'Hydroponix',
             thumbnail:
@@ -161,6 +183,23 @@ export default {
             },
             gif:
                 'https://github.com/Tymotex/timz.dev/blob/master/public/project-images/deliv-o-bot-showcase.gif?raw=true',
+        },
+        {
+            title: 'Get2Gether',
+            thumbnail: 'https://raw.githubusercontent.com/Wal-eed/get2gether/dev/get2gether.png',
+            description: utils.renderMarkdown(descriptions.get2gether),
+            furtherLinks: [
+                {
+                    label: 'GitHub',
+                    link: 'https://github.com/wal-eed/get2gether/tree/dev',
+                },
+            ],
+            technologies: ['javascript', 'react', 'python', 'flask', 'mongodb'],
+            overlay: {
+                icon: images.overlayImages.github,
+                label: 'View on GitHub',
+                link: 'https://github.com/wal-eed/get2gether/tree/dev',
+            },
         },
         {
             title: 'POSIX Shell to Perl 5 Transpiler',
@@ -209,6 +248,10 @@ export default {
                 {
                     label: 'Demo',
                     link: 'https://www.youtube.com/watch?v=MPnFIEm2_oM',
+                },
+                {
+                    label: 'GitHub',
+                    link: 'https://github.com/Tymotex/DarkShadeCrypt',
                 },
             ],
             technologies: ['java', 'javafx'],

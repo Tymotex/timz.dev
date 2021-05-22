@@ -24,7 +24,7 @@ const truncate = input =>
 
 // Strips the frontmatter from the given markdown string
 const bypassFrontmatter = markdownBody => {
-    return markdownBody.replace(/^---$.*^---$/ms, '');
+    return markdownBody ? markdownBody.replace(/^---$.*^---$/ms, '') : '';
 };
 
 const renderMarkdown = rawMarkdown => {

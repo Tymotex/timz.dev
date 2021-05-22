@@ -1,6 +1,6 @@
 import React from 'react';
 import TechnologyItem from './TechnologyItem.js';
-import images from 'src/portfolio-data/icons';
+import images from 'src/portfolio-data/tech-icons';
 import listStyles from './TechnologyList.module.scss';
 
 // Given the name of a technology, returns the corresponding image object.
