@@ -1,4 +1,4 @@
-// Collection of my personal projects
+// Collection of my personal projects in JSON format
 
 // Importing a set of images to be displayed in the hover overlay
 import images from '../images';

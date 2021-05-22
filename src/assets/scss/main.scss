@@ -1,50 +1,50 @@
-@import "libs/vars";
-@import "libs/functions";
-@import "libs/mixins";
-@import "libs/skel";
-@import "../css/font-awesome.min.css";
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600");
+@import 'libs/vars';
+@import 'libs/functions';
+@import 'libs/mixins';
+@import 'libs/skel';
+@import '../css/font-awesome.min.css';
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600');
 
 @include skel-breakpoints(
     (
-        xlarge: "(max-width: 1680px)",
-        large: "(max-width: 1280px)",
-        medium: "(max-width: 980px)",
-        small: "(max-width: 736px)",
-        xsmall: "(max-width: 480px)",
-        xxsmall: "(max-width: 360px)",
+        xlarge: '(max-width: 1680px)',
+        large: '(max-width: 1280px)',
+        medium: '(max-width: 980px)',
+        small: '(max-width: 736px)',
+        xsmall: '(max-width: 480px)',
+        xxsmall: '(max-width: 360px)',
     )
 );
 
 @include skel-layout(
     (
-        reset: "full",
-        boxModel: "border",
+        reset: 'full',
+        boxModel: 'border',
     )
 );
 
 // Base.
 
-@import "base/page";
-@import "base/typography";
+@import 'base/page';
+@import 'base/typography';
 
 // Component.
 
-@import "components/form";
-@import "components/box";
-@import "components/icon";
-@import "components/image";
-@import "components/list";
-@import "components/table";
-@import "components/button";
+@import 'components/form';
+@import 'components/box';
+@import 'components/icon';
+@import 'components/image';
+@import 'components/list';
+@import 'components/table';
+@import 'components/button';
 
 // Layout.
 
-@import "layout/bg";
-@import "layout/wrapper";
-@import "layout/header";
-@import "layout/main";
-@import "layout/footer";
+@import 'layout/bg';
+@import 'layout/wrapper';
+@import 'layout/header';
+@import 'layout/main';
+@import 'layout/footer';
 
 // ===== Other Global Custom SCSS =====
 // Putting the particle js background behind the main content:
@@ -75,4 +75,15 @@
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: #555;
+}
+
+// Global overrides
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    letter-spacing: normal;
 }

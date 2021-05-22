@@ -12,7 +12,7 @@ const InterestsList = ({ interests }) => {
     return (
         <Grid container>
             {interests.map(eachInterest => (
-                <Grid item md={4} className={styles.gridItem}>
+                <Grid item xs={4} md={3} className={styles.gridItem}>
                     <Card
                         className={styles.interestCard}
                         style={{ border: '6px solid rgba(34, 34, 34, 1)' }}

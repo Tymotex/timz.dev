@@ -1,25 +1,18 @@
 import React from 'react';
 import Window from 'src/components/windows/Window.js';
 import ContactForm from './ContactForm';
+import bio from 'src/portfolio-data/bio';
 
 const ContactWindow = props => {
     return (
         <Window {...props}>
             <p>
                 Resume available{' '}
-                <a
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://tymotex.github.io/timz.dev/public/resume/resume.pdf"
-                >
+                <a target="_blank" rel="noreferrer" href={bio.resumeURL}>
                     <strong>here</strong>
                 </a>
                 . Transcript available{' '}
-                <a
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://tymotex.github.io/timz.dev/public/resume/transcript.pdf"
-                >
+                <a target="_blank" rel="noreferrer" href={bio.transcriptURL}>
                     <strong>here</strong>
                 </a>
                 .
