@@ -7,6 +7,7 @@ import React from 'react';
 import windowStyles from 'src/components/windows/Window.module.scss';
 import { TechnologyList } from './technologies-list';
 import HoverOverlay from './HoverOverlay.js';
+import TagList from './TagList';
 
 const ProjectCard = ({ project, children }) => {
     const { title, thumbnail, technologies, overlay, gif } = project;
@@ -63,6 +64,7 @@ const ProjectCard = ({ project, children }) => {
                 >
                     {title}
                 </Typography>
+                <TagList tags={project.tags} />
                 <hr className={windowStyles.thinHr} />
                 {children}
                 {technologies && technologies.length > 0 && (

@@ -116,6 +116,7 @@ export default {
                 label: 'View on GitHub',
                 link: 'https://github.com/kishek2000/accentureHackathon',
             },
+            tags: ['team', 'ongoing'],
         },
         {
             title: 'Employ.me',
@@ -136,12 +137,40 @@ export default {
                     link: 'https://employ-me.netlify.app/',
                 },
             ],
-            technologies: ['javascript', 'react', 'python', 'flask', 'mongodb', 'materialUI'],
+            technologies: [
+                'javascript',
+                'react',
+                'python',
+                'flask',
+                'mongodb',
+                'materialUI',
+                'sass',
+            ],
             overlay: {
                 icon: images.overlayImages.github,
                 label: 'View on GitHub',
                 link: 'https://github.com/Tymotex/JobTracker',
             },
+            tags: ['team', 'uni', 'ongoing'],
+        },
+        {
+            title: 'Structs.sh',
+            thumbnail:
+                'https://raw.githubusercontent.com/csesoc/Structs.sh/master/public/structs.png',
+            description: utils.renderMarkdown(descriptions.structs),
+            furtherLinks: [
+                {
+                    label: 'GitHub',
+                    link: 'https://github.com/csesoc/Structs.sh/',
+                },
+            ],
+            technologies: ['javascript', 'react'],
+            overlay: {
+                icon: images.overlayImages.github,
+                label: 'View on GitHub',
+                link: 'https://github.com/csesoc/Structs.sh/',
+            },
+            tags: ['team', 'ongoing'],
         },
     ],
     miniProjects: [
@@ -183,6 +212,7 @@ export default {
             },
             gif:
                 'https://github.com/Tymotex/timz.dev/blob/master/public/project-images/deliv-o-bot-showcase.gif?raw=true',
+            tags: ['team', 'uni'],
         },
         {
             title: 'Get2Gether',
@@ -200,6 +230,7 @@ export default {
                 label: 'View on GitHub',
                 link: 'https://github.com/wal-eed/get2gether/tree/dev',
             },
+            tags: ['team', 'ongoing'],
         },
         {
             title: 'POSIX Shell to Perl 5 Transpiler',
@@ -218,6 +249,7 @@ export default {
                 label: 'View on GitHub',
                 link: 'https://github.com/Tymotex/ShellPerlTranspiler',
             },
+            tags: ['uni'],
         },
         {
             title: 'CS Nexus',
@@ -262,6 +294,7 @@ export default {
             },
             gif:
                 'https://github.com/Tymotex/timz.dev/blob/master/public/project-images/darkshade-crypt-showcase.gif?raw=true',
+            tags: ['team', 'uni'],
         },
         {
             title: 'timz.dev',

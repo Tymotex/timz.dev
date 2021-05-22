@@ -4,7 +4,7 @@ image: https://tymotex.github.io/timz.dev/public/project-images/cosmica-title.pn
 summary: Cosmica is a cross-platform sci-fi strategy game written in C# and built with the Unity game engine.
 ---
 
-_Cosmica_ is a cross-platform sci-fi strategy game written in C# and built with the Unity game engine.
+_Cosmica_ is a cross-platform sci-fi strategy game written in C# and built with the Unity game engine. This game was later sold to an indie game publisher in the US.
 
 ### Overview of the game:
 

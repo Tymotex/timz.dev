@@ -1,0 +1,38 @@
+// Styles for the the tag legend component (this is NOT the tag list component
+// that is seen on each card)
+.tagLegend {
+    list-style: none;
+
+    .tagItem {
+        display: flex;
+        align-items: center;
+
+        .tagText {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: normal;
+        }
+        .tagIcon {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+    }
+}
+
+.tagList {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+
+    .tagItem {
+        align-self: center;
+    }
+    .tagIcon {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+    }
+}

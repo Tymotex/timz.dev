@@ -1,8 +1,14 @@
+// Markdown files that are used by src/components/windows/projects-windows/ProjectCard.js
+// and are rendered as blog pages with the route: /blogs/<filename>
+//     Eg. For Techsuite.md, a route for /blogs/Techsuite will be created. See
+//         gatsby-node.js for how this is done.
+
 import techsuiteDesc from './Techsuite.md';
 import tactiledsDesc from './Tactile-DS.md';
 import cosmicaDesc from './Cosmica.md';
 import galacticEdDesc from './Galactic-Ed.md';
 import employMeDesc from './EmployMe.md';
+import structsDesc from './Structs.md';
 import hydroponixDesc from './Hydroponix.md';
 import delivobotDesc from './Autonomous-Deliv-O-Bot.md';
 import get2getherDesc from './Get2Gether.md';
@@ -21,6 +27,7 @@ const descriptions = {
     cosmica: cosmicaDesc,
     galacticed: galacticEdDesc,
     employMe: employMeDesc,
+    structs: structsDesc,
     hydroponix: hydroponixDesc,
     delivobot: delivobotDesc,
     get2gether: get2getherDesc,
