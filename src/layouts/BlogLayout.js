@@ -11,6 +11,7 @@ import {
     Divider,
     InputBase,
 } from '@material-ui/core';
+import siteIcon from 'src/images/icon.png';
 
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -31,6 +32,7 @@ import Slide from '@material-ui/core/Slide';
 
 import Cookies from 'js-cookie';
 import { siteCookies } from '../constants';
+import { Link } from 'gatsby';
 
 const drawerWidth = 240;
 
@@ -176,9 +178,11 @@ const BlogLayout = ({ pageName = 'Blogs', children }) => {
                                 >
                                     <MenuIcon />
                                 </IconButton>
-                                <Typography variant="h6" noWrap>
-                                    {pageName}
-                                </Typography>
+                                <Link to="/" className={styles.homeTitle}>
+                                    <Typography variant="h6" noWrap>
+                                        <img src={siteIcon} /> Timz.dev
+                                    </Typography>
+                                </Link>
                                 {/* Search bar */}
                                 <div className={classes.search}>
                                     <div className={classes.searchIcon}>

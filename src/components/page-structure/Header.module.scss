@@ -1,0 +1,31 @@
+.header {
+    width: 100%;
+    margin: 0;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.25);
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(0, 46, 133, 0.116) 0px 0.25em 1em;
+
+    .name {
+        letter-spacing: 2px;
+        text-transform: none;
+    }
+
+    .summary {
+        letter-spacing: 2px !important;
+        text-transform: none !important;
+    }
+
+    .headerBox {
+        width: 1000px;
+        padding: 30px;
+    }
+
+    .typerContainer {
+        height: 30px;
+        .typedText {
+            font-family: 'Roboto Mono', monospace !important;
+            color: rgb(255, 255, 255);
+            text-transform: none !important;
+        }
+    }
+}

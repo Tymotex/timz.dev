@@ -2,20 +2,42 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import BottomNav from './BottomNav';
 import { bio } from 'src/portfolio-data';
-import HeaderIcon from './HeaderIcon';
+import styles from './Header.module.scss';
+import ReactTypingEffect from 'react-typing-effect';
 
 const Header = props => (
-    <header id="header" style={props.timeout ? { display: 'none' } : {}}>
-        {/* Code icon */}
-        <HeaderIcon />
+    <header className={styles.header} id="header" style={props.timeout ? { display: 'none' } : {}}>
         {/* Central box showing name and summary */}
-        <div className="content">
+        <div className={`${styles.headerBox} content`}>
             <div className="inner">
-                <h1>{bio.name}</h1>
-                <p>
-                    {bio.frontPageSummary}
-                    <br />
-                </p>
+                <h1 className={styles.name}>{bio.name}</h1>
+                <p className={styles.summary}>{bio.frontPageSummary}</p>
+                <div className={styles.typerContainer}>
+                    <ReactTypingEffect
+                        text={[
+                            '<FullstackEngineer />',
+                            '<AspiringDataScientist />',
+                            '<HobbyistGameDev />',
+                            '<COMPTutor />',
+                        ]}
+                        speed={75}
+                        eraseSpeed={50}
+                        cursor="_"
+                        eraseDelay={1500}
+                        typingDelay={750}
+                        cursorRenderer={cursor => <h1>{cursor}</h1>}
+                        displayTextRenderer={(text, i) => {
+                            return (
+                                <p className={styles.typedText}>
+                                    {text.split('').map((char, i) => {
+                                        const key = `${i}`;
+                                        return <span key={key}>{char}</span>;
+                                    })}
+                                </p>
+                            );
+                        }}
+                    />
+                </div>
             </div>
         </div>
         {/* This is the bar of buttons: 'About', 'Projects', 'Blogs', 'Contact' */}
