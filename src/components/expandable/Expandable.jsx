@@ -14,7 +14,13 @@ const Expandable = ({ text, children }) => {
 
     return (
         <ul>
-            <div className={styles.expandable} onClick={handleExpandedToggle}>
+            <div
+                className={styles.expandable}
+                onClick={handleExpandedToggle}
+                onKeyDown={handleExpandedToggle}
+                role="button"
+                tabIndex={0}
+            >
                 <ExpandButton text={text} isExpanded={isExpanded} />
             </div>
             {isExpanded && (

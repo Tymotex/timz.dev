@@ -4,10 +4,12 @@ import BottomNav from './BottomNav';
 import { bio } from 'src/portfolio-data';
 import styles from './Header.module.scss';
 import ReactTypingEffect from 'react-typing-effect';
+import WallpaperSettings from '../particles/WallpaperSettings';
 
 const Header = props => (
     <header className={styles.header} id="header" style={props.timeout ? { display: 'none' } : {}}>
         {/* Central box showing name and summary */}
+        <WallpaperSettings />
         <div className={`${styles.headerBox} content`}>
             <div className="inner">
                 <h1 className={styles.name}>{bio.name}</h1>
@@ -39,6 +41,7 @@ const Header = props => (
                     />
                 </div>
             </div>
+            {props.children}
         </div>
         {/* This is the bar of buttons: 'About', 'Projects', 'Blogs', 'Contact' */}
         <BottomNav {...props} />

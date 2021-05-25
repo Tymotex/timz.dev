@@ -180,7 +180,7 @@ const BlogLayout = ({ pageName = 'Blogs', children }) => {
                                 </IconButton>
                                 <Link to="/" className={styles.homeTitle}>
                                     <Typography variant="h6" noWrap>
-                                        <img src={siteIcon} /> Timz.dev
+                                        <img src={siteIcon} alt="Site icon" /> Timz.dev
                                     </Typography>
                                 </Link>
                                 {/* Search bar */}

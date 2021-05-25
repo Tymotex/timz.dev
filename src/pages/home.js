@@ -1,9 +1,10 @@
-import React from "react";
-import Layout from "../components/page-structure/Layout";
-import Header from "../components/page-structure/Header";
-import Main from "../components/page-structure/Main";
-import Footer from "../components/page-structure/Footer";
-import PropTypes from "prop-types";
+import React from 'react';
+import Layout from '../components/page-structure/Layout';
+import Header from '../components/page-structure/Header';
+import Main from '../components/page-structure/Main';
+import Footer from '../components/page-structure/Footer';
+import PropTypes from 'prop-types';
+import WallpaperSettings from '../components/particles/WallpaperSettings';
 
 class HomePage extends React.Component {
     constructor(props) {
@@ -13,8 +14,8 @@ class HomePage extends React.Component {
             isArticleVisible: false,
             timeout: false,
             articleTimeout: false,
-            article: "",
-            loading: "is-loading",
+            article: '',
+            loading: 'is-loading',
         };
         this.handleOpenArticle = this.handleOpenArticle.bind(this);
         this.handleCloseArticle = this.handleCloseArticle.bind(this);
@@ -23,14 +24,14 @@ class HomePage extends React.Component {
 
     componentDidMount() {
         this.timeoutId = setTimeout(() => {
-            this.setState({ loading: "" });
+            this.setState({ loading: '' });
         }, 100);
         if (this.props.targetWindow) {
             const targetWindow = this.props.targetWindow.toLowerCase();
             if (
-                targetWindow === "projects" ||
-                targetWindow === "about" ||
-                targetWindow === "contact"
+                targetWindow === 'projects' ||
+                targetWindow === 'about' ||
+                targetWindow === 'contact'
             ) {
                 this.handleOpenArticle(this.props.targetWindow);
             }
@@ -80,7 +81,7 @@ class HomePage extends React.Component {
         setTimeout(() => {
             this.setState({
                 isArticleVisible: !this.state.isArticleVisible,
-                article: "",
+                article: '',
             });
         }, 350);
     }
@@ -88,16 +89,17 @@ class HomePage extends React.Component {
     render() {
         return (
             <Layout location={this.props.location}>
+                <WallpaperSettings />
                 <div
                     className={`body ${this.state.loading} ${
-                        this.state.isArticleVisible ? "is-article-visible" : ""
+                        this.state.isArticleVisible ? 'is-article-visible' : ''
                     }`}
                 >
                     <div id="wrapper">
                         <Header
                             onOpenArticle={this.handleOpenArticle}
                             timeout={this.state.timeout}
-                        />
+                        ></Header>
                         <Main
                             isArticleVisible={this.state.isArticleVisible}
                             timeout={this.state.timeout}

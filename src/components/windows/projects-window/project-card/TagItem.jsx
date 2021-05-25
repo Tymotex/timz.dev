@@ -6,7 +6,7 @@ import styles from '../Tag.module.scss';
 const TagItem = ({ tag }) => {
     return (
         <li className={styles.tagItem}>
-            <img className={styles.tagIcon} src={tagIcons[tag]} />
+            <img className={styles.tagIcon} src={tagIcons[tag]} alt="Tag icon" />
         </li>
     );
 };

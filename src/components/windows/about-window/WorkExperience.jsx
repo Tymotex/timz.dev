@@ -1,5 +1,4 @@
 import React from 'react';
-import { Typography } from '@material-ui/core';
 import bio from 'src/portfolio-data/bio';
 import styles from './WorkExperience.module.scss';
 
