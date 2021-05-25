@@ -7,8 +7,9 @@ import reading from './reading.png';
 import origami from './origami.png';
 import powerlifting from './powerlifting.png';
 import gardening from './gardening.png';
+import podcasts from './podcasts.png';
 
-export default { 
+export default {
     coding,
     deepLearning,
     electronics,
@@ -17,5 +18,6 @@ export default {
     reading,
     origami,
     powerlifting,
-    gardening
+    gardening,
+    podcasts,
 };

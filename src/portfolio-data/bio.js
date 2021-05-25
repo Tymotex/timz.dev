@@ -18,67 +18,67 @@ const bio = {
     `,
     interests: [
         {
-            name: 'Coding',
+            name: 'Game Development',
             description: `
-                
-            `,
-            image: interests.coding,
-        },
-        {
-            name: 'Deep learning',
-            description: `
-
-            `,
-            image: interests.deepLearning,
-        },
-        {
-            name: 'Electronics',
-            description: `
-            
-            `,
-            image: interests.electronics,
-        },
-        {
-            name: 'Game development',
-            description: `
-            
+                Sci-fi, strategy, RPGs and retro
             `,
             image: interests.gameDev,
         },
+        // {
+        //     name: 'Deep learning',
+        //     description: `
+        //         Reinforcement learning, NLP, OCR
+        //     `,
+        //     image: interests.deepLearning,
+        // },
         {
-            name: 'Science books & biographies',
+            name: 'Science Books',
             description: `
-            
+                Neuroscience, physics and biology
             `,
             image: interests.reading,
         },
         {
-            name: 'Fingerstyle guitar',
+            name: 'Fingerstyle Guitar',
             description: `
-            
+                Game OSTs and other embarrassing songs 
             `,
             image: interests.guitar,
         },
         {
-            name: 'Powerlifting',
+            name: 'Weightlifting',
             description: `
-            
+                Powerlifting, clean & jerks and snatches
             `,
             image: interests.powerlifting,
         },
         {
             name: 'Gardening',
             description: `
-            
+                Fruit trees, flowers, succulents and radishes (lol)
             `,
             image: interests.gardening,
         },
         {
             name: 'Origami',
             description: `
-            
+                Modular origami, roses and animals
             `,
             image: interests.origami,
+        },
+        {
+            name: 'Electronics',
+            description: `
+                Raspberry pi, Arduino projects, home automation
+            `,
+            image: interests.electronics,
+        },
+        {
+            name: 'Listening to Podcasts',
+            description: `
+                Lex Fridman, Jocko Willink, Sam Harris, Jordan Peterson
+            `,
+            image: interests.podcasts,
         },
     ],
     workExperience: [

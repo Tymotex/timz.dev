@@ -59,12 +59,25 @@ class SketchExample extends React.Component {
 
         return (
             <div>
-                <div style={styles.swatch} onClick={this.handleClick}>
+                <div
+                    style={styles.swatch}
+                    onClick={this.handleClick}
+                    onKeyDown={this.handleClick}
+                    role="button"
+                    tabIndex={0}
+                >
                     <div style={styles.color} />
                 </div>
                 {this.state.displayColorPicker ? (
                     <div style={styles.popover}>
-                        <div style={styles.cover} onClick={this.handleClose} />
+                        <div
+                            style={styles.cover}
+                            onClick={this.handleClose}
+                            onKeyDown={this.handleClose}
+                            role="button"
+                            tabIndex={0}
+                            aria-label="Close"
+                        />
                         <SketchPicker color={this.state.color} onChange={this.handleChange} />
                     </div>
                 ) : null}
