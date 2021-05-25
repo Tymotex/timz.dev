@@ -89,7 +89,7 @@ class HomePage extends React.Component {
     render() {
         return (
             <Layout location={this.props.location}>
-                <WallpaperSettings />
+                {/* <WallpaperSettings /> */}
                 <div
                     className={`body ${this.state.loading} ${
                         this.state.isArticleVisible ? 'is-article-visible' : ''

@@ -8,6 +8,7 @@ import origami from './origami.png';
 import powerlifting from './powerlifting.png';
 import gardening from './gardening.png';
 import podcasts from './podcasts.png';
+import teaching from './teaching.png';
 
 export default {
     coding,
@@ -20,4 +21,5 @@ export default {
     powerlifting,
     gardening,
     podcasts,
+    teaching,
 };

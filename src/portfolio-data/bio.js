@@ -80,6 +80,13 @@ const bio = {
             `,
             image: interests.podcasts,
         },
+        {
+            name: 'Teaching',
+            description: `
+                Coding, physics and maths
+            `,
+            image: interests.teaching,
+        },
     ],
     workExperience: [
         {
