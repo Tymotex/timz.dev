@@ -157,5 +157,13 @@ $overlayTransDuration: 0.5s;
     // ===== Button grid styles =====
     .buttonGrid > * {
         padding: 0 8px;
+        .halfButtonContainer {
+            display: inline-flex;
+            width: 50%;
+        }
+        .fullButtonContainer {
+            display: inline-flex;
+            width: 100%;
+        }
     }
 }

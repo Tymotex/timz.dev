@@ -16,7 +16,7 @@ const renderButtonGrid = buttonDataArr => {
     } else if (buttonDataArr.length === 1) {
         // Return a list containing one element taking up maximum grid columns (12)
         return [
-            <Grid item xs={12} xl={12}>
+            <Grid className={windowStyles.halfButtonContainer} item xs={12} xl={12}>
                 <NeonButton link={buttonDataArr[0].link}>{buttonDataArr[0].label}</NeonButton>
             </Grid>,
         ];
@@ -25,10 +25,26 @@ const renderButtonGrid = buttonDataArr => {
         const { link: firstLink, label: firstLabel } = buttonDataArr[0];
         const { link: secondLink, label: secondLabel } = buttonDataArr[1];
         return [
-            <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
+            <Grid
+                className={windowStyles.fullButtonContainer}
+                item
+                xs={12}
+                sm={12}
+                md={12}
+                lg={6}
+                xl={6}
+            >
                 <NeonButton link={firstLink}>{firstLabel}</NeonButton>
             </Grid>,
-            <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
+            <Grid
+                className={windowStyles.fullButtonContainer}
+                item
+                xs={12}
+                sm={12}
+                md={12}
+                lg={6}
+                xl={6}
+            >
                 <NeonButton link={secondLink}>{secondLabel}</NeonButton>
             </Grid>,
             ...renderButtonGrid(buttonDataArr.slice(2)),
