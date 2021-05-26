@@ -1,8 +1,8 @@
 {
-    "name": "gatsby-starter-dimension-v2",
-    "description": "Gatsby Starter - Dimension V2",
-    "version": "1.0.0",
-    "author": "Hunter Chang",
+    "name": "timz.dev",
+    "description": "My personal portfolio site",
+    "version": "2.0.0",
+    "author": "Tim Zhang",
     "dependencies": {
         "@material-ui/core": "^4.11.0",
         "@material-ui/icons": "^4.11.2",

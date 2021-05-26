@@ -108,6 +108,7 @@ $overlayTransDuration: 0.5s;
     .descriptionContainer {
         max-height: 200px;
         overflow: hidden;
+        padding: 10px 25px;
         mask-image: linear-gradient(
             to bottom,
             black 40%,
@@ -158,10 +159,12 @@ $overlayTransDuration: 0.5s;
     .buttonGrid > * {
         padding: 0 8px;
         .halfButtonContainer {
+            padding: 0 4px;
             display: inline-flex;
             width: 50%;
         }
         .fullButtonContainer {
+            padding: 0 4px;
             display: inline-flex;
             width: 100%;
         }

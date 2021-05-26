@@ -1,9 +1,9 @@
-import { Grid, Typography } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import React from 'react';
-import { ProjectCard } from './project-card';
 import NeonButton from 'src/components/buttons/neon-button/NeonButton';
-import windowStyles from '../Window.module.scss';
 import utils from 'src/portfolio-data/utils';
+import windowStyles from '../Window.module.scss';
+import { ProjectCard } from './project-card';
 
 /**
  * Given an array of objects of shape: { link, label }, returns an array of
@@ -16,7 +16,16 @@ const renderButtonGrid = buttonDataArr => {
     } else if (buttonDataArr.length === 1) {
         // Return a list containing one element taking up maximum grid columns (12)
         return [
-            <Grid className={windowStyles.halfButtonContainer} item xs={12} xl={12}>
+            <Grid
+                style={{
+                    padding: '0 8px',
+                    display: 'inline-flex',
+                    width: '100%',
+                }}
+                item
+                xs={12}
+                xl={12}
+            >
                 <NeonButton link={buttonDataArr[0].link}>{buttonDataArr[0].label}</NeonButton>
             </Grid>,
         ];
@@ -26,7 +35,11 @@ const renderButtonGrid = buttonDataArr => {
         const { link: secondLink, label: secondLabel } = buttonDataArr[1];
         return [
             <Grid
-                className={windowStyles.fullButtonContainer}
+                style={{
+                    padding: '0 8px',
+                    display: 'inline-flex',
+                    width: '50%',
+                }}
                 item
                 xs={12}
                 sm={12}
@@ -37,7 +50,11 @@ const renderButtonGrid = buttonDataArr => {
                 <NeonButton link={firstLink}>{firstLabel}</NeonButton>
             </Grid>,
             <Grid
-                className={windowStyles.fullButtonContainer}
+                style={{
+                    padding: '0 8px',
+                    display: 'inline-flex',
+                    width: '50%',
+                }}
                 item
                 xs={12}
                 sm={12}
@@ -58,26 +75,29 @@ const ProjectsGrid = ({ projects }) => {
             {projects.map(eachProject => (
                 <Grid item xs={12} sm={6} lg={4}>
                     <ProjectCard project={eachProject}>
-                        <Typography variant="body2" component="p">
-                            <div
-                                className={windowStyles.descriptionContainer}
-                                dangerouslySetInnerHTML={{
-                                    __html: eachProject.description,
-                                }}
-                            />
-                            <a
-                                className={windowStyles.readMore}
-                                href={`${process.env.BASE_URL}/blogs/${utils.convertValidURL(
-                                    eachProject.title
-                                )}`}
-                                target="blank"
-                            >
-                                {' '}
-                                {/* TODO: Add blog URL */}
-                                <strong>Read more</strong>
-                            </a>
-                        </Typography>
-                        <Grid container className={windowStyles.buttonGrid}>
+                        <div
+                            className={windowStyles.descriptionContainer}
+                            dangerouslySetInnerHTML={{
+                                __html: eachProject.description,
+                            }}
+                        ></div>
+                        <a
+                            className={windowStyles.readMore}
+                            href={`${process.env.BASE_URL}/blogs/${utils.convertValidURL(
+                                eachProject.title
+                            )}`}
+                            target="blank"
+                        >
+                            {' '}
+                            {/* TODO: Add blog URL */}
+                            <strong>Read more</strong>
+                        </a>
+                        <Grid
+                            container
+                            style={{
+                                padding: '0 8px',
+                            }}
+                        >
                             {/* Rendering a full-width button if there exists only 1 element */}
                             {renderButtonGrid(eachProject.furtherLinks)}
                         </Grid>
