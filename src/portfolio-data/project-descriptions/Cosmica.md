@@ -22,8 +22,8 @@ As the player progresses through levels, they can unlock up to 7 new types of de
 their own 3 stages of permanent upgrades which boosts the defender ship's stats makes them look more
 badass.
 
--   <strong>Playable WebGL build <a href="https://tymotex.github.io/Cosmica/">here</a></strong>
--   Google Play listing <a href="https://play.google.com/store/apps/details?id=com.Cosmica.Cosmica">here</a>.
+-   Playable WebGL build **[here](https://tymotex.github.io/Cosmica/)**.
+-   Google Play listing **[here](https://play.google.com/store/apps/details?id=com.Cosmica.Cosmica)**.
 
 ### Gameplay Demo
 

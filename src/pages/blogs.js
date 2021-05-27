@@ -2,6 +2,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { BlogsList } from '../components/blogs';
 import { BlogLayout } from '../layouts';
+import { Helmet } from 'react-helmet';
 
 const Blogs = () => {
     const data = useStaticQuery(graphql`
@@ -43,6 +44,9 @@ const Blogs = () => {
 
     return (
         <BlogLayout>
+            <Helmet>
+                <title>Project Blogs</title>
+            </Helmet>
             <BlogsList blogs={sortedBlogs} />
         </BlogLayout>
     );

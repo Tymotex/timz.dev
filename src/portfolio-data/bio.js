@@ -16,6 +16,12 @@ const bio = {
         I love the creative freedom in software engineering and building
         meaningful projects that benefit the world at large.
     `,
+    typewriterLines: [
+        '<FullstackEngineer />',
+        '<AspiringDataScientist />',
+        '<HobbyistGameDev />',
+        '<COMPTutor />',
+    ],
     interests: [
         {
             name: 'Game Development',
@@ -99,11 +105,11 @@ const bio = {
             time: 'May 2021 - August 2021 (3 months)',
             description: utils.renderMarkdown(workExperience.accentureInternDesc),
         },
-        {
-            name: 'WiseTech — Software Engineer Intern',
-            // time: 'July 2021 - August 2021',
-            description: utils.renderMarkdown(workExperience.wiseTechInternDesc),
-        },
+        // {
+        //     name: 'WiseTech — Software Engineer Intern',
+        //     // time: 'July 2021 - August 2021',
+        //     description: utils.renderMarkdown(workExperience.wiseTechInternDesc),
+        // },
     ],
 };
 

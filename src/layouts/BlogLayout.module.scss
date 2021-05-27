@@ -40,4 +40,13 @@ $transitionDuration: 0.2s;
 
 .homeTitle {
     border: none;
+    .brandContainer {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        h3 {
+            margin: 0px 10px;
+        }
+    }
 }

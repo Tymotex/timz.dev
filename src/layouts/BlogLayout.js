@@ -98,6 +98,8 @@ const useStyles = makeStyles(theme => ({
             marginLeft: theme.spacing(3),
             width: 'auto',
         },
+        marginTop: '10px',
+        marginBottom: '10px',
     },
     searchIcon: {
         padding: theme.spacing(0, 2),
@@ -179,9 +181,10 @@ const BlogLayout = ({ pageName = 'Blogs', children }) => {
                                     <MenuIcon />
                                 </IconButton>
                                 <Link to="/" className={styles.homeTitle}>
-                                    <Typography variant="h6" noWrap>
-                                        <img src={siteIcon} alt="Site icon" /> Timz.dev
-                                    </Typography>
+                                    <div className={styles.brandContainer}>
+                                        <img src={siteIcon} alt="Site icon" />
+                                        <h3>Timz.dev</h3>
+                                    </div>
                                 </Link>
                                 {/* Search bar */}
                                 <div className={classes.search}>

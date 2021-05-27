@@ -16,12 +16,7 @@ const Header = props => (
                 <p className={styles.summary}>{bio.frontPageSummary}</p>
                 <div className={styles.typerContainer}>
                     <ReactTypingEffect
-                        text={[
-                            '<FullstackEngineer />',
-                            '<AspiringDataScientist />',
-                            '<HobbyistGameDev />',
-                            '<COMPTutor />',
-                        ]}
+                        text={bio.typewriterLines}
                         speed={75}
                         eraseSpeed={50}
                         cursor="_"

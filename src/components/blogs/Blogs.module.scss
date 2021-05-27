@@ -17,6 +17,10 @@ $footnoteOpacity: 0.65;
         text-align: center;
     }
 
+    .listSummary {
+        text-align: center;
+    }
+
     .blogCard {
         margin: 10px;
         position: relative;
@@ -79,7 +83,7 @@ $footnoteOpacity: 0.65;
                     margin-top: -$minCardHeight;
                     height: $minCardHeight;
                     width: 100%;
-                    content: "";
+                    content: '';
                     background-image: linear-gradient(
                         to bottom,
                         rgba(245, 246, 252, 0),

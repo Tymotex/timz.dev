@@ -24,6 +24,4 @@ const WorkExperience = () => {
     );
 };
 
-WorkExperience.propTypes = {};
-
 export default WorkExperience;
