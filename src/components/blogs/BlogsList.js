@@ -21,7 +21,11 @@ const BlogsList = ({ blogs, searchQuery }) => {
             <h2 className={styles.listTitle}>Project Blogs</h2>
             <p className={styles.listSummary}>
                 A collection of my software projects, including serious personal projects, some
-                university projects, and spaghetti code beginner projects 😵.
+                university projects, and spaghetti code beginner projects{' '}
+                <span role="img" aria-label="Horrified">
+                    😵
+                </span>
+                .
             </p>
             <Divider />
             <Masonry>

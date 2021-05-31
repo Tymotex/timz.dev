@@ -4,6 +4,7 @@ import Window from 'src/components/windows/Window.js';
 import { bio } from 'src/portfolio-data';
 import InterestsLists from './InterestsList';
 import WorkExperience from './WorkExperience';
+import AwardsLists from './AwardsList';
 
 const AboutWindow = props => {
     const { aboutDescription, interests } = bio;
@@ -20,6 +21,9 @@ const AboutWindow = props => {
             </ul>
             <Expandable text="Work Experience">
                 <WorkExperience />
+            </Expandable>
+            <Expandable text="Academic Awards and Hackathons">
+                <AwardsLists />
             </Expandable>
             <Expandable text="Interests and Hobbies">
                 <InterestsLists interests={interests} />

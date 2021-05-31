@@ -111,6 +111,41 @@ const bio = {
         //     description: utils.renderMarkdown(workExperience.wiseTechInternDesc),
         // },
     ],
+    awards: [
+        {
+            name: "Faculty of Engineering Dean's Award",
+            time: '2020',
+            description:
+                "For being among the top 25 highest performing students across all 1st/2nd year students in UNSW's School of Engineering.",
+        },
+        {
+            name: 'Atlassian 1st Place Prize for Data Structures and Algorithms',
+            time: '2020',
+            description: 'For the best performance in COMP2521 (S0382E)',
+        },
+        {
+            name: 'Macquarie Bank Prize for 1st Place in SENG2021',
+            time: '2021',
+            description:
+                'Led a team of 5 in developing an automated job application tracking system and achieved 1st place out of 30 other teams.',
+        },
+        {
+            name: "Accenture 'Hack for Good' Hackathon 1st Place",
+            time: '2020',
+            description:
+                'Worked in a team of 4 to develop a prototype for an education platform driven by deep learning that automatically tailors a curriculum for young children with ASD. Achieved 1st place out of 37 other participating teams from across Australia.',
+        },
+        {
+            name: 'Google Chronicle Hackathon 2nd Place',
+            time: '2020',
+            description:
+                'Worked in a team of 4 to build a proof-of-concept application for an automated time scheduler system. This project won 2nd place out of around 40 other teams.',
+        },
+        {
+            name: 'Academic Awards Achievement (Scholarship)',
+            time: '2019',
+        },
+    ],
 };
 
 export default bio;

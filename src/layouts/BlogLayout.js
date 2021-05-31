@@ -1,38 +1,30 @@
-import React from 'react';
-import { Container } from '@material-ui/core';
-import clsx from 'clsx';
-import { fade, makeStyles } from '@material-ui/core/styles';
 import {
-    Drawer,
-    CssBaseline,
     AppBar,
-    Toolbar,
-    Typography,
+    Container,
+    CssBaseline,
     Divider,
+    Drawer,
     InputBase,
+    Toolbar,
 } from '@material-ui/core';
-import siteIcon from 'src/images/icon.png';
-
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import { NightsStay, WbSunny, Search } from '@material-ui/icons';
-
-import { DrawerList, BlackOverlay } from './components';
-import styles from './BlogLayout.module.scss';
-
-// Theme override
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import { lightTheme, darkTheme } from './themes';
-
+import Slide from '@material-ui/core/Slide';
+import { createMuiTheme, fade, makeStyles, ThemeProvider } from '@material-ui/core/styles';
 // Hiding the top nav bar on scroll
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import Slide from '@material-ui/core/Slide';
-
-import Cookies from 'js-cookie';
-import { siteCookies } from '../constants';
+import { NightsStay, Search, WbSunny } from '@material-ui/icons';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import MenuIcon from '@material-ui/icons/Menu';
+import clsx from 'clsx';
 import { Link } from 'gatsby';
+import Cookies from 'js-cookie';
+import React from 'react';
+import siteIcon from 'src/images/icon.png';
+import { siteCookies } from '../constants';
+import styles from './BlogLayout.module.scss';
+import { BlackOverlay, DrawerList } from './components';
+import { darkTheme, lightTheme } from './themes';
 
 const drawerWidth = 240;
 
