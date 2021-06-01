@@ -1,0 +1,18 @@
+*.js.map*
+*.js*
+*.json
+page-data
+styles.*
+
+# # Ignore everything
+# *
+
+# # But not these files...
+# !.gitignore
+# !resume
+# !static
+# !project-images
+# !*.png
+# !blogs
+# !404
+# !template.latex
