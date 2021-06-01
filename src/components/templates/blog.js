@@ -23,7 +23,7 @@ export const query = graphql`
     }
 `;
 
-const Blog = ({ data, pageContext }) => {
+const Blog = ({ data, pageContext, searchQuery }) => {
     // The .md file content is first converted to HTML, then rendered using dangerouslySetInnerHTML
     const convertedHtml = marked(data.markdownRemark.rawMarkdownBody);
     const { title, summary } = data.markdownRemark.frontmatter;

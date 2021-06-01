@@ -10,8 +10,11 @@ const applySearchFilter = (blogs, searchQuery) => {
 };
 
 const BlogsList = ({ blogs, searchQuery }) => {
-    // alert(`Searching for ${searchQuery}`);
     const filteredBlogs = applySearchFilter(blogs, searchQuery);
+    const sortedBlogs = filteredBlogs.sort((blogA, blogB) =>
+        blogA.title.toLowerCase().localeCompare(blogB.title.toLowerCase())
+    );
+
     return (
         <ResponsiveMasonry
             className={styles.blogList}
@@ -29,7 +32,7 @@ const BlogsList = ({ blogs, searchQuery }) => {
             </p>
             <Divider />
             <Masonry>
-                {filteredBlogs.map((eachBlog, i) => (
+                {sortedBlogs.map((eachBlog, i) => (
                     // TODO: Add spacing between grid items, add card text, clickable link
                     <BlogCard blog={eachBlog} key={i} />
                 ))}

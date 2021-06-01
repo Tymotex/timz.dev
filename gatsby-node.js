@@ -32,11 +32,18 @@ module.exports.createPages = async ({ graphql, actions }) => {
     // Using src/components/templates/blog.js as the page component:
     const blogTemplatePath = path.resolve('./src/components/templates/blog.js');
     const homePagePath = path.resolve('./src/pages/home.js');
+    const blogsIndexPath = path.resolve('./src/pages/blogs.js');
 
     actions.createPage({
         path: `/home/:targetWindow`,
         matchPath: `/home/:targetWindow`,
         component: homePagePath,
+    });
+
+    actions.createPage({
+        path: `/blogs/:query`,
+        matchPath: `/blogs/:query`,
+        component: blogsIndexPath,
     });
 
     const res = await graphql(`

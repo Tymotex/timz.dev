@@ -25,6 +25,8 @@ import { siteCookies } from '../constants';
 import styles from './BlogLayout.module.scss';
 import { BlackOverlay, DrawerList } from './components';
 import { darkTheme, lightTheme } from './themes';
+import { useStaticQuery, graphql } from 'gatsby';
+import { navigate } from 'gatsby';
 
 const drawerWidth = 240;
 
@@ -97,11 +99,14 @@ const useStyles = makeStyles(theme => ({
         padding: theme.spacing(0, 2),
         height: '100%',
         position: 'absolute',
-        right: '0',
-        pointerEvents: 'none',
+        right: '0%',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        zIndex: 100,
+        '&:hover': {
+            cursor: 'pointer',
+        },
     },
     inputRoot: {
         color: 'inherit',
@@ -128,13 +133,46 @@ const toggleDarkMode = () => {
     return !wasActive;
 };
 
-const BlogLayout = ({ pageName = 'Blogs', children }) => {
+const BlogLayout = ({ pageName = 'Blogs', children, initialQuery = '' }) => {
+    const data = useStaticQuery(graphql`
+        query {
+            allMarkdownRemark {
+                edges {
+                    node {
+                        frontmatter {
+                            title
+                            image
+                            summary
+                        }
+                        fields {
+                            slug
+                        }
+                        timeToRead
+                    }
+                }
+            }
+        }
+    `);
+
+    const blogs = data.allMarkdownRemark.edges.map(eachEdge => {
+        const { title, image, summary } = eachEdge.node.frontmatter;
+        const link = `${process.env.BASE_URL}/blogs/${eachEdge.node.fields.slug.toLowerCase()}`;
+        const timeToRead = eachEdge.node.timeToRead;
+        return {
+            title,
+            image,
+            summary,
+            link,
+            timeToRead,
+        };
+    });
+
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
     const [darkModeActive, setDarkModeActive] = React.useState(
         Cookies.get(siteCookies.DARK_MODE_ACTIVE)
     );
-    const [searchQuery, setSearchQuery] = React.useState('');
+    const [searchQuery, setSearchQuery] = React.useState(initialQuery);
 
     const handleDrawerOpen = () => {
         setOpen(true);
@@ -146,6 +184,10 @@ const BlogLayout = ({ pageName = 'Blogs', children }) => {
 
     const dynamicBlogSearch = event => {
         setSearchQuery(event.target.value);
+    };
+
+    const classicSearch = query => {
+        navigate(`/blogs/${query}`);
     };
 
     const trigger = useScrollTrigger({ target: typeof window !== 'undefined' ? window : null });
@@ -180,7 +222,10 @@ const BlogLayout = ({ pageName = 'Blogs', children }) => {
                                 </Link>
                                 {/* Search bar */}
                                 <div className={classes.search}>
-                                    <div className={classes.searchIcon}>
+                                    <div
+                                        className={classes.searchIcon}
+                                        onClick={() => classicSearch(searchQuery)}
+                                    >
                                         <Search />
                                     </div>
                                     <InputBase
@@ -237,8 +282,12 @@ const BlogLayout = ({ pageName = 'Blogs', children }) => {
                     >
                         <BlackOverlay overlayActive={open} />
                         <div className={classes.drawerHeader} />
+                        {/* Render children, but enhance them with additional props */}
                         {React.Children.map(children, child =>
-                            React.cloneElement(child, { searchQuery: searchQuery })
+                            React.cloneElement(child, {
+                                searchQuery,
+                                blogs,
+                            })
                         )}
                     </main>
                 </div>
