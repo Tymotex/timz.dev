@@ -15,6 +15,7 @@ module.exports = {
     },
     plugins: [
         'gatsby-plugin-styled-components', // This plugin solves the bug where unstyled content 'flickers' before being styled. Source: https://github.com/gatsbyjs/gatsby/issues/5667
+        'gatsby-plugin-material-ui', // This solves unstyled content flickering for Material UI
         'gatsby-plugin-react-helmet',
         'gatsby-plugin-root-import', // This is the plugin that lets you import relative to the project root: import ... from 'src/...';
         {
