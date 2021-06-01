@@ -38,7 +38,7 @@
     ],
     "license": "MIT",
     "scripts": {
-        "build": "gatsby build",
+        "build": "gatsby build && echo '/* /index.html  200' | cat > public/_redirects",
         "develop": "gatsby develop",
         "format": "prettier --write '**/*.js'",
         "test": "echo \"Error: no test specified\" && exit 1",
