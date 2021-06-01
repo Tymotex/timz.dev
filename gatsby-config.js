@@ -14,6 +14,7 @@ module.exports = {
         description: 'Tim Zhang',
     },
     plugins: [
+        `gatsby-plugin-netlify`,
         'gatsby-plugin-react-helmet',
         'gatsby-plugin-root-import', // This is the plugin that lets you import relative to the project root: import ... from 'src/...';
         {
