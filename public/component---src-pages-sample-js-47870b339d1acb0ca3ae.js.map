@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/pages/sample.js"],"names":["Sample"],"mappings":"8FAAA,gCAUeA,UARA,WACX,OACI","file":"component---src-pages-sample-js-47870b339d1acb0ca3ae.js","sourcesContent":["import React from 'react';\n\nconst Sample = () => {\n    return (\n        <>\n      \n        </>\n    );\n}\n\nexport default Sample;\n"],"sourceRoot":""}
