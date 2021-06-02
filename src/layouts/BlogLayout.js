@@ -225,6 +225,9 @@ const BlogLayout = ({ pageName = 'Blogs', children, initialQuery = '' }) => {
                                     <div
                                         className={classes.searchIcon}
                                         onClick={() => classicSearch(searchQuery)}
+                                        onKeyDown={() => classicSearch(searchQuery)}
+                                        role="button"
+                                        tabIndex={0}
                                     >
                                         <Search />
                                     </div>

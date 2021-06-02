@@ -121,7 +121,7 @@ export default {
         {
             title: 'Employ.me',
             thumbnail:
-                'https://raw.githubusercontent.com/Tymotex/JobTracker/master/SourceCode_and_Documentation/images/screenshots/dashboard-index.png',
+                'https://raw.githubusercontent.com/Tymotex/Employ.me/master/images/screenshots/dashboard-index.png',
             description: utils.renderMarkdown(descriptions.employMe),
             furtherLinks: [
                 {
@@ -155,8 +155,7 @@ export default {
         },
         {
             title: 'Structs.sh',
-            thumbnail:
-                'https://raw.githubusercontent.com/csesoc/Structs.sh/master/public/structs.png',
+            thumbnail: 'https://tymotex.github.io/timz.dev/public/project-images/structs.png',
             description: utils.renderMarkdown(descriptions.structs),
             furtherLinks: [
                 {
