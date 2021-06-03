@@ -6,6 +6,7 @@ import InterestsLists from './InterestsList';
 import WorkExperience from './WorkExperience';
 import AwardsLists from './AwardsList';
 import SpotifyDisplay from './SpotifyDisplay';
+import { Divider } from '@material-ui/core';
 
 const AboutWindow = props => {
     const { aboutDescription, interests } = bio;
@@ -29,10 +30,8 @@ const AboutWindow = props => {
             <Expandable text="Interests and Hobbies">
                 <InterestsLists interests={interests} />
             </Expandable>
-            <div style={{ textAlign: 'center' }}>
-                <h3>Currently Listening To</h3>
-                <SpotifyDisplay />
-            </div>
+            <Divider />
+            <SpotifyDisplay />
         </Window>
     );
 };
