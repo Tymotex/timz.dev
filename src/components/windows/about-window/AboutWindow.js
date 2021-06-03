@@ -5,6 +5,7 @@ import { bio } from 'src/portfolio-data';
 import InterestsLists from './InterestsList';
 import WorkExperience from './WorkExperience';
 import AwardsLists from './AwardsList';
+import SpotifyDisplay from './SpotifyDisplay';
 
 const AboutWindow = props => {
     const { aboutDescription, interests } = bio;
@@ -28,6 +29,10 @@ const AboutWindow = props => {
             <Expandable text="Interests and Hobbies">
                 <InterestsLists interests={interests} />
             </Expandable>
+            <div style={{ textAlign: 'center' }}>
+                <h3>Currently Listening To</h3>
+                <SpotifyDisplay />
+            </div>
         </Window>
     );
 };
