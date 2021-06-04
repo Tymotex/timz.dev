@@ -13,7 +13,7 @@ const Expandable = ({ text, children }) => {
     };
 
     return (
-        <ul>
+        <>
             <div
                 className={styles.expandable}
                 onClick={handleExpandedToggle}
@@ -28,7 +28,7 @@ const Expandable = ({ text, children }) => {
                     <Container className={styles.content}>{children}</Container>
                 </FadeInWrapper>
             )}
-        </ul>
+        </>
     );
 };
 

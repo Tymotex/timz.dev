@@ -12,7 +12,7 @@ const ExpandButton = ({ text, isExpanded }) => {
             ) : (
                 <ChevronRight className={styles.toggleButton} />
             )}
-            <p className={styles.text}>{text}</p>
+            <h4 className={styles.text}>{text}</h4>
         </span>
     );
 };

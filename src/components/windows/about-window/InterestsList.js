@@ -8,7 +8,7 @@ const InterestsList = ({ interests }) => {
     return (
         <Grid container>
             {interests.map(eachInterest => (
-                <Grid item xs={4} md={3} className={styles.gridItem}>
+                <Grid item xs={12} sm={6} md={4} className={styles.gridItem}>
                     <InterestCard interests={eachInterest} />
                 </Grid>
             ))}

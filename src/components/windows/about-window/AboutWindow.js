@@ -6,31 +6,27 @@ import InterestsLists from './InterestsList';
 import WorkExperience from './WorkExperience';
 import AwardsLists from './AwardsList';
 import SpotifyDisplay from './SpotifyDisplay';
-import { Divider } from '@material-ui/core';
 
 const AboutWindow = props => {
     const { aboutDescription, interests } = bio;
     return (
         <Window {...props}>
             <p>{aboutDescription}</p>
-            <ul>
-                <li>
-                    <a href={bio.resumeURL}>Resume</a>
-                </li>
-                <li>
-                    <a href={bio.transcriptURL}>Transcript</a>
-                </li>
-            </ul>
+            <Expandable text="Resume">
+                <a href={bio.resumeURL}>Resume</a>
+            </Expandable>
+            <Expandable text="Transcript">
+                <a href={bio.transcriptURL}>Transcript</a>
+            </Expandable>
             <Expandable text="Work Experience">
                 <WorkExperience />
             </Expandable>
-            <Expandable text="Academic Awards and Hackathons">
+            <Expandable text="Awards">
                 <AwardsLists />
             </Expandable>
             <Expandable text="Interests and Hobbies">
                 <InterestsLists interests={interests} />
             </Expandable>
-            <Divider />
             <SpotifyDisplay />
         </Window>
     );

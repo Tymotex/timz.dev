@@ -1,10 +1,11 @@
-$expandableTextHeight: 24px;
+$expandableTextHeight: 12px;
+$textSize: 18px;
 
 .expandable {
     display: block;
-    height: $expandableTextHeight;
+    // height: $expandableTextHeight;
     margin: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     transition: 0.15s all ease-in-out;
 
     &:hover {
@@ -24,7 +25,7 @@ $expandableTextHeight: 24px;
     .text {
         display: inline;
         letter-spacing: normal;
-        font-size: 32px;
+        font-size: $textSize;
         height: $expandableTextHeight;
         line-height: $expandableTextHeight;
         user-select: none;
