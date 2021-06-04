@@ -6,7 +6,7 @@ import styles from './PDFDisplayer.module.scss';
 // Workaround for 'failed to load pdf': https://github.com/wojtekmaj/react-pdf/issues/321
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
-const PDFDisplayer = ({ showPages, file }) => {
+const PDFDisplayer = ({ showPages, fileURL, linkText }) => {
     const [numPages, setNumPages] = useState(null);
     const [pageNumber, setPageNumber] = useState(1);
 
@@ -16,8 +16,16 @@ const PDFDisplayer = ({ showPages, file }) => {
 
     return (
         <div className={styles.pdfContainer}>
+            <a
+                className={styles.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                href={bio.resumeURL}
+            >
+                <h2>{linkText}</h2>
+            </a>
             <Document
-                file={file}
+                file={fileURL}
                 onLoadSuccess={onDocumentLoadSuccess}
                 renderAnnotationLayer={false}
             >
@@ -37,6 +45,7 @@ const PDFDisplayer = ({ showPages, file }) => {
 
 PDFDisplayer.defaultProps = {
     showPages: false,
+    linkText: 'Link',
 };
 
 export default PDFDisplayer;

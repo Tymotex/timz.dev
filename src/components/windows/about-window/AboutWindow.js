@@ -14,12 +14,10 @@ const AboutWindow = props => {
         <Window {...props}>
             <p>{aboutDescription}</p>
             <Expandable text="Resume">
-                <a href={bio.resumeURL}>Resume link</a>
-                <PDFDisplayer file={bio.resumeURL} />
+                <PDFDisplayer fileURL={bio.resumeURL} linkText="Resume Link" />
             </Expandable>
             <Expandable text="Transcript">
-                <a href={bio.transcriptURL}>Transcript link</a>
-                <PDFDisplayer file={bio.transcriptURL} />
+                <PDFDisplayer fileURL={bio.transcriptURL} linkText="Transcript Link" />
             </Expandable>
             <Expandable text="Work Experience">
                 <WorkExperience />

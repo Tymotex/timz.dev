@@ -1,4 +1,13 @@
 .pdfContainer {
+    text-align: center;
+
+    .link {
+        color: blueviolet;
+        &:hover {
+            color: rgb(127, 172, 255);
+        }
+    }
+
     canvas {
         margin: 10px auto;
 

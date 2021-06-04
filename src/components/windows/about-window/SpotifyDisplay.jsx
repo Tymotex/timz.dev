@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './SpotifyDisplay.module.scss';
 
 // Shows the songs I'm currently listening to.
@@ -17,7 +16,5 @@ const SpotifyDisplay = () => {
         </div>
     );
 };
-
-SpotifyDisplay.propTypes = {};
 
 export default SpotifyDisplay;
