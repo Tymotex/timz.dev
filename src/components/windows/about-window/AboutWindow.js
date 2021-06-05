@@ -6,7 +6,6 @@ import InterestsLists from './InterestsList';
 import WorkExperience from './WorkExperience';
 import AwardsLists from './AwardsList';
 import SpotifyDisplay from './SpotifyDisplay';
-import PDFDisplayer from './PDFDisplayer';
 
 const AboutWindow = props => {
     const { aboutDescription, interests } = bio;
@@ -14,10 +13,14 @@ const AboutWindow = props => {
         <Window {...props}>
             <p>{aboutDescription}</p>
             <Expandable text="Resume">
-                <PDFDisplayer fileURL={bio.resumeURL} linkText="Resume Link" />
+                <a target="_blank" rel="noopener noreferrer" href={bio.resumeURL}>
+                    Resume link
+                </a>
             </Expandable>
             <Expandable text="Transcript">
-                <PDFDisplayer fileURL={bio.transcriptURL} linkText="Transcript Link" />
+                <a target="_blank" rel="noopener noreferrer" href={bio.transcriptURL}>
+                    Transcript link
+                </a>
             </Expandable>
             <Expandable text="Work Experience">
                 <WorkExperience />
