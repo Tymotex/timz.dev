@@ -216,7 +216,11 @@ const BlogLayout = ({ pageName = 'Blogs', children, initialQuery = '' }) => {
                                 </IconButton>
                                 <Link to="/" className={styles.homeTitle}>
                                     <div className={styles.brandContainer}>
-                                        <img src={siteIcon} alt="Site icon" />
+                                        <img
+                                            className={styles.siteIcon}
+                                            src={siteIcon}
+                                            alt="Site icon"
+                                        />
                                         <h3>Timz.dev</h3>
                                     </div>
                                 </Link>

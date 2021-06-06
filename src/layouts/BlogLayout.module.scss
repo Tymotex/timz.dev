@@ -44,9 +44,19 @@ $transitionDuration: 0.2s;
         display: flex;
         align-items: center;
         height: 100%;
+        transition: 0.15s all ease-in-out;
 
         h3 {
             margin: 0px 10px;
+        }
+        .siteIcon {
+            width: 32px;
+            height: 32px;
+        }
+
+        &:hover {
+            opacity: 0.5;
+            transition-duration: 0.15s;
         }
     }
 }
