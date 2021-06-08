@@ -38,39 +38,25 @@ const bio = {
         //     image: interests.deepLearning,
         // },
         {
-            name: 'Science Books',
+            name: 'Reading',
             description: `
-                Neuroscience, physics and biology
+                Science books, biographies
             `,
             image: interests.reading,
         },
         {
             name: 'Fingerstyle Guitar',
             description: `
-                Game OSTs and other embarrassing songs 
+                Alternative/Indie songs and Game OSTs
             `,
             image: interests.guitar,
         },
         {
             name: 'Weightlifting',
             description: `
-                Powerlifting, clean & jerks and snatches
+                Clean & jerks, snatches and powerlifting exercises
             `,
             image: interests.powerlifting,
-        },
-        {
-            name: 'Gardening',
-            description: `
-                Fruit trees, flowers, succulents and radishes (lol)
-            `,
-            image: interests.gardening,
-        },
-        {
-            name: 'Origami',
-            description: `
-                Modular origami, roses and animals
-            `,
-            image: interests.origami,
         },
         {
             name: 'Electronics',
@@ -92,6 +78,20 @@ const bio = {
                 Coding, physics and maths
             `,
             image: interests.teaching,
+        },
+        {
+            name: 'Gardening',
+            description: `
+                
+            `,
+            image: interests.gardening,
+        },
+        {
+            name: 'Origami',
+            description: `
+                
+            `,
+            image: interests.origami,
         },
     ],
     workExperience: [
