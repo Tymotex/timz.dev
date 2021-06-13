@@ -6,6 +6,9 @@ import InterestsLists from './InterestsList';
 import WorkExperience from './WorkExperience';
 import AwardsLists from './AwardsList';
 import SpotifyDisplay from './SpotifyDisplay';
+import CodeStats from './CodeStats';
+import { Grid } from '@material-ui/core';
+import GitHubStats from './GitHubStats';
 
 const AboutWindow = props => {
     const { aboutDescription, interests } = bio;
@@ -31,7 +34,15 @@ const AboutWindow = props => {
             <Expandable text="Interests and Hobbies">
                 <InterestsLists interests={interests} />
             </Expandable>
-            <SpotifyDisplay />
+            <Grid container>
+                <Grid item xs={12} sm={6}>
+                    <CodeStats />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                    <GitHubStats />
+                    <SpotifyDisplay />
+                </Grid>
+            </Grid>
         </Window>
     );
 };

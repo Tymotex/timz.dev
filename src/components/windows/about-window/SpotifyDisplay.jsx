@@ -6,7 +6,6 @@ import styles from './SpotifyDisplay.module.scss';
 const SpotifyDisplay = () => {
     return (
         <div className={styles.displayer}>
-            <h3>Live Spotify Feed</h3>
             <a href="https://open.spotify.com/user/1267816691">
                 <img
                     src="https://spotify-display-lyart.vercel.app/api/spotify"
