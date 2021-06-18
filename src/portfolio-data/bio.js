@@ -1,6 +1,7 @@
 import interests from './interests-images';
 import utils from './utils';
 import workExperience from './work-experience';
+import aboutMe from './about-me.md';
 
 const bio = {
     name: 'Tim Zhang',
@@ -9,13 +10,7 @@ const bio = {
     `,
     resumeURL: 'https://tymotex.github.io/timz.dev/public/resume/resume.pdf',
     transcriptURL: 'https://tymotex.github.io/timz.dev/public/resume/transcript.pdf',
-    aboutDescription: `
-        Hi! I'm Tim, a 3rd year student studying software engineering at UNSW. 
-        As a determined learner, I take pleasure in diving deep into complex problems
-        and becoming proficient in software technologies.
-        I love the creative freedom in software engineering and building
-        meaningful projects that benefit the world at large.
-    `,
+    aboutDescription: utils.renderMarkdown(aboutMe),
     typewriterLines: [
         '<FullstackEngineer />',
         '<AspiringDataScientist />',

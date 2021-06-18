@@ -14,7 +14,11 @@ const AboutWindow = props => {
     const { aboutDescription, interests } = bio;
     return (
         <Window {...props}>
-            <p>{aboutDescription}</p>
+            <div
+                dangerouslySetInnerHTML={{
+                    __html: aboutDescription,
+                }}
+            ></div>
             <Expandable text="Resume">
                 <a target="_blank" rel="noopener noreferrer" href={bio.resumeURL}>
                     Resume link
