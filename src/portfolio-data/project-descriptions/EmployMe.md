@@ -1,6 +1,6 @@
 ---
 title: Employ.me
-image: https://raw.githubusercontent.com/Tymotex/JobTracker/master/SourceCode_and_Documentation/images/screenshots/dashboard-index.png
+image: https://raw.githubusercontent.com/Tymotex/Employ.me/master/images/screenshots/dashboard-index.png
 summary: Employ.me is an automated job application tracking system that minimises the friction associated with managing job applications.
 ---
 
