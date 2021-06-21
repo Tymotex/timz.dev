@@ -38,6 +38,7 @@ const AboutWindow = props => {
             <Expandable text="Interests and Hobbies">
                 <InterestsLists interests={interests} />
             </Expandable>
+            <br />
             <Grid container>
                 <Grid item xs={12} sm={6}>
                     <CodeStats />
