@@ -2,6 +2,7 @@
 title: Astral Assault
 image: https://tymotex.github.io/timz.dev/public/project-images/astral-assault-thumbnail.png
 summary: Astral Assault is a more dynamic, intensive take on the classic Space Invaders with flashier visuals and a different game progression.
+rating: 3
 ---
 
 Astral Assault is a more dynamic, intensive take on the classic Space Invaders with flashier

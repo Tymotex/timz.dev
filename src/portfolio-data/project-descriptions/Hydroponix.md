@@ -2,6 +2,7 @@
 title: Hydroponix
 image: https://raw.githubusercontent.com/Tymotex/Hydroponix/master/static/thumbnail.png
 summary: An IoT automated plant propagation system built with Python.
+rating: 5
 ---
 
 An IoT automated plant propagation system built with Python on the Raspberry Pi Zero W

@@ -2,6 +2,7 @@
 title: Blitz Breach
 image: https://tymotex.github.io/timz.dev/public/project-images/blitz-breach-thumbnail.png
 summary: Blitz Breach is an extended version of an old classic, Arkanoid.
+rating: 1
 ---
 
 Blitz Breach is an extended version of an old classic, Arkanoid. The player controls a paddle

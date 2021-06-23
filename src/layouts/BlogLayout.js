@@ -143,6 +143,7 @@ const BlogLayout = ({ pageName = 'Blogs', children, initialQuery = '' }) => {
                             title
                             image
                             summary
+                            rating
                         }
                         fields {
                             slug
@@ -155,7 +156,7 @@ const BlogLayout = ({ pageName = 'Blogs', children, initialQuery = '' }) => {
     `);
 
     const blogs = data.allMarkdownRemark.edges.map(eachEdge => {
-        const { title, image, summary } = eachEdge.node.frontmatter;
+        const { title, image, summary, rating } = eachEdge.node.frontmatter;
         const link = `${process.env.BASE_URL}/blogs/${eachEdge.node.fields.slug.toLowerCase()}`;
         const timeToRead = eachEdge.node.timeToRead;
         return {
@@ -164,6 +165,7 @@ const BlogLayout = ({ pageName = 'Blogs', children, initialQuery = '' }) => {
             summary,
             link,
             timeToRead,
+            rating
         };
     });
 

@@ -10,8 +10,6 @@ import sortingFuncs from 'src/components/blogs/sortingFunctions';
 const Blogs = ({ query }) => {
     const [sortFuncIndex, setSortFuncIndex] = useState(0);
 
-    console.log(sortingFuncs);
-
     return (
         <BlogLayout initialQuery={query}>
             <Helmet>
