@@ -70,6 +70,9 @@ const renderButtonGrid = buttonDataArr => {
 };
 
 const ProjectsGrid = ({ projects }) => {
+    // First sort the list of projects into descending order of rating
+    projects.sort((projA, projB) => projB.rating - projA.rating);
+    
     return (
         <Grid container spacing={3}>
             {projects.map(eachProject => (
