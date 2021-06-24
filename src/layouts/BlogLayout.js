@@ -127,11 +127,6 @@ const useStyles = makeStyles(theme => ({
 const lightMode = createMuiTheme(lightTheme);
 const darkMode = createMuiTheme(darkTheme);
 
-const toggleDarkMode = () => {
-    const wasActive = Cookies.get(siteCookies.DARK_MODE_ACTIVE) === 'true';
-    Cookies.set(siteCookies.DARK_MODE_ACTIVE, wasActive ? 'false' : 'true');
-    return !wasActive;
-};
 
 const BlogLayout = ({ pageName = 'Blogs', children, initialQuery = '' }) => {
     const data = useStaticQuery(graphql`
@@ -172,7 +167,7 @@ const BlogLayout = ({ pageName = 'Blogs', children, initialQuery = '' }) => {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
     const [darkModeActive, setDarkModeActive] = React.useState(
-        Cookies.get(siteCookies.DARK_MODE_ACTIVE)
+        localStorage.getItem(siteCookies.DARK_MODE_ACTIVE) === 'true' ? true : false
     );
     const [searchQuery, setSearchQuery] = React.useState(initialQuery);
 
@@ -190,6 +185,12 @@ const BlogLayout = ({ pageName = 'Blogs', children, initialQuery = '' }) => {
 
     const classicSearch = query => {
         navigate(`/blogs/${query}`);
+    };
+
+    const toggleDarkMode = () => {
+        const wasActive = localStorage.getItem(siteCookies.DARK_MODE_ACTIVE) === 'true';
+        localStorage.setItem(siteCookies.DARK_MODE_ACTIVE, wasActive ? 'false' : 'true');
+        return !wasActive;
     };
 
     const trigger = useScrollTrigger({ target: typeof window !== 'undefined' ? window : null });
@@ -254,7 +255,7 @@ const BlogLayout = ({ pageName = 'Blogs', children, initialQuery = '' }) => {
                                         className={styles.darkModeButton}
                                         onClick={() => setDarkModeActive(toggleDarkMode())}
                                     >
-                                        {Cookies.get(siteCookies.DARK_MODE_ACTIVE) === 'true' ? (
+                                        {darkModeActive ? (
                                             <NightsStay className={styles.moon} />
                                         ) : (
                                             <WbSunny className={styles.sun} />

@@ -24,8 +24,6 @@ const BlogSorter = ({ sortFuncIndex, setSortFuncIndex }) => {
         setSortFuncIndex(index);
     };
 
-    console.log(sortingFuncs);
-
     return (
         <div>
             <FormControl className={classes.formControl}>
@@ -39,7 +37,7 @@ const BlogSorter = ({ sortFuncIndex, setSortFuncIndex }) => {
                     }}
                 >
                     {[...Array(sortingFuncs.length)].map((_, i) => (
-                        <option value={i} style={{ color: "green" }}>
+                        <option key={i} value={i} style={{ color: "green" }}>
                             {sortingFuncs[i].type}
                         </option>
                     ))}

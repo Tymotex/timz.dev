@@ -46,8 +46,8 @@ const drawerItems = [
 const DrawerList = () => {
     return (
         <List>
-            {drawerItems.map((eachDrawerItem) => (
-                <Link to={eachDrawerItem.link}>
+            {drawerItems.map((eachDrawerItem, i) => (
+                <Link key={i} to={eachDrawerItem.link}>
                     <ListItem button key={eachDrawerItem.text}>
                         <ListItemIcon>
                             <>
@@ -58,7 +58,7 @@ const DrawerList = () => {
                     </ListItem>
                 </Link>
             ))}
-        </List> 
+        </List>
     );
 }
 

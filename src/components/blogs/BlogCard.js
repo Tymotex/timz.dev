@@ -4,9 +4,10 @@ import styles from './Blogs.module.scss';
 
 // TODO: the on-hover is not mobile friendly. Maybe make it clickable as well? 
 
+
 const BlogCard = ({ blog }) => {
     return (
-        <Link to={blog.link}>
+        <a href={blog.link}>
             <div className={styles.blogCard}>
                 <div className={styles.image}>
                     <img
@@ -24,7 +25,7 @@ const BlogCard = ({ blog }) => {
                     </p>
                 </div>
             </div>
-        </Link>
+        </a>
     )
 }
 

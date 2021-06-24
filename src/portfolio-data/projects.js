@@ -108,7 +108,7 @@ export default {
             furtherLinks: [
                 {
                     label: 'Visit',
-                    link: 'http://galactic-ed.xyz/',
+                    link: 'https://galactic-ed.xyz/',
                 },
                 {
                     label: 'GitHub',

@@ -12,7 +12,6 @@ const applySearchFilter = (blogs, searchQuery) => {
 const BlogsList = ({ blogs, searchQuery, sortCmp }) => {
     const filteredBlogs = applySearchFilter(blogs, searchQuery);
     const sortedBlogs = filteredBlogs.sort(sortCmp);
-    console.log(sortedBlogs);
     return (
         <ResponsiveMasonry
             className={styles.blogList}
