@@ -127,7 +127,6 @@ const useStyles = makeStyles(theme => ({
 const lightMode = createMuiTheme(lightTheme);
 const darkMode = createMuiTheme(darkTheme);
 
-
 const BlogLayout = ({ pageName = 'Blogs', children, initialQuery = '' }) => {
     const data = useStaticQuery(graphql`
         query {

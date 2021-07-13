@@ -1,3 +1,4 @@
+import React from 'react';
 import interests from './interests-images';
 import utils from './utils';
 import workExperience from './work-experience';
@@ -25,13 +26,6 @@ const bio = {
             `,
             image: interests.gameDev,
         },
-        // {
-        //     name: 'Deep learning',
-        //     description: `
-        //         Reinforcement learning, NLP, OCR
-        //     `,
-        //     image: interests.deepLearning,
-        // },
         {
             name: 'Reading',
             description: `
@@ -111,7 +105,7 @@ const bio = {
             name: "Faculty of Engineering Dean's Award",
             time: '2020',
             description:
-                "For being among the top 25 highest performing students across all 1st/2nd year students in UNSW's School of Engineering.",
+                <>For being among the top 25 highest performing students across all 1st/2nd year students in UNSW's School of Engineering.</>,
         },
         {
             name: 'Atlassian 1st Place Prize for Data Structures and Algorithms',
@@ -131,7 +125,7 @@ const bio = {
                 'Worked in a team of 4 to develop a prototype for an education platform driven by deep learning that automatically tailors a curriculum for young children with ASD. Achieved 1st place out of 37 other participating teams from across Australia.',
         },
         {
-            name: 'Google Chronicle Hackathon 2nd Place',
+            name: <a href="https://raw.githubusercontent.com/Tymotex/timz.dev/master/src/portfolio-data/awards/chronicle-certificate.png">Google Chronicle Hackathon 2nd Place</a>,
             time: '2020',
             description:
                 'Worked in a team of 4 to build a proof-of-concept application for an automated time scheduler system. This project won 2nd place out of around 40 other teams.',
