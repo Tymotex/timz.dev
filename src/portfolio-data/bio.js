@@ -120,15 +120,27 @@ const bio = {
         },
         {
             name: "Accenture 'Hack for Good' Hackathon 1st Place",
-            time: '2020',
+            time: '2021',
             description:
                 'Worked in a team of 4 to develop a prototype for an education platform driven by deep learning that automatically tailors a curriculum for young children with ASD. Achieved 1st place out of 37 other participating teams from across Australia.',
         },
         {
             name: <a href="https://raw.githubusercontent.com/Tymotex/timz.dev/master/src/portfolio-data/awards/chronicle-certificate.png">Google Chronicle Hackathon 2nd Place</a>,
-            time: '2020',
+            time: '2021',
             description:
-                'Worked in a team of 4 to build a proof-of-concept application for an automated time scheduler system. This project won 2nd place out of around 40 other teams.',
+                <>
+                    <p>Worked in a team of 4 to build a proof-of-concept application for an automated time scheduler system. This project won 2nd place out of around 40 other teams.</p>
+                    <p>Prototype viewable <a href="https://get-2-gether.netlify.app/">here</a>.</p>
+                </>,
+        },
+        {
+            name: "CSESoc Annual Flagship Hackathon 2nd Place",
+            time: '2021',
+            description:
+                <>
+                    <p>Worked in a team of 4 to develop a prototype for an educational content delivery web app that recommends lessons to students with learning disabilities. We achieved 2nd place out of more than 60 participating teams.</p>
+                    <p>Prototype viewable <a href="https://educatory.netlify.app/">here</a> and pitch viewable <a href="https://youtu.be/wUZMYPQURrw">here</a></p>
+                </>,
         },
         {
             name: 'Academic Awards Achievement (Scholarship)',

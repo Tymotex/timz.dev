@@ -1,7 +1,8 @@
 import arduinoIcon from './arduino.png';
 import bootstrapIcon from './bootstrap.png';
-import cSharpIcon from './csharp.png';
 import cIcon from './c.png';
+import chakraIcon from './chakra.png';
+import cSharpIcon from './csharp.png';
 import expressIcon from './express.png';
 import flaskIcon from './flask.png';
 import gatsbyIcon from './gatsby.png';
@@ -11,7 +12,7 @@ import javaIcon from './java.png';
 import javafxIcon from './javafx.png';
 import javascriptIcon from './javascript.png';
 import jqueryIcon from './jquery.png';
-import materialUiIcon from './materialui.png'; 
+import materialUiIcon from './materialui.png';
 import mongodbIcon from './mongodb.png';
 import nextJsIcon from './nextjs.png';
 import nodeIcon from './node.png';
@@ -24,12 +25,15 @@ import rubyIcon from './ruby.png';
 import sassIcon from "./sass.png";
 import seleniumIcon from './selenium.png';
 import shellIcon from './shell.png';
+import threeIcon from './three.png';
+import typescriptIcon from './typescript.png';
 import unityIcon from './unity.png';
 
 const images = {
     "arduino": arduinoIcon,
     "bootstrap": bootstrapIcon,
-    "c": cIcon, 
+    "c": cIcon,
+    "chakra": chakraIcon,
     "csharp": cSharpIcon,
     "express": expressIcon,
     "flask": flaskIcon,
@@ -53,6 +57,8 @@ const images = {
     "sass": sassIcon,
     "selenium": seleniumIcon,
     "shell": shellIcon,
+    "three": threeIcon,
+    "typescript": typescriptIcon,
     "unity": unityIcon
 };
 

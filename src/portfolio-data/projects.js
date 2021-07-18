@@ -115,7 +115,7 @@ export default {
                     link: 'https://github.com/kishek2000/accentureHackathon',
                 },
             ],
-            technologies: ['javascript', 'nextJs', 'react', 'python', 'flask', 'mongodb'],
+            technologies: ['javascript', 'nextJs', 'react', 'python', 'express', 'mongodb', 'graphql', 'three'],
             overlay: {
                 icon: images.overlayImages.github,
                 label: 'View on GitHub',
@@ -162,7 +162,7 @@ export default {
         },
         {
             title: 'Structs.sh',
-            thumbnail: 'https://raw.githubusercontent.com/csesoc/Structs.sh/master/client/public/structs-csesoc.png',
+            thumbnail: 'https://raw.githubusercontent.com/csesoc/Structs.sh/master/client/public/homepage.png',
             description: utils.renderMarkdown(descriptions.structs),
             furtherLinks: [
                 {
@@ -170,7 +170,7 @@ export default {
                     link: 'https://github.com/csesoc/Structs.sh/',
                 },
             ],
-            technologies: ['javascript', 'react'],
+            technologies: ['javascript', 'react', 'typescript', 'mongodb', 'express'],
             overlay: {
                 icon: images.overlayImages.github,
                 label: 'View on GitHub',
@@ -240,6 +240,25 @@ export default {
                 link: 'https://github.com/wal-eed/get2gether/tree/dev',
             },
             tags: ['team', 'ongoing'],
+            rating: 4
+        },
+        {
+            title: 'Educatory',
+            thumbnail: 'https://raw.githubusercontent.com/Tymotex/educatory/main/public/showcase/homepage.png?token=ANDB5X7CNZBRKR5U3DS3D6LA7VFRG',
+            description: utils.renderMarkdown(descriptions.educatory),
+            furtherLinks: [
+                {
+                    label: 'GitHub',
+                    link: 'https://github.com/wal-eed/get2gether/tree/dev',
+                },
+            ],
+            technologies: ['typescript', 'javascript', 'react', 'nextJs', 'chakra', 'three'],
+            overlay: {
+                icon: images.overlayImages.github,
+                label: 'View on GitHub',
+                link: 'https://github.com/wal-eed/get2gether/tree/dev',
+            },
+            tags: ['team'],
             rating: 4
         },
         {

@@ -8,6 +8,7 @@ import tactiledsDesc from './Tactile-DS.md';
 import cosmicaDesc from './Cosmica.md';
 import galacticEdDesc from './Galactic-Ed.md';
 import employMeDesc from './EmployMe.md';
+import educatoryDesc from './Educatory.md';
 import structsDesc from './Structs.md';
 import hydroponixDesc from './Hydroponix.md';
 import delivobotDesc from './Autonomous-Deliv-O-Bot.md';
@@ -27,6 +28,7 @@ const descriptions = {
     cosmica: cosmicaDesc,
     galacticed: galacticEdDesc,
     employMe: employMeDesc,
+    educatory: educatoryDesc,
     structs: structsDesc,
     hydroponix: hydroponixDesc,
     delivobot: delivobotDesc,
