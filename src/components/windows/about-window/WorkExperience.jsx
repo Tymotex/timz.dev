@@ -12,12 +12,15 @@ const WorkExperience = () => {
                             <em>{eachJob.name}</em>
                         </h2>
                     </div>
+                    <img src={eachJob.logo} className={styles.companyLogo} />
                     <div className={styles.timeText}>{eachJob.time}</div>
                     <div
+                        className={styles.markdownText}
                         dangerouslySetInnerHTML={{
                             __html: eachJob.description,
                         }}
                     />
+                    <hr />
                 </>
             ))}
         </div>
