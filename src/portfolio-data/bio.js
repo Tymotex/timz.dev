@@ -3,6 +3,7 @@ import interests from './interests-images';
 import utils from './utils';
 import workExperience from './work-experience';
 import aboutMe from './about-me.md';
+import companyLogos from './work-experience/logos';
 
 const bio = {
     name: 'Tim Zhang',
@@ -85,20 +86,29 @@ const bio = {
     ],
     workExperience: [
         {
-            name: 'UNSW — Academic Tutor (Data Structures and Algorithms)',
+            name: 'UNSW — Casual Academic Tutor (Data Structures and Algorithms)',
             time: 'June 2020 - May 2021 (1 year)',
+            logo: companyLogos.unsw,
             description: utils.renderMarkdown(workExperience.academicTutorDesc),
         },
         {
             name: 'Accenture — Technical Architect',
-            time: 'May 2021 - August 2021 (3 months)',
+            time: 'May 2021 - September 2021 (5 months)',
+            logo: companyLogos.accenture,
             description: utils.renderMarkdown(workExperience.accentureInternDesc),
         },
-        // {
-        //     name: 'WiseTech — Software Engineer Intern',
-        //     // time: 'July 2021 - August 2021',
-        //     description: utils.renderMarkdown(workExperience.wiseTechInternDesc),
-        // },
+        {
+            name: 'WiseTech Global — Associate Software Developer',
+            time: 'July 2021 - October 2021 (3 months)',
+            logo: companyLogos.wisetech,
+            description: utils.renderMarkdown(workExperience.wiseTechInternDesc),
+        },
+        {
+            name: 'Google — Software Engineering Intern (SRE)',
+            time: 'November 2021 - February 2022 (3 months)',
+            logo: companyLogos.google,
+            description: utils.renderMarkdown(workExperience.googleInternDesc)
+        }
     ],
     awards: [
         {

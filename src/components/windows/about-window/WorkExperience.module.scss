@@ -6,3 +6,17 @@
     text-align: center;
     color: rgba(182, 240, 96, 0.678);
 }
+
+.companyLogo {
+    height: 75px;
+    margin: 0 auto;
+    margin-bottom: 12px;
+    display: block;
+    border-radius: 5px;
+}
+
+.markdownText {
+    p {
+        margin: 0 0 5px 0 !important;
+    }
+}
