@@ -86,7 +86,7 @@ const bio = {
     ],
     workExperience: [
         {
-            name: 'UNSW — Academic Tutor (Data Structures and Algorithms)',
+            name: 'UNSW — Casual Academic Tutor (Data Structures and Algorithms)',
             time: 'June 2020 - May 2021 (1 year)',
             logo: companyLogos.unsw,
             description: utils.renderMarkdown(workExperience.academicTutorDesc),
@@ -104,7 +104,7 @@ const bio = {
             description: utils.renderMarkdown(workExperience.wiseTechInternDesc),
         },
         {
-            name: 'Google Software Engineering Intern (SRE)',
+            name: 'Google — Software Engineering Intern (SRE)',
             time: 'November 2021 - February 2022 (3 months)',
             logo: companyLogos.google,
             description: utils.renderMarkdown(workExperience.googleInternDesc)
