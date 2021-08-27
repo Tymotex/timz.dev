@@ -19,7 +19,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import clsx from 'clsx';
 import { Link } from 'gatsby';
 import Cookies from 'js-cookie';
-import React from 'react';
+import React, { useEffect } from 'react';
 import siteIcon from 'src/images/icon.png';
 import { siteCookies } from '../constants';
 import styles from './BlogLayout.module.scss';
@@ -166,9 +166,13 @@ const BlogLayout = ({ pageName = 'Blogs', children, initialQuery = '' }) => {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
     const [darkModeActive, setDarkModeActive] = React.useState(
-        localStorage.getItem(siteCookies.DARK_MODE_ACTIVE) === 'true' ? true : false
+        false
     );
     const [searchQuery, setSearchQuery] = React.useState(initialQuery);
+
+    useEffect(() => {
+        setDarkModeActive(localStorage.getItem(siteCookies.DARK_MODE_ACTIVE) === 'true' ? true : false);
+    }, []);
 
     const handleDrawerOpen = () => {
         setOpen(true);
