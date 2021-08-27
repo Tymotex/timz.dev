@@ -196,7 +196,9 @@ const BlogLayout = ({ pageName = 'Blogs', children, initialQuery = '' }) => {
         return !wasActive;
     };
 
-    const trigger = useScrollTrigger({ target: typeof window !== 'undefined' ? window : null });
+    const trigger = useScrollTrigger({
+        target: typeof window !== 'undefined' ? window : null
+    });
 
     return (
         <ThemeProvider theme={darkModeActive ? darkMode : lightMode}>
