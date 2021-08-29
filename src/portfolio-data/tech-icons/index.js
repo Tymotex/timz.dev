@@ -25,6 +25,7 @@ import rubyIcon from './ruby.png';
 import sassIcon from "./sass.png";
 import seleniumIcon from './selenium.png';
 import shellIcon from './shell.png';
+import socketioIcon from './socketio.png';
 import threeIcon from './three.png';
 import typescriptIcon from './typescript.png';
 import unityIcon from './unity.png';
@@ -57,6 +58,7 @@ const images = {
     "sass": sassIcon,
     "selenium": seleniumIcon,
     "shell": shellIcon,
+    "socketio": socketioIcon,
     "three": threeIcon,
     "typescript": typescriptIcon,
     "unity": unityIcon

@@ -14,8 +14,8 @@ const bio = {
     transcriptURL: 'https://tymotex.github.io/timz.dev/public/resume/transcript.pdf',
     aboutDescription: utils.renderMarkdown(aboutMe),
     typewriterLines: [
-        '<FullstackEngineer />',
-        '<AspiringDataScientist />',
+        '<FullstackDev />',
+        '<AspiringSRE />',
         '<HobbyistGameDev />',
         '<COMPTutor />',
     ],

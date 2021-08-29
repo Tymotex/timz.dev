@@ -29,7 +29,7 @@ export default {
                     link: 'https://github.com/Tymotex/Techsuite/',
                 },
             ],
-            technologies: ['react', 'flask', 'postgreSQL', 'python', 'javaScript', 'sass'],
+            technologies: ['react', 'flask', 'postgreSQL', 'python', 'javaScript', 'sass', 'socketio'],
             overlay: {
                 icon: images.overlayImages.github, // Importing the image to display in the hover overlay
                 label: 'View on GitHub', // Text to be displayed on hovering over the project image
@@ -103,7 +103,7 @@ export default {
         {
             title: 'Galactic Ed',
             thumbnail:
-                'https://raw.githubusercontent.com/kishek2000/accentureHackathon/master/images/showcaseThumbnail.png',
+                'https://raw.githubusercontent.com/galacticEd/platform/master/images/thumbnail.png?token=ANDB5X3PIUJWLVCAZ52MHSTBFN3JW',
             description: utils.renderMarkdown(descriptions.galacticed),
             furtherLinks: [
                 {
@@ -115,7 +115,7 @@ export default {
                     link: 'https://github.com/kishek2000/accentureHackathon',
                 },
             ],
-            technologies: ['javascript', 'nextJs', 'react', 'python', 'express', 'mongodb', 'graphql', 'three'],
+            technologies: ['javascript', 'nextJs', 'react', 'express', 'mongodb', 'graphql', 'three'],
             overlay: {
                 icon: images.overlayImages.github,
                 label: 'View on GitHub',
@@ -244,7 +244,7 @@ export default {
         },
         {
             title: 'Educatory',
-            thumbnail: 'https://raw.githubusercontent.com/Tymotex/educatory/main/public/showcase/homepage.png?token=ANDB5X7CNZBRKR5U3DS3D6LA7VFRG',
+            thumbnail: 'https://raw.githubusercontent.com/Tymotex/educatory/main/public/showcase/homepage.png?token=ANDB5XZ2JW2LVPAEJISPDFDBGSXGI',
             description: utils.renderMarkdown(descriptions.educatory),
             furtherLinks: [
                 {
@@ -351,6 +351,25 @@ export default {
             },
             rating: 8
         },
+        {
+            title: "Ephemerald",
+            thumbnail: 'https://raw.githubusercontent.com/Wal-eed/ephemerald/main/client/public/ephemerald-thumbnail.png',
+            description: utils.renderMarkdown(descriptions.ephemerald),
+            furtherLinks: [
+                {
+                    label: 'Demo (http)',
+                    link: 'http://lukefl.me/emulator/'
+                }
+            ],
+            overlay: {
+                icon: images.overlayImages.github,
+                label: 'View on GitHub',
+                link: 'https://github.com/Tymotex/timz.dev',
+            },
+            technologies: ['react', 'chakra', 'nodejs', 'socketio'],
+            tags: ['team', 'ongoing'],
+            rating: 4
+        }
         // {
         //     title: "PyTorch Language Models",
         //     thumbnail: "https://miro.medium.com/max/12032/0*__5nhm_2qHSrTVoZ",
