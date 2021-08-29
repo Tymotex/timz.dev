@@ -103,7 +103,7 @@ export default {
         {
             title: 'Galactic Ed',
             thumbnail:
-                'https://raw.githubusercontent.com/galacticEd/platform/master/images/thumbnail.png?token=ANDB5X3PIUJWLVCAZ52MHSTBFN3JW',
+                'https://raw.githubusercontent.com/kishek2000/accentureHackathon/master/images/thumbnail.png',
             description: utils.renderMarkdown(descriptions.galacticed),
             furtherLinks: [
                 {
@@ -115,7 +115,7 @@ export default {
                     link: 'https://github.com/kishek2000/accentureHackathon',
                 },
             ],
-            technologies: ['javascript', 'nextJs', 'react', 'express', 'mongodb', 'graphql', 'three'],
+            technologies: ['typescript', 'nextJs', 'react', 'express', 'mongodb', 'graphql', 'three'],
             overlay: {
                 icon: images.overlayImages.github,
                 label: 'View on GitHub',
@@ -357,16 +357,24 @@ export default {
             description: utils.renderMarkdown(descriptions.ephemerald),
             furtherLinks: [
                 {
-                    label: 'Demo (http)',
+                    label: 'Demo',
                     link: 'http://lukefl.me/emulator/'
+                },
+                {
+                    label: 'Pitch',
+                    link: 'https://www.youtube.com/watch?v=7cMTyCDymE8'
+                },
+                {
+                    label: 'GitHub',
+                    link: 'https://github.com/Wal-eed/ephemerald'
                 }
             ],
             overlay: {
                 icon: images.overlayImages.github,
                 label: 'View on GitHub',
-                link: 'https://github.com/Tymotex/timz.dev',
+                link: 'https://github.com/Wal-eed/ephemerald',
             },
-            technologies: ['react', 'chakra', 'nodejs', 'socketio'],
+            technologies: ['react', 'typescript', 'chakra', 'nodejs', 'socketio'],
             tags: ['team', 'ongoing'],
             rating: 4
         }
