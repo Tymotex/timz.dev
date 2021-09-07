@@ -6,7 +6,7 @@ import InterestsLists from './InterestsList';
 import WorkExperience from './WorkExperience';
 import AwardsLists from './AwardsList';
 import SpotifyDisplay from './SpotifyDisplay';
-import CodeStats from './CodeStats';
+// import CodeStats from './CodeStats';
 import { Box, Grid } from '@material-ui/core';
 import GitHubStats from './GitHubStats';
 import styles from '../Window.module.scss';
@@ -20,14 +20,23 @@ const AboutWindow = props => {
                     __html: aboutDescription,
                 }}
             ></div>
-            <Expandable text="Resume">
-                <a target="_blank" rel="noopener noreferrer" href={bio.resumeURL}>
-                    Resume link
+            <Expandable text="Resume & Transcript">
+                <a
+                    className={styles.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={bio.resumeURL}
+                >
+                    Resume link{' '}
                 </a>
-            </Expandable>
-            <Expandable text="Transcript">
-                <a target="_blank" rel="noopener noreferrer" href={bio.transcriptURL}>
-                    Transcript link
+                &{' '}
+                <a
+                    className={styles.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={bio.transcriptURL}
+                >
+                    academic transcript link
                 </a>
             </Expandable>
             <Expandable text="Work Experience">

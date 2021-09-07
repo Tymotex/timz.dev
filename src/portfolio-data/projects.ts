@@ -1,15 +1,23 @@
-// Collection of my personal projects in JSON format
+// Collection of my personal projects in a javascript object
 
-// Importing a set of images to be displayed in the hover overlay
-import images from '../images';
+import images from 'src/images';
 import descriptions from './project-descriptions';
 import utils from './utils';
+import { Project } from 'src/typedefs/Project';
+
+interface ProjectCollection {
+    // A collection of personal projects that I spent significant amounts of time and effort on
+    mainProjects: Project[];
+    // A collection of projects that were either university projects or smaller personal projects
+    miniProjects: Project[];
+    // A collection of projects that aren't too impressive but which gave rise to my interest in serious software engineering
+    babyProjects: Project[];
+}
 
 // Note: Each project contains a rating field which is a value from 0-10 that is a subjective
 // representation of impressiveness
-export default {
+const projects: ProjectCollection = {
     mainProjects: [
-        // A collection of personal projects that I spent significant amounts of time and effort on
         {
             title: 'Techsuite',
             thumbnail:
@@ -29,15 +37,23 @@ export default {
                     link: 'https://github.com/Tymotex/Techsuite/',
                 },
             ],
-            technologies: ['react', 'flask', 'postgreSQL', 'python', 'javaScript', 'sass', 'socketio'],
+            technologies: [
+                'react',
+                'flask',
+                'postgreSQL',
+                'python',
+                'javaScript',
+                'sass',
+                'socketio',
+            ],
             overlay: {
-                icon: images.overlayImages.github, // Importing the image to display in the hover overlay
-                label: 'View on GitHub', // Text to be displayed on hovering over the project image
-                link: 'https://github.com/Tymotex/Techsuite', // Hyperlink to open in a new tab when image is clicked
+                icon: images.overlayImages.github,
+                label: 'View on GitHub',
+                link: 'https://github.com/Tymotex/Techsuite',
             },
             gif:
                 'https://github.com/Tymotex/timz.dev/blob/master/public/project-images/techsuite-showcase.gif?raw=true',
-            rating: 8
+            rating: 8,
         },
         {
             title: 'Tactile DS',
@@ -66,7 +82,7 @@ export default {
             },
             gif:
                 'https://github.com/Tymotex/timz.dev/blob/master/public/project-images/tactile-ds-showcase.gif?raw=true',
-            rating: 10
+            rating: 10,
         },
         {
             title: 'Cosmica',
@@ -98,7 +114,7 @@ export default {
             },
             gif:
                 'https://github.com/Tymotex/timz.dev/blob/master/public/project-images/cosmica-showcase.gif?raw=true',
-            rating: 7
+            rating: 7,
         },
         {
             title: 'Galactic Ed',
@@ -115,14 +131,22 @@ export default {
                     link: 'https://github.com/kishek2000/accentureHackathon',
                 },
             ],
-            technologies: ['typescript', 'nextJs', 'react', 'express', 'mongodb', 'graphql', 'three'],
+            technologies: [
+                'typescript',
+                'nextJs',
+                'react',
+                'express',
+                'mongodb',
+                'graphql',
+                'three',
+            ],
             overlay: {
                 icon: images.overlayImages.github,
                 label: 'View on GitHub',
                 link: 'https://github.com/kishek2000/accentureHackathon',
             },
             tags: ['team', 'ongoing'],
-            rating: 9
+            rating: 9,
         },
         {
             title: 'Employ.me',
@@ -158,11 +182,12 @@ export default {
                 link: 'https://github.com/Tymotex/JobTracker',
             },
             tags: ['team', 'uni', 'ongoing'],
-            rating: 8
+            rating: 8,
         },
         {
             title: 'Structs.sh',
-            thumbnail: 'https://raw.githubusercontent.com/csesoc/Structs.sh/master/client/public/homepage.png',
+            thumbnail:
+                'https://raw.githubusercontent.com/csesoc/Structs.sh/master/client/public/homepage.png',
             description: utils.renderMarkdown(descriptions.structs),
             furtherLinks: [
                 {
@@ -177,11 +202,10 @@ export default {
                 link: 'https://github.com/csesoc/Structs.sh/',
             },
             tags: ['team', 'ongoing'],
-            rating: 9
+            rating: 9,
         },
     ],
     miniProjects: [
-        // A collection of projects that were either university projects or smaller personal projects
         {
             title: 'Hydroponix',
             thumbnail:
@@ -199,7 +223,7 @@ export default {
                 label: 'View on GitHub',
                 link: 'https://github.com/Tymotex/Hydroponix',
             },
-            rating: 5
+            rating: 5,
         },
         {
             title: 'Autonomous Deliv-O-Bot',
@@ -221,7 +245,7 @@ export default {
             gif:
                 'https://github.com/Tymotex/timz.dev/blob/master/public/project-images/deliv-o-bot-showcase.gif?raw=true',
             tags: ['team', 'uni'],
-            rating: 5
+            rating: 5,
         },
         {
             title: 'Get2Gether',
@@ -240,11 +264,12 @@ export default {
                 link: 'https://github.com/wal-eed/get2gether/tree/dev',
             },
             tags: ['team', 'ongoing'],
-            rating: 4
+            rating: 4,
         },
         {
             title: 'Educatory',
-            thumbnail: 'https://raw.githubusercontent.com/Tymotex/educatory/main/public/showcase/homepage.png?token=ANDB5XZ2JW2LVPAEJISPDFDBGSXGI',
+            thumbnail:
+                'https://raw.githubusercontent.com/Tymotex/educatory/main/public/showcase/homepage.png?token=ANDB5XZ2JW2LVPAEJISPDFDBGSXGI',
             description: utils.renderMarkdown(descriptions.educatory),
             furtherLinks: [
                 {
@@ -259,7 +284,7 @@ export default {
                 link: 'https://github.com/wal-eed/get2gether/tree/dev',
             },
             tags: ['team'],
-            rating: 4
+            rating: 4,
         },
         {
             title: 'POSIX Shell to Perl 5 Transpiler',
@@ -279,7 +304,7 @@ export default {
                 link: 'https://github.com/Tymotex/ShellPerlTranspiler',
             },
             tags: ['uni'],
-            rating: 4
+            rating: 4,
         },
         {
             title: 'CS Nexus',
@@ -300,7 +325,7 @@ export default {
             },
             gif:
                 'https://github.com/Tymotex/CS-Nexus/blob/master/public/cs-nexus-preview.gif?raw=true',
-            rating: 4
+            rating: 4,
         },
         {
             title: 'Darkshade Crypt',
@@ -326,7 +351,7 @@ export default {
             gif:
                 'https://github.com/Tymotex/timz.dev/blob/master/public/project-images/darkshade-crypt-showcase.gif?raw=true',
             tags: ['team', 'uni'],
-            rating: 4
+            rating: 4,
         },
         {
             title: 'timz.dev',
@@ -343,31 +368,32 @@ export default {
                     link: 'https://github.com/Tymotex/timz.dev',
                 },
             ],
-            technologies: ['react', 'gatsby', 'javaScript', 'materialUI'],
+            technologies: ['react', 'gatsby', 'javaScript', 'materialUI', 'graphql'],
             overlay: {
                 icon: images.overlayImages.github,
                 label: 'View on GitHub',
                 link: 'https://github.com/Tymotex/timz.dev',
             },
-            rating: 8
+            rating: 8,
         },
         {
-            title: "Ephemerald",
-            thumbnail: 'https://raw.githubusercontent.com/Wal-eed/ephemerald/main/client/public/ephemerald-thumbnail.png',
+            title: 'Ephemerald',
+            thumbnail:
+                'https://raw.githubusercontent.com/Wal-eed/ephemerald/main/client/public/ephemerald-thumbnail.png',
             description: utils.renderMarkdown(descriptions.ephemerald),
             furtherLinks: [
                 {
                     label: 'Demo',
-                    link: 'https://ephemerald.netlify.app/emulator/'
+                    link: 'https://ephemerald.netlify.app/emulator/',
                 },
                 {
                     label: 'Pitch',
-                    link: 'https://www.youtube.com/watch?v=7cMTyCDymE8'
+                    link: 'https://www.youtube.com/watch?v=7cMTyCDymE8',
                 },
                 {
                     label: 'GitHub',
-                    link: 'https://github.com/Wal-eed/ephemerald'
-                }
+                    link: 'https://github.com/Wal-eed/ephemerald',
+                },
             ],
             overlay: {
                 icon: images.overlayImages.github,
@@ -376,8 +402,8 @@ export default {
             },
             technologies: ['react', 'typescript', 'chakra', 'nodejs', 'socketio'],
             tags: ['team', 'ongoing'],
-            rating: 4
-        }
+            rating: 4,
+        },
         // {
         //     title: "PyTorch Language Models",
         //     thumbnail: "https://miro.medium.com/max/12032/0*__5nhm_2qHSrTVoZ",
@@ -395,11 +421,7 @@ export default {
         //     overlayLink: "https://github.com/Tymotex/DarkshadeCrypt"
         // }
     ],
-    ongoingProjects: [
-        // A collection of ongoing projects
-    ],
     babyProjects: [
-        // A collection of projects that aren't too impressive but which gave rise to my interest in serious software engineering
         {
             title: 'Astral Assault',
             thumbnail:
@@ -423,7 +445,7 @@ export default {
             },
             gif:
                 'https://github.com/Tymotex/timz.dev/blob/master/public/project-images/astral-assault-showcase.gif?raw=true',
-            rating: 3
+            rating: 3,
         },
         {
             title: 'Blitz Breach',
@@ -448,7 +470,7 @@ export default {
             },
             gif:
                 'https://github.com/Tymotex/timz.dev/blob/master/public/project-images/blitz-breach-showcase.gif?raw=true',
-            rating: 1
+            rating: 1,
         },
         {
             title: 'Fallout 4 Mods',
@@ -467,7 +489,7 @@ export default {
                 label: 'View on NexusMods',
                 link: 'https://www.nexusmods.com/fallout4/users/29182470?tab=user+files',
             },
-            rating: 1
+            rating: 1,
         },
         {
             title: 'Quote scraper',
@@ -492,7 +514,9 @@ export default {
             },
             gif:
                 'https://github.com/Tymotex/timz.dev/blob/master/public/project-images/quote-extractor-showcase.gif?raw=true',
-            rating: 2
+            rating: 2,
         },
     ],
 };
+
+export default projects;

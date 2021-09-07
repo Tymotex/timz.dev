@@ -1,8 +1,8 @@
 import { Typography } from '@material-ui/core';
 import React from 'react';
-import Window from '../Window.js';
+import Window from '../Window';
 import windowStyles from '../Window.module.scss';
-import projects from 'src/portfolio-data/projects.js';
+import projects from 'src/portfolio-data/projects';
 import ProjectsGrid from './ProjectsGrid';
 import { Expandable } from 'src/components/expandable';
 import TagLegend from './TagLegend';
