@@ -358,7 +358,7 @@ export default {
             furtherLinks: [
                 {
                     label: 'Demo',
-                    link: 'http://lukefl.me/emulator/'
+                    link: 'https://ephemerald.netlify.app/emulator/'
                 },
                 {
                     label: 'Pitch',

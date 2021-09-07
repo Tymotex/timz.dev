@@ -23,63 +23,63 @@ const bio = {
         {
             name: 'Game Development',
             description: `
-                Sci-fi, strategy, RPGs and retro
+                Sci-fi, strategy, RPGs and retro.
             `,
             image: interests.gameDev,
         },
         {
             name: 'Reading',
             description: `
-                Science books, biographies
+                Pop science, lifestyle and classic software engineering books.
             `,
             image: interests.reading,
         },
         {
-            name: 'Fingerstyle Guitar',
+            name: 'Acoustic & Electric Guitar',
             description: `
-                Alternative/Indie songs and Game OSTs
+                Alternative/Indie music.
             `,
             image: interests.guitar,
         },
         {
-            name: 'Weightlifting',
+            name: 'Lifting',
             description: `
-                Clean & jerks, snatches and powerlifting exercises
+                Olympic style weightlifting and powerlifting.
             `,
             image: interests.powerlifting,
         },
         {
             name: 'Electronics',
             description: `
-                Raspberry pi, Arduino projects, home automation
+                Raspberry pi and Arduino projects.
             `,
             image: interests.electronics,
         },
         {
             name: 'Listening to Podcasts',
             description: `
-                Lex Fridman, Jocko Willink, Sam Harris, Jordan Peterson
+                Lex Fridman, Andrew Huberman, Jocko Willink, Sam Harris, Jordan Peterson.
             `,
             image: interests.podcasts,
         },
         {
-            name: 'Teaching',
+            name: 'Tutoring',
             description: `
-                Coding, physics and maths
+                Programming, physics and maths.
             `,
             image: interests.teaching,
         },
         {
             name: 'Gardening',
             description: `
-                
+                Debugging but with actual bugs.
             `,
             image: interests.gardening,
         },
         {
             name: 'Origami',
             description: `
-                
+                Modular origami.
             `,
             image: interests.origami,
         },

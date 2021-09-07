@@ -18,7 +18,7 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import MenuIcon from '@material-ui/icons/Menu';
 import clsx from 'clsx';
 import { Link } from 'gatsby';
-import Cookies from 'js-cookie';
+// import Cookies from 'js-cookie';
 import React, { useEffect } from 'react';
 import siteIcon from 'src/images/icon.png';
 import { siteCookies } from '../constants';

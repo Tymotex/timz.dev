@@ -1,6 +1,6 @@
 import React from 'react';
-import tagIcons from 'src/portfolio-data/tag-icons';
-import styles from './Tag.module.scss';
+// import tagIcons from 'src/portfolio-data/tag-icons';
+// import styles from './Tag.module.scss';
 
 const TagList = () => {
     return (

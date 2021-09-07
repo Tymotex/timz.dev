@@ -1,5 +1,5 @@
 $expandableTextHeight: 12px;
-$textSize: 18px;
+$textSize: 24px;
 
 .expandable {
     display: block;
@@ -7,6 +7,8 @@ $textSize: 18px;
     margin: 15px;
     margin-bottom: 10px;
     transition: 0.15s all ease-in-out;
+    position: relative;
+    font-family: 'Ubuntu Mono', monospace;
 
     &:hover {
         color: rgba(187, 187, 187, 0.678);
@@ -15,14 +17,19 @@ $textSize: 18px;
     }
 
     .toggleButton {
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        height: $expandableTextHeight;
         user-select: none;
+        font-size: $textSize;
     }
 
     .text {
+        margin-left: $textSize;
         display: inline;
         letter-spacing: normal;
         font-size: $textSize;

@@ -15,9 +15,22 @@ module.exports = {
     },
     plugins: [
         'gatsby-plugin-styled-components', // This plugin solves the bug where unstyled content 'flickers' before being styled. Source: https://github.com/gatsbyjs/gatsby/issues/5667
-        'gatsby-plugin-material-ui', // This solves unstyled content flickering for Material UI
+        'gatsby-plugin-material-ui',       // This solves unstyled content flickering for Material UI
         'gatsby-plugin-react-helmet',
-        'gatsby-plugin-root-import', // This is the plugin that lets you import relative to the project root: import ... from 'src/...';
+        {
+            resolve: `gatsby-plugin-typescript`,   // Gatsby ships with TypeScript support. This plugin is for additional TypeScript customisations
+            options: {                             // This is basically your tsconfig.js. See the options available here: https://babeljs.io/docs/en/babel-preset-typescript#options
+                compilerOptions: {
+                    target: 'es5',
+                    experimentalDecorators: true,
+                    jsx: 'react-jsx',
+                },
+                isTSX: true, // defaults to false
+                jsxPragma: `jsx`, // defaults to "React"
+                allExtensions: true, // defaults to false
+            }
+        },
+        'gatsby-plugin-root-import',       // This is the plugin that lets you import relative to the project root: import ... from 'src/...';
         {
             resolve: `gatsby-plugin-manifest`,
             options: {

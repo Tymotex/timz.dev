@@ -7,8 +7,9 @@ import WorkExperience from './WorkExperience';
 import AwardsLists from './AwardsList';
 import SpotifyDisplay from './SpotifyDisplay';
 import CodeStats from './CodeStats';
-import { Grid } from '@material-ui/core';
+import { Box, Grid } from '@material-ui/core';
 import GitHubStats from './GitHubStats';
+import styles from '../Window.module.scss';
 
 const AboutWindow = props => {
     const { aboutDescription, interests } = bio;
@@ -37,17 +38,17 @@ const AboutWindow = props => {
             </Expandable>
             <Expandable text="Interests and Hobbies">
                 <InterestsLists interests={interests} />
+                <SpotifyDisplay />
             </Expandable>
             <br />
-            <Grid container>
-                <Grid item xs={12} sm={6}>
-                    <CodeStats />
-                </Grid>
-                <Grid item xs={12} sm={6}>
+            <Box className={styles.statsContainer}>
+                <Box>
                     <GitHubStats />
-                    <SpotifyDisplay />
-                </Grid>
-            </Grid>
+                </Box>
+                {/* <Box>
+                    <CodeStats />
+                </Box> */}
+            </Box>
         </Window>
     );
 };

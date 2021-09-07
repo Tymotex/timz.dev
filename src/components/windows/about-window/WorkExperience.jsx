@@ -12,7 +12,7 @@ const WorkExperience = () => {
                             <em>{eachJob.name}</em>
                         </h2>
                     </div>
-                    <img src={eachJob.logo} className={styles.companyLogo} />
+                    <img src={eachJob.logo} className={styles.companyLogo} alt="Company logo" />
                     <div className={styles.timeText}>{eachJob.time}</div>
                     <div
                         className={styles.markdownText}

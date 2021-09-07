@@ -1,14 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import tagIcons from 'src/portfolio-data/tag-icons';
-import styles from '../Tag.module.scss';
-import { Avatar, Chip } from '@material-ui/core';
+import { Chip } from '@material-ui/core';
+import BuildIcon from '@material-ui/icons/Build';
 import PeopleIcon from '@material-ui/icons/People';
 import SchoolIcon from '@material-ui/icons/School';
-import BuildIcon from '@material-ui/icons/Build';
+import React, { FC } from 'react';
 
-const toTitleCase = str => {
-    return str.replace(/\w\S*/g, function(txt) {
+type TagTypes = 'team' | 'ongoing' | 'uni';
+
+const toTitleCase = (str: string): string => {
+    return str.replace(/\w\S*/g, txt => {
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
     });
 };
@@ -36,7 +35,11 @@ const Icon = ({ tagName }) => {
     }
 };
 
-const TagItem = ({ tag }) => {
+interface TagItemProps {
+    tag: TagTypes;
+}
+
+const TagItem: FC<TagItemProps> = ({ tag }) => {
     return (
         <Chip
             style={{ marginRight: '10px' }}
@@ -44,10 +47,6 @@ const TagItem = ({ tag }) => {
             label={toTitleCase(tag)}
         />
     );
-};
-
-TagItem.propTypes = {
-    tag: PropTypes.string.isRequired,
 };
 
 export default TagItem;

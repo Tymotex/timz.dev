@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '../Tag.module.scss';
-import TagItem from './TagItem';
+import TagItem from './TagItem.tsx';
 
 const TagList = ({ tags }) => {
     return (

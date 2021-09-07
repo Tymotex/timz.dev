@@ -23,6 +23,12 @@ $overlayTransDuration: 0.5s;
     }
 }
 
+.stats-container {
+    max-width: 600px;
+    display: block;
+    margin: 0 auto;
+}
+
 // ===== Project Window Styles =====
 .project-card {
     border-radius: 10px;
