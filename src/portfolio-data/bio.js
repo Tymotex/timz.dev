@@ -1,6 +1,6 @@
 import React from 'react';
 import interests from './interests-images';
-import utils from './utils';
+import { renderMarkdown } from './utils';
 import workExperience from './work-experience';
 import aboutMe from './about-me.md';
 import companyLogos from './work-experience/logos';
@@ -12,7 +12,7 @@ const bio = {
     `,
     resumeURL: 'https://tymotex.github.io/timz.dev/public/resume/resume.pdf',
     transcriptURL: 'https://tymotex.github.io/timz.dev/public/resume/transcript.pdf',
-    aboutDescription: utils.renderMarkdown(aboutMe),
+    aboutDescription: renderMarkdown(aboutMe),
     typewriterLines: [
         '<FullstackDev />',
         '<AspiringSRE />',
@@ -89,25 +89,25 @@ const bio = {
             name: 'UNSW — Casual Academic Tutor (Data Structures and Algorithms)',
             time: 'June 2020 - May 2021 (1 year)',
             logo: companyLogos.unsw,
-            description: utils.renderMarkdown(workExperience.academicTutorDesc),
+            description: renderMarkdown(workExperience.academicTutorDesc),
         },
         {
             name: 'Accenture — Technical Architect',
             time: 'May 2021 - September 2021 (5 months)',
             logo: companyLogos.accenture,
-            description: utils.renderMarkdown(workExperience.accentureInternDesc),
+            description: renderMarkdown(workExperience.accentureInternDesc),
         },
         {
             name: 'WiseTech Global — Associate Software Developer',
             time: 'July 2021 - October 2021 (3 months)',
             logo: companyLogos.wisetech,
-            description: utils.renderMarkdown(workExperience.wiseTechInternDesc),
+            description: renderMarkdown(workExperience.wiseTechInternDesc),
         },
         {
             name: 'Google — Software Engineering Intern (SRE)',
             time: 'November 2021 - February 2022 (3 months)',
             logo: companyLogos.google,
-            description: utils.renderMarkdown(workExperience.googleInternDesc)
+            description: renderMarkdown(workExperience.googleInternDesc)
         }
     ],
     awards: [

@@ -3,19 +3,19 @@ import marked from 'marked';
 /**
  * Truncation utility functions
  */
-const maxCharLength = 400;
+export const maxCharLength = 400;
 
 /**
  * Determines whether the given string needs to be truncated. Any string
  * greater than default 400 characters requires truncation
  */
-const requiresTruncation = input => input.length > maxCharLength;
+export const requiresTruncation = input => input.length > maxCharLength;
 
 /**
  * If the string requires truncation, returns a string truncated at 400 characters
  * and with ellipses appended, otherwise returns the same input string
  */
-const truncate = input =>
+export const truncate = input =>
     input.length > maxCharLength ? `${input.substring(0, maxCharLength)}...` : input;
 
 /**
@@ -23,11 +23,11 @@ const truncate = input =>
  */
 
 // Strips the frontmatter from the given markdown string
-const bypassFrontmatter = markdownBody => {
+export const bypassFrontmatter = markdownBody => {
     return markdownBody ? markdownBody.replace(/^---$.*^---$/ms, '') : '';
 };
 
-const renderMarkdown = rawMarkdown => {
+export const renderMarkdown = rawMarkdown => {
     return marked(bypassFrontmatter(rawMarkdown));
 };
 
@@ -40,11 +40,34 @@ const renderMarkdown = rawMarkdown => {
  * giving a URL friendly result: "Tactile-DS"
  *     Eg. convertValidURL("Timz.dev") === "Timzdev"
  */
-const convertValidURL = title => {
+export const convertValidURL = title => {
     return title
         .replace(/ /, '-')
         .replace(/\./, '')
         .toLowerCase();
 };
 
-export default { truncate, requiresTruncation, renderMarkdown, convertValidURL };
+/**
+ * Misc
+ */
+
+/**
+ * Given a url, returns the name of the GitHub repo and the owner, if applicable.
+ */
+export const extractRepoOwnerAndName = url => {
+    // First determine if this url is a link to a GitHub repo
+    const urlObj = new URL(url);
+    console.log(url);
+    try {
+        const isGitHub = urlObj.hostname.toLowerCase().includes('github');
+        if (!isGitHub) return null;
+
+        // Extract the repo name
+        const path = urlObj.pathname.split("/");
+        const owner = path[path.length - 2];
+        const repoName = path[path.length - 1];
+        return [owner, repoName];
+    } catch {
+        return null;
+    }
+}

@@ -1,7 +1,7 @@
 import { Grid } from '@material-ui/core';
 import React from 'react';
 import NeonButton from 'src/components/buttons/neon-button/NeonButton';
-import utils from 'src/portfolio-data/utils';
+import { convertValidURL } from 'src/portfolio-data/utils';
 import windowStyles from '../Window.module.scss';
 import { ProjectCard } from './project-card';
 
@@ -72,7 +72,7 @@ const renderButtonGrid = buttonDataArr => {
 const ProjectsGrid = ({ projects }) => {
     // First sort the list of projects into descending order of rating
     projects.sort((projA, projB) => projB.rating - projA.rating);
-    
+
     return (
         <Grid container spacing={3}>
             {projects.map(eachProject => (
@@ -86,7 +86,7 @@ const ProjectsGrid = ({ projects }) => {
                         ></div>
                         <a
                             className={windowStyles.readMore}
-                            href={`${process.env.BASE_URL}/blogs/${utils.convertValidURL(
+                            href={`${process.env.BASE_URL}/blogs/${convertValidURL(
                                 eachProject.title
                             )}`}
                             target="blank"

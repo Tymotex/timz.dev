@@ -2,7 +2,7 @@
 
 import images from 'src/images';
 import descriptions from './project-descriptions';
-import utils from './utils';
+import { renderMarkdown } from './utils';
 import { Project } from 'src/typedefs/Project';
 
 interface ProjectCollection {
@@ -22,7 +22,7 @@ const projects: ProjectCollection = {
             title: 'Techsuite',
             thumbnail:
                 'https://tymotex.github.io/timz.dev/public/project-images/techsuite-thumbnail.png',
-            description: utils.renderMarkdown(descriptions.techsuite),
+            description: renderMarkdown(descriptions.techsuite),
             furtherLinks: [
                 {
                     label: 'Visit',
@@ -59,7 +59,7 @@ const projects: ProjectCollection = {
             title: 'Tactile DS',
             thumbnail:
                 'https://tymotex.github.io/timz.dev/public/project-images/tactile-ds-thumbnail.png',
-            description: utils.renderMarkdown(descriptions.tactileds),
+            description: renderMarkdown(descriptions.tactileds),
             furtherLinks: [
                 {
                     label: 'Visit',
@@ -71,14 +71,14 @@ const projects: ProjectCollection = {
                 },
                 {
                     label: 'GitHub',
-                    link: 'https://github.com/Tymotex/DataStructures',
+                    link: 'https://github.com/Tymotex/Tactile-DS',
                 },
             ],
             technologies: ['c', 'ruby', 'perl', 'shell'],
             overlay: {
                 icon: images.overlayImages.github,
                 label: 'View on GitHub',
-                link: 'https://github.com/Tymotex/DataStructures',
+                link: 'https://github.com/Tymotex/Tactile-DS',
             },
             gif:
                 'https://github.com/Tymotex/timz.dev/blob/master/public/project-images/tactile-ds-showcase.gif?raw=true',
@@ -87,7 +87,7 @@ const projects: ProjectCollection = {
         {
             title: 'Cosmica',
             thumbnail: 'https://tymotex.github.io/timz.dev/public/project-images/cosmica-title.png',
-            description: utils.renderMarkdown(descriptions.cosmica),
+            description: renderMarkdown(descriptions.cosmica),
             furtherLinks: [
                 {
                     label: 'Play Now',
@@ -120,7 +120,7 @@ const projects: ProjectCollection = {
             title: 'Galactic Ed',
             thumbnail:
                 'https://raw.githubusercontent.com/kishek2000/accentureHackathon/master/images/thumbnail.png',
-            description: utils.renderMarkdown(descriptions.galacticed),
+            description: renderMarkdown(descriptions.galacticed),
             furtherLinks: [
                 {
                     label: 'Visit',
@@ -152,7 +152,7 @@ const projects: ProjectCollection = {
             title: 'Employ.me',
             thumbnail:
                 'https://raw.githubusercontent.com/Tymotex/Employ.me/master/images/screenshots/dashboard-index.png',
-            description: utils.renderMarkdown(descriptions.employMe),
+            description: renderMarkdown(descriptions.employMe),
             furtherLinks: [
                 {
                     label: 'Demo',
@@ -160,7 +160,7 @@ const projects: ProjectCollection = {
                 },
                 {
                     label: 'GitHub',
-                    link: 'https://github.com/Tymotex/JobTracker',
+                    link: 'https://github.com/Tymotex/Employ.me',
                 },
                 {
                     label: 'Visit',
@@ -179,7 +179,7 @@ const projects: ProjectCollection = {
             overlay: {
                 icon: images.overlayImages.github,
                 label: 'View on GitHub',
-                link: 'https://github.com/Tymotex/JobTracker',
+                link: 'https://github.com/Tymotex/Employ.me',
             },
             tags: ['team', 'uni', 'ongoing'],
             rating: 8,
@@ -188,7 +188,7 @@ const projects: ProjectCollection = {
             title: 'Structs.sh',
             thumbnail:
                 'https://raw.githubusercontent.com/csesoc/Structs.sh/master/client/public/homepage.png',
-            description: utils.renderMarkdown(descriptions.structs),
+            description: renderMarkdown(descriptions.structs),
             furtherLinks: [
                 {
                     label: 'GitHub',
@@ -210,7 +210,7 @@ const projects: ProjectCollection = {
             title: 'Hydroponix',
             thumbnail:
                 'https://raw.githubusercontent.com/Tymotex/Hydroponix/master/static/thumbnail.png',
-            description: utils.renderMarkdown(descriptions.hydroponix),
+            description: renderMarkdown(descriptions.hydroponix),
             furtherLinks: [
                 {
                     label: 'GitHub',
@@ -229,7 +229,7 @@ const projects: ProjectCollection = {
             title: 'Autonomous Deliv-O-Bot',
             thumbnail:
                 'https://tymotex.github.io/timz.dev/public/project-images/deliv-o-bot-thumbnail.png',
-            description: utils.renderMarkdown(descriptions.delivobot),
+            description: renderMarkdown(descriptions.delivobot),
             furtherLinks: [
                 {
                     label: 'Demo',
@@ -250,7 +250,7 @@ const projects: ProjectCollection = {
         {
             title: 'Get2Gether',
             thumbnail: 'https://raw.githubusercontent.com/Wal-eed/get2gether/dev/get2gether.png',
-            description: utils.renderMarkdown(descriptions.get2gether),
+            description: renderMarkdown(descriptions.get2gether),
             furtherLinks: [
                 {
                     label: 'GitHub',
@@ -270,7 +270,7 @@ const projects: ProjectCollection = {
             title: 'Educatory',
             thumbnail:
                 'https://raw.githubusercontent.com/Tymotex/educatory/main/public/showcase/homepage.png?token=ANDB5XZ2JW2LVPAEJISPDFDBGSXGI',
-            description: utils.renderMarkdown(descriptions.educatory),
+            description: renderMarkdown(descriptions.educatory),
             furtherLinks: [
                 {
                     label: 'GitHub',
@@ -290,7 +290,7 @@ const projects: ProjectCollection = {
             title: 'POSIX Shell to Perl 5 Transpiler',
             thumbnail:
                 'https://tymotex.github.io/timz.dev/public/project-images/shell-perl-transpiler-thumbnail.png',
-            description: utils.renderMarkdown(descriptions.shellPerlTranspiler),
+            description: renderMarkdown(descriptions.shellPerlTranspiler),
             furtherLinks: [
                 {
                     label: 'GitHub',
@@ -310,7 +310,7 @@ const projects: ProjectCollection = {
             title: 'CS Nexus',
             thumbnail:
                 'https://raw.githubusercontent.com/Tymotex/CS-Nexus/master/public/thumbnail.png',
-            description: utils.renderMarkdown(descriptions.csnexus),
+            description: renderMarkdown(descriptions.csnexus),
             furtherLinks: [
                 {
                     label: 'GitHub',
@@ -331,7 +331,7 @@ const projects: ProjectCollection = {
             title: 'Darkshade Crypt',
             thumbnail:
                 'https://tymotex.github.io/timz.dev/public/project-images/darkshade-crypt-thumbnail.png',
-            description: utils.renderMarkdown(descriptions.darkshadeCrypt),
+            description: renderMarkdown(descriptions.darkshadeCrypt),
             furtherLinks: [
                 {
                     label: 'Demo',
@@ -357,7 +357,7 @@ const projects: ProjectCollection = {
             title: 'timz.dev',
             thumbnail:
                 'https://raw.githubusercontent.com/Tymotex/timz.dev/master/public/project-images/timz.dev.png',
-            description: utils.renderMarkdown(descriptions.timzdev),
+            description: renderMarkdown(descriptions.timzdev),
             furtherLinks: [
                 {
                     label: 'Visit',
@@ -380,7 +380,7 @@ const projects: ProjectCollection = {
             title: 'Ephemerald',
             thumbnail:
                 'https://raw.githubusercontent.com/Wal-eed/ephemerald/main/client/public/ephemerald-thumbnail.png',
-            description: utils.renderMarkdown(descriptions.ephemerald),
+            description: renderMarkdown(descriptions.ephemerald),
             furtherLinks: [
                 {
                     label: 'Demo',
@@ -426,7 +426,7 @@ const projects: ProjectCollection = {
             title: 'Astral Assault',
             thumbnail:
                 'https://tymotex.github.io/timz.dev/public/project-images/astral-assault-thumbnail.png',
-            description: utils.renderMarkdown(descriptions.astralAssault),
+            description: renderMarkdown(descriptions.astralAssault),
             furtherLinks: [
                 {
                     label: 'Play Now',
@@ -451,7 +451,7 @@ const projects: ProjectCollection = {
             title: 'Blitz Breach',
             thumbnail:
                 'https://tymotex.github.io/timz.dev/public/project-images/blitz-breach-thumbnail.png',
-            description: utils.renderMarkdown(descriptions.blitzBreach),
+            description: renderMarkdown(descriptions.blitzBreach),
             furtherLinks: [
                 {
                     label: 'Play Now',
@@ -476,7 +476,7 @@ const projects: ProjectCollection = {
             title: 'Fallout 4 Mods',
             thumbnail:
                 'https://tymotex.github.io/timz.dev/public/project-images/fallout-4-mod-thumbnail.png',
-            description: utils.renderMarkdown(descriptions.fallout4Mods),
+            description: renderMarkdown(descriptions.fallout4Mods),
             furtherLinks: [
                 {
                     label: 'Visit',
@@ -495,7 +495,7 @@ const projects: ProjectCollection = {
             title: 'Quote scraper',
             thumbnail:
                 'https://tymotex.github.io/timz.dev/public/project-images/quote-scraper-thumbnail.png',
-            description: utils.renderMarkdown(descriptions.quoteScraper),
+            description: renderMarkdown(descriptions.quoteScraper),
             furtherLinks: [
                 {
                     label: 'Demo',
