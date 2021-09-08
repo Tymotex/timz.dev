@@ -8,7 +8,7 @@ import React from 'react';
 
 const InterestCard = ({ interests }) => {
     return (
-        <Card className={styles.interestCard} style={{ border: '6px solid rgba(34, 34, 34, 1)' }}>
+        <Card className={styles.interestCard}>
             <CardActionArea>
                 <CardMedia
                     component="img"
@@ -21,14 +21,7 @@ const InterestCard = ({ interests }) => {
                     <Typography className={styles.title} gutterBottom variant="h6" component="h5">
                         {interests.name}
                     </Typography>
-                    <Typography
-                        className={styles.content}
-                        variant="body2"
-                        color="textSecondary"
-                        component="p"
-                    >
-                        {interests.description}
-                    </Typography>
+                    <p className={styles.description}>{interests.description}</p>
                 </CardContent>
             </CardActionArea>
         </Card>
