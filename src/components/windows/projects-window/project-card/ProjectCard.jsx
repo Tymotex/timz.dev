@@ -8,13 +8,13 @@ import windowStyles from 'src/components/windows/Window.module.scss';
 import { TechnologyList } from './technologies-list';
 import HoverOverlay from './HoverOverlay.js';
 import TagList from './TagList';
-import Tooltip from 'react-tooltip';
-import { extractRepoOwnerAndName } from 'src/portfolio-data/utils';
+// import Tooltip from 'react-tooltip';
+// import { extractRepoOwnerAndName } from 'src/portfolio-data/utils';
 
 const ProjectCard = ({ project, children }) => {
     const { title, thumbnail, technologies, overlay, gif } = project;
     const thumbnailId = `${title}-thumbnail`;
-    const [owner, repoName] = extractRepoOwnerAndName(overlay.link);
+    // const [owner, repoName] = extractRepoOwnerAndName(overlay.link);
     return (
         <Card className={windowStyles.projectCard}>
             <CardActionArea>
@@ -57,15 +57,7 @@ const ProjectCard = ({ project, children }) => {
                         </div>
                     </div>
                 </a>
-                {repoName && (
-                    <Tooltip id={thumbnailId} aria-haspopup="true" role="example">
-                        {/* TODO: how to lazily load image? */}
-                        <img
-                            src={`https://github-readme-stats.vercel.app/api/pin/?username=${owner}&repo=${repoName}`}
-                            alt=""
-                        />
-                    </Tooltip>
-                )}
+                {/* // TODO: an element was removed. See the bottom of this file */}
             </CardActionArea>
             <CardContent className={windowStyles.cardContent}>
                 <Typography
@@ -91,3 +83,15 @@ const ProjectCard = ({ project, children }) => {
 };
 
 export default ProjectCard;
+
+// {
+//     repoName && (
+//         <Tooltip id={thumbnailId} aria-haspopup="true" role="example">
+//             /* TODO: how to lazily load image? TODO: how to lazily load videos or gifs? Apprent video files are more performant than gifs? */
+//             <img
+//                 src={`https://github-readme-stats.vercel.app/api/pin/?username=${owner}&repo=${repoName}`}
+//                 alt=""
+//             />
+//         </Tooltip>
+//     );
+// }
