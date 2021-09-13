@@ -58,7 +58,7 @@ const projects: ProjectCollection = {
         {
             title: 'Tactile DS',
             thumbnail:
-                'https://tymotex.github.io/timz.dev/public/project-images/tactile-ds-thumbnail.png',
+                'https://raw.githubusercontent.com/Tymotex/Tactile-DS/master/Images/thumbnail.png',
             description: renderMarkdown(descriptions.tactileds),
             furtherLinks: [
                 {
@@ -269,7 +269,7 @@ const projects: ProjectCollection = {
         {
             title: 'Educatory',
             thumbnail:
-                'https://raw.githubusercontent.com/Tymotex/educatory/main/public/showcase/homepage.png?token=ANDB5XZ2JW2LVPAEJISPDFDBGSXGI',
+                'https://raw.githubusercontent.com/Tymotex/educatory/main/public/showcase/visual.png',
             description: renderMarkdown(descriptions.educatory),
             furtherLinks: [
                 {
