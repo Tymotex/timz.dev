@@ -1,9 +1,10 @@
 // Collection of my personal projects in JSON format
 
 // Importing a set of images to be displayed in the hover overlay
-import images from '../images';
+import assetImages from '../assets/images';
 import descriptions from './project-descriptions';
 import utils from './utils';
+import projectImages from './project-images';
 
 // Note: Each project contains a rating field which is a value from 0-10 that is a subjective
 // representation of impressiveness
@@ -31,7 +32,7 @@ export default {
             ],
             technologies: ['react', 'flask', 'postgreSQL', 'python', 'javaScript', 'sass'],
             overlay: {
-                icon: images.overlayImages.github, // Importing the image to display in the hover overlay
+                icon: assetImages.overlayImages.github, // Importing the image to display in the hover overlay
                 label: 'View on GitHub', // Text to be displayed on hovering over the project image
                 link: 'https://github.com/Tymotex/Techsuite', // Hyperlink to open in a new tab when image is clicked
             },
@@ -60,7 +61,7 @@ export default {
             ],
             technologies: ['c', 'ruby', 'perl', 'shell'],
             overlay: {
-                icon: images.overlayImages.github,
+                icon: assetImages.overlayImages.github,
                 label: 'View on GitHub',
                 link: 'https://github.com/Tymotex/DataStructures',
             },
@@ -92,7 +93,7 @@ export default {
             ],
             technologies: ['c#', 'unity'],
             overlay: {
-                icon: images.overlayImages.github,
+                icon: assetImages.overlayImages.github,
                 label: 'View on GitHub',
                 link: 'https://github.com/Tymotex/Cosmica',
             },
@@ -102,24 +103,23 @@ export default {
         },
         {
             title: 'Galactic Ed',
-            thumbnail:
-                'https://raw.githubusercontent.com/kishek2000/accentureHackathon/master/images/showcaseThumbnail.png',
+            thumbnail: projectImages.galacticEd,
             description: utils.renderMarkdown(descriptions.galacticed),
             furtherLinks: [
                 {
                     label: 'Visit',
                     link: 'https://galactic-ed.xyz/',
                 },
-                {
-                    label: 'GitHub',
-                    link: 'https://github.com/kishek2000/accentureHackathon',
-                },
+                // {
+                //     label: 'GitHub',
+                //     link: 'https://github.com/galacticEd/platform',
+                // },
             ],
-            technologies: ['javascript', 'nextJs', 'react', 'python', 'express', 'mongodb', 'graphql', 'three'],
+            technologies: ['javascript', 'nextJs', 'react', 'python', 'express', 'mongodb', 'graphql'],
             overlay: {
-                icon: images.overlayImages.github,
-                label: 'View on GitHub',
-                link: 'https://github.com/kishek2000/accentureHackathon',
+                icon: assetImages.overlayImages.github,
+                label: 'Visit',
+                link: 'https://galactic-ed.xyz',
             },
             tags: ['team', 'ongoing'],
             rating: 9
@@ -153,7 +153,7 @@ export default {
                 'sass',
             ],
             overlay: {
-                icon: images.overlayImages.github,
+                icon: assetImages.overlayImages.github,
                 label: 'View on GitHub',
                 link: 'https://github.com/Tymotex/JobTracker',
             },
@@ -162,7 +162,7 @@ export default {
         },
         {
             title: 'Structs.sh',
-            thumbnail: 'https://raw.githubusercontent.com/csesoc/Structs.sh/master/client/public/homepage.png',
+            thumbnail: projectImages.structs,
             description: utils.renderMarkdown(descriptions.structs),
             furtherLinks: [
                 {
@@ -172,7 +172,7 @@ export default {
             ],
             technologies: ['javascript', 'react', 'typescript', 'mongodb', 'express'],
             overlay: {
-                icon: images.overlayImages.github,
+                icon: assetImages.overlayImages.github,
                 label: 'View on GitHub',
                 link: 'https://github.com/csesoc/Structs.sh/',
             },
@@ -195,7 +195,7 @@ export default {
             ],
             technologies: ['flask', 'influxdb', 'python', 'javaScript', 'bootstrap'],
             overlay: {
-                icon: images.overlayImages.github,
+                icon: assetImages.overlayImages.github,
                 label: 'View on GitHub',
                 link: 'https://github.com/Tymotex/Hydroponix',
             },
@@ -214,7 +214,7 @@ export default {
             ],
             technologies: ['arduino'],
             overlay: {
-                icon: images.overlayImages.youtube,
+                icon: assetImages.overlayImages.youtube,
                 label: 'View on YouTube',
                 link: 'https://www.youtube.com/watch?v=ogIqlcZ1EoI',
             },
@@ -235,7 +235,7 @@ export default {
             ],
             technologies: ['javascript', 'react', 'python', 'flask', 'mongodb'],
             overlay: {
-                icon: images.overlayImages.github,
+                icon: assetImages.overlayImages.github,
                 label: 'View on GitHub',
                 link: 'https://github.com/wal-eed/get2gether/tree/dev',
             },
@@ -254,7 +254,7 @@ export default {
             ],
             technologies: ['typescript', 'javascript', 'react', 'nextJs', 'chakra', 'three'],
             overlay: {
-                icon: images.overlayImages.github,
+                icon: assetImages.overlayImages.github,
                 label: 'View on GitHub',
                 link: 'https://github.com/wal-eed/get2gether/tree/dev',
             },
@@ -274,7 +274,7 @@ export default {
             ],
             technologies: ['shell', 'perl'],
             overlay: {
-                icon: images.overlayImages.github,
+                icon: assetImages.overlayImages.github,
                 label: 'View on GitHub',
                 link: 'https://github.com/Tymotex/ShellPerlTranspiler',
             },
@@ -294,7 +294,7 @@ export default {
             ],
             technologies: ['mongodb', 'express', 'nodejs', 'bootstrap', 'jQuery'],
             overlay: {
-                icon: images.overlayImages.github,
+                icon: assetImages.overlayImages.github,
                 label: 'View on GitHub',
                 link: 'https://github.com/Tymotex/CS-Nexus',
             },
@@ -319,7 +319,7 @@ export default {
             ],
             technologies: ['java', 'javafx'],
             overlay: {
-                icon: images.overlayImages.github,
+                icon: assetImages.overlayImages.github,
                 label: 'View on GitHub',
                 link: 'https://github.com/Tymotex/DarkshadeCrypt',
             },
@@ -345,7 +345,7 @@ export default {
             ],
             technologies: ['react', 'gatsby', 'javaScript', 'materialUI'],
             overlay: {
-                icon: images.overlayImages.github,
+                icon: assetImages.overlayImages.github,
                 label: 'View on GitHub',
                 link: 'https://github.com/Tymotex/timz.dev',
             },
@@ -390,7 +390,7 @@ export default {
             ],
             technologies: ['c#', 'unity'],
             overlay: {
-                icon: images.overlayImages.youtube,
+                icon: assetImages.overlayImages.youtube,
                 label: 'View on YouTube',
                 link: 'https://www.youtube.com/watch?v=L5HmrpmQbec',
             },
@@ -415,7 +415,7 @@ export default {
             ],
             technologies: ['c#', 'unity'],
             overlay: {
-                icon: images.overlayImages.youtube,
+                icon: assetImages.overlayImages.youtube,
                 label: 'View on YouTube',
                 link: 'https://www.youtube.com/watch?v=RtHD5X44K0M',
             },
@@ -436,7 +436,7 @@ export default {
             ],
             technologies: [],
             overlay: {
-                icon: images.overlayImages.nexusmods,
+                icon: assetImages.overlayImages.nexusmods,
                 label: 'View on NexusMods',
                 link: 'https://www.nexusmods.com/fallout4/users/29182470?tab=user+files',
             },
@@ -459,7 +459,7 @@ export default {
             ],
             technologies: ['python', 'selenium'],
             overlay: {
-                icon: images.overlayImages.youtube,
+                icon: assetImages.overlayImages.youtube,
                 label: 'View on YouTube',
                 link: 'https://www.youtube.com/watch?v=RtHD5X44K0M',
             },

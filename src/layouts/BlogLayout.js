@@ -19,7 +19,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import clsx from 'clsx';
 import { graphql, Link, navigate, useStaticQuery } from 'gatsby';
 import React, { useEffect } from 'react';
-import siteIcon from 'src/images/icon.png';
+import siteIcon from 'src/assets/images/icon.png';
 import { siteCookies } from '../constants';
 import styles from './BlogLayout.module.scss';
 import { BlackOverlay, DrawerList } from './components';

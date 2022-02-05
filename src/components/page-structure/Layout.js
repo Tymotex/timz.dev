@@ -5,6 +5,7 @@ import Helmet from 'react-helmet';
 import 'src/assets/scss/main.scss';
 import { ParticleWallpaper } from '../particles';
 import ThemeContext from './ThemeContext';
+import siteIcon from 'src/assets/images/icon.png';
 
 /**
  * Renders site metadata in the HTML head. Wraps around the rest of the
@@ -40,7 +41,7 @@ const Layout = ({ children, location }) => {
                         <link
                             rel="icon"
                             type="image/png"
-                            href="https://raw.githubusercontent.com/Tymotex/timz.dev/master/src/images/icon.png"
+                            href={siteIcon}
                             sizes="32x32"
                         />
                         <html lang="en" />
