@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import styles from './Blogs.module.scss';
 
 // TODO: the on-hover is not mobile friendly. Maybe make it clickable as well? 

@@ -5,6 +5,7 @@ import Helmet from 'react-helmet';
 import 'src/assets/scss/main.scss';
 import { ParticleWallpaper } from '../particles';
 import ThemeContext from './ThemeContext';
+import siteIcon from 'src/assets/images/icon.png';
 
 /**
  * Renders site metadata in the HTML head. Wraps around the rest of the
@@ -35,21 +36,19 @@ const Layout = ({ children, location }) => {
             `}
             render={data => (
                 <ThemeContext.Provider>
-                    <div>
-                        <Helmet>
-                            <title>{data.site.siteMetadata.title}</title>
-                            <link
-                                rel="icon"
-                                type="image/png"
-                                href="https://raw.githubusercontent.com/Tymotex/timz.dev/master/src/images/icon.png"
-                                sizes="32x32"
-                            />
-                            <html lang="en" />
-                        </Helmet>
-                        {content}
-                        <div id="particles-js">
-                            <ParticleWallpaper />
-                        </div>
+                    <Helmet>
+                        <title>{data.site.siteMetadata.title}</title>
+                        <link
+                            rel="icon"
+                            type="image/png"
+                            href={siteIcon}
+                            sizes="32x32"
+                        />
+                        <html lang="en" />
+                    </Helmet>
+                    {content}
+                    <div id="header-container" style={{ height: '100vh', width: '100vw', position: 'fixed' }}>
+                        <ParticleWallpaper />
                     </div>
                 </ThemeContext.Provider>
             )}

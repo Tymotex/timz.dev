@@ -8,14 +8,14 @@ import companyLogos from './work-experience/logos';
 const bio = {
     name: 'Tim Zhang',
     frontPageSummary: `
-        3rd year software engineering student at UNSW.
+        Final year computer science student at UNSW.
     `,
     resumeURL: 'https://tymotex.github.io/timz.dev/public/resume/resume.pdf',
     transcriptURL: 'https://tymotex.github.io/timz.dev/public/resume/transcript.pdf',
     aboutDescription: utils.renderMarkdown(aboutMe),
     typewriterLines: [
-        '<FullstackEngineer />',
-        '<AspiringDataScientist />',
+        '<FullstackDev />',
+        '<GoogleIntern />',
         '<HobbyistGameDev />',
         '<COMPTutor />',
     ],
@@ -30,7 +30,7 @@ const bio = {
         {
             name: 'Reading',
             description: `
-                Science books, biographies
+                Programmer blogs, science books, biographies
             `,
             image: interests.reading,
         },
@@ -44,21 +44,21 @@ const bio = {
         {
             name: 'Weightlifting',
             description: `
-                Clean & jerks, snatches and powerlifting exercises
+                Clean & jerks, snatches and powerlifting
             `,
             image: interests.powerlifting,
         },
         {
             name: 'Electronics',
             description: `
-                Raspberry pi, Arduino projects, home automation
+                Raspberry pi, home automation
             `,
             image: interests.electronics,
         },
         {
             name: 'Listening to Podcasts',
             description: `
-                Lex Fridman, Jocko Willink, Sam Harris, Jordan Peterson
+                Lex Fridman, Jocko Willink, Sam Harris
             `,
             image: interests.podcasts,
         },
@@ -86,29 +86,29 @@ const bio = {
     ],
     workExperience: [
         {
-            name: 'UNSW — Casual Academic Tutor (Data Structures and Algorithms)',
-            time: 'June 2020 - May 2021 (1 year)',
-            logo: companyLogos.unsw,
-            description: utils.renderMarkdown(workExperience.academicTutorDesc),
+            name: 'Google — Software Engineering Intern, SRE (Full-Time)',
+            time: 'November 2021 - February 2022 (3 months)',
+            logo: companyLogos.google,
+            description: utils.renderMarkdown(workExperience.googleInternDesc)
         },
         {
-            name: 'Accenture — Technical Architect',
-            time: 'May 2021 - September 2021 (5 months)',
-            logo: companyLogos.accenture,
-            description: utils.renderMarkdown(workExperience.accentureInternDesc),
-        },
-        {
-            name: 'WiseTech Global — Associate Software Developer',
+            name: 'WiseTech Global — Associate Software Developer (Full-Time)',
             time: 'July 2021 - October 2021 (3 months)',
             logo: companyLogos.wisetech,
             description: utils.renderMarkdown(workExperience.wiseTechInternDesc),
         },
         {
-            name: 'Google — Software Engineering Intern (SRE)',
-            time: 'November 2021 - February 2022 (3 months)',
-            logo: companyLogos.google,
-            description: utils.renderMarkdown(workExperience.googleInternDesc)
-        }
+            name: 'Accenture — Technical Architect (Casual)',
+            time: 'May 2021 - Present',
+            logo: companyLogos.accenture,
+            description: utils.renderMarkdown(workExperience.accentureInternDesc),
+        },
+        {
+            name: 'UNSW — Academic Tutor, Data Structures and Algorithms (Casual)',
+            time: 'June 2020 - May 2021 (1 year)',
+            logo: companyLogos.unsw,
+            description: utils.renderMarkdown(workExperience.academicTutorDesc),
+        },
     ],
     awards: [
         {

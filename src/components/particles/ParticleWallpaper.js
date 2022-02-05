@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Particles from 'react-particles-js';
+import Particles from 'react-tsparticles';
 import themes from './themes';
 
 const ParticleWallpaper = () => {
@@ -7,50 +7,16 @@ const ParticleWallpaper = () => {
 
     // Forcefully set gradient to a selected theme
     useEffect(() => {
-        const particleCanvas = document.querySelector('.tsparticles-canvas-el');
-        if (particleCanvas) particleCanvas.style.background = selectedTheme.css;
-    });
+        const body = document.getElementById('header-container');
+        if (!body) return;
+        body.style.background = selectedTheme.css;
+    }, []);
 
     return (
         <Particles
-            params={{
-                particles: {
-                    number: {
-                        value: 50,
-                        density: {
-                            enable: true,
-                            value_area: 1000,
-                        },
-                    },
-                    line_linked: {
-                        enable: true,
-                        opacity: 0.4,
-                    },
-                    move: {
-                        enable: true,
-                        speed: 0.5,
-                        direction: 'none',
-                        random: false,
-                        straight: false,
-                        out_mode: 'out',
-                        bounce: false,
-                        attract: {
-                            enable: false,
-                            rotateX: 600,
-                            rotateY: 1200,
-                        },
-                    },
-                    size: {
-                        value: 3,
-                    },
-                    opacity: {
-                        anim: {
-                            enable: true,
-                            speed: 1.2,
-                            opacity_min: 0.15,
-                        },
-                    },
-                },
+            id="tsparticles"
+            options={{
+                fpsLimit: 60,
                 interactivity: {
                     detect_on: 'window',
                     events: {
@@ -76,7 +42,7 @@ const ParticleWallpaper = () => {
                             size: 5,
                             duration: 2,
                             opacity: 8,
-                            speed: 3,
+                            // speed: 3,
                         },
                         repulse: {
                             distance: 200,
@@ -87,6 +53,50 @@ const ParticleWallpaper = () => {
                         },
                         remove: {
                             particles_nb: 2,
+                        },
+                    },
+                },
+                particles: {
+                    // color: {
+                    //     value: particleTheme.particleColor,
+                    // },
+                    number: {
+                        value: 50,
+                        density: {
+                            enable: true,
+                            value_area: 1000,
+                        },
+                    },
+                    links: {
+                        // color: {
+                        //     value: theme.palette.text.secondary,
+                        // },
+                        enable: true,
+                        distance: 175,
+                        opacity: 0.2,
+                    },
+                    move: {
+                        enable: true,
+                        speed: 0.5,
+                        direction: 'none',
+                        random: false,
+                        straight: false,
+                        out_mode: 'out',
+                        bounce: false,
+                        attract: {
+                            enable: false,
+                            rotateX: 600,
+                            rotateY: 1200,
+                        },
+                    },
+                    size: {
+                        value: 3,
+                    },
+                    opacity: {
+                        anim: {
+                            enable: true,
+                            speed: 1.2,
+                            opacity_min: 0.15,
                         },
                     },
                 },
