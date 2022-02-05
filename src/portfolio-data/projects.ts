@@ -1,9 +1,10 @@
 // Collection of my personal projects in a javascript object
 
-import images from 'src/images';
+import assetImages from 'src/assets/images';
 import descriptions from './project-descriptions';
 import { renderMarkdown } from './utils';
 import { Project } from 'src/typedefs/Project';
+import projectImages from './project-images';
 
 interface ProjectCollection {
     // A collection of personal projects that I spent significant amounts of time and effort on
@@ -47,9 +48,9 @@ const projects: ProjectCollection = {
                 'socketio',
             ],
             overlay: {
-                icon: images.overlayImages.github,
-                label: 'View on GitHub',
-                link: 'https://github.com/Tymotex/Techsuite',
+                icon: assetImages.overlayImages.github, // Importing the image to display in the hover overlay
+                label: 'View on GitHub', // Text to be displayed on hovering over the project image
+                link: 'https://github.com/Tymotex/Techsuite', // Hyperlink to open in a new tab when image is clicked
             },
             gif:
                 'https://github.com/Tymotex/timz.dev/blob/master/public/project-images/techsuite-showcase.gif?raw=true',
@@ -76,7 +77,7 @@ const projects: ProjectCollection = {
             ],
             technologies: ['c', 'ruby', 'perl', 'shell'],
             overlay: {
-                icon: images.overlayImages.github,
+                icon: assetImages.overlayImages.github,
                 label: 'View on GitHub',
                 link: 'https://github.com/Tymotex/Tactile-DS',
             },
@@ -108,7 +109,7 @@ const projects: ProjectCollection = {
             ],
             technologies: ['c#', 'unity'],
             overlay: {
-                icon: images.overlayImages.github,
+                icon: assetImages.overlayImages.github,
                 label: 'View on GitHub',
                 link: 'https://github.com/Tymotex/Cosmica',
             },
@@ -118,32 +119,31 @@ const projects: ProjectCollection = {
         },
         {
             title: 'Galactic Ed',
-            thumbnail:
-                'https://raw.githubusercontent.com/kishek2000/accentureHackathon/master/images/thumbnail.png',
+            thumbnail: projectImages.galacticEd,
             description: renderMarkdown(descriptions.galacticed),
             furtherLinks: [
                 {
                     label: 'Visit',
                     link: 'https://galactic-ed.xyz/',
                 },
-                {
-                    label: 'GitHub',
-                    link: 'https://github.com/kishek2000/accentureHackathon',
-                },
+                // {
+                //     label: 'GitHub',
+                //     link: 'https://github.com/galacticEd/platform',
+                // },
             ],
             technologies: [
-                'typescript',
+                'javascript',
                 'nextJs',
                 'react',
+                'python',
                 'express',
                 'mongodb',
                 'graphql',
-                'three',
             ],
             overlay: {
-                icon: images.overlayImages.github,
-                label: 'View on GitHub',
-                link: 'https://github.com/kishek2000/accentureHackathon',
+                icon: assetImages.overlayImages.github,
+                label: 'Visit',
+                link: 'https://galactic-ed.xyz',
             },
             tags: ['team', 'ongoing'],
             rating: 9,
@@ -177,7 +177,7 @@ const projects: ProjectCollection = {
                 'sass',
             ],
             overlay: {
-                icon: images.overlayImages.github,
+                icon: assetImages.overlayImages.github,
                 label: 'View on GitHub',
                 link: 'https://github.com/Tymotex/Employ.me',
             },
@@ -186,8 +186,7 @@ const projects: ProjectCollection = {
         },
         {
             title: 'Structs.sh',
-            thumbnail:
-                'https://raw.githubusercontent.com/csesoc/Structs.sh/master/client/public/homepage.png',
+            thumbnail: projectImages.structs,
             description: renderMarkdown(descriptions.structs),
             furtherLinks: [
                 {
@@ -197,7 +196,7 @@ const projects: ProjectCollection = {
             ],
             technologies: ['javascript', 'react', 'typescript', 'mongodb', 'express'],
             overlay: {
-                icon: images.overlayImages.github,
+                icon: assetImages.overlayImages.github,
                 label: 'View on GitHub',
                 link: 'https://github.com/csesoc/Structs.sh/',
             },
@@ -219,7 +218,7 @@ const projects: ProjectCollection = {
             ],
             technologies: ['flask', 'influxdb', 'python', 'javaScript', 'bootstrap'],
             overlay: {
-                icon: images.overlayImages.github,
+                icon: assetImages.overlayImages.github,
                 label: 'View on GitHub',
                 link: 'https://github.com/Tymotex/Hydroponix',
             },
@@ -238,7 +237,7 @@ const projects: ProjectCollection = {
             ],
             technologies: ['arduino'],
             overlay: {
-                icon: images.overlayImages.youtube,
+                icon: assetImages.overlayImages.youtube,
                 label: 'View on YouTube',
                 link: 'https://www.youtube.com/watch?v=ogIqlcZ1EoI',
             },
@@ -259,7 +258,7 @@ const projects: ProjectCollection = {
             ],
             technologies: ['javascript', 'react', 'python', 'flask', 'mongodb'],
             overlay: {
-                icon: images.overlayImages.github,
+                icon: assetImages.overlayImages.github,
                 label: 'View on GitHub',
                 link: 'https://github.com/wal-eed/get2gether/tree/dev',
             },
@@ -279,7 +278,7 @@ const projects: ProjectCollection = {
             ],
             technologies: ['typescript', 'javascript', 'react', 'nextJs', 'chakra', 'three'],
             overlay: {
-                icon: images.overlayImages.github,
+                icon: assetImages.overlayImages.github,
                 label: 'View on GitHub',
                 link: 'https://github.com/wal-eed/get2gether/tree/dev',
             },
@@ -299,7 +298,7 @@ const projects: ProjectCollection = {
             ],
             technologies: ['shell', 'perl'],
             overlay: {
-                icon: images.overlayImages.github,
+                icon: assetImages.overlayImages.github,
                 label: 'View on GitHub',
                 link: 'https://github.com/Tymotex/ShellPerlTranspiler',
             },
@@ -319,7 +318,7 @@ const projects: ProjectCollection = {
             ],
             technologies: ['mongodb', 'express', 'nodejs', 'bootstrap', 'jQuery'],
             overlay: {
-                icon: images.overlayImages.github,
+                icon: assetImages.overlayImages.github,
                 label: 'View on GitHub',
                 link: 'https://github.com/Tymotex/CS-Nexus',
             },
@@ -344,7 +343,7 @@ const projects: ProjectCollection = {
             ],
             technologies: ['java', 'javafx'],
             overlay: {
-                icon: images.overlayImages.github,
+                icon: assetImages.overlayImages.github,
                 label: 'View on GitHub',
                 link: 'https://github.com/Tymotex/DarkshadeCrypt',
             },
@@ -370,7 +369,7 @@ const projects: ProjectCollection = {
             ],
             technologies: ['react', 'gatsby', 'javaScript', 'materialUI', 'graphql'],
             overlay: {
-                icon: images.overlayImages.github,
+                icon: assetImages.overlayImages.github,
                 label: 'View on GitHub',
                 link: 'https://github.com/Tymotex/timz.dev',
             },
@@ -396,7 +395,7 @@ const projects: ProjectCollection = {
                 },
             ],
             overlay: {
-                icon: images.overlayImages.github,
+                icon: assetImages.overlayImages.github,
                 label: 'View on GitHub',
                 link: 'https://github.com/Wal-eed/ephemerald',
             },
@@ -439,7 +438,7 @@ const projects: ProjectCollection = {
             ],
             technologies: ['c#', 'unity'],
             overlay: {
-                icon: images.overlayImages.youtube,
+                icon: assetImages.overlayImages.youtube,
                 label: 'View on YouTube',
                 link: 'https://www.youtube.com/watch?v=L5HmrpmQbec',
             },
@@ -464,7 +463,7 @@ const projects: ProjectCollection = {
             ],
             technologies: ['c#', 'unity'],
             overlay: {
-                icon: images.overlayImages.youtube,
+                icon: assetImages.overlayImages.youtube,
                 label: 'View on YouTube',
                 link: 'https://www.youtube.com/watch?v=RtHD5X44K0M',
             },
@@ -485,7 +484,7 @@ const projects: ProjectCollection = {
             ],
             technologies: [],
             overlay: {
-                icon: images.overlayImages.nexusmods,
+                icon: assetImages.overlayImages.nexusmods,
                 label: 'View on NexusMods',
                 link: 'https://www.nexusmods.com/fallout4/users/29182470?tab=user+files',
             },
@@ -508,7 +507,7 @@ const projects: ProjectCollection = {
             ],
             technologies: ['python', 'selenium'],
             overlay: {
-                icon: images.overlayImages.youtube,
+                icon: assetImages.overlayImages.youtube,
                 label: 'View on YouTube',
                 link: 'https://www.youtube.com/watch?v=RtHD5X44K0M',
             },

@@ -77,6 +77,8 @@ $footnoteOpacity: 0.65;
 
             & > .image {
                 filter: brightness($brightnessOnHover);
+                height: 100%;
+
                 &::after {
                     display: block;
                     position: relative;

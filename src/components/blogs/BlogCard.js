@@ -9,8 +9,8 @@ const BlogCard = ({ blog }) => {
             <div className={styles.blogCard}>
                 <div className={styles.image}>
                     <img
-                        src={blog.image}
-                        alt=""
+                        src={blog.image || "https://wtwp.com/wp-content/uploads/2015/06/placeholder-image.png"}
+                        alt="Blog thumbnail"
                     />
                 </div>
                 <div className={styles.hoverContent}>

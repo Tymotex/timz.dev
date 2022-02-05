@@ -5,7 +5,7 @@ import {
     Divider,
     Drawer,
     InputBase,
-    Toolbar,
+    Toolbar
 } from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
 import Slide from '@material-ui/core/Slide';
@@ -17,16 +17,14 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import MenuIcon from '@material-ui/icons/Menu';
 import clsx from 'clsx';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, navigate } from 'gatsby';
 // import Cookies from 'js-cookie';
 import React, { useEffect } from 'react';
-import siteIcon from 'src/images/icon.png';
+import siteIcon from 'src/assets/images/icon.png';
 import { siteCookies } from '../constants';
 import styles from './BlogLayout.module.scss';
 import { BlackOverlay, DrawerList } from './components';
 import { darkTheme, lightTheme } from './themes';
-import { useStaticQuery, graphql } from 'gatsby';
-import { navigate } from 'gatsby';
 
 const drawerWidth = 240;
 
