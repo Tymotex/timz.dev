@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { Divider } from '@material-ui/core';
 import PropTypes from 'prop-types';
-import styles from './Blogs.module.scss';
+import React from 'react';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import BlogCard from './BlogCard.js';
-import { Divider } from '@material-ui/core';
+import styles from './Blogs.module.scss';
 
 const applySearchFilter = (blogs, searchQuery) => {
     return blogs.filter(eachBlog => eachBlog.title.toLowerCase().includes(searchQuery));
