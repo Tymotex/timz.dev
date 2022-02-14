@@ -12,6 +12,9 @@ const WorkExperience = () => {
                             <em>{eachJob.name}</em>
                         </h2>
                     </div>
+                    {eachJob.team && (
+                        <div className={styles.teamText}><strong>{eachJob.team}</strong></div>
+                    )}
                     <img src={eachJob.logo} className={styles.companyLogo} alt="Company logo" />
                     <div className={styles.timeText}>{eachJob.time}</div>
                     <div

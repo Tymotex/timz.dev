@@ -86,13 +86,15 @@ const bio = {
     ],
     workExperience: [
         {
-            name: 'Google — Software Engineering Intern, SRE (Full-Time)',
+            name: 'Google — Software Engineering Intern (Full-Time)',
+            team: 'Data Acquisition (Site Reliability Engineering)',
             time: 'November 2021 - February 2022 (3 months)',
             logo: companyLogos.google,
             description: renderMarkdown(workExperience.googleInternDesc)
         },
         {
             name: 'WiseTech Global — Associate Software Developer (Full-Time)',
+            team: 'WiseTech Academy',
             time: 'July 2021 - October 2021 (3 months)',
             logo: companyLogos.wisetech,
             description: renderMarkdown(workExperience.wiseTechInternDesc),
@@ -104,7 +106,8 @@ const bio = {
             description: renderMarkdown(workExperience.accentureInternDesc),
         },
         {
-            name: 'UNSW — Academic Tutor, Data Structures and Algorithms (Casual)',
+            name: 'UNSW — Academic Tutor (Casual)',
+            team: 'Data Structures & Algorithms (COMP2521)',
             time: 'June 2020 - May 2021 (1 year)',
             logo: companyLogos.unsw,
             description: renderMarkdown(workExperience.academicTutorDesc),
