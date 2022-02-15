@@ -1,5 +1,5 @@
 Improved the reliability of a URL fetching service that serves billions of 
-requests per day, used primarily by web crawlers, 
+requests per day, used primarily by web crawlers.
 
 -   Increased the availability of a 'hostname to shard number' resolver from
     99.99% to 99.999%, reducing its expected annual downtime from 53 minutes to
