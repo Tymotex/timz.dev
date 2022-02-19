@@ -10,14 +10,14 @@ import SpotifyDisplay from './SpotifyDisplay';
 import { Box, Grid } from '@material-ui/core';
 import GitHubStats from './GitHubStats';
 import styles from '../Window.module.scss';
+import { renderMarkdown } from 'src/portfolio-data/utils';
 
 const AboutWindow = props => {
-    const { aboutDescription, interests } = bio;
     return (
         <Window {...props}>
             <div
                 dangerouslySetInnerHTML={{
-                    __html: aboutDescription,
+                    __html: renderMarkdown(bio.about.elevatorPitch),
                 }}
             ></div>
             <Expandable text="Resume & Transcript">
@@ -25,7 +25,7 @@ const AboutWindow = props => {
                     className={styles.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    href={bio.resumeURL}
+                    href={bio.about.resumeUrl}
                 >
                     Resume link{' '}
                 </a>
@@ -34,7 +34,7 @@ const AboutWindow = props => {
                     className={styles.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    href={bio.transcriptURL}
+                    href={bio.about.transcriptUrl}
                 >
                     academic transcript link
                 </a>
@@ -46,7 +46,7 @@ const AboutWindow = props => {
                 <AwardsLists />
             </Expandable>
             <Expandable text="Interests and Hobbies">
-                <InterestsLists interests={interests} />
+                <InterestsLists interests={bio.interests} />
                 <SpotifyDisplay />
             </Expandable>
             <br />

@@ -13,7 +13,7 @@ const Header = props => (
         <div className={`${styles.headerBox} content`}>
             <div className="inner">
                 <h1 className={styles.name}>{bio.name}</h1>
-                <p className={styles.summary}>{bio.frontPageSummary}</p>
+                <p className={styles.summary}>{bio.headline}</p>
                 <div className={styles.typerContainer}>
                     <ReactTypingEffect
                         text={bio.typewriterLines}
