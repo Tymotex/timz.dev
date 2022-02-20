@@ -16,6 +16,8 @@
     background-image: -webkit-radial-gradient(rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0) 55%);
     background-image: -ms-radial-gradient(rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0) 55%);
     background-image: radial-gradient(rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0) 55%);
+
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
     max-width: 100%;
     text-align: center;
 
@@ -68,7 +70,6 @@
         max-width: 100%;
         text-transform: uppercase;
         background-color: rgba(20, 20, 20, 0.4);
-        border-radius: 8px;
 
         .inner {
             @include vendor(

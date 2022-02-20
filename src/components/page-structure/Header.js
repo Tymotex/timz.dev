@@ -22,15 +22,16 @@ const Header = props => (
                         cursor="_"
                         eraseDelay={1500}
                         typingDelay={750}
-                        cursorRenderer={cursor => <h1>{cursor}</h1>}
-                        displayTextRenderer={(text, i) => {
+                        cursorRenderer={cursor => <h3>{cursor}</h3>}
+                        displayTextRenderer={(text) => {
                             return (
-                                <p className={styles.typedText}>
+                                <h3 className={styles.typedText}>
                                     {text.split('').map((char, i) => {
                                         const key = `${i}`;
-                                        return <span key={key}>{char}</span>;
+                                        // Apply 'syntax' highlighting to alphanumeric characters
+                                        return <span className={/^[a-z0-9]+$/i.test(char) && styles.alphanumeric}>{char}</span>;
                                     })}
-                                </p>
+                                </h3>
                             );
                         }}
                     />
