@@ -46,6 +46,7 @@ const projects: ProjectCollection = {
                 'javaScript',
                 'sass',
                 'socketio',
+                'nginx',
             ],
             overlay: {
                 icon: assetImages.overlayImages.github, // Importing the image to display in the hover overlay
@@ -75,7 +76,7 @@ const projects: ProjectCollection = {
                     link: 'https://github.com/Tymotex/Tactile-DS',
                 },
             ],
-            technologies: ['c', 'ruby', 'perl', 'shell'],
+            technologies: ['c', 'ruby', 'perl', 'bash', 'nginx', 'AWS'],
             overlay: {
                 icon: assetImages.overlayImages.github,
                 label: 'View on GitHub',
@@ -135,10 +136,11 @@ const projects: ProjectCollection = {
                 'javascript',
                 'nextJs',
                 'react',
-                'python',
                 'express',
                 'mongodb',
                 'graphql',
+                'docker',
+                'aws',
             ],
             overlay: {
                 icon: assetImages.overlayImages.github,
@@ -175,6 +177,7 @@ const projects: ProjectCollection = {
                 'mongodb',
                 'materialUI',
                 'sass',
+                'nginx',
             ],
             overlay: {
                 icon: assetImages.overlayImages.github,
@@ -194,7 +197,16 @@ const projects: ProjectCollection = {
                     link: 'https://github.com/csesoc/Structs.sh/',
                 },
             ],
-            technologies: ['javascript', 'react', 'typescript', 'mongodb', 'express'],
+            technologies: [
+                'javascript',
+                'react',
+                'typescript',
+                'mongodb',
+                'express',
+                'docker',
+                'kubernetes',
+                'rancher',
+            ],
             overlay: {
                 icon: assetImages.overlayImages.github,
                 label: 'View on GitHub',
