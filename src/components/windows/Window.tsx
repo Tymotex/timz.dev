@@ -1,6 +1,6 @@
-import React, { useCallback, useEffect, useRef } from 'react';
-import WindowCloseButton from './WindowCloseButton';
+import React, { useEffect, useRef } from 'react';
 import windowStyles from './Window.module.scss';
+import WindowCloseButton from './WindowCloseButton';
 
 // Setting up the detection of click events outside of the window.
 // See: https://stackoverflow.com/questions/32553158/detect-click-outside-react-component.

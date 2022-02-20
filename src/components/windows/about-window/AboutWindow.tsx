@@ -1,6 +1,6 @@
 import React from 'react';
 import { Expandable } from 'src/components/expandable';
-import Window from 'src/components/windows/Window.js';
+import Window from 'src/components/windows/Window';
 import { bio } from 'src/portfolio-data';
 import InterestsLists from './InterestsList';
 import WorkExperience from './WorkExperience';
