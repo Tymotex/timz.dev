@@ -14,7 +14,7 @@ const InterestCard = ({ interests }) => {
                     component="img"
                     alt={interests.name}
                     height="140"
-                    image={interests.image}
+                    image={interests.imageUrl}
                     title={interests.name}
                 />
                 <CardContent className={styles.content}>

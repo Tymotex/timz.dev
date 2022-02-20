@@ -24,9 +24,14 @@
     .typerContainer {
         height: 30px;
         .typedText {
-            font-family: 'Roboto Mono', monospace !important;
+            font-family: 'CodeText';
             color: rgb(255, 255, 255);
             text-transform: none !important;
+
+            // Help simulate code editor syntax highlight
+            .alphanumeric {
+                color: limegreen;
+            }
         }
     }
 }

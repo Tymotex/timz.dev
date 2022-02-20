@@ -1,10 +1,5 @@
 export default [
     {
-        name: 'blue dawn',
-        css: 'radial-gradient(ellipse at bottom, #3d6492 0%, #090a0f 100%)',
-        color: '#ffffff',
-    },
-    {
         name: 'love couple',
         css: `
             linear-gradient(
