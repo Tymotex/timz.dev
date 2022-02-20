@@ -16,6 +16,9 @@ const stringToIcon = techName => {
         case 'nodejs':
             techName = 'node';
             break;
+        case 'c++':
+            techName = 'cpp';
+            break;
         default:
             break;
     }
