@@ -1,5 +1,5 @@
 import React from 'react';
-import Window from 'src/components/windows/Window.js';
+import Window from 'src/components/windows/Window';
 import ContactForm from './ContactForm';
 
 const ContactWindow = props => {

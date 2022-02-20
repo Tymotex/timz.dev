@@ -26,6 +26,36 @@
     )
 );
 
+// Using JetBrains monospace font: https://fonts.google.com/specimen/JetBrains+Mono
+
+@font-face {
+    font-family: CodeText;
+    src: local('CodeText'), url(../fonts/code/JetBrainsMono-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CodeText;
+    src: local('CodeText'), url(../fonts/code/JetBrainsMono-Bold.ttf) format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CodeText;
+    src: local('CodeText'), url(../fonts/code/JetBrainsMono-Italic.ttf) format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: CodeText;
+    src: local('CodeText'), url(../fonts/code/JetBrainsMono-BoldItalic.ttf) format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
 // Base.
 
 @import 'base/page';
