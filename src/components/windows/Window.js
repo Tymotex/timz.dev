@@ -1,12 +1,52 @@
-import React from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import WindowCloseButton from './WindowCloseButton';
 import windowStyles from './Window.module.scss';
 
+// Setting up the detection of click events outside of the window.
+// See: https://stackoverflow.com/questions/32553158/detect-click-outside-react-component.
+// Since it's possible for multiple windows to exist in the dom but simply be
+// out of view, we need to tell the alerter whether we should actually be 
+// detecting clicks outside the currently active window.
+const useClickOutsideAlerter = (ref, shouldAlert) => {
+
+};
+
+
 const Window = ({ nameID, text, image, article, articleTimeout, onCloseArticle, children }) => {
-    console.log(`${article} is open`);
+    const windowContainerRef = useRef(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (article === nameID && windowContainerRef.current && !windowContainerRef.current.contains(event.target)) {
+                onCloseArticle();
+            }
+        };
+
+        // Binding the event listener
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        }
+    }, [article, nameID, onCloseArticle]);
+
+    useEffect(() => {
+        const handleEscPress = (event) => {
+            // Note: esc has ascii code 27.
+            if (article === nameID && windowContainerRef.current && event.keyCode == 27) {
+                onCloseArticle();
+            }
+        }
+
+        document.addEventListener('keydown', handleEscPress);
+        return () => {
+            document.removeEventListener('keydown', handleEscPress);
+        }
+    }, [article, nameID, onCloseArticle]);
+
     return (
         <article
             id={nameID}
+            ref={windowContainerRef}
             className={`
                 ${article === nameID ? 'active' : ''} 
                 ${articleTimeout ? 'timeout' : ''}
