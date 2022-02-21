@@ -379,7 +379,15 @@ const projects: ProjectCollection = {
                     link: 'https://github.com/Tymotex/timz.dev',
                 },
             ],
-            technologies: ['react', 'gatsby', 'javaScript', 'materialUI', 'graphql'],
+            technologies: [
+                'react',
+                'gatsby',
+                'javaScript',
+                'typescript',
+                'materialUI',
+                'graphql',
+                'netlify',
+            ],
             overlay: {
                 icon: assetImages.overlayImages.github,
                 label: 'View on GitHub',

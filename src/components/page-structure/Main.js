@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { AboutWindow, ProjectsWindow, BlogsWindow, ContactWindow } from '../windows';
+import { AboutWindow, WorkWindow, ProjectsWindow, BlogsWindow, ContactWindow } from '../windows';
 
 const Main = props => {
     return (
@@ -11,7 +11,8 @@ const Main = props => {
             style={props.timeout ? { display: 'flex' } : { display: 'none' }}
         >
             {/* Bottom navigation buttons */}
-            <AboutWindow {...props} nameID="about" text="About" />
+            <AboutWindow {...props} nameID="about" text="About Me" />
+            <WorkWindow {...props} nameID="work" text="Work Experience" />
             <ProjectsWindow {...props} nameID="projects" text="Projects" />
             <BlogsWindow {...props} nameID="blogs" text="Blogs" />
             <ContactWindow {...props} nameID="contact" text="Contact" />
