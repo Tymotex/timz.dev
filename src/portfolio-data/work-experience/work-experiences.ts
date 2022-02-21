@@ -17,7 +17,7 @@ const workExperiences: WorkExperience[] = [
         time: 'November 2021 - February 2022 (3 months)',
         logoUrl: companyLogos.google,
         descriptionMd: workExperience.googleInternDesc,
-        technologies: ['c++', 'spanner', 'bash', 'sql'],
+        technologies: ['c++', 'spanner', 'bash', 'sql', 'googleTest'],
     },
     {
         name: 'WiseTech Global — Associate Software Developer (Full-Time)',
