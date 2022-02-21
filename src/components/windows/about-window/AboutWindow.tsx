@@ -3,7 +3,6 @@ import { Expandable } from 'src/components/expandable';
 import Window from 'src/components/windows/Window';
 import { bio } from 'src/portfolio-data';
 import InterestsLists from './InterestsList';
-import WorkExperience from './WorkExperience';
 import AwardsLists from './AwardsList';
 import SpotifyDisplay from './SpotifyDisplay';
 // import CodeStats from './CodeStats';
@@ -39,9 +38,6 @@ const AboutWindow = props => {
                     academic transcript link
                 </a>
             </Expandable>
-            <Expandable text="Work Experience">
-                <WorkExperience />
-            </Expandable>
             <Expandable text="Awards">
                 <AwardsLists />
             </Expandable>
@@ -49,6 +45,7 @@ const AboutWindow = props => {
                 <InterestsLists interests={bio.interests} />
                 <SpotifyDisplay />
             </Expandable>
+            {/* <Expandable text="Personal Developer Wiki">Sorry, this isn't ready yet!</Expandable> */}
             <br />
             <Box className={styles.statsContainer}>
                 <Box>
