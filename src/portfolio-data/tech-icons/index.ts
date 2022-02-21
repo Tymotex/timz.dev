@@ -11,6 +11,7 @@ import dockerIcon from './docker.png';
 import expressIcon from './express.png';
 import flaskIcon from './flask.png';
 import gatsbyIcon from './gatsby.png';
+import googletestIcon from './googletest.png';
 import graphqlIcon from './graphql.png';
 import influxdbIcon from './influxdb.png';
 import javaIcon from './java.png';
@@ -20,6 +21,7 @@ import jqueryIcon from './jquery.png';
 import kubernetesIcon from './kubernetes.png';
 import materialUiIcon from './materialui.png';
 import mongodbIcon from './mongodb.png';
+import netlifyIcon from './netlify.png';
 import nextJsIcon from './nextjs.png';
 import nginxIcon from './nginx.png';
 import nodeIcon from './node.png';
@@ -56,6 +58,7 @@ const images = {
     "express": expressIcon,
     "flask": flaskIcon,
     "gatsby": gatsbyIcon,
+    "googletest": googletestIcon,
     "graphql": graphqlIcon,
     "influxdb": influxdbIcon,
     "java": javaIcon,
@@ -65,6 +68,7 @@ const images = {
     "kubernetes": kubernetesIcon,
     "materialui": materialUiIcon,
     "mongodb": mongodbIcon,
+    "netlify": netlifyIcon,
     "nextjs": nextJsIcon,
     "nginx": nginxIcon,
     "node": nodeIcon,
