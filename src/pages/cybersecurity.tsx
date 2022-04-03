@@ -1,29 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'gatsby';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { MarkdownRenderer } from 'src/components/markdown';
+import { PageBreadcrumbs } from 'src/components/cybersecurity/breadcrumbs';
+import { ParallaxBanner } from 'src/components/cybersecurity/parallax-banner';
+import styles from '../components/templates/CybersecurityBlog.module.scss';
 import { CybersecurityLayout } from '../layouts';
-import styles from './cybersecurity.module.scss';
-import mdSource from 'src/portfolio-data/cybersecurity/test.md';
 
 const CybersecurityBlogs = () => {
-    const bannerRef = useRef(null);
-
-    // Parallax banner.
-    useEffect(() => {
-        const bannerImage = bannerRef.current;
-
-        const parallaxScroll = () => {
-            const offset = window.pageYOffset;
-            bannerImage.style.backgroundPositionY = offset * 0.7 + 'px';
-        };
-
-        window.addEventListener('scroll', parallaxScroll);
-
-        return () => {
-            window.removeEventListener('scroll', parallaxScroll);
-        };
-    }, []);
-
     return (
         <CybersecurityLayout>
             <Helmet>
@@ -31,25 +14,60 @@ const CybersecurityBlogs = () => {
             </Helmet>
             <div className={styles.container}>
                 <div className={styles.content}>
-                    <MarkdownRenderer mdSource={mdSource} />
+                    <PageBreadcrumbs></PageBreadcrumbs>
+                    <h1 className={styles.title}>Cybersecurity &mdash; CTFs</h1>
+                    <h2>Introduction</h2>
+                    {/* TODO: Turn these uls into components. Feed props. Style them later. */}
+                    <ul>
+                        <li>
+                            <Link to="/cybersecurity/introduction">Introduction to CTFs</Link>
+                        </li>
+                        <li>
+                            <Link to="/cybersecurity/introduction">
+                                Kali Linux on VMWare setup guide for Windows/Linux host machines
+                            </Link>
+                        </li>
+                    </ul>
+
+                    <h2>Topics & Core Concepts</h2>
+                    <ul>
+                        <li>
+                            Cryptography
+                            <ul>
+                                <li>
+                                    <Link to="/cybersecurity/rsa">RSA</Link>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Web exploitation
+                            <ul>
+                                <li>
+                                    <Link to="/cybersecurity/xss">XSS (Cross-Site Scripting)</Link>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Binary exploitation
+                            <ul>
+                                <li>
+                                    <Link to="/cybersecurity/endianness">Endianness</Link>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            General
+                            <ul>
+                                <li>
+                                    <Link to="/cybersecurity/text-encoding">Text Encoding</Link>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
-                <div
-                    ref={bannerRef}
-                    style={{
-                        height: '500px',
-                        width: '100%',
-                        backgroundImage:
-                            'url(https://images4.alphacoders.com/110/thumb-1920-1108171.png)',
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        position: 'absolute',
-                        top: -10,
-                    }}
-                ></div>
-                {/* <img
-                    className={styles.bannerImage}
-                    src="https://images4.alphacoders.com/110/thumb-1920-1108171.png"
-                ></img> */}
+                <ParallaxBanner
+                    imageSource={'https://images4.alphacoders.com/110/thumb-1920-1108171.png'}
+                />
             </div>
         </CybersecurityLayout>
     );

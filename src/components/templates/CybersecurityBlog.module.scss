@@ -20,5 +20,17 @@
         box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px -10px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
         z-index: 10;
         padding: 2rem;
+
+        .title {
+            color: rgb(203, 148, 255);
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        .content {
+            padding-bottom: 5rem;
+        }
     }
 }
