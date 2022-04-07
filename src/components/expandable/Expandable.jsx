@@ -1,4 +1,4 @@
-import { Container } from '@material-ui/core';
+import { Box, Container } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import styles from './Expandable.module.scss';
@@ -47,7 +47,7 @@ const Expandable = ({ text, children }) => {
                             overflow: 'hidden',
                         }}
                     >
-                        <Container className={styles.content}>{children}</Container>
+                        <Box className={styles.content}>{children}</Box>
                     </motion.div>
                 )}
             </AnimatePresence>

@@ -43,7 +43,7 @@ const Blog = ({ data, pageContext }) => {
                     <MarkdownRenderer mdSource={data?.markdownRemark?.rawMarkdownBody} />
                 </div>
                 <ParallaxBanner
-                    imageSource={'https://images4.alphacoders.com/110/thumb-1920-1108171.png'}
+                    imageSrc={'https://images4.alphacoders.com/110/thumb-1920-1108171.png'}
                 />
             </div>
         </CybersecurityLayout>

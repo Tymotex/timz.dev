@@ -24,9 +24,8 @@ const ParallaxBanner: React.FC<Props> = ({ imageSrc }) => {
             style={{
                 height: '500px',
                 width: '100%',
-                backgroundImage: `url(https://images4.alphacoders.com/110/thumb-1920-1108171.png)`,
+                backgroundImage: `url(${imageSrc})`,
                 backgroundSize: 'cover',
-                backgroundPosition: 'center',
                 position: 'absolute',
                 top: -10,
             }}
