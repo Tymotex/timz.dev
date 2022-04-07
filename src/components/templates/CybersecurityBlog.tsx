@@ -7,10 +7,10 @@ import { Helmet } from 'react-helmet';
 import CybersecurityLayout from 'src/layouts/CybersecurityLayout';
 import { PageBreadcrumbs } from '../cybersecurity/breadcrumbs';
 import { ParallaxBanner } from '../cybersecurity/parallax-banner';
-import { MarkdownRenderer } from '../markdown';
+import { MarkdownKatexRenderer } from 'src/components/cybersecurity/markdown-katex-renderer';
 import { ReadingProgress } from '../cybersecurity/reading-progress';
 
-// Explanation: https://www.gatsbyjs.com/docs/how-to/querying-data/page-query/
+// Explanation: https://www.gatsbyjs.com/docs/how-to/querying-data/page-query/markdown
 export const query = graphql`
     query($slug: String!) {
         markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -42,7 +42,9 @@ const Blog = ({ data, pageContext }) => {
                 <div className={styles.content}>
                     <PageBreadcrumbs pageTitle={pageContext.slug}></PageBreadcrumbs>
                     <h1 className={styles.title}>{pageContext.slug}</h1>
-                    <MarkdownRenderer mdSource={data?.markdownRemark?.rawMarkdownBody} />
+                    <MarkdownKatexRenderer>
+                        {data?.markdownRemark?.rawMarkdownBody}
+                    </MarkdownKatexRenderer>
                 </div>
                 <ParallaxBanner
                     imageSrc={'https://images4.alphacoders.com/110/thumb-1920-1108171.png'}

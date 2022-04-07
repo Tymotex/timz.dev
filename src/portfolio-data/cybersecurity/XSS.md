@@ -1,5 +1,3 @@
-### XSS
-
 This is a `test` of _markdown_ rendering.
 
 ```javascript
