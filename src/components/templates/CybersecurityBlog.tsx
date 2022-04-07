@@ -8,6 +8,7 @@ import CybersecurityLayout from 'src/layouts/CybersecurityLayout';
 import { PageBreadcrumbs } from '../cybersecurity/breadcrumbs';
 import { ParallaxBanner } from '../cybersecurity/parallax-banner';
 import { MarkdownRenderer } from '../markdown';
+import { ReadingProgress } from '../cybersecurity/reading-progress';
 
 // Explanation: https://www.gatsbyjs.com/docs/how-to/querying-data/page-query/
 export const query = graphql`
@@ -37,6 +38,7 @@ const Blog = ({ data, pageContext }) => {
                 <title>Cybersecurity &mdash; {pageContext.slug}</title>
             </Helmet>
             <div className={styles.container}>
+                <ReadingProgress />
                 <div className={styles.content}>
                     <PageBreadcrumbs pageTitle={pageContext.slug}></PageBreadcrumbs>
                     <h1 className={styles.title}>{pageContext.slug}</h1>
