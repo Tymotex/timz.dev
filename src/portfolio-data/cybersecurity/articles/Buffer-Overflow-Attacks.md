@@ -4,7 +4,7 @@ A **buffer overflow** is when the program tries to write more elements into that
 
 A **buffer overflow attack** works by finding and exploiting buffer overflows, often done by using it to overwrite the contents of memory addresses with malicious code. There are **stack-based** buffer overflow attacks (called ‘*stack smashing*’), which are more common, and **[heap-based](https://en.wikipedia.org/wiki/Heap_overflow)** buffer overflow attacks (called ‘heap smashing’). This introduction to buffer overflow attacks will only focus on stack-based attacks.
 
-In ‘Program Memory Layout [TODO LINK]’ we saw that the stack grows from higher memory addresses to lower memory addresses. Note that when a program writes data into a buffer however, it proceeds from *lower memory addresses to higher memory addresses*.
+In [‘Program Memory Layout’](https://timz.dev/cybersecurity/program-memory-layout) we saw that the stack grows from higher memory addresses to lower memory addresses. Note that when a program writes data into a buffer however, it proceeds from *lower memory addresses to higher memory addresses*.
 
 For example, let’s consider the following example C program:
 
@@ -60,7 +60,7 @@ The best way to protect against buffer overflows is to simply be a security-awar
 
 **Address space randomisation (ASLR):**
 
-ASLR works by randomising the virtual addresses used by the program every time you try to run it. This means that it’s no longer useful for the attack to run disassemblers on the binary to get the memory addresses of interest. They’d need to either run a brute-force attack or somehow leak the addresses, such as through a *format string attack[TODO link]*!
+ASLR works by randomising the virtual addresses used by the program every time you try to run it. This means that it’s no longer useful for the attack to run disassemblers on the binary to get the memory addresses of interest. They’d need to either run a brute-force attack or somehow leak the addresses, such as through a *format string attack*!
 
 The following C program will always output different memory addresses for the same function:
 

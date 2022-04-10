@@ -16,7 +16,7 @@ To better understand what disassemblers and decompilers actually do, let’s rec
 
 ***Disassemblers*** are programs that go the other way, *translating machine code to assembly language*, which is why it’s an incredibly useful tool for reverse engineering — assembly language is ***a lot*** more readable than machine code so you can derive a lot of a insight from just the executable binary itself!
 
-There are lots of disassemblers used in CTFs and in industry. Two such examples are GDB[TODO link] and [IDA](https://en.wikipedia.org/wiki/Interactive_Disassembler).
+There are lots of disassemblers used in CTFs and in industry. Two such examples are [GDB](https://www.sourceware.org/gdb/) and [IDA](https://en.wikipedia.org/wiki/Interactive_Disassembler).
 
 ***Decompilers*** take it a step further from disassemblers. Decompilers are programs that can translate machine code to more readable pseudo-source-code, essentially a reverse compiler! It’s an incredibly hard problem, but there are tools out there that we can take advantage of in CTFs like [IDA HexRays](https://hex-rays.com/decompiler/) which do a reasonable job at ‘recovering’ the source code of executables. Sometimes, as attackers, we can use decompilers to find vulnerabilities to exploit.
 

@@ -4,16 +4,16 @@ From a high level, RSA accomplishes the following:
 
 ![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/fdc4f5c9-301f-44f4-8651-1ec2d4bef4b7/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220410%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220410T010650Z&X-Amz-Expires=86400&X-Amz-Signature=49975484e443e5e1cf668837426489ffffe0b09f531c2859d8f2073c945af04a&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
 
-To start receiving encrypted messages that only Alice can decrypt, she’ll first generate the public and private keys (see ‘RSA Key Generation’[TODO LINK]), then she’ll broadcast the public key to the world (plus another number we’ll ignore for now), then anyone can send a message to Alice securely. The rest of the guide explores the procedure and theory underlying RSA encryption.
+To start receiving encrypted messages that only Alice can decrypt, she’ll first generate the public and private keys, then she’ll broadcast the public key to the world (plus another number we’ll ignore for now), then anyone can send a message to Alice securely. The rest of the guide explores the procedure and theory underlying RSA encryption.
 
-**RSA Key Generation**
+### RSA Key Generation
 
 To start using RSA, we must first generate our public key `e` and private key `d` , as well as another public value `N` .
 
 1. Pick any 2 prime numbers `p` and `q`, which are both intended to be kept *secret*.
     - In practice, we rely on randomly picking monstrously large prime numbers for `p` and `q`.
 2. Compute the *modulus value* `N` by taking the product of the chosen `p` and `q` values: `N = p * q`. We make `N` publicly known.
-3. Calculate the Euler Totient function value, φ(N) = (p-1)(q-1). Note: see *Euler’s Totient Function. [TODO LINK]*
+3. Calculate the Euler Totient function value, φ(N) = (p-1)(q-1). Note: see *Euler’s Totient Function*.
 4. Choose any value `e` such that: 
     1. $1 < e < φ(N)$
     2. `e` is co-prime with φ(N).
@@ -33,7 +33,7 @@ In summary, we have these generated these numbers using the procedure above:
 * `e` our *public key.*
 * `d` our *private key* that we use for decrypting any encrypted messages that we receive.
 
-**RSA Encryption and Decryption**
+### RSA Encryption and Decryption
 
 Once the public key `e` and private decryption key `d` have been produced, we can broadcast `e` and `N` to the world and then we’re ready to start receiving encrypted messages.
 
@@ -50,13 +50,13 @@ This encrypted message $c$ now gets sent to the receiver who decrypts a message 
     3. From (1), we know that $m^{k\phi(N)} \equiv 1 (\text{mod }  N)$. 
     4. Now, from (2) and (3), we have $m^{ed} = m^{k \phi(N) + 1}=m\cdot m^{k \phi(N)} \equiv m (\text{mod } N)$.
 
-**Modular Exponentiation**
+### Modular Exponentiation
 
 Modular exponentiation is about computing the following function: $f(e)=m^e\mod N \equiv c$. This is computationally very easy for a computer to perform.
 
 What’s interesting is that this function is easy to compute going forward, but very challenging to perform going backwards. In other words, it is *computationally infeasible* to be given $c$ and to determine what $e$ is.
 
-**Euler’s Totient Function:**
+### Euler’s Totient Function:
 
 Given a positive integer `N` , Euler’s Totient function φ returns the number of positive integers less than `N` that are *co-prime* to `N` . 
 

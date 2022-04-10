@@ -89,6 +89,6 @@ printf(buffer);           // Not safe. This is an uncontrolled format string!
 
 When given input such as `"%p %p %p"` , the first `prinf` would not interpret the input as a format string and just directly print `"%p %p %p"` . The second `printf` however would interpret the input as a format string and allow stack contents to be leaked.
 
-One way to make buffer overflow attacks a lot harder is to use *address space layout randomisation* (ASLR)[TODO LINK]. This also helps us defend against format string attacks as it makes it more challenging for attackers to determine what memory addresses to leak or overwrite.
+One way to make buffer overflow attacks a lot harder is to use *address space layout randomisation* [(ASLR)](https://en.wikipedia.org/wiki/Address_space_layout_randomization). This also helps us defend against format string attacks as it makes it more challenging for attackers to determine what memory addresses to leak or overwrite.
 
 Fortunately (or unfortunately), format string vulnerabilities have becoming increasingly rare due to them being easily detectable and patchable. Unlike buffer overflow vulnerabilities however, format string vulnerabilities exist in C, C++ *and* also other high-level languages like Java and Python.

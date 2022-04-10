@@ -40,11 +40,13 @@ const Blog = ({ data, pageContext }) => {
             <div className={styles.container}>
                 <ReadingProgress />
                 <div className={styles.content}>
-                    <PageBreadcrumbs pageTitle={pageContext.slug}></PageBreadcrumbs>
-                    <h1 className={styles.title}>{pageContext.slug}</h1>
-                    <MarkdownKatexRenderer>
-                        {data?.markdownRemark?.rawMarkdownBody}
-                    </MarkdownKatexRenderer>
+                    <div className={styles.textContainer}>
+                        <PageBreadcrumbs pageTitle={pageContext.slug}></PageBreadcrumbs>
+                        <h1 className={styles.title}>{pageContext.slug}</h1>
+                        <MarkdownKatexRenderer>
+                            {data?.markdownRemark?.rawMarkdownBody}
+                        </MarkdownKatexRenderer>
+                    </div>
                 </div>
                 <ParallaxBanner
                     imageSrc={'https://images4.alphacoders.com/110/thumb-1920-1108171.png'}

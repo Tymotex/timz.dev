@@ -8,6 +8,40 @@ import { CybersecurityLayout } from '../layouts';
 import { Expandable } from 'src/components/expandable';
 
 const CybersecurityBlogs = () => {
+    // TODO: tmp, find a better place to store and retrieve this:
+    const writeups = [
+        { name: 'substitution', path: 'substitution', source: 'COMP6841' },
+        { name: 'stonks', path: 'stonks', source: 'picoCTF' },
+        { name: 'GET-aHEAD', path: 'get-ahead', source: 'picoCTF' },
+        { name: 'Mind Your Ps and Qs', path: 'mind-your-ps-and-qs', source: 'picoCTF' },
+        { name: "Static ain't always noise", path: 'static-aint-always-noise', source: 'picoCTF' },
+        { name: 'Shuffle', path: 'shuffle', source: 'COMP6841' },
+        { name: 'Matryoshka doll', path: 'matryoshka-doll', source: 'picoCTF' },
+        { name: 'crackme-py', path: 'crackme-py', source: 'picoCTF' },
+        { name: 'tunn3l v1s10n', path: 'tunn3l-v1s10n', source: 'picoCTF' },
+        { name: 'Easy Peasy', path: 'easy-peasy', source: 'picoCTF' },
+        { name: 'Bus Buddies', path: 'bus-buddies', source: 'COMP6841' },
+        { name: 'Sec Edu', path: 'sec-edu', source: 'COMP6841' },
+        { name: 'Substitute Teacher', path: 'substitute-teacher', source: 'COMP6841' },
+        { name: 'Cookie Monster', path: 'cookie-monster', source: 'COMP6841' },
+        { name: 'Insp3ct0r', path: 'insp3ct0r', source: 'picoCTF' },
+        { name: 'The Numbers', path: 'the-numbers', source: 'picoCTF' },
+        {
+            name: 'Wireshark doo dooo do doo...',
+            path: 'wireshark-doo-dooo-do-doo',
+            source: 'picoCTF',
+        },
+        { name: 'Easy1', path: 'easy1', source: 'picoCTF' },
+        { name: 'Where are the robots', path: 'where-are-the-robots', source: 'picoCTF' },
+        { name: 'logon', path: 'logon', source: 'picoCTF' },
+        { name: 'dont-use-client-side', path: 'dont-use-client-side', source: 'picoCTF' },
+        { name: 'Pixelated', path: 'pixelated', source: 'picoCTF' },
+        { name: 'basic-file-exploit', path: 'basic-file-exploit', source: 'picoCTF' },
+        { name: 'art_assignment', path: 'art_assignment', source: 'picoCTF' },
+        { name: 'block_game', path: 'block_game', source: 'COMP6841' },
+        { name: 'first_contact', path: 'first_contact', source: 'COMP6841' },
+    ];
+
     return (
         <CybersecurityLayout>
             <Helmet>
@@ -284,6 +318,25 @@ const CybersecurityBlogs = () => {
                     </Expandable>
                     <br />
                     <h2 className={styles.title}>CTF Write-Ups</h2>
+                    <aside>
+                        I am tracking the CTF problems I complete in the spreadsheet{' '}
+                        <a
+                            href="https://docs.google.com/spreadsheets/d/1EMm5dCoRXaK6uqnVLvdup0tVP27rC6lTMMAv9RsUit8/edit?usp=sharing"
+                            target="_blank"
+                        >
+                            here
+                        </a>
+                        . Below are a few write-ups that outline my approach and thinking for some
+                        of the problems I attempted in that spreadsheet:
+                    </aside>
+                    <ul>
+                        {writeups.map(writeup => (
+                            <li>
+                                <Link to={`/cybersecurity/${writeup.path}`}>{writeup.name}</Link>{' '}
+                                <span style={{ color: 'grey' }}>&mdash; {writeup.source}</span>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
                 <ParallaxBanner imageSrc="https://images4.alphacoders.com/110/thumb-1920-1108171.png" />
             </div>
