@@ -1,3 +1,23 @@
-### Kali Linux
+### VMWare Workstation Kali Linux Setup
 
-Set up Kali.
+This is very brief list of steps to perform to install VMWare Workstation Player and spin up a virtual machine running Kali Linux, for an Ubuntu host machine. These steps were are verified to be working for Ubuntu 20.04 as of Mar 2, 2022.
+
+*Important note:* please ensure you enable ‘CPU virtualisation’ in BIOS/UEFI otherwise VMWare might fail by crashing on attempting to power on the virtual machine. Here's a [quick tutorial](https://www.youtube.com/watch?v=GK0DOfdLCa8&ab_channel=Sysadmin102) on how to do this for ASUS motherboards.
+
+1. Download the bundle file [VMWare Workstation Player](https://www.vmware.com/au/products/workstation-player/workstation-player-evaluation.html) for Linux.
+2. Install the downloaded bundle file by running `chmod u+x <path_to_bundle_file>` followed by `sudo <path_to_bundle_file>`.
+3. Download the [VMWare Kali Linux bundle file](https://www.kali.org/get-kali/#kali-virtual-machines).
+4. Extract the downloaded bundle file (this takes at least a minute to complete on my machine).
+5. Start up VMWare Workstation and follow the wizard to reach this welcome menu. Click on ‘Open a Virtual Machine’ and select the path to the .vmx file in the extracted folder of step 4. Note that we’re not actually creating a new Virtual Machine since we downloaded a pre-built Kali Linux VM.
+    
+    ![step 5](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/800639cd-3174-424d-abb5-8a087599cde6/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220410%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220410T003626Z&X-Amz-Expires=86400&X-Amz-Signature=38508918bd4812740250eb155bed3addd971ccea6807f203066febab6489b499&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+    
+6. The VM should be ready to launch. Hit ‘Power On’.
+    
+    ![step 6](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/5ce76641-4402-47d3-96f4-97715ec92840/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220410%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220410T003649Z&X-Amz-Expires=86400&X-Amz-Signature=bab8262b1bb5743bccc4f36b883da0da3619dde0701a23d46a78215ef35ef5a9&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+    
+7. Enter the username ‘kali’ and password ‘kali’ to log in. These credentials are ‘baked into’ the pre-built VM in the bundle file that was downloaded in step 3.
+8. Done!
+    
+    ![step 8](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c633dba9-0efd-447a-99b3-1a67521f5b76/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220410%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220410T003710Z&X-Amz-Expires=86400&X-Amz-Signature=0c0b86e291a72c34e3a624d09596a4135270a1f37e224a7cbef241cb2c18992d&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+    

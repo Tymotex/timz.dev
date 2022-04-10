@@ -1,7 +1,53 @@
 ### Introduction to CTFs
 
-Introduction here!
+**What are CTFs and why should you try them?**
+
+Security CTFs are competitions where participants aim to extract a flag in a protected system. 
+
+It’s widely commended for being one of the best ways to learn valuable hacking and security skills. Many problems also mimic scenarios that very closely represent vulnerabilities in real software systems. In challenging yourself with CTFs, you’ll be actively developing your [attacker’s mindset](https://www.threatstack.com/blog/how-to-understand-your-attackers-mindset) and problem-solving skills.
+
+Additionally, and I believe this to be a hugely underrated reason to do CTFs, it trains your ‘hacking persistence’ since you’ll constantly be stuck and the process of ‘un-stucking’ yourself in dead-end pursuits is a skill that transfers over to so many other problems you’ll face as a developer. The satisfaction of solving a difficult, ambiguous task and entering [flow](https://en.wikipedia.org/wiki/Flow_(psychology)) every time you sit down to solve a CTF problem is incredibly addictive too!
+
+**Jeopardy vs. Attack-Defense:**
+
+These are the two main types of CTFs.
+
+*Jeopardy CTFs* give you a list of hacking challenges where you have to extract a protected flag, with each flag having a number of points associated with them. Winning this CTF means acquiring the most points.
+
+*Attack-and-defense CTFs* involve teams that have to defend their own servers against attacking teams, and attacking other teams themselves. 
+
+**Main Categories:**
+
+CTF problems are often split into the following category
+
+- Web exploitation — penetrating web apps and networks. In these challenges, you’ll often need to launch SQL injection, XSS and request forgery attacks on a remote server.
+- Cryptography — encrypting/decrypting messages. You’ll often be given cryptography puzzles where you’re tasked with decrypting an encrypted message after being given some crucial information to exploit.
+- Binary exploitation — exploiting vulnerabilities in executable files. Binary exploitation challenges will often get you to launch buffer overflow and format string attacks. It’s considered to be a more challenging category due to many problems requiring a solid computer science background.
+- Reverse engineering — converting compiled code to a human-readable format. Like binary exploitation, this is considered to be a more challenging category since it requires a more rigorous understanding of programming languages and operating systems.
+- Forensics — recovering the digital trail of an event or uncovering information that’s tucked away in the file or abstracted in some way. In this category, you’ll be introduced to so many tools and you’ll have a much more intimate understanding of file structures and steganography techniques.
+
+**Setting up:**
+
+It’s often recommended to set up and use a virtual machine to prevent malicious files from compromising your main OS. I highly recommend setting up [Kali Linux](https://kali.org/) on a [VMWare Workstation](https://www.vmware.com/au/products/workstation-pro.html).
+
+Kali is widely appreciated by the hacker community because it delivers a large suite of useful tools and offers great customisation.
+
+ 
+I started CTFs with Ubuntu 20.04 and I often had to `sudo apt install` a large number of tools that I needed for CTFs, you’ll rarely have this problem on Kali 🙂.
+
+**CTF Etiquette:**
+
+Never post flags or solutions, and never beg for them from others. Unless stated otherwise however, it’s fine (and encouraged!) to Google things during a CTF. Apart from directly asking for solutions, you’re typically ‘expected’ to use any resource that is at your disposal — which is basically [OSINT](https://en.wikipedia.org/wiki/Open-source_intelligence), one of the core ‘tools’ for hacking.
+
+**Great starter guides:**
+
+These are some great beginner guides that I had read through to start my journey into CTFs.
+
+- [Beginner’s Guide to CTFs](https://infosecwriteups.com/beginners-guide-to-ctfs-c934a0d7f5f9)
+- [Beginner Guide on How to Play CTFs](https://medium.com/k3rn3l4rmy/beginner-guide-on-how-to-play-ctfs-8ba0e2c1b5cc)
+- [CTF Beginner Guide, By a Beginner](https://code.likeagirl.io/ctf-beginner-guide-by-a-beginner-3c86e4959fcc)
+- [CTF101](https://ctf101.org/)
+- [picoCTF](https://picoctf.org/resources)
 
 ![Kali](https://raw.githubusercontent.com/Tymotex/timz.dev/master/src/portfolio-data/cybersecurity/images/Introduction_kali.png)
-
 
