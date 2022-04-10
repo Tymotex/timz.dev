@@ -11,7 +11,8 @@ const applySearchFilter = (blogs, searchQuery) => {
 
 const BlogsList = ({ blogs, searchQuery, sortCmp }) => {
     const filteredBlogs = applySearchFilter(blogs, searchQuery);
-    const sortedBlogs = filteredBlogs.sort(sortCmp);
+    const sortedBlogs = filteredBlogs.sort(sortCmp)
+        .filter(blog => blog.title && blog.title.length > 0); // TODO: remove this filter. I only added this here to get rid of the cybersecurity blogs that also show up here.
     return (
         <ResponsiveMasonry
             className={styles.blogList}

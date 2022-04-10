@@ -6,6 +6,7 @@ import styles from './blogs.module.scss';
 import { Divider } from '@material-ui/core';
 import { BlogsSorter } from 'src/components/blogs';
 import sortingFuncs from 'src/components/blogs/sortingFunctions';
+import { Link } from 'gatsby';
 
 const Blogs = ({ query }) => {
     const [sortFuncIndex, setSortFuncIndex] = useState(0);
@@ -17,6 +18,7 @@ const Blogs = ({ query }) => {
             </Helmet>
             {/* Projects */}
             <div className={styles.container}>
+                <br />
                 <h2 className={styles.listTitle}>Project Blogs</h2>
                 <p className={styles.listSummary}>
                     A collection of my software projects, including serious personal projects, some
@@ -26,6 +28,10 @@ const Blogs = ({ query }) => {
                     </span>
                     .
                 </p>
+                <p>
+                    See my <em>Cybersecurity & CTF</em> blogs and write-ups <Link to="/cybersecurity">here</Link>.
+                </p>
+                <br />
                 <BlogsSorter sortFuncIndex={sortFuncIndex} setSortFuncIndex={setSortFuncIndex} />
                 <Divider />
             </div>
