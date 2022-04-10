@@ -1,0 +1,87 @@
+A character encoding standard like ASCII assigns a number to uniquely identify a single character. We call this number the code point of the character. The purpose of character encoding standard like ASCII is to store text digitally, because computers only ever work with 0s and 1s.
+
+If we wanted to store and work with text containing these characters on a computer system, we’d need to tell the computer system what numbers correspond to what characters. In other words, we need to tell the computer what character encoding scheme to use. We could just naively go through the characters we want to encode like this:
+
+* a will be represented by 1
+* b will be represented by 2
+* ...
+* z will be represented by 26
+* ... and so on.
+
+This works fine, however we live in a world where computers constantly talk to each other, exchanging data over the internet or otherwise. What happens when you send a text file to your friend who has a totally different character encoding scheme to you? For information interchange like this to work, you and your friend and everyone else in the world need to agree on a standard character encoding scheme. 
+
+**ASCII — American Standard Code for Information Interchange**
+
+With ASCII, we’re basically assuming that all the text we ever wanted to work with *only consisted* of alphabetical characters (lowercase a-z and uppercase A-Z), numerical characters (0-9), punctuation characters, and other characters such as $, #, %, ^ and so on. On top of these human-readable characters however, we also have what we call *[control characters](https://en.wikipedia.org/wiki/Control_character)* or *non-printing character* which don’t really have written representations, but which signal important information to the computer about how text should be displayed. For example, when you hit the backspace key, that’s the same as typing the [backspace character](https://en.wikipedia.org/wiki/Backspace) (which has a code point of 8 in ASCII).
+
+This is actually a reasonably small set, and to give each of these characters a unique code we need somewhere in the ballpark of 100 numbers. With 7 bits, we can make numbers 0-127 (since 2⁷ is 128), which lets us assign a unique code point to 128 different characters. This is what the creators of ASCII decided was reasonable, and these are the character encodings that they came up with:
+
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/4572f404-cf6f-422a-8da2-65b624592962/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220410%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220410T013504Z&X-Amz-Expires=86400&X-Amz-Signature=2a17fc0091953ab57c8e7bf4309a6877bea4ae0dd60a80ffc03543c0009324bc&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+
+Often, more useful ASCII tables like [this](https://www.rapidtables.com/code/text/ascii-table.html) will provide hexadecimal values alongside the decimal values since we see hexadecimal values way more often when looking at file contents. Also, if you’re on Linux, typing `man ascii` in your terminal gives you the ASCII table — really handy for quick lookups in CTFs.
+
+**Unicode**
+
+There is a tradeoff with the number of characters you can encode and the number of bits you need to dedicate to representing all those characters. As English speakers, we could get away with ASCII since our alphabet is quite small. However, we need to keep in mind that computers exist everywhere at this point and the world’s language distribution looks like this:
+
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/89ebef89-a38f-4762-b79c-e5a4b77f1e50/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220410%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220410T013514Z&X-Amz-Expires=86400&X-Amz-Signature=2d079ab3b662611931228fd5f691e8b67676e6f2853b87259655ddcff3245f34&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+
+How do represent the tens of thousands of characters in the Chinese language alone? 
+
+The *Unicode Consortium* was founded and introduced the first version of the *Unicode* standard in 1991 to solve these problems. Its character encoding system uses *up to* 32 bits to currently cover 100000+ characters, well over enough to uniquely represent ever major language’s alphabet and characters and have a bunch of leftover code points we could use to represent emojis and symbols like ⚑ or 💔.
+
+If we use 32 bits to encode each regular English character like A or B, wouldn’t that be incredibly wasteful? If we adopt such a standard, all our text files would be 4 times larger, right? The genius of Unicode is that the characters will take as many bits as they need, we’ll see this later.
+
+Firstly, a few things to note:
+
+* Unicode itself is split into encoding schemes UTF-8, UTF-16 and UTF-32. UTF-8 is the most prevalent character encoding you’ll see on the web.
+    - Note: UTF stands for ‘Unicode Transformation Format’
+* We often communicate the code point of characters in the shorter format: `U+<hexademical number>`. So for example, the character ⚑ happens to have the code point `0x2691` (which in decimal is the number `9873`), so we express the Unicode code point as `U+2691`.
+
+**UTF-8**
+
+Remember, Unicode only takes up as many bits as needed for the code point. With UTF-8, all your ASCII characters have the same code points, meaning they’ll all be represented and stored in 8 bits rather than 32. So there’s absolutely no issue with adopting UTF-8 if you’re only using ASCII.
+
+So what happens in UTF-8 if we want to represent a Chinese character like 爱 (love) which would not fit in 8 bits? We’d have to use more bytes.
+
+The code point for 爱 happens to be `U+7231` which in binary is 01110010 00110001. So that means we’d store 爱 with 2 bytes, right? 
+
+Unfortunately, if we directly store in the 2 bytes, 01110010 00110001, the computer would have no way to tell if it should interpret these 2 bytes as 2 separate characters or 1 character. In other words, if the computer saw 01110010 00110001, then it has no way to decide whether to show ‘爱’ or ‘r1’!
+
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/0cbc1fd9-dc93-4f76-98fb-52407f1f45b8/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220410%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220410T013535Z&X-Amz-Expires=86400&X-Amz-Signature=81939fb389f26e548dcee8476247c543d459c3b2a82633bf87b1be434cfb6ab6&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9c45d6d3-4b17-4e9f-99ac-b49933dbcad6/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220410%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220410T013537Z&X-Amz-Expires=86400&X-Amz-Signature=ea3723b6b852c68b7688e759cb5f80b9ed8f0d2848802f559f354e5183db4f0e&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+
+Unicode is incredibly clever in its solution to this problem: we use the first byte of the character to tell the computer *how many more bytes to expect for the current character encoding*.
+
+* If the computer sees `0xxxxxxx`, then it knows that the current encoding uses 1 byte.
+    - We have 7 free slots to store the Unicode code point.
+* If the computer sees `110xxxxx`, then it knows that the current encoding uses 2 bytes.
+It expects the next byte to be `10xxxxxx` .
+    - The first byte gives us 5 slots and the second byte gives us 6 slots, meaning we can store code points that are representable in 11 bits, so below the value 2¹¹.
+* If the computer sees `1110xxxx`, then it knows that the current encoding uses 3 bytes.
+It expects the next 2 bytes to be `10xxxxxx` .
+    - The 3 bytes give 4 + 6 + 6 = 16 bits to represent the code point.
+* If the computer sees `11110xxx`, then it knows that the current encoding uses 4 bytes.
+It expects the next 3 bytes to be `10xxxxxx` .
+    - The 4 bytes give 3 + 6 + 6 + 6 = 21 bits to represent the code point.
+
+This is all summarised in the following table:
+
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/10a94c4f-2a77-405c-90f8-27ce7084ae50/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220410%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220410T013546Z&X-Amz-Expires=86400&X-Amz-Signature=002a8944517e65c7ffea2175a72000487876dc0f2b2d8cce751a0585016e1cd7&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+
+So, how do we represent 爱? It looks like we’ll need 3 bytes to give us enough ‘free slots’ to write in the full code point for 爱:
+
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ac25f8ea-b0f6-4f36-9415-43e40775bd04/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220410%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220410T013548Z&X-Amz-Expires=86400&X-Amz-Signature=b418819c63dc187859822d47c3dabab768dadd447727eddce794a12163077c4c&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+
+You can check what the binary looks like for different Unicode characters here: [onlineunicodetools](https://onlineunicodetools.com/convert-unicode-to-binary).
+
+**UTF-16 and UTF-32**
+
+What’s the difference between UTF-8, UTF-16 and UTF-32? They’re all responsible for encoding Unicode characters using a multi-byte encoding like in the example shown above.
+
+UTF-16 uses 16 bits, or 2 bytes, as the minimum number of bits to encode a single character. This means that all ASCII characters would take up 2 bytes in UTF-16, meaning it’s on average a lot more wasteful of memory and storage space than if you were to use UTF-8. Why would you ever choose UTF-16 then? It turns out that when you’re using UTF-8, many characters will extend beyond 1 byte which makes indexing into a position in a string or calculating the length of strings becomes a lot less efficient! With UTF-16, you can expect the vast majority of characters to fit within those 2 bytes, so you’d rarely have to ever extend by 1 or 2 bytes. There are also more tradeoffs beyond this.
+
+Interestingly, UTF-16 has some associated security vulnerabilities, for example, [CVE-2008-2938](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2938) and [CVE-2012-2135](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-2135). This has been one huge driver behind UTF-8 being the standard character encoding system for the web.
+
+What about UTF-32? No one uses it unfortunately. It’s simply far too wasteful to use 4 bytes for everything.

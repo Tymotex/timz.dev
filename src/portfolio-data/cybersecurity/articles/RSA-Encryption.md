@@ -1,0 +1,73 @@
+RSA is a *public-key*, *asymmetric-key* encryption algorithm. Note that in symmetric-key encryption algorithms, the sender and receive have the same key — hence ‘symmetric’. The big issue with symmetric-key encryption is that you have to securely communicate the key between sender and receiver before being able to have an encrypted communication channel — there exists some secure key-exchange protocols like [Diffie-Hellman key exchange](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange) for accomplishing this. When there are multiple senders and receivers all trying to communicate with each other, however, the key exchange must be done for everyone which doesn’t scale well. This is where asymmetric-key encryption becomes really handy — no key exchange is necessary because the key used to *encrypt* the message is **different** from the key used to *decrypt* the message.
+
+From a high level, RSA accomplishes the following:
+
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/fdc4f5c9-301f-44f4-8651-1ec2d4bef4b7/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220410%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220410T010650Z&X-Amz-Expires=86400&X-Amz-Signature=49975484e443e5e1cf668837426489ffffe0b09f531c2859d8f2073c945af04a&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+
+To start receiving encrypted messages that only Alice can decrypt, she’ll first generate the public and private keys (see ‘RSA Key Generation’[TODO LINK]), then she’ll broadcast the public key to the world (plus another number we’ll ignore for now), then anyone can send a message to Alice securely. The rest of the guide explores the procedure and theory underlying RSA encryption.
+
+**RSA Key Generation**
+
+To start using RSA, we must first generate our public key `e` and private key `d` , as well as another public value `N` .
+
+1. Pick any 2 prime numbers `p` and `q`, which are both intended to be kept *secret*.
+    - In practice, we rely on randomly picking monstrously large prime numbers for `p` and `q`.
+2. Compute the *modulus value* `N` by taking the product of the chosen `p` and `q` values: `N = p * q`. We make `N` publicly known.
+3. Calculate the Euler Totient function value, φ(N) = (p-1)(q-1). Note: see *Euler’s Totient Function. [TODO LINK]*
+4. Choose any value `e` such that: 
+    1. $1 < e < φ(N)$
+    2. `e` is co-prime with φ(N).
+    
+    This value `e` will be the public key that any senders will use to encrypt their message.
+    
+
+5. Choose any value `d` such that: $d\times e (\text{mod } φ(N)) \equiv 1$.
+    
+    This is where we can rely on the [Extended Euclidean Algorithm](https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm) to determine `d` . The Extended Euclidean Algorithm is an efficient algorithm for solving for `x` in problems of the form $ax \equiv b (\text{mod } m)$.
+    
+
+In summary, we have these generated these numbers using the procedure above:
+
+* *`p`* and *`q`* which we keep private. We don’t need them and discard them after we’ve generated our public key `e` and private key `d`.
+* `N` which we broadcast to the world.
+* `e` our *public key.*
+* `d` our *private key* that we use for decrypting any encrypted messages that we receive.
+
+**RSA Encryption and Decryption**
+
+Once the public key `e` and private decryption key `d` have been produced, we can broadcast `e` and `N` to the world and then we’re ready to start receiving encrypted messages.
+
+For a sender to encrypt a message `m` , they just compute $c = m^e\text{ (mod } N)$, where `e` and `N` have been broadcasted publicly.
+
+* Since m is probably a plaintext message, you’d obviously have to map it to a number first before computing $c = m^e\text{ (mod } N)$.
+
+This encrypted message $c$ now gets sent to the receiver who decrypts a message y by computing: $c^d = (m^e)^d = m^{ed} (\text{mod }N
+) = m$, the decrypted message!
+
+* How do we know that $m^{ed} = m (\text{mod }N)$? Here’s a proof:
+    1. Euler’s theorem states that: “If `m` and `N` are *co-prime*, then $m^{\phi(N)} \equiv 1 (\text{mod } N)$.” Here’s a [proof](https://kconrad.math.uconn.edu/blurbs/ugradnumthy/eulerthm.pdf).
+    2. From the key generation step, we have $de\equiv1 \text{ (mod }\phi(N))$, or in other words, we have $ed =k\times\phi(N) + 1$ for some integer $k$.
+    3. From (1), we know that $m^{k\phi(N)} \equiv 1 (\text{mod }  N)$. 
+    4. Now, from (2) and (3), we have $m^{ed} = m^{k \phi(N) + 1}=m\cdot m^{k \phi(N)} \equiv m (\text{mod } N)$.
+
+**Modular Exponentiation**
+
+Modular exponentiation is about computing the following function: $f(e)=m^e\mod N \equiv c$. This is computationally very easy for a computer to perform.
+
+What’s interesting is that this function is easy to compute going forward, but very challenging to perform going backwards. In other words, it is *computationally infeasible* to be given $c$ and to determine what $e$ is.
+
+**Euler’s Totient Function:**
+
+Given a positive integer `N` , Euler’s Totient function φ returns the number of positive integers less than `N` that are *co-prime* to `N` . 
+
+* Two numbers `a` and `b` are co-prime if they do not share any common factors. For example 6 and 35 are coprime since the prime factors of 6 are {2, 3} and for 35 they are {5, 7}, and there is no common prime factor.
+
+Suppose we want to calculate φ(8). Brute-forcing through numbers 1-8, we see that the numbers 1, 3, 5, 7 do not share common factors with 8. So here, we have φ(8) = 4.
+
+Computing the Euler Totient value for *prime numbers* is very easy, it’ll always be the case that φ(p) = p - 1. For example, φ(7) = 6 since all of the numbers 1-6 are guaranteed not to share any prime factors with 7.
+
+Computing the Euler Totient function for composite numbers, on the other hand, is extremely challenging once the number gets huge.
+
+A remarkable property of the Euler Totient function, however, is that it is multiplicative, meaning that φ(p * q) = φ(p) * φ(q) — here’s a [proof](https://math.stackexchange.com/questions/192452/whats-the-proof-that-the-euler-totient-function-is-multiplicative). What this means is the if `p` and `q` are prime and `N = p * q` , then φ(N) = (p - 1)(q - 1), which is trivial for computers to calculate even when `p` and `q` are monstrously large prime numbers. For someone who knows N and wants to compute φ(N), it’ll be ridiculously hard given that they don’t know `p` or `q` and take advantage of the property that φ(N) = (p - 1)(q - 1). 
+
+This is where RSA’s strength comes from — it’s just computationally infeasible to find φ(N) as an attacker since they have to solve the [prime factorisation problem](https://en.wikipedia.org/wiki/Integer_factorization) for which no possible efficient algorithm is known. It’s possible that an efficient algorithm simply doesn’t exist as the prime factorisation problem has has remained an open problem in computer science and mathematics for a very long time.

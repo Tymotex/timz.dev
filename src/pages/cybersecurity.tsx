@@ -122,6 +122,11 @@ const CybersecurityBlogs = () => {
                                 <Link to="/cybersecurity/elf-files">ELF Files</Link>
                             </li>
                             <li>
+                                <Link to="/cybersecurity/program-memory-layout">
+                                    Program Memory Layout
+                                </Link>
+                            </li>
+                            <li>
                                 <Link to="/cybersecurity/buffer-overflow-attacks">
                                     Buffer Overflow Attacks
                                 </Link>
@@ -129,11 +134,6 @@ const CybersecurityBlogs = () => {
                             <li>
                                 <Link to="/cybersecurity/format-string-attacks">
                                     Format String Attacks
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/cybersecurity/return-oriented-programming">
-                                    ROP (Return-Oriented Programming)
                                 </Link>
                             </li>
                         </ul>
@@ -170,7 +170,7 @@ const CybersecurityBlogs = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/cybersecurity/rsa">RSA Encryption</Link>
+                                <Link to="/cybersecurity/rsa-encryption">RSA Encryption</Link>
                             </li>
                         </ul>
                     </Expandable>
@@ -225,11 +225,6 @@ const CybersecurityBlogs = () => {
                             <li>
                                 <Link to="/cybersecurity/steganography">Steganography</Link>
                             </li>
-                            <li>
-                                <Link to="/cybersecurity/PCAPs">
-                                    PCAPs (Network Packet Capture)
-                                </Link>
-                            </li>
                         </ul>
                     </Expandable>
                     <Expandable text="General">
@@ -240,7 +235,9 @@ const CybersecurityBlogs = () => {
                         </p>
                         <ul>
                             <li>
-                                <Link to="/cybersecurity/text-encoding">Character Encoding</Link>
+                                <Link to="/cybersecurity/character-encoding">
+                                    Character Encoding
+                                </Link>
                             </li>
                             <li>
                                 <Link to="/cybersecurity/base64">Base64</Link>
@@ -267,13 +264,18 @@ const CybersecurityBlogs = () => {
                         </p>
                         <ul>
                             <li>
-                                <Link to="/cybersecurity/python">Python for CTFs</Link>
+                                <Link to="/cybersecurity/pwntools">Pwntools</Link>
                             </li>
                             <li>
-                                <Link to="/cybersecurity/python">Pwntools</Link>
+                                <Link to="/cybersecurity/hex-editors">
+                                    Hex Editors & Hexdumping
+                                </Link>
                             </li>
                             <li>
-                                <Link to="/cybersecurity/python">CLI cheatsheet</Link>
+                                <Link to="/cybersecurity/wireshark">Wireshark</Link>
+                            </li>
+                            <li>
+                                <Link to="/cybersecurity/burpsuite">Burpsuite</Link>
                             </li>
                             <li>
                                 <Link to="/cybersecurity/gdb">GDB</Link>
@@ -281,6 +283,7 @@ const CybersecurityBlogs = () => {
                         </ul>
                     </Expandable>
                     <br />
+                    <h2 className={styles.title}>CTF Write-Ups</h2>
                 </div>
                 <ParallaxBanner imageSrc="https://images4.alphacoders.com/110/thumb-1920-1108171.png" />
             </div>
