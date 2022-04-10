@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby';
 import React from 'react';
-import styles from './blog.module.scss';
+import styles from './ProjectBlog.module.scss';
 import marked from 'marked';
 import BlogLayout from 'src/layouts/BlogLayout';
 import { Helmet } from 'react-helmet';

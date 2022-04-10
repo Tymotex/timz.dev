@@ -10,6 +10,7 @@ import { Box, Grid } from '@material-ui/core';
 import GitHubStats from './GitHubStats';
 import styles from '../Window.module.scss';
 import { renderMarkdown } from 'src/portfolio-data/utils';
+import { MarkdownRenderer } from 'src/components/markdown';
 
 const AboutWindow = props => {
     return (

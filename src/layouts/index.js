@@ -1,1 +1,2 @@
-export { default as BlogLayout } from './BlogLayout.js';
+export { default as BlogLayout } from './BlogLayout';
+export { default as CybersecurityLayout } from './CybersecurityLayout';
