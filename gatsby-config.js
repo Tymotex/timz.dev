@@ -70,6 +70,14 @@ module.exports = {
             },
         },
         {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `markdown`,
+                // Path of the cybersecurity markdown files.
+                path: `${__dirname}/src/portfolio-data/cybersecurity`,
+            },
+        },
+        {
             resolve: `gatsby-transformer-remark`,
             options: {
                 commonmark: true,
