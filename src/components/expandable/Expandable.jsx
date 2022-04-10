@@ -1,4 +1,4 @@
-import { Box, Container } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import styles from './Expandable.module.scss';
