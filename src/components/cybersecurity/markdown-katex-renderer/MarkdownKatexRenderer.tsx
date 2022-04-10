@@ -1,9 +1,9 @@
-import React from 'react';
-import ReactMarkdown from 'react-markdown';
-import MathJax from 'react-mathjax';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
-import RemarkMathPlugin from 'remark-math';
+import React from "react";
+import ReactMarkdown from "react-markdown";
+import MathJax from "react-mathjax";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import RemarkMathPlugin from "remark-math";
 
 export default function MarkdownKatexRenderer(props) {
     const newProps = {
@@ -12,8 +12,10 @@ export default function MarkdownKatexRenderer(props) {
         renderers: {
             ...props.renderers,
             // KaTeX rendering.
-            math: props => <MathJax.Node formula={props.value} />,
-            inlineMath: props => <MathJax.Node inline formula={props.value} />,
+            math: (props) => <MathJax.Node formula={props.value} />,
+            inlineMath: (props) => (
+                <MathJax.Node inline formula={props.value} />
+            ),
             // Apply syntax highlighting to code blocks.
             code: ({ language = null, value }) => {
                 return (
