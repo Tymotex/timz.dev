@@ -1,4 +1,4 @@
-import MyComponent from "./MyComponent";
+import SampleComponent from "./SampleComponent";
 
 describe("a", () => {
     test("that it works", () => {

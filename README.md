@@ -66,12 +66,12 @@ The `.mdx` file can render any of the following:
   within the `.mdx` source code.
     - For example:
         ```md
-            import MyComponent from '../src/components/MyComponent';
+            import SampleComponent from 'src/components/SampleComponent';
 
             This is a sentence that contains *valid markdown* followed by a 
             custom React component.
 
-            <MyComponent />
+            <SampleComponent />
         ```
 All of this is possible through `mdx-bundler` which is used by the server-side
 Node.js script, `scripts/blogs.ts`, to map all the `.mdx` source code to

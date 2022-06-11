@@ -1,11 +1,11 @@
 import type { GetStaticProps, NextPage } from "next";
 import { Fragment, useMemo } from "react";
-import { Blog, getAllBlogs } from "scripts/blogs";
+import { Blog, BlogInfo, getAllBlogs } from "scripts/blogs";
 import { getMDXComponent } from "mdx-bundler/client";
-import MyComponent from "src/components/MyComponent";
+import Link from "next/link";
 
-export const getStaticProps: GetStaticProps = async context => {
-    const blogs: Blog[] = await getAllBlogs();
+export const getStaticProps: GetStaticProps = async (context) => {
+    const blogs: BlogInfo[] = await getAllBlogs();
     return {
         props: {
             blogs: blogs,
@@ -14,24 +14,23 @@ export const getStaticProps: GetStaticProps = async context => {
 };
 
 interface Props {
-    blogs: Blog[];
+    blogs: BlogInfo[];
 }
 
 const BlogIndex: NextPage<Props> = ({ blogs }) => {
-    const blogComponents = useMemo(
-        () => blogs.map(blog => getMDXComponent(blog.code)),
-        [],
-    );
-
     return (
         <>
             <h1>Welcome</h1>
-            <MyComponent />
-            {blogComponents.map((Blog, i) => (
-                <Fragment key={i}>
-                    <Blog />
-                </Fragment>
-            ))}
+            <ul>
+                {blogs.map((blogInfo) => (
+                    <li key={blogInfo.slug}>
+                        <Link href={`/blogs/${blogInfo.slug}`}>
+                            {`${blogInfo.slug} - ${blogInfo.frontmatter.title}`}
+                        </Link>
+                        ({blogInfo.frontmatter.date})
+                    </li>
+                ))}
+            </ul>
         </>
     );
 };
