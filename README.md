@@ -1,21 +1,71 @@
-### Timz.dev Portfolio
+# Dev Portfolio & Blog
 
-A software engineering portfolio site, built with React + Gatsby and Material UI. Deployed <a href="https://www.timz.dev">here</a>.
+A developer portfolio and blogging platform where the content writer can
+leverage the expressive power of MDX and LaTeX for mathematical typesetting.
 
-### Features:
+This project was built with React, Next.js, Typescript and mdx-bundler.
 
--   **Projects showcase**
-    -   `src/portfolio-data/projects.js` contains a JS object with details regarding software projects. These are rendered under the Projects window as stylish cards showcasing the technologies used, images, links, tags, markdown blog, etc.
-    -   `.md` files in `src/portfolio-data/project-descriptions` have pages automatically created under the /blogs route. Eg. src/portfolio-data/MyProject.md creates a page at /blogs/MyProject
--   **Bio showcase**
-    -   Work experience summary, awards, interests and hobbies rendered from fields of the object exported from `src/portfolio-data/bio.js`
-    -   Embedded PDF renderer
-    -   Live Spotify feed displayer (using this [project](https://github.com/novatorem/novatorem))
-        <img src="https://spotify-display-lyart.vercel.app/api/spotify" alt="Spotify Now Playing">
--   **Blogs**
-    -   Blogs index page with masonry grid of styled project cards, dark mode toggle, search bar, sidenav and more
-    -   Blog show page linked with `.md` files in `src/portfolio-data/project-descriptions`
--   **Contact**
-    -   Contact form compatible with Netlify's integrated email services
--   **Theming**
-    -   Customisable 'network particles' wallpaper with themes
+# Content Management
+
+To author new blogs, add a `.mdx` file to `content/blogs` and fill in the
+following frontmatter format:
+
+```
+---
+title: Learn React in 30 Seconds (Not Clickbait)
+description: Whatever is here is passed to <meta name="description" content="...">.
+published: true
+dateWritten
+---
+```
+
+- The filename will be used to construct a URL slug. Use a meaningful name
+  because hitting more keywords improves SEO.
+
+Note that we are using `scripts/blogs.ts` to traverse and source files from the
+local filesystem to discover the `.mdx` files. The files could be located
+anywhere, such as AWS S3 bucket, but keeping it all these blog files in the
+same repo as the project itself is simply more convenient to work with, and you
+get version control for free.
+
+Some very helpful resources I used to build this system adapted to my specific
+needs were: 
+- Josh Comeau's blog, ['How I Built My Blog'](https://www.joshwcomeau.com/blog/how-i-built-my-blog/).
+- Peter Lynch's ['Guide to Using Mdx-bundler With Next.js'](https://www.peterlunch.com/blog/mdx-bundler-beginners).
+
+### Supported Syntax
+
+The `.mdx` file can render any of the following:
+* Anything considered valid [markdown syntax](https://www.markdownguide.org/cheat-sheet/).
+* Syntax-highlighted code blocks started with the markdown character sequence, ```.
+    - This relies on the packages: `remark-prism`, `prismjs`, and `@types/remark-prism`.
+* Embedded LaTeX expressions. You can write them inline or as a separate block.
+    - For example:
+        ```md
+            This renders an inline LaTeX expression.
+            $\alpha$  
+
+            This renders a block-level LaTeX expression.
+            $$
+                \frac{1}{2}
+            $$
+        ```
+    - This relies on the packages: `remark-math`, `rehype-katex`, `katex`.
+    - See the [KaTeX documentation](https://katex.org/docs/supported.html) for a
+      list of all LaTeX expressions that are supported.
+* Any custom react components available in the project, ie. any JSX. By
+  extension, this means that you can use any HTML element you want, directly
+  within the `.mdx` source code.
+    - For example:
+        ```md
+            import MyComponent from '../src/components/MyComponent';
+
+            This is a sentence that contains *valid markdown* followed by a 
+            custom React component.
+
+            <MyComponent />
+        ```
+All of this is possible through `mdx-bundler` which is used by the server-side
+Node.js script, `scripts/blogs.ts`, to map all the `.mdx` source code to
+executable javascript that renders the content.
+
