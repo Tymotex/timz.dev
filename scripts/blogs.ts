@@ -1,6 +1,6 @@
 import fs from "fs";
 import signale from "signale";
-import { sassPlugin } from 'esbuild-sass-plugin';
+import { sassPlugin } from "esbuild-sass-plugin";
 import path from "path";
 import { bundleMDX } from "mdx-bundler";
 import remarkPrism from "remark-prism";
@@ -19,12 +19,16 @@ export interface Blog {
 
 export const getAllBlogs = async (): Promise<Blog[]> => {
     const cwd = process.cwd();
-    const blogsDir = path.join (cwd, "content/blogs");
+    const blogsDir = path.join(cwd, "content/blogs");
     signale.start(`Sourcing blogs from '${blogsDir}'`);
 
     const filenames = fs.readdirSync(blogsDir);
     const allBlogs = await Promise.all(
-        filenames.map(async (filename) => {
+        filenames.map(async filename => {
+            if (path.extname(filename) !== ".mdx")
+                signale.info(
+                    `Skipping '${filename}' because it doesn't have the .mdx file extension`,
+                );
             const slug = filename.replace(/\.mdx$/, "");
 
             const absPath = path.join(blogsDir, filename);
@@ -32,20 +36,21 @@ export const getAllBlogs = async (): Promise<Blog[]> => {
 
             const { code, frontmatter } = await bundleMDX({
                 cwd: cwd,
-                esbuildOptions: (options) => {
-                    options.target = 'es2020'; // TODO: es5?
-                    if (options.plugins) options.plugins = [
-                        ...options.plugins,
-                        sassPlugin({
-                            basedir: '.'
-                        })
-                    ];
-                    // Add a loder for .scss files
+                // Sourced from: https://github.com/kentcdodds/mdx-bundler/issues/116.
+                // Solves the lack of default sass module support in mdx-bundler.
+                esbuildOptions: options => {
+                    options.target = "es2020";
+                    if (options.plugins)
+                        options.plugins = [
+                            ...options.plugins,
+                            sassPlugin({
+                                basedir: ".",
+                            }),
+                        ];
                     options.loader = {
                         ...options.loader,
-                    }
-                    options.publicPath = '/mdx';
-                    // path.join(process.cwd(), 'public/content/blogs');
+                    };
+                    options.publicPath = "/mdx";
                     options.outdir = path.join(cwd, "public/mdx");
                     options.write = true;
                     return options;

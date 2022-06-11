@@ -13,14 +13,17 @@ following frontmatter format:
 ```
 ---
 title: Learn React in 30 Seconds (Not Clickbait)
-description: Whatever is here is passed to <meta name="description" content="...">.
+description: Whatever is here is passed to 
 published: true
-dateWritten
+date: yyyy-mm-dd
 ---
 ```
-
-- The filename will be used to construct a URL slug. Use a meaningful name
+> The filename will be used to construct a URL slug. Use a meaningful name
   because hitting more keywords improves SEO.
+- `title` gets added into the `<title>` element.
+- `description` gets written to `<meta name="description" content="...">`.
+- `published` indicates whether a blog is publicly viewable.
+- `date` is the time the blog was published.
 
 Note that we are using `scripts/blogs.ts` to traverse and source files from the
 local filesystem to discover the `.mdx` files. The files could be located
@@ -28,10 +31,15 @@ anywhere, such as AWS S3 bucket, but keeping it all these blog files in the
 same repo as the project itself is simply more convenient to work with, and you
 get version control for free.
 
-Some very helpful resources I used to build this system adapted to my specific
-needs were: 
+Getting MDX to work with the right plugins and build configurations was a really
+challenging task, especially without many relevant guidance online. Here were
+some resources I found extremely helpful in building out this system, adapted to
+my specific: 
 - Josh Comeau's blog, ['How I Built My Blog'](https://www.joshwcomeau.com/blog/how-i-built-my-blog/).
 - Peter Lynch's ['Guide to Using Mdx-bundler With Next.js'](https://www.peterlunch.com/blog/mdx-bundler-beginners).
+- Basil's ['Using Sass modules with MDX'](https://www.qbasil.dev/blog/mdx-w-scss).
+  Sass module support doesn't ship with `mdx-bundler`. This guide pointed me
+  `esbuild-sass-plugin` which finally solved frustrating build loader errors.
 
 ### Supported Syntax
 

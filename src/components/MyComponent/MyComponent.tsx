@@ -1,7 +1,10 @@
-import React from "react";
+import React, {FC} from "react";
 import styles from "./MyComponent.module.scss";
 
-function MyComponent() {
+interface Props {
+}
+
+const MyComponent: FC<Props> = () => {
     return <div className={styles.test}>My COMPONENT</div>;
 }
 
