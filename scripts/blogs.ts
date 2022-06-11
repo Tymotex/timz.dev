@@ -1,5 +1,6 @@
 import fs from "fs";
 import signale from "signale";
+import { sassPlugin } from 'esbuild-sass-plugin';
 import path from "path";
 import { bundleMDX } from "mdx-bundler";
 import remarkPrism from "remark-prism";
@@ -17,7 +18,8 @@ export interface Blog {
 }
 
 export const getAllBlogs = async (): Promise<Blog[]> => {
-    const blogsDir = path.join(process.cwd(), "content/blogs");
+    const cwd = process.cwd();
+    const blogsDir = path.join (cwd, "content/blogs");
     signale.start(`Sourcing blogs from '${blogsDir}'`);
 
     const filenames = fs.readdirSync(blogsDir);
@@ -29,6 +31,25 @@ export const getAllBlogs = async (): Promise<Blog[]> => {
             const rawSource = fs.readFileSync(absPath, "utf8");
 
             const { code, frontmatter } = await bundleMDX({
+                cwd: cwd,
+                esbuildOptions: (options) => {
+                    options.target = 'es2020'; // TODO: es5?
+                    if (options.plugins) options.plugins = [
+                        ...options.plugins,
+                        sassPlugin({
+                            basedir: '.'
+                        })
+                    ];
+                    // Add a loder for .scss files
+                    options.loader = {
+                        ...options.loader,
+                    }
+                    options.publicPath = '/mdx';
+                    // path.join(process.cwd(), 'public/content/blogs');
+                    options.outdir = path.join(cwd, "public/mdx");
+                    options.write = true;
+                    return options;
+                },
                 source: rawSource,
                 mdxOptions(options) {
                     options.remarkPlugins = [

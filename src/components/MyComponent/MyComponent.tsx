@@ -1,7 +1,8 @@
 import React from "react";
+import styles from "./MyComponent.module.scss";
 
 function MyComponent() {
-    return <div style={{ background: "yellow" }}>My COMPONENT</div>;
+    return <div className={styles.test}>My COMPONENT</div>;
 }
 
 export default MyComponent;

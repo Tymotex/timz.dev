@@ -2,6 +2,7 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { Fragment, useMemo } from "react";
 import { Blog, getAllBlogs } from "scripts/blogs";
 import { getMDXComponent } from "mdx-bundler/client";
+import MyComponent from "src/components/MyComponent";
 
 export const getStaticProps: GetStaticProps = async (context) => {
     const blogs: Blog[] = await getAllBlogs();
