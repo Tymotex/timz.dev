@@ -1,6 +1,7 @@
 // A very minimal component used to sanity check MDX bundling, Storybook
 // rendering, SCSS styling and other things. Not meant for production!
-import React, { FC } from "react";
+import { FC } from "react";
+import { useDarkMode } from "src/contexts/LightDarkThemeProvider";
 import styles from "./SampleComponent.module.scss";
 
 interface Props {
@@ -9,9 +10,13 @@ interface Props {
 }
 
 const SampleComponent: FC<Props> = ({ text, background }) => {
+    const isDarkMode = useDarkMode();
+
     return (
         <div
-            className={styles.test}
+            className={`${styles.test} ${
+                isDarkMode ? styles.dark : styles.light
+            }`}
             style={{
                 background,
             }}

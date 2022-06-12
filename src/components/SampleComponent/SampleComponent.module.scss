@@ -1,5 +1,18 @@
+@import "styles/global.scss";
+
 .test {
-    background: greenyellow;
     padding: 40px;
     text-align: center;
+
+    // Light/dark mode rules:
+    transition: background $theme-transition-duration ease-in,
+        color $theme-transition-duration ease-in;
+    &.dark {
+        background: $dark-background-colour;
+        color: $dark-text-colour;
+    }
+    &.light {
+        background: $light-background-colour;
+        color: $light-text-colour;
+    }
 }
