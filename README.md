@@ -1,5 +1,9 @@
 # Dev Portfolio & Blog
 
+![GitHub MIT License](https://img.shields.io/github/license/Tymotex/timz.dev)
+![GitHub repo size](https://img.shields.io/github/repo-size/Tymotex/timz.dev)
+![GitHub issues](https://img.shields.io/github/issues/Tymotex/timz.dev)
+
 A developer portfolio and blogging platform where the content writer can
 leverage the expressive power of MDX and LaTeX for mathematical typesetting.
 
