@@ -1,3 +1,5 @@
+const path = require('path');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode: true,
@@ -12,7 +14,10 @@ const nextConfig = {
     // Note: generating source maps for production increases build times, but
     //       it's necessary to get `source-map-explorer` working.
     // See: https://stackoverflow.com/questions/67916628/next-js-how-to-use-source-map-explorer-with-next-js.
-    productionBrowserSourceMaps: true
+    productionBrowserSourceMaps: true,
+    sassOptions: {
+        includePaths: [path.resolve(__dirname, "styles")]
+    }
 }
 
 // When the ANALYZE environment variable is true, then running `next build` will

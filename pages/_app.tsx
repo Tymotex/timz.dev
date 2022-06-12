@@ -1,3 +1,4 @@
+import { AnimatePresence } from "framer-motion";
 import type { AppProps } from "next/app";
 import "styles/global.scss";
 
@@ -8,13 +9,11 @@ import "katex/dist/katex.min.css";
 
 // Applies syntax highlighting to all ``` and ` code snippets in the .mdx blogs.
 // See a list of more themes here: https://github.com/PrismJS/prism-themes.
-import "prismjs/themes/prism-tomorrow.css";
 import Head from "next/head";
-import SampleComponent from "src/components/SampleComponent";
+import "prismjs/themes/prism-tomorrow.css";
 import { DarkModeProvider } from "src/contexts/LightDarkThemeProvider";
-import { DarkModeToggler } from "src/components/DarkModeToggler";
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps, router }: AppProps) {
     return (
         <DarkModeProvider>
             <Head>
@@ -24,7 +23,12 @@ function MyApp({ Component, pageProps }: AppProps) {
                     content="Welcome to my developer portfolio and blog. Learn some things with me!"
                 ></meta>
             </Head>
-            <Component {...pageProps} />
+            {/* Note: `exitBeforeEnter` makes it so that when navigating to a
+                       new page, the current page must fully animate out BEFORE
+                       the new page can come in. */}
+            <AnimatePresence exitBeforeEnter>
+                <Component {...pageProps} key={router.route} />
+            </AnimatePresence>
         </DarkModeProvider>
     );
 }
