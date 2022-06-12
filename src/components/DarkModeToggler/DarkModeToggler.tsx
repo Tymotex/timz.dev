@@ -7,7 +7,9 @@ const DarkModeToggler: React.FC<Props> = () => {
     const theme = useContext(DarkModeContext);
 
     return (
-        <button onClick={() => theme.toggleDarkMode()}>Toggle Dark Mode</button>
+        <button onClick={() => theme.toggleDarkMode()}>
+            Toggle Dark Mode (currently {theme.isDarkMode ? "dark" : "light"})
+        </button>
     );
 };
 

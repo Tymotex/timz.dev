@@ -15,7 +15,7 @@
         "test:generate-output": "jest --json --outputFile=artifacts/.jest-test-results.json || true",
         "test:docs": "echo The Jest results are outputted to a JSON file so that Storybook can read it and report the test results for each component",
         "lint": "next lint",
-        "storybook": "yarn test:generate-output && start-storybook --quiet -p 6006 || true",
+        "storybook": "yarn test:generate-output && BROWSER=\"none\" start-storybook --quiet -p 6006 || true",
         "build-storybook": "build-storybook"
     },
     "dependencies": {

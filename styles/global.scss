@@ -1,4 +1,5 @@
-// A set of global variables for defining colour palette.
+// Global styles, including SCSS variables for defining the colour palette for
+// light/dark mode and font families.
 
 $theme-transition-duration: 0.2s;
 
@@ -13,3 +14,12 @@ $dark-text-colour: whitesmoke;
  */
 $light-background-colour: whitesmoke;
 $light-text-colour: darkslategray;
+
+html {
+    font-family: Helvetica, "Trebuchet MS", Arial, sans-serif;
+
+    pre,
+    code {
+        font-family: "Consolas", "Courier New", monospace;
+    }
+}
