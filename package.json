@@ -24,6 +24,7 @@
         "@types/signale": "^1.4.4",
         "esbuild": "^0.14.43",
         "esbuild-sass-plugin": "^2.2.6",
+        "framer-motion": "^6.3.11",
         "gray-matter": "^4.0.3",
         "katex": "^0.16.0",
         "mdx-bundler": "^9.0.1",

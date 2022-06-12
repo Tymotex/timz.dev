@@ -3,6 +3,7 @@ import { Fragment, useMemo } from "react";
 import { Blog, BlogInfo, getAllBlogs } from "scripts/blogs";
 import { getMDXComponent } from "mdx-bundler/client";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export const getStaticProps: GetStaticProps = async (context) => {
     const blogs: BlogInfo[] = await getAllBlogs();
@@ -19,7 +20,20 @@ interface Props {
 
 const BlogIndex: NextPage<Props> = ({ blogs }) => {
     return (
-        <>
+        <motion.div
+            initial={{
+                opacity: 0,
+            }}
+            animate={{
+                opacity: 1,
+            }}
+            exit={{
+                opacity: 0,
+            }}
+            transition={{
+                duration: 0.5,
+            }}
+        >
             <h1>Welcome</h1>
             <ul>
                 {blogs.map((blogInfo) => (
@@ -31,7 +45,7 @@ const BlogIndex: NextPage<Props> = ({ blogs }) => {
                     </li>
                 ))}
             </ul>
-        </>
+        </motion.div>
     );
 };
 

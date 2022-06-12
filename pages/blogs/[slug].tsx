@@ -2,6 +2,7 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { Fragment, useMemo } from "react";
 import { Blog, getAllBlogs, getBlog } from "scripts/blogs";
 import { getMDXComponent } from "mdx-bundler/client";
+import { motion } from "framer-motion";
 
 export const getStaticProps: GetStaticProps = async (context) => {
     if (context === undefined || context.params === undefined)
@@ -37,10 +38,23 @@ const BlogIndex: NextPage<Props> = ({ blog }) => {
     const Blog = useMemo(() => getMDXComponent(blog.code), [blog]);
 
     return (
-        <>
+        <motion.div
+            initial={{
+                opacity: 0,
+            }}
+            animate={{
+                opacity: 1,
+            }}
+            exit={{
+                opacity: 0,
+            }}
+            transition={{
+                duration: 0.5,
+            }}
+        >
             <h3>{blog.frontmatter.title}</h3>
             <Blog />
-        </>
+        </motion.div>
     );
 };
 
