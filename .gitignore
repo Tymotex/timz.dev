@@ -3,6 +3,9 @@
 # work around the lack of sass support from mdx-bundler.
 public/mdx
 
+# The output directory of `build-storybook`.
+docs-build
+
 # dependencies
 /node_modules
 /.pnp

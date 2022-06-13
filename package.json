@@ -16,7 +16,7 @@
         "test:docs": "echo The Jest results are outputted to a JSON file so that Storybook can read it and report the test results for each component",
         "lint": "next lint",
         "storybook": "yarn test:generate-output && BROWSER=\"none\" start-storybook --quiet -p 6006 || true",
-        "build-storybook": "build-storybook"
+        "build-storybook": "build-storybook -o docs-build"
     },
     "dependencies": {
         "@next/bundle-analyzer": "^12.1.6",
