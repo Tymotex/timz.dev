@@ -18,6 +18,10 @@ $light-text-colour: darkslategray;
 html {
     font-family: Helvetica, "Trebuchet MS", Arial, sans-serif;
 
+    body {
+        margin: 0;
+    }
+
     pre,
     code {
         font-family: "Consolas", "Courier New", monospace;
