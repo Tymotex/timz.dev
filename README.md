@@ -4,10 +4,22 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/Tymotex/timz.dev)
 ![GitHub issues](https://img.shields.io/github/issues/Tymotex/timz.dev)
 
+<p style="text-align: center">
+    <a href="https://timz.dev">Deployed Site</a> |
+    <a href="https://www.figma.com/file/kSDFLWSycGG4lXjn0seVv3/timz.dev-Blog-Design?node-id=0%3A1">Figma (Private)</a> | 
+    <a href="https://tymotex.github.io/timz.dev/">Docs (Storybook)</a>
+</p>
+ 
+---
+
 A developer portfolio and blogging platform where the content writer can
 leverage the expressive power of MDX and LaTeX for mathematical typesetting.
 
-This project was built with React, Next.js, Typescript and mdx-bundler.
+- Built with React, Next.js, Typescript and mdx-bundler.
+- Uses Storybook for live component documentation.
+    - Sets up custom theming and branding.
+    - Jest test integration.
+
 
 # Content Management
 
