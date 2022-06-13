@@ -1,25 +1,20 @@
 import type { NextPage } from "next";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import CentralContainer from "src/components/Container/CentralContainer";
 
 const Home: NextPage = () => {
     return (
         <motion.div
-            initial={{
-                opacity: 0,
-            }}
-            animate={{
-                opacity: 1,
-            }}
-            exit={{
-                opacity: 0,
-            }}
-            transition={{
-                duration: 0.5,
-            }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
         >
-            <h1>Home</h1>
-            <Link href="/blogs">Blogs</Link>
+            <CentralContainer>
+                <h1>Home</h1>
+                <Link href="/blogs">Blogs</Link>
+                <Link href="/projects">Projects</Link>
+            </CentralContainer>
         </motion.div>
     );
 };

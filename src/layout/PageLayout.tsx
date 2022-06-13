@@ -6,7 +6,7 @@ interface Props {
     children: React.ReactNode;
 }
 
-const PageLayout: React.FC<Props> = ({ children }) => {
+const PortfolioLayout: React.FC<Props> = ({ children }) => {
     return (
         <div className={styles.container}>
             {children}
@@ -16,4 +16,4 @@ const PageLayout: React.FC<Props> = ({ children }) => {
     );
 };
 
-export default PageLayout;
+export default PortfolioLayout;

@@ -1,0 +1,17 @@
+// SCSS variables for defining the colour palette for light/dark mode and
+// font families.
+
+$theme-transition-duration: 0.2s;
+
+/**
+ * Dark mode palette.
+ */
+$dark-background-colour: rgb(44, 37, 53);
+$dark-text-colour: whitesmoke;
+$primary: rgb(91, 91, 158);
+
+/**
+ * Light mode palette.
+ */
+$light-background-colour: whitesmoke;
+$light-text-colour: darkslategray;

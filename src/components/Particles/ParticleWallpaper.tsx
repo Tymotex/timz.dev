@@ -3,6 +3,7 @@ import Particles from "react-tsparticles";
 import { ParticleType, getParticleOptions } from ".";
 import themes from "./themes";
 import styles from "./ParticleWallpaper.module.scss";
+import { motion } from "framer-motion";
 
 const ParticleWallpaper = () => {
     const [particleType, setParticleType] = useState<ParticleType>(
@@ -17,12 +18,15 @@ const ParticleWallpaper = () => {
         body.style.background = selectedTheme.css;
     }, []);
     return (
-        <div id="header-container" className={styles.particleContainer}>
-            <Particles
-                id="tsparticles"
-                options={getParticleOptions(particleType)}
-            />
-        </div>
+        <>
+            <div className={styles.overlay}></div>
+            <div id="header-container" className={styles.particleContainer}>
+                <Particles
+                    id="tsparticles"
+                    options={getParticleOptions(particleType)}
+                />
+            </div>
+        </>
     );
 };
 
