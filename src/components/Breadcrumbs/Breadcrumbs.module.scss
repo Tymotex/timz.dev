@@ -1,0 +1,16 @@
+.breadcrumbs {
+    // Reset default <nav> and <li> styling.
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    .crumb {
+        display: inline-block;
+
+        // The last crumb in the trail should not appear clickable.
+        &:not(:last-child) {
+            color: blue;
+            cursor: pointer;
+        }
+    }
+}
