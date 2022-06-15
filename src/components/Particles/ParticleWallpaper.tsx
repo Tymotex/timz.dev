@@ -4,11 +4,14 @@ import { ParticleType, getParticleOptions } from ".";
 import themes from "./themes";
 import styles from "./ParticleWallpaper.module.scss";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 
 const ParticleWallpaper = () => {
     const [particleType, setParticleType] = useState<ParticleType>(
         ParticleType.Networks,
     );
+    const [targetOpacity, setOpacity] = useState<number>(0);
+    const router = useRouter();
 
     // Forcefully set gradient to a selected theme
     useEffect(() => {
@@ -17,9 +20,27 @@ const ParticleWallpaper = () => {
         if (!body) return;
         body.style.background = selectedTheme.css;
     }, []);
+
+    // When the path is anything but "/", then darken the overlay to create
+    // a backdrop effect.
+    useEffect(() => {
+        if (router.pathname !== "/") setOpacity(0.55);
+        else setOpacity(0);
+    }, [router.pathname]);
+
     return (
         <>
-            <div className={styles.overlay}></div>
+            <motion.div
+                className={styles.overlay}
+                initial={{ opacity: 1 }}
+                animate={{
+                    opacity: targetOpacity,
+                }}
+                transition={{
+                    duration: 0.5,
+                    delay: 0.3,
+                }}
+            ></motion.div>
             <div id="header-container" className={styles.particleContainer}>
                 <Particles
                     id="tsparticles"

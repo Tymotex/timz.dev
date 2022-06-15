@@ -8,11 +8,13 @@
     @include elevation-shadow;
 
     // Position in the vertical center of the page, except slightly offset
-    // upwards.
+    // upwards to give more breathing room to footer elements (like social
+    // icons).
     position: fixed;
-    max-height: 75%;
-    height: 500px;
+    max-height: 60%;
+    height: 600px;
     width: 100%;
     top: 47%;
     transform: translateY(-50%);
+    overflow: hidden;
 }

@@ -13,9 +13,9 @@
 }
 
 .overlay {
-    animation: 1.5s ease-out 0s 1 fadeIn;
+    // animation: 1.5s ease-out 0s 1 fadeIn;
     position: fixed;
-    background: black;
+    background: rgb(12, 12, 12);
     height: 100vh;
     width: 100vw;
     opacity: 0;
