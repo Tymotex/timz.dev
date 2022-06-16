@@ -19,13 +19,14 @@ const Breadcrumbs: React.FC<Props> = ({ crumbs }) => {
                 crumbs.map((crumb, i) => (
                     <Fragment key={crumb.title}>
                         <Link href={crumb.url}>
-                            <li
-                                className={styles.crumb}
-                                aria-current={
-                                    i === crumbs.length - 1 && "location"
-                                }
-                            >
-                                <a>{crumb.title}</a>
+                            <li role="button" className={styles.crumb}>
+                                <a
+                                    aria-current={
+                                        i === crumbs.length - 1 && "location"
+                                    }
+                                >
+                                    {crumb.title}
+                                </a>
                             </li>
                         </Link>
                         {i < crumbs.length - 1 && <ChevronRight />}

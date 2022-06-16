@@ -6,10 +6,13 @@ import styles from "./ParticleWallpaper.module.scss";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 
-const ParticleWallpaper = () => {
-    const [particleType, setParticleType] = useState<ParticleType>(
-        ParticleType.Networks,
-    );
+interface Props {
+    particleType: ParticleType;
+}
+
+const ParticleWallpaper: React.FC<Props> = ({
+    particleType = ParticleType.Networks,
+}) => {
     const [targetOpacity, setOpacity] = useState<number>(0);
     const router = useRouter();
 
@@ -24,9 +27,9 @@ const ParticleWallpaper = () => {
     // When the path is anything but "/", then darken the overlay to create
     // a backdrop effect.
     useEffect(() => {
-        if (router.pathname !== "/") setOpacity(0.55);
+        if (router && router.pathname !== "/") setOpacity(0.55);
         else setOpacity(0);
-    }, [router.pathname]);
+    }, [router]);
 
     return (
         <>

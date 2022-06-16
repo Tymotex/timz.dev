@@ -12,6 +12,7 @@
         "start": "next start",
         "start:docs": "echo Serve the built files",
         "test": "jest",
+        "test:watch": "jest --watch",
         "test:generate-output": "jest --json --outputFile=artifacts/.jest-test-results.json || true",
         "test:docs": "echo The Jest results are outputted to a JSON file so that Storybook can read it and report the test results for each component",
         "lint": "next lint",

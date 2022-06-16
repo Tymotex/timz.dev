@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import type { NextPage } from "next";
 import Link from "next/link";
+import Breadcrumbs from "src/components/Breadcrumbs";
 import CentralContainer from "src/components/Container/CentralContainer";
 import ContentContainer from "src/components/Container/ContentContainer";
 import { HStack, VStack } from "src/components/Stack";
