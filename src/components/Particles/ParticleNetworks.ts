@@ -20,7 +20,7 @@ const networkOptions: RecursivePartial<IOptions> = {
         },
         move: {
             enable: true,
-            speed: 0.175,
+            speed: 0.2,
             direction: "none",
             random: false,
             straight: false,
@@ -29,6 +29,12 @@ const networkOptions: RecursivePartial<IOptions> = {
         },
         size: {
             value: 3,
+        },
+        opacity: {
+            value: {
+                min: 0.1,
+                max: 0.5,
+            },
         },
     },
     retina_detect: true,

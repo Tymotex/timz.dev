@@ -2,7 +2,7 @@ import { AnimatePresence } from "framer-motion";
 import type { AppProps } from "next/app";
 import "styles/global.scss";
 import { DarkModeProvider } from "src/contexts/LightDarkThemeProvider";
-import { PortfolioLayout } from "src/layout";
+// import { PortfolioLayout } from "src/layout";
 
 /* --------------------------- Global blog styles --------------------------- */
 // Applies formatting and typography styles to any LaTeX expression embedded
@@ -13,8 +13,18 @@ import "katex/dist/katex.min.css";
 // See a list of more themes here: https://github.com/PrismJS/prism-themes.
 import Head from "next/head";
 import "prismjs/themes/prism-tomorrow.css";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 const App = ({ Component, pageProps, router }: AppProps) => {
+    const [isBlogPage, setIsBlogPage] = useState<boolean>(
+        /^\/blogs/.test(router.pathname),
+    );
+
+    useEffect(() => {
+        setIsBlogPage(/^\/blogs/.test(router.pathname));
+    }, [router.pathname]);
+
     return (
         <DarkModeProvider>
             <Head>
@@ -27,7 +37,7 @@ const App = ({ Component, pageProps, router }: AppProps) => {
             {/* Note: `exitBeforeEnter` makes it so that when navigating to a
                        new page, the current page must fully animate out BEFORE
                        the new page can come in. */}
-            <PortfolioLayout />
+            {/* {!isBlogPage && <PortfolioLayout />} */}
             <AnimatePresence exitBeforeEnter>
                 <Component {...pageProps} key={router.route} />
             </AnimatePresence>

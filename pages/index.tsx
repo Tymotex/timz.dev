@@ -1,5 +1,5 @@
-import type { NextPage } from "next";
 import { motion } from "framer-motion";
+import type { NextPage } from "next";
 import Link from "next/link";
 import CentralContainer from "src/components/Container/CentralContainer";
 

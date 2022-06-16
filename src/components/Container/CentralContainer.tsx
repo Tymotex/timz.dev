@@ -16,7 +16,7 @@ const CentralContainer: React.FC<Props> = ({ children }) => {
             }}
             animate={{
                 opacity: 1,
-                height: 600,
+                height: 500,
             }}
             transition={{
                 duration: 1.4,

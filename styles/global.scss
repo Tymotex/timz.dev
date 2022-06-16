@@ -2,7 +2,9 @@
 @import "./variables.scss";
 
 html {
+    // Fonts.
     font-family: Helvetica, "Trebuchet MS", Arial, sans-serif;
+    font-size: 16px; // Setting what 1rem is. See: https://stackoverflow.com/questions/48451764/how-to-set-base-size-for-rem.
 
     /* ------------------------ Scrollbar styles. ------------------------ */
     overflow-x: hidden;
@@ -11,7 +13,7 @@ html {
     overflow: overlay;
 
     ::-webkit-scrollbar {
-        width: 0.4rem;
+        width: 5px;
     }
 
     ::-webkit-scrollbar-track {
@@ -19,7 +21,7 @@ html {
     }
 
     ::-webkit-scrollbar-thumb {
-        background-color: $primary;
+        background-color: $tertiary;
     }
 
     body {

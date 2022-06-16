@@ -63,7 +63,11 @@ const Window: React.FC<Props> = ({ children, onClickOutside }) => {
                 style={{}}
             >
                 <Link href="/">
-                    <CloseIcon size={32} className={styles.closeButton} />
+                    <CloseIcon
+                        aria-label="Close"
+                        size={32}
+                        className={styles.closeButton}
+                    />
                 </Link>
                 {children}
                 <div className={styles.bottomGap} />
