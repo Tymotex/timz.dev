@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React, { Fragment } from "react";
-import styles from "./Breadcrumbs.module.scss";
 import { MdChevronRight as ChevronRight } from "react-icons/md";
+import styles from "./Breadcrumbs.module.scss";
 
 interface Crumb {
     title: string;
@@ -10,17 +10,21 @@ interface Crumb {
 
 interface Props {
     crumbs: Crumb[];
+    isDarkMode?: boolean;
 }
 
-const Breadcrumbs: React.FC<Props> = ({ crumbs }) => {
+const Breadcrumbs: React.FC<Props> = ({ crumbs, isDarkMode }) => {
     return (
         <nav aria-label="breadcrumbs" className={styles.breadcrumbs}>
             {crumbs &&
                 crumbs.map((crumb, i) => (
                     <Fragment key={crumb.title}>
                         <Link href={crumb.url}>
-                            <li role="button" className={styles.crumb}>
+                            <li role="button" className={`${styles.crumb}`}>
                                 <a
+                                    className={
+                                        isDarkMode ? styles.dark : styles.light
+                                    }
                                     aria-current={
                                         i === crumbs.length - 1 && "location"
                                     }
@@ -29,7 +33,13 @@ const Breadcrumbs: React.FC<Props> = ({ crumbs }) => {
                                 </a>
                             </li>
                         </Link>
-                        {i < crumbs.length - 1 && <ChevronRight />}
+                        {i < crumbs.length - 1 && (
+                            <ChevronRight
+                                className={`${styles.separator} ${
+                                    isDarkMode ? styles.dark : styles.light
+                                }`}
+                            />
+                        )}
                     </Fragment>
                 ))}
         </nav>

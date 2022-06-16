@@ -1,16 +1,52 @@
+@import "../../../styles/variables.scss";
+
 .breadcrumbs {
+    font-family: $code-font-stack;
+
     // Reset default <nav> and <li> styling.
     list-style-type: none;
     margin: 0;
     padding: 0;
 
+    // Keep the text and crumb separator vertically aligned.
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+
     .crumb {
         display: inline-block;
 
+        // text-decoration-style: dotted !important;
+
         // The last crumb in the trail should not appear clickable.
         &:not(:last-child) {
-            color: blue;
+            .dark {
+                color: $dark-text-colour;
+                border-bottom: 1px dotted $dark-text-colour;
+            }
+            .light {
+                color: $light-text-colour;
+                border-bottom: 1px dotted $light-text-colour;
+            }
             cursor: pointer;
+        }
+
+        &:last-child {
+            .dark {
+                color: $dark-subtitle-colour;
+            }
+            .light {
+                color: $light-subtitle-colour;
+            }
+        }
+    }
+
+    .separator {
+        &.dark {
+            color: $dark-text-colour;
+        }
+        &.light {
+            color: $light-text-colour;
         }
     }
 }
