@@ -1,11 +1,9 @@
 import { motion } from "framer-motion";
 import type { NextPage } from "next";
-import Link from "next/link";
-import Breadcrumbs from "src/components/Breadcrumbs";
-import { Button, LinkButton } from "src/components/Button";
+import { LinkButton } from "src/components/Button";
 import CentralContainer from "src/components/Container/CentralContainer";
 import ContentContainer from "src/components/Container/ContentContainer";
-import { HStack, VStack } from "src/components/Stack";
+import styles from "./404.module.scss";
 
 const NotFoundPage: NextPage = () => {
     return (
@@ -16,8 +14,10 @@ const NotFoundPage: NextPage = () => {
         >
             <CentralContainer>
                 <ContentContainer centerContents>
-                    <h1>404</h1>
-                    <LinkButton href="/" text="Go Home" />
+                    <div className={styles.centered}>
+                        <h1>404</h1>
+                        <LinkButton href="/" text="Go Home" />
+                    </div>
                 </ContentContainer>
             </CentralContainer>
         </motion.div>

@@ -1,0 +1,11 @@
+@import "../../../styles/variables.scss";
+
+.miniDivider {
+    max-width: 100px;
+    margin-left: 6px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    height: 0px;
+    border: none;
+    border-top: 0.5px solid rgba($color: $dark-subtitle-colour, $alpha: 0.6);
+}

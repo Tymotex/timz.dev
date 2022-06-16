@@ -6,6 +6,7 @@ interface Props {
     alignItems?: "center" | "flex-end" | "flex-start";
     columnGap?: number;
     rowGap?: number;
+    className?: string;
 }
 
 const HStack: React.FC<Props> = ({
@@ -13,11 +14,12 @@ const HStack: React.FC<Props> = ({
     alignItems,
     columnGap,
     rowGap,
+    className,
 }) => {
     return (
         <div
             role="presentation"
-            className={styles.horizontal}
+            className={`${styles.horizontal} ${className}`}
             style={{
                 alignItems,
                 columnGap,

@@ -1,8 +1,7 @@
 import React from "react";
 import styles from "./Button.module.scss";
-import { motion } from "framer-motion";
 
-interface Props {
+export interface ButtonProps {
     text: string;
     type?: "primary" | "secondary" | "tertiary";
     icon?: React.ReactNode;
@@ -10,7 +9,7 @@ interface Props {
     shape?: "pill" | "box";
 }
 
-const Button: React.FC<Props> = ({
+const Button: React.FC<ButtonProps> = ({
     text,
     type = "primary",
     icon,

@@ -14,12 +14,14 @@ const SampleComponent: FC<Props> = ({ text, background }) => {
 
     return (
         <div
+            role="presentation"
             className={`${styles.test} ${
                 isDarkMode ? styles.dark : styles.light
             }`}
             style={{
                 background,
             }}
+            data-testid="sample-component"
         >
             {text}
         </div>
