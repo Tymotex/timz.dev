@@ -15,14 +15,16 @@ interface Props {
 const AsideLinkGroup: React.FC<Props> = ({ links }) => {
     return (
         <nav className={styles.asideGroup}>
-            {links &&
-                links.map((link) => (
-                    <li key={link.text}>
-                        <Link href={link.url}>
-                            <a>{link.text}</a>
-                        </Link>
-                    </li>
-                ))}
+            <ul>
+                {links &&
+                    links.map((link) => (
+                        <li key={link.text}>
+                            <Link href={link.url}>
+                                <a>{link.text}</a>
+                            </Link>
+                        </li>
+                    ))}
+            </ul>
         </nav>
     );
 };
