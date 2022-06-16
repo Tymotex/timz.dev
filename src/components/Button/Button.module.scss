@@ -10,12 +10,11 @@
     outline: inherit;
 
     // Vertically center text and icon.
-    display: flex;
+    display: inline-flex;
     align-items: center;
     column-gap: 8px;
 
     // Custom styles.
-    display: inline-block;
     padding: 0.64rem 0.7rem 0.6rem 0.7rem;
     border-radius: 200px;
     font-family: $code-font-stack;

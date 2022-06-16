@@ -1,0 +1,54 @@
+@import "../../../styles/variables.scss";
+
+.asideGroup {
+    font-family: $code-font-stack;
+    color: $dark-subtitle-colour;
+    text-align: right;
+    position: absolute;
+    display: flex;
+
+    // Reset default <nav> and <li> styling.
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li a {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+@media screen and (min-width: $lg) {
+    .asideGroup {
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        flex-direction: column;
+
+        li:not(:last-child) {
+            padding-bottom: 8px;
+            width: 70px;
+            border-bottom: 1px dotted $dark-subtitle-colour;
+        }
+
+        li:not(:first-child) {
+            padding-top: 8px;
+        }
+    }
+}
+
+@media screen and (max-width: $lg) {
+    .asideGroup {
+        left: 50%;
+        top: 1.5rem;
+        transform: translateX(-50%);
+
+        display: flex;
+        justify-content: space-evenly;
+        width: 80%;
+
+        li {
+            border-bottom: 1px dotted $dark-subtitle-colour;
+        }
+    }
+}

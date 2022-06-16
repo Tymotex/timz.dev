@@ -1,14 +1,6 @@
 import React from "react";
 import styles from "./Stack.module.scss";
 
-interface Props {
-    children: JSX.Element | JSX.Element[];
-    alignItems?: "center" | "flex-end" | "flex-start";
-    columnGap?: number;
-    rowGap?: number;
-    className?: string;
-}
-
 const HStack: React.FC<Props> = ({
     children,
     alignItems,

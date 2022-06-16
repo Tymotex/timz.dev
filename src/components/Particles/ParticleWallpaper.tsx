@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 
 interface Props {
-    particleType: ParticleType;
+    particleType?: ParticleType;
 }
 
 const ParticleWallpaper: React.FC<Props> = ({
