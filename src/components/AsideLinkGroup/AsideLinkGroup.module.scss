@@ -8,9 +8,11 @@
     display: flex;
 
     // Reset default <nav> and <li> styling.
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
 
     li a {
         text-decoration: none;
@@ -42,13 +44,16 @@
         left: 50%;
         top: 1.5rem;
         transform: translateX(-50%);
-
-        display: flex;
-        justify-content: space-evenly;
         width: 80%;
 
-        li {
-            border-bottom: 1px dotted $dark-subtitle-colour;
+        ul {
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+
+            li {
+                border-bottom: 1px dotted $dark-subtitle-colour;
+            }
         }
     }
 }
