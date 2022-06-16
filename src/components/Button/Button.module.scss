@@ -1,0 +1,54 @@
+@import "../../../styles/variables.scss";
+
+.button {
+    // Remove default HTML button styling.
+    background: none;
+    color: inherit;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+
+    // Vertically center text and icon.
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+
+    // Custom styles.
+    display: inline-block;
+    padding: 0.64rem 0.7rem 0.6rem 0.7rem;
+    border-radius: 200px;
+    font-family: $code-font-stack;
+    border: 1px solid;
+    border-color: rgba($color: $dark-subtitle-colour, $alpha: 0.3);
+
+    transition: background 0.2s, color 0.2s, transform 0.05s, margin 0.05s;
+
+    &.primary {
+        background: rgba($color: #0d0d11, $alpha: 0.7);
+        color: $dark-text-colour;
+
+        &:hover {
+            background: $light-background-colour;
+            color: $light-text-colour;
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+
+    &.secondary {
+        background: rgba($color: #0d0d11, $alpha: 0.5);
+        color: $dark-text-colour;
+    }
+
+    &.tertiary {
+        text-decoration: underline;
+        color: $primary;
+    }
+}
+
+.linkButton {
+    text-decoration: none;
+}

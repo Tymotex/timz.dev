@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import type { NextPage } from "next";
 import Link from "next/link";
 import Breadcrumbs from "src/components/Breadcrumbs";
+import { Button, LinkButton } from "src/components/Button";
 import CentralContainer from "src/components/Container/CentralContainer";
 import ContentContainer from "src/components/Container/ContentContainer";
 import { HStack, VStack } from "src/components/Stack";
@@ -26,8 +27,15 @@ const Home: NextPage = () => {
                         nisi minim incididunt nisi deserunt magna. Sint aliqua
                         Lorem pariatur consequat pariatur magna irure. Labore
                     </p>
-                    <Link href="/blogs">Blogs</Link>
-                    <Link href="/projects">Projects</Link>
+                    <HStack columnGap={10}>
+                        <LinkButton type="primary" text="Work" href="/work" />
+                        <LinkButton
+                            type="primary"
+                            text="Projects"
+                            href="/projects"
+                        />
+                        <LinkButton type="primary" text="Blog" href="/blogs" />
+                    </HStack>
                 </ContentContainer>
             </CentralContainer>
         </motion.div>
