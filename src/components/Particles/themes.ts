@@ -3,7 +3,7 @@ interface GradientTheme {
     css: ``;
 }
 
-export default [
+const gradientThemes = [
     {
         name: "love couple",
         css: `
@@ -20,5 +20,4 @@ export default [
     // },
 ];
 
-// background: rgb(2,0,36);
-// background: ;
+export default gradientThemes;

@@ -1,14 +1,14 @@
-import React, { useEffect, useRef } from "react";
-import styles from "./Window.module.scss";
 import { motion } from "framer-motion";
-import { IoMdClose as CloseIcon } from "react-icons/io";
 import Link from "next/link";
+import React, { useEffect, useRef } from "react";
+import { IoMdClose as CloseIcon } from "react-icons/io";
+import styles from "./Window.module.scss";
 
 type OutsideClickHandler = () => void;
 
 interface Props {
     children?: React.ReactNode;
-    onClickOutside?: OutsideClickHandler;
+    onClickOutside: OutsideClickHandler;
 }
 
 /**
@@ -29,12 +29,12 @@ const useClickOutside = (
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
-    }, [ref]);
+    }, [ref, outsideClickHandler]);
 };
 
 const Window: React.FC<Props> = ({ children, onClickOutside }) => {
     const windowRef = useRef(null);
-    if (onClickOutside) useClickOutside(windowRef, onClickOutside);
+    useClickOutside(windowRef, onClickOutside);
 
     return (
         <>

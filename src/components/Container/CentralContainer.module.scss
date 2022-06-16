@@ -3,7 +3,7 @@
 
 .centralContainer {
     // Dark colour scheme.
-    background: rgba($color: #000000, $alpha: 0.45);
+    background: rgba($color: #000000, $alpha: 0.35);
     color: $dark-text-colour;
     @include elevation-shadow;
 

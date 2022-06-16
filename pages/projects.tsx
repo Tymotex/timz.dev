@@ -18,7 +18,7 @@ const Projects: NextPage = () => {
             // disabled. See: https://stackoverflow.com/questions/65902664/next-js-router-push-without-scrolling-to-the-top.
             { scroll: false },
         );
-    }, []);
+    }, [router]);
 
     return (
         <>

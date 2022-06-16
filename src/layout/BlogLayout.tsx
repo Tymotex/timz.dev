@@ -1,25 +1,26 @@
-import React, { useEffect, useState } from "react";
-import styles from "./CentralContainer.module.scss";
+import React from "react";
 import { motion } from "framer-motion";
+import styles from "./BlogLayout.module.scss";
 
 interface Props {
     children: React.ReactNode;
 }
 
-const CentralContainer: React.FC<Props> = ({ children }) => {
+const BlogLayout: React.FC<Props> = ({ children }) => {
     return (
         <motion.div
-            className={styles.centralContainer}
+            className={styles.blogBody}
             initial={{
                 opacity: 0,
-                height: 400,
             }}
             animate={{
                 opacity: 1,
-                height: 500,
+            }}
+            exit={{
+                opacity: 0,
             }}
             transition={{
-                duration: 1.4,
+                duration: 0.5,
             }}
         >
             {children}
@@ -27,4 +28,4 @@ const CentralContainer: React.FC<Props> = ({ children }) => {
     );
 };
 
-export default CentralContainer;
+export default BlogLayout;

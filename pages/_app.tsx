@@ -2,7 +2,7 @@ import { AnimatePresence } from "framer-motion";
 import type { AppProps } from "next/app";
 import "styles/global.scss";
 import { DarkModeProvider } from "src/contexts/LightDarkThemeProvider";
-// import { PortfolioLayout } from "src/layout";
+import { PortfolioLayout } from "src/layout";
 
 /* --------------------------- Global blog styles --------------------------- */
 // Applies formatting and typography styles to any LaTeX expression embedded
@@ -37,7 +37,10 @@ const App = ({ Component, pageProps, router }: AppProps) => {
             {/* Note: `exitBeforeEnter` makes it so that when navigating to a
                        new page, the current page must fully animate out BEFORE
                        the new page can come in. */}
-            {/* {!isBlogPage && <PortfolioLayout />} */}
+            <AnimatePresence>
+                {!isBlogPage && <PortfolioLayout />}
+            </AnimatePresence>
+
             <AnimatePresence exitBeforeEnter>
                 <Component {...pageProps} key={router.route} />
             </AnimatePresence>

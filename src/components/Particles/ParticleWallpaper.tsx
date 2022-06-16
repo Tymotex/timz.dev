@@ -36,9 +36,10 @@ const ParticleWallpaper = () => {
                 animate={{
                     opacity: targetOpacity,
                 }}
+                exit={{ opacity: 0 }}
                 transition={{
-                    duration: 0.5,
-                    delay: 0.3,
+                    duration: 0.55,
+                    delay: 0.5,
                 }}
             ></motion.div>
             <div id="header-container" className={styles.particleContainer}>
