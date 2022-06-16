@@ -17,7 +17,7 @@ const AsideLinkGroup: React.FC<Props> = ({ links }) => {
         <nav className={styles.asideGroup}>
             {links &&
                 links.map((link) => (
-                    <li>
+                    <li key={link.text}>
                         <Link href={link.url}>
                             <a>{link.text}</a>
                         </Link>

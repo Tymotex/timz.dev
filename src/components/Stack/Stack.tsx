@@ -2,7 +2,7 @@ import React from "react";
 import HStack from "./HStack";
 import VStack from "./VStack";
 
-interface StackProps {
+export interface StackProps {
     children: JSX.Element | JSX.Element[];
     alignItems?: "center" | "flex-end" | "flex-start";
     columnGap?: number;

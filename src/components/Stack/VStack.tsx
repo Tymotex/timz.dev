@@ -1,13 +1,8 @@
 import React from "react";
 import styles from "./Stack.module.scss";
+import { StackProps } from "./Stack";
 
-interface Props {
-    children: JSX.Element | JSX.Element[];
-    rowGap?: number;
-    alignItems?: "flex-end" | "center" | "flex-start";
-}
-
-const VStack: React.FC<Props> = ({ children, rowGap, alignItems }) => {
+const VStack: React.FC<StackProps> = ({ children, rowGap, alignItems }) => {
     return (
         <div
             role="presentation"

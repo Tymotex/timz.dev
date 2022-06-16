@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "./Stack.module.scss";
+import { StackProps } from "./Stack";
 
-const HStack: React.FC<Props> = ({
+const HStack: React.FC<StackProps> = ({
     children,
     alignItems,
     columnGap,
