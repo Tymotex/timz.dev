@@ -12,6 +12,7 @@
         "start": "next start",
         "start:docs": "echo Serve the built files",
         "test": "jest",
+        "test:watch": "jest --watch",
         "test:generate-output": "jest --json --outputFile=artifacts/.jest-test-results.json || true",
         "test:docs": "echo The Jest results are outputted to a JSON file so that Storybook can read it and report the test results for each component",
         "lint": "next lint",
@@ -32,10 +33,13 @@
         "prismjs": "^1.28.0",
         "react": "18.1.0",
         "react-dom": "18.1.0",
+        "react-icons": "^4.4.0",
+        "react-tsparticles": "^1.40.0",
         "rehype-katex": "^6.0.2",
         "remark-math": "^5.1.1",
         "remark-prism": "^1.3.6",
-        "signale": "^1.4.0"
+        "signale": "^1.4.0",
+        "tsparticles": "^1.34.0"
     },
     "devDependencies": {
         "@babel/core": "^7.18.2",

@@ -1,0 +1,36 @@
+// Use the black overlay to fade in the particle wallpaper. This is done partly
+// to cover up a strange stutter that always happens on page load.
+@keyframes fadeIn {
+    0% {
+        opacity: 1;
+    }
+    35% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.overlay {
+    // animation: 1.5s ease-out 0s 1 fadeIn;
+    position: fixed;
+    background: rgb(12, 12, 12);
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    opacity: 0;
+
+    // Don't make the overlay block mouse events.
+    pointer-events: none;
+}
+
+// Fix the particle wallpaper behind everything else.
+.particleContainer {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: -10;
+    left: 0;
+}

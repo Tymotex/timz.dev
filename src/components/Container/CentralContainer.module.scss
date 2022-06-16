@@ -1,0 +1,19 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+.centralContainer {
+    // Dark colour scheme.
+    background: rgba($color: #000000, $alpha: 0.35);
+    color: $dark-text-colour;
+    @include elevation-shadow;
+
+    // Position in the vertical center of the page, except slightly offset
+    // upwards to give more breathing room to footer elements (like social
+    // icons).
+    position: fixed;
+    max-height: 72%;
+    width: 100%;
+    top: 47%;
+    transform: translateY(-50%);
+    overflow: hidden;
+}

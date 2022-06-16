@@ -31,4 +31,17 @@ const Template: ComponentStory<typeof Breadcrumbs> = (args) => (
 );
 
 export const BasicBreadcrumbs = Template.bind({});
-BasicBreadcrumbs.args = {};
+BasicBreadcrumbs.args = {
+    crumbs: [
+        { title: "Home", url: "/" },
+        { title: "Projects", url: "/projects" },
+        { title: "My Sentient Robot", url: "/projects/my-sentient-robot" },
+    ],
+    isDarkMode: false,
+};
+
+export const SingleCrumb = Template.bind({});
+SingleCrumb.args = {
+    crumbs: [{ title: "Home", url: "/" }],
+    isDarkMode: false,
+};

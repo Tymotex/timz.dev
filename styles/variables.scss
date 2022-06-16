@@ -1,0 +1,32 @@
+// SCSS variables for defining the colour palette for light/dark mode and
+// font families.
+
+$theme-transition-duration: 0.2s;
+
+/**
+ * Dark mode palette.
+ */
+$dark-background-colour: #272b39;
+$dark-text-colour: #eeeeee;
+$dark-subtitle-colour: #c0b4ce;
+
+/**
+ * Light mode palette.
+ */
+$light-background-colour: whitesmoke;
+$light-text-colour: #101010;
+$light-subtitle-colour: #818181;
+
+/**
+ * Main palette.
+ */
+$primary: #8785f1;
+$secondary: #b9b8ff;
+$tertiary: #908faf;
+
+/**
+ * Typography.
+ */
+
+$regular-font-stack: Helvetica, Trebuchet MS, Arial;
+$code-font-stack: Consolas, monaco, Courier New;

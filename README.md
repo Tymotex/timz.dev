@@ -15,11 +15,12 @@
 A developer portfolio and blogging platform where the content writer can
 leverage the expressive power of MDX and LaTeX for mathematical typesetting.
 
-- Built with React, Next.js, Typescript and mdx-bundler.
+- Built with React, Next.js, Typescript and mdx-bundler with remark and rehype
+  plugins for markdown syntax highlighting and embedded LaTeX.
 - Uses Storybook for live component documentation.
     - Sets up custom theming and branding.
     - Jest test integration.
-
+    - Automatically builds and deploys static assets in `docs/` to GitHub Pages.
 
 # Content Management
 
@@ -93,3 +94,24 @@ All of this is possible through `mdx-bundler` which is used by the server-side
 Node.js script, `scripts/blogs.ts`, to map all the `.mdx` source code to
 executable javascript that renders the content.
 
+# Performance
+
+I developed this site with SEO and UX in mind for the blog pages, however I
+relaxed this requirement for the portfolio pages.
+
+To optimise bundle size and/or minimise CPU consider cutting or substituting
+away from the following:
+- `framer-motion` is only used for page transitions and for polishing UI
+  interactions. The main import, `motion` adds about 25kb to the bundle size.
+  See [reduce bundle size](https://www.framer.com/docs/guide-reduce-bundle-size/).
+- `tsparticles` and `react-tsparticles` drastically decrease performance. This
+  is used as conservatively as possible on the portfolio pages only and will
+  not impact the SEO of blog pages. I assumed that the portfolio pages are not
+  SEO-critical, however this may not be the case for freelancer portfolios.
+
+### Caveats
+A list of things that helped keep the bundle size lower and improve performance
+but which were not clearly documented or obvious.
+
+- Import icons from `react-icons` with the most deeply qualified paths for correct tree-shaking. See this [issue](https://github.com/react-icons/react-icons/issues/154). This may not apply anymore.
+- Reduce fps limit to <= 30 in `tsparticles` options. See this [post](https://stackoverflow.com/questions/59268732/optimise-particles-js-background-to-avoid-high-cpu-usage).

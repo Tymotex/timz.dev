@@ -1,0 +1,47 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+.window {
+    background: $dark-background-colour;
+    color: $dark-text-colour;
+    @include elevation-shadow;
+
+    // Shape the window.
+    box-sizing: border-box; // Prevents padding from expanding dimensions.
+    padding: 2.4rem;
+    border-radius: 6px;
+    width: 75%;
+    max-width: 1080px;
+
+    // Horizontally center on the page with a sparing gap at the top.
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .closeButton {
+        $corner-padding: 18px;
+
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: $corner-padding;
+        opacity: 0.7;
+
+        cursor: pointer;
+
+        // Shrink the close button on hover.
+        transition: transform 0.2s;
+        &:hover {
+            transform: scale(0.7);
+        }
+    }
+
+    // Forcefully apply a gap between the window and the bottom of the page.
+    // See: https://stackoverflow.com/questions/9350775/set-position-absolute-and-margin.
+    .bottomGap {
+        height: 100px;
+        margin: 0 0 -100px 0;
+        background: transparent;
+    }
+}

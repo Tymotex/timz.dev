@@ -1,0 +1,18 @@
+@import "../styles/variables.scss";
+
+.greeting {
+    font-family: $code-font-stack;
+    color: $dark-subtitle-colour;
+}
+
+.name {
+    color: $secondary;
+}
+
+.description {
+    color: $dark-subtitle-colour;
+}
+
+.buttonStack {
+    margin-top: 2rem;
+}

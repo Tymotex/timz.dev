@@ -1,7 +1,10 @@
+import { render, screen } from "@testing-library/react";
 import SampleComponent from "./SampleComponent";
 
 describe("a", () => {
     test("that it works", () => {
-        console.log("Yes");
+        render(<SampleComponent text="Testing..." />);
+        const sampleComponent = screen.getByTestId("sample-component");
+        expect(sampleComponent).toBeInTheDocument;
     });
 });
