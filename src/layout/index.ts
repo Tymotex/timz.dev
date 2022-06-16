@@ -1,1 +1,1 @@
-export { default as PortfolioLayout } from "./PortfolioLayout";
+export { default as BlogLayout } from "./BlogLayout";

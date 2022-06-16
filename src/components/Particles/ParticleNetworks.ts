@@ -15,8 +15,8 @@ const networkOptions: RecursivePartial<IOptions> = {
         },
         links: {
             enable: true,
-            distance: 175,
-            opacity: 0.2,
+            distance: 180,
+            opacity: 0.12,
         },
         move: {
             enable: true,
@@ -33,7 +33,7 @@ const networkOptions: RecursivePartial<IOptions> = {
         opacity: {
             value: {
                 min: 0.1,
-                max: 0.5,
+                max: 0.3,
             },
         },
     },

@@ -41,8 +41,13 @@ const ParticleWallpaper = () => {
                     duration: 0.55,
                     delay: 0.5,
                 }}
+                aria-hidden="true"
             ></motion.div>
-            <div id="header-container" className={styles.particleContainer}>
+            <div
+                id="header-container"
+                className={styles.particleContainer}
+                aria-hidden="true"
+            >
                 <Particles
                     id="tsparticles"
                     options={getParticleOptions(particleType)}

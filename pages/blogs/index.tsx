@@ -4,7 +4,7 @@ import { Blog, BlogInfo, getAllBlogs } from "scripts/blogs";
 import { getMDXComponent } from "mdx-bundler/client";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import BlogLayout from "src/layout/BlogLayout";
+import { BlogLayout } from "src/layout";
 
 export const getStaticProps: GetStaticProps = async (context) => {
     const blogs: BlogInfo[] = await getAllBlogs();
