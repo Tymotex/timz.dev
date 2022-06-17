@@ -4,7 +4,8 @@
 public/mdx
 
 # Testing outputs.
-artifacts/.jest-test-results.json
+# Note: disabling this prevents Storybook from publishing with test results.
+# artifacts/.jest-test-results.json
 
 # The output directory of `build-storybook`.
 docs-build
