@@ -21,7 +21,7 @@ const NotFoundPage: NextPage = () => {
                     <div className={styles.centered}>
                         <h1>404</h1>
                         <p suppressHydrationWarning>
-                            Couldn't find &apos;{notFoundPath}
+                            Couldn&apos;t find &apos;{notFoundPath}
                             &apos;
                         </p>
                         <LinkButton href="/" text="Go Home" />
