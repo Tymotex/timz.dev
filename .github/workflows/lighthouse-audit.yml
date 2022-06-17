@@ -9,8 +9,8 @@ jobs:
               uses: treosh/lighthouse-ci-action@v9
               with:
                   urls: |
-                      https://example.com/
-                      https://example.com/blog
+                      https://timz-dev.vercel.app/
+                      https://timz-dev.vercel.app/blogs
                   #   budgetPath: ./budget.json # test performance budgets
                   uploadArtifacts: true # save results as an action artifacts
                   temporaryPublicStorage: true # upload lighthouse report to the temporary storage
