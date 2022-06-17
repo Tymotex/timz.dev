@@ -1,12 +1,14 @@
 # Dev Portfolio & Blog
 
-![GitHub MIT License](https://img.shields.io/github/license/Tymotex/timz.dev)
-![GitHub repo size](https://img.shields.io/github/repo-size/Tymotex/timz.dev)
-![GitHub issues](https://img.shields.io/github/issues/Tymotex/timz.dev)
+<p align="center">
+    <img src="https://img.shields.io/github/license/Tymotex/timz.dev" alt="GitHub MIT License" >
+    <img src="https://img.shields.io/github/repo-size/Tymotex/timz.dev" alt="GitHub Repo Size" >
+    <img src="https://img.shields.io/github/issues/Tymotex/timz.dev" alt="GitHub Issues" >
+</p>
 
-<p style="text-align: center">
+<p align="center">
     <a href="https://timz.dev">Deployed Site</a> |
-    <a href="https://www.figma.com/file/kSDFLWSycGG4lXjn0seVv3/timz.dev-Blog-Design?node-id=0%3A1">Figma (Private)</a> | 
+    <a href="https://www.figma.com/file/kSDFLWSycGG4lXjn0seVv3/timz.dev-Blog-Design?node-id=0%3A1">Figma</a> <em>(private for now)</em> | 
     <a href="https://tymotex.github.io/timz.dev/">Docs (Storybook)</a>
 </p>
  
@@ -21,6 +23,17 @@ leverage the expressive power of MDX and LaTeX for mathematical typesetting.
     - Sets up custom theming and branding.
     - Jest test integration.
     - Automatically builds and deploys static assets in `docs/` to GitHub Pages.
+
+# CI/CD
+
+This project uses the following GitHub Actions workflows:
+- `storybook-deploy` &ndash; This deploys an instance of this project's Storybook documentation website
+    to GitHub Pages.
+- `lighthouse-audit` &ndash; This runs a web vitals audit using Chrome Lighthouse on the deployed
+    instance of the website. It can be configured to run on non-deployed static
+    files. See [Lighthouse CI Action](https://github.com/marketplace/actions/lighthouse-ci-action).
+- `unit-test` &ndash; This simply invokes `yarn test` in a container and checks no unit tests are
+    failing.
 
 # Content Management
 
