@@ -6,6 +6,7 @@ interface Props {
     width?: string | number;
     maxWidth?: string | number;
     centerContents?: boolean;
+    disableHighlight?: boolean;
 }
 
 const ContentContainer: React.FC<Props> = ({
@@ -13,6 +14,7 @@ const ContentContainer: React.FC<Props> = ({
     width,
     maxWidth,
     centerContents,
+    disableHighlight,
 }) => {
     return (
         <div
@@ -23,6 +25,7 @@ const ContentContainer: React.FC<Props> = ({
             style={{
                 width: width || 800,
                 maxWidth: maxWidth || 800,
+                userSelect: disableHighlight ? "none" : "text",
             }}
         >
             {children}

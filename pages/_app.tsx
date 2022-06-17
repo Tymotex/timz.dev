@@ -6,6 +6,7 @@ import { DarkModeProvider } from "src/contexts/LightDarkThemeProvider";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { ParticleWallpaper } from "src/components/Particles";
+import OgImage from "public/og-image.avif";
 
 /* --------------------------- Global blog styles --------------------------- */
 // Applies formatting and typography styles to any LaTeX expression embedded
@@ -28,11 +29,20 @@ const App = ({ Component, pageProps, router }: AppProps) => {
     return (
         <DarkModeProvider>
             <Head>
-                <title>Tim&apos;s Dev Portfolio and Blog</title>
+                <title>Tim Zhang - Developer Portfolio and Blog</title>
                 <meta
                     name="description"
-                    content="Welcome to my developer portfolio and blog. Learn some things with me!"
-                ></meta>
+                    content="Welcome to my developer portfolio and blog where I try to explore and demystify the intracacies of software engineering."
+                />
+                <meta
+                    property="og:title"
+                    content="Tim Zhang's Developer Portfolio and Blog"
+                />
+                <meta property="og:image" content={OgImage.src} />
+                <meta
+                    property="og:description"
+                    content="A curious developer's portfolio and blog on all things software engineering."
+                />
             </Head>
             {/* Note: `exitBeforeEnter` makes it so that when navigating to a
                        new page, the current page must fully animate out BEFORE

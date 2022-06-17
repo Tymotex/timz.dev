@@ -21,6 +21,7 @@ const Home: NextPage = () => {
                     centerContents
                     maxWidth={"800px"}
                     width={"80%"}
+                    disableHighlight
                 >
                     <aside className={styles.greeting}>
                         Hi there, I&apos;m

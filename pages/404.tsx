@@ -8,6 +8,7 @@ import styles from "./404.module.scss";
 
 const NotFoundPage: NextPage = () => {
     const router = useRouter();
+    const notFoundPath = router ? router.asPath : "";
 
     return (
         <motion.div
@@ -19,8 +20,8 @@ const NotFoundPage: NextPage = () => {
                 <ContentContainer centerContents>
                     <div className={styles.centered}>
                         <h1>404</h1>
-                        <p>
-                            Couldn't find &apos;{router && router.asPath}
+                        <p suppressHydrationWarning>
+                            Couldn't find &apos;{notFoundPath}
                             &apos;
                         </p>
                         <LinkButton href="/" text="Go Home" />

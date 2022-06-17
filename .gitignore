@@ -3,8 +3,12 @@
 # work around the lack of sass support from mdx-bundler.
 public/mdx
 
+# Testing outputs.
+artifacts/.jest-test-results.json
+
 # The output directory of `build-storybook`.
 docs-build
+
 
 # dependencies
 /node_modules
