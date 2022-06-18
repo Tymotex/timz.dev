@@ -5,6 +5,7 @@ import { LinkButton } from "src/components/Button";
 import CentralContainer from "src/components/Container/CentralContainer";
 import ContentContainer from "src/components/Container/ContentContainer";
 import { MiniDivider } from "src/components/Divider";
+import { Quote } from "src/components/Quote";
 import { Stack } from "src/components/Stack";
 import { Typewriter } from "src/components/Typewriter";
 import styles from "./Landing.module.scss";
@@ -59,6 +60,10 @@ const Home: NextPage = () => {
                     { text: "About", url: "/about" },
                     { text: "Contact", url: "/contact" },
                 ]}
+            />
+            <Quote
+                quote="Software and cathedrals are much the same – first we build them, then we pray."
+                author="Sam Redwine"
             />
         </motion.div>
     );

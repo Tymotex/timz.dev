@@ -22,9 +22,40 @@ $light-subtitle-colour: #818181;
 /**
  * Main palette.
  */
-$primary: #8785f1;
-$secondary: #b9b8ff;
-$tertiary: #908faf;
+$primary: hsl(241, 79%, 73%);
+$primary-100: hsl(241, 79%, 10%);
+$primary-200: hsl(241, 79%, 20%);
+$primary-300: hsl(241, 79%, 30%);
+$primary-400: hsl(241, 79%, 40%);
+$primary-500: $primary;
+$primary-600: hsl(241, 79%, 60%);
+$primary-700: hsl(241, 79%, 70%);
+$primary-800: hsl(241, 79%, 80%);
+$primary-900: hsl(241, 100%, 90%);
+
+$secondary: hsl(241, 70%, 86%);
+$secondary-100: hsl(241, 100%, 10%);
+$secondary-200: hsl(241, 100%, 30%);
+$secondary-300: hsl(241, 100%, 50%);
+$secondary-400: hsl(241, 100%, 60%);
+$secondary-500: $secondary;
+$secondary-600: hsl(241, 100%, 90%);
+
+$tertiary: hsl(242, 17%, 62%);
+$tertiary-100: hsl(242, 17%, 30%);
+$tertiary-200: hsl(242, 17%, 40%);
+$tertiary-300: hsl(242, 17%, 50%);
+$tertiary-400: hsl(242, 17%, 55%);
+$tertiary-500: $tertiary;
+$tertiary-600: hsl(242, 17%, 70%);
+$tertiary-700: hsl(242, 17%, 80%);
+$tertiary-800: hsl(242, 30%, 90%);
+$tertiary-900: hsl(242, 65%, 90%);
+
+$cool-grey: hsl(242, 15%, 75%);
+$cool-grey-100: hsl(242, 15%, 20%);
+$cool-grey-200: hsl(242, 15%, 30%);
+$cool-grey-700: hsl(242, 15%, 90%);
 
 /**
  * Typography.

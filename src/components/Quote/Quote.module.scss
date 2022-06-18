@@ -1,0 +1,37 @@
+@import "../../../styles/variables.scss";
+
+.quote {
+    font-family: $regular-font-stack;
+    border-left: 5px solid $cool-grey-200;
+    background: hsla(0, 0%, 0%, 0.1);
+    padding: $spacing-xs 0px;
+    margin: 0px $spacing-sm;
+    width: 100%;
+    max-width: $sm;
+
+    // Bottom center the quote.
+    position: fixed;
+    bottom: $spacing-sm;
+    left: 50%;
+    transform: translateX(-50%);
+
+    blockquote {
+        font-style: italic;
+        color: $dark-text-colour;
+        margin: 0px $spacing-sm $spacing-xs $spacing-sm;
+    }
+    p {
+        margin: 0;
+    }
+    figcaption {
+        margin: 0px $spacing-sm 0px $spacing-sm;
+        color: $cool-grey;
+    }
+}
+
+// Hide the quote when the screen is too narrow
+@media screen and (max-width: $sm) {
+    .quote {
+        display: none;
+    }
+}

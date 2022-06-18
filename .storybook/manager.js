@@ -2,7 +2,7 @@ import { addons } from '@storybook/addons';
 import { create } from '@storybook/theming';
 
 const mytheme = create({
-    base: 'light',
+    base: 'dark',
 
     // UI
     appBorderRadius: 4,
