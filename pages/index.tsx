@@ -1,3 +1,4 @@
+import portfolio from "content/portfolio/portfolio";
 import { motion } from "framer-motion";
 import type { NextPage } from "next";
 import { AsideLinkGroup } from "src/components/AsideLinkGroup";
@@ -10,11 +11,6 @@ import { Socials } from "src/components/Socials";
 import { Stack } from "src/components/Stack";
 import { Typewriter } from "src/components/Typewriter";
 import styles from "./Landing.module.scss";
-import {
-    FiGithub as GitHubIcon,
-    FiYoutube as YoutubeIcon,
-} from "react-icons/fi";
-import { RiLinkedinLine as LinkedInIcon } from "react-icons/ri";
 
 const Home: NextPage = () => {
     return (
@@ -60,22 +56,7 @@ const Home: NextPage = () => {
                     </Stack>
                 </ContentContainer>
             </CentralContainer>
-            <Socials
-                socials={[
-                    {
-                        icon: <GitHubIcon size={20} aria-hidden />,
-                        url: "https://github.com/Tymotex/",
-                    },
-                    {
-                        icon: <LinkedInIcon size={20} aria-hidden />,
-                        url: "https://www.linkedin.com/in/timz-seng",
-                    },
-                    {
-                        icon: <YoutubeIcon size={20} aria-hidden />,
-                        url: "https://www.youtube.com/channel/UCIuefX9zQPux3lGCkDOdlIQ",
-                    },
-                ]}
-            />
+            <Socials socials={portfolio.socials} />
             <AsideLinkGroup
                 links={[
                     { text: "Resume", url: "/resume" },

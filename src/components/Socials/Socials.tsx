@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Socials.module.scss";
+import { motion } from "framer-motion";
 
-interface SocialLinkData {
+export interface SocialLinkData {
     icon: React.ReactNode;
     url: string;
 }
@@ -11,8 +12,15 @@ interface Props {
 }
 
 const useBreakpointTrigger = (breakpoint: number): boolean => {
-    const [width, setWidth] = useState(window.innerWidth);
+    const [width, setWidth] = useState<number>(0);
 
+    // Initialise the width. Note: we must do this in `useEffect` since window
+    // is undefined on the server side.
+    useEffect(() => {
+        setWidth(window.innerWidth);
+    }, []);
+
+    //
     useEffect(() => {
         function handleResize() {
             setWidth(window.innerWidth);
@@ -34,9 +42,12 @@ const Socials: React.FC<Props> = ({ socials }) => {
         : styles.anchoredToLeft;
 
     return (
-        <div
+        <motion.div
             role="region"
             className={`${styles.socialLinkContainer} ${positionClass}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
         >
             {socials &&
                 socials.map((social) => (
@@ -46,7 +57,7 @@ const Socials: React.FC<Props> = ({ socials }) => {
                         </a>
                     </div>
                 ))}
-        </div>
+        </motion.div>
     );
 };
 

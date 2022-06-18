@@ -7,7 +7,7 @@
         padding: $spacing-xxs;
         height: 18px;
         width: 18px;
-        border: 2px solid $dark-text-colour;
+        border: 2px solid rgba($dark-text-colour, 0.8);
         background-color: rgba($primary-100, 0.3);
         border-radius: 50%;
         position: relative;
