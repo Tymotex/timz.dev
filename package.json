@@ -17,7 +17,8 @@
         "test:docs": "echo The Jest results are outputted to a JSON file so that Storybook can read it and report the test results for each component",
         "lint": "next lint",
         "storybook": "yarn test:generate-output && BROWSER=\"none\" start-storybook --quiet -p 6006 || true",
-        "build-storybook": "build-storybook -o docs-build"
+        "build-storybook": "build-storybook -o docs-build",
+        "prepare": "husky install"
     },
     "dependencies": {
         "@next/bundle-analyzer": "^12.1.6",
@@ -66,6 +67,7 @@
         "eslint": "8.17.0",
         "eslint-config-next": "12.1.6",
         "eslint-plugin-storybook": "^0.5.12",
+        "husky": "^8.0.0",
         "jest": "^28.1.1",
         "jest-environment-jsdom": "^28.1.1",
         "sass": "^1.52.3",
