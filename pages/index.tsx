@@ -52,14 +52,14 @@ const Home: NextPage = () => {
                         <LinkButton type="primary" text="Blog" href="/blogs" />
                     </Stack>
                 </ContentContainer>
-                <AsideLinkGroup
-                    links={[
-                        { text: "Resume", url: "/resume" },
-                        { text: "About", url: "/about" },
-                        { text: "Contact", url: "/contact" },
-                    ]}
-                />
             </CentralContainer>
+            <AsideLinkGroup
+                links={[
+                    { text: "Resume", url: "/resume" },
+                    { text: "About", url: "/about" },
+                    { text: "Contact", url: "/contact" },
+                ]}
+            />
         </motion.div>
     );
 };

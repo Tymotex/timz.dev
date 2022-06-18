@@ -3,6 +3,8 @@
 
 $theme-transition-duration: 0.2s;
 
+$central-container-top-offset: 47%;
+
 /**
  * Dark mode palette.
  */
@@ -34,16 +36,22 @@ $code-font-stack: Consolas, monaco, Courier New;
 /**
  * Responsive breakpoints.
  */
+$xs: 400px;
+$sm: 576px;
+$md: 768px;
 $lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
 
 /**
  * Spacing.
  */
 $spacing-xs: 12px;
-$spacing-sm: 16px;
-$spacing-md: 24px;
-$spacing-lg: 34px;
-$spacing-xl: 48px;
+$spacing-sm: 24px;
+$spacing-md: 32px;
+$spacing-lg: 48px;
+$spacing-xl: 60px;
+$spacing-xxl: 72px;
 
 $line-spacing-sm: 1.25;
 $line-spacing-md: 1.5;

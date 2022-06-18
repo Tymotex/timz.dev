@@ -4,7 +4,7 @@
     font-family: $code-font-stack;
     color: $dark-subtitle-colour;
     text-align: right;
-    position: absolute;
+    position: fixed;
     display: flex;
 
     // Reset default <nav> and <li> styling.
@@ -23,7 +23,7 @@
 @media screen and (min-width: $lg) {
     .asideGroup {
         right: 20px;
-        top: 50%;
+        top: $central-container-top-offset;
         transform: translateY(-50%);
         flex-direction: column;
 
@@ -41,6 +41,7 @@
 
 @media screen and (max-width: $lg) {
     .asideGroup {
+        // Anchor the aside group to the top of the viewport.
         left: 50%;
         top: 1.5rem;
         transform: translateX(-50%);
