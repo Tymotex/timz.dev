@@ -1,0 +1,45 @@
+@import "../../../styles/variables.scss";
+
+.socialLinkContainer {
+    display: flex;
+
+    .socialLink {
+        padding: $spacing-xxs;
+        height: 18px;
+        width: 18px;
+        border: 2px solid $dark-text-colour;
+        background-color: rgba($primary-100, 0.3);
+        border-radius: 50%;
+        position: relative;
+
+        svg {
+            position: absolute;
+            color: $dark-text-colour;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+    }
+
+    &.anchoredToLeft {
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: $spacing-sm;
+
+        position: fixed;
+        top: $central-container-top-offset;
+        left: $spacing-xs;
+        transform: translateY(-50%);
+    }
+
+    &.anchoredToBottom {
+        flex-direction: row;
+        column-gap: $spacing-xxs;
+        align-items: flex-start;
+
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: $spacing-sm;
+    }
+}

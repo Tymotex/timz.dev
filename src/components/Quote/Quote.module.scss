@@ -30,7 +30,7 @@
 }
 
 // Hide the quote when the screen is too narrow
-@media screen and (max-width: $sm) {
+@media screen and (max-width: $lg) {
     .quote {
         display: none;
     }

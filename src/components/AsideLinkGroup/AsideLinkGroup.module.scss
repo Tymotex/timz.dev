@@ -22,7 +22,7 @@
 
 @media screen and (min-width: $lg) {
     .asideGroup {
-        right: 20px;
+        right: $spacing-md;
         top: $central-container-top-offset;
         transform: translateY(-50%);
         flex-direction: column;
