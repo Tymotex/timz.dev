@@ -1,0 +1,15 @@
+@import "../../../styles/variables.scss";
+
+.typewriter {
+    font-family: $code-font-stack;
+    position: relative;
+    display: inline;
+
+    div {
+        display: inline;
+        // Text colour gradient.
+        background: linear-gradient(to right, $primary, $secondary);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}

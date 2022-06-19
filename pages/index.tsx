@@ -30,17 +30,15 @@ const Home: NextPage = () => {
                         Hi there, I&apos;m
                     </aside>
                     <h1 className={styles.name}>Tim Zhang.</h1>
-                    <p className={styles.headline}>
-                        I&apos;m <Typewriter />
-                    </p>
+                    <div className={styles.headline}>
+                        I&apos;m{" "}
+                        <Typewriter messages={portfolio.profile.headlines} />
+                    </div>
                     <MiniDivider />
 
-                    <p className={styles.description}>
-                        Do et irure sint velit consequat officia. Irure cillum
-                        ex in culpa ullamco proident deserunt enim eiusmod. Ut
-                        id laborum occaecat cupidatat ad dolore mollit occaecat
-                        sunt cillum.
-                    </p>
+                    <div className={styles.description} role="presentation">
+                        {portfolio.profile.elevatorPitch}
+                    </div>
                     <Stack
                         direction="horizontal"
                         columnGap={10}
@@ -56,7 +54,7 @@ const Home: NextPage = () => {
                     </Stack>
                 </ContentContainer>
             </CentralContainer>
-            <Socials socials={portfolio.socials} />
+            <Socials socials={portfolio.profile.socials} />
             <AsideLinkGroup
                 links={[
                     { text: "Resume", url: "/resume" },

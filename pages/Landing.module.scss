@@ -11,11 +11,13 @@
 
 .headline {
     color: $dark-subtitle-colour;
+    font-family: $code-font-stack;
     font-size: larger;
 }
 
 .description {
     color: $dark-subtitle-colour;
+    line-height: $line-spacing-md;
 }
 
 .buttonStack {
