@@ -30,9 +30,10 @@ const Home: NextPage = () => {
                         Hi there, I&apos;m
                     </aside>
                     <h1 className={styles.name}>Tim Zhang.</h1>
-                    <p className={styles.headline}>
-                        I&apos;m <Typewriter />
-                    </p>
+                    <div className={styles.headline}>
+                        I&apos;m{" "}
+                        <Typewriter messages={portfolio.profile.headlines} />
+                    </div>
                     <MiniDivider />
 
                     <p className={styles.description}>
@@ -56,7 +57,7 @@ const Home: NextPage = () => {
                     </Stack>
                 </ContentContainer>
             </CentralContainer>
-            <Socials socials={portfolio.socials} />
+            <Socials socials={portfolio.profile.socials} />
             <AsideLinkGroup
                 links={[
                     { text: "Resume", url: "/resume" },

@@ -21,8 +21,13 @@ interface PortfolioData {
         // Open graph protocol image.
         ogImage: string;
     };
-    // Social icons and links.
-    socials: SocialLinkData[];
+    profile: {
+        // A list of few-word descriptions about you as a continuation from
+        // "I'm". Eg. "a software engineer", "a lost soul".
+        headlines: string[];
+        // Social icons and links.
+        socials: SocialLinkData[];
+    };
 }
 
 const portfolio: PortfolioData = {
@@ -35,20 +40,27 @@ const portfolio: PortfolioData = {
             "A curious developer's portfolio and blog on all things software engineering.",
         ogImage: OgImage.src,
     },
-    socials: [
-        {
-            icon: <GitHubIcon size={20} aria-hidden />,
-            url: "https://github.com/Tymotex/",
-        },
-        {
-            icon: <LinkedInIcon size={20} aria-hidden />,
-            url: "https://www.linkedin.com/in/timz-seng",
-        },
-        {
-            icon: <YoutubeIcon size={20} aria-hidden />,
-            url: "https://www.youtube.com/channel/UCIuefX9zQPux3lGCkDOdlIQ",
-        },
-    ],
+    profile: {
+        headlines: [
+            "a computer science student.",
+            "a hobbyist fullstack developer.",
+            "an aspiring software engineer.",
+        ],
+        socials: [
+            {
+                icon: <GitHubIcon size={20} aria-hidden />,
+                url: "https://github.com/Tymotex/",
+            },
+            {
+                icon: <LinkedInIcon size={20} aria-hidden />,
+                url: "https://www.linkedin.com/in/timz-seng",
+            },
+            {
+                icon: <YoutubeIcon size={20} aria-hidden />,
+                url: "https://www.youtube.com/channel/UCIuefX9zQPux3lGCkDOdlIQ",
+            },
+        ],
+    },
 };
 
 export default portfolio;
