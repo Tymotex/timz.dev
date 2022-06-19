@@ -43,7 +43,7 @@ following frontmatter format:
 ```
 ---
 title: Learn React in 30 Seconds (Not Clickbait)
-description: Whatever is here is passed to 
+description: React is a popular web framework that...
 published: true
 date: yyyy-mm-dd
 ---
