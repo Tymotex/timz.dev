@@ -36,12 +36,9 @@ const Home: NextPage = () => {
                     </div>
                     <MiniDivider />
 
-                    <p className={styles.description}>
-                        Do et irure sint velit consequat officia. Irure cillum
-                        ex in culpa ullamco proident deserunt enim eiusmod. Ut
-                        id laborum occaecat cupidatat ad dolore mollit occaecat
-                        sunt cillum.
-                    </p>
+                    <div className={styles.description} role="presentation">
+                        {portfolio.profile.elevatorPitch}
+                    </div>
                     <Stack
                         direction="horizontal"
                         columnGap={10}
