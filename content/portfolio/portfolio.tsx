@@ -25,6 +25,9 @@ interface PortfolioData {
         // A list of few-word descriptions about you as a continuation from
         // "I'm". Eg. "a software engineer", "a lost soul".
         headlines: string[];
+        // Concise sentences to display on the landing page and leave an
+        // impression on the reader.
+        elevatorPitch: React.ReactNode;
         // Social icons and links.
         socials: SocialLinkData[];
     };
@@ -34,7 +37,7 @@ const portfolio: PortfolioData = {
     meta: {
         mainTitle: "Tim Zhang - Developer Portfolio and Blog",
         mainDescription:
-            "Welcome to my developer portfolio and blog where I try to explore and demystify the intracacies of software engineering.",
+            "Welcome to my developer portfolio and blog, where I try to explore and demystify the intracacies of software engineering.",
         ogTitle: "Tim Zhang's Developer Portfolio and Blog",
         ogDescription:
             "A curious developer's portfolio and blog on all things software engineering.",
@@ -46,6 +49,13 @@ const portfolio: PortfolioData = {
             "a hobbyist fullstack developer.",
             "an aspiring software engineer.",
         ],
+        elevatorPitch: (
+            <p>
+                I'm currently a final year computer science student at the
+                University of New South Wales. I love working on software
+                projects and learning something about everything.
+            </p>
+        ),
         socials: [
             {
                 icon: <GitHubIcon size={20} aria-hidden />,
