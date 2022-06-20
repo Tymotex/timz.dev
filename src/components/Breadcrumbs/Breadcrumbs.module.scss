@@ -1,12 +1,11 @@
 @import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
 
 .breadcrumbs {
     font-family: $code-font-stack;
 
     // Reset default <nav> and <li> styling.
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+    @include reset-ul-styles;
 
     // Keep the text and crumb separator vertically aligned.
     display: flex;

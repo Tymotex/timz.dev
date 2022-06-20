@@ -19,6 +19,7 @@ module.exports = {
     "core": {
         "builder": "@storybook/builder-webpack5"
     },
+    staticDirs: ['../public'],
     // Ensures that absolute import paths work from *.stories.(jsx|tsx)* files.
     // Sourced from: https://stackoverflow.com/questions/51771077/storybook-with-absolute-paths.
     webpackFinal: async (config) => {

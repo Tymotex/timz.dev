@@ -3,6 +3,7 @@ import type { NextPage } from "next";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Fragment, useCallback } from "react";
+import ChipGroup from "src/components/ChipGroup";
 import { Window } from "src/components/Window";
 
 const Projects: NextPage = () => {
@@ -27,6 +28,9 @@ const Projects: NextPage = () => {
                     <Window onClickOutside={() => redirectToHome()}>
                         <h1>Projects</h1>
                         <Link href="/">Home</Link>
+                        <ChipGroup
+                            technologies={["python", "javascript", "ruby"]}
+                        />
                         {[...Array(10)].map((_, i) => (
                             <Fragment key={i}>
                                 <p>
