@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 import { IoMdClose as CloseIcon } from "react-icons/io";
+import Breadcrumbs from "../Breadcrumbs";
+import { Crumb } from "../Breadcrumbs/Breadcrumbs";
 import styles from "./Window.module.scss";
 
 type OutsideClickHandler = () => void;
@@ -9,6 +11,7 @@ type OutsideClickHandler = () => void;
 interface Props {
     children?: React.ReactNode;
     onClickOutside: OutsideClickHandler;
+    crumbs?: Crumb[];
 }
 
 /**
@@ -32,7 +35,7 @@ const useClickOutside = (
     }, [ref, outsideClickHandler]);
 };
 
-const Window: React.FC<Props> = ({ children, onClickOutside }) => {
+const Window: React.FC<Props> = ({ children, onClickOutside, crumbs }) => {
     const windowRef = useRef(null);
     useClickOutside(windowRef, onClickOutside);
 
@@ -62,6 +65,12 @@ const Window: React.FC<Props> = ({ children, onClickOutside }) => {
                 }}
                 style={{}}
             >
+                {crumbs && crumbs.length > 0 && (
+                    <Breadcrumbs
+                        className={styles.breadcrumbs}
+                        crumbs={crumbs}
+                    />
+                )}
                 <Link href="/">
                     <CloseIcon
                         aria-label="Close"

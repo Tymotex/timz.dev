@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 import { MdChevronRight as ChevronRight } from "react-icons/md";
 import styles from "./Breadcrumbs.module.scss";
 
-interface Crumb {
+export interface Crumb {
     title: string;
     url: string;
 }
@@ -11,11 +11,19 @@ interface Crumb {
 interface Props {
     crumbs: Crumb[];
     isDarkMode?: boolean;
+    className?: string;
 }
 
-const Breadcrumbs: React.FC<Props> = ({ crumbs, isDarkMode }) => {
+const Breadcrumbs: React.FC<Props> = ({
+    crumbs,
+    isDarkMode = true,
+    className,
+}) => {
     return (
-        <nav aria-label="breadcrumbs" className={styles.breadcrumbs}>
+        <nav
+            aria-label="breadcrumbs"
+            className={`${styles.breadcrumbs} ${className}`}
+        >
             {crumbs &&
                 crumbs.map((crumb, i) => (
                     <Fragment key={crumb.title}>

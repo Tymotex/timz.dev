@@ -9,6 +9,7 @@ import {
     DarkModeContext,
     DarkModeContextProps,
 } from "src/contexts/LightDarkThemeProvider";
+import ContentContainer from "src/components/Container/ContentContainer";
 
 export default {
     title: "Portfolio/Window",
@@ -32,7 +33,7 @@ const Template: ComponentStory<typeof Window> = (args) => <Window {...args} />;
 export const Basic = Template.bind({});
 Basic.args = {
     children: (
-        <>
+        <ContentContainer>
             <h1>Hello world</h1>
             <p>
                 Cupidatat nulla ex deserunt velit do velit incididunt amet qui.
@@ -40,14 +41,14 @@ Basic.args = {
                 nisi sint ipsum. Amet laboris pariatur nulla mollit sint
                 officia. Officia magna commodo reprehenderit aute excepteur.
             </p>
-        </>
+        </ContentContainer>
     ),
 };
 
 export const Scrolling = Template.bind({});
 Scrolling.args = {
     children: (
-        <>
+        <ContentContainer>
             <h1>Hello world</h1>
             {[...Array(10)].map((_, i) => (
                 <Fragment key={i}>
@@ -77,6 +78,6 @@ Scrolling.args = {
                     </p>
                 </Fragment>
             ))}
-        </>
+        </ContentContainer>
     ),
 };

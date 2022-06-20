@@ -37,11 +37,11 @@ BasicBreadcrumbs.args = {
         { title: "Projects", url: "/projects" },
         { title: "My Sentient Robot", url: "/projects/my-sentient-robot" },
     ],
-    isDarkMode: false,
+    isDarkMode: true,
 };
 
 export const SingleCrumb = Template.bind({});
 SingleCrumb.args = {
     crumbs: [{ title: "Home", url: "/" }],
-    isDarkMode: false,
+    isDarkMode: true,
 };

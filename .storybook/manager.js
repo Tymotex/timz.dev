@@ -14,7 +14,7 @@ const mytheme = create({
     // Text colors
     textInverseColor: '#022B3A',
 
-    brandTitle: "Timz.Dev",
+    brandTitle: "timz.dev",
     brandUrl: "https://timz.dev",
     brandTarget: "_self"
 });
