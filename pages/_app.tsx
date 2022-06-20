@@ -5,8 +5,9 @@ import { useEffect, useState } from "react";
 import { ParticleWallpaper } from "src/components/Particles";
 import { DarkModeProvider } from "src/contexts/LightDarkThemeProvider";
 import portfolio from "content/portfolio/portfolio";
-
+import Router from "next/router";
 import "styles/global.scss";
+import "src/blog-components/global.scss";
 
 /* --------------------------- Global blog styles --------------------------- */
 // Applies formatting and typography styles to any LaTeX expression embedded
@@ -21,6 +22,7 @@ const App = ({ Component, pageProps, router }: AppProps) => {
     const [isBlogPage, setIsBlogPage] = useState<boolean>(
         /^\/blogs/.test(router.pathname),
     );
+    useTransitionFix();
 
     useEffect(() => {
         setIsBlogPage(/^\/blogs/.test(router.pathname));
@@ -55,6 +57,29 @@ const App = ({ Component, pageProps, router }: AppProps) => {
             </AnimatePresence>
         </DarkModeProvider>
     );
+};
+
+/* --------------------- Production Page Transition Fix --------------------- */
+// See: https://github.com/vercel/next.js/issues/17464.
+// It's still unresolved as of 2022 June 20.
+
+const routeChange = () => {
+    const tempFix = () => {
+        const elements = document.querySelectorAll('style[media="x"]');
+        elements.forEach((elem) => elem.removeAttribute("media"));
+    };
+    tempFix();
+};
+
+const useTransitionFix = () => {
+    useEffect(() => {
+        Router.events.on("routeChangeComplete", routeChange);
+        Router.events.on("routeChangeStart", routeChange);
+    }, []);
+
+    useEffect(() => {
+        Router.router?.push(Router.router?.pathname);
+    }, []);
 };
 
 export default App;

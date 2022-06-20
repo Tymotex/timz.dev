@@ -1,0 +1,11 @@
+// This file contains all the styles for blog components.
+//
+// Note: why aren't we using SCSS modules for blog components? Unfortunately,
+//       there is no SCSS module support for `mdx-bundler`. Using CSS-in-JS
+//       solutions is problematic as well. Eg. `styled-components` will cause
+//       a nasty warning around hook violations because the styled components
+//       are 'created' in `getMDXComponent`.
+
+.blog-image {
+    border: 20px solid blue;
+}
