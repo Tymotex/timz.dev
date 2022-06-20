@@ -1,14 +1,16 @@
 import React from "react";
 import styles from "./SectionDivider.module.scss";
 
-interface Props {}
+interface Props {
+    text: string;
+}
 
-const SectionDivider: React.FC<Props> = () => {
+const SectionDivider: React.FC<Props> = ({ text }) => {
     return (
         <div role="presentation" className={styles.sectionDivider}>
-            <div className={styles.leftDivider} />
-            <div>Central Text</div>
-            <div className={styles.rightDivider} />
+            <div className={`${styles.divider} ${styles.leftDivider}`} />
+            <div className={styles.centralText}>{text}</div>
+            <div className={`${styles.divider} ${styles.rightDivider}`} />
         </div>
     );
 };

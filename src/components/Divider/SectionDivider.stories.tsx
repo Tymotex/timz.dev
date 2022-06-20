@@ -17,5 +17,7 @@ const Template: ComponentStory<typeof SectionDivider> = (args) => (
     <SectionDivider {...args} />
 );
 
-export const BasicMiniDivider = Template.bind({});
-BasicMiniDivider.args = {};
+export const BasicSectionDivider = Template.bind({});
+BasicSectionDivider.args = {
+    text: "Hello World",
+};

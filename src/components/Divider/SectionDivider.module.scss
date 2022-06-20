@@ -1,35 +1,44 @@
 @import "../../../styles/variables.scss";
 
+@mixin dividerDecorator {
+    content: "";
+    width: 4px;
+    height: 4px;
+    display: block;
+    position: absolute;
+    top: -1.5px;
+    border-radius: 50%;
+    background: $dark-text-colour;
+}
+
 .sectionDivider {
     display: flex;
     align-items: center;
-    column-gap: $spacing-xs;
+    column-gap: $spacing-sm;
+
+    .centralText {
+        color: $dark-text-colour;
+        font-family: $code-font-stack;
+        white-space: nowrap;
+    }
+
+    .divider {
+        width: 100%;
+        border-bottom: 1px solid rgb(84, 84, 84);
+        position: relative;
+    }
 
     .leftDivider {
-        width: 100px;
-        border-bottom: 1px solid white;
-        position: relative;
-
         &::after {
-            content: "";
-            width: 5px;
-            height: 5px;
-            display: block;
-            position: absolute;
-            top: -2.5px;
-            border-radius: 50%;
+            @include dividerDecorator;
             right: 0;
-            background: yellow;
         }
     }
 
     .rightDivider {
-        width: 100px;
-        border-bottom: 1px solid white;
-        position: relative;
-
         &::before {
-            content: "";
+            @include dividerDecorator;
+            left: 0;
         }
     }
 }
