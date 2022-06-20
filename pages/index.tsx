@@ -57,8 +57,8 @@ const Home: NextPage = () => {
             <Socials socials={portfolio.profile.socials} />
             <AsideLinkGroup
                 links={[
-                    { text: "Resume", url: "/resume" },
-                    { text: "About", url: "/about" },
+                    { text: "Resume", url: "/documents/resume.pdf" },
+                    { text: "About", url: "https://google.com" },
                     { text: "Contact", url: "/contact" },
                 ]}
             />

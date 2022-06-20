@@ -7,9 +7,12 @@
 
     div {
         display: inline;
+
         // Text colour gradient.
-        background: linear-gradient(to right, $primary, $secondary);
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
+        span:first-child {
+            background: linear-gradient(to right, $primary, $secondary);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     }
 }

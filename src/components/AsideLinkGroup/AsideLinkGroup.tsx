@@ -25,9 +25,21 @@ const AsideLinkGroup: React.FC<Props> = ({ links }) => {
                 {links &&
                     links.map((link) => (
                         <li key={link.text}>
-                            <Link href={link.url}>
-                                <a>{link.text}</a>
-                            </Link>
+                            {/* Render either an internal/external link
+                                depending on whether the url begins with / */}
+                            {/^\//.test(link.url) ? (
+                                <Link href={link.url}>
+                                    <a>{link.text}</a>
+                                </Link>
+                            ) : (
+                                <a
+                                    href={link.url}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    {link.text}
+                                </a>
+                            )}
                         </li>
                     ))}
             </ul>
