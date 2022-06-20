@@ -8,9 +8,15 @@ interface Props {
 const SectionDivider: React.FC<Props> = ({ text }) => {
     return (
         <div role="presentation" className={styles.sectionDivider}>
-            <div className={`${styles.divider} ${styles.leftDivider}`} />
-            <div className={styles.centralText}>{text}</div>
-            <div className={`${styles.divider} ${styles.rightDivider}`} />
+            <div
+                role="presentation"
+                className={`${styles.divider} ${styles.leftDivider}`}
+            />
+            <h1 className={styles.centralText}>{text}</h1>
+            <div
+                role="presentation"
+                className={`${styles.divider} ${styles.rightDivider}`}
+            />
         </div>
     );
 };

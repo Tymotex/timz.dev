@@ -1,6 +1,8 @@
+@import "../../../styles/variables.scss";
+
 .contentContainer {
     margin: 0 auto;
-    padding: 32px;
+    padding: $spacing-sm;
 
     &.centered {
         position: absolute;

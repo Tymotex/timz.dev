@@ -3,7 +3,10 @@ import type { NextPage } from "next";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Fragment, useCallback } from "react";
+import Breadcrumbs from "src/components/Breadcrumbs";
 import ChipGroup from "src/components/ChipGroup";
+import ContentContainer from "src/components/Container/ContentContainer";
+import SectionDivider from "src/components/Divider/SectionDivider";
 import { Window } from "src/components/Window";
 
 const Projects: NextPage = () => {
@@ -25,45 +28,28 @@ const Projects: NextPage = () => {
         <>
             <motion.div>
                 <div style={{ position: "relative" }}>
-                    <Window onClickOutside={() => redirectToHome()}>
-                        <h1>Projects</h1>
-                        <Link href="/">Home</Link>
-                        <ChipGroup
-                            technologies={["python", "javascript", "ruby"]}
-                        />
-                        {[...Array(10)].map((_, i) => (
-                            <Fragment key={i}>
-                                <p>
-                                    Cupidatat nulla ex deserunt velit do velit
-                                    incididunt amet qui. Tempor officia culpa
-                                    sit amet consectetur. Sunt veniam anim eu
-                                    nisi sint ipsum. Amet laboris pariatur nulla
-                                    mollit sint officia. Officia magna commodo
-                                    reprehenderit aute excepteur.
-                                </p>
-                                <p>
-                                    Lorem veniam nulla eiusmod et quis voluptate
-                                    anim nisi. Nisi tempor esse ex culpa sint
-                                    esse adipisicing consequat tempor mollit
-                                    cupidatat occaecat esse ipsum. Deserunt
-                                    nulla sunt labore ipsum commodo anim
-                                    proident nostrud non velit officia aute
-                                    incididunt mollit.
-                                </p>
-                                <p>
-                                    Eu deserunt ea tempor sunt excepteur cillum
-                                    eiusmod non nulla aliquip eu qui irure. Ex
-                                    aliqua enim est id consequat pariatur ut do
-                                    laboris. Id sit est cupidatat labore
-                                    proident. Fugiat aliqua aute excepteur non
-                                    Lorem mollit aute esse dolore ipsum eu est
-                                    dolore. Nulla culpa ipsum nulla labore
-                                    nostrud adipisicing et ad. Occaecat proident
-                                    magna qui in. Aliqua ut cillum ea pariatur
-                                    voluptate magna laborum laborum.
-                                </p>
-                            </Fragment>
-                        ))}
+                    <Window
+                        onClickOutside={() => redirectToHome()}
+                        crumbs={[
+                            { title: "Home", url: "/" },
+                            { title: "Projects", url: "/projects" },
+                        ]}
+                    >
+                        <SectionDivider text="Main Projects" />
+                        <ContentContainer maxWidth={1200}>
+                            <Link href="/">Home</Link>
+                            <ChipGroup
+                                technologies={["python", "javascript", "ruby"]}
+                            />
+                        </ContentContainer>
+
+                        <SectionDivider text="Other Projects" />
+                        <ContentContainer maxWidth={1200}>
+                            <Link href="/">Home</Link>
+                            <ChipGroup
+                                technologies={["python", "javascript", "ruby"]}
+                            />
+                        </ContentContainer>
                     </Window>
                 </div>
             </motion.div>

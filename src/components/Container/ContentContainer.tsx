@@ -23,7 +23,7 @@ const ContentContainer: React.FC<Props> = ({
                 centerContents && styles.centered
             }`}
             style={{
-                width: width || 800,
+                width: width || "100%",
                 maxWidth: maxWidth || 800,
                 userSelect: disableHighlight ? "none" : "text",
             }}

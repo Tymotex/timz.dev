@@ -12,8 +12,8 @@ const ChipGroup: React.FC<Props> = ({ technologies }) => {
         <ul className={styles.chipStack}>
             {technologies &&
                 technologies.map((tech) => (
-                    <li className={styles.chip}>
-                        <img
+                    <li className={styles.chip} key={tech}>
+                        <Image
                             alt={`${tech} icon`}
                             src={`/icons/${tech}.png`}
                             width={20}
