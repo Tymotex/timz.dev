@@ -7,6 +7,7 @@ import { bundleMDX } from "mdx-bundler";
 import remarkPrism from "remark-prism";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+import { remarkMdxImages } from "remark-mdx-images";
 
 export interface BlogFrontmatter {
     title: string;
@@ -40,6 +41,7 @@ const makeMDXBundle = async (rawSource: string) => {
                 ];
             options.loader = {
                 ...options.loader,
+                ".png": "dataurl",
             };
             options.publicPath = "/mdx";
             options.outdir = path.join(cwd, "public/mdx");
@@ -52,6 +54,7 @@ const makeMDXBundle = async (rawSource: string) => {
                 ...(options?.remarkPlugins ?? []),
                 remarkPrism,
                 remarkMath,
+                remarkMdxImages,
             ];
             options.rehypePlugins = [
                 ...(options?.rehypePlugins ?? []),
@@ -72,33 +75,31 @@ export const getAllBlogs = async (): Promise<BlogInfo[]> => {
 
     const filenames = fs.readdirSync(blogsDir);
     const allBlogs = await Promise.all(
-        filenames.map(async (filename) => {
-            if (path.extname(filename) !== ".mdx")
-                signale.info(
-                    `Skipping '${filename}' because it doesn't have the .mdx file extension`,
-                );
-            const absPath = path.join(blogsDir, filename);
-            const slug = filename.replace(/\.mdx$/, "");
+        filenames
+            .filter((filename) => path.extname(filename) === ".mdx")
+            .map(async (filename) => {
+                const absPath = path.join(blogsDir, filename);
+                const slug = filename.replace(/\.mdx$/, "");
 
-            const rawSource = fs.readFileSync(absPath, "utf8");
-            const matterResult = matter(rawSource);
-            const frontmatter = matterResult.data;
+                const rawSource = fs.readFileSync(absPath, "utf8");
+                const matterResult = matter(rawSource);
+                const frontmatter = matterResult.data;
 
-            // Next.js does not serialise objects for performance reasons. This
-            // means that although we can write native YAML dates in the
-            // frontmatter, we'll unfortunately have to still serialise the date
-            // and then deserialise it in the component code.
-            // See: https://github.com/vercel/next.js/issues/13209#issuecomment-633149650.
-            const blog = {
-                slug,
-                frontmatter: {
-                    ...frontmatter,
-                    date: frontmatter.date.toString(),
-                },
-            } as BlogInfo;
+                // Next.js does not serialise objects for performance reasons. This
+                // means that although we can write native YAML dates in the
+                // frontmatter, we'll unfortunately have to still serialise the date
+                // and then deserialise it in the component code.
+                // See: https://github.com/vercel/next.js/issues/13209#issuecomment-633149650.
+                const blog = {
+                    slug,
+                    frontmatter: {
+                        ...frontmatter,
+                        date: frontmatter.date.toString(),
+                    },
+                } as BlogInfo;
 
-            return blog;
-        }),
+                return blog;
+            }),
     );
     signale.complete(`Fetched ${allBlogs.length} blogs!`);
 

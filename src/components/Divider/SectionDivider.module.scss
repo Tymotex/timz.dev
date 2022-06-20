@@ -1,0 +1,35 @@
+@import "../../../styles/variables.scss";
+
+.sectionDivider {
+    display: flex;
+    align-items: center;
+    column-gap: $spacing-xs;
+
+    .leftDivider {
+        width: 100px;
+        border-bottom: 1px solid white;
+        position: relative;
+
+        &::after {
+            content: "";
+            width: 5px;
+            height: 5px;
+            display: block;
+            position: absolute;
+            top: -2.5px;
+            border-radius: 50%;
+            right: 0;
+            background: yellow;
+        }
+    }
+
+    .rightDivider {
+        width: 100px;
+        border-bottom: 1px solid white;
+        position: relative;
+
+        &::before {
+            content: "";
+        }
+    }
+}

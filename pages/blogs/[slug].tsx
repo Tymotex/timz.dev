@@ -33,7 +33,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 interface Props {
     blog: Blog;
 }
-
 const BlogIndex: NextPage<Props> = ({ blog }) => {
     const Blog = useMemo(() => getMDXComponent(blog.code), [blog]);
 

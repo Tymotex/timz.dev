@@ -43,7 +43,7 @@ following frontmatter format:
 ```
 ---
 title: Learn React in 30 Seconds (Not Clickbait)
-description: Whatever is here is passed to 
+description: React is a popular web framework that...
 published: true
 date: yyyy-mm-dd
 ---
@@ -107,8 +107,21 @@ All of this is possible through `mdx-bundler` which is used by the server-side
 Node.js script, `scripts/blogs.ts`, to map all the `.mdx` source code to
 executable javascript that renders the content.
 
-# Performance
+# Issues & Performance
 
+## Challenges
+
+- `mdx-bundler` doesn't have built-in support for Sass modules. As a workaround,
+  this project uses a global SCSS file at `src/blog-components/global.scss`.
+- Cannot import `next/image` in .mdx files when using `mdx-bundler`. This is 
+  really unfortunate because `next/image` contains a lot of image optimisations
+  that improve the Core Web Vitals. The current workaround is to have a custom
+  component `BlogImage` that provides styling and options to minimise cumulative
+  layout shift. Eventually, a script could be set up to run prior to
+  `yarn build` that runs an web image optimiser (converting .png to .webp, for
+  example) on all image files under `public/`.
+
+## Performance
 I developed this site with SEO and UX in mind for the blog pages, however I
 relaxed this requirement for the portfolio pages.
 
