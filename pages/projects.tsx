@@ -9,21 +9,10 @@ import { Window } from "src/components/Window";
 import styles from "./Projects.module.scss";
 import { FeaturedProject } from "src/components/FeaturedProject";
 import portfolio from "content/portfolio/portfolio";
+import { useRedirectHome } from "src/hooks/routerHooks";
 
 const Projects: NextPage = () => {
-    const router = useRouter();
-
-    const redirectToHome = useCallback(() => {
-        router.push(
-            {
-                pathname: "/",
-            },
-            undefined,
-            // By default, Next.js will force scroll to the top. This can be
-            // disabled. See: https://stackoverflow.com/questions/65902664/next-js-router-push-without-scrolling-to-the-top.
-            { scroll: false },
-        );
-    }, [router]);
+    const redirectToHome = useRedirectHome();
 
     return (
         <>

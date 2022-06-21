@@ -9,6 +9,7 @@ export interface SocialLinkData {
 
 interface Props {
     socials: SocialLinkData[];
+    position?: "fixed" | "absolute";
 }
 
 const useBreakpointTrigger = (breakpoint: number): boolean => {
@@ -32,7 +33,7 @@ const useBreakpointTrigger = (breakpoint: number): boolean => {
     return width <= breakpoint;
 };
 
-const Socials: React.FC<Props> = ({ socials }) => {
+const Socials: React.FC<Props> = ({ socials, position = "fixed" }) => {
     // Responsive re-positioning across the standard 'lg' breakpoint (992px).
     const isSmallScreen = useBreakpointTrigger(992);
 
@@ -48,6 +49,7 @@ const Socials: React.FC<Props> = ({ socials }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
+            style={{ position }}
         >
             {socials &&
                 socials.map((social) => (
