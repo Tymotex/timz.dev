@@ -2,7 +2,8 @@ import { withTests } from "@storybook/addon-jest";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import results from "artifacts/.jest-test-results.json";
 import Button from "./Button";
-import { FiGithub } from "react-icons/fi";
+import { FiGithub as GitHubIcon } from "react-icons/fi";
+import { MdOutlineArrowRightAlt as RightArrowIcon } from "react-icons/md";
 
 export default {
     title: "Portfolio/Button",
@@ -24,7 +25,18 @@ PrimaryButton.args = {
 export const ButtonWithIcon = Template.bind({});
 ButtonWithIcon.args = {
     type: "secondary",
-    text: "Read More",
-    icon: <FiGithub />,
+    text: "GitHub",
+    icon: <GitHubIcon />,
     iconPosition: "left",
+};
+
+export const ReadMore = Template.bind({});
+ReadMore.args = {
+    type: "primary",
+    callToAction: true,
+    shape: "pill",
+    text: "Read more",
+    icon: <RightArrowIcon />,
+    iconPosition: "right",
+    iconInset: true,
 };

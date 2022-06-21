@@ -1,0 +1,10 @@
+@import "../styles/variables.scss";
+
+.description {
+    width: 100%;
+    max-width: 45rem;
+    padding: $spacing-sm;
+
+    margin: 0 auto;
+    text-align: center;
+}

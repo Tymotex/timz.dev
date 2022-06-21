@@ -3,6 +3,7 @@
 .contentContainer {
     margin: 0 auto;
     padding: $spacing-sm;
+    box-sizing: border-box;
 
     &.centered {
         position: absolute;

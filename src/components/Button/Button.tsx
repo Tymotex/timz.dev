@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import styles from "./Button.module.scss";
 
@@ -7,6 +8,12 @@ export interface ButtonProps {
     icon?: React.ReactNode;
     iconPosition?: "left" | "right";
     shape?: "pill" | "box";
+    callToAction?: boolean;
+    internalUrl?: string;
+    externalUrl?: string;
+    onClick?: React.MouseEventHandler<HTMLButtonElement>;
+    // Adds an outline and inset box-shadow to the icon.
+    iconInset?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -14,7 +21,12 @@ const Button: React.FC<ButtonProps> = ({
     type = "primary",
     icon,
     iconPosition,
-    shape,
+    shape = "box",
+    callToAction = false,
+    iconInset = false,
+    internalUrl,
+    externalUrl,
+    onClick,
 }) => {
     let buttonClass = styles.primary;
     switch (type) {
@@ -31,18 +43,42 @@ const Button: React.FC<ButtonProps> = ({
             buttonClass = styles.primary;
     }
 
-    return (
+    const ButtonCore = (
         <button
-            className={`${styles.button} ${buttonClass}`}
+            onClick={onClick}
+            className={`${styles.button} ${buttonClass} ${
+                callToAction && styles.callToAction
+            }`}
             style={{
                 flexDirection: iconPosition === "left" ? "row" : "row-reverse",
                 borderRadius: shape === "pill" ? 200 : 5,
             }}
         >
-            {icon}
+            {icon && (
+                <span className={`${styles.icon} ${iconInset && styles.inset}`}>
+                    {icon}
+                </span>
+            )}
             <span>{text}</span>
         </button>
     );
+
+    const ButtonWithLink = externalUrl ? (
+        <a
+            href={externalUrl}
+            target="_blank"
+            rel="noreferrer"
+            className={styles.anchor}
+        >
+            {ButtonCore}
+        </a>
+    ) : internalUrl ? (
+        <Link href={internalUrl}>{ButtonCore}</Link>
+    ) : (
+        ButtonCore
+    );
+
+    return ButtonWithLink;
 };
 
 export default Button;

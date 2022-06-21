@@ -8,7 +8,7 @@ $central-container-top-offset: 47%;
 /**
  * Dark mode palette.
  */
-$dark-background-colour: #272b39;
+$dark-background-colour: hsl(227, 20, 21);
 $dark-text-colour: #eeeeee;
 $dark-subtitle-colour: #c0b4ce;
 
@@ -53,9 +53,15 @@ $tertiary-800: hsl(242, 30%, 90%);
 $tertiary-900: hsl(242, 65%, 90%);
 
 $cool-grey: hsl(242, 15%, 75%);
-$cool-grey-100: hsl(242, 15%, 20%);
-$cool-grey-200: hsl(242, 15%, 30%);
-$cool-grey-700: hsl(242, 15%, 90%);
+$cool-grey-100: hsl(242, 15%, 10%);
+$cool-grey-200: hsl(242, 15%, 15%);
+$cool-grey-300: hsl(242, 15%, 22%);
+$cool-grey-400: hsl(242, 15%, 30%);
+$cool-grey-500: hsl(242, 15%, 40%);
+$cool-grey-600: hsl(242, 15%, 50%);
+$cool-grey-700: hsl(242, 15%, 60%);
+$cool-grey-800: hsl(242, 15%, 70%);
+$cool-grey-900: hsl(242, 15%, 80%);
 
 /**
  * Typography.
@@ -63,6 +69,13 @@ $cool-grey-700: hsl(242, 15%, 90%);
 
 $regular-font-stack: Helvetica, Trebuchet MS, Arial;
 $code-font-stack: Consolas, monaco, Courier New;
+
+$font-size-xs: 8px;
+$font-size-sm: 12px;
+$font-size-md: 16px;
+$font-size-lg: 24px;
+$font-size-xl: 32px;
+$font-size-xxl: 48px;
 
 /**
  * Responsive breakpoints.

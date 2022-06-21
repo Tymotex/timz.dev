@@ -5,6 +5,7 @@ import {
 import { RiLinkedinLine as LinkedInIcon } from "react-icons/ri";
 import { SocialLinkData } from "src/components/Socials/Socials";
 import OgImage from "public/og-image.avif";
+import { Project } from "src/components/FeaturedProject/FeaturedProject";
 
 interface PortfolioData {
     meta: {
@@ -30,6 +31,14 @@ interface PortfolioData {
         elevatorPitch: React.ReactNode;
         // Social icons and links.
         socials: SocialLinkData[];
+    };
+    projects: {
+        featured: {
+            [k: string]: Project;
+        };
+        other: {
+            [k: string]: Project;
+        };
     };
 }
 
@@ -70,6 +79,22 @@ const portfolio: PortfolioData = {
                 url: "https://www.youtube.com/channel/UCIuefX9zQPux3lGCkDOdlIQ",
             },
         ],
+    },
+    projects: {
+        featured: {
+            tactileDs: {
+                title: "Tactile-DS",
+                headline:
+                    "An interactive data structure and algorithm visualiser.",
+                description: `Some words describing what the project is, what I built it with, how it was made, its purpose, etc.
+                I might then prompt the viewer to read more and see a project blog, if it exists.
+                Lorem ipsum, more text here, but keep it concise. Invite the reader to read more.`,
+                technologies: ["python", "javascript", "arduino"],
+                githubUrl: "https://github.com/Tymotex/Tactile-DS",
+                demoUrl: "https://data-structures.xyz/",
+            },
+        },
+        other: {},
     },
 };
 

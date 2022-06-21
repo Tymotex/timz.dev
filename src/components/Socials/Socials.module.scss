@@ -7,14 +7,14 @@
         padding: $spacing-xxs;
         height: 18px;
         width: 18px;
-        border: 2px solid rgba($dark-text-colour, 0.8);
+        border: 2px solid rgba($dark-text-colour, 0.5);
         background-color: rgba($primary-100, 0.3);
         border-radius: 50%;
         position: relative;
 
         svg {
             position: absolute;
-            color: $dark-text-colour;
+            color: rgba($dark-text-colour, 0.75);
             top: 50%;
             left: 50%;
             transform: translateX(-50%) translateY(-50%);

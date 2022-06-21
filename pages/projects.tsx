@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
 import type { NextPage } from "next";
-import Link from "next/link";
 import { useRouter } from "next/router";
-import { Fragment, useCallback } from "react";
-import Breadcrumbs from "src/components/Breadcrumbs";
+import { useCallback } from "react";
 import ChipGroup from "src/components/ChipGroup";
 import ContentContainer from "src/components/Container/ContentContainer";
 import SectionDivider from "src/components/Divider/SectionDivider";
 import { Window } from "src/components/Window";
+import styles from "./Projects.module.scss";
+import { FeaturedProject } from "src/components/FeaturedProject";
+import portfolio from "content/portfolio/portfolio";
 
 const Projects: NextPage = () => {
     const router = useRouter();
@@ -36,19 +37,26 @@ const Projects: NextPage = () => {
                         ]}
                     >
                         <SectionDivider text="Main Projects" />
+                        <p className={styles.description}>
+                            A few software engineering projects that I&apos;ve
+                            tinkered with in my spare time.
+                        </p>
                         <ContentContainer maxWidth={1200}>
-                            <Link href="/">Home</Link>
-                            <ChipGroup
-                                technologies={["python", "javascript", "ruby"]}
-                            />
+                            {[...Array(5)].map((_, i) => (
+                                <FeaturedProject
+                                    key={i}
+                                    position={i % 2 === 0 ? "left" : "right"}
+                                    project={
+                                        portfolio.projects.featured.tactileDs
+                                    }
+                                />
+                            ))}
                         </ContentContainer>
-
                         <SectionDivider text="Other Projects" />
                         <ContentContainer maxWidth={1200}>
-                            <Link href="/">Home</Link>
-                            <ChipGroup
-                                technologies={["python", "javascript", "ruby"]}
-                            />
+                            <p className={styles.description}>
+                                Some other projects that I&apos;ve worked on.
+                            </p>
                         </ContentContainer>
                     </Window>
                 </div>
