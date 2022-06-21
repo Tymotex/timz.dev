@@ -1,4 +1,5 @@
 @import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
 
 .button {
     // Remove default HTML button styling.
@@ -8,6 +9,7 @@
     font: inherit;
     cursor: pointer;
     outline: inherit;
+    text-align: center;
 
     // Vertically center text and icon.
     display: inline-flex;
@@ -15,8 +17,7 @@
     column-gap: 8px;
 
     // Custom styles.
-    padding: 0.64rem 0.7rem 0.6rem 0.7rem;
-    border-radius: 200px;
+    padding: 0.64rem 0.85rem 0.6rem 0.85rem;
     font-family: $code-font-stack;
     border: 1px solid;
     border-color: rgba($color: $dark-subtitle-colour, $alpha: 0.3);
@@ -43,11 +44,35 @@
     }
 
     &.tertiary {
+        border: none;
         text-decoration: underline;
         color: $primary;
+    }
+
+    &.callToAction {
+        background: $cool-grey-300;
+    }
+
+    .icon {
+        display: inline-flex;
+        align-items: center;
+
+        &.inset {
+            @include inset-shadow;
+            border-radius: 50%;
+            padding: 5px;
+            margin: -5px 0px;
+            width: 1rem;
+            height: 1rem;
+        }
     }
 }
 
 .linkButton {
     text-decoration: none;
+}
+
+.anchor {
+    text-decoration: none;
+    color: inherit;
 }

@@ -1,0 +1,78 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+$detailsPanelWidth: 35rem;
+
+.featuredProject {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: 0 0 $spacing-lg 0;
+
+    .details {
+        padding: $spacing-md $spacing-xxl $spacing-md $spacing-md;
+        box-sizing: border-box;
+        max-width: $detailsPanelWidth;
+        background: $cool-grey-200;
+        border-radius: 5px;
+        @include elevation-shadow;
+
+        .title {
+            font-family: $code-font-stack;
+            font-size: $font-size-xl;
+            color: $primary;
+            margin: $spacing-xs 0;
+        }
+
+        .headline {
+            font-family: $code-font-stack;
+            color: $secondary;
+        }
+
+        .description {
+            color: $cool-grey-900;
+            text-align: justify;
+        }
+
+        .buttonGroup {
+            display: flex;
+            justify-content: space-between;
+            margin-top: $spacing-sm;
+
+            .externalLinkButtons {
+                display: flex;
+                column-gap: $spacing-xxs;
+            }
+        }
+    }
+
+    .demo {
+        width: calc(100% - $detailsPanelWidth + $spacing-md);
+        margin-left: -$spacing-md;
+
+        .image {
+            width: 100%;
+            @include elevation-shadow-square-lg;
+            margin-top: $spacing-xl;
+        }
+    }
+
+    // Alternate the details panel and demo panel placement.
+    &:nth-child(2n) {
+        flex-direction: row-reverse;
+        .details {
+            padding: $spacing-md $spacing-md $spacing-md $spacing-xxl;
+            text-align: right;
+
+            .buttonGroup {
+                flex-direction: row-reverse;
+            }
+            .description {
+                text-align-last: right;
+            }
+        }
+        .demo {
+            margin-right: -$spacing-md;
+        }
+    }
+}
