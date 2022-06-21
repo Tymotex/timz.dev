@@ -2,38 +2,16 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 import { IoMdClose as CloseIcon } from "react-icons/io";
+import { OutsideClickHandler, useClickOutside } from "src/hooks/windowHooks";
 import Breadcrumbs from "../Breadcrumbs";
 import { Crumb } from "../Breadcrumbs/Breadcrumbs";
 import styles from "./Window.module.scss";
-
-type OutsideClickHandler = () => void;
 
 interface Props {
     children?: React.ReactNode;
     onClickOutside: OutsideClickHandler;
     crumbs?: Crumb[];
 }
-
-/**
- * Runs the given callback whenever the user clicks outside the component that
- * `ref` points to.
- */
-const useClickOutside = (
-    ref: React.RefObject<any>,
-    outsideClickHandler: OutsideClickHandler,
-) => {
-    useEffect(() => {
-        const handleClickOutside = (event: Event) => {
-            if (ref.current && !ref.current.contains(event.target))
-                outsideClickHandler();
-        };
-
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, [ref, outsideClickHandler]);
-};
 
 const Window: React.FC<Props> = ({ children, onClickOutside, crumbs }) => {
     const windowRef = useRef(null);

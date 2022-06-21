@@ -26,7 +26,6 @@
         align-items: flex-start;
         row-gap: $spacing-sm;
 
-        position: fixed;
         top: $central-container-top-offset;
         left: $spacing-xs;
         transform: translateY(-50%);
@@ -37,7 +36,6 @@
         column-gap: $spacing-xxs;
         align-items: flex-start;
 
-        position: absolute;
         left: 50%;
         transform: translateX(-50%);
         bottom: $spacing-sm;

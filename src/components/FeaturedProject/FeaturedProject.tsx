@@ -10,6 +10,7 @@ import {
 } from "react-icons/md";
 import { FiGithub as GitHubIcon } from "react-icons/fi";
 import Link from "next/link";
+import Image from "next/image";
 
 export interface Project {
     title: string;
@@ -65,7 +66,15 @@ const FeaturedProject: React.FC<Props> = ({ project, position = "left" }) => {
                 </div>
             </div>
             <div className={styles.demo}>
-                <img className={styles.image} src="/og-image.avif" />
+                {/* Alternative to `background: url(...)` that uses next/image.
+                    See: https://github.com/vercel/next.js/discussions/18357.*/}
+                <Image
+                    className={styles.image}
+                    src="/og-image.avif"
+                    layout="fill"
+                    objectFit="cover"
+                    alt={`${project.title} thumbnail`}
+                />
             </div>
         </div>
     );

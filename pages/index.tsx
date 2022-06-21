@@ -58,7 +58,7 @@ const Home: NextPage = () => {
             <AsideLinkGroup
                 links={[
                     { text: "Resume", url: "/documents/resume.pdf" },
-                    { text: "About", url: "https://google.com" },
+                    { text: "About", url: "/about" },
                     { text: "Contact", url: "/contact" },
                 ]}
             />

@@ -8,6 +8,7 @@ $detailsPanelWidth: 35rem;
     display: flex;
     flex-direction: row;
     margin: 0 0 $spacing-lg 0;
+    height: fit-content;
 
     .details {
         padding: $spacing-md $spacing-xxl $spacing-md $spacing-md;
@@ -49,12 +50,12 @@ $detailsPanelWidth: 35rem;
     .demo {
         width: calc(100% - $detailsPanelWidth + $spacing-md);
         margin-left: -$spacing-md;
+        position: relative;
+        max-height: fit-content;
+        @include elevation-shadow-square-lg;
 
-        .image {
-            width: 100%;
-            @include elevation-shadow-square-lg;
-            margin-top: $spacing-xl;
-        }
+        margin-top: $spacing-md;
+        height: 320px;
     }
 
     // Alternate the details panel and demo panel placement.
@@ -72,7 +73,7 @@ $detailsPanelWidth: 35rem;
             }
         }
         .demo {
-            margin-right: -$spacing-md;
+            margin-right: -$spacing-md - $spacing-xxs;
         }
     }
 }
