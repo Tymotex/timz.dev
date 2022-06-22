@@ -57,6 +57,7 @@ const portfolio: PortfolioData = {
             "a computer science student.",
             "a hobbyist fullstack developer.",
             "an aspiring software engineer.",
+            "a lifelong learner.",
         ],
         elevatorPitch: (
             <p>
