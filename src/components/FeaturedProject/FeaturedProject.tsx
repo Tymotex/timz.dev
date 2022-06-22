@@ -11,15 +11,7 @@ import {
 import { FiGithub as GitHubIcon } from "react-icons/fi";
 import Link from "next/link";
 import Image from "next/image";
-
-export interface Project {
-    title: string;
-    headline: string;
-    description: string;
-    technologies: Technology[];
-    githubUrl?: string;
-    demoUrl?: string;
-}
+import { Project } from "content/portfolio/portfolio";
 
 interface Props {
     project: Project;

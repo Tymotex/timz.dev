@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React from "react";
 import { Button } from "../Button";
-import { Project } from "../FeaturedProject/FeaturedProject";
 import styles from "./ProjectCard.module.scss";
 import { FiGithub as GithubIcon } from "react-icons/fi";
 import {
@@ -10,6 +9,7 @@ import {
 } from "react-icons/md";
 import ContentContainer from "../Container/ContentContainer";
 import { SubtleDivider } from "../Divider";
+import { Project } from "content/portfolio/portfolio";
 
 interface Props {
     project: Project;
@@ -19,7 +19,12 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
     return (
         <div className={styles.projectCard}>
             <div className={styles.thumbnail}>
-                <Image src="/og-image.avif" layout="fill" objectFit="cover" />
+                <Image
+                    src="/og-image.avif"
+                    alt={`${project.title} thumbnail`}
+                    layout="fill"
+                    objectFit="cover"
+                />
             </div>
             <div className={styles.details}>
                 <div className={styles.mainContent}>

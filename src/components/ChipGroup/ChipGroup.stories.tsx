@@ -19,5 +19,5 @@ const Template: ComponentStory<typeof ChipGroup> = (args) => (
 
 export const TechStack = Template.bind({});
 TechStack.args = {
-    technologies: ["python", "sql"],
+    technologies: ["python", "SQL"],
 };
