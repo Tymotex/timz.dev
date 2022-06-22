@@ -10,6 +10,7 @@ import styles from "./Projects.module.scss";
 import { FeaturedProject } from "src/components/FeaturedProject";
 import portfolio from "content/portfolio/portfolio";
 import { useRedirectHome } from "src/hooks/routerHooks";
+import { ProjectCard, ProjectCardDeck } from "src/components/ProjectCard";
 
 const Projects: NextPage = () => {
     const redirectToHome = useRedirectHome();
@@ -46,6 +47,7 @@ const Projects: NextPage = () => {
                             <p className={styles.description}>
                                 Some other projects that I&apos;ve worked on.
                             </p>
+                            <ProjectCardDeck />
                         </ContentContainer>
                     </Window>
                 </div>

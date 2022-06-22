@@ -20,3 +20,13 @@
     margin: 0;
     padding: 0;
 }
+
+@mixin clip-fade-text($maxHeight) {
+    max-height: $maxHeight;
+    overflow: hidden;
+    mask-image: linear-gradient(
+        to bottom,
+        black 40%,
+        transparent 95%
+    ); // See: https://stackoverflow.com/questions/22808040/fading-out-text-on-overflow-with-css-if-the-text-is-bigger-than-allowed
+}

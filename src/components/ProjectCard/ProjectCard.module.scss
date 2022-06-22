@@ -1,0 +1,74 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+.projectCardDeck {
+    position: relative;
+    display: flex;
+    margin: $spacing-sm auto;
+    flex-direction: row;
+    column-gap: $spacing-sm;
+    row-gap: $spacing-sm;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .projectCard {
+        background: $cool-grey-200;
+        height: 450px;
+        // width: 100%;
+        // max-width: 320px;
+        min-width: 320px;
+        max-width: 500px;
+        @include elevation-shadow;
+
+        .thumbnail {
+            height: 200px;
+            position: relative;
+        }
+
+        .details {
+            .mainContent {
+                padding: $spacing-sm $spacing-sm $spacing-xxs $spacing-sm;
+                .title {
+                    text-align: center;
+                    font-family: $code-font-stack;
+                    margin: 0;
+                }
+
+                .description {
+                    @include clip-fade-text(75px);
+                }
+
+                .buttonGroup {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    row-gap: $spacing-xs;
+
+                    .externalLinksGroup {
+                        display: inline-flex;
+                        flex-direction: row;
+                        align-items: center;
+                        column-gap: $spacing-xs;
+                    }
+                }
+            }
+
+            .technologyList {
+                display: flex;
+                flex-direction: row;
+
+                @include reset-ul-styles;
+            }
+        }
+        .builtWith {
+            width: calc(100% - $spacing-sm - $spacing-sm);
+            color: $cool-grey-700;
+            display: block;
+            padding: $spacing-xxs $spacing-sm;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+}
