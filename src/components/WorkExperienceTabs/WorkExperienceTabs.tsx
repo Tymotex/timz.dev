@@ -34,17 +34,23 @@ const WorkExperienceTabs: React.FC<Props> = ({ workExperiences }) => {
                             <AnimatedTab
                                 index={i}
                                 key={work.company + work.jobTitle}
+                                popupImageSrc={`/icons/company/${work.company.toLowerCase()}.png`}
                             >
                                 {work.company} ({work.employmentType})
                             </AnimatedTab>
                         ))}
                 </TabList>
 
-                <TabPanels>
+                <TabPanels className={styles.tabPanels}>
                     {workExperiences &&
                         workExperiences.map((work) => (
                             <TabPanel key={work.company + work.jobTitle}>
-                                <h2>{work.jobTitle}</h2>
+                                <h2 className={styles.jobTitle}>
+                                    {work.jobTitle}
+                                </h2>
+                                <p className={styles.employmentPeriod}>
+                                    {work.from} &ndash; {work.to}
+                                </p>
                                 {work.description}
                             </TabPanel>
                         ))}

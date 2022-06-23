@@ -1,5 +1,6 @@
 import { useRect } from "@reach/rect";
 import { Tab, useTabsContext } from "@reach/tabs";
+import Image from "next/image";
 import React, { useContext } from "react";
 import { useIsomorphicLayoutEffect } from "src/hooks/windowHooks";
 import { AnimatedContext, HORIZONTAL_PADDING } from "./AnimatedTabGroup";
@@ -7,11 +8,17 @@ import styles from "./AnimatedTabs.module.scss";
 
 interface Props {
     index: number;
-    style?: React.CSSProperties;
     children: React.ReactNode;
+    popupImageSrc?: string;
+    style?: React.CSSProperties;
 }
 
-const AnimatedTab: React.FC<Props> = ({ index, style, children }) => {
+const AnimatedTab: React.FC<Props> = ({
+    index,
+    style,
+    popupImageSrc,
+    children,
+}) => {
     // get the currently selected index from useTabsContext
     const { selectedIndex } = useTabsContext();
     const isSelected = selectedIndex === index;
@@ -31,16 +38,38 @@ const AnimatedTab: React.FC<Props> = ({ index, style, children }) => {
     }, [isSelected, rect, animatedContext?.setActiveRect]);
 
     return (
-        <Tab
-            ref={ref}
-            className={`${styles.tab} ${isSelected && styles.currentTab}`}
-            style={{
-                ...style,
-                border: "none",
-            }}
-        >
-            {children}
-        </Tab>
+        <>
+            {popupImageSrc && (
+                <div
+                    className={`${styles.companyLogo} ${
+                        !isSelected && styles.hidden
+                    }`}
+                    style={{
+                        position: "absolute",
+                        height: rect && rect.height,
+                        width: 100,
+                        left: -120,
+                        top: rect && rect.height * index,
+                    }}
+                >
+                    <Image
+                        src={popupImageSrc}
+                        layout="fill"
+                        objectFit="contain"
+                    />
+                </div>
+            )}
+            <Tab
+                ref={ref}
+                className={`${styles.tab} ${isSelected && styles.currentTab}`}
+                style={{
+                    ...style,
+                    border: "none",
+                }}
+            >
+                {children}
+            </Tab>
+        </>
     );
 };
 

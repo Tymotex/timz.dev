@@ -1,12 +1,12 @@
 @import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
 
 $slider-track: 2px solid rgba(152, 152, 152, 0.284);
 $tab-switch-duration-ease: 300ms ease;
 $tab-button-min-width: 220px;
+$tab-panel-max-height: 300px;
 
 .animatedTabGroup {
-    overflow: hidden;
-
     .tabList {
         min-width: 200px;
         display: flex;
@@ -23,6 +23,7 @@ $tab-button-min-width: 220px;
             left $tab-switch-duration-ease;
     }
     .tab {
+        position: relative;
         font-family: $code-font-stack;
         padding: $spacing-xs;
         color: $dark-text-colour;
@@ -46,6 +47,9 @@ $tab-button-min-width: 220px;
     .animatedTabGroup {
         display: flex;
         column-gap: $spacing-md;
+        margin-left: 130px;
+        margin-right: 40px;
+        height: $tab-panel-max-height;
 
         .tabList {
             min-width: $tab-button-min-width;
@@ -55,16 +59,46 @@ $tab-button-min-width: 220px;
             height: fit-content;
 
             overflow: auto;
+
+            .companyLogo {
+                transition: all $tab-switch-duration-ease;
+                opacity: 1;
+
+                &.hidden {
+                    opacity: 0;
+                    visibility: hidden;
+                }
+            }
         }
 
         .currentTabHighlighter {
             border-radius: 10px;
+        }
+
+        .tabPanels {
+            background: $cool-grey-400;
+            padding: $spacing-md;
+            height: fit-content;
+            transition: all 1s ease;
+            @include elevation-shadow-square;
+
+            .jobTitle {
+                font-family: $code-font-stack;
+                margin: 0;
+            }
+
+            .employmentPeriod {
+                margin-top: $spacing-xxs;
+                color: $cool-grey-800;
+            }
         }
     }
 }
 
 @media screen and (max-width: $lg) {
     .animatedTabGroup {
+        overflow: hidden;
+
         .tabList {
             width: 100%;
             flex-direction: row;
@@ -72,6 +106,7 @@ $tab-button-min-width: 220px;
             border-top: $slider-track;
 
             transform: rotateX(180deg);
+            overflow-y: hidden;
 
             .currentTabHighlighter {
                 position: absolute;
@@ -81,6 +116,10 @@ $tab-button-min-width: 220px;
 
             .tab {
                 transform: rotateX(180deg);
+            }
+
+            .companyLogo {
+                display: none;
             }
         }
     }
