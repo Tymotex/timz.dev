@@ -79,7 +79,6 @@ $tab-panel-max-height: 300px;
             background: $cool-grey-400;
             padding: $spacing-md;
             height: fit-content;
-            transition: all 1s ease;
             @include elevation-shadow-square;
 
             .jobTitle {

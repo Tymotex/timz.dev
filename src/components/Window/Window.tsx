@@ -57,7 +57,6 @@ const Window: React.FC<Props> = ({ children, onClickOutside, crumbs }) => {
                     />
                 </Link>
                 {children}
-                <div className={styles.bottomGap} />
             </motion.div>
         </>
     );

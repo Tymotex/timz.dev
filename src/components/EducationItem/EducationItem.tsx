@@ -1,5 +1,7 @@
 import { Education } from "content/portfolio/portfolio";
+import Image from "next/image";
 import React from "react";
+import styles from "./EducationItem.module.scss";
 
 interface Props {
     education: Education;
@@ -8,13 +10,30 @@ interface Props {
 const Education: React.FC<Props> = ({ education }) => {
     return (
         <>
-            <h2>
-                {education.degree} at {education.university}
-            </h2>
-            <p>
-                {education.from} - {education.to}
-            </p>
-            {education.description}
+            <div className={styles.header}>
+                <div className={styles.institutionLogo}>
+                    <Image
+                        src="/icons/company/unsw.png"
+                        layout="fill"
+                        objectFit="contain"
+                    />
+                </div>
+                <div className={styles.details}>
+                    <h2 className={styles.title}>
+                        <strong className={styles.degree}>
+                            {education.degree}
+                        </strong>{" "}
+                        @{" "}
+                        <em className={styles.institution}>
+                            {education.university}
+                        </em>
+                    </h2>
+                    <p className={styles.enrolmentPeriod}>
+                        {education.from} - {education.to}
+                    </p>
+                </div>
+            </div>
+            <div className={styles.description}>{education.description}</div>
         </>
     );
 };

@@ -6,6 +6,7 @@ import { RiLinkedinLine as LinkedInIcon } from "react-icons/ri";
 import { SocialLinkData } from "src/components/Socials/Socials";
 import { Technology } from "src/components/ChipGroup/technologies";
 import OgImage from "public/og-image.avif";
+import UnorderedList from "src/components/UnorderedList";
 
 interface PortfolioData {
     meta: {
@@ -142,9 +143,9 @@ const portfolio: PortfolioData = {
             technologies: ["c++", "spanner", "bash", "SQL", "googleTest"],
             description: (
                 <>
-                    <ul>
+                    <UnorderedList>
                         <li>Item 1</li>
-                    </ul>
+                    </UnorderedList>
                     <p>
                         Laboris aliquip occaecat aliqua dolore ea aliquip
                         commodo eu. Ut aliqua exercitation laborum culpa.
@@ -240,7 +241,7 @@ const portfolio: PortfolioData = {
         to: "Dec 2022",
         description: (
             <>
-                <ul>
+                <UnorderedList>
                     <li>High disctinction average mark.</li>
                     <li>
                         Project team lead in the Computer Science & Engineering
@@ -248,7 +249,7 @@ const portfolio: PortfolioData = {
                     </li>
                     <li>
                         Academic Awards:
-                        <ul>
+                        <UnorderedList>
                             <li>
                                 Atlassian 1st place prize for achieving the
                                 highest mark in COMP2521 (Data Structures and
@@ -261,9 +262,9 @@ const portfolio: PortfolioData = {
                                 students.
                             </li>
                             <li>Faculty of Engineering Dean’s Award</li>
-                        </ul>
+                        </UnorderedList>
                     </li>
-                </ul>
+                </UnorderedList>
             </>
         ),
     },

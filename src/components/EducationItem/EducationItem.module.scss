@@ -1,0 +1,53 @@
+@import "../../../styles/variables.scss";
+
+.header {
+    .institutionLogo {
+        position: relative;
+        width: 100px;
+        height: 60px;
+        padding-right: 100px;
+        margin-right: 20px;
+    }
+    .details {
+        .title {
+            font-family: $code-font-stack;
+            font-size: $font-size-lg;
+            color: $cool-grey-600;
+            margin-bottom: 0;
+
+            .degree {
+                color: $primary;
+            }
+            .institution {
+                color: $secondary;
+            }
+        }
+        .enrolmentPeriod {
+            font-family: $code-font-stack;
+            font-size: $font-size-sm;
+        }
+    }
+}
+
+.description {
+    margin-left: $spacing-md;
+}
+
+@media screen and (min-width: $lg) {
+    .header {
+        display: flex;
+        align-items: center;
+
+        .institutionLogo {
+            border-right: 2px solid $cool-grey-600;
+        }
+    }
+}
+
+@media screen and (max-width: $lg) {
+    .header {
+        .details {
+            margin-left: $spacing-md;
+        }
+    }
+}

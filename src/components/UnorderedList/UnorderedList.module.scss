@@ -1,0 +1,16 @@
+@import "../../../styles/variables.scss";
+
+.unorderedList {
+    position: relative;
+    list-style: none;
+    padding-left: 1.5em;
+
+    li {
+        margin-top: $spacing-xxs;
+        &:before {
+            content: "►";
+            position: absolute;
+            left: 0;
+        }
+    }
+}

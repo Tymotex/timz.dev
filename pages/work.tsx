@@ -1,6 +1,7 @@
 import portfolio from "content/portfolio/portfolio";
 import { motion } from "framer-motion";
 import type { NextPage } from "next";
+import Image from "next/image";
 import ContentContainer from "src/components/Container/ContentContainer";
 import { SectionDivider } from "src/components/Divider";
 import { EducationItem } from "src/components/EducationItem";
