@@ -9,14 +9,17 @@ import styles from "./AnimatedTabs.module.scss";
 interface Props {
     index: number;
     children: React.ReactNode;
-    popupImageSrc?: string;
+    popupImage?: {
+        src: string;
+        alt: string;
+    };
     style?: React.CSSProperties;
 }
 
 const AnimatedTab: React.FC<Props> = ({
     index,
     style,
-    popupImageSrc,
+    popupImage,
     children,
 }) => {
     // get the currently selected index from useTabsContext
@@ -39,7 +42,7 @@ const AnimatedTab: React.FC<Props> = ({
 
     return (
         <>
-            {popupImageSrc && (
+            {popupImage && (
                 <div
                     className={`${styles.companyLogo} ${
                         !isSelected && styles.hidden
@@ -53,7 +56,8 @@ const AnimatedTab: React.FC<Props> = ({
                     }}
                 >
                     <Image
-                        src={popupImageSrc}
+                        src={popupImage.src}
+                        alt={popupImage.alt}
                         layout="fill"
                         objectFit="contain"
                     />

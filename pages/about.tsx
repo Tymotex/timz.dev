@@ -1,3 +1,4 @@
+import portfolio from "content/portfolio/portfolio";
 import { motion } from "framer-motion";
 import type { NextPage } from "next";
 import ContentContainer from "src/components/Container/ContentContainer";
@@ -20,9 +21,7 @@ const About: NextPage = () => {
                         ]}
                     >
                         <SectionDivider text="Who am I?" />
-                        <ContentContainer maxWidth={1200}>
-                            <p>Hello world</p>
-                        </ContentContainer>
+                        {portfolio.profile.aboutMe}
                     </Window>
                 </div>
             </motion.div>

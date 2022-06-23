@@ -1,0 +1,15 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: $spacing-xs;
+    row-gap: $spacing-xs;
+
+    .imageContainer {
+        position: relative;
+        @include elevation-shadow;
+    }
+}

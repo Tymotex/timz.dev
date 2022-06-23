@@ -34,7 +34,9 @@ const Breadcrumbs: React.FC<Props> = ({
                                         isDarkMode ? styles.dark : styles.light
                                     }
                                     aria-current={
-                                        i === crumbs.length - 1 && "location"
+                                        i === crumbs.length - 1
+                                            ? "location"
+                                            : "false"
                                     }
                                 >
                                     {crumb.title}

@@ -34,7 +34,10 @@ const WorkExperienceTabs: React.FC<Props> = ({ workExperiences }) => {
                             <AnimatedTab
                                 index={i}
                                 key={work.company + work.jobTitle}
-                                popupImageSrc={`/icons/company/${work.company.toLowerCase()}.png`}
+                                popupImage={{
+                                    src: `/icons/company/${work.company.toLowerCase()}.png`,
+                                    alt: `${work.company} logo`,
+                                }}
                             >
                                 {work.company} ({work.employmentType})
                             </AnimatedTab>

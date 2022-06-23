@@ -7,6 +7,10 @@ import { SocialLinkData } from "src/components/Socials/Socials";
 import { Technology } from "src/components/ChipGroup/technologies";
 import OgImage from "public/og-image.avif";
 import UnorderedList from "src/components/UnorderedList";
+import Image from "next/image";
+import { ImageGallery } from "src/components/ImageGallery";
+import { SectionDivider } from "src/components/Divider";
+import ContentContainer from "src/components/Container/ContentContainer";
 
 interface PortfolioData {
     meta: {
@@ -32,6 +36,7 @@ interface PortfolioData {
         elevatorPitch: React.ReactNode;
         // Social icons and links.
         socials: SocialLinkData[];
+        aboutMe: React.ReactNode;
     };
     projects: {
         featured: {
@@ -115,6 +120,70 @@ const portfolio: PortfolioData = {
                 url: "https://www.youtube.com/channel/UCIuefX9zQPux3lGCkDOdlIQ",
             },
         ],
+        aboutMe: (
+            <>
+                <ContentContainer maxWidth={1200} padding={"0 32px 32px 32px"}>
+                    <p>
+                        A brief description about me. Lorem ipsum. Nunc eu nulla
+                        in nisl tincidunt porta. Etiam sed justo feugiat,
+                        tincidunt ante non, faucibus lacus. Vestibulum bibendum
+                        lacinia ligula vitae vulputate.
+                    </p>
+                    <p>
+                        Rem ipsum. Nunc eu nulla in nisl tincidunt porta. Etiam
+                        sed justo feugiat, tincidunt ante non, faucibus lacus.
+                        Vestibulum bibendum lacinia ligula vitae.
+                    </p>
+
+                    <h2>My Programming Battlestation</h2>
+                    <p>Where I churn out buggy software:</p>
+                    <ImageGallery
+                        images={[
+                            {
+                                src: "/images/profile/battlestation-1.jpg",
+                                alt: "Blue battlestation",
+                            },
+                            {
+                                src: "/images/profile/battlestation-2.jpg",
+                                alt: "Red battlestation",
+                            },
+                        ]}
+                        width={300}
+                        height={200}
+                    />
+                </ContentContainer>
+                <SectionDivider text="Hobbies & Interests" />
+                <ContentContainer maxWidth={1200} padding={"0 32px 32px 32px"}>
+                    <p>What I enjoy outside of programming.</p>
+                    <UnorderedList>
+                        <li>Game development & modding.</li>
+                        <li>Guitar &ndash; mainly fingerstyle on acoustic.</li>
+                        <li>
+                            Powerlifting, even with my frail programmer arms.
+                        </li>
+                        <li>
+                            Gardening (I have a secret fantasy of becoming a
+                            nomadic radish farmer).
+                        </li>
+                        <li>Origami.</li>
+                    </UnorderedList>
+                    <ImageGallery
+                        images={[
+                            {
+                                src: "/images/profile/origami-1.png",
+                                alt: "Origami rose",
+                            },
+                            {
+                                src: "/images/profile/plants-1.jpg",
+                                alt: "Succulents",
+                            },
+                        ]}
+                        width={250}
+                        height={150}
+                    />
+                </ContentContainer>
+            </>
+        ),
     },
     projects: {
         featured: {

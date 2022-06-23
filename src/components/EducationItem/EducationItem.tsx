@@ -16,6 +16,7 @@ const Education: React.FC<Props> = ({ education }) => {
                         src="/icons/company/unsw.png"
                         layout="fill"
                         objectFit="contain"
+                        alt="Institution logo"
                     />
                 </div>
                 <div className={styles.details}>
