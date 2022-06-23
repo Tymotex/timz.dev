@@ -1,0 +1,87 @@
+@import "../../../styles/variables.scss";
+
+$slider-track: 2px solid rgba(152, 152, 152, 0.284);
+$tab-switch-duration-ease: 300ms ease;
+$tab-button-min-width: 220px;
+
+.animatedTabGroup {
+    overflow: hidden;
+
+    .tabList {
+        min-width: 200px;
+        display: flex;
+        flex-direction: column;
+        border-left: $slider-track;
+
+        overflow: auto;
+    }
+    .currentTabHighlighter {
+        position: absolute;
+        width: 2px;
+        background: $primary;
+        transition: top $tab-switch-duration-ease,
+            left $tab-switch-duration-ease;
+    }
+    .tab {
+        font-family: $code-font-stack;
+        padding: $spacing-xs;
+        color: $dark-text-colour;
+        background: none;
+        transition: background $tab-switch-duration-ease;
+        user-select: none;
+        cursor: pointer;
+        min-width: $tab-button-min-width;
+
+        &.currentTab {
+            background: rgba($cool-grey-500, 0.4);
+        }
+
+        &:hover:not(.currentTab) {
+            background: rgba($cool-grey-500, 0.2);
+        }
+    }
+}
+
+@media screen and (min-width: $lg) {
+    .animatedTabGroup {
+        display: flex;
+        column-gap: $spacing-md;
+
+        .tabList {
+            min-width: $tab-button-min-width;
+            display: flex;
+            flex-direction: column;
+            border-left: $slider-track;
+            height: fit-content;
+
+            overflow: auto;
+        }
+
+        .currentTabHighlighter {
+            border-radius: 10px;
+        }
+    }
+}
+
+@media screen and (max-width: $lg) {
+    .animatedTabGroup {
+        .tabList {
+            width: 100%;
+            flex-direction: row;
+            border-left: none;
+            border-top: $slider-track;
+
+            transform: rotateX(180deg);
+
+            .currentTabHighlighter {
+                position: absolute;
+                height: 2px !important;
+                background: $primary;
+            }
+
+            .tab {
+                transform: rotateX(180deg);
+            }
+        }
+    }
+}

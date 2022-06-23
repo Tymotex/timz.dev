@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Socials.module.scss";
 import { motion } from "framer-motion";
+import { useBreakpointTrigger } from "src/hooks/windowHooks";
 
 export interface SocialLinkData {
     icon: React.ReactNode;
@@ -11,27 +12,6 @@ interface Props {
     socials: SocialLinkData[];
     position?: "fixed" | "absolute";
 }
-
-const useBreakpointTrigger = (breakpoint: number): boolean => {
-    const [width, setWidth] = useState<number>(0);
-
-    // Initialise the width. Note: we must do this in `useEffect` since window
-    // is undefined on the server side.
-    useEffect(() => {
-        setWidth(window.innerWidth);
-    }, []);
-
-    //
-    useEffect(() => {
-        function handleResize() {
-            setWidth(window.innerWidth);
-        }
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, [width]);
-
-    return width <= breakpoint;
-};
 
 const Socials: React.FC<Props> = ({ socials, position = "fixed" }) => {
     // Responsive re-positioning across the standard 'lg' breakpoint (992px).

@@ -4,6 +4,7 @@
 .window {
     background: $dark-background-colour;
     color: $dark-text-colour;
+    overflow-x: hidden;
     @include elevation-shadow;
 
     // Shape the window.

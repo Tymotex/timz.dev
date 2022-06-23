@@ -14,14 +14,15 @@ html {
 
     ::-webkit-scrollbar {
         width: 5px;
+        height: 3px;
     }
 
     ::-webkit-scrollbar-track {
-        background: $dark-background-colour;
+        background: $cool-grey-100;
     }
 
     ::-webkit-scrollbar-thumb {
-        background-color: $tertiary;
+        background-color: $secondary;
     }
 
     body {
