@@ -143,16 +143,28 @@ export const getBlog = async (
     category: string,
     slug: string,
 ): Promise<Blog> => {
-    const targetBlogPath = path.join(
-        process.cwd(),
-        `content/blogs/${category}/${slug}.mdx`,
-    );
+    const dirPath = path.join(process.cwd(), `content/blogs/${category}`);
+    const targetBlogPath = `${dirPath}/${slug}.mdx`;
+
+    if (!fs.existsSync(dirPath)) {
+        signale.error(
+            `Directory for category '${category}' does not exist at path '${dirPath}'.`,
+        );
+        return;
+    }
+    if (!fs.existsSync(targetBlogPath)) {
+        signale.error(`Path for blog '${targetBlogPath}' does not exist.`);
+        return;
+    }
 
     signale.start(`Generating blog '${targetBlogPath}'`);
 
     const rawSource = fs.readFileSync(targetBlogPath, "utf8");
 
     const { code, frontmatter } = await makeMDXBundle(rawSource);
+    if (!code || typeof code === "undefined") {
+        signale.error(`Fucked up on ${targetBlogPath}`);
+    }
     const blog = {
         slug,
         frontmatter: {

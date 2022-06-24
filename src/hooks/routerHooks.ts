@@ -35,6 +35,17 @@ export const useTransitionFix = () => {
     }, []);
 
     useEffect(() => {
-        Router.router?.push(Router.router?.pathname);
+        // Doing `router.push(router.pathname)` causes an href invalidation
+        // error. The workaround for this is do `router.push(router.asPath)`,
+        // however this causes infinite redirection on single-level non-existent
+        // paths like `/hello-world`. The workaround of the workaround is to
+        // conditionally use `pathname` or `asPath` based on URL nest level.
+        //
+        // See: https://github.com/vercel/next.js/discussions/33243
+        const path = Router.router?.pathname || "";
+        const nestLevel = path.split("/").length - 1;
+        Router.router?.push(
+            nestLevel === 1 ? Router.router?.pathname : Router.router?.asPath,
+        );
     }, []);
 };

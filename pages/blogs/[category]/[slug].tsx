@@ -4,6 +4,7 @@ import { Blog, getAllBlogs, getBlog } from "scripts/blogs";
 import { getMDXComponent } from "mdx-bundler/client";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
+import { ErrorPage } from "src/components/Error";
 
 export const getStaticProps: GetStaticProps = async (context) => {
     if (context === undefined || context.params === undefined)
@@ -11,9 +12,10 @@ export const getStaticProps: GetStaticProps = async (context) => {
     const slug = context.params.slug as string;
     const category = context.params.category as string;
     const blog = await getBlog(category, slug);
+
     return {
         props: {
-            blog: blog,
+            blog: blog || null,
         },
     };
 };
@@ -26,7 +28,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
     const allBlogs = await getAllBlogs();
     return {
         paths: allBlogs.map((blog) => ({
-            params: { category: blog.category, slug: blog.slug },
+            // params: { category: blog.category, slug: blog.slug },
+            params: { category: "blogs", slug: "hello-world" },
         })),
         fallback: true,
     };
@@ -37,11 +40,22 @@ interface Props {
 }
 
 const BlogIndex: NextPage<Props> = ({ blog }) => {
-    const Blog = useMemo(() => getMDXComponent(blog.code), [blog]);
     const router = useRouter();
     const { category, slug } = router.query;
+    const Blog = useMemo(
+        () => blog && typeof blog !== "undefined" && getMDXComponent(blog.code),
+        [blog],
+    );
 
-    // TODO: Test this fallback UI and substitute for a loader.
+    // TODO: Test these fallback components and substitute for a loader and error.
+    if (!blog)
+        return (
+            <ErrorPage
+                errorMessage={`There's nothing to see at '${category}/${slug}'.`}
+                homeUrl="/blogs"
+                errorCode="404"
+            />
+        );
     if (router.isFallback) return <>Loading...</>;
 
     return (
@@ -60,7 +74,7 @@ const BlogIndex: NextPage<Props> = ({ blog }) => {
             }}
         >
             <h3>{blog.frontmatter.title}</h3>
-            <Blog />
+            {Blog && <Blog />}
         </motion.div>
     );
 };

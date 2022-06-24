@@ -1,0 +1,12 @@
+.errorPage {
+    height: 100vh;
+    width: 100vw;
+    position: static;
+    top: 0;
+    left: 0;
+
+    .errorContainer {
+        z-index: 10;
+        text-align: center;
+    }
+}
