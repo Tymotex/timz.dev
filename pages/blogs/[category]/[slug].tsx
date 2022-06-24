@@ -3,12 +3,14 @@ import { Fragment, useMemo } from "react";
 import { Blog, getAllBlogs, getBlog } from "scripts/blogs";
 import { getMDXComponent } from "mdx-bundler/client";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 
 export const getStaticProps: GetStaticProps = async (context) => {
     if (context === undefined || context.params === undefined)
         throw new Error("Context object isn't populated with expected fields.");
     const slug = context.params.slug as string;
-    const blog = await getBlog(slug);
+    const category = context.params.category as string;
+    const blog = await getBlog(category, slug);
     return {
         props: {
             blog: blog,
@@ -24,17 +26,23 @@ export const getStaticPaths: GetStaticPaths = async () => {
     const allBlogs = await getAllBlogs();
     return {
         paths: allBlogs.map((blog) => ({
-            params: { slug: blog.slug },
+            params: { category: blog.category, slug: blog.slug },
         })),
-        fallback: false,
+        fallback: true,
     };
 };
 
 interface Props {
     blog: Blog;
 }
+
 const BlogIndex: NextPage<Props> = ({ blog }) => {
     const Blog = useMemo(() => getMDXComponent(blog.code), [blog]);
+    const router = useRouter();
+    const { category, slug } = router.query;
+
+    // TODO: Test this fallback UI and substitute for a loader.
+    if (router.isFallback) return <>Loading...</>;
 
     return (
         <motion.div

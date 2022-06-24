@@ -26,7 +26,9 @@ const BlogIndex: NextPage<Props> = ({ blogs }) => {
             <ul>
                 {blogs.map((blogInfo) => (
                     <li key={blogInfo.slug}>
-                        <Link href={`/blogs/${blogInfo.slug}`}>
+                        <Link
+                            href={`/blogs/${blogInfo.category}/${blogInfo.slug}`}
+                        >
                             {`${blogInfo.slug} - ${blogInfo.frontmatter.title}`}
                         </Link>
                         ({blogInfo.frontmatter.date})

@@ -1,0 +1,20 @@
+---
+title: Hex Editors
+description: A hex editor, in general, is just a program that can read any file and display each byte of its contents.
+published: true
+date: 2022-06-25
+---
+
+A *hex editor*, in general, is just a program that can read any file and display each byte of its contents. This means that you can inspect the metadata of files, for example, and inspect files that are corrupted. 
+
+* Hexadecimal is just the standard number system used to represent binary data. Each hexadecimal character represents 4 bits, and 2 will make up a single byte.
+* Hex editors and hexdumps usually look like this:
+    
+
+![hexdump.png](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/37b2dfdb-2900-498d-a856-ead33e653a8c/hexdump.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220410%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220410T014315Z&X-Amz-Expires=86400&X-Amz-Signature=3aeab0ca8eea6f0ed525299de49d3759b108b517ca35ad57625189bd848f82ab&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22hexdump.png%22&x-id=GetObject)
+
+* This output was produced by running `hexdump -C <file>`.
+* Each row of output shows 16 bytes of the file.
+* Often, the human-readable textual interpretation of the of the file’s bytes is meaningless for most files. If you only what the text contents, use `strings <file>`.
+
+Some good hex editors for CTFs that are available for Linux distributions include [ghex](https://wiki.gnome.org/Apps/Ghex) which gives you a GUI or [xxd](https://linux.die.net/man/1/xxd) if you prefer (or need) just a CLI. I frequently use the [Hex Editor](https://marketplace.visualstudio.com/items?itemName=ms-vscode.hexeditor) extension for VSCode, my main editor. It’s not as advanced as standalone hex editors, however it’s super convenient and allows you to quickly analyse and edit the bytes of a file in the same editor where you’re writing all your scripts to solve the CTF.

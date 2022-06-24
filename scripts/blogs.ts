@@ -18,6 +18,7 @@ export interface BlogFrontmatter {
 
 export interface Blog {
     frontmatter: BlogFrontmatter;
+    category: string;
     slug: string;
     code: string;
 }
@@ -65,6 +66,26 @@ const makeMDXBundle = async (rawSource: string) => {
     });
 };
 
+// Recursively traverses and returns a list of all files at arbitrary depth
+// from the given path.
+const walkSync = (startPath: string) => {
+    const getFilesRecursively = (directory: string, files: string[]) => {
+        const filesInDirectory = fs.readdirSync(directory);
+        for (const file of filesInDirectory) {
+            const absolute = path.join(directory, file);
+            if (fs.statSync(absolute).isDirectory()) {
+                getFilesRecursively(absolute, files);
+            } else {
+                files.push(absolute);
+            }
+        }
+    };
+
+    let files: string[] = [];
+    getFilesRecursively(startPath, files);
+    return files;
+};
+
 /**
  * Retrieves display data for all blogs, useful for rendering the blog index
  * page.
@@ -73,15 +94,16 @@ export const getAllBlogs = async (): Promise<BlogInfo[]> => {
     const blogsDir = path.join(process.cwd(), "content/blogs");
     signale.start(`Sourcing blogs from '${blogsDir}'`);
 
-    const filenames = fs.readdirSync(blogsDir);
+    const filenames = walkSync(blogsDir);
     const allBlogs = await Promise.all(
         filenames
             .filter((filename) => path.extname(filename) === ".mdx")
             .map(async (filename) => {
-                const absPath = path.join(blogsDir, filename);
-                const slug = filename.replace(/\.mdx$/, "");
+                const basename = path.basename(filename);
+                const category = path.basename(path.dirname(filename));
+                const slug = basename.replace(/\.mdx$/, "");
 
-                const rawSource = fs.readFileSync(absPath, "utf8");
+                const rawSource = fs.readFileSync(filename, "utf8");
                 const matterResult = matter(rawSource);
                 const frontmatter = matterResult.data;
 
@@ -92,9 +114,10 @@ export const getAllBlogs = async (): Promise<BlogInfo[]> => {
                 // See: https://github.com/vercel/next.js/issues/13209#issuecomment-633149650.
                 const blog = {
                     slug,
+                    category,
                     frontmatter: {
                         ...frontmatter,
-                        date: frontmatter.date.toString(),
+                        date: frontmatter?.date?.toString(),
                     },
                 } as BlogInfo;
 
@@ -116,10 +139,13 @@ export const getAllBlogs = async (): Promise<BlogInfo[]> => {
  *
  * @param string slug   The unique filename identifier for the blog post.
  */
-export const getBlog = async (slug: string): Promise<Blog> => {
+export const getBlog = async (
+    category: string,
+    slug: string,
+): Promise<Blog> => {
     const targetBlogPath = path.join(
         process.cwd(),
-        `content/blogs/${slug}.mdx`,
+        `content/blogs/${category}/${slug}.mdx`,
     );
 
     signale.start(`Generating blog '${targetBlogPath}'`);
