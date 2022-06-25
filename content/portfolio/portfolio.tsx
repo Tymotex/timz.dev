@@ -11,6 +11,7 @@ import Image from "next/image";
 import { ImageGallery } from "src/components/ImageGallery";
 import { SectionDivider } from "src/components/Divider";
 import ContentContainer from "src/components/Container/ContentContainer";
+import AwardList from "src/components/Education/AwardList";
 
 interface PortfolioData {
     meta: {
@@ -82,6 +83,12 @@ export interface Education {
     description: React.ReactNode;
 }
 
+export interface Award {
+    title: string;
+    description?: string;
+    date?: string;
+}
+
 const portfolio: PortfolioData = {
     meta: {
         mainTitle: "Tim Zhang - Developer Portfolio and Blog",
@@ -134,7 +141,36 @@ const portfolio: PortfolioData = {
                         sed justo feugiat, tincidunt ante non, faucibus lacus.
                         Vestibulum bibendum lacinia ligula vitae.
                     </p>
-
+                </ContentContainer>
+                <SectionDivider text="Hobbies & Interests" />
+                <ContentContainer maxWidth={1200} padding={"0 32px 32px 32px"}>
+                    <p>What I enjoy outside of programming.</p>
+                    <UnorderedList>
+                        <li>Game development & modding.</li>
+                        <li>Guitar &ndash; mainly fingerstyle on acoustic.</li>
+                        <li>
+                            Powerlifting, even with my frail programmer arms.
+                        </li>
+                        <li>
+                            Gardening (I have a secret fantasy of becoming a
+                            nomadic radish farmer).
+                        </li>
+                        <li>Origami.</li>
+                    </UnorderedList>
+                    {/* <ImageGallery
+                        images={[
+                            {
+                                src: "/images/profile/origami-1.png",
+                                alt: "Origami rose",
+                            },
+                            {
+                                src: "/images/profile/plants-1.jpg",
+                                alt: "Succulents",
+                            },
+                        ]}
+                        width={250}
+                        height={150}
+                    /> */}
                     <h2>My Programming Battlestation</h2>
                     <p>Where I churn out buggy software:</p>
                     <ImageGallery
@@ -152,36 +188,6 @@ const portfolio: PortfolioData = {
                         height={200}
                     />
                 </ContentContainer>
-                <SectionDivider text="Hobbies & Interests" />
-                <ContentContainer maxWidth={1200} padding={"0 32px 32px 32px"}>
-                    <p>What I enjoy outside of programming.</p>
-                    <UnorderedList>
-                        <li>Game development & modding.</li>
-                        <li>Guitar &ndash; mainly fingerstyle on acoustic.</li>
-                        <li>
-                            Powerlifting, even with my frail programmer arms.
-                        </li>
-                        <li>
-                            Gardening (I have a secret fantasy of becoming a
-                            nomadic radish farmer).
-                        </li>
-                        <li>Origami.</li>
-                    </UnorderedList>
-                    <ImageGallery
-                        images={[
-                            {
-                                src: "/images/profile/origami-1.png",
-                                alt: "Origami rose",
-                            },
-                            {
-                                src: "/images/profile/plants-1.jpg",
-                                alt: "Succulents",
-                            },
-                        ]}
-                        width={250}
-                        height={150}
-                    />
-                </ContentContainer>
             </>
         ),
     },
@@ -194,7 +200,7 @@ const portfolio: PortfolioData = {
                 description: `Some words describing what the project is, what I built it with, how it was made, its purpose, etc.
                 I might then prompt the viewer to read more and see a project blog, if it exists.
                 Lorem ipsum, more text here, but keep it concise. Invite the reader to read more.`,
-                technologies: ["python", "javascript", "arduino"],
+                technologies: ["Python", "JavaScript", "Arduino"],
                 githubUrl: "https://github.com/Tymotex/Tactile-DS",
                 demoUrl: "https://data-structures.xyz/",
             },
@@ -203,26 +209,53 @@ const portfolio: PortfolioData = {
     },
     work: [
         {
+            jobTitle: "Software Engineer",
+            company: "Google",
+            employmentType: "Full-Time",
+            team: "",
+            from: "January 2021",
+            to: "...",
+            technologies: [],
+            description: <>Not started.</>,
+        },
+        {
             jobTitle: "Software Engineering Intern",
             company: "Google",
             employmentType: "Internship",
             team: "Data Acquisition (Site Reliability Engineering)",
             from: "November 2021",
             to: "February 2022",
-            technologies: ["c++", "spanner", "bash", "SQL", "googleTest"],
+            technologies: ["C++", "Spanner", "Bash", "SQL", "GoogleTest"],
             description: (
                 <>
+                    Improved the reliability of a URL fetching service that
+                    serves billions of requests per day, used primarily by web
+                    crawlers.
                     <UnorderedList>
-                        <li>Item 1</li>
+                        <li>
+                            Increased the availability of a 'hostname to shard
+                            number' resolver from 99.99% to 99.999%, reducing
+                            its expected annual downtime from 53 minutes to 5
+                            minutes.
+                        </li>
+                        <li>
+                            Designed and unit-tested new C++ interfaces and a
+                            Spanner database schema to phase out software
+                            anti-patterns.
+                        </li>
+                        <li>
+                            Implemented a scalable multithreaded cache refresher
+                            in C++ which could potentially reduce data staleness
+                            from minutes to milliseconds.
+                        </li>
+                        <li>
+                            Planned production rollout and testing procedures,
+                            including writing Bash scripts to automatically
+                            generate traffic and extract, normalise and compare
+                            contents from different storage services for
+                            verifying correctness, end-to-end.
+                        </li>
                     </UnorderedList>
-                    <p>
-                        Laboris aliquip occaecat aliqua dolore ea aliquip
-                        commodo eu. Ut aliqua exercitation laborum culpa.
-                        Voluptate velit quis elit est minim deserunt tempor
-                        sint. Incididunt eiusmod fugiat laboris proident eu aute
-                        eu cillum non officia duis deserunt in irure. Ipsum
-                        pariatur cupidatat culpa qui aute sunt aute.
-                    </p>
                 </>
             ),
         },
@@ -234,7 +267,7 @@ const portfolio: PortfolioData = {
             from: "July 2021",
             to: "October 2021",
             technologies: [
-                "c#",
+                "C#",
                 "ASP.NET",
                 "SQL Server",
                 "NUnit",
@@ -243,14 +276,26 @@ const portfolio: PortfolioData = {
             ],
             description: (
                 <>
-                    <p>
-                        Qui excepteur commodo deserunt magna amet incididunt
-                        pariatur ex. Ipsum pariatur dolor reprehenderit qui et
-                        voluptate adipisicing exercitation ut ipsum. Ut dolore
-                        consectetur adipisicing id. Proident esse occaecat duis
-                        elit. Ullamco id sint anim dolor minim Lorem voluptate
-                        in cupidatat officia voluptate qui nostrud.
-                    </p>
+                    Developed API and UI for a learning management system,{" "}
+                    <a href="https://wisetechacademy.com/">WiseTech Academy</a>.
+                    <UnorderedList>
+                        <li>
+                            Applied test-driven development with NUnit to
+                            implement REST APIs for a user and content
+                            management system using C#, ASP.NET Core and SQL
+                            Server.
+                        </li>
+                        <li>
+                            Implemented a bulk enrolment time-saving feature,
+                            allowing .CSV and .XLSX files to be uploaded to
+                            create users and new course enrolments with dry-run
+                            results preview and error reporting.
+                        </li>
+                        <li>
+                            Developed content management interfaces using
+                            ASP.NET Razor pages, jQuery and SCSS.
+                        </li>
+                    </UnorderedList>
                 </>
             ),
         },
@@ -261,22 +306,40 @@ const portfolio: PortfolioData = {
             from: "May 2021",
             to: "Jan 2022",
             technologies: [
-                "typescript",
-                "node",
-                "mongodb",
-                "graphql",
-                "express",
-                "docker",
+                "TypeScript",
+                "Node",
+                "Mongodb",
+                "GraphQL",
+                "Express",
+                "Docker",
             ],
             description: (
                 <>
-                    <p>
-                        Et consectetur non irure nulla non sint. In incididunt
-                        aute pariatur laborum sunt ea velit officia. Enim anim
-                        sint anim cupidatat do enim in. Qui commodo velit aute
-                        ullamco eu ipsum duis ut incididunt laborum aliqua
-                        exercitation aute proident.
-                    </p>
+                    Developing an educational platform that tailors lessons for
+                    young children with ASD for the{" "}
+                    <strong>Autism Awareness</strong> charity organisation.
+                    <UnorderedList>
+                        <li>
+                            Built a prototype of the product, achieving 1st
+                            place in Accenture's 2021 hackathon out of 37 teams,
+                            and later pitched the project to Accenture to
+                            acquire funding for continued development.
+                        </li>
+                        <li>
+                            Implemented a lesson builder interface for
+                            developing reusable therapy sessions, reducing work
+                            that previously would take hours to just minutes.
+                        </li>
+                        <li>
+                            Implemented a content management GraphQL API using
+                            Node.js with TypeScript, Express and MongoDB.
+                        </li>
+                        <li>
+                            Formed core requirements and designed a concept for
+                            a neural network backing the platform's learning
+                            recommendation engine.
+                        </li>
+                    </UnorderedList>
                 </>
             ),
         },
@@ -287,18 +350,40 @@ const portfolio: PortfolioData = {
             team: "Data Structures & Algorithms (COMP2521)",
             from: "June 2020",
             to: "May 2021",
-            technologies: ["c", "bash", "perl", "ruby", "nginx", "AWS"],
+            technologies: ["C", "Bash", "Perl", "Ruby", "Nginx", "AWS"],
             description: (
                 <>
-                    <p>
-                        Duis incididunt ipsum non eu. Ullamco magna laboris
-                        pariatur in tempor dolore proident. Mollit aute id
-                        aliqua veniam eu elit. Reprehenderit Lorem veniam
-                        reprehenderit esse proident irure elit do non. Laborum
-                        consectetur deserunt dolore ut non laboris quis mollit
-                        ipsum. Veniam commodo ea dolor mollit exercitation.
-                        Lorem minim aliquip incididunt nisi consequat.
-                    </p>
+                    Taught Data Structures and Algorithms (COMP2521) in
+                    trimester 2 and 3 in 2020 and trimester 1 in 2021.
+                    <UnorderedList>
+                        <li>
+                            Delivered two 1-hour online tutorials to 26 students
+                            each week.
+                        </li>
+                        <li>
+                            Delivered 6 hours of lab demonstrations to over 70
+                            students each week.
+                        </li>
+                        <li>
+                            Volunteered for additional help sessions and
+                            answering online course forum questions.
+                        </li>
+                        <li>
+                            Achieved a student satisfaction rating of 5.74/6.00
+                            in the first term of teaching, with the average
+                            rating being 5.21/6.00 in the School of Engineering.
+                        </li>
+                        <li>
+                            Achieved a student satisfaction rating of 5.89/6.00
+                            in the second term of teaching, with the average
+                            rating being 5.14/6.00 in the School of Engineering.
+                        </li>
+                        <li>
+                            Achieved a student satisfaction rating of 5.89/6.00
+                            in the third term of teaching, with the average
+                            rating being 5.30/6.00 in the School of Engineering.
+                        </li>
+                    </UnorderedList>
                 </>
             ),
         },
@@ -311,29 +396,67 @@ const portfolio: PortfolioData = {
         description: (
             <>
                 <UnorderedList>
-                    <li>High disctinction average mark.</li>
+                    <li>High distinction average WAM (GPA).</li>
                     <li>
                         Project team lead in the Computer Science & Engineering
                         Society (CSESoc).
                     </li>
-                    <li>
-                        Academic Awards:
-                        <UnorderedList>
-                            <li>
-                                Atlassian 1st place prize for achieving the
-                                highest mark in COMP2521 (Data Structures and
-                                algorithms) out of 400+ engineering students.
-                            </li>
-                            <li>
-                                Macquarie bank 1st place prize for achieving the
-                                highest mark in SENG2021 (Software Engineering
-                                Design Workshop) out of 159 software engineering
-                                students.
-                            </li>
-                            <li>Faculty of Engineering Dean’s Award</li>
-                        </UnorderedList>
-                    </li>
                 </UnorderedList>
+                <h3>Academic Awards & Hackathons</h3>
+                <AwardList
+                    awards={[
+                        {
+                            title: "Atlassian 1st place prize",
+                            description: `For achieving the highest mark in COMP2521 (Data Structures
+                        and algorithms) out of 400+ engineering students.`,
+                            date: "2020",
+                        },
+                        {
+                            title: "Macquarie Bank 1st place prize",
+                            description: `For achieving the highest mark in SENG2021 (Software
+                        Engineering Design Workshop) out of 159 software
+                        engineering students.`,
+                            date: "2021",
+                        },
+                        {
+                            title: "Faculty of Engineering Dean’s Award",
+                            description: `For ranking in the top 25 academic performance across
+                        all 1st & 2nd year students in UNSW's School of
+                        Engineering.`,
+                            date: "2020, 2021",
+                        },
+                        {
+                            title: "Accenture 'Hack for Good' Hackathon 1st Place",
+                            description: `Worked in a team of 4 to develop a prototype for
+                        an education platform driven by deep learning that
+                        automatically tailors a curriculum for young children
+                        with ASD. Achieved 1st place out of 37 other
+                        participating teams from across Australia.`,
+                            date: "2021",
+                        },
+                        {
+                            title: "Google Chronicle Hackathon 2nd Place",
+                            description: `Worked in a team of 4 to build a
+                        proof-of-concept application for an automated time
+                        scheduler system. This project won 2nd place out of
+                        around 40 other teams.`,
+                            date: "2021",
+                        },
+                        {
+                            title: "CSESoc Annual Flagship Hackathon 2nd Place",
+                            description: `Worked in a team of 4 to develop a prototype for
+                        an educational content delivery web app that recommends
+                        lessons to students with learning disabilities. We
+                        achieved 2nd place out of more than 60 participating
+                        teams.`,
+                            date: "2021",
+                        },
+                        {
+                            title: "Academic Awards Achievement Scholarship",
+                            date: "2019",
+                        },
+                    ]}
+                />
             </>
         ),
     },

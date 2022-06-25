@@ -1,12 +1,14 @@
 @import "../../../styles/variables.scss";
 @import "../../../styles/mixins.scss";
 
-$slider-track: 2px solid rgba(152, 152, 152, 0.284);
+$slider-track: 3px solid rgba(152, 152, 152, 0.284);
 $tab-switch-duration-ease: 300ms ease;
 $tab-button-min-width: 220px;
-$tab-panel-max-height: 300px;
+$tab-panel-min-height: 300px;
 
 .animatedTabGroup {
+    user-select: none;
+
     .tabList {
         min-width: 200px;
         display: flex;
@@ -17,7 +19,7 @@ $tab-panel-max-height: 300px;
     }
     .currentTabHighlighter {
         position: absolute;
-        width: 2px;
+        width: 3px;
         background: $primary;
         transition: top $tab-switch-duration-ease,
             left $tab-switch-duration-ease;
@@ -49,7 +51,7 @@ $tab-panel-max-height: 300px;
         column-gap: $spacing-md;
         margin-left: 130px;
         margin-right: 40px;
-        height: $tab-panel-max-height;
+        min-height: $tab-panel-min-height;
 
         .tabList {
             min-width: $tab-button-min-width;
@@ -86,6 +88,14 @@ $tab-panel-max-height: 300px;
                 margin: 0;
             }
 
+            .team {
+                color: $cool-grey-900;
+                font-family: $code-font-stack;
+                font-weight: bold;
+                margin: 0;
+                margin-top: $spacing-xxs;
+            }
+
             .employmentPeriod {
                 margin-top: $spacing-xxs;
                 color: $cool-grey-800;
@@ -109,7 +119,7 @@ $tab-panel-max-height: 300px;
 
             .currentTabHighlighter {
                 position: absolute;
-                height: 2px !important;
+                height: 3px !important;
                 background: $primary;
             }
 

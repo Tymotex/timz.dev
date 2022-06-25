@@ -22,7 +22,9 @@ const ChipGroup: React.FC<Props> = ({ technologies, position = "left" }) => {
                     <li className={styles.chip} key={tech}>
                         <Image
                             alt={`${tech} icon`}
-                            src={`/icons/tech/${tech}.png`}
+                            src={`/icons/tech/${encodeURIComponent(
+                                tech.toLowerCase(),
+                            )}.png`}
                             width={20}
                             height={20}
                         />

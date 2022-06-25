@@ -1,23 +1,9 @@
-import React, {
-    Dispatch,
-    SetStateAction,
-    useContext,
-    useEffect,
-    useLayoutEffect,
-} from "react";
-import {
-    Tabs,
-    TabList,
-    Tab,
-    TabPanels,
-    TabPanel,
-    useTabsContext,
-} from "@reach/tabs";
+import { TabList, TabPanel, TabPanels } from "@reach/tabs";
 import { WorkExperience } from "content/portfolio/portfolio";
-import { useRect } from "@reach/rect";
-import { useIsomorphicLayoutEffect } from "src/hooks/windowHooks";
-import AnimatedTabGroup from "./AnimatedTabGroup";
+import React from "react";
+import ChipGroup from "../ChipGroup";
 import AnimatedTab from "./AnimatedTab";
+import AnimatedTabGroup from "./AnimatedTabGroup";
 import styles from "./AnimatedTabs.module.scss";
 
 interface Props {
@@ -27,7 +13,7 @@ interface Props {
 const WorkExperienceTabs: React.FC<Props> = ({ workExperiences }) => {
     return (
         <>
-            <AnimatedTabGroup>
+            <AnimatedTabGroup defaultIndex={1}>
                 <TabList className={styles.tabList}>
                     {workExperiences &&
                         workExperiences.map((work, i) => (
@@ -51,10 +37,12 @@ const WorkExperienceTabs: React.FC<Props> = ({ workExperiences }) => {
                                 <h2 className={styles.jobTitle}>
                                     {work.jobTitle}
                                 </h2>
+                                <p className={styles.team}>{work.team}</p>
                                 <p className={styles.employmentPeriod}>
                                     {work.from} &ndash; {work.to}
                                 </p>
                                 {work.description}
+                                <ChipGroup technologies={work.technologies} />
                             </TabPanel>
                         ))}
                 </TabPanels>

@@ -18,7 +18,7 @@ html {
     }
 
     ::-webkit-scrollbar-track {
-        background: $cool-grey-100;
+        background: $cool-grey-200;
     }
 
     ::-webkit-scrollbar-thumb {
@@ -33,5 +33,9 @@ html {
     pre,
     code {
         font-family: "Consolas", "Courier New", monospace;
+    }
+
+    a {
+        color: $cool-grey-800;
     }
 }

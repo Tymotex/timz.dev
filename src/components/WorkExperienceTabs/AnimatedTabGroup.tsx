@@ -12,10 +12,15 @@ export const AnimatedContext =
 
 interface Props {
     children: JSX.Element | JSX.Element[];
+    defaultIndex?: number;
     style?: React.CSSProperties;
 }
 
-const AnimatedTabGroup: React.FC<Props> = ({ children, style }) => {
+const AnimatedTabGroup: React.FC<Props> = ({
+    children,
+    defaultIndex,
+    style,
+}) => {
     // some state to store the position we want to animate to
     const [activeRect, setActiveRect] = React.useState<any>(null);
     const isScreenLg = !useBreakpointTrigger(992);
@@ -39,6 +44,7 @@ const AnimatedTabGroup: React.FC<Props> = ({ children, style }) => {
             {/* make sure to forward style since we're wrapping Tabs */}
             <Tabs
                 ref={ref}
+                defaultIndex={defaultIndex}
                 style={{ ...style, position: "relative" }}
                 className={styles.animatedTabGroup}
             >
@@ -50,10 +56,10 @@ const AnimatedTabGroup: React.FC<Props> = ({ children, style }) => {
                         top: !isScreenLg
                             ? horizontalTopOffset
                             : verticalTopOffset,
-                        width: !isScreenLg ? activeRect && activeRect.width : 2,
+                        width: !isScreenLg ? activeRect && activeRect.width : 3,
                         height: isScreenLg
                             ? activeRect && activeRect.height
-                            : 2,
+                            : 3,
                     }}
                 />
                 {children}

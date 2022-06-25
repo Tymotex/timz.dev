@@ -1,0 +1,19 @@
+@import "../../../styles/variables.scss";
+
+.awardItem {
+    &:not(:last-child) {
+        margin-bottom: $spacing-sm;
+    }
+
+    .title {
+        margin: 0;
+        font-family: $code-font-stack;
+    }
+    .date {
+        color: $cool-grey-700;
+    }
+    .description {
+        margin: $spacing-xxs 0 0 0;
+        color: $cool-grey-900;
+    }
+}

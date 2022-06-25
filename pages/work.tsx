@@ -4,7 +4,7 @@ import type { NextPage } from "next";
 import Image from "next/image";
 import ContentContainer from "src/components/Container/ContentContainer";
 import { SectionDivider } from "src/components/Divider";
-import { EducationItem } from "src/components/EducationItem";
+import { EducationItem } from "src/components/Education";
 import { Window } from "src/components/Window";
 import { WorkExperienceTabs } from "src/components/WorkExperienceTabs";
 import { useRedirectHome } from "src/hooks/routerHooks";
