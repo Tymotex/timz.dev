@@ -1,9 +1,6 @@
 import type { GetStaticProps, NextPage } from "next";
-import { Fragment, useMemo } from "react";
-import { Blog, BlogInfo, getAllBlogs } from "scripts/blogs";
-import { getMDXComponent } from "mdx-bundler/client";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { BlogInfo, getAllBlogs } from "scripts/blogs";
 import { BlogLayout } from "src/layout";
 
 export const getStaticProps: GetStaticProps = async (context) => {

@@ -129,31 +129,38 @@ const portfolio: PortfolioData = {
         ],
         aboutMe: (
             <>
-                <ContentContainer maxWidth={1200} padding={"0 32px 32px 32px"}>
+                <ContentContainer maxWidth={1200} padding={"0 32px 0 32px"}>
                     <p>
-                        A brief description about me. Lorem ipsum. Nunc eu nulla
-                        in nisl tincidunt porta. Etiam sed justo feugiat,
-                        tincidunt ante non, faucibus lacus. Vestibulum bibendum
-                        lacinia ligula vitae vulputate.
+                        Hi! I'm Tim, a final year computer science student at
+                        the University of New South Wales (UNSW). I love working
+                        on software projects, especially when they're related to
+                        frontend/backend development and lower-level
+                        infrastructure.
                     </p>
                     <p>
-                        Rem ipsum. Nunc eu nulla in nisl tincidunt porta. Etiam
-                        sed justo feugiat, tincidunt ante non, faucibus lacus.
-                        Vestibulum bibendum lacinia ligula vitae.
+                        I've interned at Google as a software engineering intern
+                        in a site reliability engineering team and I have also
+                        taught the data structures and algorithms course,{" "}
+                        <a href="https://www.handbook.unsw.edu.au/undergraduate/courses/2021/COMP2521?year=2021">
+                            COMP2521
+                        </a>
+                        , at UNSW for 3 semesters. Software engineering is an
+                        absolute blast for me and I enjoy sharing knowledge with
+                        others 🤓.
                     </p>
                 </ContentContainer>
                 <SectionDivider text="Hobbies & Interests" />
                 <ContentContainer maxWidth={1200} padding={"0 32px 32px 32px"}>
                     <p>What I enjoy outside of programming.</p>
                     <UnorderedList>
-                        <li>Game development & modding.</li>
+                        <li>Game development & mod authoring.</li>
                         <li>Guitar &ndash; mainly fingerstyle on acoustic.</li>
                         <li>
                             Powerlifting, even with my frail programmer arms.
                         </li>
                         <li>
-                            Gardening (I have a secret fantasy of becoming a
-                            nomadic radish farmer).
+                            Gardening (to soothe the soul after dealing with a
+                            particularly mind-bending bug).
                         </li>
                         <li>Origami.</li>
                     </UnorderedList>
@@ -172,7 +179,9 @@ const portfolio: PortfolioData = {
                         height={150}
                     /> */}
                     <h2>My Programming Battlestation</h2>
-                    <p>Where I churn out buggy software:</p>
+                    <p>
+                        Where I churn out <del>buggy</del> software:
+                    </p>
                     <ImageGallery
                         images={[
                             {
