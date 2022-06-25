@@ -18,6 +18,7 @@ export interface BlogFrontmatter {
 
 export interface Blog {
     frontmatter: BlogFrontmatter;
+    category: string;
     slug: string;
     code: string;
 }
@@ -26,43 +27,69 @@ export type BlogInfo = Omit<Blog, "code">;
 
 const makeMDXBundle = async (rawSource: string) => {
     const cwd = process.cwd();
-    return await bundleMDX({
-        cwd: cwd,
-        // Sourced from: https://github.com/kentcdodds/mdx-bundler/issues/116.
-        // Solves the lack of default sass module support in mdx-bundler.
-        esbuildOptions: (options) => {
-            options.target = "es2020";
-            if (options.plugins)
-                options.plugins = [
-                    ...options.plugins,
-                    sassPlugin({
-                        basedir: ".",
-                    }),
+
+    try {
+        return await bundleMDX({
+            cwd: cwd,
+            // Sourced from: https://github.com/kentcdodds/mdx-bundler/issues/116.
+            // Solves the lack of default sass module support in mdx-bundler.
+            esbuildOptions: (options) => {
+                options.target = "es2020";
+                if (options.plugins)
+                    options.plugins = [
+                        ...options.plugins,
+                        sassPlugin({
+                            basedir: ".",
+                        }),
+                    ];
+                options.loader = {
+                    ...options.loader,
+                    ".png": "dataurl",
+                };
+                options.publicPath = "/mdx";
+                options.outdir = path.join(cwd, "public/mdx");
+                options.write = true;
+                return options;
+            },
+            source: rawSource,
+            mdxOptions(options) {
+                options.remarkPlugins = [
+                    ...(options?.remarkPlugins ?? []),
+                    remarkPrism,
+                    remarkMath,
+                    remarkMdxImages,
                 ];
-            options.loader = {
-                ...options.loader,
-                ".png": "dataurl",
-            };
-            options.publicPath = "/mdx";
-            options.outdir = path.join(cwd, "public/mdx");
-            options.write = true;
-            return options;
-        },
-        source: rawSource,
-        mdxOptions(options) {
-            options.remarkPlugins = [
-                ...(options?.remarkPlugins ?? []),
-                remarkPrism,
-                remarkMath,
-                remarkMdxImages,
-            ];
-            options.rehypePlugins = [
-                ...(options?.rehypePlugins ?? []),
-                rehypeKatex,
-            ];
-            return options;
-        },
-    });
+                options.rehypePlugins = [
+                    ...(options?.rehypePlugins ?? []),
+                    rehypeKatex,
+                ];
+                return options;
+            },
+        });
+    } catch {
+        signale.error(`Failed on '${rawSource}'`);
+        return null;
+    }
+};
+
+// Recursively traverses and returns a list of all files at arbitrary depth
+// from the given path.
+const walkSync = (startPath: string) => {
+    const getFilesRecursively = (directory: string, files: string[]) => {
+        const filesInDirectory = fs.readdirSync(directory);
+        for (const file of filesInDirectory) {
+            const absolute = path.join(directory, file);
+            if (fs.statSync(absolute).isDirectory()) {
+                getFilesRecursively(absolute, files);
+            } else {
+                files.push(absolute);
+            }
+        }
+    };
+
+    let files: string[] = [];
+    getFilesRecursively(startPath, files);
+    return files;
 };
 
 /**
@@ -73,15 +100,16 @@ export const getAllBlogs = async (): Promise<BlogInfo[]> => {
     const blogsDir = path.join(process.cwd(), "content/blogs");
     signale.start(`Sourcing blogs from '${blogsDir}'`);
 
-    const filenames = fs.readdirSync(blogsDir);
+    const filenames = walkSync(blogsDir);
     const allBlogs = await Promise.all(
         filenames
             .filter((filename) => path.extname(filename) === ".mdx")
             .map(async (filename) => {
-                const absPath = path.join(blogsDir, filename);
-                const slug = filename.replace(/\.mdx$/, "");
+                const basename = path.basename(filename);
+                const category = path.basename(path.dirname(filename));
+                const slug = basename.replace(/\.mdx$/, "");
 
-                const rawSource = fs.readFileSync(absPath, "utf8");
+                const rawSource = fs.readFileSync(filename, "utf8");
                 const matterResult = matter(rawSource);
                 const frontmatter = matterResult.data;
 
@@ -92,9 +120,10 @@ export const getAllBlogs = async (): Promise<BlogInfo[]> => {
                 // See: https://github.com/vercel/next.js/issues/13209#issuecomment-633149650.
                 const blog = {
                     slug,
+                    category,
                     frontmatter: {
                         ...frontmatter,
-                        date: frontmatter.date.toString(),
+                        date: frontmatter?.date?.toString(),
                     },
                 } as BlogInfo;
 
@@ -116,17 +145,32 @@ export const getAllBlogs = async (): Promise<BlogInfo[]> => {
  *
  * @param string slug   The unique filename identifier for the blog post.
  */
-export const getBlog = async (slug: string): Promise<Blog> => {
-    const targetBlogPath = path.join(
-        process.cwd(),
-        `content/blogs/${slug}.mdx`,
-    );
+export const getBlog = async (
+    category: string,
+    slug: string,
+): Promise<Blog> => {
+    const dirPath = path.join(process.cwd(), `content/blogs/${category}`);
+    const targetBlogPath = `${dirPath}/${slug}.mdx`;
+
+    if (!fs.existsSync(dirPath)) {
+        signale.error(
+            `Directory for category '${category}' does not exist at path '${dirPath}'.`,
+        );
+        return;
+    }
+    if (!fs.existsSync(targetBlogPath)) {
+        signale.error(`Path for blog '${targetBlogPath}' does not exist.`);
+        return;
+    }
 
     signale.start(`Generating blog '${targetBlogPath}'`);
 
     const rawSource = fs.readFileSync(targetBlogPath, "utf8");
 
     const { code, frontmatter } = await makeMDXBundle(rawSource);
+    if (!code || typeof code === "undefined") {
+        signale.error(`Fucked up on ${targetBlogPath}`);
+    }
     const blog = {
         slug,
         frontmatter: {

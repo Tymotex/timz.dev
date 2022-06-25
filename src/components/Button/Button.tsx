@@ -73,7 +73,9 @@ const Button: React.FC<ButtonProps> = ({
             {ButtonCore}
         </a>
     ) : internalUrl ? (
-        <Link href={internalUrl}>{ButtonCore}</Link>
+        <Link href={internalUrl} scroll={false}>
+            {ButtonCore}
+        </Link>
     ) : (
         ButtonCore
     );

@@ -4,12 +4,13 @@ import { motion } from "framer-motion";
 
 interface Props {
     children: React.ReactNode;
+    className?: string;
 }
 
-const CentralContainer: React.FC<Props> = ({ children }) => {
+const CentralContainer: React.FC<Props> = ({ children, className }) => {
     return (
         <motion.div
-            className={styles.centralContainer}
+            className={`${styles.centralContainer} ${className}`}
             initial={{
                 opacity: 0,
                 height: 400,

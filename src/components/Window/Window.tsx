@@ -9,11 +9,15 @@ import styles from "./Window.module.scss";
 
 interface Props {
     children?: React.ReactNode;
-    onClickOutside: OutsideClickHandler;
+    onClickOutside?: OutsideClickHandler;
     crumbs?: Crumb[];
 }
 
-const Window: React.FC<Props> = ({ children, onClickOutside, crumbs }) => {
+const Window: React.FC<Props> = ({
+    children,
+    onClickOutside = () => {},
+    crumbs,
+}) => {
     const windowRef = useRef(null);
     useClickOutside(windowRef, onClickOutside);
 

@@ -17,7 +17,6 @@ const Work: NextPage = () => {
             <motion.div>
                 <div style={{ position: "relative" }}>
                     <Window
-                        onClickOutside={() => redirectToHome()}
                         crumbs={[
                             { title: "Home", url: "/" },
                             { title: "Work", url: "/work" },

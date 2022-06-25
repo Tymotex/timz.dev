@@ -17,7 +17,10 @@ const nextConfig = {
     productionBrowserSourceMaps: true,
     sassOptions: {
         includePaths: [path.resolve(__dirname, "styles")]
-    }
+    },
+    images: {
+        domains: ['tymotex.github.io', 'raw.githubusercontent.com'],
+    },
 }
 
 // When the ANALYZE environment variable is true, then running `next build` will

@@ -1,7 +1,6 @@
 import portfolio from "content/portfolio/portfolio";
 import { motion } from "framer-motion";
 import type { NextPage } from "next";
-import ContentContainer from "src/components/Container/ContentContainer";
 import SectionDivider from "src/components/Divider/SectionDivider";
 import { Window } from "src/components/Window";
 import { useRedirectHome } from "src/hooks/routerHooks";
@@ -14,7 +13,6 @@ const About: NextPage = () => {
             <motion.div>
                 <div style={{ position: "relative" }}>
                     <Window
-                        onClickOutside={() => redirectToHome()}
                         crumbs={[
                             { title: "Home", url: "/" },
                             { title: "About", url: "/about" },

@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "../Button";
+import { Button, LinkButton } from "../Button";
 import ChipGroup from "../ChipGroup";
 import { Technology } from "../ChipGroup/technologies";
 import { MiniDivider } from "../Divider";
@@ -39,21 +39,25 @@ const FeaturedProject: React.FC<Props> = ({ project, position = "left" }) => {
                         icon={<RightArrowIcon />}
                         iconPosition={"right"}
                         iconInset={true}
-                        internalUrl={"/"}
+                        internalUrl={`/blogs/projects/${project.blogSlug}`}
                     />
                     <div className={styles.externalLinkButtons}>
-                        <Button
-                            text="GitHub"
-                            icon={<GitHubIcon />}
-                            iconPosition="left"
-                            externalUrl={project.githubUrl}
-                        />
-                        <Button
-                            text="Demo"
-                            icon={<DemoIcon />}
-                            iconPosition="left"
-                            externalUrl={project.demoUrl}
-                        />
+                        {project.githubUrl && (
+                            <Button
+                                text="GitHub"
+                                icon={<GitHubIcon />}
+                                iconPosition="left"
+                                externalUrl={project.githubUrl}
+                            />
+                        )}
+                        {project.demoUrl && (
+                            <Button
+                                text="Demo"
+                                icon={<DemoIcon />}
+                                iconPosition="left"
+                                externalUrl={project.demoUrl}
+                            />
+                        )}
                     </div>
                 </div>
             </div>
@@ -62,7 +66,7 @@ const FeaturedProject: React.FC<Props> = ({ project, position = "left" }) => {
                     See: https://github.com/vercel/next.js/discussions/18357.*/}
                 <Image
                     className={styles.image}
-                    src="/og-image.avif"
+                    src={project.imageUrl}
                     layout="fill"
                     objectFit="cover"
                     alt={`${project.title} thumbnail`}

@@ -6,18 +6,16 @@
     display: flex;
     margin: $spacing-sm auto;
     flex-direction: row;
-    column-gap: $spacing-sm;
-    row-gap: $spacing-sm;
+    column-gap: $spacing-md;
+    row-gap: $spacing-md;
     flex-wrap: wrap;
     justify-content: center;
 
     .projectCard {
         background: $cool-grey-300;
-        height: 450px;
-        // width: 100%;
-        // max-width: 320px;
-        min-width: 320px;
-        max-width: 500px;
+        min-height: fit-content;
+        width: 100%;
+        max-width: 420px;
         border-radius: 6px;
         @include elevation-shadow;
 
@@ -70,6 +68,15 @@
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
+            margin-bottom: $spacing-xs;
+        }
+    }
+}
+
+@media screen and (max-width: $sm) {
+    .projectCardDeck {
+        .projectCard {
+            height: fit-content;
         }
     }
 }

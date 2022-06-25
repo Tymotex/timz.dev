@@ -1,80 +1,146 @@
 @import "../../../styles/variables.scss";
 @import "../../../styles/mixins.scss";
 
-$detailsPanelWidth: 40rem;
+$detailsPanelWidth: 37rem;
 
-.featuredProject {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    margin: 0 0 $spacing-md 0;
-    height: fit-content;
-
-    .details {
-        padding: $spacing-md $spacing-xxl $spacing-md $spacing-md;
-        box-sizing: border-box;
-        max-width: $detailsPanelWidth;
-        background: $cool-grey-300;
-        border-radius: 5px;
-        // @include elevation-shadow;
-
-        .title {
-            font-family: $code-font-stack;
-            font-size: $font-size-xl;
-            color: $primary;
-            margin: $spacing-xs 0;
-        }
-
-        .headline {
-            font-family: $code-font-stack;
-            color: $secondary;
-        }
-
-        .description {
-            color: $cool-grey-900;
-            text-align: justify;
-            @include clip-fade-text(90px);
-        }
-
-        .buttonGroup {
+@media screen and (min-width: $lg) {
+    .featuredProjectGroup {
+        .featuredProject {
+            width: 100%;
             display: flex;
-            justify-content: space-between;
-            margin-top: $spacing-sm;
+            flex-direction: row;
+            margin: 0 0 $spacing-md 0;
 
-            .externalLinkButtons {
-                display: flex;
-                column-gap: $spacing-xxs;
+            .details {
+                padding: $spacing-md $spacing-xxl $spacing-md $spacing-md;
+                box-sizing: border-box;
+                min-width: $detailsPanelWidth;
+                max-width: $detailsPanelWidth;
+                background: $cool-grey-300;
+                border-radius: 5px;
+
+                .title {
+                    font-family: $code-font-stack;
+                    font-size: $font-size-xl;
+                    color: $primary;
+                    margin: $spacing-xs 0;
+                }
+
+                .headline {
+                    font-family: $code-font-stack;
+                    color: $secondary;
+                }
+
+                .description {
+                    color: $cool-grey-900;
+                    text-align: justify;
+                    @include clip-fade-text(90px);
+                }
+
+                .buttonGroup {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: $spacing-sm;
+
+                    .externalLinkButtons {
+                        display: flex;
+                        column-gap: $spacing-xxs;
+                    }
+                }
             }
-        }
-    }
 
-    .demo {
-        width: calc(100% - $detailsPanelWidth + $spacing-md);
-        margin-left: -$spacing-md;
-        position: relative;
-        max-height: fit-content;
-        @include elevation-shadow;
+            .demo {
+                width: calc(100% - $detailsPanelWidth + $spacing-md);
+                margin-left: -$spacing-md;
+                position: relative;
+                max-height: fit-content;
+                @include elevation-shadow;
 
-        margin-top: $spacing-md;
-        height: 310px;
-    }
+                margin-top: auto;
+                margin-bottom: auto;
+                height: 310px;
+            }
 
-    // Alternate the details panel and demo panel placement.
-    &:nth-child(2n) {
-        flex-direction: row-reverse;
-        .details {
-            padding: $spacing-md $spacing-md $spacing-md $spacing-xxl;
-            text-align: right;
-
-            .buttonGroup {
+            // Alternate the details panel and demo panel placement.
+            &:nth-child(2n) {
                 flex-direction: row-reverse;
-            }
-            .description {
-                text-align-last: right;
+                .details {
+                    padding: $spacing-md $spacing-md $spacing-md $spacing-xxl;
+                    text-align: right;
+
+                    .buttonGroup {
+                        flex-direction: row-reverse;
+                    }
+                    .description {
+                        text-align-last: right;
+                    }
+                }
+                .demo {
+                    margin-right: -$spacing-md - $spacing-xxs;
+                }
             }
         }
-        .demo {
-            margin-right: -$spacing-md - $spacing-xxs;
+    }
+}
+
+@media screen and (max-width: $lg) {
+    .featuredProjectGroup {
+        display: flex;
+        flex-direction: column;
+        row-gap: $spacing-md;
+
+        .featuredProject {
+            display: flex;
+            flex-direction: column-reverse !important;
+            @include elevation-shadow;
+
+            .details {
+                border-radius: 0 0 5px 5px;
+                padding: $spacing-md $spacing-xxl $spacing-md $spacing-md;
+                box-sizing: border-box;
+                background: $cool-grey-300;
+
+                .title {
+                    font-family: $code-font-stack;
+                    font-size: $font-size-xl;
+                    color: $primary;
+                    margin: $spacing-xs 0;
+                }
+
+                .headline {
+                    font-family: $code-font-stack;
+                    color: $secondary;
+                }
+
+                .description {
+                    color: $cool-grey-900;
+                    text-align: justify;
+                    @include clip-fade-text(90px);
+                }
+
+                .buttonGroup {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: $spacing-sm;
+                    flex-wrap: wrap;
+                    row-gap: $spacing-sm;
+
+                    .externalLinkButtons {
+                        display: flex;
+                        column-gap: $spacing-xxs;
+                    }
+                }
+            }
+
+            .demo {
+                position: relative;
+                max-height: fit-content;
+                border-radius: 5px 5px 0 0;
+
+                margin-top: auto;
+                margin-bottom: auto;
+                height: 400px;
+            }
         }
     }
 }

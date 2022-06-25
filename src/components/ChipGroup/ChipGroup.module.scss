@@ -21,11 +21,12 @@
 
     .chip {
         display: flex;
+        font-size: small;
         align-items: center;
         column-gap: $spacing-xxs;
-        background: $cool-grey-300;
+        background: $cool-grey-400;
         color: $dark-text-colour;
         border-radius: 64px;
-        padding: $spacing-xxs;
+        padding: 3px 6px;
     }
 }

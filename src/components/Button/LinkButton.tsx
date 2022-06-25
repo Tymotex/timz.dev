@@ -8,9 +8,14 @@ interface LinkButtonProps extends ButtonProps {
 }
 
 const LinkButton: React.FC<LinkButtonProps> = (props) => {
+    const isExternalUrl = props.href[0] !== "/";
+    const openInNewTabProps = isExternalUrl && {
+        rel: "noreferrer",
+        target: "_blank",
+    };
     return (
         <Link href={props.href}>
-            <a className={styles.linkButton}>
+            <a className={styles.linkButton} {...openInNewTabProps}>
                 <Button {...props} />
             </a>
         </Link>

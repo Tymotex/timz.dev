@@ -32,6 +32,7 @@ export type Technology =
     | "Python"
     | "Pytorch"
     | "Rancher"
+    | "Raspberry Pi"
     | "React"
     | "Ruby"
     | "Sass"

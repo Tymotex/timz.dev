@@ -45,7 +45,7 @@ const App = ({ Component, pageProps, router }: AppProps) => {
             </Head>
 
             {/* Only show the particle wallpaper when on blog routes. */}
-            <AnimatePresence>
+            <AnimatePresence exitBeforeEnter>
                 {!isBlogPage && <ParticleWallpaper />}
             </AnimatePresence>
 

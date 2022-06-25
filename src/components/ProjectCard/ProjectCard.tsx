@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { Button } from "../Button";
+import { Button, LinkButton } from "../Button";
 import styles from "./ProjectCard.module.scss";
 import { FiGithub as GithubIcon } from "react-icons/fi";
 import {
@@ -20,7 +20,7 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
         <div className={styles.projectCard}>
             <div className={styles.thumbnail}>
                 <Image
-                    src="/og-image.avif"
+                    src={project.imageUrl}
                     alt={`${project.title} thumbnail`}
                     layout="fill"
                     objectFit="cover"
@@ -37,30 +37,34 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
                             callToAction
                             icon={<RightArrowIcon />}
                             iconInset
+                            internalUrl={`/blogs/projects/${project.blogSlug}`}
                         />
                         <div className={styles.externalLinksGroup}>
-                            <Button
-                                text=""
-                                shape="pill"
-                                type="secondary"
-                                icon={<GithubIcon />}
-                            />
-                            <Button
-                                text=""
-                                shape="pill"
-                                type="secondary"
-                                icon={<DemoIcon />}
-                            />
+                            {project.githubUrl && (
+                                <Button
+                                    text=""
+                                    shape="pill"
+                                    type="secondary"
+                                    icon={<GithubIcon />}
+                                    externalUrl={project.githubUrl}
+                                />
+                            )}
+                            {project.demoUrl && (
+                                <Button
+                                    text=""
+                                    shape="pill"
+                                    type="secondary"
+                                    icon={<DemoIcon />}
+                                    externalUrl={project.demoUrl}
+                                />
+                            )}
                         </div>
                     </div>
                 </div>
                 <SubtleDivider />
                 <small className={styles.builtWith}>
                     <strong>Built with: </strong>
-                    <em>
-                        React, Vue, Angular, Typescript, C++, Rust, Golang, C,
-                        Docker, AWS, Other stuff.
-                    </em>
+                    <em>{project.technologies.join(", ")}</em>
                 </small>
             </div>
         </div>

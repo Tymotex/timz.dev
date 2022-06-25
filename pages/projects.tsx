@@ -11,6 +11,7 @@ import { FeaturedProject } from "src/components/FeaturedProject";
 import portfolio from "content/portfolio/portfolio";
 import { useRedirectHome } from "src/hooks/routerHooks";
 import { ProjectCard, ProjectCardDeck } from "src/components/ProjectCard";
+import FeaturedProjectList from "src/components/FeaturedProject/FeaturedProjectList";
 
 const Projects: NextPage = () => {
     const redirectToHome = useRedirectHome();
@@ -20,7 +21,6 @@ const Projects: NextPage = () => {
             <motion.div>
                 <div style={{ position: "relative" }}>
                     <Window
-                        onClickOutside={() => redirectToHome()}
                         crumbs={[
                             { title: "Home", url: "/" },
                             { title: "Projects", url: "/projects" },
@@ -31,23 +31,22 @@ const Projects: NextPage = () => {
                             A few software engineering projects that I&apos;ve
                             tinkered with in my spare time.
                         </p>
-                        <ContentContainer maxWidth={1200}>
-                            {[...Array(5)].map((_, i) => (
-                                <FeaturedProject
-                                    key={i}
-                                    position={i % 2 === 0 ? "left" : "right"}
-                                    project={
-                                        portfolio.projects.featured.tactileDs
-                                    }
-                                />
-                            ))}
+                        <ContentContainer maxWidth={1200} padding={"48px"}>
+                            <FeaturedProjectList
+                                projects={portfolio.projects.featured}
+                            />
                         </ContentContainer>
                         <SectionDivider text="Other Projects" />
-                        <ContentContainer maxWidth={1200}>
+                        <ContentContainer
+                            maxWidth={1200}
+                            padding={"0 48px 48px 48px"}
+                        >
                             <p className={styles.description}>
                                 Some other projects that I&apos;ve worked on.
                             </p>
-                            <ProjectCardDeck />
+                            <ProjectCardDeck
+                                projects={portfolio.projects.other}
+                            />
                         </ContentContainer>
                     </Window>
                 </div>
