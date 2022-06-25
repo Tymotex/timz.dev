@@ -1,7 +1,7 @@
 @import "../../../styles/variables.scss";
 @import "../../../styles/mixins.scss";
 
-$detailsPanelWidth: 35rem;
+$detailsPanelWidth: 40rem;
 
 .featuredProject {
     width: 100%;
@@ -14,9 +14,9 @@ $detailsPanelWidth: 35rem;
         padding: $spacing-md $spacing-xxl $spacing-md $spacing-md;
         box-sizing: border-box;
         max-width: $detailsPanelWidth;
-        background: $cool-grey-200;
+        background: $cool-grey-300;
         border-radius: 5px;
-        @include elevation-shadow;
+        // @include elevation-shadow;
 
         .title {
             font-family: $code-font-stack;
@@ -56,7 +56,7 @@ $detailsPanelWidth: 35rem;
         @include elevation-shadow;
 
         margin-top: $spacing-md;
-        height: 350px;
+        height: 310px;
     }
 
     // Alternate the details panel and demo panel placement.

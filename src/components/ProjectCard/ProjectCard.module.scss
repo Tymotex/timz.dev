@@ -12,12 +12,13 @@
     justify-content: center;
 
     .projectCard {
-        background: $cool-grey-200;
+        background: $cool-grey-300;
         height: 450px;
         // width: 100%;
         // max-width: 320px;
         min-width: 320px;
         max-width: 500px;
+        border-radius: 6px;
         @include elevation-shadow;
 
         .thumbnail {
