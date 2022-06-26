@@ -17,7 +17,8 @@
         "test:docs": "echo The Jest results are outputted to a JSON file so that Storybook can read it and report the test results for each component",
         "lint": "next lint",
         "storybook": "yarn test:generate-output && BROWSER=\"none\" start-storybook --quiet -p 6006 || true",
-        "build-storybook": "build-storybook -o docs-build",
+        "build-storybook": "build-storybook -o docs",
+        "deploy-storybook": "storybook-to-ghpages --existing-output-dir docs",
         "prepare": "husky install"
     },
     "dependencies": {
@@ -60,6 +61,7 @@
         "@storybook/manager-webpack5": "^6.5.8",
         "@storybook/preset-scss": "^1.0.3",
         "@storybook/react": "^6.5.8",
+        "@storybook/storybook-deployer": "^2.8.11",
         "@storybook/testing-library": "^0.0.12",
         "@storybook/theming": "^6.5.8",
         "@testing-library/jest-dom": "^5.16.4",
