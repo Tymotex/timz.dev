@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, LinkButton } from "../Button";
-import ChipGroup from "../ChipGroup";
+import { TechnologyChipGroup } from "../ChipGroup";
 import { Technology } from "../ChipGroup/technologies";
 import { MiniDivider } from "../Divider";
 import styles from "./FeaturedProject.module.scss";
@@ -24,7 +24,7 @@ const FeaturedProject: React.FC<Props> = ({ project, position = "left" }) => {
             <div className={styles.details}>
                 <h2 className={styles.title}>{project.title}</h2>
                 <p className={styles.headline}>{project.headline}</p>
-                <ChipGroup
+                <TechnologyChipGroup
                     technologies={project.technologies}
                     position={position}
                 />

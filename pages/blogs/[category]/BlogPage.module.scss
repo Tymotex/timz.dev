@@ -1,3 +1,41 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
 .blogPage {
     height: 100%;
+
+    .title {
+        text-align: center;
+        font-size: $font-size-x3l;
+        margin: 0;
+    }
+
+    .metadataList {
+        @include reset-ul-styles;
+        display: flex;
+        justify-content: center;
+        // column-gap: $spacing-md;
+        margin: $spacing-sm 0;
+        font-family: $code-font-stack;
+
+        .field {
+            position: relative;
+            padding: 0 $spacing-md;
+            color: $cool-grey-700;
+
+            &:not(:last-child) {
+                &:before {
+                    content: "";
+                    width: 6px;
+                    background: $cool-grey-700;
+                    height: 6px;
+                    position: absolute;
+                    border-radius: 50%;
+                    top: 50%;
+                    right: -3px;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
 }

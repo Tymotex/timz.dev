@@ -20,11 +20,12 @@ html {
     }
 
     ::-webkit-scrollbar-track {
-        background: $cool-grey-200;
+        background: $cool-grey-100;
     }
 
     ::-webkit-scrollbar-thumb {
-        background-color: $secondary;
+        background-color: $primary-700;
+        border-radius: 10px;
     }
 
     body {

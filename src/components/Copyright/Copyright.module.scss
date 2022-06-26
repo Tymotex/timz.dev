@@ -1,0 +1,9 @@
+@import "../../../styles/variables.scss";
+
+.copyright {
+    display: block;
+    text-align: center;
+    color: $cool-grey-800;
+    margin-bottom: $spacing-xs;
+    font-size: $font-size-md;
+}

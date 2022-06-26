@@ -1,0 +1,85 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+.blogList {
+    display: flex;
+    flex-direction: column;
+    row-gap: $spacing-sm;
+    @include reset-ul-styles;
+
+    .blogItem {
+        display: flex;
+        flex-direction: row;
+        background-color: white;
+        border-radius: 5px;
+
+        .thumbnail {
+            position: relative;
+            box-sizing: border-box;
+            min-width: 150px;
+            min-height: 150px;
+            cursor: pointer;
+        }
+
+        .details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            padding: $spacing-xxs $spacing-md;
+            margin: 0;
+            width: 100%;
+
+            .title {
+                margin: $spacing-xxs 0;
+                font-family: $code-font-stack;
+                transition: opacity 50ms ease;
+                text-decoration: none;
+                cursor: pointer;
+                color: $cool-grey-200;
+
+                h2 {
+                    margin: 0;
+                }
+
+                &:hover {
+                    opacity: 0.5;
+                }
+            }
+            .divider {
+                margin: 0 0 $spacing-xxs 0;
+            }
+            .date {
+                margin: 0;
+                color: $cool-grey-600;
+            }
+            .description {
+                color: $cool-grey-300;
+                // This truncates text at 2 lines with ellipses.
+                // See Vinesh's solution at: https://stackoverflow.com/questions/11989546/wrap-a-text-within-only-two-lines-inside-div.
+                margin: 0;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                line-height: 1.5em;
+                max-height: 3em;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $sm) {
+    .blogList {
+        row-gap: $spacing-md;
+
+        .blogItem {
+            flex-direction: column;
+
+            .thumbnail {
+                height: 240px;
+            }
+        }
+    }
+}

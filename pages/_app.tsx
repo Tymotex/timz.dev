@@ -17,6 +17,8 @@ import "katex/dist/katex.min.css";
 // Applies syntax highlighting to all ``` and ` code snippets in the .mdx blogs.
 // See a list of more themes here: https://github.com/PrismJS/prism-themes.
 import "prismjs/themes/prism-tomorrow.css";
+import { BlogLayout } from "src/layout";
+import { BlogContext } from "src/contexts/BlogContext";
 
 const App = ({ Component, pageProps, router }: AppProps) => {
     const [isBlogPage, setIsBlogPage] = useState<boolean>(
@@ -63,7 +65,13 @@ const App = ({ Component, pageProps, router }: AppProps) => {
                        new page, the current page must fully animate out BEFORE
                        the new page can come in. */}
             <AnimatePresence exitBeforeEnter>
-                <Component {...pageProps} key={router.route} />
+                {router.pathname.startsWith("/blogs") ? (
+                    <BlogLayout>
+                        <Component {...pageProps} key={router.route} />
+                    </BlogLayout>
+                ) : (
+                    <Component {...pageProps} key={router.route} />
+                )}
             </AnimatePresence>
         </DarkModeProvider>
     );

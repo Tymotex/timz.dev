@@ -9,6 +9,7 @@ interface Props {
     disableHighlight?: boolean;
     padding?: string;
     textAlign?: "left" | "center" | "right";
+    className?: string;
 }
 
 const ContentContainer: React.FC<Props> = ({
@@ -19,11 +20,12 @@ const ContentContainer: React.FC<Props> = ({
     disableHighlight,
     padding,
     textAlign = "left",
+    className,
 }) => {
     return (
         <div
             role="presentation"
-            className={`${styles.contentContainer} ${
+            className={`${styles.contentContainer} ${className} ${
                 centerContents && styles.centered
             }`}
             style={{

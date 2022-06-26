@@ -9,7 +9,7 @@ interface Props {
 
 const AwardList: React.FC<Props> = ({ awards }) => {
     return (
-        <UnorderedList>
+        <UnorderedList resetDefaultStyle>
             {awards &&
                 awards.map((award) => (
                     <AwardItem key={award.title} award={award} />
