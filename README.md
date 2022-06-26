@@ -9,7 +9,7 @@
 <p align="center">
     <a href="https://timz.dev">Deployed Site</a> |
     <a href="https://www.figma.com/file/kSDFLWSycGG4lXjn0seVv3/timz.dev-Blog-Design?node-id=0%3A1">Figma</a> <em>(private for now)</em> | 
-    <a href="https://tymotex.github.io/timz.dev/">Docs (Storybook)</a>
+    <a href="https://storybook.timz.dev">Docs (Storybook)</a>
 </p>
  
 ---
@@ -28,8 +28,6 @@ leverage the expressive power of MDX and LaTeX for mathematical typesetting.
 # CI/CD
 
 This project uses the following GitHub Actions workflows:
-- `storybook-deploy` &ndash; This deploys an instance of this project's Storybook documentation website
-    to GitHub Pages.
 - `lighthouse-audit` &ndash; This runs a web vitals audit using Chrome Lighthouse on the deployed
     instance of the website. It can be configured to run on non-deployed static
     files. See [Lighthouse CI Action](https://github.com/marketplace/actions/lighthouse-ci-action).

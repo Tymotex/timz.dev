@@ -1,21 +1,14 @@
+import portfolio from "content/portfolio/portfolio";
 import { motion } from "framer-motion";
 import type { NextPage } from "next";
-import { useRouter } from "next/router";
-import { useCallback } from "react";
-import ChipGroup from "src/components/ChipGroup";
 import ContentContainer from "src/components/Container/ContentContainer";
 import SectionDivider from "src/components/Divider/SectionDivider";
+import FeaturedProjectList from "src/components/FeaturedProject/FeaturedProjectList";
+import { ProjectCardDeck } from "src/components/ProjectCard";
 import { Window } from "src/components/Window";
 import styles from "./Projects.module.scss";
-import { FeaturedProject } from "src/components/FeaturedProject";
-import portfolio from "content/portfolio/portfolio";
-import { useRedirectHome } from "src/hooks/routerHooks";
-import { ProjectCard, ProjectCardDeck } from "src/components/ProjectCard";
-import FeaturedProjectList from "src/components/FeaturedProject/FeaturedProjectList";
 
 const Projects: NextPage = () => {
-    const redirectToHome = useRedirectHome();
-
     return (
         <>
             <motion.div>

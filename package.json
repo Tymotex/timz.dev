@@ -17,7 +17,8 @@
         "test:docs": "echo The Jest results are outputted to a JSON file so that Storybook can read it and report the test results for each component",
         "lint": "next lint",
         "storybook": "yarn test:generate-output && BROWSER=\"none\" start-storybook --quiet -p 6006 || true",
-        "build-storybook": "build-storybook -o docs-build",
+        "build-storybook": "build-storybook -o docs",
+        "deploy-storybook": "storybook-to-ghpages",
         "prepare": "husky install"
     },
     "dependencies": {
