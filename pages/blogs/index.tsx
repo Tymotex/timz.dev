@@ -1,7 +1,8 @@
 import type { GetStaticProps, NextPage } from "next";
-import Link from "next/link";
 import { BlogInfo, getAllBlogs } from "scripts/blogs";
-import { BlogLayout } from "src/layout";
+import { BlogList } from "src/components/Blog";
+import { SubtleDivider } from "src/components/Divider";
+import styles from "./BlogIndex.module.scss";
 
 export const getStaticProps: GetStaticProps = async (context) => {
     const blogs: BlogInfo[] = await getAllBlogs();
@@ -19,19 +20,9 @@ interface Props {
 const BlogIndex: NextPage<Props> = ({ blogs }) => {
     return (
         <>
-            <h1>Blogs</h1>
-            <ul>
-                {blogs.map((blogInfo) => (
-                    <li key={blogInfo.slug}>
-                        <Link
-                            href={`/blogs/${blogInfo.category}/${blogInfo.slug}`}
-                        >
-                            {`${blogInfo.slug} - ${blogInfo.frontmatter.title}`}
-                        </Link>
-                        ({blogInfo.frontmatter.date})
-                    </li>
-                ))}
-            </ul>
+            <h1 className={styles.title}>Blogs</h1>
+            <SubtleDivider />
+            <BlogList blogs={blogs} />
         </>
     );
 };
