@@ -1,0 +1,55 @@
+@import "../../../styles/variables.scss";
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+
+    .fieldGroup {
+        display: flex;
+        flex-direction: row;
+        column-gap: $spacing-md;
+        justify-content: space-between;
+
+        .field {
+            label {
+                color: $cool-grey-800;
+            }
+
+            input,
+            textarea {
+                width: 100%;
+                box-sizing: border-box;
+                background: rgba($color: #000000, $alpha: 0.1);
+                color: $dark-text-colour;
+                padding: $spacing-xs;
+                border: 1px solid rgba($color: #ffffff, $alpha: 0.5);
+                border-radius: 5px;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: $spacing-sm;
+            }
+
+            &.name {
+                width: 50%;
+            }
+
+            &.email {
+                width: 50%;
+            }
+
+            &.message {
+                width: 100%;
+                min-height: 10rem;
+
+                textarea {
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    .submitButton {
+        margin-top: $spacing-md;
+    }
+}

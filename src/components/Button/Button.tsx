@@ -4,7 +4,8 @@ import styles from "./Button.module.scss";
 
 export interface ButtonProps {
     text: string;
-    type?: "primary" | "secondary" | "tertiary";
+    type?: "button" | "submit";
+    colour?: "primary" | "secondary" | "tertiary";
     icon?: React.ReactNode;
     iconPosition?: "left" | "right";
     shape?: "pill" | "box";
@@ -18,7 +19,8 @@ export interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({
     text,
-    type = "primary",
+    type = "button",
+    colour = "primary",
     icon,
     iconPosition,
     shape = "box",
@@ -29,7 +31,7 @@ const Button: React.FC<ButtonProps> = ({
     onClick,
 }) => {
     let buttonClass = styles.primary;
-    switch (type) {
+    switch (colour) {
         case "primary":
             buttonClass = styles.primary;
             break;
@@ -49,6 +51,7 @@ const Button: React.FC<ButtonProps> = ({
             className={`${styles.button} ${buttonClass} ${
                 callToAction && styles.callToAction
             }`}
+            type={type}
             style={{
                 flexDirection: iconPosition === "left" ? "row" : "row-reverse",
                 borderRadius: shape === "pill" ? 200 : 5,
