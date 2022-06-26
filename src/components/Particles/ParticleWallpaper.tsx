@@ -8,10 +8,12 @@ import { useRouter } from "next/router";
 
 interface Props {
     particleType?: ParticleType;
+    darkOverlayForUrls?: Set<string>;
 }
 
 const ParticleWallpaper: React.FC<Props> = ({
     particleType = ParticleType.Networks,
+    darkOverlayForUrls,
 }) => {
     const [targetOpacity, setOpacity] = useState<number>(0);
     const router = useRouter();
@@ -24,10 +26,11 @@ const ParticleWallpaper: React.FC<Props> = ({
         body.style.background = selectedTheme.css;
     }, []);
 
-    // When the path is anything but "/", then darken the overlay to create
-    // a backdrop effect.
+    // When the path is specified in `darkOverlayForUrls`, then darken the
+    // overlay to create a backdrop effect.
     useEffect(() => {
-        if (router && router.pathname !== "/") setOpacity(0.55);
+        if (router && darkOverlayForUrls?.has(router.pathname))
+            setOpacity(0.55);
         else setOpacity(0);
     }, [router]);
 
