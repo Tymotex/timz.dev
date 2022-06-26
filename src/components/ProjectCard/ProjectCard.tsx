@@ -1,15 +1,14 @@
+import { Project } from "content/portfolio/portfolio";
 import Image from "next/image";
 import React from "react";
-import { Button, LinkButton } from "../Button";
-import styles from "./ProjectCard.module.scss";
 import { FiGithub as GithubIcon } from "react-icons/fi";
 import {
     MdOutlineArrowRightAlt as RightArrowIcon,
     MdOutlineOpenInNew as DemoIcon,
 } from "react-icons/md";
-import ContentContainer from "../Container/ContentContainer";
+import { Button } from "../Button";
 import { SubtleDivider } from "../Divider";
-import { Project } from "content/portfolio/portfolio";
+import styles from "./ProjectCard.module.scss";
 
 interface Props {
     project: Project;
