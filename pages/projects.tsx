@@ -1,6 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 import portfolio from "content/portfolio/portfolio";
 import { motion } from "framer-motion";
 import type { NextPage } from "next";
+import Image from "next/image";
 import ContentContainer from "src/components/Container/ContentContainer";
 import SectionDivider from "src/components/Divider/SectionDivider";
 import FeaturedProjectList from "src/components/FeaturedProject/FeaturedProjectList";
@@ -39,6 +41,12 @@ const Projects: NextPage = () => {
                             </p>
                             <ProjectCardDeck
                                 projects={portfolio.projects.other}
+                            />
+                            {/* GitHub Statistics. */}
+                            <img
+                                src="https://github-readme-stats.vercel.app/api?username=Tymotex&theme=solarized-dark"
+                                alt="GitHub statistics"
+                                style={{ display: "block", margin: "0 auto" }}
                             />
                         </ContentContainer>
                     </Window>

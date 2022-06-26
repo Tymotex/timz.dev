@@ -19,7 +19,7 @@ const nextConfig = {
         includePaths: [path.resolve(__dirname, "styles")]
     },
     images: {
-        domains: ['tymotex.github.io', 'raw.githubusercontent.com'],
+        domains: ['tymotex.github.io', 'raw.githubusercontent.com', 'github-readme-stats.vercel.app'],
     },
 }
 
