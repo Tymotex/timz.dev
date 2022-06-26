@@ -19,7 +19,7 @@ interface Props {
 const BlogIndex: NextPage<Props> = ({ blogs }) => {
     return (
         <BlogLayout>
-            <h1>Welcome</h1>
+            <h1>Blogs</h1>
             <ul>
                 {blogs.map((blogInfo) => (
                     <li key={blogInfo.slug}>

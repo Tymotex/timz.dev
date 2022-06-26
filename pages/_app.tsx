@@ -46,7 +46,17 @@ const App = ({ Component, pageProps, router }: AppProps) => {
 
             {/* Only show the particle wallpaper when on blog routes. */}
             <AnimatePresence exitBeforeEnter>
-                {!isBlogPage && <ParticleWallpaper />}
+                {/* {!isBlogPage && <ParticleWallpaper />} */}
+                <ParticleWallpaper
+                    darkOverlayForUrls={
+                        new Set<string>([
+                            "/projects",
+                            "/work",
+                            "/contact",
+                            "/about",
+                        ])
+                    }
+                />
             </AnimatePresence>
 
             {/* Note: `exitBeforeEnter` makes it so that when navigating to a
