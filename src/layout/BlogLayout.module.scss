@@ -1,7 +1,7 @@
 @import "../../styles/variables.scss";
 @import "../../styles/mixins.scss";
 
-$edge-skew-angle: -2.5deg;
+$edge-skew-angle: -1.5deg;
 
 .blogBody {
     background: rgba($color: #000000, $alpha: 0);
@@ -15,6 +15,7 @@ $edge-skew-angle: -2.5deg;
         background: whitesmoke;
         margin: 250px 0;
 
+        // Creating a 'razor blade', or slanted edge.
         &:before {
             position: absolute;
             width: 100%;
@@ -44,6 +45,12 @@ $edge-skew-angle: -2.5deg;
             transform-origin: top right;
             transform: skewY($edge-skew-angle);
             box-shadow: rgba(0, 0, 0, 0.15) 0px 10px 10px 0px;
+        }
+
+        // Top bar containing navigation UI and buttons.
+        .topBar {
+            display: flex;
+            justify-content: space-between;
         }
     }
 }

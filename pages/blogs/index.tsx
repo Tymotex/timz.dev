@@ -1,7 +1,7 @@
 import type { GetStaticProps, NextPage } from "next";
 import { BlogInfo, getAllBlogs } from "scripts/blogs";
 import { BlogList } from "src/components/Blog";
-import { SubtleDivider } from "src/components/Divider";
+import { MiniDivider, SubtleDivider } from "src/components/Divider";
 import styles from "./BlogIndex.module.scss";
 
 export const getStaticProps: GetStaticProps = async (context) => {
@@ -21,8 +21,16 @@ const BlogIndex: NextPage<Props> = ({ blogs }) => {
     return (
         <>
             <h1 className={styles.title}>Blogs</h1>
-            <SubtleDivider />
-            <BlogList blogs={blogs} />
+            <MiniDivider />
+            <BlogList
+                blogs={blogs.filter((blog) => blog.category !== "projects")}
+            />
+
+            <h1 className={styles.title}>Projects</h1>
+            <MiniDivider />
+            <BlogList
+                blogs={blogs.filter((blog) => blog.category === "projects")}
+            />
         </>
     );
 };

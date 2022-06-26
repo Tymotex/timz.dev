@@ -20,6 +20,7 @@ const BlogItem: React.FC<Props> = ({ blog }) => {
                     <a>
                         <Image
                             src="/og-image.avif"
+                            alt={`${blog.slug} thumbnail`}
                             layout="fill"
                             objectFit="cover"
                         />
