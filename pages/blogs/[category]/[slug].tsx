@@ -1,13 +1,11 @@
-import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { Fragment, useMemo } from "react";
-import { Blog, getAllBlogs, getBlog } from "scripts/blogs";
 import { getMDXComponent } from "mdx-bundler/client";
-import { motion } from "framer-motion";
+import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { useRouter } from "next/router";
-import { ErrorPage } from "src/components/Error";
-import styles from "./BlogPage.module.scss";
+import { useMemo } from "react";
+import { Blog, getAllBlogs, getBlog } from "scripts/blogs";
+import { ChipGroup } from "src/components/ChipGroup";
 import ContentContainer from "src/components/Container/ContentContainer";
-import { BlogLayout } from "src/layout";
+import styles from "./BlogPage.module.scss";
 
 export const getStaticProps: GetStaticProps = async (context) => {
     if (context === undefined || context.params === undefined)
@@ -51,40 +49,25 @@ const BlogIndex: NextPage<Props> = ({ blog }) => {
     );
 
     // TODO: Test these fallback components and substitute for a loader and error.
-    if (!blog)
-        return (
-            <></>
-            // <ErrorPage
-            //     errorMessage={`There's nothing to see at '${category}/${slug}'.`}
-            //     homeUrl="/blogs"
-            //     errorCode="404"
-            // />
-        );
+    if (!blog) return <></>;
     if (router.isFallback) return <>Loading...</>;
 
     return (
-        // <motion.div
-        //     initial={{
-        //         opacity: 0,
-        //     }}
-        //     animate={{
-        //         opacity: 1,
-        //     }}
-        //     exit={{
-        //         opacity: 0,
-        //     }}
-        //     transition={{
-        //         duration: 0.5,
-        //     }}
-        //     className={styles.blogPage}
-        // >
-        // </motion.div>
-        <BlogLayout>
-            <ContentContainer>
-                <h3>{blog.frontmatter.title}</h3>
-                {Blog && <Blog />}
-            </ContentContainer>
-        </BlogLayout>
+        <ContentContainer className={styles.blogPage}>
+            <h1 className={styles.title}>{blog.frontmatter.title}</h1>
+            <ul className={styles.metadataList}>
+                <li className={styles.field}>4th June, 2022</li>
+                <li className={styles.field}>5 mins to read</li>
+                <li className={styles.field}>Medium</li>
+            </ul>
+            <ChipGroup
+                items={["Software Engineering", "Cybersecurity"]}
+                position="center"
+                padding="10px 16px"
+            />
+            <br />
+            {Blog && <Blog />}
+        </ContentContainer>
     );
 };
 

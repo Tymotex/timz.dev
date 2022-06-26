@@ -1,4 +1,5 @@
 @import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
 
 .unorderedList {
     position: relative;
@@ -11,6 +12,16 @@
             content: "►";
             position: absolute;
             left: 0;
+        }
+    }
+
+    &.reset {
+        @include reset-ul-styles;
+
+        li {
+            &:before {
+                content: "";
+            }
         }
     }
 }

@@ -11,16 +11,24 @@ export interface SocialLinkData {
 interface Props {
     socials: SocialLinkData[];
     position?: "fixed" | "absolute";
+    anchorPosition?: "bottom";
+    style?: React.CSSProperties;
 }
 
-const Socials: React.FC<Props> = ({ socials, position = "fixed" }) => {
+const Socials: React.FC<Props> = ({
+    socials,
+    position = "fixed",
+    anchorPosition,
+    style,
+}) => {
     // Responsive re-positioning across the standard 'lg' breakpoint (992px).
     const isSmallScreen = useBreakpointTrigger(992);
 
     // When the screen width is below 'lg', dock the icons to the bottom.
-    const positionClass = isSmallScreen
-        ? styles.anchoredToBottom
-        : styles.anchoredToLeft;
+    const positionClass =
+        anchorPosition || isSmallScreen
+            ? styles.anchoredToBottom
+            : styles.anchoredToLeft;
 
     return (
         <motion.div
@@ -29,7 +37,7 @@ const Socials: React.FC<Props> = ({ socials, position = "fixed" }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
-            style={{ position }}
+            style={{ ...style, position }}
         >
             {socials &&
                 socials.map((social) => (

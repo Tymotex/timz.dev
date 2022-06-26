@@ -571,7 +571,7 @@ const portfolio: PortfolioData = {
                             date: "2021",
                         },
                         {
-                            title: "Faculty of Engineering Dean’s Award",
+                            title: "Faculty of Engineering Dean’s Award (x2)",
                             description: `For ranking in the top 25 academic performance across
                         all 1st & 2nd year students in UNSW's School of
                         Engineering.`,

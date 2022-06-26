@@ -4,11 +4,12 @@ import { Technology } from "./technologies";
 import styles from "./ChipGroup.module.scss";
 
 interface Props {
-    technologies: Technology[];
+    items: string[];
     position?: "left" | "right" | "center";
+    padding?: string;
 }
 
-const ChipGroup: React.FC<Props> = ({ technologies, position = "left" }) => {
+const ChipGroup: React.FC<Props> = ({ items, position = "left", padding }) => {
     const positionClass =
         position === "left"
             ? styles.left
@@ -17,18 +18,10 @@ const ChipGroup: React.FC<Props> = ({ technologies, position = "left" }) => {
             : position === "center" && styles.center;
     return (
         <ul className={`${styles.chipStack} ${positionClass}`}>
-            {technologies &&
-                technologies.map((tech) => (
-                    <li className={styles.chip} key={tech}>
-                        <Image
-                            alt={`${tech} icon`}
-                            src={`/icons/tech/${encodeURIComponent(
-                                tech.toLowerCase(),
-                            )}.png`}
-                            width={20}
-                            height={20}
-                        />
-                        <span role="listitem">{tech}</span>
+            {items &&
+                items.map((item) => (
+                    <li className={styles.chip} key={item} style={{ padding }}>
+                        {item}
                     </li>
                 ))}
         </ul>
