@@ -44,7 +44,7 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
                                 <Button
                                     text=""
                                     shape="pill"
-                                    type="secondary"
+                                    colour="secondary"
                                     icon={<GithubIcon />}
                                     externalUrl={project.githubUrl}
                                 />
@@ -53,7 +53,7 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
                                 <Button
                                     text=""
                                     shape="pill"
-                                    type="secondary"
+                                    colour="secondary"
                                     icon={<DemoIcon />}
                                     externalUrl={project.demoUrl}
                                 />

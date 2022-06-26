@@ -23,6 +23,7 @@ leverage the expressive power of MDX and LaTeX for mathematical typesetting.
     - Sets up custom theming and branding.
     - Jest test integration.
     - Automatically builds and deploys static assets in `docs/` to GitHub Pages.
+- Uses Getform.io for email receipt and delivery for the Contact page.
 
 # CI/CD
 
@@ -106,6 +107,12 @@ The `.mdx` file can render any of the following:
 All of this is possible through `mdx-bundler` which is used by the server-side
 Node.js script, `scripts/blogs.ts`, to map all the `.mdx` source code to
 executable javascript that renders the content.
+
+# Contact Form
+
+The contact form was built using the [Getform](https://getform.io/) email receipt and delivery service.
+I followed [this guide](https://blog.getform.io/building-nextjs-forms-using-getform/) for setting up the form.
+The API endpoint string is set inside `constants/external.ts` and need not be secret.
 
 # Issues & Performance
 

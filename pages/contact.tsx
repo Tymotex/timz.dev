@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import type { NextPage } from "next";
+import { ContactForm } from "src/components/ContactForm";
 import ContentContainer from "src/components/Container/ContentContainer";
+import { SectionDivider } from "src/components/Divider";
 import { Window } from "src/components/Window";
 import { useRedirectHome } from "src/hooks/routerHooks";
 
@@ -17,8 +19,19 @@ const Contact: NextPage = () => {
                             { title: "Contact", url: "/contact" },
                         ]}
                     >
-                        <ContentContainer maxWidth={1200}>
-                            <p>Contact me!</p>
+                        <SectionDivider text="Contact Me" />
+                        <ContentContainer
+                            maxWidth="35rem"
+                            padding="0"
+                            textAlign="center"
+                        >
+                            <p>
+                                Feel free to reach out to me if you have a
+                                question or just want to connect!
+                            </p>
+                        </ContentContainer>
+                        <ContentContainer maxWidth={1200} padding={"24px 48px"}>
+                            <ContactForm />
                         </ContentContainer>
                     </Window>
                 </div>

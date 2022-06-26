@@ -44,13 +44,17 @@ const Home: NextPage = () => {
                         columnGap={10}
                         className={styles.buttonStack}
                     >
-                        <LinkButton type="primary" text="Work" href="/work" />
+                        <LinkButton colour="primary" text="Work" href="/work" />
                         <LinkButton
-                            type="primary"
+                            colour="primary"
                             text="Projects"
                             href="/projects"
                         />
-                        <LinkButton type="primary" text="Blog" href="/blogs" />
+                        <LinkButton
+                            colour="primary"
+                            text="Blog"
+                            href="/blogs"
+                        />
                     </Stack>
                 </ContentContainer>
             </CentralContainer>
