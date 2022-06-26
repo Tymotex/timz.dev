@@ -18,7 +18,7 @@
         "lint": "next lint",
         "storybook": "yarn test:generate-output && BROWSER=\"none\" start-storybook --quiet -p 6006 || true",
         "build-storybook": "build-storybook -o docs",
-        "deploy-storybook": "storybook-to-ghpages --existing-output-dir docs",
+        "deploy-storybook": "storybook-to-ghpages",
         "prepare": "husky install"
     },
     "dependencies": {

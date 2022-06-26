@@ -9,7 +9,7 @@ public/mdx
 
 # The output directory of `build-storybook`.
 docs-build
-
+docs
 
 # dependencies
 /node_modules
