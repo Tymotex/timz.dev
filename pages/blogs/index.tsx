@@ -18,7 +18,7 @@ interface Props {
 
 const BlogIndex: NextPage<Props> = ({ blogs }) => {
     return (
-        <BlogLayout>
+        <>
             <h1>Blogs</h1>
             <ul>
                 {blogs.map((blogInfo) => (
@@ -32,7 +32,7 @@ const BlogIndex: NextPage<Props> = ({ blogs }) => {
                     </li>
                 ))}
             </ul>
-        </BlogLayout>
+        </>
     );
 };
 

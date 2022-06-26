@@ -51,40 +51,16 @@ const BlogIndex: NextPage<Props> = ({ blog }) => {
     );
 
     // TODO: Test these fallback components and substitute for a loader and error.
-    if (!blog)
-        return (
-            <></>
-            // <ErrorPage
-            //     errorMessage={`There's nothing to see at '${category}/${slug}'.`}
-            //     homeUrl="/blogs"
-            //     errorCode="404"
-            // />
-        );
+    if (!blog) return <></>;
     if (router.isFallback) return <>Loading...</>;
 
     return (
-        // <motion.div
-        //     initial={{
-        //         opacity: 0,
-        //     }}
-        //     animate={{
-        //         opacity: 1,
-        //     }}
-        //     exit={{
-        //         opacity: 0,
-        //     }}
-        //     transition={{
-        //         duration: 0.5,
-        //     }}
-        //     className={styles.blogPage}
-        // >
-        // </motion.div>
-        <BlogLayout>
+        <>
             <ContentContainer>
                 <h3>{blog.frontmatter.title}</h3>
                 {Blog && <Blog />}
             </ContentContainer>
-        </BlogLayout>
+        </>
     );
 };
 
