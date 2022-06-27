@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "concurrently \"next-remote-watch content/\" \"yarn storybook\"",
+        "dev": "concurrently \"next-remote-watch content/ scripts/\" \"yarn storybook\"",
         "dev:docs": "echo Start both the local development server and the storybook server. Note: using `next-remote-watch` lets you hot reload on change to non-source-code files.",
         "build": "next build",
         "build:analyse": "ANALYZE=true yarn build",
