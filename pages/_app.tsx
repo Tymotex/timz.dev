@@ -21,14 +21,8 @@ import { BlogLayout } from "src/layout";
 import { BlogContext } from "src/contexts/BlogContext";
 
 const App = ({ Component, pageProps, router }: AppProps) => {
-    const [isBlogPage, setIsBlogPage] = useState<boolean>(
-        /^\/blogs/.test(router.pathname),
-    );
+    const [searchQuery, setSearchQuery] = useState<string>("");
     useTransitionFix();
-
-    useEffect(() => {
-        setIsBlogPage(/^\/blogs/.test(router.pathname));
-    }, [router.pathname]);
 
     return (
         <DarkModeProvider>
@@ -65,13 +59,15 @@ const App = ({ Component, pageProps, router }: AppProps) => {
                        new page, the current page must fully animate out BEFORE
                        the new page can come in. */}
             <AnimatePresence exitBeforeEnter>
-                {router.pathname.startsWith("/blogs") ? (
-                    <BlogLayout>
+                <BlogContext.Provider value={{ searchQuery, setSearchQuery }}>
+                    {router.pathname.startsWith("/blogs") ? (
+                        <BlogLayout>
+                            <Component {...pageProps} key={router.route} />
+                        </BlogLayout>
+                    ) : (
                         <Component {...pageProps} key={router.route} />
-                    </BlogLayout>
-                ) : (
-                    <Component {...pageProps} key={router.route} />
-                )}
+                    )}
+                </BlogContext.Provider>
             </AnimatePresence>
         </DarkModeProvider>
     );

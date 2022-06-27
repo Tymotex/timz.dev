@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useMemo } from "react";
+import React, { useContext, useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import styles from "./BlogLayout.module.scss";
 import ContentContainer from "src/components/Container/ContentContainer";
@@ -11,6 +11,7 @@ import portfolio from "content/portfolio/portfolio";
 import { Copyright } from "src/components/Copyright";
 import { useRouter } from "next/router";
 import { DarkModeContext } from "src/contexts/LightDarkThemeProvider";
+import { SearchBar } from "src/components/SearchBar";
 
 interface Props {
     children: React.ReactNode;
@@ -19,6 +20,7 @@ interface Props {
 const BlogLayout: React.FC<Props> = ({ children }) => {
     const router = useRouter();
     const theme = useContext(DarkModeContext);
+    const blogContext = useContext(BlogContext);
 
     const crumbs = useMemo(() => {
         if (!router) return [{ title: "Home", url: "/" }];
@@ -76,7 +78,13 @@ const BlogLayout: React.FC<Props> = ({ children }) => {
                         crumbs={crumbs}
                         isDarkMode={theme.isDarkMode}
                     />
-                    <DarkModeToggler />
+                    <div className={styles.rightGroup}>
+                        <SearchBar
+                            query={blogContext.searchQuery}
+                            setQuery={blogContext.setSearchQuery}
+                        />
+                        <DarkModeToggler />
+                    </div>
                 </ContentContainer>
                 {children}
             </div>

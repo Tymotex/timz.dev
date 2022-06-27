@@ -1,0 +1,35 @@
+@import "../../../styles/variables.scss";
+
+.searchBar {
+    position: relative;
+
+    .searchIcon {
+        position: absolute;
+        top: 50%;
+        left: $spacing-xs;
+        transform: translateY(-50%);
+    }
+
+    label {
+        // top: -16px;
+        // left: 12px;
+        // color: $cool-grey-500;
+        // font-size: small;
+        position: absolute;
+        visibility: hidden;
+    }
+
+    input {
+        border-radius: 100px;
+        padding: $spacing-xs $spacing-xs $spacing-xs $spacing-lg;
+
+        &.dark {
+            background-color: $cool-grey-300;
+        }
+
+        &.light {
+            background-color: rgb(246, 248, 250);
+            border: 1px solid $cool-grey-800;
+        }
+    }
+}
