@@ -9,6 +9,8 @@ import styles from "./BlogPage.module.scss";
 import { AiFillRead as BookIcon } from "react-icons/ai";
 import { BsMedium as MediumIcon } from "react-icons/bs";
 import { DarkModeContext } from "src/contexts/LightDarkThemeProvider";
+import { MiniDivider, SubtleDivider } from "src/components/Divider";
+import Link from "next/link";
 
 export const getStaticProps: GetStaticProps = async (context) => {
     if (context === undefined || context.params === undefined)
@@ -87,6 +89,17 @@ const BlogIndex: NextPage<Props> = ({ blog }) => {
                 <br />
             </ContentContainer>
             <div className={styles.blogContents}>{Blog && <Blog />}</div>
+            <br />
+            <SubtleDivider />
+            <ContentContainer className={styles.blogFooter}>
+                <p>
+                    Thanks for reading 🤓!{" "}
+                    <Link href="/contact">Let me know</Link> if this helped you.
+                </p>
+                <p>
+                    See more of my blogs <Link href="/blogs">here</Link>.
+                </p>
+            </ContentContainer>
         </>
     );
 };

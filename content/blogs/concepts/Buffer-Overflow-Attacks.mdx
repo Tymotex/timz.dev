@@ -9,9 +9,9 @@ tags:
     - Computer Science
 ---
 
-A **buffer** in the context of a buffer overflow attack is basically a fixed-length memory region such as an integer array or string that the program writes data to.
+import { Image } from 'src/blog-components/Image';
 
-A **buffer overflow** is when the program tries to write more elements into that array than its allocated size, causing the program to silently write the data to adjacent memory addresses, overwriting their contents.
+A **buffer** in the context of a buffer overflow attack is basically a fixed-length memory region such as an integer array or string that the program writes data to. A **buffer overflow** is when the program tries to write more elements into that array than its allocated size, causing the program to silently write the data to adjacent memory addresses, overwriting their contents. 
 
 A **buffer overflow attack** works by finding and exploiting buffer overflows, often done by using it to overwrite the contents of memory addresses with malicious code. There are **stack-based** buffer overflow attacks (called ‘*stack smashing*’), which are more common, and **[heap-based](https://en.wikipedia.org/wiki/Heap_overflow)** buffer overflow attacks (called ‘heap smashing’). This introduction to buffer overflow attacks will only focus on stack-based attacks.
 
@@ -37,7 +37,8 @@ int main() {
 }
 ```
 
-![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/8502265b-b450-497e-a64d-7c6fe6c12fca/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220410%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220410T012745Z&X-Amz-Expires=86400&X-Amz-Signature=72e0e560ca1adb180718894e1dcf6509b824fce5a0c3ac28b24769520802b797&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+<Image src="/images/blogs/concepts/Buffer-Overflow-Attacks/buffer-overflow-example.png" alt="Buffer overflow example" width="100%" />
+
 
 Remember that in C, you need to null-terminate strings by placing a null character, `\0` , at the final slot of the buffer. This means that the above code can only accept inputs of length 0-3. If we sends inputs of length 0-3, we’ll see the following intended output:
 
@@ -104,7 +105,7 @@ ASLR only makes buffer overflow attacks more difficult to carry out, not impossi
 
 Stack canarying involves using strncmp on a few of the trailing bytes *after the end of a buffer* to check that it matches a known value called the canary value. If it fails to match, then the program has successfully caught a buffer overflow attempt by the user and will terminate.
 
-![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c65d88ce-612f-4e7d-9ab6-c45e260f1270/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220410%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220410T012800Z&X-Amz-Expires=86400&X-Amz-Signature=2fec9a9a09b1f2efda9e3d18b1f1be4c8ade932f4c11c4f8513f7248fb9305ed&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+<Image src="/images/blogs/concepts/Buffer-Overflow-Attacks/stack-canarying.png" alt="Stack canarying diagram" />
 
 The idea is that when the attacker attempts a buffer overflow attack, then the first few bytes that are corrupted will be on the canary that’s placed at the end of the buffer. Seeing if the 
 
@@ -123,10 +124,10 @@ Stack canarying is not fool-proof! It’s easily overriden if the attacker can p
 
 Just like how canaries were [historically used](https://en.wikipedia.org/wiki/Sentinel_species#Historical_examples) to detect dangerous carbon monoxide levels in coal mines, we use stack canaries are named such because they help processes detect attempts at buffer overflow attacks.
 
-![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/02b77da0-b8c1-48bf-9785-c6617cf18945/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220410%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220410T012817Z&X-Amz-Expires=86400&X-Amz-Signature=f080df307c75554d3c93708a6549534522479f13469c0445e190d7d7ad6a1a7b&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+<Image src="/images/blogs/concepts/Buffer-Overflow-Attacks/canary-bird.png" alt="Cute canary birds" width="50%" shadow />
 
 There are plenty of other buffer overflow defence strategies as well as attack strategies that overcome them.
 
-* [Prevent execution of code on the stack](https://en.wikipedia.org/wiki/Stack_buffer_overflow#:~:text=the%20stack.%5B2%5D-, Nonexecutable%20stack, -%5Bedit%5D).
+* [Prevent execution of code on the stack](https://en.wikipedia.org/wiki/Stack_buffer_overflow).
 * [No-op sleds](https://en.wikipedia.org/wiki/NOP_slide).
 * [ROP (return-oriented programming) attacks](https://en.wikipedia.org/wiki/Return-oriented_programming) which you can launch via a buffer-overflow vulnerability.

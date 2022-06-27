@@ -16,7 +16,8 @@ $dark-subtitle-colour: #c0b4ce;
 /**
  * Light mode palette.
  */
-$light-background-colour: rgb(246, 248, 250);
+// $light-background-colour: rgb(246, 248, 250);
+$light-background-colour: white;
 $light-text-colour: #101010;
 $light-subtitle-colour: #818181;
 
@@ -107,3 +108,8 @@ $line-spacing-sm: 1.25;
 $line-spacing-md: 1.5;
 $line-spacing-lg: 2;
 $line-spacing-xl: 3;
+
+/**
+ * Blog variables.
+ */
+$blog-contents-max-width: 50rem;

@@ -5,9 +5,10 @@ published: false
 date: 2022-06-25
 ---
 
-### Introduction to CTFs
+import {Image} from 'src/blog-components/Image';
 
-**What are CTFs and why should you try them?**
+
+## What are CTFs and why should you try them?
 
 Security CTFs are competitions where participants aim to extract a flag in a protected system. 
 
@@ -15,7 +16,7 @@ It’s widely commended for being one of the best ways to learn valuable hacking
 
 Additionally, and I believe this to be a hugely underrated reason to do CTFs, it trains your ‘hacking persistence’ since you’ll constantly be stuck and the process of ‘un-stucking’ yourself in dead-end pursuits is a skill that transfers over to so many other problems you’ll face as a developer. The satisfaction of solving a difficult, ambiguous task and entering [flow](https://en.wikipedia.org/wiki/Flow_(psychology)) every time you sit down to solve a CTF problem is incredibly addictive too!
 
-**Jeopardy vs. Attack-Defense:**
+## Jeopardy vs. Attack-Defense
 
 These are the two main types of CTFs.
 
@@ -23,7 +24,7 @@ These are the two main types of CTFs.
 
 *Attack-and-defense CTFs* involve teams that have to defend their own servers against attacking teams, and attacking other teams themselves. 
 
-**Main Categories:**
+## Main Categories
 
 CTF problems are often split into the following category
 
@@ -33,20 +34,21 @@ CTF problems are often split into the following category
 - Reverse engineering — converting compiled code to a human-readable format. Like binary exploitation, this is considered to be a more challenging category since it requires a more rigorous understanding of programming languages and operating systems.
 - Forensics — recovering the digital trail of an event or uncovering information that’s tucked away in the file or abstracted in some way. In this category, you’ll be introduced to so many tools and you’ll have a much more intimate understanding of file structures and steganography techniques.
 
-**Setting up:**
+## Setting up
 
 It’s often recommended to set up and use a virtual machine to prevent malicious files from compromising your main OS. I highly recommend setting up [Kali Linux](https://kali.org/) on a [VMWare Workstation](https://www.vmware.com/au/products/workstation-pro.html).
 
 Kali is widely appreciated by the hacker community because it delivers a large suite of useful tools and offers great customisation.
 
+<Image src="/images/blogs/kali-linux.png" width="20%" alt="Kali Linux Icon" />
  
 I started CTFs with Ubuntu 20.04 and I often had to `sudo apt install` a large number of tools that I needed for CTFs, you’ll rarely have this problem on Kali 🙂.
 
-**CTF Etiquette:**
+## CTF Etiquette
 
 Never post flags or solutions, and never beg for them from others. Unless stated otherwise however, it’s fine (and encouraged!) to Google things during a CTF. Apart from directly asking for solutions, you’re typically ‘expected’ to use any resource that is at your disposal — which is basically [OSINT](https://en.wikipedia.org/wiki/Open-source_intelligence), one of the core ‘tools’ for hacking.
 
-**Great starter guides:**
+## Great starter guides
 
 These are some great beginner guides that I had read through to start my journey into CTFs.
 
@@ -56,5 +58,4 @@ These are some great beginner guides that I had read through to start my journey
 - [CTF101](https://ctf101.org/)
 - [picoCTF](https://picoctf.org/resources)
 
-![Kali](https://raw.githubusercontent.com/Tymotex/timz.dev/master/src/portfolio-data/cybersecurity/images/Introduction_kali.png)
 
