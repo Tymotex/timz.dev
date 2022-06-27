@@ -1,0 +1,12 @@
+@import "../../../styles/variables.scss";
+
+.tagFilter {
+    .tagSearch {
+        margin-bottom: $spacing-xs;
+        .searchInput {
+            padding: $spacing-xxs $spacing-xxs $spacing-xxs $spacing-sm;
+            border-radius: 100px;
+            border: 1px solid rgba($color: $cool-grey-600, $alpha: 0.5);
+        }
+    }
+}

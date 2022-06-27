@@ -55,6 +55,12 @@ $edge-skew-angle: -1deg;
         .topBar {
             display: flex;
             justify-content: space-between;
+
+            .rightGroup {
+                display: flex;
+                flex-direction: row;
+                column-gap: $spacing-sm;
+            }
         }
     }
 }

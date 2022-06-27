@@ -1,16 +1,18 @@
-import React, { useContext, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
+import React, { useContext, useEffect, useMemo, useState } from "react";
 import styles from "./BlogLayout.module.scss";
-import ContentContainer from "src/components/Container/ContentContainer";
-import { ParticleWallpaper } from "src/components/Particles";
-import { BlogContext } from "src/contexts/BlogContext";
-import Breadcrumbs from "src/components/Breadcrumbs";
-import { DarkModeToggler } from "src/components/DarkModeToggler";
-import { Socials } from "src/components/Socials";
+
 import portfolio from "content/portfolio/portfolio";
-import { Copyright } from "src/components/Copyright";
 import { useRouter } from "next/router";
+import Breadcrumbs from "src/components/Breadcrumbs";
+import ContentContainer from "src/components/Container/ContentContainer";
+import { Copyright } from "src/components/Copyright";
+import { DarkModeToggler } from "src/components/DarkModeToggler";
+import { SearchBar } from "src/components/SearchBar";
+import { Socials } from "src/components/Socials";
+import { BlogContext } from "src/contexts/BlogContext";
 import { DarkModeContext } from "src/contexts/LightDarkThemeProvider";
+import { TagFilter } from "src/components/TagFilter";
 
 interface Props {
     children: React.ReactNode;
@@ -19,6 +21,9 @@ interface Props {
 const BlogLayout: React.FC<Props> = ({ children }) => {
     const router = useRouter();
     const theme = useContext(DarkModeContext);
+    const blogContext = useContext(BlogContext);
+
+    const [filterTags, setFilterTags] = useState<string[]>([]);
 
     const crumbs = useMemo(() => {
         if (!router) return [{ title: "Home", url: "/" }];
@@ -45,6 +50,10 @@ const BlogLayout: React.FC<Props> = ({ children }) => {
             ];
         }
     }, [router]);
+
+    useEffect(() => {
+        setFilterTags(String(router.query.tags).split(","));
+    }, [router.query]);
 
     return (
         <motion.div
@@ -76,8 +85,17 @@ const BlogLayout: React.FC<Props> = ({ children }) => {
                         crumbs={crumbs}
                         isDarkMode={theme.isDarkMode}
                     />
-                    <DarkModeToggler />
+                    <div className={styles.rightGroup}>
+                        <SearchBar
+                            query={blogContext.searchQuery}
+                            setQuery={blogContext.setSearchQuery}
+                        />
+                        <DarkModeToggler />
+                    </div>
                 </ContentContainer>
+                {/* <ContentContainer padding="24px 24px 0 24px">
+                    <TagFilter tags={filterTags} />
+                </ContentContainer> */}
                 {children}
             </div>
             <footer>

@@ -44,8 +44,19 @@ export const useTransitionFix = () => {
         // See: https://github.com/vercel/next.js/discussions/33243
         const path = Router.router?.pathname || "";
         const nestLevel = path.split("/").length - 1;
-        Router.router?.push(
-            nestLevel === 1 ? Router.router?.pathname : Router.router?.asPath,
-        );
-    }, []);
+
+        // For some reason, invoking router.push does not propagate the original
+        // query parameters, so we need to extract them and explicitly attach
+        // them on the `push` invocation below.
+        const urlSearchParams = new URLSearchParams(window.location.search);
+        const params = Object.fromEntries(urlSearchParams.entries());
+
+        Router.router?.push({
+            pathname:
+                nestLevel === 1
+                    ? Router.router?.pathname
+                    : Router.router?.asPath,
+            query: params,
+        });
+    }, [Router.router]);
 };

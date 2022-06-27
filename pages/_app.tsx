@@ -8,6 +8,7 @@ import portfolio from "content/portfolio/portfolio";
 import { useTransitionFix } from "src/hooks/routerHooks";
 import "styles/global.scss";
 import "src/blog-components/global.scss";
+import "@reach/combobox/styles.css";
 
 /* --------------------------- Global blog styles --------------------------- */
 // Applies formatting and typography styles to any LaTeX expression embedded
@@ -21,14 +22,8 @@ import { BlogLayout } from "src/layout";
 import { BlogContext } from "src/contexts/BlogContext";
 
 const App = ({ Component, pageProps, router }: AppProps) => {
-    const [isBlogPage, setIsBlogPage] = useState<boolean>(
-        /^\/blogs/.test(router.pathname),
-    );
+    const [searchQuery, setSearchQuery] = useState<string>("");
     useTransitionFix();
-
-    useEffect(() => {
-        setIsBlogPage(/^\/blogs/.test(router.pathname));
-    }, [router.pathname]);
 
     return (
         <DarkModeProvider>
@@ -64,15 +59,17 @@ const App = ({ Component, pageProps, router }: AppProps) => {
             {/* Note: `exitBeforeEnter` makes it so that when navigating to a
                        new page, the current page must fully animate out BEFORE
                        the new page can come in. */}
-            <AnimatePresence exitBeforeEnter>
-                {router.pathname.startsWith("/blogs") ? (
-                    <BlogLayout>
+            <BlogContext.Provider value={{ searchQuery, setSearchQuery }}>
+                <AnimatePresence exitBeforeEnter>
+                    {router.pathname.startsWith("/blogs") ? (
+                        <BlogLayout>
+                            <Component {...pageProps} key={router.route} />
+                        </BlogLayout>
+                    ) : (
                         <Component {...pageProps} key={router.route} />
-                    </BlogLayout>
-                ) : (
-                    <Component {...pageProps} key={router.route} />
-                )}
-            </AnimatePresence>
+                    )}
+                </AnimatePresence>
+            </BlogContext.Provider>
         </DarkModeProvider>
     );
 };
