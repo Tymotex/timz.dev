@@ -6,11 +6,15 @@ import styles from "./ChipGroup.module.scss";
 interface Props {
     technologies: Technology[];
     position?: "left" | "right" | "center";
+    padding?: string;
+    invertColour?: boolean;
 }
 
 const TechnologyChipGroup: React.FC<Props> = ({
     technologies,
     position = "left",
+    padding,
+    invertColour = false,
 }) => {
     const positionClass =
         position === "left"
@@ -22,7 +26,13 @@ const TechnologyChipGroup: React.FC<Props> = ({
         <ul className={`${styles.chipStack} ${positionClass}`}>
             {technologies &&
                 technologies.map((tech) => (
-                    <li className={styles.chip} key={tech}>
+                    <li
+                        className={`${styles.chip} ${
+                            invertColour ? styles.light : styles.dark
+                        }`}
+                        key={tech}
+                        style={{ padding }}
+                    >
                         <Image
                             alt={`${tech} icon`}
                             src={`/icons/tech/${encodeURIComponent(

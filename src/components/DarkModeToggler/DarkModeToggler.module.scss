@@ -3,4 +3,12 @@
 .toggler {
     border: none;
     background: none;
+    cursor: pointer;
+
+    .moon {
+        color: $light-background-colour;
+    }
+    .sun {
+        color: $dark-background-colour;
+    }
 }

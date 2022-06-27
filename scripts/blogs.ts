@@ -9,11 +9,22 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import { remarkMdxImages } from "remark-mdx-images";
 
+// Tags to help categorise blogs.
+export type BlogTag =
+    | "Software Engineering"
+    | "Cybersecurity"
+    | "Frontend"
+    | "Backend"
+    | "Computer Science";
+
 export interface BlogFrontmatter {
     title: string;
     description: string;
     published: boolean;
     date: string;
+    thumbnail?: string;
+    tags?: BlogTag[];
+    mediumLink?: string;
 }
 
 export interface Blog {
@@ -21,6 +32,7 @@ export interface Blog {
     category: string;
     slug: string;
     code: string;
+    minsToRead: number;
 }
 
 export type BlogInfo = Omit<Blog, "code">;
@@ -72,8 +84,10 @@ const makeMDXBundle = async (rawSource: string) => {
     }
 };
 
-// Recursively traverses and returns a list of all files at arbitrary depth
-// from the given path.
+/**
+ * Recursively traverses and returns a list of all files at arbitrary depth
+ * from the given path.
+ */
 const walkSync = (startPath: string) => {
     const getFilesRecursively = (directory: string, files: string[]) => {
         const filesInDirectory = fs.readdirSync(directory);
@@ -90,6 +104,21 @@ const walkSync = (startPath: string) => {
     let files: string[] = [];
     getFilesRecursively(startPath, files);
     return files;
+};
+
+/**
+ * Returns an estimate for the time to read the given blog contents.
+ */
+const getTimeToRead = (blogContents: string): number => {
+    // Just naively count the words and divide by half the average reading speed
+    // which is ~238 words per minute. Taking half of the average is reasonable
+    // because it takes substantially longer to read through focused educational
+    // articles.
+    const standardWordsPerMin = 120;
+    const wordCount = blogContents.trim().split(/\s+/).length;
+    if (wordCount < standardWordsPerMin) return 1;
+
+    return Math.round(wordCount / standardWordsPerMin);
 };
 
 /**
@@ -125,6 +154,7 @@ export const getAllBlogs = async (): Promise<BlogInfo[]> => {
                         ...frontmatter,
                         date: frontmatter?.date?.toString(),
                     },
+                    minsToRead: getTimeToRead(rawSource),
                 } as BlogInfo;
 
                 return blog;
@@ -178,6 +208,7 @@ export const getBlog = async (
             // See the comment in `getAllBlogs` for why we're serialising here.
             date: frontmatter.date.toString(),
         },
+        minsToRead: getTimeToRead(rawSource),
         code,
     } as Blog;
     signale.success(`Successfully bundled blog: '${slug}'.`);

@@ -1,0 +1,14 @@
+---
+title: File Metadata
+description: Almost all file types that are meant to be passed to and interpreted by software will start with a header whose bytes have special meaning according to the file format standard.
+published: false
+date: 2022-06-25
+---
+
+Almost all file types that are meant to be passed to and interpreted by software will start with a header whose bytes have special meaning according to the file format standard. This is quite similar to how network protocols define headers that communicate information like message length, IP addresses, etc. We have the same concept but for file types! For example, this is the standard that jpeg defines and what all valid jpg/jpeg files are expected to adhere to:
+
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/fb2917a6-8f17-49a4-8f35-613429fbbd78/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220410%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220410T013021Z&X-Amz-Expires=86400&X-Amz-Signature=8afcbd7d3a01c685e7975b70895006636c586cac3faa8a2d4f9ac4a6e936384b&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+
+A lot of handy tools exist that will report useful metadata about files for you — for example [exiftool](https://exiftool.org/) which is commonly used in CTF problems.
+
+Note: a lot of important general metadata is managed by the filesystem itself. In some forensic problems, you can discover a lot of insight about the given file by using the `stat` CLI on the file. This lets you discover some information such as the access, modification and creation times of a filem, its size, etc.

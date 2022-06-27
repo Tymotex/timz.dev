@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import styles from "./BlogLayout.module.scss";
 import ContentContainer from "src/components/Container/ContentContainer";
@@ -9,15 +9,46 @@ import { DarkModeToggler } from "src/components/DarkModeToggler";
 import { Socials } from "src/components/Socials";
 import portfolio from "content/portfolio/portfolio";
 import { Copyright } from "src/components/Copyright";
+import { useRouter } from "next/router";
+import { DarkModeContext } from "src/contexts/LightDarkThemeProvider";
 
 interface Props {
     children: React.ReactNode;
 }
 
 const BlogLayout: React.FC<Props> = ({ children }) => {
+    const router = useRouter();
+    const theme = useContext(DarkModeContext);
+
+    const crumbs = useMemo(() => {
+        if (!router) return [{ title: "Home", url: "/" }];
+
+        const urlComponents = router.asPath
+            .split("/")
+            .filter((urlComponent) => !!urlComponent);
+
+        if (!urlComponents || urlComponents.length < 1) {
+            return [{ title: "Home", url: "/" }];
+        } else if (urlComponents.length === 1) {
+            return [
+                { title: "Home", url: "/" },
+                { title: "Blogs", url: "/blogs" },
+            ];
+        } else {
+            return [
+                { title: "Home", url: "/" },
+                { title: "Blogs", url: "/blogs" },
+                {
+                    title: urlComponents[urlComponents.length - 1],
+                    url: router.asPath,
+                },
+            ];
+        }
+    }, [router]);
+
     return (
         <motion.div
-            className={styles.blogBody}
+            className={`${styles.blogBody}`}
             initial={{
                 opacity: 0,
             }}
@@ -31,24 +62,23 @@ const BlogLayout: React.FC<Props> = ({ children }) => {
                 duration: 0.5,
             }}
         >
-            <div className={styles.slantedContainer}>
+            <div
+                className={`${styles.slantedContainer} ${
+                    theme.isDarkMode ? styles.dark : styles.light
+                }`}
+            >
                 <ContentContainer
                     className={styles.topBar}
                     maxWidth={"52rem"}
                     padding={"24px 0 0 0"}
                 >
                     <Breadcrumbs
-                        crumbs={[
-                            { title: "Home", url: "/" },
-                            { title: "Blogs", url: "/blogs" },
-                        ]}
-                        isDarkMode={false}
+                        crumbs={crumbs}
+                        isDarkMode={theme.isDarkMode}
                     />
                     <DarkModeToggler />
                 </ContentContainer>
-                <ContentContainer padding={"0 24px"} maxWidth={"50rem"}>
-                    {children}
-                </ContentContainer>
+                {children}
             </div>
             <footer>
                 <Socials

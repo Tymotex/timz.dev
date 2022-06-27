@@ -1,11 +1,16 @@
 import { getMDXComponent } from "mdx-bundler/client";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { useRouter } from "next/router";
-import { useMemo } from "react";
+import { useContext, useMemo } from "react";
 import { Blog, getAllBlogs, getBlog } from "scripts/blogs";
 import { ChipGroup } from "src/components/ChipGroup";
 import ContentContainer from "src/components/Container/ContentContainer";
 import styles from "./BlogPage.module.scss";
+import { AiFillRead as BookIcon } from "react-icons/ai";
+import { BsMedium as MediumIcon } from "react-icons/bs";
+import { DarkModeContext } from "src/contexts/LightDarkThemeProvider";
+import { MiniDivider, SubtleDivider } from "src/components/Divider";
+import Link from "next/link";
 
 export const getStaticProps: GetStaticProps = async (context) => {
     if (context === undefined || context.params === undefined)
@@ -42,32 +47,60 @@ interface Props {
 
 const BlogIndex: NextPage<Props> = ({ blog }) => {
     const router = useRouter();
-    const { category, slug } = router.query;
     const Blog = useMemo(
         () => blog && typeof blog !== "undefined" && getMDXComponent(blog.code),
         [blog],
     );
+    const theme = useContext(DarkModeContext);
+    const dateStr = useMemo(
+        () =>
+            new Date(blog?.frontmatter.date).toLocaleDateString("en-US", {
+                month: "short",
+                day: "numeric",
+                year: "numeric",
+            }),
+        [blog],
+    );
 
-    // TODO: Test these fallback components and substitute for a loader and error.
     if (!blog) return <></>;
     if (router.isFallback) return <>Loading...</>;
 
     return (
-        <ContentContainer className={styles.blogPage}>
-            <h1 className={styles.title}>{blog.frontmatter.title}</h1>
-            <ul className={styles.metadataList}>
-                <li className={styles.field}>4th June, 2022</li>
-                <li className={styles.field}>5 mins to read</li>
-                <li className={styles.field}>Medium</li>
-            </ul>
-            <ChipGroup
-                items={["Software Engineering", "Cybersecurity"]}
-                position="center"
-                padding="10px 16px"
-            />
+        <>
+            <ContentContainer className={styles.blogPage}>
+                <h1 className={styles.title}>{blog.frontmatter.title}</h1>
+                <ul className={styles.metadataList}>
+                    <li className={styles.field}>{dateStr}</li>
+                    <li className={styles.field}>
+                        {blog.minsToRead} mins to read <BookIcon />
+                    </li>
+                    {blog.frontmatter.mediumLink && (
+                        <li className={`${styles.field} ${styles.link}`}>
+                            Medium <MediumIcon />
+                        </li>
+                    )}
+                </ul>
+                <ChipGroup
+                    items={blog.frontmatter.tags}
+                    position="center"
+                    padding="10px 16px"
+                    invertColour={!theme.isDarkMode}
+                />
+                <br />
+            </ContentContainer>
+            <div className={styles.blogContents}>{Blog && <Blog />}</div>
             <br />
-            {Blog && <Blog />}
-        </ContentContainer>
+            <SubtleDivider />
+            <ContentContainer className={styles.blogFooter}>
+                <p>
+                    Thanks for reading 🤓!{" "}
+                    <Link href="/contact">Let me know</Link> if this helped you.
+                </p>
+                <p>
+                    See more of my blogs <Link href="/blogs">here</Link>.
+                </p>
+            </ContentContainer>
+        </>
     );
 };
 

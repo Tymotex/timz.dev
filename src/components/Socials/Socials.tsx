@@ -41,11 +41,15 @@ const Socials: React.FC<Props> = ({
         >
             {socials &&
                 socials.map((social) => (
-                    <div className={styles.socialLink} key={social.url}>
-                        <a href={social.url} target="_blank" rel="noreferrer">
-                            {social.icon}
-                        </a>
-                    </div>
+                    <a
+                        className={styles.socialLink}
+                        key={social.url}
+                        href={social.url}
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        {social.icon}
+                    </a>
                 ))}
         </motion.div>
     );

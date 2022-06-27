@@ -24,7 +24,7 @@ html {
     }
 
     ::-webkit-scrollbar-thumb {
-        background-color: $primary-700;
+        background-color: rgb(175, 175, 227);
         border-radius: 10px;
     }
 
@@ -39,7 +39,7 @@ html {
     }
 
     a {
-        color: $cool-grey-800;
+        color: inherit;
     }
 
     p {

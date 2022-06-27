@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useContext } from "react";
 import { BlogInfo } from "scripts/blogs";
+import { DarkModeContext } from "src/contexts/LightDarkThemeProvider";
+import { ChipGroup } from "../ChipGroup";
 import { MiniDivider } from "../Divider";
 import styles from "./Blog.module.scss";
 
@@ -11,15 +13,24 @@ interface Props {
 
 const BlogItem: React.FC<Props> = ({ blog }) => {
     const link = `/blogs/${blog.category}/${blog.slug}`;
-    const dateStr = new Date(blog.frontmatter.date).toLocaleDateString("en-US");
+    const defaultThumbnail = "/og-image.avif";
+    const theme = useContext(DarkModeContext);
 
     return (
-        <li className={styles.blogItem}>
+        <li
+            className={`${styles.blogItem} ${
+                theme.isDarkMode ? styles.dark : styles.light
+            }`}
+        >
             <div className={styles.thumbnail}>
                 <Link href={link}>
                     <a>
                         <Image
-                            src="/og-image.avif"
+                            src={
+                                blog.frontmatter.thumbnail
+                                    ? blog.frontmatter.thumbnail
+                                    : defaultThumbnail
+                            }
                             alt={`${blog.slug} thumbnail`}
                             layout="fill"
                             objectFit="cover"
@@ -33,6 +44,10 @@ const BlogItem: React.FC<Props> = ({ blog }) => {
                         <h2>{blog.frontmatter.title}</h2>
                     </a>
                 </Link>
+                <ChipGroup
+                    items={blog.frontmatter.tags}
+                    invertColour={!theme.isDarkMode}
+                />
                 <MiniDivider className={styles.divider} />
                 {/* <p className={styles.date}>Published {dateStr}.</p> */}
                 <p className={styles.description}>

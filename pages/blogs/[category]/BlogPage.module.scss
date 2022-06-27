@@ -20,8 +20,16 @@
 
         .field {
             position: relative;
+            display: flex;
+            flex-direction: row;
+            column-gap: $spacing-xs;
+            align-items: center;
             padding: 0 $spacing-md;
             color: $cool-grey-700;
+
+            &.link {
+                text-decoration: underline;
+            }
 
             &:not(:last-child) {
                 &:before {
@@ -38,4 +46,63 @@
             }
         }
     }
+}
+
+.blogContents {
+    & > * {
+        &:not(:last-child) {
+            margin-bottom: $spacing-sm;
+        }
+    }
+
+    p,
+    ul,
+    ol,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        max-width: $blog-contents-max-width;
+        margin: 0 auto;
+        line-height: $line-spacing-lg;
+    }
+
+    p {
+        // Make the first letter of the first paragraph element extra large.
+        // See: https://www.digitalocean.com/community/tutorials/css-drop-caps.
+        &:first-child {
+            &::first-letter {
+                font-family: $code-font-stack;
+                padding: 0 0.3rem;
+                margin: 0 0.3rem 0 0;
+                border-radius: 8px;
+
+                font-size: 4rem;
+                float: left;
+                line-height: 1;
+            }
+        }
+    }
+
+    li {
+        margin: $spacing-xs 0;
+    }
+
+    pre {
+        max-width: $blog-contents-max-width;
+        margin: 0 auto;
+        border-radius: 5px;
+    }
+
+    img {
+        max-width: $blog-contents-max-width;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.blogFooter {
+    color: $cool-grey-500;
 }
