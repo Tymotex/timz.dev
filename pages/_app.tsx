@@ -8,6 +8,7 @@ import portfolio from "content/portfolio/portfolio";
 import { useTransitionFix } from "src/hooks/routerHooks";
 import "styles/global.scss";
 import "src/blog-components/global.scss";
+import "@reach/combobox/styles.css";
 
 /* --------------------------- Global blog styles --------------------------- */
 // Applies formatting and typography styles to any LaTeX expression embedded
@@ -58,8 +59,8 @@ const App = ({ Component, pageProps, router }: AppProps) => {
             {/* Note: `exitBeforeEnter` makes it so that when navigating to a
                        new page, the current page must fully animate out BEFORE
                        the new page can come in. */}
-            <AnimatePresence exitBeforeEnter>
-                <BlogContext.Provider value={{ searchQuery, setSearchQuery }}>
+            <BlogContext.Provider value={{ searchQuery, setSearchQuery }}>
+                <AnimatePresence exitBeforeEnter>
                     {router.pathname.startsWith("/blogs") ? (
                         <BlogLayout>
                             <Component {...pageProps} key={router.route} />
@@ -67,8 +68,8 @@ const App = ({ Component, pageProps, router }: AppProps) => {
                     ) : (
                         <Component {...pageProps} key={router.route} />
                     )}
-                </BlogContext.Provider>
-            </AnimatePresence>
+                </AnimatePresence>
+            </BlogContext.Provider>
         </DarkModeProvider>
     );
 };

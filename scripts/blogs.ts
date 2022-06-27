@@ -8,14 +8,7 @@ import remarkPrism from "remark-prism";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import { remarkMdxImages } from "remark-mdx-images";
-
-// Tags to help categorise blogs.
-export type BlogTag =
-    | "Software Engineering"
-    | "Cybersecurity"
-    | "Frontend"
-    | "Backend"
-    | "Computer Science";
+import { BlogTag } from "src/model/Blog";
 
 export interface BlogFrontmatter {
     title: string;
