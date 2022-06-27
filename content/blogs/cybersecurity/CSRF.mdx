@@ -3,6 +3,9 @@ title: Cross-Site Request Forgery
 description: Cross site request forgery (CSRF, often pronounced ‘sea surf’) is an attack that takes advantage of you being logged in at other websites.
 published: true
 date: 2022-06-25
+thumbnail: /images/thumbnails/cybersecurity.png
+tags:
+    - Cybersecurity
 ---
 
 Cross site request forgery (CSRF, often pronounced ‘sea surf’) is an attack that takes advantage of you being logged in at other websites. In CSRF attacks, the attacker crafts a link to a site you trust that, when clicked, will launch a GET request that performs a malicious action — which works because you’re logged in and therefore the server thinks you’re legitimately trying to perform that action. For example, if you’re logged into a banking app which exposes an HTTP GET endpoint that performs some money transfer, then the attacker might craft a link that looks like [ `https://bank-app.com/transfer?to=attacker_id&amount=100` ](https://bank-app.com/transfer?to=attacker_id&amount=100). When the attacker gets you to click on this link, your browser makes a GET request to bank-app.com’s servers, instructing them that you’re making a money transfer of $100 to the attacker!

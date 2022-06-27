@@ -6,6 +6,8 @@ import { Blog, getAllBlogs, getBlog } from "scripts/blogs";
 import { ChipGroup } from "src/components/ChipGroup";
 import ContentContainer from "src/components/Container/ContentContainer";
 import styles from "./BlogPage.module.scss";
+import { AiFillRead as BookIcon } from "react-icons/ai";
+import { BsMedium as MediumIcon } from "react-icons/bs";
 
 export const getStaticProps: GetStaticProps = async (context) => {
     if (context === undefined || context.params === undefined)
@@ -42,13 +44,20 @@ interface Props {
 
 const BlogIndex: NextPage<Props> = ({ blog }) => {
     const router = useRouter();
-    const { category, slug } = router.query;
     const Blog = useMemo(
         () => blog && typeof blog !== "undefined" && getMDXComponent(blog.code),
         [blog],
     );
+    const dateStr = useMemo(
+        () =>
+            new Date(blog?.frontmatter.date).toLocaleDateString("en-US", {
+                month: "short",
+                day: "numeric",
+                year: "numeric",
+            }),
+        [blog],
+    );
 
-    // TODO: Test these fallback components and substitute for a loader and error.
     if (!blog) return <></>;
     if (router.isFallback) return <>Loading...</>;
 
@@ -56,14 +65,21 @@ const BlogIndex: NextPage<Props> = ({ blog }) => {
         <ContentContainer className={styles.blogPage}>
             <h1 className={styles.title}>{blog.frontmatter.title}</h1>
             <ul className={styles.metadataList}>
-                <li className={styles.field}>4th June, 2022</li>
-                <li className={styles.field}>5 mins to read</li>
-                <li className={styles.field}>Medium</li>
+                <li className={styles.field}>{dateStr}</li>
+                <li className={styles.field}>
+                    {blog.minsToRead} mins to read <BookIcon />
+                </li>
+                {blog.frontmatter.mediumLink && (
+                    <li className={`${styles.field} ${styles.link}`}>
+                        Medium <MediumIcon />
+                    </li>
+                )}
             </ul>
             <ChipGroup
-                items={["Software Engineering", "Cybersecurity"]}
+                items={blog.frontmatter.tags}
                 position="center"
                 padding="10px 16px"
+                invertColour
             />
             <br />
             {Blog && <Blog />}

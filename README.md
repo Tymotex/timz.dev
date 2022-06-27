@@ -36,17 +36,27 @@ This project uses the following GitHub Actions workflows:
 
 # Content Management
 
-To author new blogs, add a `.mdx` file to `content/blogs` and fill in the
+To author new blogs, add a `.mdx` file to `content/blogs/${category}` and fill in the
 following frontmatter format:
 
 ```
 ---
-title: Learn React in 30 Seconds (Not Clickbait)
-description: React is a popular web framework that...
+title: Buffer Overflow Attacks
+description: Buffer overflows are when the program tries to write more elements into an array's allocated size.
 published: true
-date: yyyy-mm-dd
+date: 2022-06-25
+# Optional thumbnail.
+thumbnail: /images/thumbnails/cybersecurity.png
+# Optional tags to help with categorising blogs.
+tags:
+    - Cybersecurity
+    - Computer Science
+    ...
+# Optional link to Medium post.
+mediumLink: https://...
 ---
 ```
+
 > The filename will be used to construct a URL slug. Use a meaningful name
   because hitting more keywords improves SEO.
 - `title` gets added into the `<title>` element.

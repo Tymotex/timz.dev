@@ -554,7 +554,9 @@ const portfolio: PortfolioData = {
                         Society (CSESoc).
                     </li>
                 </UnorderedList>
-                <h3>Academic Awards & Hackathons</h3>
+                <h3 style={{ marginTop: "48px" }}>
+                    Academic Awards & Hackathons
+                </h3>
                 <AwardList
                     awards={[
                         {

@@ -3,6 +3,9 @@ title: Server-Side Request Forgery
 description: SSRF is about you, as an attacker, getting a server to fulfill network requests that you don’t have authorisation for
 published: true
 date: 2022-06-25
+thumbnail: /images/thumbnails/cybersecurity.png
+tags:
+    - Cybersecurity
 ---
 
 SSRF is about you, as an attacker, getting a server to fulfill network requests that you don’t have authorisation for. Many web application backends will involve getting a URL input from the user and using the user-supplied URL to fulfil some request, like fetching its contents and returning it. The problem arises when the server is given a URL that references an internal service or other services that the server has priveleged access to, like a database server. An attacker could send an `http://localhost` URL at a specific port that’s running a confidential internal service, or you could send something like `file:///etc/passwd/` and leak resources on the web server. 

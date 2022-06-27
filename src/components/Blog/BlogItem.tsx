@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { BlogInfo } from "scripts/blogs";
+import { ChipGroup } from "../ChipGroup";
 import { MiniDivider } from "../Divider";
 import styles from "./Blog.module.scss";
 
@@ -11,7 +12,7 @@ interface Props {
 
 const BlogItem: React.FC<Props> = ({ blog }) => {
     const link = `/blogs/${blog.category}/${blog.slug}`;
-    const dateStr = new Date(blog.frontmatter.date).toLocaleDateString("en-US");
+    const defaultThumbnail = "/og-image.avif";
 
     return (
         <li className={styles.blogItem}>
@@ -19,7 +20,11 @@ const BlogItem: React.FC<Props> = ({ blog }) => {
                 <Link href={link}>
                     <a>
                         <Image
-                            src="/og-image.avif"
+                            src={
+                                blog.frontmatter.thumbnail
+                                    ? blog.frontmatter.thumbnail
+                                    : defaultThumbnail
+                            }
                             alt={`${blog.slug} thumbnail`}
                             layout="fill"
                             objectFit="cover"
@@ -33,6 +38,7 @@ const BlogItem: React.FC<Props> = ({ blog }) => {
                         <h2>{blog.frontmatter.title}</h2>
                     </a>
                 </Link>
+                <ChipGroup items={blog.frontmatter.tags} invertColour />
                 <MiniDivider className={styles.divider} />
                 {/* <p className={styles.date}>Published {dateStr}.</p> */}
                 <p className={styles.description}>

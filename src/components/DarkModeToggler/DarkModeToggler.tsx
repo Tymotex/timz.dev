@@ -1,6 +1,9 @@
-import React, { useContext } from "react";
+import React, { useCallback, useContext } from "react";
 import { DarkModeContext } from "src/contexts/LightDarkThemeProvider";
-import { BsSunFill as SunIcon } from "react-icons/bs";
+import {
+    BsSunFill as SunIcon,
+    BsMoonStarsFill as MoonIcon,
+} from "react-icons/bs";
 import styles from "./DarkModeToggler.module.scss";
 
 interface Props {}
@@ -14,7 +17,7 @@ const DarkModeToggler: React.FC<Props> = () => {
             onClick={() => theme.toggleDarkMode()}
         >
             {/* Toggle Dark Mode (currently {theme.isDarkMode ? "dark" : "light"}) */}
-            <SunIcon size={32} />
+            {theme.isDarkMode ? <MoonIcon size={32} /> : <SunIcon size={32} />}
         </button>
     );
 };

@@ -6,9 +6,11 @@ import styles from "./BlogIndex.module.scss";
 
 export const getStaticProps: GetStaticProps = async (context) => {
     const blogs: BlogInfo[] = await getAllBlogs();
+
+    // Filter out unpublished blogs from being shown on the index page.
     return {
         props: {
-            blogs: blogs,
+            blogs: blogs && blogs.filter((blog) => blog.frontmatter.published),
         },
     };
 };
@@ -20,17 +22,18 @@ interface Props {
 const BlogIndex: NextPage<Props> = ({ blogs }) => {
     return (
         <>
-            <h1 className={styles.title}>Blogs</h1>
+            <h1 className={styles.title}>Byte-Sized Concepts</h1>
+            {/* <p></p> */}
             <MiniDivider />
             <BlogList
                 blogs={blogs.filter((blog) => blog.category !== "projects")}
             />
 
-            <h1 className={styles.title}>Projects</h1>
+            {/* <h1 className={styles.title}>Projects</h1>
             <MiniDivider />
             <BlogList
                 blogs={blogs.filter((blog) => blog.category === "projects")}
-            />
+            /> */}
         </>
     );
 };
