@@ -39,7 +39,7 @@ Alternatively, you could make the form hidden and not even require the user to c
 
 You can launch a CSRF attack off of a *stored XSS* attack, which we call a **stored CSRF attack**. For example, when you discover a stored XSS vulnerability on a site that lets you post comments, then you could insert an `<img>` element that 
 
-**Defending Against CSRF:**
+## Defending Against CSRF
 
 As the backend engineer implementing an API, ensure that you do not expose a GET endpoint that does any kind of state change. You can do this by following REST conventions for designing an API. As mentioned however, CSRF attacks can be launched with other HTTP verbs like POST, PUT, etc. so designing the API according to REST conventions is far from a foolproof defense against CSRF attacks.
 

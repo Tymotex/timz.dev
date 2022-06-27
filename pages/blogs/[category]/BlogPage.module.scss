@@ -69,9 +69,9 @@
         line-height: $line-spacing-lg;
     }
 
-    p {
-        // Make the first letter of the first paragraph element extra large.
-        // See: https://www.digitalocean.com/community/tutorials/css-drop-caps.
+    // Make the first letter of the first paragraph element extra large.
+    // See: https://www.digitalocean.com/community/tutorials/css-drop-caps.
+    & > p {
         &:first-child {
             &::first-letter {
                 font-family: $code-font-stack;

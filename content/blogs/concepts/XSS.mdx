@@ -13,7 +13,7 @@ import { Image } from 'src/blog-components/Image';
 
 Cross site scripting, one of the most common security vulnerabilities that exists, is a powerful web exploitation technique where malicious JavaScript code is given to web frontends that will execute it for other users. In a way, you can mostly think of XSS as ‘JavaScript injection’, although not all attacks necessarily involve JavaScript!
 
-**Same-Origin Policy:**
+## Same-Origin Policy
 
 XSS is basically a way to circumvent the [*same-origin policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy), * a security mechanism that basically aims to stop one website from reading/writing to the DOM of another URL of a different *origin*. For example, the JavaScript code in [malicious-site.com](http://malicious-site.com) is prevented from reading/writing to [your-banking-app.com](http://your-banking-app.com). Note that this restriction only applies to scripts, not HTML tags like images, making them an avenue for exploits!
 
@@ -28,7 +28,7 @@ Since the same-origin policy stops you, an attacker, from running your malicious
 
 Just remember, the browser will blindly trust and render all the HTML, and consequently run all the JavaScript embedded in that HTML, that [your-banking-app.com](http://your-banking-app.com) returns.
 
-**Reflected XSS (Non-Persistent XSS):**
+## Reflected XSS (Non-Persistent XSS)
 
 Reflected XSS is possible when the malicious input is *reflected back* in the HTML returned in the response. You perform this style of attack by adding the malicious JavaScript in the URL, which when requested from the web server, will result in the web server sending back a document that runs that malicious JavaScript when the browser renders it.
 
@@ -40,7 +40,7 @@ If the query value gets directly rendered without any validation, then we’re a
 
 Then, you can distribute this URL to unsuspecting users (commonly through legit-looking emails), and then when the link is clicked, their browser will execute your malicious code which could do anything from displaying a harmless alert or attaching their cookies and sending it to a web server you control.
 
-**Stored XSS (Persistent XSS):**
+## Stored XSS (Persistent XSS)
 
 When the input is reflected back in the reponse ***and*** stored in the database itself, meaning that it’ll potentially continue to be distributed to users, making it an order of magnitude more disastrous than reflected XSS. Additionally, one challenge with reflected XSS is that you have to bait victims into clicking a link to get the malicious javascript to run. With stored XSS, any user that visits the site itself will execute that malicious javascript.
 
@@ -52,6 +52,6 @@ In this example, as an attacker, you could send in a `<script>alert(1)</script>`
 
 Note that `<script>` elements aren’t the only way to execute XSS, you can attach your malicious JavaScript to event handlers like `[onload](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload)` on regular HTML elements like `body` , `svg` , etc.
 
-**Defending against XSS:**
+## Defending against XSS
 
 The main defense against XSS is to sanitise user input *on arrival*. Often, the best way to do this is via tried and tested input sanitising libraries like [DOMPurify](https://github.com/cure53/DOMPurify).

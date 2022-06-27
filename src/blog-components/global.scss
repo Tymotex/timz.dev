@@ -5,17 +5,4 @@
 //       solutions is problematic as well. Eg. `styled-components` will cause
 //       a nasty warning around hook violations because the styled components
 //       are 'created' in `getMDXComponent`.
-@import "../../styles/variables.scss";
-@import "../../styles/mixins.scss";
-
-.blog-image {
-    display: block;
-    margin: 0 auto;
-    max-width: $blog-contents-max-width;
-
-    img {
-        &.shadow {
-            @include elevation-shadow;
-        }
-    }
-}
+@import './Image/Image.scss';
