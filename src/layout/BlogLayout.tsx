@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import styles from "./BlogLayout.module.scss";
 import ContentContainer from "src/components/Container/ContentContainer";
@@ -9,12 +9,41 @@ import { DarkModeToggler } from "src/components/DarkModeToggler";
 import { Socials } from "src/components/Socials";
 import portfolio from "content/portfolio/portfolio";
 import { Copyright } from "src/components/Copyright";
+import { useRouter } from "next/router";
 
 interface Props {
     children: React.ReactNode;
 }
 
 const BlogLayout: React.FC<Props> = ({ children }) => {
+    const router = useRouter();
+
+    const crumbs = useMemo(() => {
+        if (!router) return [{ title: "Home", url: "/" }];
+
+        const urlComponents = router.asPath
+            .split("/")
+            .filter((urlComponent) => !!urlComponent);
+
+        if (!urlComponents || urlComponents.length < 1) {
+            return [{ title: "Home", url: "/" }];
+        } else if (urlComponents.length === 1) {
+            return [
+                { title: "Home", url: "/" },
+                { title: "Blogs", url: "/blogs" },
+            ];
+        } else {
+            return [
+                { title: "Home", url: "/" },
+                { title: "Blogs", url: "/blogs" },
+                {
+                    title: urlComponents[urlComponents.length - 1],
+                    url: router.asPath,
+                },
+            ];
+        }
+    }, [router]);
+
     return (
         <motion.div
             className={styles.blogBody}
@@ -37,13 +66,7 @@ const BlogLayout: React.FC<Props> = ({ children }) => {
                     maxWidth={"52rem"}
                     padding={"24px 0 0 0"}
                 >
-                    <Breadcrumbs
-                        crumbs={[
-                            { title: "Home", url: "/" },
-                            { title: "Blogs", url: "/blogs" },
-                        ]}
-                        isDarkMode={false}
-                    />
+                    <Breadcrumbs crumbs={crumbs} isDarkMode={false} />
                     <DarkModeToggler />
                 </ContentContainer>
                 <ContentContainer padding={"0 24px"} maxWidth={"50rem"}>
