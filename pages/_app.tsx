@@ -8,6 +8,7 @@ import portfolio from "content/portfolio/portfolio";
 import { useTransitionFix } from "src/hooks/routerHooks";
 import "styles/global.scss";
 import "src/blog-components/global.scss";
+import "@reach/combobox/styles.css";
 
 /* --------------------------- Global blog styles --------------------------- */
 // Applies formatting and typography styles to any LaTeX expression embedded
