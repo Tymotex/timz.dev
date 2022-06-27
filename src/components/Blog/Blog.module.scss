@@ -10,8 +10,17 @@
     .blogItem {
         display: flex;
         flex-direction: row;
-        background-color: white;
         border-radius: 5px;
+
+        &.dark {
+            background-color: $cool-grey-300;
+            color: $dark-text-colour;
+        }
+
+        &.light {
+            background-color: white;
+            color: $light-text-colour;
+        }
 
         .thumbnail {
             position: relative;
@@ -36,7 +45,6 @@
                 transition: opacity 50ms ease;
                 text-decoration: none;
                 cursor: pointer;
-                color: $cool-grey-200;
 
                 h2 {
                     margin: 0;
@@ -51,10 +59,8 @@
             }
             .date {
                 margin: 0;
-                color: $cool-grey-600;
             }
             .description {
-                color: $cool-grey-300;
                 // This truncates text at 2 lines with ellipses.
                 // See Vinesh's solution at: https://stackoverflow.com/questions/11989546/wrap-a-text-within-only-two-lines-inside-div.
                 margin: 0;

@@ -1,6 +1,7 @@
 import type { GetStaticProps, NextPage } from "next";
 import { BlogInfo, getAllBlogs } from "scripts/blogs";
 import { BlogList } from "src/components/Blog";
+import ContentContainer from "src/components/Container/ContentContainer";
 import { MiniDivider, SubtleDivider } from "src/components/Divider";
 import styles from "./BlogIndex.module.scss";
 
@@ -21,7 +22,7 @@ interface Props {
 
 const BlogIndex: NextPage<Props> = ({ blogs }) => {
     return (
-        <>
+        <ContentContainer>
             <h1 className={styles.title}>Byte-Sized Concepts</h1>
             {/* <p></p> */}
             <MiniDivider />
@@ -34,7 +35,7 @@ const BlogIndex: NextPage<Props> = ({ blogs }) => {
             <BlogList
                 blogs={blogs.filter((blog) => blog.category === "projects")}
             /> */}
-        </>
+        </ContentContainer>
     );
 };
 

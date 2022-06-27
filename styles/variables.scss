@@ -2,6 +2,7 @@
 // font families.
 
 $theme-transition-duration: 0.2s;
+$dark-mode-transition-duration: 0.2s;
 
 $central-container-top-offset: 47%;
 
@@ -15,7 +16,7 @@ $dark-subtitle-colour: #c0b4ce;
 /**
  * Light mode palette.
  */
-$light-background-colour: whitesmoke;
+$light-background-colour: rgb(246, 248, 250);
 $light-text-colour: #101010;
 $light-subtitle-colour: #818181;
 
@@ -105,3 +106,4 @@ $spacing-xxl: 72px;
 $line-spacing-sm: 1.25;
 $line-spacing-md: 1.5;
 $line-spacing-lg: 2;
+$line-spacing-xl: 3;

@@ -3,6 +3,20 @@
 
 $edge-skew-angle: -1deg;
 
+@mixin slantedEdge {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: skewY($edge-skew-angle);
+}
+
 .blogBody {
     background: rgba($color: #000000, $alpha: 0);
     width: 100%;
@@ -12,39 +26,29 @@ $edge-skew-angle: -1deg;
     .slantedContainer {
         position: relative;
         width: 100%;
-        background: rgb(246, 248, 250);
         margin: 250px 0;
+        transition: all $dark-mode-transition-duration ease;
+
+        &.dark {
+            background: $dark-background-colour;
+            color: $dark-text-colour;
+        }
+
+        &.light {
+            background: $light-background-colour;
+            color: $light-text-colour;
+        }
 
         // Creating a 'razor blade', or slanted edge.
         &:before {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            content: "";
-            background: inherit;
-            z-index: -1;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
+            @include slantedEdge;
             transform-origin: top left;
-            transform: skewY($edge-skew-angle);
-            box-shadow: rgba(0, 0, 0, 0.15) 0px -10px 0px 0px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px -10px 10px 0px;
         }
         &:after {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            content: "";
-            background: inherit;
-            z-index: -1;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
+            @include slantedEdge;
             transform-origin: top right;
-            transform: skewY($edge-skew-angle);
-            box-shadow: rgba(0, 0, 0, 0.15) 0px 10px 10px 0px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 10px 0px;
         }
 
         // Top bar containing navigation UI and buttons.

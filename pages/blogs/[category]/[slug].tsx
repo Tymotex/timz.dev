@@ -1,13 +1,14 @@
 import { getMDXComponent } from "mdx-bundler/client";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { useRouter } from "next/router";
-import { useMemo } from "react";
+import { useContext, useMemo } from "react";
 import { Blog, getAllBlogs, getBlog } from "scripts/blogs";
 import { ChipGroup } from "src/components/ChipGroup";
 import ContentContainer from "src/components/Container/ContentContainer";
 import styles from "./BlogPage.module.scss";
 import { AiFillRead as BookIcon } from "react-icons/ai";
 import { BsMedium as MediumIcon } from "react-icons/bs";
+import { DarkModeContext } from "src/contexts/LightDarkThemeProvider";
 
 export const getStaticProps: GetStaticProps = async (context) => {
     if (context === undefined || context.params === undefined)
@@ -48,6 +49,7 @@ const BlogIndex: NextPage<Props> = ({ blog }) => {
         () => blog && typeof blog !== "undefined" && getMDXComponent(blog.code),
         [blog],
     );
+    const theme = useContext(DarkModeContext);
     const dateStr = useMemo(
         () =>
             new Date(blog?.frontmatter.date).toLocaleDateString("en-US", {
@@ -62,28 +64,30 @@ const BlogIndex: NextPage<Props> = ({ blog }) => {
     if (router.isFallback) return <>Loading...</>;
 
     return (
-        <ContentContainer className={styles.blogPage}>
-            <h1 className={styles.title}>{blog.frontmatter.title}</h1>
-            <ul className={styles.metadataList}>
-                <li className={styles.field}>{dateStr}</li>
-                <li className={styles.field}>
-                    {blog.minsToRead} mins to read <BookIcon />
-                </li>
-                {blog.frontmatter.mediumLink && (
-                    <li className={`${styles.field} ${styles.link}`}>
-                        Medium <MediumIcon />
+        <>
+            <ContentContainer className={styles.blogPage}>
+                <h1 className={styles.title}>{blog.frontmatter.title}</h1>
+                <ul className={styles.metadataList}>
+                    <li className={styles.field}>{dateStr}</li>
+                    <li className={styles.field}>
+                        {blog.minsToRead} mins to read <BookIcon />
                     </li>
-                )}
-            </ul>
-            <ChipGroup
-                items={blog.frontmatter.tags}
-                position="center"
-                padding="10px 16px"
-                invertColour
-            />
-            <br />
-            {Blog && <Blog />}
-        </ContentContainer>
+                    {blog.frontmatter.mediumLink && (
+                        <li className={`${styles.field} ${styles.link}`}>
+                            Medium <MediumIcon />
+                        </li>
+                    )}
+                </ul>
+                <ChipGroup
+                    items={blog.frontmatter.tags}
+                    position="center"
+                    padding="10px 16px"
+                    invertColour={!theme.isDarkMode}
+                />
+                <br />
+            </ContentContainer>
+            <div className={styles.blogContents}>{Blog && <Blog />}</div>
+        </>
     );
 };
 

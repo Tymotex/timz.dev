@@ -10,6 +10,7 @@ import { Socials } from "src/components/Socials";
 import portfolio from "content/portfolio/portfolio";
 import { Copyright } from "src/components/Copyright";
 import { useRouter } from "next/router";
+import { DarkModeContext } from "src/contexts/LightDarkThemeProvider";
 
 interface Props {
     children: React.ReactNode;
@@ -17,6 +18,7 @@ interface Props {
 
 const BlogLayout: React.FC<Props> = ({ children }) => {
     const router = useRouter();
+    const theme = useContext(DarkModeContext);
 
     const crumbs = useMemo(() => {
         if (!router) return [{ title: "Home", url: "/" }];
@@ -46,7 +48,7 @@ const BlogLayout: React.FC<Props> = ({ children }) => {
 
     return (
         <motion.div
-            className={styles.blogBody}
+            className={`${styles.blogBody}`}
             initial={{
                 opacity: 0,
             }}
@@ -60,18 +62,23 @@ const BlogLayout: React.FC<Props> = ({ children }) => {
                 duration: 0.5,
             }}
         >
-            <div className={styles.slantedContainer}>
+            <div
+                className={`${styles.slantedContainer} ${
+                    theme.isDarkMode ? styles.dark : styles.light
+                }`}
+            >
                 <ContentContainer
                     className={styles.topBar}
                     maxWidth={"52rem"}
                     padding={"24px 0 0 0"}
                 >
-                    <Breadcrumbs crumbs={crumbs} isDarkMode={false} />
+                    <Breadcrumbs
+                        crumbs={crumbs}
+                        isDarkMode={theme.isDarkMode}
+                    />
                     <DarkModeToggler />
                 </ContentContainer>
-                <ContentContainer padding={"0 24px"} maxWidth={"50rem"}>
-                    {children}
-                </ContentContainer>
+                {children}
             </div>
             <footer>
                 <Socials
