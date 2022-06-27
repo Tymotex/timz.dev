@@ -162,6 +162,9 @@ export const getAllBlogs = async (): Promise<BlogInfo[]> => {
     );
     signale.complete(`Fetched ${allBlogs.length} blogs!`);
 
+    allBlogs.sort((a, b) =>
+        a.frontmatter.title.localeCompare(b.frontmatter.title),
+    );
     return allBlogs;
 };
 
