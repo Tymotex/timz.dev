@@ -9,6 +9,8 @@ tags:
     - Computer Science
 ---
 
+import { Image } from 'src/blog-components/Image';
+
 ELF (**E**xecutable and **l**inkable **f**ormat) format is the standard file format for *executables*, *shared libraries*, *object files* and *core dumps* on most Linux systems. Files in the ELF format are very commonly provided in CTF challenges, particularly for reverse engineering and forensics challenges, as plenty of tools and techniques exist for deriving insight from them!
 
 ELF files are the typical output of compilers and linkers.
@@ -17,7 +19,7 @@ ELF files consist of an **ELF header** a **program header** table (listing ≥ 0
 
 Also, here is an [incredibly detailed dissection of ELF files](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/ELF_Executable_and_Linkable_Format_diagram_by_Ange_Albertini.png/1920px-ELF_Executable_and_Linkable_Format_diagram_by_Ange_Albertini.png) as a useful supplement to learning about them!
 
-**ELF Header:**
+## ELF Header
 
 The header is crucial for ensuring that the file is correctly interpreted by the OS when it’s executed, or when it is passed to the linker if it’s an object file.
 
@@ -76,24 +78,24 @@ $ file simple
 simple: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=d9da8c1d5941118dd1869a0d32eb8a0ad01865d2, for GNU/Linux 3.2.0, with debug_info, not stripped
 ```
 
-**ELF Program Header (Segments):**
+## ELF Program Header (Segments)
 
 The program header table shows the ***segments*** used at *run-time*, which basically tell the OS *how* to use the ELF file contents to create the virtual address space for the process to execute. In other words, the program header table contains the information that the system uses to know how to create the [*process image*](https://stackoverflow.com/questions/41865240/whats-the-difference-between-a-process-and-a-process-image).
 
 You can use `readelf --segments simple` to print out the ELF program header.
 
-**ELF Section Header (Sections):**
+## ELF Section Header (Sections)
 
 The section header table lets you locate all of the file’s *sections* which contain important data about how to link files.
 
 You can use `readelf --sections simple` to print out the ELF program header.
 
-**ELF Segments and Sections**
+## ELF Segments and Sections
 
 One important thing to understand about the difference between *segments* and *sections* is that their ‘relevance’ depends on how the ELF file is being used — whether for execution or for linking. In the case of execution, the segments contain all the info and the sections are *simply ignored*. In the case of linking, the sections are used and the segments are ignored. 
 
 Segments and sections both identify a group of bytes in the ELF file, and there can definitely be overlap. Any byte can be a part of 0 or 1 sections and they can simultaneously also be part of 0 or 1 segments.
 
-![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7ff40e6b-8bb8-4b65-a1ae-aaea1005667b/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220410%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220410T012656Z&X-Amz-Expires=86400&X-Amz-Signature=9e1adb961abb360dff1368ef52c8fd4bb1f7e30c7f7bf3735b7a1338078745eb&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+<Image src="/images/blogs/concepts/ELF-Files/ELF-format.png" alt="ELF file data organisation" width="100%" />
 
 For a deeper dive into ELF files, see [this excellent presentation](https://www.youtube.com/watch?v=nC1U1LJQL8o&ab_channel=stacksmashing) on the implementation details of the ELF format.

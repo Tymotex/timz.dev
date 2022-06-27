@@ -11,6 +11,7 @@ import { BsMedium as MediumIcon } from "react-icons/bs";
 import { DarkModeContext } from "src/contexts/LightDarkThemeProvider";
 import { MiniDivider, SubtleDivider } from "src/components/Divider";
 import Link from "next/link";
+import Head from "next/head";
 
 export const getStaticProps: GetStaticProps = async (context) => {
     if (context === undefined || context.params === undefined)
@@ -67,6 +68,24 @@ const BlogIndex: NextPage<Props> = ({ blog }) => {
 
     return (
         <>
+            <Head>
+                <title>{blog.frontmatter.title}</title>
+                <meta
+                    name="description"
+                    content={blog.frontmatter.description}
+                />
+                <meta name="og:title" content={blog.frontmatter.title} />
+                {blog.frontmatter.thumbnail && (
+                    <meta
+                        name="og:image"
+                        content={blog.frontmatter.thumbnail}
+                    />
+                )}
+                <meta
+                    name="og:description"
+                    content={blog.frontmatter.description}
+                />
+            </Head>
             <ContentContainer className={styles.blogPage}>
                 <h1 className={styles.title}>{blog.frontmatter.title}</h1>
                 <ul className={styles.metadataList}>
