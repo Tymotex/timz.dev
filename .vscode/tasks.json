@@ -1,0 +1,54 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        // First, wipe all previous terminal instances that get opened by 
+        // default. I prefer starting from a clean slate.
+        {
+            "label": "SplitTerminalonStartip",
+            "command": "${command:workbench.action.terminal.killAll}",
+            "type": "shell",
+            "problemMatcher": [],
+            "runOptions": {
+                "runOn": "folderOpen"
+            }
+        },
+        // Launch the dev server in a split window with a Zsh instance on the
+        // right side.
+        {
+            "label": "Dev Server",
+            "type": "shell",
+            // The command is written this way as a workaround to VSCode
+            // forcefully closing terminals after tasks complete.
+            // Sourced from: https://stackoverflow.com/questions/59067229/how-to-re-use-a-vs-code-task-window-without-closing-it.
+            "command": "bash -c 'npm run dev; exec zsh'",
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "echo": true,
+                "focus": false,
+                "group": "development"
+            },
+            "runOptions": {
+                "runOn": "folderOpen"
+            },
+        },
+        {
+            "label": "Dev Shell",
+            "type": "shell",
+            "command": "zsh",
+            "windows": {
+                "command": "echo hello"
+            },
+            "presentation": {
+                "panel": "new",
+                "echo": true,
+                "focus": true,
+                "group": "development",
+                "showReuseMessage": false
+            },
+            "runOptions": {
+                "runOn": "folderOpen"
+            },
+        },
+    ]
+}
