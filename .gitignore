@@ -1,3 +1,5 @@
+wiki/.obsidian
+
 # This is where the .css files from transpiling sass module files get stored
 # so that the .mdx blogs have them available. It was really challenging to
 # work around the lack of sass support from mdx-bundler.
