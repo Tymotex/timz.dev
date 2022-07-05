@@ -1,0 +1,106 @@
+{
+  "main": {
+    "id": "fc089abe4bdebadf",
+    "type": "split",
+    "children": [
+      {
+        "id": "ea94d73e04f0859d",
+        "type": "leaf",
+        "state": {
+          "type": "graph",
+          "state": {}
+        }
+      },
+      {
+        "id": "85974eaa4edaf2a5",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "software-engineering/programming-languages/JavaScript.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "713887e14b72299a",
+    "type": "split",
+    "children": [
+      {
+        "id": "eaeb6623f767ea33",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "28897ed18ee4b960",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "d2d867cbfb8edac7",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "dc79a4e4410cab59",
+    "type": "split",
+    "children": [
+      {
+        "id": "0aeac451ace5419b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ba7f0f8703d79fa9",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "software-engineering/programming-languages/JavaScript.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "85974eaa4edaf2a5",
+  "lastOpenFiles": [
+    "software-engineering/programming-languages/JavaScript.md",
+    "software-engineering/programming-languages/CSS.md",
+    "software-engineering/frameworks/Vue.js.md",
+    "software-engineering/programming-languages/TypeScript.md",
+    "software-engineering/Untitled.md"
+  ]
+}
