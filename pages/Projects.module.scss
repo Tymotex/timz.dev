@@ -4,5 +4,7 @@
     width: 100%;
     max-width: 45rem;
     margin: $spacing-xs auto;
+    padding: 0 $spacing-sm;
+    box-sizing: border-box;
     text-align: center;
 }

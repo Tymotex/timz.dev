@@ -144,3 +144,17 @@ $detailsPanelWidth: 37rem;
         }
     }
 }
+
+@media screen and (max-width: $sm) {
+    .featuredProjectGroup {
+        .featuredProject {
+            .demo {
+                height: 200px;
+            }
+
+            .details {
+                padding: $spacing-sm;
+            }
+        }
+    }
+}

@@ -12,6 +12,7 @@ import { ImageGallery } from "src/components/ImageGallery";
 import { SectionDivider } from "src/components/Divider";
 import ContentContainer from "src/components/Container/ContentContainer";
 import AwardList from "src/components/Education/AwardList";
+import Highlight, { defaultProps } from "prism-react-renderer";
 
 interface PortfolioData {
     meta: {
@@ -131,7 +132,7 @@ const portfolio: PortfolioData = {
         ],
         aboutMe: (
             <>
-                <ContentContainer maxWidth={"50rem"} padding={"12px"}>
+                <ContentContainer maxWidth={"50rem"} padding={"0 32px"}>
                     <p>
                         Hi! I'm Tim, a final year computer science student at
                         the University of New South Wales (UNSW). I love working
@@ -154,7 +155,7 @@ const portfolio: PortfolioData = {
                 <SectionDivider text="Hobbies & Interests" />
                 <ContentContainer
                     maxWidth={"50rem"}
-                    padding={"12px 12px 48px 12px"}
+                    padding={"12px 32px 48px 32px"}
                 >
                     <p>What I enjoy outside of programming.</p>
                     <UnorderedList>
@@ -183,7 +184,9 @@ const portfolio: PortfolioData = {
                         width={250}
                         height={150}
                     /> */}
-                    <h2>My Programming Battlestation</h2>
+                    <h2 style={{ marginTop: "32px" }}>
+                        My Programming Battlestation
+                    </h2>
                     <p>
                         Where I churn out <del>buggy</del> software:
                     </p>
@@ -201,9 +204,54 @@ const portfolio: PortfolioData = {
                         width={300}
                         height={200}
                     />
-                    <div style={{ position: 'relative', width: 600, height: 320 }}>
-                        <Image src="/images/profile/neofetch.png" layout="fill" objectFit="contain" />
-                    </div>
+                    <Highlight
+                        {...defaultProps}
+                        code={`
+$ neofetch
+                   -                     tym@arch 
+                  .o+                    -------- 
+                 ooo/                    OS: Arch Linux x86_64 
+                +oooo:                   Kernel: 5.15.52-1-lts 
+               +oooooo:                  Uptime: 5 hours, 19 mins 
+               -+oooooo+:                Packages: 1340 (pacman), 6 (flatpak) 
+             /:-:++oooo+:                Shell: zsh 5.9 
+            /++++/+++++++:               Resolution: 2560x1440, 3440x1440, 2560x1440 
+           /++++++++++++++:              WM: i3 
+          /+++ooooooooooooo/             Theme: Arc-Dark [GTK2/3] 
+         ./ooosssso++osssssso+           Icons: breeze-dark [GTK2/3] 
+        .oossssso-/ossssss+              Terminal: vscode 
+       -osssssso.      :ssssssso.        CPU: AMD Ryzen 5 5600X (12) @ 3.700GHz 
+      :osssssss/        osssso+++.       GPU: NVIDIA GeForce GTX 1060 6GB 
+     /ossssssss/        +ssssooo/-       Memory: 8119MiB / 31998MiB 
+   /ossssso+/:-        -:/+osssso+-
+  +sso+:-                 .-/+oso:                               
+ ++:.                           -/+/                             
+                    `}
+                        language="bash"
+                    >
+                        {({
+                            className,
+                            style,
+                            tokens,
+                            getLineProps,
+                            getTokenProps,
+                        }) => (
+                            <pre className={className} style={style}>
+                                {tokens.map((line, i) => (
+                                    <div {...getLineProps({ line, key: i })}>
+                                        {line.map((token, key) => (
+                                            <span
+                                                {...getTokenProps({
+                                                    token,
+                                                    key,
+                                                })}
+                                            />
+                                        ))}
+                                    </div>
+                                ))}
+                            </pre>
+                        )}
+                    </Highlight>
                 </ContentContainer>
             </>
         ),

@@ -80,15 +80,18 @@ const Breadcrumbs: React.FC<Props> = ({
                 </>
             )}
             {isSmallScreen && crumbs && crumbs.length <= 1 && (
-                <Link href={"/"}>
-                    <a
-                        className={`${styles.crumb} ${styles.clickableCrumb} ${
-                            isDarkMode ? styles.dark : styles.light
-                        }`}
-                    >
-                        Home
-                    </a>
-                </Link>
+                <>
+                    <ChevronLeft />
+                    <Link href={"/"}>
+                        <a
+                            className={`${styles.crumb} ${
+                                isDarkMode ? styles.dark : styles.light
+                            }`}
+                        >
+                            Home
+                        </a>
+                    </Link>
+                </>
             )}
         </nav>
     );

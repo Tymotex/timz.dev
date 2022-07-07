@@ -5,6 +5,7 @@ import ContentContainer from "src/components/Container/ContentContainer";
 import { SectionDivider } from "src/components/Divider";
 import { Window } from "src/components/Window";
 import { useRedirectHome } from "src/hooks/routerHooks";
+import styles from "./Contact.module.scss";
 
 const Contact: NextPage = () => {
     const redirectToHome = useRedirectHome();
@@ -25,7 +26,7 @@ const Contact: NextPage = () => {
                             padding="0"
                             textAlign="center"
                         >
-                            <p>
+                            <p className={styles.description}>
                                 Feel free to reach out to me if you have a
                                 question or just want to connect!
                             </p>

@@ -21,6 +21,7 @@
         font-family: $code-font-stack;
         white-space: nowrap;
         margin: $spacing-xs;
+        font-size: xx-large;
     }
 
     .divider {
@@ -40,6 +41,14 @@
         &::before {
             @include dividerDecorator;
             left: 0;
+        }
+    }
+}
+
+@media screen and (max-width: $sm) {
+    .sectionDivider {
+        .centralText {
+            font-size: x-large;
         }
     }
 }

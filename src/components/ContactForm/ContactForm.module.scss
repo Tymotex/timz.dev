@@ -53,6 +53,7 @@
 
                 textarea {
                     height: 100%;
+                    min-height: 300px;
                     resize: none;
                 }
             }
@@ -61,5 +62,25 @@
 
     .submitButton {
         margin-top: $spacing-md;
+    }
+}
+
+@media screen and (max-width: $sm) {
+    .contactForm {
+        .fieldGroup {
+            flex-direction: column;
+
+            .field {
+                &.name {
+                    width: 100%;
+                }
+                &.email {
+                    width: 100%;
+                }
+                &.message {
+                    margin-top: $spacing-md;
+                }
+            }
+        }
     }
 }
