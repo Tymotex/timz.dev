@@ -201,6 +201,9 @@ const portfolio: PortfolioData = {
                         width={300}
                         height={200}
                     />
+                    <div style={{ position: 'relative', width: 600, height: 320 }}>
+                        <Image src="/images/profile/neofetch.png" layout="fill" objectFit="contain" />
+                    </div>
                 </ContentContainer>
             </>
         ),
