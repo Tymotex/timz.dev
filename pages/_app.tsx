@@ -17,7 +17,7 @@ import "katex/dist/katex.min.css";
 
 // Applies syntax highlighting to all ``` and ` code snippets in the .mdx blogs.
 // See a list of more themes here: https://github.com/PrismJS/prism-themes.
-import "prismjs/themes/prism-tomorrow.css";
+import "prism-themes/themes/prism-atom-dark.min.css";
 import { BlogLayout } from "src/layout";
 import { BlogContext } from "src/contexts/BlogContext";
 

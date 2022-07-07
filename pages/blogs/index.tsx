@@ -1,4 +1,5 @@
 import type { GetStaticProps, NextPage } from "next";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { useContext, useEffect, useState } from "react";
 import { BlogInfo, getAllBlogs } from "scripts/blogs";
@@ -55,13 +56,20 @@ const BlogIndex: NextPage<Props> = ({ blogs }) => {
     }, [blogContext, router.query]);
 
     return (
-        <ContentContainer>
-            <h1 className={styles.title}>Byte-Sized Concepts</h1>
-            <MiniDivider />
-            <BlogList
-                blogs={blogList.filter((blog) => blog.category !== "projects")}
-            />
-        </ContentContainer>
+        <>
+            <Head>
+                <title>Blogs</title>
+            </Head>
+            <ContentContainer>
+                <h1 className={styles.title}>Byte-Sized Concepts</h1>
+                <MiniDivider />
+                <BlogList
+                    blogs={blogList.filter(
+                        (blog) => blog.category !== "projects",
+                    )}
+                />
+            </ContentContainer>
+        </>
     );
 };
 
