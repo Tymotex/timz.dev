@@ -2,6 +2,7 @@
 
 .searchBar {
     position: relative;
+    display: inline-block;
 
     .searchIcon {
         position: absolute;
@@ -21,6 +22,7 @@
 
     input {
         border-radius: 100px;
+        border: 1px solid rgba($color: $cool-grey-500, $alpha: 0.5);
         padding: $spacing-xs $spacing-xs $spacing-xs $spacing-lg;
 
         &.dark {

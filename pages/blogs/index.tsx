@@ -52,7 +52,7 @@ const BlogIndex: NextPage<Props> = ({ blogs }) => {
                 return blog.frontmatter.tags.some((tag) => tags.has(tag));
             }),
         );
-    }, [blogContext.searchQuery, router.query]);
+    }, [blogContext, router.query]);
 
     return (
         <ContentContainer>

@@ -13,6 +13,7 @@ import { Socials } from "src/components/Socials";
 import { BlogContext } from "src/contexts/BlogContext";
 import { DarkModeContext } from "src/contexts/LightDarkThemeProvider";
 import { TagFilter } from "src/components/TagFilter";
+import { useBreakpointTrigger } from "src/hooks/windowHooks";
 
 interface Props {
     children: React.ReactNode;
@@ -22,6 +23,7 @@ const BlogLayout: React.FC<Props> = ({ children }) => {
     const router = useRouter();
     const theme = useContext(DarkModeContext);
     const blogContext = useContext(BlogContext);
+    const isSmallScreen = useBreakpointTrigger(600);
 
     const [filterTags, setFilterTags] = useState<string[]>([]);
 
@@ -79,20 +81,30 @@ const BlogLayout: React.FC<Props> = ({ children }) => {
                 <ContentContainer
                     className={styles.topBar}
                     maxWidth={"52rem"}
-                    padding={"24px 0 0 0"}
+                    padding={"18px"}
                 >
                     <Breadcrumbs
                         crumbs={crumbs}
                         isDarkMode={theme.isDarkMode}
                     />
                     <div className={styles.rightGroup}>
+                        {!isSmallScreen && (
+                            <SearchBar
+                                query={blogContext.searchQuery}
+                                setQuery={blogContext.setSearchQuery}
+                            />
+                        )}
+                        <DarkModeToggler />
+                    </div>
+                </ContentContainer>
+                {isSmallScreen && (
+                    <div className={styles.separateSearchBar}>
                         <SearchBar
                             query={blogContext.searchQuery}
                             setQuery={blogContext.setSearchQuery}
                         />
-                        <DarkModeToggler />
                     </div>
-                </ContentContainer>
+                )}
                 {/* <ContentContainer padding="24px 24px 0 24px">
                     <TagFilter tags={filterTags} />
                 </ContentContainer> */}

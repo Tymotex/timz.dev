@@ -86,6 +86,11 @@
             .thumbnail {
                 height: 240px;
             }
+
+            .details {
+                box-sizing: border-box;
+                padding: $spacing-sm;
+            }
         }
     }
 }

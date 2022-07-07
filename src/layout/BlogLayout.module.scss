@@ -55,12 +55,19 @@ $edge-skew-angle: -1deg;
         .topBar {
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
+            box-sizing: border-box;
 
             .rightGroup {
                 display: flex;
                 flex-direction: row;
                 column-gap: $spacing-sm;
             }
+        }
+
+        .separateSearchBar {
+            display: flex;
+            justify-content: center;
         }
     }
 }

@@ -10,6 +10,7 @@ interface Props {
     padding?: string;
     textAlign?: "left" | "center" | "right";
     className?: string;
+    margin?: string;
 }
 
 const ContentContainer: React.FC<Props> = ({
@@ -21,6 +22,7 @@ const ContentContainer: React.FC<Props> = ({
     padding,
     textAlign = "left",
     className,
+    margin,
 }) => {
     return (
         <div
@@ -34,6 +36,7 @@ const ContentContainer: React.FC<Props> = ({
                 userSelect: disableHighlight ? "none" : "text",
                 padding,
                 textAlign,
+                margin,
             }}
         >
             {children}
