@@ -3,15 +3,15 @@
     "tasks": [
         // First, wipe all previous terminal instances that get opened by 
         // default. I prefer starting from a clean slate.
-        {
-            "label": "SplitTerminalonStartip",
-            "command": "${command:workbench.action.terminal.killAll}",
-            "type": "shell",
-            "problemMatcher": [],
-            "runOptions": {
-                "runOn": "folderOpen"
-            }
-        },
+        // {
+        //     "label": "SplitTerminalonStartup",
+        //     "command": "${command:workbench.action.terminal.killAll}",
+        //     "type": "shell",
+        //     "problemMatcher": [],
+        //     "runOptions": {
+        //         "runOn": "folderOpen"
+        //     }
+        // },
         // Launch the dev server in a split window with a Zsh instance on the
         // right side.
         {

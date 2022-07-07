@@ -5,9 +5,11 @@ import { motion } from "framer-motion";
 interface Props {
     children: React.ReactNode;
     className?: string;
+    height?: string;
+    fontSize?: string;
 }
 
-const CentralContainer: React.FC<Props> = ({ children, className }) => {
+const CentralContainer: React.FC<Props> = ({ children, className, height, fontSize }) => {
     return (
         <motion.div
             className={`${styles.centralContainer} ${className}`}
@@ -17,11 +19,13 @@ const CentralContainer: React.FC<Props> = ({ children, className }) => {
             }}
             animate={{
                 opacity: 1,
-                height: 500,
+                height: height || 500,
+                fontSize
             }}
             transition={{
                 duration: 1.4,
             }}
+            style={{ height }}
         >
             {children}
         </motion.div>

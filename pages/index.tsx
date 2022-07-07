@@ -10,20 +10,23 @@ import { Quote } from "src/components/Quote";
 import { Socials } from "src/components/Socials";
 import { Stack } from "src/components/Stack";
 import { Typewriter } from "src/components/Typewriter";
+import { useBreakpointTrigger } from "src/hooks/windowHooks";
 import styles from "./Landing.module.scss";
 
 const Home: NextPage = () => {
+    const isSmallScreen = useBreakpointTrigger(480);
+
     return (
         <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
         >
-            <CentralContainer>
+            <CentralContainer height={isSmallScreen && "420px"} fontSize={isSmallScreen ? "small" : "medium"}>
                 <ContentContainer
                     centerContents
                     maxWidth={"800px"}
-                    width={"80%"}
+                    width={"100%"}
                     disableHighlight
                 >
                     <aside className={styles.greeting}>
@@ -34,7 +37,7 @@ const Home: NextPage = () => {
                         I&apos;m{" "}
                         <Typewriter messages={portfolio.profile.headlines} />
                     </div>
-                    <MiniDivider />
+                    <MiniDivider margin={isSmallScreen ? '18px 0 10px 0' : '10px 0px'} />
 
                     <div className={styles.description} role="presentation">
                         {portfolio.profile.elevatorPitch}
@@ -42,6 +45,7 @@ const Home: NextPage = () => {
                     <Stack
                         direction="horizontal"
                         columnGap={10}
+                        rowGap={10}
                         className={styles.buttonStack}
                     >
                         <LinkButton colour="primary" text="Work" href="/work" />
