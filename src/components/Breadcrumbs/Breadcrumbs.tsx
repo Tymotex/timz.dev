@@ -1,6 +1,10 @@
 import Link from "next/link";
 import React, { Fragment } from "react";
-import { MdChevronRight as ChevronRight } from "react-icons/md";
+import {
+    MdChevronRight as ChevronRight,
+    MdChevronLeft as ChevronLeft,
+} from "react-icons/md";
+import { useBreakpointTrigger } from "src/hooks/windowHooks";
 import styles from "./Breadcrumbs.module.scss";
 
 export interface Crumb {
@@ -19,12 +23,15 @@ const Breadcrumbs: React.FC<Props> = ({
     isDarkMode = true,
     className,
 }) => {
+    const isSmallScreen = useBreakpointTrigger(480);
+
     return (
         <nav
             aria-label="breadcrumbs"
             className={`${styles.breadcrumbs} ${className}`}
         >
-            {crumbs &&
+            {!isSmallScreen &&
+                crumbs &&
                 crumbs.map((crumb, i) => (
                     <Fragment key={crumb.title}>
                         <Link href={crumb.url}>
@@ -52,6 +59,21 @@ const Breadcrumbs: React.FC<Props> = ({
                         )}
                     </Fragment>
                 ))}
+            {isSmallScreen && crumbs && crumbs.length > 1 && (
+                <>
+                    <ChevronLeft />
+                    <Link href={crumbs[crumbs.length - 2].url}>
+                        <button className={styles.crumb}>
+                            {crumbs[crumbs.length - 2].title}
+                        </button>
+                    </Link>
+                </>
+            )}
+            {isSmallScreen && crumbs && crumbs.length <= 1 && (
+                <Link href={"/"}>
+                    <a className={styles.crumb}>Home</a>
+                </Link>
+            )}
         </nav>
     );
 };

@@ -13,17 +13,23 @@
     column-gap: 6px;
 
     .crumb {
+        @include reset-button-styles;
         display: inline-block;
-
-        // text-decoration-style: dotted !important;
+        white-space: nowrap;
+        max-width: 64px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 1px 0px; // See: https://stackoverflow.com/questions/13240665/css-overflowhidden-removing-border-bottom.
 
         // The last crumb in the trail should not appear clickable.
         &:not(:last-child) {
-            .dark {
+            .dark,
+            &.dark {
                 color: $dark-text-colour;
                 border-bottom: 1px dotted $dark-text-colour;
             }
-            .light {
+            .light,
+            &.light {
                 color: $light-text-colour;
                 border-bottom: 1px dotted $light-text-colour;
             }

@@ -30,18 +30,45 @@
             &.link {
                 text-decoration: underline;
             }
+        }
+    }
+}
 
-            &:not(:last-child) {
-                &:before {
-                    content: "";
-                    width: 6px;
-                    background: $cool-grey-700;
-                    height: 6px;
-                    position: absolute;
-                    border-radius: 50%;
-                    top: 50%;
-                    right: -3px;
-                    transform: translateY(-50%);
+@media screen and (max-width: $sm) {
+    .blogPage {
+        .metadataList {
+            flex-direction: column;
+            justify-content: center;
+            row-gap: $spacing-xxs;
+
+            .field {
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $sm) {
+    .blogPage {
+        .metadataList {
+            flex-direction: row;
+
+            .field {
+                &:not(:last-child) {
+                    &:before {
+                        content: "";
+                        width: 6px;
+                        background: $cool-grey-700;
+                        height: 6px;
+                        position: absolute;
+                        border-radius: 50%;
+                        top: 50%;
+                        right: -3px;
+                        transform: translateY(-50%);
+                    }
                 }
             }
         }
@@ -49,6 +76,7 @@
 }
 
 .blogContents {
+    padding: 0 $spacing-md $spacing-md $spacing-md;
     & > * {
         &:not(:last-child) {
             margin-bottom: $spacing-sm;
@@ -76,10 +104,10 @@
             &::first-letter {
                 font-family: $code-font-stack;
                 padding: 0 0.3rem;
-                margin: 0 0.3rem 0 0;
+                margin: 0 0.5rem 0 0;
                 border-radius: 8px;
 
-                font-size: 4rem;
+                font-size: 3.9rem;
                 float: left;
                 line-height: 1;
             }
@@ -105,4 +133,12 @@
 
 .blogFooter {
     color: $cool-grey-500;
+}
+
+@media screen and (max-width: $md) {
+    .blogPage {
+        .title {
+            font-size: xx-large;
+        }
+    }
 }

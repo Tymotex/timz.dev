@@ -24,6 +24,7 @@ const BlogLayout: React.FC<Props> = ({ children }) => {
     const theme = useContext(DarkModeContext);
     const blogContext = useContext(BlogContext);
     const isSmallScreen = useBreakpointTrigger(600);
+    const isOnIndexPage = router.pathname === "/blogs";
 
     const [filterTags, setFilterTags] = useState<string[]>([]);
 
@@ -88,7 +89,7 @@ const BlogLayout: React.FC<Props> = ({ children }) => {
                         isDarkMode={theme.isDarkMode}
                     />
                     <div className={styles.rightGroup}>
-                        {!isSmallScreen && (
+                        {!isSmallScreen && isOnIndexPage && (
                             <SearchBar
                                 query={blogContext.searchQuery}
                                 setQuery={blogContext.setSearchQuery}
@@ -97,7 +98,7 @@ const BlogLayout: React.FC<Props> = ({ children }) => {
                         <DarkModeToggler />
                     </div>
                 </ContentContainer>
-                {isSmallScreen && (
+                {isSmallScreen && isOnIndexPage && (
                     <div className={styles.separateSearchBar}>
                         <SearchBar
                             query={blogContext.searchQuery}
