@@ -21,6 +21,20 @@ const nextConfig = {
     images: {
         domains: ['tymotex.github.io', 'raw.githubusercontent.com', 'github-readme-stats.vercel.app'],
     },
+    rewrites: [
+        // If the host is `blog.timz.dev`, this rewrite is applied.
+        // See: https://vercel.com/support/articles/can-i-redirect-from-a-subdomain-to-a-subpath.
+        {
+            "source": "/:path*",
+            "has": [
+              {
+                "type": "host",
+                "value": "blog.timz.dev"
+              }
+            ],
+            "destination": "/app/:path*"
+        }
+    ]
 }
 
 // When the ANALYZE environment variable is true, then running `next build` will
