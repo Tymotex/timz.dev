@@ -34,7 +34,9 @@ const Education: React.FC<Props> = ({ education }) => {
                     </p>
                 </div>
             </div>
-            <div className={styles.description}>{education.description}</div>
+            <div className={styles.description}>
+                <education.Description />
+            </div>
         </>
     );
 };

@@ -22,7 +22,10 @@ const Home: NextPage = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
         >
-            <CentralContainer height={isSmallScreen && "420px"} fontSize={isSmallScreen ? "small" : "medium"}>
+            <CentralContainer
+                height={isSmallScreen && "420px"}
+                fontSize={isSmallScreen ? "small" : "medium"}
+            >
                 <ContentContainer
                     centerContents
                     maxWidth={"800px"}
@@ -37,10 +40,12 @@ const Home: NextPage = () => {
                         I&apos;m{" "}
                         <Typewriter messages={portfolio.profile.headlines} />
                     </div>
-                    <MiniDivider margin={isSmallScreen ? '18px 0 10px 0' : '10px 0px'} />
+                    <MiniDivider
+                        margin={isSmallScreen ? "18px 0 10px 0" : "10px 0px"}
+                    />
 
                     <div className={styles.description} role="presentation">
-                        {portfolio.profile.elevatorPitch}
+                        <portfolio.profile.elevatorPitch />
                     </div>
                     <Stack
                         direction="horizontal"

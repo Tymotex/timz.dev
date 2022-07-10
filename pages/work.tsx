@@ -8,9 +8,10 @@ import { EducationItem } from "src/components/Education";
 import { Window } from "src/components/Window";
 import { WorkExperienceTabs } from "src/components/WorkExperienceTabs";
 import { useRedirectHome } from "src/hooks/routerHooks";
+import { useBreakpointTrigger } from "src/hooks/windowHooks";
 
 const Work: NextPage = () => {
-    const redirectToHome = useRedirectHome();
+    const isSmallScreen = useBreakpointTrigger(480);
 
     return (
         <>
@@ -29,7 +30,10 @@ const Work: NextPage = () => {
                             />
                         </ContentContainer>
                         <SectionDivider text="Education" />
-                        <ContentContainer maxWidth={1200}>
+                        <ContentContainer
+                            maxWidth={1200}
+                            padding={isSmallScreen && "12px 18px 0px 0px"}
+                        >
                             <EducationItem education={portfolio.education} />
                         </ContentContainer>
                     </Window>

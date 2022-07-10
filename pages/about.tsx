@@ -19,7 +19,7 @@ const About: NextPage = () => {
                         ]}
                     >
                         <SectionDivider text="Who am I?" />
-                        {portfolio.profile.aboutMe}
+                        <portfolio.profile.AboutMe />
                     </Window>
                 </div>
             </motion.div>

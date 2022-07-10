@@ -53,7 +53,7 @@ const Window: React.FC<Props> = ({
                         crumbs={crumbs}
                     />
                 )}
-                <Link href="/">
+                <Link href="/" scroll={false}>
                     <CloseIcon
                         aria-label="Close"
                         size={32}

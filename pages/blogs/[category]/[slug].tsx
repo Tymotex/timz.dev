@@ -1,17 +1,17 @@
 import { getMDXComponent } from "mdx-bundler/client";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import Head from "next/head";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useContext, useMemo } from "react";
+import { AiFillRead as BookIcon } from "react-icons/ai";
+import { BsMedium as MediumIcon } from "react-icons/bs";
 import { Blog, getAllBlogs, getBlog } from "scripts/blogs";
 import { ChipGroup } from "src/components/ChipGroup";
 import ContentContainer from "src/components/Container/ContentContainer";
-import styles from "./BlogPage.module.scss";
-import { AiFillRead as BookIcon } from "react-icons/ai";
-import { BsMedium as MediumIcon } from "react-icons/bs";
+import { SubtleDivider } from "src/components/Divider";
 import { DarkModeContext } from "src/contexts/LightDarkThemeProvider";
-import { MiniDivider, SubtleDivider } from "src/components/Divider";
-import Link from "next/link";
-import Head from "next/head";
+import styles from "./BlogPage.module.scss";
 
 export const getStaticProps: GetStaticProps = async (context) => {
     if (context === undefined || context.params === undefined)
@@ -36,7 +36,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
     return {
         paths: allBlogs.map((blog) => ({
             params: { category: blog.category, slug: blog.slug },
-            // params: { category: , slug: "hello-world" },
         })),
         fallback: true,
     };

@@ -42,7 +42,7 @@ const WorkExperienceTabs: React.FC<Props> = ({ workExperiences }) => {
                                 <p className={styles.employmentPeriod}>
                                     {work.from} &ndash; {work.to}
                                 </p>
-                                {work.description}
+                                <work.Description />
                                 <SubtleDivider />
                                 <TechnologyChipGroup
                                     technologies={work.technologies}

@@ -30,7 +30,7 @@ export interface Blog {
 
 export type BlogInfo = Omit<Blog, "code">;
 
-const makeMDXBundle = async (rawSource: string) => {
+export const makeMDXBundle = async (rawSource: string) => {
     const cwd = process.cwd();
 
     try {

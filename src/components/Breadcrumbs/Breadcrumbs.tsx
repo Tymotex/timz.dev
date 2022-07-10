@@ -34,7 +34,7 @@ const Breadcrumbs: React.FC<Props> = ({
                 crumbs &&
                 crumbs.map((crumb, i) => (
                     <Fragment key={crumb.title}>
-                        <Link href={crumb.url}>
+                        <Link href={crumb.url} scroll={false}>
                             <li
                                 role="button"
                                 className={`${styles.crumb} ${
@@ -68,7 +68,7 @@ const Breadcrumbs: React.FC<Props> = ({
             {isSmallScreen && crumbs && crumbs.length > 1 && (
                 <>
                     <ChevronLeft />
-                    <Link href={crumbs[crumbs.length - 2].url}>
+                    <Link href={crumbs[crumbs.length - 2].url} scroll={false}>
                         <button
                             className={`${styles.crumb} ${
                                 styles.clickableCrumb
@@ -82,7 +82,7 @@ const Breadcrumbs: React.FC<Props> = ({
             {isSmallScreen && crumbs && crumbs.length <= 1 && (
                 <>
                     <ChevronLeft />
-                    <Link href={"/"}>
+                    <Link href={"/"} scroll={false}>
                         <a
                             className={`${styles.crumb} ${
                                 isDarkMode ? styles.dark : styles.light

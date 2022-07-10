@@ -40,6 +40,7 @@ const ContactForm = () => {
                     />
                 </div>
             </div>
+
             <div className={styles.submitButton}>
                 <Button text="Submit" type="submit" />
             </div>

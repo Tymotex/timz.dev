@@ -13,6 +13,14 @@ import { SectionDivider } from "src/components/Divider";
 import ContentContainer from "src/components/Container/ContentContainer";
 import AwardList from "src/components/Education/AwardList";
 import Highlight, { defaultProps } from "prism-react-renderer";
+import AboutMe from "./AboutMe";
+import GoogleSoftwareEngineeringIntern from "./work-experience/google-software-engineering-intern";
+import WiseTechAssociateSoftwareDeveloper from "./work-experience/wisetech-associate-software-developer";
+import AccentureTechnicalArchitect from "./work-experience/accenture-technical-architect";
+import UnswCasualAcademicTutor from "./work-experience/unsw-casual-academic-tutor";
+import Education from "./Education";
+import GoogleSoftwareEngineer from "./work-experience/google-software-engineer";
+import ElevatorPitch from "./ElevatorPitch";
 
 interface PortfolioData {
     meta: {
@@ -35,10 +43,10 @@ interface PortfolioData {
         headlines: string[];
         // Concise sentences to display on the landing page and leave an
         // impression on the reader.
-        elevatorPitch: React.ReactNode;
+        elevatorPitch: React.ComponentType;
         // Social icons and links.
         socials: SocialLinkData[];
-        aboutMe: React.ReactNode;
+        AboutMe: React.ComponentType;
     };
     projects: {
         featured: Project[];
@@ -55,7 +63,7 @@ export interface WorkExperience {
     team?: string;
     from: string;
     to: string;
-    description: React.ReactNode;
+    Description: React.ComponentType;
     technologies: Technology[];
 }
 
@@ -83,7 +91,7 @@ export interface Education {
     from: string;
     // Eg. 'Present' or 'Dec 2022'.
     to: string;
-    description: React.ReactNode;
+    Description: React.ComponentType;
 }
 
 export interface Award {
@@ -109,13 +117,7 @@ const portfolio: PortfolioData = {
             "an aspiring software engineer.",
             "a lifelong learner.",
         ],
-        elevatorPitch: (
-            <p>
-                I'm currently a final year computer science student at the
-                University of New South Wales. I love working on software
-                projects and learning something about everything.
-            </p>
-        ),
+        elevatorPitch: ElevatorPitch,
         socials: [
             {
                 icon: <GitHubIcon size={20} aria-hidden />,
@@ -130,131 +132,7 @@ const portfolio: PortfolioData = {
                 url: "https://www.youtube.com/channel/UCIuefX9zQPux3lGCkDOdlIQ",
             },
         ],
-        aboutMe: (
-            <>
-                <ContentContainer maxWidth={"50rem"} padding={"0 32px"}>
-                    <p>
-                        Hi! I'm Tim, a final year computer science student at
-                        the University of New South Wales (UNSW). I love working
-                        on software projects, especially when they're related to
-                        frontend/backend development and lower-level
-                        infrastructure.
-                    </p>
-                    <p>
-                        I've interned at Google as a software engineering intern
-                        in a site reliability engineering team and I have also
-                        taught the data structures and algorithms course,{" "}
-                        <a href="https://www.handbook.unsw.edu.au/undergraduate/courses/2021/COMP2521?year=2021">
-                            COMP2521
-                        </a>
-                        , at UNSW for 3 semesters. Software engineering is an
-                        absolute blast for me and I enjoy sharing knowledge with
-                        others 🤓.
-                    </p>
-                </ContentContainer>
-                <SectionDivider text="Hobbies & Interests" />
-                <ContentContainer
-                    maxWidth={"50rem"}
-                    padding={"12px 32px 48px 32px"}
-                >
-                    <p>What I enjoy outside of programming.</p>
-                    <UnorderedList>
-                        <li>Game development & mod authoring.</li>
-                        <li>Guitar &ndash; mainly fingerstyle on acoustic.</li>
-                        <li>
-                            Powerlifting, even with my frail programmer arms.
-                        </li>
-                        <li>
-                            Gardening (to soothe the soul after dealing with a
-                            particularly mind-bending bug).
-                        </li>
-                        <li>Origami.</li>
-                    </UnorderedList>
-                    {/* <ImageGallery
-                        images={[
-                            {
-                                src: "/images/profile/origami-1.png",
-                                alt: "Origami rose",
-                            },
-                            {
-                                src: "/images/profile/plants-1.jpg",
-                                alt: "Succulents",
-                            },
-                        ]}
-                        width={250}
-                        height={150}
-                    /> */}
-                    <h2 style={{ marginTop: "32px" }}>
-                        My Programming Battlestation
-                    </h2>
-                    <p>
-                        Where I churn out <del>buggy</del> software:
-                    </p>
-                    <ImageGallery
-                        images={[
-                            {
-                                src: "/images/profile/battlestation-1.jpg",
-                                alt: "Blue battlestation",
-                            },
-                            {
-                                src: "/images/profile/battlestation-2.jpg",
-                                alt: "Red battlestation",
-                            },
-                        ]}
-                        width={300}
-                        height={200}
-                    />
-                    <Highlight
-                        {...defaultProps}
-                        code={`
-$ neofetch
-                   -                     tym@arch 
-                  .o+                    -------- 
-                 ooo/                    OS: Arch Linux x86_64 
-                +oooo:                   Kernel: 5.15.52-1-lts 
-               +oooooo:                  Uptime: N/A
-               -+oooooo+:                Packages: 1340 (pacman), 6 (flatpak) 
-             /:-:++oooo+:                Shell: zsh 5.9 
-            /++++/+++++++:               Resolution: 2560x1440, 3440x1440, 2560x1440 
-           /++++++++++++++:              WM: i3 
-          /+++ooooooooooooo/             Theme: Arc-Dark [GTK2/3] 
-         ./ooosssso++osssssso+           Icons: breeze-dark [GTK2/3] 
-        .oossssso-/ossssss+              Terminal: vscode 
-       -osssssso.      :ssssssso.        CPU: AMD Ryzen 5 5600X (12) @ 3.700GHz 
-      :osssssss/        osssso+++.       GPU: NVIDIA GeForce GTX 1060 6GB 
-     /ossssssss/        +ssssooo/-       Memory: 8119MiB / 31998MiB 
-   /ossssso+/:-        -:/+osssso+-
-  +sso+:-                 .-/+oso:                               
- ++:.                           -/+/                             
-                    `}
-                        language="bash"
-                    >
-                        {({
-                            className,
-                            style,
-                            tokens,
-                            getLineProps,
-                            getTokenProps,
-                        }) => (
-                            <pre className={className} style={style}>
-                                {tokens.map((line, i) => (
-                                    <div {...getLineProps({ line, key: i })}>
-                                        {line.map((token, key) => (
-                                            <span
-                                                {...getTokenProps({
-                                                    token,
-                                                    key,
-                                                })}
-                                            />
-                                        ))}
-                                    </div>
-                                ))}
-                            </pre>
-                        )}
-                    </Highlight>
-                </ContentContainer>
-            </>
-        ),
+        AboutMe: AboutMe,
     },
     projects: {
         featured: [
@@ -419,7 +297,7 @@ $ neofetch
             from: "January 2021",
             to: "...",
             technologies: [],
-            description: <>Not started.</>,
+            Description: GoogleSoftwareEngineer,
         },
         {
             jobTitle: "Software Engineering Intern",
@@ -429,38 +307,7 @@ $ neofetch
             from: "November 2021",
             to: "February 2022",
             technologies: ["C++", "Spanner", "Bash", "SQL", "GoogleTest"],
-            description: (
-                <>
-                    Improved the reliability of a URL fetching service that
-                    serves billions of requests per day, used primarily by web
-                    crawlers.
-                    <UnorderedList>
-                        <li>
-                            Increased the availability of a 'hostname to shard
-                            number' resolver from 99.99% to 99.999%, reducing
-                            its expected annual downtime from 53 minutes to 5
-                            minutes.
-                        </li>
-                        <li>
-                            Designed and unit-tested new C++ interfaces and a
-                            Spanner database schema to phase out software
-                            anti-patterns.
-                        </li>
-                        <li>
-                            Implemented a scalable multithreaded cache refresher
-                            in C++ which could potentially reduce data staleness
-                            from minutes to milliseconds.
-                        </li>
-                        <li>
-                            Planned production rollout and testing procedures,
-                            including writing Bash scripts to automatically
-                            generate traffic and extract, normalise and compare
-                            contents from different storage services for
-                            verifying correctness, end-to-end.
-                        </li>
-                    </UnorderedList>
-                </>
-            ),
+            Description: GoogleSoftwareEngineeringIntern,
         },
         {
             jobTitle: "Associate Software Developer",
@@ -477,30 +324,7 @@ $ neofetch
                 "SCSS",
                 "SQL",
             ],
-            description: (
-                <>
-                    Developed API and UI for a learning management system,{" "}
-                    <a href="https://wisetechacademy.com/">WiseTech Academy</a>.
-                    <UnorderedList>
-                        <li>
-                            Applied test-driven development with NUnit to
-                            implement REST APIs for a user and content
-                            management system using C#, ASP.NET Core and SQL
-                            Server.
-                        </li>
-                        <li>
-                            Implemented a bulk enrolment time-saving feature,
-                            allowing .CSV and .XLSX files to be uploaded to
-                            create users and new course enrolments with dry-run
-                            results preview and error reporting.
-                        </li>
-                        <li>
-                            Developed content management interfaces using
-                            ASP.NET Razor pages, jQuery and SCSS.
-                        </li>
-                    </UnorderedList>
-                </>
-            ),
+            Description: WiseTechAssociateSoftwareDeveloper,
         },
         {
             jobTitle: "Technical Architect",
@@ -516,35 +340,7 @@ $ neofetch
                 "Express",
                 "Docker",
             ],
-            description: (
-                <>
-                    Developing an educational platform that tailors lessons for
-                    young children with ASD for the{" "}
-                    <strong>Autism Awareness</strong> charity organisation.
-                    <UnorderedList>
-                        <li>
-                            Built a prototype of the product, achieving 1st
-                            place in Accenture's 2021 hackathon out of 37 teams,
-                            and later pitched the project to Accenture to
-                            acquire funding for continued development.
-                        </li>
-                        <li>
-                            Implemented a lesson builder interface for
-                            developing reusable therapy sessions, reducing work
-                            that previously would take hours to just minutes.
-                        </li>
-                        <li>
-                            Implemented a content management GraphQL API using
-                            Node.js with TypeScript, Express and MongoDB.
-                        </li>
-                        <li>
-                            Formed core requirements and designed a concept for
-                            a neural network backing the platform's learning
-                            recommendation engine.
-                        </li>
-                    </UnorderedList>
-                </>
-            ),
+            Description: AccentureTechnicalArchitect,
         },
         {
             jobTitle: "Academic Tutor",
@@ -554,41 +350,7 @@ $ neofetch
             from: "June 2020",
             to: "May 2021",
             technologies: ["C", "Bash", "Perl", "Ruby", "Nginx", "AWS"],
-            description: (
-                <>
-                    Taught Data Structures and Algorithms (COMP2521) in
-                    trimester 2 and 3 in 2020 and trimester 1 in 2021.
-                    <UnorderedList>
-                        <li>
-                            Delivered two 1-hour online tutorials to 26 students
-                            each week.
-                        </li>
-                        <li>
-                            Delivered 6 hours of lab demonstrations to over 70
-                            students each week.
-                        </li>
-                        <li>
-                            Volunteered for additional help sessions and
-                            answering online course forum questions.
-                        </li>
-                        <li>
-                            Achieved a student satisfaction rating of 5.74/6.00
-                            in the first term of teaching, with the average
-                            rating being 5.21/6.00 in the School of Engineering.
-                        </li>
-                        <li>
-                            Achieved a student satisfaction rating of 5.89/6.00
-                            in the second term of teaching, with the average
-                            rating being 5.14/6.00 in the School of Engineering.
-                        </li>
-                        <li>
-                            Achieved a student satisfaction rating of 5.89/6.00
-                            in the third term of teaching, with the average
-                            rating being 5.30/6.00 in the School of Engineering.
-                        </li>
-                    </UnorderedList>
-                </>
-            ),
+            Description: UnswCasualAcademicTutor,
         },
     ],
     education: {
@@ -596,74 +358,7 @@ $ neofetch
         university: "University of New South Wales",
         from: "Jan 2019",
         to: "Dec 2022",
-        description: (
-            <>
-                <UnorderedList>
-                    <li>High distinction average WAM (GPA).</li>
-                    <li>
-                        Project team lead in the Computer Science & Engineering
-                        Society (CSESoc).
-                    </li>
-                </UnorderedList>
-                <h3 style={{ marginTop: "48px" }}>
-                    Academic Awards & Hackathons
-                </h3>
-                <AwardList
-                    awards={[
-                        {
-                            title: "Atlassian 1st place prize",
-                            description: `For achieving the highest mark in COMP2521 (Data Structures
-                        and algorithms) out of 400+ engineering students.`,
-                            date: "2020",
-                        },
-                        {
-                            title: "Macquarie Bank 1st place prize",
-                            description: `For achieving the highest mark in SENG2021 (Software
-                        Engineering Design Workshop) out of 159 software
-                        engineering students.`,
-                            date: "2021",
-                        },
-                        {
-                            title: "Faculty of Engineering Dean’s Award (x2)",
-                            description: `For ranking in the top 25 academic performance across
-                        all 1st & 2nd year students in UNSW's School of
-                        Engineering.`,
-                            date: "2020, 2021",
-                        },
-                        {
-                            title: "Accenture 'Hack for Good' Hackathon 1st Place",
-                            description: `Worked in a team of 4 to develop a prototype for
-                        an education platform driven by deep learning that
-                        automatically tailors a curriculum for young children
-                        with ASD. Achieved 1st place out of 37 other
-                        participating teams from across Australia.`,
-                            date: "2021",
-                        },
-                        {
-                            title: "Google Chronicle Hackathon 2nd Place",
-                            description: `Worked in a team of 4 to build a
-                        proof-of-concept application for an automated time
-                        scheduler system. This project won 2nd place out of
-                        around 40 other teams.`,
-                            date: "2021",
-                        },
-                        {
-                            title: "CSESoc Annual Flagship Hackathon 2nd Place",
-                            description: `Worked in a team of 4 to develop a prototype for
-                        an educational content delivery web app that recommends
-                        lessons to students with learning disabilities. We
-                        achieved 2nd place out of more than 60 participating
-                        teams.`,
-                            date: "2021",
-                        },
-                        {
-                            title: "Academic Awards Achievement Scholarship",
-                            date: "2019",
-                        },
-                    ]}
-                />
-            </>
-        ),
+        Description: Education,
     },
 };
 
