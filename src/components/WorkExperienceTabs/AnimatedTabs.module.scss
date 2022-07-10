@@ -43,6 +43,31 @@ $tab-panel-min-height: 300px;
             background: rgba($cool-grey-500, 0.2);
         }
     }
+
+    .tabPanels {
+        background: $cool-grey-300;
+        padding: $spacing-md;
+        height: fit-content;
+        @include elevation-shadow-square;
+
+        .jobTitle {
+            font-family: $code-font-stack;
+            margin: 0;
+        }
+
+        .team {
+            color: $cool-grey-900;
+            font-family: $code-font-stack;
+            font-weight: bold;
+            margin: 0;
+            margin-top: $spacing-xxs;
+        }
+
+        .employmentPeriod {
+            margin-top: $spacing-xxs;
+            color: $cool-grey-800;
+        }
+    }
 }
 
 @media screen and (min-width: $lg) {
@@ -75,31 +100,6 @@ $tab-panel-min-height: 300px;
 
         .currentTabHighlighter {
             border-radius: 10px;
-        }
-
-        .tabPanels {
-            background: $cool-grey-300;
-            padding: $spacing-md;
-            height: fit-content;
-            @include elevation-shadow-square;
-
-            .jobTitle {
-                font-family: $code-font-stack;
-                margin: 0;
-            }
-
-            .team {
-                color: $cool-grey-900;
-                font-family: $code-font-stack;
-                font-weight: bold;
-                margin: 0;
-                margin-top: $spacing-xxs;
-            }
-
-            .employmentPeriod {
-                margin-top: $spacing-xxs;
-                color: $cool-grey-800;
-            }
         }
     }
 }

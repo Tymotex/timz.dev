@@ -212,7 +212,7 @@ $ neofetch
                   .o+                    -------- 
                  ooo/                    OS: Arch Linux x86_64 
                 +oooo:                   Kernel: 5.15.52-1-lts 
-               +oooooo:                  Uptime: 5 hours, 19 mins 
+               +oooooo:                  Uptime: N/A
                -+oooooo+:                Packages: 1340 (pacman), 6 (flatpak) 
              /:-:++oooo+:                Shell: zsh 5.9 
             /++++/+++++++:               Resolution: 2560x1440, 3440x1440, 2560x1440 

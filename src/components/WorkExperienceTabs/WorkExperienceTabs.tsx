@@ -2,6 +2,7 @@ import { TabList, TabPanel, TabPanels } from "@reach/tabs";
 import { WorkExperience } from "content/portfolio/portfolio";
 import React from "react";
 import { TechnologyChipGroup } from "../ChipGroup";
+import { SubtleDivider } from "../Divider";
 import AnimatedTab from "./AnimatedTab";
 import AnimatedTabGroup from "./AnimatedTabGroup";
 import styles from "./AnimatedTabs.module.scss";
@@ -42,6 +43,7 @@ const WorkExperienceTabs: React.FC<Props> = ({ workExperiences }) => {
                                     {work.from} &ndash; {work.to}
                                 </p>
                                 {work.description}
+                                <SubtleDivider />
                                 <TechnologyChipGroup
                                     technologies={work.technologies}
                                 />
