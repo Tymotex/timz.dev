@@ -179,7 +179,7 @@ const portfolio: PortfolioData = {
                 description:
                     "Cosmica is a cross-platform sci-fi strategy game developed from scratch using the Unity game engine and C#, available on Google Play and playable online. This game was sold to a small indie game publisher in 2021.",
                 imageUrl: "/images/projects/cosmica.png",
-                demoUrl: "https://tymotex.github.io/Cosmica/",
+                demoUrl: "https://cosmica.timz.dev",
                 githubUrl: "https://github.com/Tymotex/Cosmica",
                 videoUrl: "https://www.youtube.com/watch?v=D7K1GOqns1w",
                 playUrl:

@@ -26,6 +26,12 @@
         "**/*.tsx"
     ],
     "exclude": [
-        "node_modules"
-    ]
+        "node_modules",
+        "cypress"
+    ],
+    "typeAcquisition": {
+        "include": [
+            "jest"
+        ]
+    }
 }

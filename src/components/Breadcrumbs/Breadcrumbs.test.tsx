@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import { expect } from "src/util/jestGlobals";
 import Breadcrumbs from "./Breadcrumbs";
 
 describe("Breadcrumbs", () => {
