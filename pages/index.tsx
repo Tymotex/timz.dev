@@ -1,4 +1,5 @@
 import portfolio from "content/portfolio/portfolio";
+import { getRandomQuote } from "content/portfolio/quotes";
 import { motion } from "framer-motion";
 import type { NextPage } from "next";
 import { AsideLinkGroup } from "src/components/AsideLinkGroup";
@@ -75,10 +76,7 @@ const Home: NextPage = () => {
                     { text: "Contact", url: "/contact" },
                 ]}
             />
-            <Quote
-                quote="Software and cathedrals are much the same – first we build them, then we pray."
-                author="Sam Redwine"
-            />
+            <Quote quote={getRandomQuote()} />
         </motion.div>
     );
 };

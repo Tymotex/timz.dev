@@ -1,15 +1,15 @@
 import React from "react";
 import styles from "./Quote.module.scss";
 import { motion } from "framer-motion";
+import { Quote } from "content/portfolio/quotes";
 
 interface Props {
-    quote: string;
-    author: string;
-    source?: string;
-    url?: string;
+    quote: Quote;
 }
 
-const Quote: React.FC<Props> = ({ quote, author, source, url }) => {
+const Quote: React.FC<Props> = ({ quote }) => {
+    const { quote: message, author, source, url } = quote;
+
     return (
         <motion.figure
             className={styles.quote}
@@ -18,7 +18,7 @@ const Quote: React.FC<Props> = ({ quote, author, source, url }) => {
             transition={{ duration: 0.5, delay: 0.75 }}
         >
             <blockquote cite={url}>
-                <p>&quot;{quote}&quot;</p>
+                <p>&quot;{message}&quot;</p>
             </blockquote>
             <figcaption>
                 &ndash; {author}
