@@ -1,6 +1,12 @@
 // SCSS variables for defining the colour palette for light/dark mode and
 // font families.
 
+// Open Sans.
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+// Ubuntu Mono.
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
 $theme-transition-duration: 0.2s;
 $dark-mode-transition-duration: 0.2s;
 
@@ -70,8 +76,8 @@ $cool-grey-1000: hsl(242, 15%, 90%);
  * Typography.
  */
 
-$regular-font-stack: Helvetica, Trebuchet MS, Arial;
-$code-font-stack: Consolas, monaco, Courier New;
+$regular-font-stack: "Open Sans", Helvetica, Trebuchet MS, Arial;
+$code-font-stack: "Ubuntu Mono", Consolas, monaco, Courier New;
 
 $font-size-xs: 8px;
 $font-size-sm: 12px;
