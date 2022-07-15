@@ -1,8 +1,7 @@
+import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import { useEffect, useState } from "react";
-import { ParticleWallpaper } from "src/components/Particles";
 import { DarkModeProvider } from "src/contexts/LightDarkThemeProvider";
 import portfolio from "content/portfolio/portfolio";
 import { useTransitionFix } from "src/hooks/routerHooks";
@@ -20,6 +19,17 @@ import "katex/dist/katex.min.css";
 import "prism-themes/themes/prism-atom-dark.min.css";
 import { BlogLayout } from "src/layout";
 import { BlogContext } from "src/contexts/BlogContext";
+import dynamic from "next/dynamic";
+
+const DynamicParticleWallpaper = dynamic(
+    () =>
+        import("src/components/Particles").then(
+            (module) => module.ParticleWallpaper,
+        ),
+    {
+        ssr: false,
+    },
+);
 
 const App = ({ Component, pageProps, router }: AppProps) => {
     const [searchQuery, setSearchQuery] = useState<string>("");
@@ -43,8 +53,7 @@ const App = ({ Component, pageProps, router }: AppProps) => {
 
             {/* Only show the particle wallpaper when on blog routes. */}
             <AnimatePresence exitBeforeEnter>
-                {/* {!isBlogPage && <ParticleWallpaper />} */}
-                <ParticleWallpaper
+                <DynamicParticleWallpaper
                     darkOverlayForUrls={
                         new Set<string>([
                             "/projects",

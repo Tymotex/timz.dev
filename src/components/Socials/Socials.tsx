@@ -6,6 +6,7 @@ import { useBreakpointTrigger } from "src/hooks/windowHooks";
 export interface SocialLinkData {
     icon: React.ReactNode;
     url: string;
+    label: string;
 }
 
 interface Props {
@@ -47,6 +48,7 @@ const Socials: React.FC<Props> = ({
                         href={social.url}
                         target="_blank"
                         rel="noreferrer"
+                        aria-label={social.label}
                     >
                         {social.icon}
                     </a>

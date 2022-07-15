@@ -122,14 +122,17 @@ const portfolio: PortfolioData = {
             {
                 icon: <GitHubIcon size={20} aria-hidden />,
                 url: "https://github.com/Tymotex/",
+                label: "GitHub",
             },
             {
                 icon: <LinkedInIcon size={20} aria-hidden />,
                 url: "https://www.linkedin.com/in/timz-seng",
+                label: "LinkedIn",
             },
             {
                 icon: <YoutubeIcon size={20} aria-hidden />,
                 url: "https://www.youtube.com/channel/UCIuefX9zQPux3lGCkDOdlIQ",
+                label: "YouTube",
             },
         ],
         AboutMe: AboutMe,
