@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./Quote.module.scss";
 import { motion } from "framer-motion";
-import { Quote } from "content/portfolio/quotes";
+import { QuoteData } from "content/portfolio/quotes";
 
 interface Props {
-    quote: Quote;
+    quote: QuoteData;
 }
 
 const Quote: React.FC<Props> = ({ quote }) => {
@@ -18,12 +18,19 @@ const Quote: React.FC<Props> = ({ quote }) => {
             transition={{ duration: 0.5, delay: 0.75 }}
         >
             <blockquote cite={url}>
-                <p>&quot;{message}&quot;</p>
+                <p>
+                    &quot;{message}&quot;
+                    {source && (
+                        <em>
+                            {" "}
+                            <a href={source} target="_blank" rel="noreferrer">
+                                (source)
+                            </a>
+                        </em>
+                    )}
+                </p>
             </blockquote>
-            <figcaption>
-                &ndash; {author}
-                {source && <em>, {source}</em>}.
-            </figcaption>
+            {author && <figcaption>&ndash; {author}</figcaption>}
         </motion.figure>
     );
 };
