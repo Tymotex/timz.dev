@@ -7,30 +7,35 @@ describe("Portfolio page tests", () => {
                     expectedUrl: "/about",
                     headingText: "Who am I?",
                 },
-                {
-                    linkText: "Contact",
-                    expectedUrl: "/contact",
-                    headingText: "Contact Me",
-                },
-                {
-                    linkText: "Work",
-                    expectedUrl: "/work",
-                    headingText: "Work Experience",
-                },
-                {
-                    linkText: "Projects",
-                    expectedUrl: "/projects",
-                    headingText: "Main Projects",
-                },
+                // {
+                //     linkText: "Contact",
+                //     expectedUrl: "/contact",
+                //     headingText: "Contact Me",
+                // },
+                // {
+                //     linkText: "Work",
+                //     expectedUrl: "/work",
+                //     headingText: "Work Experience",
+                // },
+                // {
+                //     linkText: "Projects",
+                //     expectedUrl: "/projects",
+                //     headingText: "Main Projects",
+                // },
             ];
 
             cy.wrap(windows).each((windowData: any) => {
+                cy.wait(1000);
                 cy.visit("/");
+                cy.wait(1000);
 
                 // Click into the link from the homepage.
+                cy.wait(1000);
                 cy.contains(windowData.linkText).click();
+                cy.wait(1000);
 
                 // The window should be visible and the URL should change.
+                cy.wait(1000);
                 cy.url().should("include", windowData.expectedUrl);
                 cy.getTestElement("portfolio-window");
                 cy.contains(windowData.headingText);

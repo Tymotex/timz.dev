@@ -22,6 +22,7 @@ const Home: NextPage = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            suppressHydrationWarning
         >
             <CentralContainer
                 height={isSmallScreen && "420px"}
