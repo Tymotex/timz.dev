@@ -15,6 +15,7 @@ export interface ButtonProps {
     onClick?: React.MouseEventHandler<HTMLButtonElement>;
     // Adds an outline and inset box-shadow to the icon.
     iconInset?: boolean;
+    ariaLabel?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -29,6 +30,7 @@ const Button: React.FC<ButtonProps> = ({
     internalUrl,
     externalUrl,
     onClick,
+    ariaLabel,
 }) => {
     let buttonClass = styles.primary;
     switch (colour) {
@@ -56,6 +58,7 @@ const Button: React.FC<ButtonProps> = ({
                 flexDirection: iconPosition === "left" ? "row" : "row-reverse",
                 borderRadius: shape === "pill" ? 200 : 5,
             }}
+            aria-label={ariaLabel}
         >
             {icon && (
                 <span className={`${styles.icon} ${iconInset && styles.inset}`}>

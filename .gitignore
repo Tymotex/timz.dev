@@ -11,6 +11,11 @@ public/mdx
 docs-build
 docs
 
+# Cypress files.
+cypress/downloads
+cypress/screenshots
+cypress/videos
+
 # dependencies
 /node_modules
 /.pnp

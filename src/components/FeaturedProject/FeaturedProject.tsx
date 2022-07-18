@@ -20,7 +20,10 @@ interface Props {
 
 const FeaturedProject: React.FC<Props> = ({ project, position = "left" }) => {
     return (
-        <div className={styles.featuredProject}>
+        <div
+            className={styles.featuredProject}
+            data-testid="featured-project-card"
+        >
             <div className={styles.details}>
                 <h2 className={styles.title}>{project.title}</h2>
                 <p className={styles.headline}>{project.headline}</p>
@@ -36,6 +39,7 @@ const FeaturedProject: React.FC<Props> = ({ project, position = "left" }) => {
                         callToAction={true}
                         shape={"pill"}
                         text={"Read more"}
+                        ariaLabel="Read more"
                         icon={<RightArrowIcon />}
                         iconPosition={"right"}
                         iconInset={true}

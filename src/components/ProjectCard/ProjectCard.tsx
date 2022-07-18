@@ -17,7 +17,7 @@ interface Props {
 
 const ProjectCard: React.FC<Props> = ({ project }) => {
     return (
-        <div className={styles.projectCard}>
+        <div className={styles.projectCard} data-testid={"other-project-card"}>
             <div className={styles.thumbnail}>
                 <Image
                     src={project.imageUrl}
@@ -33,6 +33,7 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
                     <div className={styles.buttonGroup}>
                         <Button
                             text="Read more"
+                            ariaLabel="Read more"
                             shape="pill"
                             callToAction
                             icon={<RightArrowIcon />}

@@ -22,47 +22,43 @@ const Window: React.FC<Props> = ({
     useClickOutside(windowRef, onClickOutside);
 
     return (
-        <>
-            <motion.div
-                ref={windowRef}
-                className={styles.window}
-                initial={{
-                    opacity: 0,
-                    position: "absolute",
-                    transform: "translateX(-50%)",
-                    top: "150px",
-                }}
-                animate={{
-                    opacity: 1,
-                    position: "absolute",
-                    top: "100px",
-                    left: "50%",
-                    transform: "translateX(-50%)",
-                }}
-                exit={{
-                    opacity: 0,
-                }}
-                transition={{
-                    duration: 0.75,
-                }}
-                style={{}}
-            >
-                {crumbs && crumbs.length > 0 && (
-                    <Breadcrumbs
-                        className={styles.breadcrumbs}
-                        crumbs={crumbs}
-                    />
-                )}
-                <Link href="/" scroll={false}>
-                    <CloseIcon
-                        aria-label="Close"
-                        size={32}
-                        className={styles.closeButton}
-                    />
-                </Link>
-                {children}
-            </motion.div>
-        </>
+        <motion.div
+            data-testid={"portfolio-window"}
+            ref={windowRef}
+            className={styles.window}
+            initial={{
+                opacity: 0,
+                position: "absolute",
+                transform: "translateX(-50%)",
+                top: "150px",
+            }}
+            animate={{
+                opacity: 1,
+                position: "absolute",
+                top: "100px",
+                left: "50%",
+                transform: "translateX(-50%)",
+            }}
+            exit={{
+                opacity: 0,
+            }}
+            transition={{
+                duration: 0.75,
+            }}
+            style={{}}
+        >
+            {crumbs && crumbs.length > 0 && (
+                <Breadcrumbs className={styles.breadcrumbs} crumbs={crumbs} />
+            )}
+            <Link href="/" scroll={false}>
+                <CloseIcon
+                    aria-label="Close"
+                    size={32}
+                    className={styles.closeButton}
+                />
+            </Link>
+            {children}
+        </motion.div>
     );
 };
 
