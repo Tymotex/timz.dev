@@ -15,6 +15,7 @@ const DarkModeToggler: React.FC<Props> = () => {
         <button
             className={styles.toggler}
             onClick={() => theme.toggleDarkMode()}
+            aria-label="Dark mode toggler"
         >
             {theme.isDarkMode ? (
                 <MoonIcon className={styles.moon} size={32} />
