@@ -28,7 +28,7 @@ const AboutMe: React.FC<Props> = () => {
                     others 🤓.
                 </p>
             </ContentContainer>
-            <SectionDivider text="Hobbies & Interests" />
+            {/* <SectionDivider text="Hobbies & Interests" />
             <ContentContainer
                 maxWidth={"50rem"}
                 padding={"12px 32px 12px 32px"}
@@ -44,25 +44,25 @@ const AboutMe: React.FC<Props> = () => {
                     </li>
                     <li>Origami.</li>
                 </UnorderedList>
-                {/* <ImageGallery
-                        images={[
-                            {
-                                src: "/images/profile/origami-1.png",
-                                alt: "Origami rose",
-                            },
-                            {
-                                src: "/images/profile/plants-1.jpg",
-                                alt: "Succulents",
-                            },
-                        ]}
-                        width={250}
-                        height={150}
-                    /> */}
-                {/*
+                <ImageGallery
+                    images={[
+                        {
+                            src: "/images/profile/origami-1.png",
+                            alt: "Origami rose",
+                        },
+                        {
+                            src: "/images/profile/plants-1.jpg",
+                            alt: "Succulents",
+                        },
+                    ]}
+                    width={250}
+                    height={150}
+                />
+
                 <h2 style={{ marginTop: "32px" }}>
                     My Programming Battlestation
                 </h2>
-                 <p>
+                <p>
                     Where I churn out <del>buggy</del> software:
                 </p>
                 <ImageGallery
@@ -78,32 +78,59 @@ const AboutMe: React.FC<Props> = () => {
                     ]}
                     width={300}
                     height={200}
-                /> */}
+                />
+            </ContentContainer> */}
+            <br />
+            <SectionDivider text="Developer Stats" />
+            <ContentContainer>
+                <div role="presentation">
+                    <img
+                        src="https://github-readme-stats.vercel.app/api/wakatime?username=Tymotex&langs_count=5&custom_title=Top%205%20Languages&hide=Other&theme=nightowl"
+                        alt="Top Languages from WakaTime"
+                        style={{
+                            margin: "24px auto",
+                            display: "block",
+                            maxWidth: "100%",
+                        }}
+                    />
+                </div>
+                <div role="presentation">
+                    <img
+                        src="https://github-readme-stats.vercel.app/api?username=Tymotex&show_icons=true&theme=nightowl"
+                        alt="Tymotex GitHub stats"
+                        style={{
+                            margin: "0 auto",
+                            display: "block",
+                            maxWidth: "100%",
+                        }}
+                    />
+                </div>
             </ContentContainer>
             <ContentContainer maxWidth={950} padding={"0px 0px 12px 0px"}>
                 <Highlight
                     {...defaultProps}
                     code={`
-$ neofetch   # Some information about my main workstation ;)
+$ neofetch  # My main workstation specs ;)
 
-                   -                     tym@arch 
-                  .o+                    -------- 
-                 ooo/                    OS: Arch Linux x86_64 
-                +oooo:                   Kernel: 5.15.52-1-lts 
-               +oooooo:                  Uptime: N/A
-               -+oooooo+:                Packages: 1363 (pacman), 6 (flatpak) 
-             /:-:++oooo+:                Shell: zsh 5.9 
-            /++++/+++++++:               Resolution: 2560x1440, 3440x1440, 2560x1440 
-           /++++++++++++++:              WM: i3 
-          /+++ooooooooooooo/             Theme: Arc-Dark [GTK2/3] 
-         ./ooosssso++osssssso+           Icons: breeze-dark [GTK2/3] 
-        .oossssso-/ossssss+              Terminal: alacritty 
-       -osssssso.      :ssssssso.        CPU: AMD Ryzen 5 5600X (12) @ 3.700GHz 
-      :osssssss/        osssso+++.       GPU: NVIDIA GeForce GTX 1060 6GB 
-     /ossssssss/        +ssssooo/-       Memory: 8119MiB / 31998MiB 
-   /ossssso+/:-        -:/+osssso+-
-  +sso+:-                 .-/+oso:                               
- ++:.                           -/+/                             
+                   -                     tym@arch
+                  .o+                    --------
+                  ooo/                   OS ➜ Arch Linux x86_64
+                 +oooo:                  ├ Kernel ➜ 5.15.55-1-lts
+                +oooooo:                 ├ Uptime ➜ 25 mins
+               -+oooooo+:                └ Packages ➜ 1477 (pacman), 6 (flatpak)
+              /:-:++oooo+:
+             /++++/+++++++:              PC ➜ arch
+            /++++++++++++++:             ├ CPU ➜ Ryzen 5 5600X (12) @ 3.7GHz [23.3°on]
+           /+++ooooooooooooo/            ├ Memory ➜ 6404MiB / 31998MiB (20%)
+         ./ooosssso++osssssso+           ├ GPU ➜ NVIDIA GeForce GTX 1060 6GB
+        .oossssso-    /ossssss+          └ Resolution ➜ 2560x1440, 3440x1440, 2560x1440
+       -osssssso.      :ssssssso.
+      :osssssss/        osssso+++.       WM ➜ i3
+     /ossssssss/        +ssssooo/-       ├ Bar ➜ Polybar
+    /ossssso+/:-        -:/+osssso+-     └ Compositor ➜ Compton
+   +sso+:-                   .-/+oso:
+  ++:.                            -/+/   TTY ➜ alacritty
+ .                                   /   ├ Shell ➜ zsh 5.9                        
                     `}
                     language="bash"
                 >
