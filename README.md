@@ -2,13 +2,13 @@
 
 <p align="center">
     <img src="https://img.shields.io/github/license/Tymotex/timz.dev" alt="GitHub MIT License" >
-    <img src="https://img.shields.io/github/repo-size/Tymotex/timz.dev" alt="GitHub Repo Size" >
+    <!-- <img src="https://img.shields.io/github/repo-size/Tymotex/timz.dev" alt="GitHub Repo Size" > -->
     <img src="https://img.shields.io/github/issues/Tymotex/timz.dev" alt="GitHub Issues" >
 </p>
 
 <p align="center">
     <a href="https://timz.dev">Deployed Site</a> |
-    <a href="https://www.figma.com/file/kSDFLWSycGG4lXjn0seVv3/timz.dev-Blog-Design?node-id=0%3A1">Figma</a> <em>(private for now)</em> | 
+    <a href="https://www.figma.com/file/kSDFLWSycGG4lXjn0seVv3/timz.dev-Blog-Design?node-id=0%3A1">Figma</a> <em>(invite-only)</em> | 
     <a href="https://storybook.timz.dev">Docs (Storybook)</a>
 </p>
  

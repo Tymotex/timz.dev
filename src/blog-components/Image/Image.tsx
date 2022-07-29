@@ -69,34 +69,21 @@ const BlogImage: React.FC<Props> = ({
                     />
                 )}
             </div>
+            {/* When zoomed in, an overlay and new blown-up image is shown. */}
             {zoomedIn && (
                 <>
                     <motion.div
-                        style={{
-                            height: "100vh",
-                            width: "100vw",
-                            position: "fixed",
-                            background: "rgba(0, 0, 0, 0.65)",
-                            top: 0,
-                            left: 0,
-                        }}
-                        onClick={zoomOut}
+                        className="zoom-overlay"
+                        onClick={() => setZoomedIn(false)}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                     ></motion.div>
                     <motion.img
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        onClick={zoomOut}
+                        className="zoom-img"
+                        initial={{ opacity: 0, maxWidth: 0 }}
+                        animate={{ opacity: 1, maxWidth: "90vw" }}
+                        onClick={() => setZoomedIn(false)}
                         src={src}
-                        style={{
-                            cursor: "zoom-out",
-                            maxWidth: "90vw",
-                            position: "fixed",
-                            top: "50%",
-                            left: "50%",
-                            transform: "translateX(-50%) translateY(-50%)",
-                        }}
                     />
                 </>
             )}
