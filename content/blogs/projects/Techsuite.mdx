@@ -5,16 +5,92 @@ published: true
 date: 2022-06-05
 ---
 
-Techsuite is a collaborative social app built with React, Flask and PostgreSQL.
+import { SmallDivider } from 'src/blog-components/Divider';
+import { Image } from 'src/blog-components/Image';
 
-## Features:
+Techsuite is a web app that supports realtime group & direct messaging, networking and sharing ideas 🌱. I built it with React, Flask, PostgreSQL and Socket.io.
 
--   Standalone authentication system and support for one-click Google sign-in and registration
--   User profile personalisation with profile image/cover uploading and bio customisation
--   Friendship management system for social networking
--   Realtime private messaging with connected Techsuite peers
--   Channels with realtime messaging which can support multiple concurrent users
--   Channel operations, personalisation and configuration. Eg. image/cover uploading, authorisation levels, membership management and private channels
--   View and search for GitHub's most popular and trendy software projects
--   View articles sourced from HackerNews based on what's most hot/popular/recent
--   Persistent dark mode toggle, responsive and animated UI
+
+## Core **Features**
+
+These are some of the core features of Techsuite.
+
+- **Channels**. These are groups that users can join and then send messages to each other in real time. Think of them like the text channels on Discord or Slack.
+    - Each channel is customisable to be accessible to the public or invitation-only.
+    - There is a basic authorisation system with ‘owners’ being able to set properties about the channel and manage its members, etc.
+    - Each channel gets their own personalisable space with owners being able to set a picture and a cover wallpaper and utilise other admin functionalities.
+- **Connections**. Very similar to LinkedIn and Facebook. When you sign up, you can view other people’s profiles and send them requests to connect. Once they become your contact, you’ll be able to directly exchange messages in real time.
+- **Profiles**. Just like in Facebook, every user has their own personalisable space that’s viewable by other users on the platform. You can set your own bio, share what channels you’re a member of and set your own profile picture and cover wallpaper.
+- **News**. You can explore through trending projects on GitHub and peruse the latest articles from Hacker News.
+
+## Gallery
+
+Some screenshots from the site.
+
+<Image src="/images/blogs/projects/techsuite-home-showcase.png" caption="Landing page." width="720px" />
+<Image src="/images/blogs/projects/techsuite-channel-showcase.png" caption="Channel index page." width="720px" />
+<Image src="/images/blogs/projects/techsuite-channel-page-showcase.png" caption="Channel page." width="720px" />
+<Image src="/images/blogs/projects/techsuite-connections-showcase.png" caption="Connections page." width="720px" />
+<Image src="/images/blogs/projects/techsuite-messaging-showcase.png" caption="Direct messaging." width="720px" />
+<Image src="/images/blogs/projects/techsuite-profile-showcase.png" caption="Profile page." width="720px" />
+<Image src="/images/blogs/projects/techsuite-news-showcase.png" caption="News page." width="720px" />
+
+<SmallDivider />
+
+## **Background**
+
+With pretty much no prior experience in web development or understanding of databases, I set out to build this weird amalgamation of Facebook, Messenger, LinkedIn, Slack, but with developers as the target audience. I wanted to learn a bit about the magic behind each of these extremely complex yet user-friendly services and try my hand at building out the rudimentary architecture and logic behind them.
+
+This was my first substantial project where I built pretty much everything from scratch, with the only exception being some CSS hacks. I knew next to nothing about React, PostgreSQL or Flask and only had a beginner’s understanding of HTML, CSS and JavaScript to work with. I think that this was one of the few projects that really cemented my interest in making software engineering my life’s pursuit.
+
+*Note*: I’m writing everything here in 2022, around 2 years after the initial development of this project in 2020. Although I had wrapped it up that year, there was still so much to be polished, so I revisited the codebase to perform an audit of the app and list out all the mistakes I made in this project’s development so that I could share and learn from it.
+
+## Code Quality
+
+I wrote some horrendous code. Since it was my first React project, I have component hierarchies where props get passed 4+ levels deep, very minimal type-checking or prop validation, very little input validation, … the list goes on. If I were to rebuild this project, I would absolutely use TypeScript over JavaScript, use a better state management framework like Redux (or use React Context at the very least), write Jest unit tests, and so on.
+
+## Accessibility
+
+I didn’t know what web accessibility was and why it was important at the time. I still only know the basics and have never talked to any expert frontend developer about this before, but I know enough to know that it’s a huge deal when you’re expecting to deploy a user-facing service. I didn’t even know the importance of semantic HTML, so there are divs and spans everywhere and other odd choices of HTML elements throughout the codebase.
+
+## CSS
+
+I discovered SCSS early on in the project, which luckily made CSS maintenance a little less intolerable. Still, I didn’t think through many of my choices. I have both global stylesheets and SCSS modules in this project, but I really should have stuck to just SCSS modules primarily to prevent CSS rule collisions. I never considered anything like Tailwind or CSS-in-JS solutions, but I think that SCSS modules worked well for keeping my React component source code less bloated.
+
+## **Deployment**
+
+Deploying was an absolute pain. I didn’t bother thinking about deploying the app to production until I wanted to deploy it. It didn’t help that I only had a basic level of proficiency with Linux administration and basic understanding of computer networking.
+
+I currently have an NGINX server running on a $10/month Linux virtual machine rented from Vultr, living somewhere in a Sydney datacenter. This, I believe, is basically equivalent to an AWS EC2 machine or a DigitalOcean droplet. The NGINX server is set up to reverse proxy incoming traffic to a REST API server.
+
+By the time I knew what Docker was, I was already nearing deployment and sadly never got around to writing *proper* development/production Dockerfiles and making use of container orchestration. If I were to do everything all over again, I’d write the Dockerfiles at the start and maintain them as I develop. It would have simplified the setup process as well since currently, developers would need to install PostgreSQL, set up a database user, set up the database URI, and do all these other laborious tasks that don’t matter to the application architecture and logic.
+
+If this were a serious project that needed to be shipped to a large userbase (instead of just me and perhaps my mum), then I’d break up the monolithic backend server into several Flask microservices and orchestrate them with Kubernetes. Then, I’d dump this all onto a managed Kubernetes service like Amazon EKS. 
+
+## **Security Issues**
+
+I’m certain the site is vulnerable to XSS, CSRF and possibly SQL injection attacks. At the time, I had no idea what any of these attacks were and therefore had no idea I was opening myself up for disaster. Luckily, I learned about these security issues *without* having worked on a real project with a large userbase. Security is still a weak point in my developer skillset, but I know that I should at least sanitise all user input.
+
+At this point in time, I decided the reward/effort ratio was too low to justify implementing security measures for the project. The absolute worst case scenario is that someone gains remote access of my VM and trashes the system, but I could just recover a snapshot.
+
+## Testing
+
+When I built the project, I had close to no background in testing. All I knew were how to write some very basic unit tests in Python for functions with simple inputs and outputs and no complex dependencies that needed to be mocked. My form of ‘testing’ in this project, like for most newbies, involved just pretending to be a user and trying to break the system. It’s still easy to find new bugs this way.
+
+This project is missing tests at all levels — unit tests, integration tests, end-to-end tests, etc. The frontend is completely untested. I had no idea that frontend testing was even possible (how do you unit test UI?). Again, at this point the reward/effort ratio was too low, given that I already ironed out the bugs along the critical paths of the application. If I were to travel back in time to the start of the project, I would *at least* set up a CI server and get it to run integration tests on each API endpoint and then write a few end-to-end Cypress tests to make sure the critical paths of the application are working.
+
+## **Socket.io**
+
+This project uses socket.io to set up bidirectional client-server messaging. I discovered this when researching how apps like Messenger are built. I stumbled upon [Flask-SocketIO](https://flask-socketio.readthedocs.io/en/latest/) pretty early on and used that to set up server-side event handlers that client browsers could trigger. I used [socket.io-client](https://socket.io/docs/v4/client-api/) to set up client-side event handlers that the API servers could trigger. Every time you click into a channel page or open a chat window with another person on Techsuite, the client’s browser emits an event to the server, which *subscribes* the user to events under a localised group of clients. In other words, when people join the ‘Coffee Lovers’ channel, they will begin emitting events locally amongst each other. This is how you’re able to make it so that when one person sends a message, every other member’s chat window gets updated with that message. Normally, the client-server interaction is unidirectional, with the client sending request and server responding.
+
+I made a huge mess of the event handlers on the server and client side. They're all lumped together inside `server/src/server.py` without any documentation or sufficient input validation. I should have designed the interface to these server-side event handlers with the same mindset of orderliness you would have when designing RESTful APIs.
+
+## Documentation
+
+This is the part I’m kicking myself hardest for. I can forgive my earlier self for making all the mistakes above since I was a stumbling noob, looking to improve my development knowledge and skills, but it made revisiting this project years later very challenging. I never documented my decision-making process, why I made certain tradeoffs, why I picked certain libraries, why I architected things the way I did. When I was revisiting the project, it felt a lot like reverse engineering. 
+
+I should have at least scratched down unstructured notes in a plaintext file, then organised them into pages on Confluence or on the GitHub readme. I have 0 documentation for the API, but I did at least loosely adhere to REST API design standards as I was developing the backend. Using Storybook would’ve been a really easy way to have decent documentation for the UI components in the client-side codebase, but unfortunately I had no idea what that was at the time.
+
+## Final Thoughts
+
+That’s all that I can think of in one sitting. I know I have more embarrassing mistakes and poor choices to reveal, but most of them have been forgotten in the roughly 2 years since I last touched this project. You live, you learn.

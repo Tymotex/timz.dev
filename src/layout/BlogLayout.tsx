@@ -60,7 +60,7 @@ const BlogLayout: React.FC<Props> = ({ children }) => {
 
     return (
         <motion.div
-            className={`${styles.blogBody}`}
+            className={`${styles.blogBody} blogBody`}
             initial={{
                 opacity: 0,
             }}

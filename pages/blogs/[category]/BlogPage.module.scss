@@ -77,11 +77,11 @@
 
 .blogContents {
     padding: 0 $spacing-md $spacing-md $spacing-md;
-    & > * {
-        &:not(:last-child) {
-            margin-bottom: $spacing-sm;
-        }
-    }
+    // & > * {
+    //     &:not(:last-child) {
+    //         margin-bottom: $spacing-xxs;
+    //     }
+    // }
 
     p,
     ul,
@@ -95,6 +95,20 @@
         max-width: $blog-contents-max-width;
         margin: 0 auto;
         line-height: $line-spacing-lg;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-top: $spacing-md !important;
+    }
+
+    // Targets all paragraphs with a sibling before it.
+    p + p {
+        margin: $spacing-sm auto 0 auto !important;
+        line-height: $line-spacing-xl;
     }
 
     // Make the first letter of the first paragraph element extra large.
@@ -115,7 +129,7 @@
     }
 
     li {
-        margin: $spacing-xs 0;
+        margin: $spacing-xxxs 0;
     }
 
     pre {

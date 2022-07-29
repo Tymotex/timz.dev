@@ -112,7 +112,8 @@ const BlogIndex: NextPage<Props> = ({ blog }) => {
             <ContentContainer className={styles.blogFooter}>
                 <p>
                     Thanks for reading 🤓!{" "}
-                    <Link href="/contact">Let me know</Link> if this helped you.
+                    <Link href="/contact">Let me know</Link> if you found this
+                    interesting.
                 </p>
                 <p>
                     See more of my blogs <Link href="/blogs">here</Link>.

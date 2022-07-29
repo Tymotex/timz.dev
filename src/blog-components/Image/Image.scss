@@ -5,10 +5,26 @@
     display: block;
     margin: 0 auto;
     max-width: $blog-contents-max-width;
-    
+
     img {
         &.shadow {
-            @include elevation-shadow;
+            @include elevation-shadow-light;
+        }
+    }
+
+    figure {
+        margin: $spacing-sm auto $spacing-md auto;
+        cursor: zoom-in;
+
+        img {
+            @include elevation-shadow-light;
+        }
+
+        figcaption {
+            margin-top: $spacing-xs;
+            text-align: center;
+            color: $cool-grey-700;
+            font-style: italic;
         }
     }
 }

@@ -3,6 +3,11 @@
         rgba(0, 0, 0, 0.25) 0px 0px 0px 1px;
 }
 
+@mixin elevation-shadow-light {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 10px 14px 0px,
+        rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
+}
+
 @mixin elevation-shadow-square {
     box-shadow: rgba(0, 0, 0, 0.1) -9px 9px 0px -3px;
 }
