@@ -43,7 +43,8 @@
 .zoom-img {
     cursor: zoom-out;
     max-width: 90vw;
-    width: 100%;
+    width: auto;
+    max-height: 90vh;
     position: fixed;
     top: 50%;
     left: 50%;

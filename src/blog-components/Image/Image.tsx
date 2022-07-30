@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useState } from "react";
 
 interface Props {
     src: string;
+    alt?: string;
     width?: number | string;
     height?: number | string;
     shadow?: boolean;
@@ -13,6 +14,7 @@ interface Props {
 
 const BlogImage: React.FC<Props> = ({
     src,
+    alt,
     width,
     height,
     shadow = true,
@@ -53,6 +55,7 @@ const BlogImage: React.FC<Props> = ({
                     <figure className={"blog-figure"}>
                         <img
                             src={src}
+                            alt={caption}
                             width={"100%"}
                             height={height}
                             className={`${shadow && !transparent && "shadow"}`}
@@ -66,6 +69,7 @@ const BlogImage: React.FC<Props> = ({
                     <img
                         src={src}
                         width={width}
+                        alt={alt}
                         height={height}
                         className={`${shadow && !transparent && "shadow"}`}
                     />

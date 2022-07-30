@@ -28,8 +28,8 @@ const Projects: NextPage = () => {
                         <p className={styles.description}>
                             A few software engineering projects that I built out
                             in my spare time. These projects have spanned at
-                            least a few months and have helped me become a more
-                            competent and passionate developer 💻.
+                            least a few months and have helped me become a 
+                            better engineer 💻.
                         </p>
                         <ContentContainer
                             maxWidth={1200}

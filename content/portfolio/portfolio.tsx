@@ -177,6 +177,46 @@ const portfolio: PortfolioData = {
                 blogSlug: "Tactile-DS",
             },
             {
+                title: "Hack & Jack",
+                blogSlug: "Nand2Tetris",
+                headline: `A 16-bit general-purpose computer and a C++ compiler for a custom programming
+                language.`,
+                imageUrl: "/images/projects/nand2tetris.png",
+                description: `Hack is a 16-bit general-purpose computer based on the Von Neumann architecture, built with the help of hardware
+                simulators. Jack is a
+                simple programming language modeled after Java, with a compiler
+                written in C++. These projects follow implementation suggestions from 'The Elements of Computing Systems' by Nisan and Schocken`,
+                githubUrl: "https://github.com/Tymotex/Nand2Tetris",
+                technologies: [
+                    "Assembly",
+                    "Shell",
+                    "CMake",
+                    "GoogleTest",
+                    "C++",
+                ],
+            },
+            {
+                title: "Structs.sh",
+                blogSlug: "Structs.sh",
+                headline: `A data structures and algorithms learning platform with an integrated visualiser.`,
+                description: `Structs.sh is an interactive data structure and algorithm visualiser and educational platform for computer science students.`,
+                imageUrl: "/images/projects/structs.sh.png",
+
+                demoUrl: "https://structs.sh",
+                githubUrl: "https://github.com/csesoc/Structs.sh/",
+                technologies: [
+                    "JavaScript",
+                    "React",
+
+                    "TypeScript",
+                    "Mongodb",
+                    "Express",
+                    "Docker",
+                    "Kubernetes",
+                    "Rancher",
+                ],
+            },
+            {
                 title: "Cosmica",
                 blogSlug: "Cosmica",
                 headline: `A cross-platform sci-fi strategy game built with C# and Unity.`,
@@ -208,46 +248,6 @@ const portfolio: PortfolioData = {
                     "GraphQL",
                     "Docker",
                     "AWS",
-                ],
-            },
-            {
-                title: "Structs.sh",
-                blogSlug: "Structs.sh",
-                headline: `A data structures and algorithms learning platform with an integrated visualiser.`,
-                description: `Structs.sh is an interactive data structure and algorithm visualiser and educational platform for computer science students.`,
-                imageUrl: "/images/projects/structs.sh.png",
-
-                demoUrl: "https://structs.sh",
-                githubUrl: "https://github.com/csesoc/Structs.sh/",
-                technologies: [
-                    "JavaScript",
-                    "React",
-
-                    "TypeScript",
-                    "Mongodb",
-                    "Express",
-                    "Docker",
-                    "Kubernetes",
-                    "Rancher",
-                ],
-            },
-            {
-                title: "Hack & Jack (computer platform, basic OS and compiler)",
-                blogSlug: "Nand2Tetris",
-                headline: `A 16-bit general-purpose computer and a C++ compiler for a custom programming
-                language. A long journey from NAND gates up to Tetris!`,
-                imageUrl: "/images/projects/nand2tetris.png",
-                description: `Hack is a 16-bit general-purpose computer based on the Von Neumann architecture, built with the help of hardware
-                simulators. Jack is a
-                simple programming language modeled after Java, with a compiler
-                written in C++. These projects follow implementation suggestions from 'The Elements of Computing Systems' by Nisan and Schocken`,
-                githubUrl: "https://github.com/Tymotex/Nand2Tetris",
-                technologies: [
-                    "Assembly",
-                    "Shell",
-                    "CMake",
-                    "GoogleTest",
-                    "C++",
                 ],
             },
         ],
