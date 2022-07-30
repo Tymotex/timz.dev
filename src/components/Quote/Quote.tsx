@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Quote.module.scss";
 import { motion } from "framer-motion";
 import { QuoteData } from "content/portfolio/quotes";
+import { RiDoubleQuotesL as DoubleQuoteStart, RiDoubleQuotesR as DoubleQuoteEnd } from 'react-icons/ri';
 
 interface Props {
     quote: QuoteData;
@@ -19,7 +20,7 @@ const Quote: React.FC<Props> = ({ quote }) => {
         >
             <blockquote cite={url}>
                 <p>
-                    &quot;{message}&quot;
+                    <DoubleQuoteStart />{message}<DoubleQuoteEnd />
                     {source && (
                         <em>
                             {" "}
