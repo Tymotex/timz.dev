@@ -26,8 +26,10 @@ const Projects: NextPage = () => {
                     >
                         <SectionDivider text="Main Projects" />
                         <p className={styles.description}>
-                            A few software engineering projects that I&apos;ve
-                            tinkered with in my spare time.
+                            A few software engineering projects that I built out
+                            in my spare time. These projects have spanned at
+                            least a few months and have helped me become a more
+                            competent and passionate developer 💻.
                         </p>
                         <ContentContainer
                             maxWidth={1200}
@@ -50,7 +52,11 @@ const Projects: NextPage = () => {
                             }
                         >
                             <p className={styles.description}>
-                                Some other projects that I&apos;ve worked on.
+                                Below are some other engineering projects that I&apos;ve worked on.
+                                Many of them were in development for a few months
+                                or several weeks, or are still in development.
+                                Some of these projects were done very early on
+                                in my engineering education.
                             </p>
                             <ProjectCardDeck
                                 projects={portfolio.projects.other}
