@@ -140,27 +140,13 @@ const portfolio: PortfolioData = {
     projects: {
         featured: [
             {
-                title: "Tactile-DS",
-                headline:
-                    "An interactive data structure and algorithm visualiser.",
-                description: `Some words describing what the project is, what I built it with, how it was made, its purpose, etc.
-                I might then prompt the viewer to read more and see a project blog, if it exists.
-                Lorem ipsum, more text here, but keep it concise. Invite the reader to read more.`,
-                technologies: ["C", "Ruby", "Perl", "Bash", "Nginx", "AWS"],
-                githubUrl: "https://github.com/Tymotex/Tactile-DS",
-                demoUrl: "https://data-structures.xyz/",
-                imageUrl: "/images/projects/tactile-ds.png",
-                videoUrl: "https://www.youtube.com/watch?v=iSJL-9pe-PY",
-                blogSlug: "Tactile-DS",
-            },
-            {
                 title: "Techsuite",
                 blogSlug: "Techsuite",
-                headline: `A collaboration and social networking app for developers. Built with React, Flask and PostgreSQL.`,
+                headline: `A collaboration and social networking app, built for developers.`,
                 imageUrl: "/images/projects/techsuite.png",
-                description: `Some words describing what the project is, what I built it with, how it was made, its purpose, etc.
-                I might then prompt the viewer to read more and see a project blog, if it exists.
-                Lorem ipsum, more text here, but keep it concise. Invite the reader to read more.`,
+                description: `Techsuite is a web app that supports realtime 
+                group and direct messaging, networking and sharing ideas 🌱. I
+                built it with React, Flask, PostgreSQL and Socket.io.`,
                 demoUrl: "https://techsuite.dev",
                 videoUrl: "https://www.youtube.com/watch?v=C4o2fOCq2cI",
                 githubUrl: "https://github.com/Tymotex/Techsuite/",
@@ -174,6 +160,21 @@ const portfolio: PortfolioData = {
                     "SocketIO",
                     "Nginx",
                 ],
+            },
+            {
+                title: "Tactile-DS",
+                headline:
+                    "An interactive data structure and algorithm visualiser with a terminal aesthetic.",
+                description: `Tactile-DS is a collection of interactive
+                visualisers for the classic data structures and algorithms
+                taught in a university. This was built primarily as a teaching
+                tool and resource for UNSW students.`,
+                technologies: ["C", "Ruby", "Perl", "Bash", "Nginx", "AWS"],
+                githubUrl: "https://github.com/Tymotex/Tactile-DS",
+                demoUrl: "https://tactile-ds.timz.dev/",
+                imageUrl: "/images/projects/tactile-ds.png",
+                videoUrl: "https://www.youtube.com/watch?v=iSJL-9pe-PY",
+                blogSlug: "Tactile-DS",
             },
             {
                 title: "Cosmica",
@@ -193,7 +194,9 @@ const portfolio: PortfolioData = {
                 title: "Galactic Ed",
                 blogSlug: "Galactic-Ed",
                 headline: `An educational platform that tailors lessons for children with ASD`,
-                description: `An educational platform that tailors lessons for children with ASD`,
+                description: `Galactic Ed is an educational web app that tailors
+                lessons for early children on the autism spectrum and delivers an impactful
+                learning experience while lessening the workload from parents.`,
                 imageUrl: "/images/projects/galactic-ed.png",
                 // demoUrl: "https://galactic-ed.xyz/",
                 technologies: [
@@ -206,6 +209,66 @@ const portfolio: PortfolioData = {
                     "Docker",
                     "AWS",
                 ],
+            },
+            {
+                title: "Structs.sh",
+                blogSlug: "Structs.sh",
+                headline: `A data structures and algorithms learning platform with an integrated visualiser.`,
+                description: `Structs.sh is an interactive data structure and algorithm visualiser and educational platform for computer science students.`,
+                imageUrl: "/images/projects/structs.sh.png",
+
+                demoUrl: "https://structs.sh",
+                githubUrl: "https://github.com/csesoc/Structs.sh/",
+                technologies: [
+                    "JavaScript",
+                    "React",
+
+                    "TypeScript",
+                    "Mongodb",
+                    "Express",
+                    "Docker",
+                    "Kubernetes",
+                    "Rancher",
+                ],
+            },
+            {
+                title: "Hack & Jack (computer platform, basic OS and compiler)",
+                blogSlug: "Nand2Tetris",
+                headline: `A 16-bit general-purpose computer and a C++ compiler for a custom programming
+                language. A long journey from NAND gates up to Tetris!`,
+                imageUrl: "/images/projects/nand2tetris.png",
+                description: `Hack is a 16-bit general-purpose computer based on the Von Neumann architecture, built with the help of hardware
+                simulators. Jack is a
+                simple programming language modeled after Java, with a compiler
+                written in C++. These projects follow implementation suggestions from 'The Elements of Computing Systems' by Nisan and Schocken`,
+                githubUrl: "https://github.com/Tymotex/Nand2Tetris",
+                technologies: [
+                    "Assembly",
+                    "Shell",
+                    "CMake",
+                    "GoogleTest",
+                    "C++",
+                ],
+            },
+        ],
+        other: [
+            {
+                title: "Developer Portfolio Site",
+                blogSlug: "timz.dev",
+                imageUrl: "/images/projects/timz.dev.png",
+                description: `A developer portfolio and blog site built with React, Next.js, TypeScript and MDX.`,
+                demoUrl: "https://timz.dev",
+                githubUrl: "https://github.com/Tymotex/timz.dev",
+                technologies: ["React", "Next", "JavaScript", "TypeScript"],
+            },
+            {
+                title: "Digital Garden - Developer Wiki",
+                blogSlug: "wiki.timz.dev",
+                imageUrl: "/images/projects/wiki.png",
+                description: `My digital garden and personal knowledgebase. Contains a graph representation of engineering knowledge and other areas of study.`,
+                demoUrl: "https://wiki.timz.dev",
+                githubUrl: "https://github.com/Tymotex/wiki",
+                technologies: ["Markdown", "JavaScript", "SCSS", "HTML"],
             },
             {
                 title: "Employ.me",
@@ -228,27 +291,6 @@ const portfolio: PortfolioData = {
                 ],
             },
             {
-                title: "Structs.sh",
-                blogSlug: "Structs.sh",
-                headline: `A data structures and algorithms learning platform with an integrated visualiser.`,
-                description: `Structs.sh is an interactive data structure and algorithm visualiser and educational platform for computer science students.`,
-                imageUrl: "/images/projects/structs.sh.png",
-                demoUrl: "https://structs.sh",
-                githubUrl: "https://github.com/csesoc/Structs.sh/",
-                technologies: [
-                    "JavaScript",
-                    "React",
-                    "TypeScript",
-                    "Mongodb",
-                    "Express",
-                    "Docker",
-                    "Kubernetes",
-                    "Rancher",
-                ],
-            },
-        ],
-        other: [
-            {
                 title: "Hydroponix",
                 blogSlug: "Hydroponix",
                 imageUrl:
@@ -265,7 +307,7 @@ const portfolio: PortfolioData = {
                 ],
             },
             {
-                title: "Autonomous Deliv-O-Bot",
+                title: "Autonomous Container Delivery Robot",
                 blogSlug: "Deliv-O-Bot",
                 imageUrl: "/images/projects/deliv-o-bot.png",
                 description: `An autonomous container delivery vehicle, built using the Arduino Rev3 MCU development board.`,
@@ -279,15 +321,6 @@ const portfolio: PortfolioData = {
                 description: `An experimental transpiler that maps POSIX-compatible shell scripts to their equivalent Perl 5 scripts.`,
                 technologies: ["Shell", "Perl"],
                 githubUrl: "https://github.com/Tymotex/ShellPerlTranspiler",
-            },
-            {
-                title: "timz.dev",
-                blogSlug: "Hydroponix",
-                imageUrl: "/images/projects/timz.dev.png",
-                description: `A developer portfolio and blog site built with React, Next.js, TypeScript and MDX.`,
-                demoUrl: "https://timz.dev",
-                githubUrl: "https://github.com/Tymotex/timz.dev",
-                technologies: ["React", "Next", "JavaScript", "TypeScript"],
             },
         ],
     },

@@ -61,11 +61,18 @@ const BlogIndex: NextPage<Props> = ({ blogs }) => {
                 <title>Blogs</title>
             </Head>
             <ContentContainer>
-                <h1 className={styles.title}>Byte-Sized Concepts</h1>
+                <h1 className={styles.title}>Concepts</h1>
                 <MiniDivider />
                 <BlogList
                     blogs={blogList.filter(
                         (blog) => blog.category !== "projects",
+                    )}
+                />
+                <h1 className={styles.title}>Projects</h1>
+                <MiniDivider />
+                <BlogList
+                    blogs={blogList.filter(
+                        (blog) => blog.category === "projects",
                     )}
                 />
             </ContentContainer>

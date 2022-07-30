@@ -8,15 +8,17 @@ interface Props {
     shadow?: boolean;
     caption?: string;
     zoomable?: boolean;
+    transparent?: boolean;
 }
 
 const BlogImage: React.FC<Props> = ({
     src,
     width,
     height,
-    shadow,
+    shadow = true,
     caption,
     zoomable = true,
+    transparent = false,
 }) => {
     const [zoomedIn, setZoomedIn] = useState(false);
 
@@ -53,7 +55,7 @@ const BlogImage: React.FC<Props> = ({
                             src={src}
                             width={"100%"}
                             height={height}
-                            className={`${shadow && "shadow"}`}
+                            className={`${shadow && !transparent && "shadow"}`}
                             style={{
                                 maxWidth: width,
                             }}
@@ -65,7 +67,7 @@ const BlogImage: React.FC<Props> = ({
                         src={src}
                         width={width}
                         height={height}
-                        className={`${shadow && "shadow"}`}
+                        className={`${shadow && !transparent && "shadow"}`}
                     />
                 )}
             </div>

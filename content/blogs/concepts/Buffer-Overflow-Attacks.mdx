@@ -58,7 +58,7 @@ Here we’ve used a buffer overflow to overwrite the contents of the variable `d
 
 Notice that this means we can eventually reach the return address of the stack frame for the current function with the buffer overflow vulnerability. One common trick is to overwrite this return address, putting in the address of a different part of the program. This means we can make the program *jump to anywhere we want* after the current function terminates and the program will resume execution from the address that we’ve specified. Often, one goal of real buffer overflow attacks done on a remote server is to launch a *root* shell on it, letting us do virtually anything thereafter.
 
-**How do buffer overflow vulnerabilities arise?** 
+## How do buffer overflow vulnerabilities arise?
 
 It mainly happens due to bad programming practices around input validation where the programmer hasn’t put in a check to ensure that the program hasn’t received more data than can be fit into an array. It’s mainly the programs that are written in C and C++ that are vulnerable to buffer overflow attacks. Buffers are used everywhere in operating systems code for example, which are usually written in C. Other high-level languages like Python, JavaScript, Java have built-in safeguards that prevent buffer overflow vulnerabilities. 
 
@@ -66,11 +66,11 @@ Buffer overflow vulnerabilities are gradually disappearing due in part because t
 
 In general, while hacking, if you manage to produce a segmentation fault, that’s a really good sign because you’ve found a case that the program doesn’t know how to recover from, ie. you found a situation that the developer has not accounted for.
 
-**An overview of defence tactics against buffer overflows:**
+## An overview of defence tactics against buffer overflows
 
 The best way to protect against buffer overflows is to simply be a security-aware programmer and ensure that you always validate the input before writing data into a buffer. Aside from that, there a few standard ways that we’ve significantly reduced the feasibility of buffer overflow attacks. 
 
-**Address space randomisation (ASLR):**
+### Address space randomisation (ASLR)
 
 ASLR works by randomising the virtual addresses used by the program every time you try to run it. This means that it’s no longer useful for the attack to run disassemblers on the binary to get the memory addresses of interest. They’d need to either run a brute-force attack or somehow leak the addresses, such as through a *format string attack*!
 
@@ -101,7 +101,7 @@ It’s possible to disable ASLR for your OS. On Linux, you can temporarily disab
 
 ASLR only makes buffer overflow attacks more difficult to carry out, not impossible. ASLR is used on most operating systems (Linux, Windows, MacOS).
 
-**Stack Canarying:**
+### Stack Canarying
 
 Stack canarying involves using strncmp on a few of the trailing bytes *after the end of a buffer* to check that it matches a known value called the canary value. If it fails to match, then the program has successfully caught a buffer overflow attempt by the user and will terminate.
 
@@ -125,6 +125,8 @@ Stack canarying is not fool-proof! It’s easily overriden if the attacker can p
 Just like how canaries were [historically used](https://en.wikipedia.org/wiki/Sentinel_species#Historical_examples) to detect dangerous carbon monoxide levels in coal mines, we use stack canaries are named such because they help processes detect attempts at buffer overflow attacks.
 
 <Image src="/images/blogs/concepts/Buffer-Overflow-Attacks/canary-bird.png" alt="Cute canary birds" width="50%" shadow />
+
+## Closing Note
 
 There are plenty of other buffer overflow defence strategies as well as attack strategies that overcome them.
 

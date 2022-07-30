@@ -3,7 +3,7 @@ import { getRandomQuote } from "content/portfolio/quotes";
 import { motion } from "framer-motion";
 import type { NextPage } from "next";
 import { AsideLinkGroup } from "src/components/AsideLinkGroup";
-import { LinkButton } from "src/components/Button";
+import { Button, LinkButton } from "src/components/Button";
 import CentralContainer from "src/components/Container/CentralContainer";
 import ContentContainer from "src/components/Container/ContentContainer";
 import { MiniDivider } from "src/components/Divider";
@@ -55,16 +55,24 @@ const Home: NextPage = () => {
                         rowGap={10}
                         className={styles.buttonStack}
                     >
-                        <LinkButton colour="primary" text="Work" href="/work" />
+                        <LinkButton colour="primary" text="Work" href="/work" shape="pill" />
                         <LinkButton
                             colour="primary"
                             text="Projects"
                             href="/projects"
+                            shape="pill"
                         />
                         <LinkButton
                             colour="primary"
                             text="Blog"
                             href="/blogs"
+                            shape="pill"
+                        />
+                        <Button
+                            colour="primary"
+                            text="Wiki"
+                            shape="pill"
+                            externalUrl="https://wiki.timz.dev"
                         />
                     </Stack>
                 </ContentContainer>

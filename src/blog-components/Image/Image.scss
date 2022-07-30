@@ -17,7 +17,9 @@
         cursor: zoom-in;
 
         img {
-            @include elevation-shadow-light;
+            &.shadow {
+                @include elevation-shadow-light;
+            }
         }
 
         figcaption {
