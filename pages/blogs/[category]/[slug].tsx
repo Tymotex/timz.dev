@@ -12,6 +12,7 @@ import ContentContainer from "src/components/Container/ContentContainer";
 import { SubtleDivider } from "src/components/Divider";
 import { DarkModeContext } from "src/contexts/LightDarkThemeProvider";
 import styles from "./BlogPage.module.scss";
+import Image from "next/image";
 
 export const getStaticProps: GetStaticProps = async (context) => {
     if (context === undefined || context.params === undefined)
@@ -48,7 +49,10 @@ interface Props {
 const BlogIndex: NextPage<Props> = ({ blog }) => {
     const router = useRouter();
     const Blog = useMemo(
-        () => blog && typeof blog !== "undefined" && getMDXComponent(blog.code),
+        () =>
+            blog &&
+            typeof blog !== "undefined" &&
+            getMDXComponent(blog.code, { Image: Image }),
         [blog],
     );
     const theme = useContext(DarkModeContext);

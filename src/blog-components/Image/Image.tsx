@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import React, { useCallback, useEffect, useState } from "react";
+import NextImage from "next/image";
 
 interface Props {
     src: string;
@@ -50,29 +51,50 @@ const BlogImage: React.FC<Props> = ({
 
     return (
         <>
-            <div className={`blog-image`} onClick={zoomIn}>
+            <div className={`blog-image`}>
                 {caption ? (
-                    <figure className={"blog-figure"}>
-                        <img
-                            src={src}
-                            alt={caption}
-                            width={"100%"}
-                            height={height}
-                            className={`${shadow && !transparent && "shadow"}`}
+                    <>
+                        <figure
+                            className={`blog-figure img-container ${
+                                shadow && !transparent && "shadow"
+                            }`}
                             style={{
-                                maxWidth: width,
+                                height: height,
+                                width: width,
                             }}
-                        />
-                        <figcaption>{caption}</figcaption>
-                    </figure>
+                            onClick={zoomIn}
+                        >
+                            <NextImage
+                                src={src}
+                                alt={caption || alt}
+                                layout="fill"
+                                objectFit="contain"
+                                style={{ cursor: zoomable && "zoom-in" }}
+                            />
+                        </figure>
+                        <figcaption className={"blog-caption"}>
+                            {caption}
+                        </figcaption>
+                    </>
                 ) : (
-                    <img
-                        src={src}
-                        width={width}
-                        alt={alt}
-                        height={height}
-                        className={`${shadow && !transparent && "shadow"}`}
-                    />
+                    <div
+                        className={`img-container ${
+                            shadow && !transparent && "shadow"
+                        }`}
+                        style={{
+                            height: height,
+                            width: width,
+                        }}
+                        onClick={zoomIn}
+                    >
+                        <NextImage
+                            src={src}
+                            layout="fill"
+                            objectFit="contain"
+                            alt={alt || caption}
+                            style={{ cursor: zoomable && "zoom-in" }}
+                        />
+                    </div>
                 )}
             </div>
             {/* When zoomed in, an overlay and new blown-up image is shown. */}
@@ -90,6 +112,7 @@ const BlogImage: React.FC<Props> = ({
                         animate={{ opacity: 1, maxWidth: "90vw" }}
                         onClick={() => setZoomedIn(false)}
                         src={src}
+                        alt={alt || caption}
                     />
                 </>
             )}

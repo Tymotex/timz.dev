@@ -6,3 +6,12 @@
 //       a nasty warning around hook violations because the styled components
 //       are 'created' in `getMDXComponent`.
 @import "./Image/Image.scss";
+
+.small-divider {
+    max-width: 200px;
+    width: 100%;
+    height: 0px;
+    border-bottom: 1px solid black;
+    background: black;
+    margin: 32px auto;
+}

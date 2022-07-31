@@ -6,28 +6,28 @@
     margin: 0 auto;
     max-width: $blog-contents-max-width;
 
-    img {
+    & > img {
         &.shadow {
             @include elevation-shadow-light;
         }
     }
 
-    figure {
+    .blog-figure {
         margin: $spacing-sm auto $spacing-md auto;
-        cursor: zoom-in;
 
         img {
             &.shadow {
                 @include elevation-shadow-light;
             }
         }
+    }
+    .blog-caption {
+        text-align: center;
+        color: $cool-grey-700;
+    }
 
-        figcaption {
-            margin-top: $spacing-xs;
-            text-align: center;
-            color: $cool-grey-700;
-            font-style: italic;
-        }
+    .img-container {
+        position: relative;
     }
 }
 
@@ -38,6 +38,7 @@
     background: rgba(0, 0, 0, 0.65);
     top: 0;
     left: 0;
+    z-index: 10;
 }
 
 .zoom-img {
@@ -49,4 +50,5 @@
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
+    z-index: 10;
 }

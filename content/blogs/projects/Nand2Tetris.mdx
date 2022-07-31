@@ -41,57 +41,57 @@ concepts and building things out in the order below.
   'injected' into pure silicon crystals to form what are called n-type semiconductors
   and p-type semiconductors.
 
-    <Image src="/images/blogs/projects/silicon.png" width="150px" transparent alt="silicon crystal" />
+    <Image src="/images/blogs/projects/silicon.png" height="100px" transparent alt="silicon crystal" />
 
 2. **P-N junctions and diodes** — an interesting result of physically joining 
   an n-type semiconductor and p-type semiconductor is that an electric potential
   difference exists across the junction. This enables unidirectional current
   flow, letting us implement a simple diode device.
 
-    <Image src="/images/blogs/projects/p-n-junction.png" width="250px" transparent alt="pn junction" />
+    <Image src="/images/blogs/projects/p-n-junction.png" height="120px" transparent alt="pn junction" />
 
 3. **NPN/PNP transistors** — simple transistor devices can be formed from physically
   joining n-type and p-type semiconductors in either the n-p-n configuration or
   p-n-p configuration.
 
-    <Image src="/images/blogs/projects/npn-transistor.png" width="250px" transparent alt="npn transistor" />
+    <Image src="/images/blogs/projects/npn-transistor.png" height="200px" transparent alt="npn transistor" />
 
 4. **Logic gate implementation using transistors and resistors** — the primitive
   logic gates such as AND, OR and NOT can be implemented using transistors and
   resistors. Starting with these gates, we easily have access to other gates
   such as XOR, NAND, NOR, etc.
 
-    <Image src="/images/blogs/projects/AND-gate-implementation.png" caption="AND gate implementation." width="250px" transparent />
+    <Image src="/images/blogs/projects/AND-gate-implementation.png" caption="AND gate implementation." height="250px" transparent />
 
 5. **Logic design with primitive logic gates** — 
   it was proven in 1913 that NAND is a *[universal logic gate](https://en.wikipedia.org/wiki/NAND_logic)*, meaning that any boolean function can be implemented solely using NAND gates.
   The implication is that literally all of the chips after this stage can be
   built entirely from just NAND gates. 
 
-    <Image src="/images/blogs/projects/AND-gate-implementation.png" caption="AND gate implementation." width="250px" transparent />
+    <Image src="/images/blogs/projects/AND-gate-implementation.png" caption="AND gate implementation." height="250px" transparent />
 
 6. **Multiplexer and demultiplexer implementation** — multiplexers take in
   multiple data inputs and use some control inputs to select out which input
   to pass through to the output. Demultiplexers take in a single input signal
   and direct it towards one of many output pins, using control bits.
 
-    <Image src="/images/blogs/projects/multiplexer.png" caption="4-way mux chip." width="250px" transparent />
+    <Image src="/images/blogs/projects/multiplexer.png" caption="4-way mux chip." height="150px" transparent />
 
 7. **Adder chips (half-adder, full-adder and incrementer)** — from primitive
   logic gates, we can construct a basic ['half adder'](https://en.wikipedia.org/wiki/Adder_(electronics)) that adds two 1-bit numbers,
   which can then be composed together to form ['full adders'](https://en.wikipedia.org/wiki/Adder_(electronics)) capable of adding three 1-bit numbers, which can then be composed
   together to form 16-bit adder chips, capable of adding two 16-bit numbers.
 
-    <Image src="/images/blogs/projects/half-adder.png" caption="Half adder." width="250px" />
-    <Image src="/images/blogs/projects/full-adder.png" caption="Full adder." width="300px" />
-    <Image src="/images/blogs/projects/ripple-carry-adder.png" caption="8-bit ripple carry adder chip." width="500px" />
+    <Image src="/images/blogs/projects/half-adder.png" caption="Half adder." height="150px" />
+    <Image src="/images/blogs/projects/full-adder.png" caption="Full adder." height="150px" />
+    <Image src="/images/blogs/projects/ripple-carry-adder.png" caption="8-bit ripple carry adder chip." height="300px" />
 
 8. **Arithmetic logic unit implementation** — using a bunch of multiplexers, demultiplexers,
   AND gates and a 16-bit adder, you can implement a basic ALU capable of addition, subtraction
   and logical operations, AND, OR and NOT, on 16-bit inputs.
 
-    <Image src="/images/blogs/projects/alu.png" caption="ALU chip. The inputs zx, nz, zy, ny, f, and no are control bits that determine what arithmetic-logic operation to perform." width="300px" />
-    <Image src="/images/blogs/projects/my-alu.png" caption="My implementation of the ALU." width="500px" />
+    <Image src="/images/blogs/projects/alu.png" caption="ALU chip. The inputs zx, nz, zy, ny, f, and no are control bits that determine what arithmetic-logic operation to perform." height="250px" />
+    <Image src="/images/blogs/projects/my-alu.png" caption="My implementation of the ALU." height="350px" />
 
 9. **Combinational vs. sequential chips and quartz clocks** — combinational
   chips are those whose functionality is independent of time. Sequential chips
@@ -100,15 +100,15 @@ concepts and building things out in the order below.
   units for the registers that will ultimately be used to construct the RAM
   device. This can be done with a central quartz clock, a [piezoelectric](https://en.wikipedia.org/wiki/Piezoelectricity) material that generates signals at a very precise frequency.
 
-    <Image src="/images/blogs/projects/clock-signal.png" caption="Example clock signal." width="300px" />
+    <Image src="/images/blogs/projects/clock-signal.png" caption="Example clock signal." height="150px" />
 
 10. **Latches: S-R latches, data flip-flops (D latches)** — latches are digital
   circuits that can maintain state over time. Mainly, there are S-R latches, which can
   be set to either an on/off state, and data flip-flops, which build on top of S-R latches,
   that form the fundamental units that ultimately can be composed together to form RAM chips.
 
-    <Image src="/images/blogs/projects/sr-latch.png" caption="S-R latch implementation." width="300px" />
-    <Image src="/images/blogs/projects/dff.png" caption="Data flip-flip implementation." width="300px" />
+    <Image src="/images/blogs/projects/sr-latch.png" caption="S-R latch implementation." height="150px" />
+    <Image src="/images/blogs/projects/dff.png" caption="Data flip-flip implementation." height="150px" />
 
 11. **1-bit and n-bit register construction** — registers are devices that hold
   and emit a value. A 1-bit register, which simply holds either a 0 or a 1 and emits it
@@ -116,8 +116,8 @@ concepts and building things out in the order below.
   An 16-bit register, which can hold sixteen 0s or 1s and emit them each, can be constructed
   by joining, in parallel, sixteen 1-bit registers.
 
-    <Image src="/images/blogs/projects/1-bit-register.png" caption="1-bit register implementation." width="300px" />
-    <Image src="/images/blogs/projects/16-1-bit-registers.png" caption="Sixteen 1-bit registers form a 16-bit register" width="500px" />
+    <Image src="/images/blogs/projects/1-bit-register.png" caption="1-bit register implementation." height="150px" />
+    <Image src="/images/blogs/projects/16-1-bit-registers.png" caption="Sixteen 1-bit registers form a 16-bit register" height="250px" />
 
 12. **Recursive ascent construction of RAM modules** — RAM is essentially just a big
   array of $n$ registers, each of which is addressable with a value in range
@@ -127,8 +127,8 @@ concepts and building things out in the order below.
   create a bigger RAM chip with eight times the memory capacity. This recursive construction
   can be repeated endlessly.
 
-    <Image src="/images/blogs/projects/RAM8.png" caption="RAM8 chip." width="500px" />
-    <Image src="/images/blogs/projects/RAM64.png" caption="RAM64 chip, constructed using RAM8 chips." width="500px" />
+    <Image src="/images/blogs/projects/RAM8.png" caption="RAM8 chip." height="400px" />
+    <Image src="/images/blogs/projects/RAM64.png" caption="RAM64 chip, constructed using RAM8 chips." height="400px" />
 
 13. **Counter chip implementation (for the program counter register)** — there's
   usually a dedicated register called a counter aboard the CPU that has an interface for loading
@@ -137,7 +137,7 @@ concepts and building things out in the order below.
   an incrementer chip (built alongside the adder chips previously), multiplexers,
   and a 16-bit register.
 
-    <Image src="/images/blogs/projects/counter-chip.png" caption="Counter chip implementation." width="350px" />
+    <Image src="/images/blogs/projects/counter-chip.png" caption="Counter chip implementation." height="150px" />
 
 14. **Computer architecture: defining the Hack instruction set and assembly language** — the
   instruction set for the Hack machine is very compact, consisting of only 2
@@ -145,8 +145,8 @@ concepts and building things out in the order below.
     - Addressing instructions called A-instructions, which read a value into a dedicated address register called the 'A register'.
     - Computation instructions called C-instructions, which executes an arithmetic-logic hardware operation and stores the result in some register.
 
-    <Image src="/images/blogs/projects/A-instruction.png" caption="A-instruction structure." width="500px" />
-    <Image src="/images/blogs/projects/C-instruction.png" caption="C-instruction structure." width="500px" />
+    <Image src="/images/blogs/projects/A-instruction.png" caption="A-instruction structure." height="220px" />
+    <Image src="/images/blogs/projects/C-instruction.png" caption="C-instruction structure." height="220px" />
   
     At this stage, we're only defining a standard and not building out anything.
     Once the standard is defined, we'll use it to guide the design of a CPU that
@@ -161,7 +161,7 @@ concepts and building things out in the order below.
     gets a single register that is meant to contain the code of whatever character
     is currently being pressed by the user.
 
-    <Image src="/images/blogs/projects/memory-mapped-io.png" caption="Memory-mapped I/O." width="500px" />
+    <Image src="/images/blogs/projects/memory-mapped-io.png" caption="Memory-mapped I/O." height="400px" />
   
 16. **CPU design and implementation** — it's time to put everything together.
     The aim of the CPU design is to support the instruction set defined previously,
@@ -170,7 +170,7 @@ concepts and building things out in the order below.
     chips aboard the CPU, namely the dedicated registers and ALU. The following
     minimal design is sufficient to support the instruction set.
 
-    <Image src="/images/blogs/projects/hack-CPU.png" caption="Hack CPU implementation." width="720px" />
+    <Image src="/images/blogs/projects/hack-CPU.png" caption="Hack CPU implementation." height="400px" />
 
 17. **Fitting everything into the Von Neumann architecture to complete the general-purpose computer** — 
     With the CPU (plus the ALU) and RAM both implemented, we can compose them
@@ -179,7 +179,7 @@ concepts and building things out in the order below.
     instruction emitted from the ROM chip that directs the CPU to begin executing instructions for loading the OS kernel into main memory 
     (this process called [OS bootstrapping](https://en.wikipedia.org/wiki/Bootstrapping)). When the user hits the reset button, it’ll cause the CPU to set $\texttt{pc = 0}$ which causes the first instruction in $\texttt{ROM32K}$ to be emitted and execution to start from the beginning again. In each clock cycle, the CPU accomplishes the entire fetch-decode execute cycle to fully execute one 16-bit instruction emitted from the data memory device.
 
-    <Image src="/images/blogs/projects/hack-von-neumann-computer.png" caption="Hack computer assembled based on the Von Neumann architecture." width="720px" />
+    <Image src="/images/blogs/projects/hack-von-neumann-computer.png" caption="Hack computer assembled based on the Von Neumann architecture." height="400px" />
 
 The difference between this simple 16-bit computer and modern personal computers
 is obviously massive. Notably, this computer is missing the dedicated graphics

@@ -70,6 +70,7 @@ export const makeMDXBundle = async (rawSource: string) => {
                 ];
                 return options;
             },
+            globals: { "next/image": "Image" },
         });
     } catch {
         signale.error(`Failed on '${rawSource}'`);
