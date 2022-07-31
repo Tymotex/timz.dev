@@ -28,7 +28,7 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
             </div>
             <div className={styles.details}>
                 <div className={styles.mainContent}>
-                    <h3 className={styles.title}>{project.title}</h3>
+                    <h2 className={styles.title}>{project.title}</h2>
                     <p className={styles.description}>{project.description}</p>
                     <div className={styles.buttonGroup}>
                         <Button
@@ -44,6 +44,7 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
                             {project.githubUrl && (
                                 <Button
                                     text=""
+                                    ariaLabel="open GitHub repo"
                                     shape="pill"
                                     colour="secondary"
                                     icon={<GithubIcon />}
@@ -53,6 +54,7 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
                             {project.demoUrl && (
                                 <Button
                                     text=""
+                                    ariaLabel="open demo"
                                     shape="pill"
                                     colour="secondary"
                                     icon={<DemoIcon />}
@@ -65,7 +67,7 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
                 <SubtleDivider />
                 <small className={styles.builtWith}>
                     <strong>Built with: </strong>
-                    <em>{project.technologies.join(", ")}</em>
+                    {project.technologies.join(", ")}
                 </small>
             </div>
         </div>

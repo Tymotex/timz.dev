@@ -120,7 +120,11 @@ const BlogIndex: NextPage<Props> = ({ blog }) => {
                     interesting.
                 </p>
                 <p>
-                    See more of my blogs <Link href="/blogs">here</Link>.
+                    See more of my{" "}
+                    <Link href="/blogs">
+                        <a>blogs</a>
+                    </Link>
+                    .
                 </p>
             </ContentContainer>
         </>

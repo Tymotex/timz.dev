@@ -75,12 +75,15 @@ const Button: React.FC<ButtonProps> = ({
             target="_blank"
             rel="noreferrer"
             className={styles.anchor}
+            aria-label={ariaLabel}
         >
             {ButtonCore}
         </a>
     ) : internalUrl ? (
         <Link href={internalUrl} scroll={false}>
-            {ButtonCore}
+            <a aria-label={ariaLabel} style={{ textDecoration: "none" }}>
+                {ButtonCore}
+            </a>
         </Link>
     ) : (
         ButtonCore

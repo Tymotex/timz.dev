@@ -41,7 +41,7 @@ const TechnologyChipGroup: React.FC<Props> = ({
                             width={20}
                             height={20}
                         />
-                        <span role="listitem">{tech}</span>
+                        <span aria-label="technology name">{tech}</span>
                     </li>
                 ))}
         </ul>
