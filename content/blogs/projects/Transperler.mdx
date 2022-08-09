@@ -1,0 +1,37 @@
+---
+title: Transperler
+description: A regex-based transpiler for mapping POSIX shell scripts to equivalent Perl 5 scripts.
+published: true
+date: 2022-08-09
+---
+
+import { Image } from 'src/blog-components/Image';
+
+[Transperler](https://transperler.timz.dev) is a regex-based transpiler for mapping POSIX shell scripts to equivalent Perl 5 scripts. It supports the translation of most control structures and some commonly used builtin shell commands to Perl. It aims to preserve the comments and indentation of the original input file. 
+
+**Why would you want to convert Shell scripts to Perl scripts?** 
+The most common use case for this is when you have written a 'one-off' Bash script that
+has accidentally evolved into something more complex as requirements have
+grown. Converting Shell scripts to Perl scripts lets you leverage a language that offers a 
+richer native API for text processing, efficient data structures, libraries, etc. It's also 
+OS-independent, whereas Shell scripts are much more challenging to make portable.
+There are more reasons why Perl, as well as other scripting languages like Python or Ruby, should be
+preferred over UNIX Shell such as security, maintainability, testability... see this [Perlmonks discussion](https://www.perlmonks.org/?node_id=668481).
+
+This project also features a PWA built with Vue, Nuxt.js, Tailwind and TypeScript, as well as an API server written in Go and Gin that wraps around the Perl 5 transpiler and the [shellcheck](https://github.com/koalaman/shellcheck) Shell script static analyser.
+
+<Image src="/images/projects/transperler.png" caption="Transperler thumbnail." height="500px" />
+
+The transpiler client features a minimal Shell code editor and live preview for
+the Perl 5 output. Whenever the user has finished typing, the client sends a 
+series of requests to the API server to check the validity of the Shell script,
+and proceeding with invoking the Perl 5 transpiler if it is valid.
+
+<Image src="/images/blogs/projects/transperler-error.png" caption="Transperler shell live validation." height="300px" />
+
+The architecture for the project is pretty simple and follows a traditional
+client/server setup. If this project were required to scale up to serve more concurrent users, it would be
+better to extract out the static shell analyser and transpiler into separate
+microservices so they can scaled out independently.
+
+<Image src="/images/blogs/projects/transperler-architecture.png" caption="Transperler architecture." height="350px" />

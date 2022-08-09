@@ -13,7 +13,7 @@
     }
 
     .blog-figure {
-        margin: $spacing-sm auto $spacing-md auto;
+        margin: $spacing-sm auto $spacing-xs auto;
 
         img {
             &.shadow {
@@ -23,6 +23,7 @@
     }
     .blog-caption {
         text-align: center;
+        margin-bottom: $spacing-md;
         color: $cool-grey-700;
     }
 

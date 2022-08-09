@@ -14,6 +14,8 @@ export type Technology =
     | "Express"
     | "Flask"
     | "Gatsby"
+    | "Gin"
+    | "Go"
     | "GoogleTest"
     | "GraphQL"
     | "HTML"
@@ -31,6 +33,7 @@ export type Technology =
     | "Nginx"
     | "Node"
     | "NUnit"
+    | "Nuxt"
     | "Perl"
     | "PostgreSQL"
     | "Python"
@@ -47,6 +50,8 @@ export type Technology =
     | "Spanner"
     | "SQL"
     | "SQL Server"
+    | "Tailwind"
     | "Three"
     | "TypeScript"
-    | "Unity";
+    | "Unity"
+    | "Vue";
