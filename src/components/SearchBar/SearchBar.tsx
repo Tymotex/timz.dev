@@ -22,7 +22,7 @@ const SearchBar: React.FC<Props> = ({ query, setQuery }) => {
                 className={`${theme.isDarkMode ? styles.dark : styles.light}`}
                 type="text"
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Hello world..."
+                placeholder="Search blogs"
             />
         </div>
     );
