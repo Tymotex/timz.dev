@@ -1,0 +1,13 @@
+.tableOfContents {
+    padding: 0;
+    position: sticky;
+    top: 128px;
+    max-height: calc(100vh - 128px);
+    height: fit-content;
+    overflow: auto;
+    display: block;
+
+    .heading {
+        list-style-type: none;
+    }
+}

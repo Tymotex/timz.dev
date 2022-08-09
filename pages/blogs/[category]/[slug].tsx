@@ -2,8 +2,8 @@ import { getMDXComponent } from "mdx-bundler/client";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { useContext, useMemo } from "react";
+import { Router, useRouter } from "next/router";
+import { useContext, useEffect, useMemo } from "react";
 import { AiFillRead as BookIcon } from "react-icons/ai";
 import { BsMedium as MediumIcon } from "react-icons/bs";
 import { Blog, getAllBlogs, getBlog } from "scripts/blogs";
@@ -13,6 +13,7 @@ import { SubtleDivider } from "src/components/Divider";
 import { DarkModeContext } from "src/contexts/LightDarkThemeProvider";
 import styles from "./BlogPage.module.scss";
 import Image from "next/image";
+import { TableOfContents } from "src/components/TableOfContents";
 
 export const getStaticProps: GetStaticProps = async (context) => {
     if (context === undefined || context.params === undefined)
@@ -65,6 +66,23 @@ const BlogIndex: NextPage<Props> = ({ blog }) => {
             }),
         [blog],
     );
+    const blogContentsContainerId = useMemo(
+        () => "blog-contents-container",
+        [],
+    );
+
+    // There is a very strange bug where refreshing on an anchored route like
+    // timz.dev/blog/foo#bar will briefly show the correct page, then suddenly
+    // redirect to timz.dev/blog/foo%23bar. This `useEffect` callback forcefully
+    // corrects that by redirecting back to timz.dev/blog/foo#bar which then
+    // shows the correct UI. This causes a brief flash of the incorrect page,
+    // unfortunately.
+    useEffect(() => {
+        if (window.location.href.includes("%23")) {
+            const [mainPageUrl, fragmentId] = window.location.href.split("%23");
+            router.push(mainPageUrl + "#" + fragmentId);
+        }
+    }, [router]);
 
     if (!blog) return <></>;
     if (router.isFallback) return <>Loading...</>;
@@ -110,7 +128,31 @@ const BlogIndex: NextPage<Props> = ({ blog }) => {
                 />
                 <br />
             </ContentContainer>
-            <div className={styles.blogContents}>{Blog && <Blog />}</div>
+            <div className={styles.blogContainer}>
+                <div
+                    id={blogContentsContainerId}
+                    className={styles.blogContents}
+                >
+                    {Blog && (
+                        <Blog
+                            components={{
+                                h2: ({ children }) => (
+                                    <h2
+                                        id={encodeURIComponent(
+                                            String(children),
+                                        )}
+                                    >
+                                        {children}
+                                    </h2>
+                                ),
+                            }}
+                        />
+                    )}
+                </div>
+                <TableOfContents
+                    blogContentsContainerId={blogContentsContainerId}
+                />
+            </div>
             <br />
             <SubtleDivider />
             <ContentContainer className={styles.blogFooter}>
