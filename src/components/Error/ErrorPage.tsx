@@ -1,9 +1,9 @@
-import dynamic from "next/dynamic";
 import React from "react";
 import { BiHome as HomeIcon } from "react-icons/bi";
 import { LinkButton } from "../Button";
 import { CentralContainer } from "../Container";
 import ContentContainer from "../Container/ContentContainer";
+import { ParticleWallpaper } from "../Particles";
 import styles from "./ErrorPage.module.scss";
 
 interface Props {
@@ -11,16 +11,6 @@ interface Props {
     homeUrl: string;
     errorCode?: string;
 }
-
-const DynamicParticleWallpaper = dynamic(
-    () =>
-        import("src/components/Particles").then(
-            (module) => module.ParticleWallpaper,
-        ),
-    {
-        ssr: false,
-    },
-);
 
 const ErrorMessage: React.FC<Props> = ({
     errorCode,
@@ -45,8 +35,7 @@ const ErrorMessage: React.FC<Props> = ({
                     )}
                 </ContentContainer>
             </CentralContainer>
-
-            <DynamicParticleWallpaper />
+            <ParticleWallpaper />
         </div>
     );
 };
