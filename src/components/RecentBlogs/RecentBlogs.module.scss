@@ -1,0 +1,69 @@
+@import "../../../styles/variables.scss";
+
+$stickyWidth: 16rem;
+
+.blogsList {
+    padding: $spacing-xs 0;
+
+    .heading {
+        list-style: none;
+        color: $cool-grey-400;
+        font-family: $code-font-stack;
+        font-size: larger;
+        margin-bottom: $spacing-sm;
+    }
+
+    .blog {
+        list-style: none;
+        color: $cool-grey-700;
+        margin-bottom: $spacing-xs;
+        border-bottom: dotted 1px rgba(128, 128, 128, 0.508);
+        width: fit-content;
+    }
+}
+
+@media screen and (min-width: $xl) {
+    .blogsList {
+        margin-left: $spacing-md;
+        border-left: 1px solid rgba(128, 128, 128, 0.15);
+        height: fit-content;
+        position: sticky;
+        top: 64px;
+        max-height: calc(100vh - 64px);
+        width: $stickyWidth;
+        max-width: $stickyWidth;
+
+        .heading {
+            padding-left: $spacing-xs;
+        }
+
+        .blog {
+            margin-left: $spacing-sm;
+            max-width: $stickyWidth;
+
+            // This truncates text at 2 lines with ellipses.
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            line-height: 1.5em;
+            max-height: 3em;
+
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $xl) {
+    .blogsList {
+        position: relative;
+        display: table;
+        margin: $spacing-sm auto 0 auto;
+        border-top: 1px solid rgba(128, 128, 128, 0.2);
+        border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+        padding: $spacing-xs $spacing-md;
+    }
+}

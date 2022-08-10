@@ -1,31 +1,42 @@
 import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { useContext, useEffect, useState } from "react";
-import { BlogInfo, getAllBlogs } from "scripts/blogs";
+import { useContext, useEffect, useMemo, useState } from "react";
+import { BlogInfo, getAllBlogs, getRecentBlogs } from "scripts/blogs";
 import { BlogList } from "src/components/Blog";
 import ContentContainer from "src/components/Container/ContentContainer";
 import { MiniDivider } from "src/components/Divider";
+import { RecentBlogs } from "src/components/RecentBlogs";
 import { BlogContext } from "src/contexts/BlogContext";
 import styles from "./BlogIndex.module.scss";
 
 export const getStaticProps: GetStaticProps = async (context) => {
     const blogs: BlogInfo[] = await getAllBlogs();
+    const recentBlogs: BlogInfo[] = await getRecentBlogs();
 
-    // Filter out unpublished blogs from being shown on the index page.
     return {
         props: {
-            blogs: blogs && blogs.filter((blog) => blog.frontmatter.published),
+            blogs: blogs,
+            recentBlogs: recentBlogs,
         },
     };
 };
 
 interface Props {
     blogs: BlogInfo[];
+    recentBlogs: BlogInfo[];
 }
 
-const BlogIndex: NextPage<Props> = ({ blogs }) => {
+const BlogIndex: NextPage<Props> = ({ blogs, recentBlogs }) => {
     const [blogList, setBlogList] = useState<BlogInfo[]>(blogs);
+    const softwareEngineeringBlogs = useMemo(
+        () => blogList.filter((blog) => blog.category !== "projects"),
+        [blogList],
+    );
+    const projectBlogs = useMemo(
+        () => blogList.filter((blog) => blog.category === "projects"),
+        [blogList],
+    );
     const blogContext = useContext(BlogContext);
     const router = useRouter();
 
@@ -60,22 +71,43 @@ const BlogIndex: NextPage<Props> = ({ blogs }) => {
             <Head>
                 <title>Blogs</title>
             </Head>
-            <ContentContainer>
-                <h1 className={styles.title}>Concepts</h1>
-                <MiniDivider />
-                <BlogList
-                    blogs={blogList.filter(
-                        (blog) => blog.category !== "projects",
-                    )}
-                />
-                <h1 className={styles.title}>Projects</h1>
-                <MiniDivider />
-                <BlogList
-                    blogs={blogList.filter(
-                        (blog) => blog.category === "projects",
-                    )}
-                />
-            </ContentContainer>
+            <div className={styles.mainContainer}>
+                <RecentBlogs blogs={recentBlogs} />
+                <ContentContainer className={styles.blogsFeedContainer}>
+                    <section className={styles.blogSection}>
+                        <div className={styles.blogSectionHeader}>
+                            <h1 className={styles.title}>
+                                Software Engineering Blogs
+                            </h1>
+                            <aside className={styles.numArticles}>
+                                {softwareEngineeringBlogs.length} article
+                                {softwareEngineeringBlogs.length !== 1 && "s"}.
+                            </aside>
+                        </div>
+                        <MiniDivider />
+                        <p className={styles.description}>
+                            Informative articles on useful technologies and how
+                            some cool things work.
+                        </p>
+                        <BlogList blogs={softwareEngineeringBlogs} />
+                    </section>
+                    <section className={styles.blogSection}>
+                        <div className={styles.blogSectionHeader}>
+                            <h1 className={styles.title}>Project Blogs</h1>
+                            <aside className={styles.numArticles}>
+                                {projectBlogs.length} article
+                                {projectBlogs.length !== 1 && "s"}.
+                            </aside>
+                        </div>
+                        <MiniDivider />
+                        <p className={styles.description}>
+                            Details about some software engineering projects
+                            that I&apos;ve worked on.
+                        </p>
+                        <BlogList blogs={projectBlogs} />
+                    </section>
+                </ContentContainer>
+            </div>
         </>
     );
 };

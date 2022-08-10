@@ -14,7 +14,7 @@ Watch a demo [here](https://www.youtube.com/watch?v=C4o2fOCq2cI).
 <Image src="/images/blogs/projects/techsuite-showcase.png" caption="Mobile and desktop." height="400px" transparent />
 
 
-## Core **Features**
+## Core Features
 
 These are some of the core features of Techsuite.
 
@@ -40,7 +40,7 @@ Some screenshots from the site.
 
 <hr className="small-divider" />
 
-## **Background**
+## Background
 
 With pretty much no prior experience in web development or understanding of databases, I set out to build this weird amalgamation of Facebook, Messenger, LinkedIn, Slack, but with developers as the target audience. I wanted to learn a bit about the magic behind each of these extremely complex yet user-friendly services and try my hand at building out the rudimentary architecture and logic behind them.
 
@@ -60,7 +60,7 @@ I didn’t know what web accessibility was and why it was important at the time.
 
 I discovered SCSS early on in the project, which luckily made CSS maintenance a little less intolerable. Still, I didn’t think through many of my choices. I have both global stylesheets and SCSS modules in this project, but I really should have stuck to just SCSS modules primarily to prevent CSS rule collisions. I never considered anything like Tailwind or CSS-in-JS solutions, but I think that SCSS modules worked well for keeping my React component source code less bloated.
 
-## **Deployment**
+## Deployment
 
 Deploying was an absolute pain. I didn’t bother thinking about deploying the app to production until I wanted to deploy it. It didn’t help that I only had a basic level of proficiency with Linux administration and basic understanding of computer networking.
 
@@ -70,7 +70,7 @@ By the time I knew what Docker was, I was already nearing deployment and sadly n
 
 If this were a serious project that needed to be shipped to a large userbase (instead of just me and perhaps my mum), then I’d break up the monolithic backend server into several Flask microservices and orchestrate them with Kubernetes. Then, I’d dump this all onto a managed Kubernetes service like Amazon EKS. 
 
-## **Security Issues**
+## Security Issues
 
 I’m certain the site is vulnerable to XSS, CSRF and possibly SQL injection attacks. At the time, I had no idea what any of these attacks were and therefore had no idea I was opening myself up for disaster. Luckily, I learned about these security issues *without* having worked on a real project with a large userbase. Security is still a weak point in my developer skillset, but I know that I should at least sanitise all user input.
 
@@ -82,7 +82,7 @@ When I built the project, I had close to no background in testing. All I knew we
 
 This project is missing tests at all levels — unit tests, integration tests, end-to-end tests, etc. The frontend is completely untested. I had no idea that frontend testing was even possible (how do you unit test UI?). Again, at this point the reward/effort ratio was too low, given that I already ironed out the bugs along the critical paths of the application. If I were to travel back in time to the start of the project, I would *at least* set up a CI server and get it to run integration tests on each API endpoint and then write a few end-to-end Cypress tests to make sure the critical paths of the application are working.
 
-## **Socket.io**
+## Socket.io
 
 This project uses socket.io to set up bidirectional client-server messaging. I discovered this when researching how apps like Messenger are built. I stumbled upon [Flask-SocketIO](https://flask-socketio.readthedocs.io/en/latest/) pretty early on and used that to set up server-side event handlers that client browsers could trigger. I used [socket.io-client](https://socket.io/docs/v4/client-api/) to set up client-side event handlers that the API servers could trigger. Every time you click into a channel page or open a chat window with another person on Techsuite, the client’s browser emits an event to the server, which *subscribes* the user to events under a localised group of clients. In other words, when people join the ‘Coffee Lovers’ channel, they will begin emitting events locally amongst each other. This is how you’re able to make it so that when one person sends a message, every other member’s chat window gets updated with that message. Normally, the client-server interaction is unidirectional, with the client sending request and server responding.
 

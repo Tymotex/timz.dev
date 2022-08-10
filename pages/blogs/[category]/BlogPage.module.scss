@@ -75,73 +75,90 @@
     }
 }
 
-.blogContents {
-    padding: 0 $spacing-md $spacing-md $spacing-md;
-    // & > * {
-    //     &:not(:last-child) {
-    //         margin-bottom: $spacing-xxs;
-    //     }
-    // }
+.blogContainer {
+    display: flex;
+    justify-content: center;
 
-    p,
-    ul,
-    ol,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        max-width: $blog-contents-max-width;
-        margin: 0 auto;
-        line-height: $line-spacing-lg;
-    }
+    .blogContents {
+        padding: 0 $spacing-md $spacing-md $spacing-md;
+        // & > * {
+        //     &:not(:last-child) {
+        //         margin-bottom: $spacing-xxs;
+        //     }
+        // }
 
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        margin-top: $spacing-md !important;
-    }
+        p,
+        ul,
+        ol,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            max-width: $blog-contents-max-width;
+            margin: 0 auto;
+            line-height: $line-spacing-lg;
+        }
 
-    // Targets all paragraphs with a sibling before it.
-    p + p {
-        margin: $spacing-sm auto 0 auto !important;
-        line-height: $line-spacing-xl;
-    }
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-top: $spacing-md !important;
+        }
 
-    // Make the first letter of the first paragraph element extra large.
-    // See: https://www.digitalocean.com/community/tutorials/css-drop-caps.
-    & > p {
-        &:first-child {
-            &::first-letter {
-                font-family: $code-font-stack;
-                padding: 0 0.3rem;
-                margin: 0 0.5rem 0 0;
-                border-radius: 8px;
+        // Targets all paragraphs with a sibling before it.
+        p + p {
+            margin: $spacing-sm auto 0 auto !important;
+            line-height: $line-spacing-xl;
+        }
 
-                font-size: 3.9rem;
-                float: left;
-                line-height: 1;
+        // Make the first letter of the first paragraph element extra large.
+        // See: https://www.digitalocean.com/community/tutorials/css-drop-caps.
+        & > p {
+            &:first-child {
+                &::first-letter {
+                    font-family: $code-font-stack;
+                    padding: 0 0.3rem;
+                    margin: 0 0.5rem 0 0;
+                    border-radius: 8px;
+
+                    font-size: 3.9rem;
+                    float: left;
+                    line-height: 1;
+                }
             }
         }
-    }
 
-    li {
-        margin: $spacing-xxxs 0;
-    }
+        li {
+            margin: $spacing-xxxs 0;
+        }
 
-    pre {
-        max-width: $blog-contents-max-width;
-        margin: 0 auto;
-        border-radius: 5px;
-    }
+        pre {
+            max-width: $blog-contents-max-width;
+            margin: 0 auto;
+            border-radius: 5px;
+        }
 
-    img {
-        max-width: $blog-contents-max-width;
-        display: block;
-        margin: 0 auto;
+        img {
+            max-width: $blog-contents-max-width;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}
+
+@media screen and (max-width: $xl) {
+    .blogContainer {
+        flex-direction: column-reverse;
+    }
+}
+
+@media screen and (min-width: $xl) {
+    .blogContainer {
+        flex-direction: row;
     }
 }
 

@@ -1,0 +1,68 @@
+@import "../../../styles/variables.scss";
+
+$stickyTableWidth: 15rem;
+
+.tableOfContents {
+    padding: 0;
+    height: fit-content;
+    margin-left: $spacing-md;
+
+    .title {
+        list-style-type: none;
+        color: $cool-grey-500;
+        margin-left: $spacing-sm;
+        font-weight: bold;
+        font-family: $code-font-stack;
+        font-size: larger;
+        a {
+            text-decoration: none;
+        }
+    }
+    .heading {
+        list-style-type: none;
+        margin: $spacing-xs 0;
+
+        // This truncates text at 2 lines with ellipses.
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-height: 1.5em;
+        max-height: 3em;
+
+        a {
+            text-decoration: none;
+            color: $primary-500;
+        }
+    }
+}
+
+@media screen and (max-width: $xl) {
+    .tableOfContents {
+        position: relative;
+        display: table;
+        margin: 0 auto $spacing-md auto;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.179);
+        border-top: 1px solid rgba(128, 128, 128, 0.179);
+        padding-top: $spacing-xs;
+    }
+}
+
+@media screen and (min-width: $xl) {
+    .tableOfContents {
+        position: sticky;
+        display: table;
+        border-left: 1px solid rgba(128, 128, 128, 0.179);
+        top: 128px;
+        max-height: calc(100vh - 128px);
+        overflow: auto;
+        width: $stickyTableWidth;
+        max-width: $stickyTableWidth;
+
+        .header {
+            width: $stickyTableWidth;
+            max-width: $stickyTableWidth;
+        }
+    }
+}
