@@ -1,8 +1,9 @@
 import { getMDXComponent } from "mdx-bundler/client";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
-import { Router, useRouter } from "next/router";
+import { useRouter } from "next/router";
 import { useContext, useEffect, useMemo } from "react";
 import { AiFillRead as BookIcon } from "react-icons/ai";
 import { BsMedium as MediumIcon } from "react-icons/bs";
@@ -10,10 +11,11 @@ import { Blog, getAllBlogs, getBlog } from "scripts/blogs";
 import { ChipGroup } from "src/components/ChipGroup";
 import ContentContainer from "src/components/Container/ContentContainer";
 import { SubtleDivider } from "src/components/Divider";
-import { DarkModeContext } from "src/contexts/LightDarkThemeProvider";
-import styles from "./BlogPage.module.scss";
-import Image from "next/image";
 import { TableOfContents } from "src/components/TableOfContents";
+import { DarkModeContext } from "src/contexts/LightDarkThemeProvider";
+import { getBlogDate } from "src/util/dateUtils";
+import { getHeadings } from "src/util/getBlogComponents";
+import styles from "./BlogPage.module.scss";
 
 export const getStaticProps: GetStaticProps = async (context) => {
     if (context === undefined || context.params === undefined)
@@ -47,8 +49,17 @@ interface Props {
     blog: Blog;
 }
 
+interface Heading {
+    text: string;
+    indentLevel: number;
+    orderOnPage: number;
+}
+
 const BlogIndex: NextPage<Props> = ({ blog }) => {
     const router = useRouter();
+    const theme = useContext(DarkModeContext);
+
+    // Blog MDX component.
     const Blog = useMemo(
         () =>
             blog &&
@@ -56,16 +67,7 @@ const BlogIndex: NextPage<Props> = ({ blog }) => {
             getMDXComponent(blog.code, { Image: Image }),
         [blog],
     );
-    const theme = useContext(DarkModeContext);
-    const dateStr = useMemo(
-        () =>
-            new Date(blog?.frontmatter.date).toLocaleDateString("en-US", {
-                month: "short",
-                day: "numeric",
-                year: "numeric",
-            }),
-        [blog],
-    );
+    const dateStr = useMemo(() => getBlogDate(blog), [blog]);
     const blogContentsContainerId = useMemo(
         () => "blog-contents-container",
         [],
@@ -133,21 +135,7 @@ const BlogIndex: NextPage<Props> = ({ blog }) => {
                     id={blogContentsContainerId}
                     className={styles.blogContents}
                 >
-                    {Blog && (
-                        <Blog
-                            components={{
-                                h2: ({ children }) => (
-                                    <h2
-                                        id={encodeURIComponent(
-                                            String(children),
-                                        )}
-                                    >
-                                        {children}
-                                    </h2>
-                                ),
-                            }}
-                        />
-                    )}
+                    {Blog && <Blog components={getHeadings()} />}
                 </div>
                 <TableOfContents
                     blogContentsContainerId={blogContentsContainerId}

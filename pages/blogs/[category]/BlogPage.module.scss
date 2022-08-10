@@ -77,7 +77,6 @@
 
 .blogContainer {
     display: flex;
-    flex-direction: row;
     justify-content: center;
 
     .blogContents {
@@ -148,6 +147,18 @@
             display: block;
             margin: 0 auto;
         }
+    }
+}
+
+@media screen and (max-width: $xl) {
+    .blogContainer {
+        flex-direction: column-reverse;
+    }
+}
+
+@media screen and (min-width: $xl) {
+    .blogContainer {
+        flex-direction: row;
     }
 }
 
