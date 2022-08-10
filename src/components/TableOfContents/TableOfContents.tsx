@@ -50,7 +50,7 @@ const TableOfContents: React.FC<Props> = ({ blogContentsContainerId }) => {
         );
     }, [setHeadings, blogContentsContainerId]);
 
-    return (
+    return headings && headings.length > 0 ? (
         <ol className={styles.tableOfContents}>
             <li className={styles.title}>
                 <Link href={"#"}>Table of Contents</Link>
@@ -72,6 +72,8 @@ const TableOfContents: React.FC<Props> = ({ blogContentsContainerId }) => {
                 </li>
             ))}
         </ol>
+    ) : (
+        <></>
     );
 };
 

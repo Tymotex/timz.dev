@@ -118,8 +118,12 @@ const getTimeToRead = (blogContents: string): number => {
 /**
  * Retrieves display data for all blogs, useful for rendering the blog index
  * page.
+ *
+ * @param boolean retrieveUnpublished   Whether to retrieve blogs that haven't been published.
  */
-export const getAllBlogs = async (): Promise<BlogInfo[]> => {
+export const getAllBlogs = async (
+    retrieveUnpublished: boolean = false,
+): Promise<BlogInfo[]> => {
     const blogsDir = path.join(process.cwd(), "content/blogs");
     signale.start(`Sourcing blogs from '${blogsDir}'`);
 
@@ -159,7 +163,10 @@ export const getAllBlogs = async (): Promise<BlogInfo[]> => {
     allBlogs.sort((a, b) =>
         a.frontmatter.title.localeCompare(b.frontmatter.title),
     );
-    return allBlogs;
+
+    return retrieveUnpublished
+        ? allBlogs
+        : allBlogs.filter((blog) => blog.frontmatter.published);
 };
 
 /**
@@ -211,4 +218,21 @@ export const getBlog = async (
     signale.success(`Successfully bundled blog: '${slug}'.`);
 
     return blog;
+};
+
+/**
+ * Retrieves display data for the most recent blogs.
+ *
+ * @param number numBlogs   The number of blogs to retrieve.
+ */
+export const getRecentBlogs = async (
+    numBlogs: number = 5,
+): Promise<BlogInfo[]> => {
+    const allBlogs = await getAllBlogs();
+    allBlogs.sort((a, b) => {
+        const aDate = new Date(a?.frontmatter.date);
+        const bDate = new Date(b?.frontmatter.date);
+        return aDate >= bDate ? -1 : 1;
+    });
+    return allBlogs.slice(0, 5);
 };

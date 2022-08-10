@@ -1,3 +1,49 @@
-.title {
-    user-select: none;
+@import "../../styles/variables.scss";
+
+.mainContainer {
+    display: flex;
+    justify-content: center;
+
+    .blogsFeedContainer {
+        margin: 0;
+
+        .blogSection {
+            margin-bottom: $spacing-lg;
+
+            .blogSectionHeader {
+                display: flex;
+                flex-wrap: wrap;
+                row-gap: $spacing-xs;
+                justify-content: space-between;
+
+                .title {
+                    margin: 0;
+                    user-select: none;
+                    font-family: $code-font-stack;
+                }
+                .numArticles {
+                    color: $cool-grey-700;
+                }
+            }
+            .description {
+                color: $cool-grey-700;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $xl) {
+    .mainContainer {
+        flex-direction: row-reverse;
+    }
+}
+
+@media screen and (max-width: $xl) {
+    .mainContainer {
+        flex-direction: column;
+
+        .blogsFeedContainer {
+            margin: 0 auto;
+        }
+    }
 }

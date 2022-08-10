@@ -11,6 +11,7 @@ import { Blog, getAllBlogs, getBlog } from "scripts/blogs";
 import { ChipGroup } from "src/components/ChipGroup";
 import ContentContainer from "src/components/Container/ContentContainer";
 import { SubtleDivider } from "src/components/Divider";
+import { Loader } from "src/components/Loader";
 import { TableOfContents } from "src/components/TableOfContents";
 import { DarkModeContext } from "src/contexts/LightDarkThemeProvider";
 import { getBlogDate } from "src/util/dateUtils";
@@ -36,7 +37,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 // Eg. the .mdx blog with filename 'Learn-React-Hooks.mdx' will have a
 //     corresponding route: '/blogs/Learn-React-Hooks'.
 export const getStaticPaths: GetStaticPaths = async () => {
-    const allBlogs = await getAllBlogs();
+    const allBlogs = await getAllBlogs(true);
     return {
         paths: allBlogs.map((blog) => ({
             params: { category: blog.category, slug: blog.slug },
@@ -86,7 +87,7 @@ const BlogIndex: NextPage<Props> = ({ blog }) => {
         }
     }, [router]);
 
-    if (!blog) return <></>;
+    if (!blog) return <Loader />;
     if (router.isFallback) return <>Loading...</>;
 
     return (
