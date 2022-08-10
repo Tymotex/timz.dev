@@ -306,7 +306,8 @@ const portfolio: PortfolioData = {
                     "Tailwind",
                     "Docker",
                 ],
-                githubUrl: "https://github.com/Tymotex/ShellPerlTranspiler",
+                githubUrl: "https://github.com/Tymotex/Transperler",
+                demoUrl: "https://transperler.timz.dev",
             },
             {
                 title: "Hydroponix",
