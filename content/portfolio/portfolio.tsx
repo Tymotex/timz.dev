@@ -278,7 +278,7 @@ const portfolio: PortfolioData = {
                 imageUrl: "/images/projects/employ.me.png",
                 videoUrl: "https://youtu.be/VoWjZLe-DFs",
                 githubUrl: "https://github.com/Tymotex/Employ.me",
-                demoUrl: "https://employ-me.netlify.app/",
+                demoUrl: "https://employ.me.timz.dev/",
                 technologies: [
                     "JavaScript",
                     "React",

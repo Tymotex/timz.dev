@@ -2,10 +2,79 @@
 title: Employ.me
 description: Employ.me is an automated job application tracking system that minimises the friction associated with managing job applications.
 published: false
-date: 2022-06-25
+date: 2022-08-16
 ---
 
-Employ.me is an automated job application tracking system that minimises the friction associated with managing job applications.
+[Employ.me](https://employ.me.timz.dev/) is an automated job application tracking system that minimises the friction associated with managing job applications.
 You can manage your job application using an integrated spreadsheet, kanban board, calendar and other visual layouts.
 Your progress and success is visualised with real statistics based on your activity on the site.
 There's also a community system for you to engage with other job seekers and give/receive constructive criticism.
+
+See the [video demonstration](https://www.youtube.com/watch?v=VoWjZLe-DFs) of Employ.me. 
+
+It's built with React, Material UI, Python + Flask and MongoDB.
+
+**Features**
+- Scrapes job postings from several sources and allows you to automate your job application tracking with a single click.
+- Manage and see your job applications in intuitive views:
+    - Spreadsheet — including filters, selectable columns, searching, and more.
+    - Kanban board — clearly captures the state of each job application.
+    - Calendar — highlights critical events such as upcoming interviews.
+- Personalise your job boards, write notes for each job application using an integrated rich text editor.
+- Statistics and automatic activity recording — allows you to access insights about your long term progress and career development through a statistics dashboard.
+- Social networking.
+    - Connect with other users, see the resumes they have chosen to upload.
+    - Receive valuable constructive criticism for your public resume and job profile from your peers. Leave feedback for your peers and the community will vote you up.
+    - Automatically constructs a profile for you, based on a resume you upload (an opt-in experience). This was built using a deep learning model!
+
+## Background
+
+This project was part of the [SENG2021](https://www.handbook.unsw.edu.au/undergraduate/courses/2022/SENG2021) 
+software engineering project course at UNSW. It felt pretty much like an extended
+hackathon — I led a team of 4 other members and we worked tirelessly to learn
+a bunch of technologies in a short amount of time (around 8 weeks) and pumping
+out a lot of code of questionable quality. At the end, we had to pitch our
+project to mock investors by providing a 10-minute video and answering a judge
+panel for a couple of minutes (like how you would in a hackathon). We were 
+fortunate to win! Macquarie Bank gave us a generous lump sum as a prize and we
+were invited to receive an engineering award at UNSW.
+
+We ideated as a team for a solid 2 weeks before settling on the idea of producing a tool to
+aid in our shared struggle against the biggest engineering student challenge 
+ — *getting an internship*. The idea spawned from our complaints about how much
+of a logistical and organisational nightmare it was to track all your job applications,
+visualise the status of each of them, and understand your long-term progress.
+From these high-level problems, we derived low-level pain points and generated
+user stories from them, and executed on Agile principles of project
+management over the next couple of weeks to ship a solution. In the end, we built
+a fairly large system, but it was incredibly rushed, unsurprisingly. We had very
+little testing (which to be fair, was not something that would give us the edge
+against the competition, especially in such a short time), we had a huge set of
+features in the project which quickly led to us building out something generalised
+rather than specialised in solving the original problems we identified. It was
+all a fantastic learning experience, and I definitely realised how crap of an
+engineer I was. I convinced myself that winning meant having the richest feature
+set. In my opinion, we identified a compelling niche set of problems and we simply
+got lucky that we literally weren't given sufficient time to show just how
+much we deviated from solving the original problems. In other words, if we continued
+our wild hackathon-like execution for a few months rather than a couple of weeks,
+we would have crumbled for sure.
+
+I still cringe really hard hearing the words I say in [this demo video](https://www.youtube.com/watch?v=VoWjZLe-DFs), and how I sped
+up the video to meet the 10-minute time limit on the video submission.
+I recorded the demo with a Blue Yeti microphone, but had the wrong input
+selected when I hit record (instead, all my beautiful utterances were captured
+by a crappy $20 Chinese webcam that happened to have a potato microphone embedded inside that I had no
+knowledge of). It was a pretty rushed mini-project getting that demo recorded.
+Since then, I've learned a lot more about pitching and the importance of a 
+polished and 'put-together' presentation.
+
+I'm also still cringing hard about the UI design, which I'm embarrassed to think
+looked okay back then. One year after concluding the project,
+I think the UI quality is passable at best.
+I always felt a disconnect between the frontends I built out and the
+frontends of polished apps and websites backed by enterprises. At the time, I
+just thought that having an aesthetic design was just an artsy skill, but it's
+actually a decently rigorous principle-driven engineering process. Reading
+[Refactoring UI](https://www.refactoringui.com/) really opened my eyes to all
+the mistakes I had made with my frontend projects.
