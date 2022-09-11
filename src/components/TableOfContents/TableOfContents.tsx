@@ -53,7 +53,9 @@ const TableOfContents: React.FC<Props> = ({ blogContentsContainerId }) => {
     return headings && headings.length > 0 ? (
         <ol className={styles.tableOfContents}>
             <li className={styles.title}>
-                <Link href={"#"}>Table of Contents</Link>
+                <Link href={"#"} scroll={false}>
+                    Table of Contents
+                </Link>
             </li>
             {headings.map((heading) => (
                 <li
@@ -66,7 +68,7 @@ const TableOfContents: React.FC<Props> = ({ blogContentsContainerId }) => {
                     }}
                     key={heading.text}
                 >
-                    <Link href={`#${urlify(heading.text)}`}>
+                    <Link href={`#${urlify(heading.text)}`} scroll={false}>
                         {heading.text}
                     </Link>
                 </li>

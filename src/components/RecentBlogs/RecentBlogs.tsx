@@ -14,7 +14,10 @@ const RecentBlogs: React.FC<Props> = ({ blogs }) => {
             {blogs &&
                 blogs.map((blog) => (
                     <li className={styles.blog} key={blog.frontmatter.title}>
-                        <Link href={`/blogs/${blog.category}/${blog.slug}`}>
+                        <Link
+                            href={`/blogs/${blog.category}/${blog.slug}`}
+                            scroll={false}
+                        >
                             {blog.frontmatter.title}
                         </Link>
                     </li>

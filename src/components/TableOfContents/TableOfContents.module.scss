@@ -13,7 +13,9 @@ $stickyTableWidth: 15rem;
         margin-left: $spacing-sm;
         font-weight: bold;
         font-family: $code-font-stack;
-        font-size: larger;
+        font-size: $font-size-xl;
+        margin-bottom: $spacing-sm;
+
         a {
             text-decoration: none;
         }

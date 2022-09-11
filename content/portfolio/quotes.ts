@@ -61,6 +61,9 @@ const quoteBank: QuoteData[] = [
         quote: "Why doesn't C++ have automatic garbage collection? Because there would be nothing left.",
         source: "https://www.reddit.com/r/AskReddit/comments/2kvhmz/whats_the_best_programming_joke_that_you_know/",
     },
+    {
+        quote: "There are two hard problems in computer science: cache invalidation, naming things, and off-by-one errors.",
+    },
 ];
 
 export const getRandomQuote = (): QuoteData => {

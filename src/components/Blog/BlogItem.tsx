@@ -23,7 +23,7 @@ const BlogItem: React.FC<Props> = ({ blog }) => {
             }`}
         >
             <div className={styles.thumbnail}>
-                <Link href={link}>
+                <Link href={link} scroll={false}>
                     <a>
                         <Image
                             src={
@@ -39,7 +39,7 @@ const BlogItem: React.FC<Props> = ({ blog }) => {
                 </Link>
             </div>
             <div className={styles.details}>
-                <Link href={link}>
+                <Link href={link} scroll={false}>
                     <a className={styles.title}>
                         <h2>{blog.frontmatter.title}</h2>
                     </a>

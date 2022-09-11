@@ -44,5 +44,15 @@ html {
 
     p {
         line-height: $line-spacing-md;
+        font-family: $regular-font-stack;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: $code-font-stack;
     }
 }

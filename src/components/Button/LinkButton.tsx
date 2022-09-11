@@ -14,7 +14,7 @@ const LinkButton: React.FC<LinkButtonProps> = (props) => {
         target: "_blank",
     };
     return (
-        <Link href={props.href}>
+        <Link href={props.href} scroll={false}>
             <a className={styles.linkButton} {...openInNewTabProps}>
                 <Button {...props} />
             </a>

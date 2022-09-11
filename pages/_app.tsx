@@ -42,7 +42,11 @@ const App = ({ Component, pageProps, router }: AppProps) => {
             </Head>
 
             {/* Only show the particle wallpaper when on blog routes. */}
-            <AnimatePresence exitBeforeEnter>
+            <AnimatePresence
+                mode="wait"
+                initial={false}
+                onExitComplete={() => window.scrollTo(0, 0)}
+            >
                 <ParticleWallpaper
                     darkOverlayForUrls={
                         new Set<string>([
@@ -59,7 +63,11 @@ const App = ({ Component, pageProps, router }: AppProps) => {
                        new page, the current page must fully animate out BEFORE
                        the new page can come in. */}
             <BlogContext.Provider value={{ searchQuery, setSearchQuery }}>
-                <AnimatePresence exitBeforeEnter>
+                <AnimatePresence
+                    mode="wait"
+                    initial={false}
+                    onExitComplete={() => window.scrollTo(0, 0)}
+                >
                     {router.pathname.startsWith("/blogs") ? (
                         <BlogLayout>
                             <Component {...pageProps} key={router.route} />
