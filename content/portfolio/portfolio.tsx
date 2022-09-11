@@ -341,7 +341,7 @@ const portfolio: PortfolioData = {
             company: "Google",
             employmentType: "Full-Time",
             team: "",
-            from: "January 2021",
+            from: "January 2022",
             to: "...",
             technologies: [],
             Description: GoogleSoftwareEngineer,
