@@ -81,7 +81,7 @@ const BlogLayout: React.FC<Props> = ({ children }) => {
             >
                 <ContentContainer
                     className={styles.topBar}
-                    maxWidth={"52rem"}
+                    maxWidth={"67rem"}
                     padding={"18px"}
                 >
                     <Breadcrumbs
