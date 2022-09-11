@@ -7,7 +7,7 @@
         padding: $spacing-xxs;
         height: 18px;
         width: 18px;
-        border: 2px solid rgba($dark-text-colour, 0.5);
+        border: 2px solid rgba($cool-grey-900, 0.2);
         background-color: rgba($primary-100, 0.3);
         border-radius: 50%;
         position: relative;
@@ -20,6 +20,8 @@
             top: 50%;
             left: 50%;
             transform: translateX(-50%) translateY(-50%);
+            height: 16px;
+            width: 16px;
         }
 
         &:hover {
@@ -45,5 +47,19 @@
         left: 50%;
         transform: translateX(-50%);
         bottom: $spacing-sm;
+    }
+}
+
+@media screen and (max-width: $md) {
+    .socialLinkContainer {
+        .socialLink {
+            height: 10px;
+            width: 10px;
+
+            svg {
+                height: 12px;
+                width: 12px;
+            }
+        }
     }
 }

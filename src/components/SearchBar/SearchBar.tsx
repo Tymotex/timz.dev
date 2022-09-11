@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { DarkModeContext } from "src/contexts/LightDarkThemeProvider";
+import { ThemeContext } from "src/contexts/ThemeProvider";
 import { BsSearch as SearchIcon } from "react-icons/bs";
 import styles from "./SearchBar.module.scss";
 
@@ -9,7 +9,7 @@ interface Props {
 }
 
 const SearchBar: React.FC<Props> = ({ query, setQuery }) => {
-    const theme = useContext(DarkModeContext);
+    const theme = useContext(ThemeContext);
 
     return (
         <div className={styles.searchBar}>

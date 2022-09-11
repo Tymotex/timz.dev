@@ -4,10 +4,7 @@ import results from "artifacts/.jest-test-results.json";
 import { withTests } from "@storybook/addon-jest";
 import Breadcrumbs from "./Breadcrumbs";
 import { withReactContext } from "storybook-react-context";
-import {
-    DarkModeContext,
-    DarkModeContextProps,
-} from "src/contexts/LightDarkThemeProvider";
+import { ThemeContext, ThemeContextProps } from "src/contexts/ThemeProvider";
 
 export default {
     title: "Portfolio/Breadcrumbs",
@@ -18,10 +15,10 @@ export default {
     decorators: [
         withTests({ results }),
         withReactContext({
-            Context: DarkModeContext,
+            Context: ThemeContext,
             initialState: {
                 isDarkMode: localStorage.getItem("isDarkMode") === "true",
-            } as Partial<DarkModeContextProps>,
+            } as Partial<ThemeContextProps>,
         }),
     ],
 } as ComponentMeta<typeof Breadcrumbs>;

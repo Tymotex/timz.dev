@@ -1,7 +1,7 @@
 // A very minimal component used to sanity check MDX bundling, Storybook
 // rendering, SCSS styling and other things. Not meant for production!
 import { FC } from "react";
-import { useDarkMode } from "src/contexts/LightDarkThemeProvider";
+import { useDarkMode } from "src/contexts/ThemeProvider";
 import styles from "./SampleComponent.module.scss";
 
 interface Props {

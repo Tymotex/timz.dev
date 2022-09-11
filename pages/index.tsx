@@ -7,6 +7,7 @@ import { Button, LinkButton } from "src/components/Button";
 import CentralContainer from "src/components/Container/CentralContainer";
 import ContentContainer from "src/components/Container/ContentContainer";
 import { MiniDivider } from "src/components/Divider";
+import { GradientSelector } from "src/components/Particles";
 import { Quote } from "src/components/Quote";
 import { Socials } from "src/components/Socials";
 import { Stack } from "src/components/Stack";
@@ -55,7 +56,12 @@ const Home: NextPage = () => {
                         rowGap={10}
                         className={styles.buttonStack}
                     >
-                        <LinkButton colour="primary" text="Work" href="/work" shape="pill" />
+                        <LinkButton
+                            colour="primary"
+                            text="Work"
+                            href="/work"
+                            shape="pill"
+                        />
                         <LinkButton
                             colour="primary"
                             text="Projects"
@@ -86,6 +92,7 @@ const Home: NextPage = () => {
                 ]}
             />
             <Quote quote={getRandomQuote()} />
+            <GradientSelector />
         </motion.div>
     );
 };

@@ -5,10 +5,7 @@ import { withTests } from "@storybook/addon-jest";
 import Window from "./Window";
 
 import { withReactContext } from "storybook-react-context";
-import {
-    DarkModeContext,
-    DarkModeContextProps,
-} from "src/contexts/LightDarkThemeProvider";
+import { ThemeContext, ThemeContextProps } from "src/contexts/ThemeProvider";
 import ContentContainer from "src/components/Container/ContentContainer";
 
 export default {
@@ -20,10 +17,10 @@ export default {
     decorators: [
         withTests({ results }),
         withReactContext({
-            Context: DarkModeContext,
+            Context: ThemeContext,
             initialState: {
                 isDarkMode: localStorage.getItem("isDarkMode") === "true",
-            } as Partial<DarkModeContextProps>,
+            } as Partial<ThemeContextProps>,
         }),
     ],
 } as ComponentMeta<typeof Window>;

@@ -4,10 +4,7 @@ import results from "artifacts/.jest-test-results.json";
 import { withTests } from "@storybook/addon-jest";
 import SampleComponent from "./SampleComponent";
 import { withReactContext } from "storybook-react-context";
-import {
-    DarkModeContext,
-    DarkModeContextProps,
-} from "src/contexts/LightDarkThemeProvider";
+import { ThemeContext, ThemeContextProps } from "src/contexts/ThemeProvider";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -20,10 +17,10 @@ export default {
     decorators: [
         withTests({ results }),
         withReactContext({
-            Context: DarkModeContext,
+            Context: ThemeContext,
             initialState: {
                 isDarkMode: false,
-            } as Partial<DarkModeContextProps>,
+            } as Partial<ThemeContextProps>,
         }),
     ],
 } as ComponentMeta<typeof SampleComponent>;

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useContext } from "react";
 import { BlogInfo } from "scripts/blogs";
-import { DarkModeContext } from "src/contexts/LightDarkThemeProvider";
+import { ThemeContext } from "src/contexts/ThemeProvider";
 import { ChipGroup } from "../ChipGroup";
 import { MiniDivider } from "../Divider";
 import styles from "./Blog.module.scss";
@@ -14,7 +14,7 @@ interface Props {
 const BlogItem: React.FC<Props> = ({ blog }) => {
     const link = `/blogs/${blog.category}/${blog.slug}`;
     const defaultThumbnail = "/og-image.avif";
-    const theme = useContext(DarkModeContext);
+    const theme = useContext(ThemeContext);
 
     return (
         <li

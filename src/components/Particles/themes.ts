@@ -1,23 +1,25 @@
 interface GradientTheme {
     name: string;
-    css: ``;
+    css: string;
 }
 
-const gradientThemes = [
+// Various aesthetic gradients to apply to the background.
+// Mustn't be empty.
+const gradientThemes: GradientTheme[] = [
     {
-        name: "love couple",
+        name: "🌊 Red Ocean",
         css: `
             linear-gradient(90deg, rgb(88, 24, 40), rgb(20 37 53))
         `,
     },
-    // {
-    //     name: "mauve",
-    //     css: `linear-gradient(to right, #42275a, #734b6d)`,
-    // },
-    // {
-    //     name: "Ocean",
-    //     css: `linear-gradient(45deg, rgb(18 16 42) 0%, rgb(102 115 148) 100%)`,
-    // },
+    {
+        name: "🌙 Twilight",
+        css: `linear-gradient(70deg, #200122, #4f0202)`,
+    },
+    {
+        name: "🐬 Subnautica",
+        css: `linear-gradient(120deg, #000428, #183147)`,
+    },
 ];
 
 export default gradientThemes;
