@@ -2,7 +2,7 @@ import { useRect } from "@reach/rect";
 import { Tab, useTabsContext } from "@reach/tabs";
 import Image from "next/image";
 import React, { useContext } from "react";
-import { useIsomorphicLayoutEffect } from "src/hooks/windowHooks";
+import { useIsomorphicLayoutEffect } from "src/hooks/window";
 import { AnimatedContext, HORIZONTAL_PADDING } from "./AnimatedTabGroup";
 import styles from "./AnimatedTabs.module.scss";
 

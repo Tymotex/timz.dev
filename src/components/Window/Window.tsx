@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 import { IoMdClose as CloseIcon } from "react-icons/io";
-import { OutsideClickHandler, useClickOutside } from "src/hooks/windowHooks";
+import { OutsideClickHandler, useClickOutside } from "src/hooks/window";
 import Breadcrumbs from "../Breadcrumbs";
 import { Crumb } from "../Breadcrumbs/Breadcrumbs";
 import styles from "./Window.module.scss";

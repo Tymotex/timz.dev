@@ -4,7 +4,7 @@ import {
     MdChevronRight as ChevronRight,
     MdChevronLeft as ChevronLeft,
 } from "react-icons/md";
-import { useBreakpointTrigger } from "src/hooks/windowHooks";
+import { useBreakpointTrigger } from "src/hooks/window";
 import styles from "./Breadcrumbs.module.scss";
 
 export interface Crumb {

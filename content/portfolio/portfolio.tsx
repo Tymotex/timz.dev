@@ -310,22 +310,6 @@ const portfolio: PortfolioData = {
                 demoUrl: "https://transperler.timz.dev",
             },
             {
-                title: "Hydroponix",
-                blogSlug: "Hydroponix",
-                imageUrl:
-                    "https://raw.githubusercontent.com/Tymotex/Hydroponix/master/static/thumbnail.png",
-                description: `An IoT automated plant propagation system built with Python on the Raspberry Pi Zero W.`,
-                githubUrl: "https://github.com/Tymotex/Hydroponix",
-                technologies: [
-                    "Raspberry Pi",
-                    "Flask",
-                    "InfluxDB",
-                    "Python",
-                    "JavaScript",
-                    "Bootstrap",
-                ],
-            },
-            {
                 title: "Autonomous Container Delivery Robot",
                 blogSlug: "Deliv-O-Bot",
                 imageUrl: "/images/projects/deliv-o-bot.png",
@@ -341,7 +325,7 @@ const portfolio: PortfolioData = {
             company: "Google",
             employmentType: "Full-Time",
             team: "",
-            from: "January 2021",
+            from: "January 2022",
             to: "...",
             technologies: [],
             Description: GoogleSoftwareEngineer,

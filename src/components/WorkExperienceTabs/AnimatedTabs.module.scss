@@ -15,6 +15,10 @@ $tab-panel-min-height: 300px;
         flex-direction: column;
         border-left: $slider-track;
 
+        button {
+            font-size: $font-size-md;
+        }
+
         overflow: auto;
     }
     .currentTabHighlighter {
@@ -48,6 +52,10 @@ $tab-panel-min-height: 300px;
         background: $cool-grey-300;
         padding: $spacing-md;
         height: fit-content;
+
+        // This gets inherited by the work description text.
+        line-height: 1.7;
+
         @include elevation-shadow-square;
 
         .jobTitle {
@@ -86,6 +94,10 @@ $tab-panel-min-height: 300px;
             height: fit-content;
 
             overflow: auto;
+
+            button {
+                text-align: left;
+            }
 
             .companyLogo {
                 transition: all $tab-switch-duration-ease;

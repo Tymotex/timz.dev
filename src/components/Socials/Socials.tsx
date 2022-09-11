@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Socials.module.scss";
 import { motion } from "framer-motion";
-import { useBreakpointTrigger } from "src/hooks/windowHooks";
+import { useBreakpointTrigger } from "src/hooks/window";
 
 export interface SocialLinkData {
     icon: React.ReactNode;

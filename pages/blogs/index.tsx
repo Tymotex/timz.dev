@@ -69,7 +69,7 @@ const BlogIndex: NextPage<Props> = ({ blogs, recentBlogs }) => {
     return (
         <>
             <Head>
-                <title>Blogs</title>
+                <title>Dev Blogs</title>
             </Head>
             <div className={styles.mainContainer}>
                 <RecentBlogs blogs={recentBlogs} />
@@ -84,12 +84,15 @@ const BlogIndex: NextPage<Props> = ({ blogs, recentBlogs }) => {
                                 {softwareEngineeringBlogs.length !== 1 && "s"}.
                             </aside>
                         </div>
-                        <MiniDivider />
                         <p className={styles.description}>
-                            Informative articles on useful technologies and how
-                            some cool things work.
+                            Articles on technologies and other cool things.
                         </p>
-                        <BlogList blogs={softwareEngineeringBlogs} />
+                        <MiniDivider />
+                        {softwareEngineeringBlogs?.length > 0 ? (
+                            <BlogList blogs={softwareEngineeringBlogs} />
+                        ) : (
+                            <p>No articles found, sorry.</p>
+                        )}
                     </section>
                     <section className={styles.blogSection}>
                         <div className={styles.blogSectionHeader}>
@@ -104,7 +107,11 @@ const BlogIndex: NextPage<Props> = ({ blogs, recentBlogs }) => {
                             Details about some software engineering projects
                             that I&apos;ve worked on.
                         </p>
-                        <BlogList blogs={projectBlogs} />
+                        {projectBlogs?.length > 0 ? (
+                            <BlogList blogs={projectBlogs} />
+                        ) : (
+                            <p>No articles found, sorry.</p>
+                        )}
                     </section>
                 </ContentContainer>
             </div>

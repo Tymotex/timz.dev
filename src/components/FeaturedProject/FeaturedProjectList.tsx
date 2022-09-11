@@ -1,6 +1,6 @@
 import portfolio, { Project } from "content/portfolio/portfolio";
 import React from "react";
-import { useBreakpointTrigger } from "src/hooks/windowHooks";
+import { useBreakpointTrigger } from "src/hooks/window";
 import FeaturedProject from "./FeaturedProject";
 import styles from "./FeaturedProject.module.scss";
 

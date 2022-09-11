@@ -6,7 +6,7 @@ import {
     MdOutlineArrowRightAlt as RightArrowIcon,
     MdOutlineOpenInNew as DemoIcon,
 } from "react-icons/md";
-import { useBreakpointTrigger } from "src/hooks/windowHooks";
+import { useBreakpointTrigger } from "src/hooks/window";
 import { Button } from "../Button";
 import { SubtleDivider } from "../Divider";
 import styles from "./ProjectCard.module.scss";

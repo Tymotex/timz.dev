@@ -6,7 +6,7 @@ import Head from "next/head";
 import { useState } from "react";
 import "src/blog-components/global.scss";
 import { ThemeProvider } from "src/contexts/ThemeProvider";
-import { useTransitionFix } from "src/hooks/routerHooks";
+import { useTransitionFix } from "src/hooks/router";
 import "styles/global.scss";
 
 /* --------------------------- Global blog styles --------------------------- */

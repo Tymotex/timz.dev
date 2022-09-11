@@ -1,7 +1,7 @@
 import { useRect } from "@reach/rect";
 import { Tabs } from "@reach/tabs";
 import React, { Dispatch, SetStateAction } from "react";
-import { useBreakpointTrigger } from "src/hooks/windowHooks";
+import { useBreakpointTrigger } from "src/hooks/window";
 import styles from "./AnimatedTabs.module.scss";
 
 export const HORIZONTAL_PADDING = 8;
