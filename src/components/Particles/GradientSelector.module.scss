@@ -1,0 +1,52 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+.selector {
+    @include reset-button-styles;
+
+    position: fixed;
+    bottom: $spacing-sm;
+    right: $spacing-sm;
+    cursor: pointer;
+    background: rgba($cool-grey-300, 0.5);
+
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 100ms ease-in-out;
+
+    &:hover {
+        background: $cool-grey-500;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+            rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    }
+
+    .icon {
+        color: $cool-grey-800;
+        font-size: 21px;
+    }
+}
+
+.menuList {
+    background: $cool-grey-100 !important;
+    border-radius: 10px;
+    color: $dark-text-colour;
+}
+
+@media screen and (max-width: $md) {
+    // Downscale the selector so that it fits at the bottom with the other
+    // footer UI.
+    .selector {
+        width: 24px;
+        height: 24px;
+
+        .icon {
+            font-size: 16px;
+        }
+    }
+}

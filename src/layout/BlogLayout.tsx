@@ -11,7 +11,7 @@ import { DarkModeToggler } from "src/components/DarkModeToggler";
 import { SearchBar } from "src/components/SearchBar";
 import { Socials } from "src/components/Socials";
 import { BlogContext } from "src/contexts/BlogContext";
-import { DarkModeContext } from "src/contexts/LightDarkThemeProvider";
+import { ThemeContext } from "src/contexts/ThemeProvider";
 import { TagFilter } from "src/components/TagFilter";
 import { useBreakpointTrigger } from "src/hooks/windowHooks";
 
@@ -21,7 +21,7 @@ interface Props {
 
 const BlogLayout: React.FC<Props> = ({ children }) => {
     const router = useRouter();
-    const theme = useContext(DarkModeContext);
+    const theme = useContext(ThemeContext);
     const blogContext = useContext(BlogContext);
     const isSmallScreen = useBreakpointTrigger(600);
     const isOnIndexPage = router.pathname === "/blogs";

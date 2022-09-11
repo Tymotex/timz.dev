@@ -1,13 +1,15 @@
 @import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
 
 .quote {
     font-family: $regular-font-stack;
-    border-left: 5px solid $cool-grey-300;
-    background: hsla(0, 0%, 0%, 0.1);
-    padding: $spacing-xs 0px;
+    border-left: 5px solid $cool-grey-400;
+    background: hsla(0, 0%, 0%, 0.25);
+    padding: $spacing-xs $spacing-sm $spacing-xs 0;
     margin: 0px $spacing-sm;
     width: 100%;
     max-width: $sm;
+    border-radius: 0 10px 10px 0;
 
     // Bottom center the quote.
     position: fixed;
@@ -20,13 +22,33 @@
         color: $dark-text-colour;
         margin: 0px $spacing-sm $spacing-xs $spacing-sm;
     }
+
     p {
         margin: 0;
         color: $cool-grey-800;
     }
+
     figcaption {
         margin: 0px $spacing-sm 0px $spacing-sm;
         color: $cool-grey;
+    }
+
+    .randomiseButton {
+        @include reset-button-styles;
+        position: absolute;
+        right: $spacing-xs;
+        bottom: $spacing-xs;
+        cursor: pointer;
+
+        transition: all 100ms ease-in-out;
+
+        .icon {
+            font-size: $font-size-xl;
+        }
+
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 }
 

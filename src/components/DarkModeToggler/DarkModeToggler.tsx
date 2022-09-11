@@ -3,13 +3,13 @@ import {
     BsMoonStarsFill as MoonIcon,
     BsSunFill as SunIcon,
 } from "react-icons/bs";
-import { DarkModeContext } from "src/contexts/LightDarkThemeProvider";
+import { ThemeContext } from "src/contexts/ThemeProvider";
 import styles from "./DarkModeToggler.module.scss";
 
 interface Props {}
 
 const DarkModeToggler: React.FC<Props> = () => {
-    const theme = useContext(DarkModeContext);
+    const theme = useContext(ThemeContext);
 
     return (
         <button

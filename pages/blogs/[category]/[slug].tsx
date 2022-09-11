@@ -13,7 +13,7 @@ import ContentContainer from "src/components/Container/ContentContainer";
 import { SubtleDivider } from "src/components/Divider";
 import { Loader } from "src/components/Loader";
 import { TableOfContents } from "src/components/TableOfContents";
-import { DarkModeContext } from "src/contexts/LightDarkThemeProvider";
+import { ThemeContext } from "src/contexts/ThemeProvider";
 import { getBlogDate } from "src/util/dateUtils";
 import { getHeadings } from "src/util/getBlogComponents";
 import styles from "./BlogPage.module.scss";
@@ -58,7 +58,7 @@ interface Heading {
 
 const BlogIndex: NextPage<Props> = ({ blog }) => {
     const router = useRouter();
-    const theme = useContext(DarkModeContext);
+    const theme = useContext(ThemeContext);
 
     // Blog MDX component.
     const Blog = useMemo(

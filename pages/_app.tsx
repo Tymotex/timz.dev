@@ -5,7 +5,7 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import { useState } from "react";
 import "src/blog-components/global.scss";
-import { DarkModeProvider } from "src/contexts/LightDarkThemeProvider";
+import { ThemeProvider } from "src/contexts/ThemeProvider";
 import { useTransitionFix } from "src/hooks/routerHooks";
 import "styles/global.scss";
 
@@ -21,12 +21,15 @@ import { BlogContext } from "src/contexts/BlogContext";
 import { BlogLayout } from "src/layout";
 import { ParticleWallpaper } from "src/components/Particles";
 
+// Menu button default styles. See: https://reach.tech/menu-button
+import "@reach/menu-button/styles.css";
+
 const App = ({ Component, pageProps, router }: AppProps) => {
     const [searchQuery, setSearchQuery] = useState<string>("");
     useTransitionFix();
 
     return (
-        <DarkModeProvider>
+        <ThemeProvider>
             <Head>
                 <title>{portfolio.meta.mainTitle}</title>
                 <meta
@@ -77,7 +80,7 @@ const App = ({ Component, pageProps, router }: AppProps) => {
                     )}
                 </AnimatePresence>
             </BlogContext.Provider>
-        </DarkModeProvider>
+        </ThemeProvider>
     );
 };
 

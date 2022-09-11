@@ -1,7 +1,30 @@
 import { IOptions, RecursivePartial } from "tsparticles";
 
 const networkOptions: RecursivePartial<IOptions> = {
-    fpsLimit: 20,
+    fpsLimit: 30,
+    interactivity: {
+        events: {
+            onHover: {
+                enable: true,
+                mode: "grab",
+            },
+            onClick: {
+                enable: true,
+                mode: "push",
+            },
+        },
+        modes: {
+            grab: {
+                distance: 140,
+                line_linked: {
+                    opacity: 1,
+                },
+            },
+            push: {
+                particles_nb: 1,
+            },
+        },
+    },
     particles: {
         // color: {
         //     value: particleTheme.particleColor,
@@ -20,7 +43,7 @@ const networkOptions: RecursivePartial<IOptions> = {
         },
         move: {
             enable: true,
-            speed: 0.2,
+            speed: 0.6,
             direction: "none",
             random: false,
             straight: false,

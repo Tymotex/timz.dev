@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Particles from "react-tsparticles";
 import { ParticleType, getParticleOptions } from ".";
 import themes from "./themes";
 import styles from "./ParticleWallpaper.module.scss";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
+import { ThemeContext } from "src/contexts/ThemeProvider";
 
 interface Props {
     particleType?: ParticleType;
@@ -17,14 +18,15 @@ const ParticleWallpaper: React.FC<Props> = ({
 }) => {
     const [targetOpacity, setOpacity] = useState<number>(0);
     const router = useRouter();
+    const themeContext = useContext(ThemeContext);
 
     // Forcefully set gradient to a selected theme.
     useEffect(() => {
-        const selectedTheme = themes[Math.floor(Math.random() * themes.length)];
+        const selectedTheme = themes[themeContext.particleThemeIndex];
         const body = document.getElementById("header-container");
         if (!body) return;
         body.style.background = selectedTheme.css;
-    }, []);
+    }, [themeContext.particleThemeIndex]);
 
     // When the path is specified in `darkOverlayForUrls`, then darken the
     // overlay to create a backdrop effect.

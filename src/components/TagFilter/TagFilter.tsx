@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { ChipGroup } from "../ChipGroup";
 import { IoMdClose as CloseIcon } from "react-icons/io";
-import { DarkModeContext } from "src/contexts/LightDarkThemeProvider";
+import { ThemeContext } from "src/contexts/ThemeProvider";
 import {
     Combobox,
     ComboboxOption,
@@ -17,7 +17,7 @@ interface Props {
 }
 
 const TagFilter: React.FC<Props> = ({ tags }) => {
-    const theme = useContext(DarkModeContext);
+    const theme = useContext(ThemeContext);
 
     return (
         <div className={styles.tagFilter}>
