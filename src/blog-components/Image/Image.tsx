@@ -47,7 +47,7 @@ const BlogImage: React.FC<Props> = ({
         return () => {
             document.removeEventListener("keydown", zoomOut, false);
         };
-    }, []);
+    }, [zoomOut]);
 
     return (
         <>

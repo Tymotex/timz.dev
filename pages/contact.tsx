@@ -4,7 +4,7 @@ import { ContactForm } from "src/components/ContactForm";
 import ContentContainer from "src/components/Container/ContentContainer";
 import { SectionDivider } from "src/components/Divider";
 import { Window } from "src/components/Window";
-import { useRedirectHome } from "src/hooks/routerHooks";
+import { useRedirectHome } from "src/hooks/router";
 import styles from "./Contact.module.scss";
 
 const Contact: NextPage = () => {

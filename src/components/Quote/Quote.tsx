@@ -1,6 +1,6 @@
-import { getRandomQuote } from "content/portfolio/quotes";
+import { getRandomQuote, QuoteData } from "content/portfolio/quotes";
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { GiRollingDices as DiceIcon } from "react-icons/gi";
 import {
     RiDoubleQuotesL as DoubleQuoteStart,
@@ -11,9 +11,11 @@ import styles from "./Quote.module.scss";
 interface Props {}
 
 const Quote: React.FC<Props> = () => {
-    const [quoteData, setQuoteData] = useState(getRandomQuote());
+    const [quoteData, setQuoteData] = useState<QuoteData>();
 
-    const { quote, author, source, url } = quoteData;
+    useEffect(() => {
+        setQuoteData(getRandomQuote());
+    }, [setQuoteData]);
 
     return (
         <motion.figure
@@ -22,28 +24,38 @@ const Quote: React.FC<Props> = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.75 }}
         >
-            <blockquote cite={url}>
-                <p>
-                    <DoubleQuoteStart />
-                    {quote}
-                    <DoubleQuoteEnd />
-                    {source && (
-                        <em>
-                            {" "}
-                            <a href={source} target="_blank" rel="noreferrer">
-                                (source)
-                            </a>
-                        </em>
+            {quoteData && (
+                <>
+                    <blockquote cite={quoteData.url}>
+                        <p>
+                            <DoubleQuoteStart />
+                            {quoteData.quote}
+                            <DoubleQuoteEnd />
+                            {quoteData.source && (
+                                <em>
+                                    {" "}
+                                    <a
+                                        href={quoteData.source}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                    >
+                                        (source)
+                                    </a>
+                                </em>
+                            )}
+                            <button
+                                className={styles.randomiseButton}
+                                onClick={() => setQuoteData(getRandomQuote())}
+                            >
+                                <DiceIcon className={styles.icon} />
+                            </button>
+                        </p>
+                    </blockquote>
+                    {quoteData.author && (
+                        <figcaption>&ndash; {quoteData.author}</figcaption>
                     )}
-                    <button
-                        className={styles.randomiseButton}
-                        onClick={() => setQuoteData(getRandomQuote())}
-                    >
-                        <DiceIcon className={styles.icon} />
-                    </button>
-                </p>
-            </blockquote>
-            {author && <figcaption>&ndash; {author}</figcaption>}
+                </>
+            )}
         </motion.figure>
     );
 };

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import type { NextPage } from "next";
 import SectionDivider from "src/components/Divider/SectionDivider";
 import { Window } from "src/components/Window";
-import { useRedirectHome } from "src/hooks/routerHooks";
+import { useRedirectHome } from "src/hooks/router";
 
 const About: NextPage = () => {
     const redirectToHome = useRedirectHome();

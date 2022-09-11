@@ -58,5 +58,5 @@ export const useTransitionFix = () => {
                     : Router.router?.asPath,
             query: params,
         });
-    }, [Router.router]);
+    }, []);
 };

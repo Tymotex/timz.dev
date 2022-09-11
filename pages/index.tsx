@@ -13,7 +13,7 @@ import { Quote } from "src/components/Quote";
 import { Socials } from "src/components/Socials";
 import { Stack } from "src/components/Stack";
 import { Typewriter } from "src/components/Typewriter";
-import { useBreakpointTrigger } from "src/hooks/windowHooks";
+import { useBreakpointTrigger } from "src/hooks/window";
 import styles from "./Landing.module.scss";
 
 const Home: NextPage = () => {

@@ -7,8 +7,8 @@ import { SectionDivider } from "src/components/Divider";
 import { EducationItem } from "src/components/Education";
 import { Window } from "src/components/Window";
 import { WorkExperienceTabs } from "src/components/WorkExperienceTabs";
-import { useRedirectHome } from "src/hooks/routerHooks";
-import { useBreakpointTrigger } from "src/hooks/windowHooks";
+import { useRedirectHome } from "src/hooks/router";
+import { useBreakpointTrigger } from "src/hooks/window";
 
 const Work: NextPage = () => {
     const isSmallScreen = useBreakpointTrigger(480);

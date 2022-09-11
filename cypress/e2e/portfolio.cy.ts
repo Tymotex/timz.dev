@@ -20,7 +20,7 @@ describe("Portfolio page tests", () => {
                 // {
                 //     linkText: "Projects",
                 //     expectedUrl: "/projects",
-                //     headingText: "Main Projects",
+                //     headingText: "Featured Projects",
                 // },
             ];
 

@@ -13,7 +13,9 @@ export default {
     decorators: [withTests({ results })],
 } as ComponentMeta<typeof Image>;
 
-const Template: ComponentStory<typeof Image> = (args) => <Image {...args} />;
+const Template: ComponentStory<typeof Image> = (args) => (
+    <Image {...args} alt="test placeholder" />
+);
 
 export const BasicImage = Template.bind({});
 BasicImage.args = {

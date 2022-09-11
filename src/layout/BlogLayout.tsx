@@ -13,7 +13,7 @@ import { Socials } from "src/components/Socials";
 import { BlogContext } from "src/contexts/BlogContext";
 import { ThemeContext } from "src/contexts/ThemeProvider";
 import { TagFilter } from "src/components/TagFilter";
-import { useBreakpointTrigger } from "src/hooks/windowHooks";
+import { useBreakpointTrigger } from "src/hooks/window";
 
 interface Props {
     children: React.ReactNode;
