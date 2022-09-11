@@ -4,6 +4,7 @@
 .centralContainer {
     // Dark colour scheme.
     background: rgba($color: #000000, $alpha: 0.35);
+    backdrop-filter: blur(2px);
     color: $dark-text-colour;
     @include elevation-shadow;
 

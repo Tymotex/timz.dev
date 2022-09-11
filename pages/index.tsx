@@ -2,6 +2,7 @@ import portfolio from "content/portfolio/portfolio";
 import { getRandomQuote } from "content/portfolio/quotes";
 import { motion } from "framer-motion";
 import type { NextPage } from "next";
+import { useState } from "react";
 import { AsideLinkGroup } from "src/components/AsideLinkGroup";
 import { Button, LinkButton } from "src/components/Button";
 import CentralContainer from "src/components/Container/CentralContainer";
@@ -91,7 +92,7 @@ const Home: NextPage = () => {
                     { text: "Contact", url: "/contact" },
                 ]}
             />
-            <Quote quote={getRandomQuote()} />
+            <Quote />
             <GradientSelector />
         </motion.div>
     );

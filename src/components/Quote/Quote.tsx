@@ -1,15 +1,19 @@
-import React from "react";
-import styles from "./Quote.module.scss";
+import { getRandomQuote } from "content/portfolio/quotes";
 import { motion } from "framer-motion";
-import { QuoteData } from "content/portfolio/quotes";
-import { RiDoubleQuotesL as DoubleQuoteStart, RiDoubleQuotesR as DoubleQuoteEnd } from 'react-icons/ri';
+import React, { useState } from "react";
+import { GiRollingDices as DiceIcon } from "react-icons/gi";
+import {
+    RiDoubleQuotesL as DoubleQuoteStart,
+    RiDoubleQuotesR as DoubleQuoteEnd,
+} from "react-icons/ri";
+import styles from "./Quote.module.scss";
 
-interface Props {
-    quote: QuoteData;
-}
+interface Props {}
 
-const Quote: React.FC<Props> = ({ quote }) => {
-    const { quote: message, author, source, url } = quote;
+const Quote: React.FC<Props> = () => {
+    const [quoteData, setQuoteData] = useState(getRandomQuote());
+
+    const { quote, author, source, url } = quoteData;
 
     return (
         <motion.figure
@@ -20,7 +24,9 @@ const Quote: React.FC<Props> = ({ quote }) => {
         >
             <blockquote cite={url}>
                 <p>
-                    <DoubleQuoteStart />{message}<DoubleQuoteEnd />
+                    <DoubleQuoteStart />
+                    {quote}
+                    <DoubleQuoteEnd />
                     {source && (
                         <em>
                             {" "}
@@ -29,6 +35,12 @@ const Quote: React.FC<Props> = ({ quote }) => {
                             </a>
                         </em>
                     )}
+                    <button
+                        className={styles.randomiseButton}
+                        onClick={() => setQuoteData(getRandomQuote())}
+                    >
+                        <DiceIcon className={styles.icon} />
+                    </button>
                 </p>
             </blockquote>
             {author && <figcaption>&ndash; {author}</figcaption>}
