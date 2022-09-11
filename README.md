@@ -14,7 +14,7 @@
  
 ---
 
-[timz.dev homepage screenshot](/public/images/portfolio-home.png)
+[timz.dev homepage screenshot](public/images/portfolio-home.png)
 
 A developer portfolio and blog, built with React, Next.js and TypeScript, using
 [MDX](https://mdxjs.com/) for writing blog content and LaTeX for mathematical
