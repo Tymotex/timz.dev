@@ -1,26 +1,21 @@
+import OgImage from "public/og-image.avif";
 import {
     FiGithub as GitHubIcon,
-    FiYoutube as YoutubeIcon,
 } from "react-icons/fi";
+import {
+    AiOutlineMail as MailIcon
+} from 'react-icons/ai'
 import { RiLinkedinLine as LinkedInIcon } from "react-icons/ri";
-import { SocialLinkData } from "src/components/Socials/Socials";
 import { Technology } from "src/components/ChipGroup/technologies";
-import OgImage from "public/og-image.avif";
-import UnorderedList from "src/components/UnorderedList";
-import Image from "next/image";
-import { ImageGallery } from "src/components/ImageGallery";
-import { SectionDivider } from "src/components/Divider";
-import ContentContainer from "src/components/Container/ContentContainer";
-import AwardList from "src/components/Education/AwardList";
-import Highlight, { defaultProps } from "prism-react-renderer";
+import { SocialLinkData } from "src/components/Socials/Socials";
 import AboutMe from "./AboutMe";
-import GoogleSoftwareEngineeringIntern from "./work-experience/google-software-engineering-intern";
-import WiseTechAssociateSoftwareDeveloper from "./work-experience/wisetech-associate-software-developer";
-import AccentureTechnicalArchitect from "./work-experience/accenture-technical-architect";
-import UnswCasualAcademicTutor from "./work-experience/unsw-casual-academic-tutor";
 import Education from "./Education";
-import GoogleSoftwareEngineer from "./work-experience/google-software-engineer";
 import ElevatorPitch from "./ElevatorPitch";
+import AccentureTechnicalArchitect from "./work-experience/accenture-technical-architect";
+import GoogleSoftwareEngineer from "./work-experience/google-software-engineer";
+import GoogleSoftwareEngineeringIntern from "./work-experience/google-software-engineering-intern";
+import UnswCasualAcademicTutor from "./work-experience/unsw-casual-academic-tutor";
+import WiseTechAssociateSoftwareDeveloper from "./work-experience/wisetech-associate-software-developer";
 
 interface PortfolioData {
     meta: {
@@ -130,10 +125,15 @@ const portfolio: PortfolioData = {
                 label: "LinkedIn",
             },
             {
-                icon: <YoutubeIcon size={20} aria-hidden />,
-                url: "https://www.youtube.com/channel/UCIuefX9zQPux3lGCkDOdlIQ",
-                label: "YouTube",
-            },
+                icon: <MailIcon size={20} aria-hidden />,
+                url: "mailto:admin@timz.dev",
+                label: "Mail"
+            }
+            // {
+            //     icon: <YoutubeIcon size={20} aria-hidden />,
+            //     url: "https://www.youtube.com/channel/UCIuefX9zQPux3lGCkDOdlIQ",
+            //     label: "YouTube",
+            // },
         ],
         AboutMe: AboutMe,
     },
