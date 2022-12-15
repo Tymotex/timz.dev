@@ -13,6 +13,7 @@ export type Technology =
     | "Docker"
     | "Express"
     | "Flask"
+    | "Firebase"
     | "Gatsby"
     | "Gin"
     | "Go"

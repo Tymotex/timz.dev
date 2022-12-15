@@ -1,10 +1,6 @@
 import OgImage from "public/og-image.avif";
-import {
-    FiGithub as GitHubIcon,
-} from "react-icons/fi";
-import {
-    AiOutlineMail as MailIcon
-} from 'react-icons/ai'
+import { FiGithub as GitHubIcon } from "react-icons/fi";
+import { AiOutlineMail as MailIcon } from "react-icons/ai";
 import { RiLinkedinLine as LinkedInIcon } from "react-icons/ri";
 import { Technology } from "src/components/ChipGroup/technologies";
 import { SocialLinkData } from "src/components/Socials/Socials";
@@ -107,10 +103,12 @@ const portfolio: PortfolioData = {
     },
     profile: {
         headlines: [
-            "a computer science student.",
+            "an incoming software engineer at Google.",
+            "a computer science graduate.",
             "a hobbyist fullstack developer.",
             "an aspiring software engineer.",
             "a lifelong learner.",
+            "a fan of alternative rock and indie.",
         ],
         elevatorPitch: ElevatorPitch,
         socials: [
@@ -127,8 +125,8 @@ const portfolio: PortfolioData = {
             {
                 icon: <MailIcon size={20} aria-hidden />,
                 url: "mailto:admin@timz.dev",
-                label: "Mail"
-            }
+                label: "Mail",
+            },
             // {
             //     icon: <YoutubeIcon size={20} aria-hidden />,
             //     url: "https://www.youtube.com/channel/UCIuefX9zQPux3lGCkDOdlIQ",
@@ -147,7 +145,7 @@ const portfolio: PortfolioData = {
                 description: `Techsuite is a web app that supports realtime 
                 group and direct messaging, networking and sharing ideas 🌱. I
                 built it with React, Flask, PostgreSQL and Socket.io.`,
-                demoUrl: "https://techsuite.dev",
+                demoUrl: "https://techsuite.timz.dev",
                 videoUrl: "https://www.youtube.com/watch?v=C4o2fOCq2cI",
                 githubUrl: "https://github.com/Tymotex/Techsuite/",
                 technologies: [
@@ -175,25 +173,6 @@ const portfolio: PortfolioData = {
                 imageUrl: "/images/projects/tactile-ds.png",
                 videoUrl: "https://www.youtube.com/watch?v=iSJL-9pe-PY",
                 blogSlug: "Tactile-DS",
-            },
-            {
-                title: "Hack & Jack",
-                blogSlug: "Nand2Tetris",
-                headline: `A 16-bit general-purpose computer and a C++ compiler for a custom programming
-                language.`,
-                imageUrl: "/images/projects/nand2tetris.png",
-                description: `Hack is a 16-bit general-purpose computer based on the Von Neumann architecture, built with the help of hardware
-                simulators. Jack is a
-                simple programming language modeled after Java, with a compiler
-                written in C++. These projects follow implementation suggestions from 'The Elements of Computing Systems' by Nisan and Schocken`,
-                githubUrl: "https://github.com/Tymotex/Nand2Tetris",
-                technologies: [
-                    "Assembly",
-                    "Shell",
-                    "CMake",
-                    "GoogleTest",
-                    "C++",
-                ],
             },
             {
                 title: "Structs.sh",
@@ -250,6 +229,25 @@ const portfolio: PortfolioData = {
                     "AWS",
                 ],
             },
+            {
+                title: "Hack & Jack",
+                blogSlug: "Nand2Tetris",
+                headline: `A 16-bit general-purpose computer and a C++ compiler for a custom programming
+                language.`,
+                imageUrl: "/images/projects/nand2tetris.png",
+                description: `Hack is a 16-bit general-purpose computer based on the Von Neumann architecture, built with the help of hardware
+                simulators. Jack is a
+                simple programming language modeled after Java, with a compiler
+                written in C++. These projects follow implementation suggestions from 'The Elements of Computing Systems' by Nisan and Schocken`,
+                githubUrl: "https://github.com/Tymotex/Nand2Tetris",
+                technologies: [
+                    "Assembly",
+                    "Shell",
+                    "CMake",
+                    "GoogleTest",
+                    "C++",
+                ],
+            },
         ],
         other: [
             {
@@ -289,6 +287,22 @@ const portfolio: PortfolioData = {
                     "Sass",
                     "Nginx",
                 ],
+            },
+            {
+                title: "Konflux",
+                blogSlug: "Konflux",
+                imageUrl: "/images/projects/konflux.png",
+                description: `Realtime timetabling tool that seeks to minimise the familiar frustrations involved in picking a time that suits everyone for a group event.`,
+                technologies: [
+                    "React",
+                    "Next",
+                    "Firebase",
+                    "Sass",
+                    "TypeScript",
+                ],
+                githubUrl: "https://github.com/Tymotex/Konflux",
+                demoUrl: "https://konflux.timz.dev",
+                videoUrl: "https://youtu.be/h5qK4jiGyu0",
             },
             {
                 title: "Transperler",
