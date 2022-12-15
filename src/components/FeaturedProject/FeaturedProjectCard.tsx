@@ -2,6 +2,7 @@ import React from "react";
 import { Button, LinkButton } from "../Button";
 import { TechnologyChipGroup } from "../ChipGroup";
 import { Technology } from "../ChipGroup/technologies";
+import { AiOutlineYoutube as YouTubeIcon } from "react-icons/ai";
 import { MiniDivider } from "../Divider";
 import styles from "./FeaturedProject.module.scss";
 import {
@@ -18,7 +19,10 @@ interface Props {
     position?: "left" | "right";
 }
 
-const FeaturedProject: React.FC<Props> = ({ project, position = "left" }) => {
+const FeaturedProjectCard: React.FC<Props> = ({
+    project,
+    position = "left",
+}) => {
     return (
         <div
             className={styles.featuredProject}
@@ -62,6 +66,15 @@ const FeaturedProject: React.FC<Props> = ({ project, position = "left" }) => {
                                 externalUrl={project.demoUrl}
                             />
                         )}
+                        {project.videoUrl && (
+                            <Button
+                                text="Video"
+                                icon={<YouTubeIcon />}
+                                iconPosition="left"
+                                shape="pill"
+                                colour="secondary"
+                            />
+                        )}
                     </div>
                 </div>
             </div>
@@ -80,4 +93,4 @@ const FeaturedProject: React.FC<Props> = ({ project, position = "left" }) => {
     );
 };
 
-export default FeaturedProject;
+export default FeaturedProjectCard;

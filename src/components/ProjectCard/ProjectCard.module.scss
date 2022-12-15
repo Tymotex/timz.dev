@@ -45,10 +45,11 @@
                     row-gap: $spacing-xs;
 
                     .externalLinksGroup {
-                        display: inline-flex;
+                        display: flex;
                         flex-direction: row;
                         align-items: center;
                         column-gap: $spacing-xs;
+                        flex-wrap: wrap;
                     }
                 }
             }

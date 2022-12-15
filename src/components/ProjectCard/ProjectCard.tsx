@@ -1,12 +1,12 @@
 import { Project } from "content/portfolio/portfolio";
 import Image from "next/image";
 import React from "react";
+import { AiOutlineYoutube as YouTubeIcon } from "react-icons/ai";
 import { FiGithub as GithubIcon } from "react-icons/fi";
 import {
     MdOutlineArrowRightAlt as RightArrowIcon,
     MdOutlineOpenInNew as DemoIcon,
 } from "react-icons/md";
-import { useBreakpointTrigger } from "src/hooks/window";
 import { Button } from "../Button";
 import { SubtleDivider } from "../Divider";
 import styles from "./ProjectCard.module.scss";
@@ -59,6 +59,15 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
                                     colour="secondary"
                                     icon={<DemoIcon />}
                                     externalUrl={project.demoUrl}
+                                />
+                            )}
+                            {project.videoUrl && (
+                                <Button
+                                    text=""
+                                    ariaLabel="open video demo"
+                                    shape="pill"
+                                    colour="secondary"
+                                    icon={<YouTubeIcon />}
                                 />
                             )}
                         </div>

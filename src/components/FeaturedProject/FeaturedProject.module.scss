@@ -127,7 +127,9 @@ $detailsPanelWidth: 37rem;
 
                     .externalLinkButtons {
                         display: flex;
+                        flex-wrap: wrap;
                         column-gap: $spacing-xxs;
+                        row-gap: $spacing-xxs;
                     }
                 }
             }
