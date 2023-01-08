@@ -103,7 +103,7 @@ const portfolio: PortfolioData = {
     },
     profile: {
         headlines: [
-            "an incoming software engineer at Google.",
+            "a software engineer at Google.",
             "a computer science graduate.",
             "a hobbyist fullstack developer.",
             "an aspiring software engineer.",
@@ -338,10 +338,10 @@ const portfolio: PortfolioData = {
             jobTitle: "Software Engineer",
             company: "Google",
             employmentType: "Full-Time",
-            team: "",
-            from: "January 2022",
-            to: "...",
-            technologies: [],
+            team: "Storage SRE",
+            from: "January 2023",
+            to: "Present",
+            technologies: ["C++"],
             Description: GoogleSoftwareEngineer,
         },
         {

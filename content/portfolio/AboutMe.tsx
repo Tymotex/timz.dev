@@ -11,10 +11,11 @@ const AboutMe: React.FC<Props> = () => {
         <>
             <ContentContainer maxWidth={"50rem"} padding={"0 32px"}>
                 <p>
-                    Hi! I'm Tim, a final year computer science student at the
+                    Hi! I'm Tim, a software engineer at Google and a computer
+                    science graduate from the
                     University of New South Wales (UNSW). I love working on
                     software projects, especially when they're related to
-                    frontend/backend development and lower-level infrastructure.
+                    frontend/backend development and computing infrastructure.
                 </p>
                 <p>
                     I've interned at Google as a software engineering intern in
