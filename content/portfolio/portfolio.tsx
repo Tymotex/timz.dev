@@ -338,7 +338,7 @@ const portfolio: PortfolioData = {
             jobTitle: "Software Engineer",
             company: "Google",
             employmentType: "Full-Time",
-            team: "Storage SRE",
+            team: "Core Data Foundations SRE",
             from: "January 2023",
             to: "Present",
             technologies: ["C++"],
