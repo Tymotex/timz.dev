@@ -14,8 +14,8 @@ const AboutMe: React.FC<Props> = () => {
                     Hi! I'm Tim, a software engineer at Google and a computer
                     science graduate from the
                     University of New South Wales (UNSW). I love working on
-                    software projects, especially when they're related to
-                    frontend/backend development and computing infrastructure.
+                    large-scale computing infrastructure and I enjoy working
+                    on web apps and game development outside of work.
                 </p>
                 <p>
                     I've interned at Google as a software engineering intern in
@@ -25,8 +25,8 @@ const AboutMe: React.FC<Props> = () => {
                         COMP2521
                     </a>
                     , at UNSW for 3 semesters. Software engineering is an
-                    absolute blast for me and I enjoy sharing knowledge with
-                    others 🤓.
+                    absolute blast for me and I enjoy <a href="https://wiki.timz.dev">sharing knowledge </a>
+                    with others 🤓.
                 </p>
             </ContentContainer>
             {/* <SectionDivider text="Hobbies & Interests" />
