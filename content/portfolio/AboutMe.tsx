@@ -12,10 +12,10 @@ const AboutMe: React.FC<Props> = () => {
             <ContentContainer maxWidth={"50rem"} padding={"0 32px"}>
                 <p>
                     Hi! I'm Tim, a software engineer at Google and a computer
-                    science graduate from the
-                    University of New South Wales (UNSW). I love working on
-                    large-scale computing infrastructure and I enjoy working
-                    on web apps and game development outside of work.
+                    science graduate from the University of New South Wales
+                    (UNSW). I love working on large-scale computing
+                    infrastructure and I enjoy working on web apps and game
+                    development outside of work.
                 </p>
                 <p>
                     I've interned at Google as a software engineering intern in
@@ -25,47 +25,26 @@ const AboutMe: React.FC<Props> = () => {
                         COMP2521
                     </a>
                     , at UNSW for 3 semesters. Software engineering is an
-                    absolute blast for me and I enjoy <a href="https://wiki.timz.dev">sharing knowledge </a>
+                    absolute blast for me and I enjoy{" "}
+                    <a href="https://wiki.timz.dev">sharing knowledge </a>
                     with others 🤓.
                 </p>
             </ContentContainer>
-            {/* <SectionDivider text="Hobbies & Interests" />
+            <SectionDivider text="Hobbies & Interests" />
             <ContentContainer
                 maxWidth={"50rem"}
                 padding={"12px 32px 12px 32px"}
             >
-                <p>What I enjoy outside of programming.</p>
+                <p>What I enjoy outside of programming 🕹️</p>
                 <UnorderedList>
                     <li>Game development & mod authoring.</li>
                     <li>Guitar &ndash; mainly fingerstyle on acoustic.</li>
-                    <li>Powerlifting, even with my frail programmer arms.</li>
-                    <li>
-                        Gardening (to soothe the soul after dealing with a
-                        particularly mind-bending bug).
-                    </li>
+                    <li>Powerlifting.</li>
+                    <li>Electronics projects.</li>
                     <li>Origami.</li>
+                    <li>Mechanical keyboards.</li>
+                    <li>Murdering innocent houseplants.</li>
                 </UnorderedList>
-                <ImageGallery
-                    images={[
-                        {
-                            src: "/images/profile/origami-1.png",
-                            alt: "Origami rose",
-                        },
-                        {
-                            src: "/images/profile/plants-1.jpg",
-                            alt: "Succulents",
-                        },
-                    ]}
-                    width={250}
-                    height={150}
-                />
-
-                <h2 style={{ marginTop: "32px" }}>
-                    My Programming Battlestation
-                </h2>
-                <p>
-                    Where I churn out <del>buggy</del> software:
-                </p>
                 <ImageGallery
                     images={[
                         {
@@ -73,14 +52,22 @@ const AboutMe: React.FC<Props> = () => {
                             alt: "Blue battlestation",
                         },
                         {
-                            src: "/images/profile/battlestation-2.jpg",
-                            alt: "Red battlestation",
+                            src: "/images/profile/origami-1.jpg",
+                            alt: "Origami rose",
+                        },
+                        {
+                            src: "/images/profile/mechanical-keyboard.jpg",
+                            alt: "Succulents",
+                        },
+                        {
+                            src: "/images/profile/plants-1.jpg",
+                            alt: "Succulents",
                         },
                     ]}
-                    width={300}
-                    height={200}
+                    width={250}
+                    height={250}
                 />
-            </ContentContainer> */}
+            </ContentContainer>
             <br />
             <SectionDivider text="Developer Stats" />
             <ContentContainer>

@@ -6,7 +6,7 @@ interface Props {}
 const Copyright: React.FC<Props> = () => {
     return (
         <small className={styles.copyright}>
-            &copy; <em>2022 Tim Zhang.</em>
+            &copy; <em>2024 Tim Zhang.</em>
         </small>
     );
 };
