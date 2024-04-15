@@ -45,7 +45,9 @@ const Quote: React.FC<Props> = () => {
                             )}
                             <button
                                 className={styles.randomiseButton}
-                                onClick={() => setQuoteData(getRandomQuote())}
+                                onClick={() =>
+                                    setQuoteData(getRandomQuote(quoteData))
+                                }
                             >
                                 <DiceIcon className={styles.icon} />
                             </button>

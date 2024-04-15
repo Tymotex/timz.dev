@@ -5,6 +5,7 @@ export interface QuoteData {
     url?: string;
 }
 
+// TODO: Refactor this into a set. It certainly does not need to be an array.
 const quoteBank: QuoteData[] = [
     {
         quote: "Software and cathedrals are much the same – first we build them, then we pray.",
@@ -66,6 +67,13 @@ const quoteBank: QuoteData[] = [
     },
 ];
 
-export const getRandomQuote = (): QuoteData => {
-    return quoteBank[Math.floor(Math.random() * quoteBank.length)];
+export const getRandomQuote = (excludeQuote?: QuoteData): QuoteData => {
+    // If an excludeQuote is provided, then ensure not to select it next.
+    const quotes =
+        excludeQuote !== undefined
+            ? quoteBank.filter(
+                  (currQuote) => currQuote.quote != excludeQuote.quote,
+              )
+            : quoteBank;
+    return quotes[Math.floor(Math.random() * quotes.length)];
 };
