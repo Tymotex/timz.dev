@@ -43,6 +43,12 @@ const AboutMe: React.FC<Props> = () => {
                     <li>Electronics projects.</li>
                     <li>Origami.</li>
                     <li>Mechanical keyboards.</li>
+                    <li>
+                        <a href="https://www.reddit.com/r/unixporn/">
+                            UNIX ricing
+                        </a>
+                        .
+                    </li>
                     <li>Murdering innocent houseplants.</li>
                 </UnorderedList>
                 <ImageGallery
@@ -57,15 +63,19 @@ const AboutMe: React.FC<Props> = () => {
                         },
                         {
                             src: "/images/profile/mechanical-keyboard.jpg",
-                            alt: "Succulents",
+                            alt: "Mechanical keyboard",
                         },
                         {
                             src: "/images/profile/plants-1.jpg",
                             alt: "Succulents",
                         },
+                        {
+                            src: "/images/profile/unix-ricing.png",
+                            alt: "UNIX ricing",
+                        },
                     ]}
-                    width={250}
-                    height={250}
+                    width={300}
+                    height={240}
                 />
             </ContentContainer>
             <br />
