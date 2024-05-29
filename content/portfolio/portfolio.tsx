@@ -106,9 +106,10 @@ const portfolio: PortfolioData = {
             "a software engineer at Google.",
             "a computer science graduate.",
             "a hobbyist fullstack developer.",
-            "an aspiring software engineer.",
             "a lifelong learner.",
-            "a fan of alternative rock and indie.",
+            "a lover of physics and biology.",
+            "a staunch Vim enthusiast.",
+            "a site reliabilty engineer.",
         ],
         elevatorPitch: ElevatorPitch,
         socials: [

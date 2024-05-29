@@ -83,17 +83,6 @@ const AboutMe: React.FC<Props> = () => {
             <ContentContainer>
                 <div role="presentation">
                     <img
-                        src="https://github-readme-stats.vercel.app/api/wakatime?username=Tymotex&langs_count=5&custom_title=Top%205%20Languages&hide=Other&theme=nightowl"
-                        alt="Top Languages from WakaTime"
-                        style={{
-                            margin: "24px auto",
-                            display: "block",
-                            maxWidth: "100%",
-                        }}
-                    />
-                </div>
-                <div role="presentation">
-                    <img
                         src="https://github-readme-stats.vercel.app/api?username=Tymotex&show_icons=true&theme=nightowl"
                         alt="Tymotex GitHub stats"
                         style={{
