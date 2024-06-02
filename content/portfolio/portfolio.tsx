@@ -168,7 +168,15 @@ const portfolio: PortfolioData = {
                 visualisers for the classic data structures and algorithms
                 taught in a university. This was built primarily as a teaching
                 tool and resource for UNSW students.`,
-                technologies: ["C", "Ruby", "Perl", "Bash", "Nginx", "AWS"],
+                technologies: [
+                    "C",
+                    "Ruby",
+                    "Perl",
+                    "Bash",
+                    "Nginx",
+                    "AWS",
+                    "Docker",
+                ],
                 githubUrl: "https://github.com/Tymotex/Tactile-DS",
                 demoUrl: "https://tactile-ds.timz.dev/",
                 imageUrl: "/images/projects/tactile-ds.png",
