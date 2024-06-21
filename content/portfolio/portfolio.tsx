@@ -219,28 +219,6 @@ const portfolio: PortfolioData = {
                 technologies: ["C#", "Unity"],
             },
             {
-                title: "Techsuite",
-                blogSlug: "Techsuite",
-                headline: `A collaboration and social networking app, built for developers.`,
-                imageUrl: "/images/projects/techsuite.png",
-                description: `Techsuite is a web app that supports realtime 
-                group and direct messaging, networking and sharing ideas 🌱. I
-                built it with React, Flask, PostgreSQL and Socket.io.`,
-                demoUrl: "https://techsuite.timz.dev",
-                videoUrl: "https://www.youtube.com/watch?v=C4o2fOCq2cI",
-                githubUrl: "https://github.com/Tymotex/Techsuite/",
-                technologies: [
-                    "React",
-                    "Flask",
-                    "PostgreSQL",
-                    "Python",
-                    "JavaScript",
-                    "Sass",
-                    "SocketIO",
-                    "Nginx",
-                ],
-            },
-            {
                 title: "Ink Memories",
                 blogSlug: "InkMemories",
                 headline: `A cloud-powered, eInk, smart photo frame.`,
@@ -362,10 +340,10 @@ const portfolio: PortfolioData = {
             jobTitle: "Software Engineer",
             company: "Google",
             employmentType: "Full-Time",
-            team: "Core Data Foundations SRE",
+            team: "Storage SRE",
             from: "January 2023",
             to: "Present",
-            technologies: ["C++"],
+            technologies: ["C++", "Python", "Bash"],
             Description: GoogleSoftwareEngineer,
         },
         {
