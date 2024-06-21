@@ -1,0 +1,51 @@
+---
+title: InkMemories
+description: A cloud-powered smart photo frame.
+published: true
+date: 2024-06-21
+thumbnail: /images/projects/ink-memories.png
+---
+
+import { Image } from 'src/blog-components/Image';
+
+Your cherished memories on eInk, powered by Raspberry Pi and Google Photos!
+
+InkMemories is a low-power, always-on digital photo frame with Google Photos integration and driven by a Raspberry Pi Zero W.
+
+<Image src="/images/blogs/projects/ink-memories.png" caption="Ink memories screen." height="400px" transparent />
+
+See the [video demo](https://www.youtube.com/watch?v=Rxiik2Z_8as&ab_channel=Tym) and [GitHub repository](https://github.com/Tymotex/InkMemories?tab=readme-ov-file#how-it-works).
+
+## Background
+
+I developed this project as a surprise gift to my partner! I was inspired to build this project after learning about the recent development of eInk screens that were not monochromatic and because I’d developed a yearning to reconnect with old memories from a Google Photos album I shared with my partner.
+
+In essence, InkMemories works by running a daemon on a Raspberry Pi that routinely fetches images from a shared album in Google Photos. The integration with Google Photos was done by setting up [rclone](https://rclone.org/) with Google Photos as a storage backend and mounting it on the Raspberry Pi's local filesystem for easy access through simple filesystem operations. A Python daemon is configured to pull out a random image from a Google Photos album every hour and display it on the eInk screen. For this project, I chose the [InkyImpression 5.7 inch 7 colour screen](https://core-electronics.com.au/inky-impression-5-7-7-colour-epaper-eink-hat.html) in particular because it had a simple programming interface to integrate with.
+
+While the core logic of the application was simple, a few requirements made this project much more complex over time:
+
+1. The network delay in fetching an image from a cloud storage service was poor for user experience.
+2. Ideally, the application needed to be resilient to outages and machine restarts. The solution I implemented was to create a buffer/queue/cache of images that could allow the screen to still rotate through images during network or cloud service outages. Incidentally, this also mitigated the first problem above, eliminating network delay entirely for the user. The application could run offline for potentially days without any change, and resume running when the underlying incidents recover.
+    - Note: I ended up working on this collaboratively with my partner who was also a software engineer 🤓.
+3. Photos don’t always come in a way that is friendly in the screen’s resolution and orientation. Some image pre-processing on our side needed to be done to frame pictures in a way that was pleasing.
+4. Decoupling the system’s different parts so that we could easily swap out the storage backend and the eInk screen in the future.
+
+*Note*: It is also possible to extend this project in a way to support more than just Google Photos as a backend. Doing so is a matter of configuring rclone. The core logic of InkMemories is well decoupled from the storage backend.
+
+I also hacked together a simple design for a custom stand for the eInk display and Pi using Blender, then 3D printed it with white PLA filament on the 3D printers at my workplace.
+
+<Image src="/images/blogs/projects/ink-memories-stand-front.png" caption="Ink memories front stand view." height="400px" transparent />
+
+<Image src="/images/blogs/projects/ink-memories-stand-back.png" caption="Ink memories back stand view." height="400px" transparent />
+
+*Note*: The holes in the back of the stand allow the power cable to the Raspberry Pi Zero to be funnelled through.
+
+## Cost estimation
+
+All in all, this project was fairly expensive to kick off due to the cost of the eInk display, but I expect it to cost next to nothing to run for several years. The reliability and lifespan of the specific screen I chose is still an unknown, however it is well documented that other commercial eInk screens can last well beyond a decade if refreshes are infrequent (which in this project’s case, can indeed be configured to be very infrequent).
+
+These were the main expenses:
+- Raspberry Pi and power supply (estimated $40 AUD).
+- eInk display (estimated $130 AUD).
+- Power costs: based on the cost of electricity in Sydney in 2024, I expect the year-round running costs to be around $3 AUD or potentially even less.
+

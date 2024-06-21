@@ -3,7 +3,7 @@ title: Buffer Overflow Attacks
 description: Buffer overflows are when the program tries to write more elements into an array's allocated size.
 published: true
 date: 2022-06-25
-thumbnail: /images/thumbnails/cybersecurity.png
+thumbnail: /images/thumbnails/canary-bird.png
 tags:
     - Cybersecurity
     - Computer Science
@@ -118,7 +118,7 @@ if (dont_overwrite_me_pls != 42) {
 } 
 ```
 
-Often however, stack canarying can be performed behind the scenes for you by the compiler (see gcc’s [-fstack-protector](https://linux.die.net/man/1/gcc#:~:text=any%20basic%20block.-, %2Dfstack%2Dprotector, -Emit%20extra%20code) option) and the chosen canary value will be a randomised value specific to each process.
+Often however, stack canarying can be performed behind the scenes for you by the compiler (see gcc’s [fstack-protector](https://linux.die.net/man/1/gcc) option) and the chosen canary value will be a randomised value specific to each process.
 
 Stack canarying is not fool-proof! It’s easily overriden if the attacker can pass the stack canary check in their buffer overflow attempt by matching the stack canary value (if they know the source code, for example), otherwise the attacker would need to brute-force through different canary values or find ways to leak the canary value first (like through a format string attack).
 

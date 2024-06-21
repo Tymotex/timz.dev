@@ -3,7 +3,7 @@ title: Cross-Site Scripting (XSS)
 description: Cross site scripting, one of the most common security vulnerabilities that exists, is a powerful web exploitation technique where malicious JavaScript code is given to web frontends that will execute it for other users
 published: true
 date: 2022-06-25
-thumbnail: /images/thumbnails/cybersecurity.png
+thumbnail: /images/thumbnails/xss.png
 tags:
     - Cybersecurity
     - Computer Science
@@ -50,7 +50,7 @@ The classic example used to explain how stored XSS is achieved is when websites 
 
 In this example, as an attacker, you could send in a `<script>alert(1)</script>` as the comment body which gets stored in the application’s database. Then, when other users visit the page where your comment is fetched and put into the HTML response, your malicious code will run in their browser!  
 
-Note that `<script>` elements aren’t the only way to execute XSS, you can attach your malicious JavaScript to event handlers like `[onload](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload)` on regular HTML elements like `body` , `svg` , etc.
+Note that `<script>` elements aren’t the only way to execute XSS, you can attach your malicious JavaScript to event handlers like [onload](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload) on regular HTML elements like `body` , `svg` , etc.
 
 ## Defending against XSS
 

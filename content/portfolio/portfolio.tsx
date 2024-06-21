@@ -219,25 +219,42 @@ const portfolio: PortfolioData = {
                 technologies: ["C#", "Unity"],
             },
             {
-                title: "Galactic Ed",
-                blogSlug: "Galactic-Ed",
-                headline: `An educational platform that tailors lessons for children with ASD`,
-                description: `Galactic Ed is an educational web app that tailors
-                lessons for early children on the autism spectrum and delivers an impactful
-                learning experience while lessening the workload from parents.`,
-                imageUrl: "/images/projects/galactic-ed.png",
-                // demoUrl: "https://galactic-ed.xyz/",
+                title: "Techsuite",
+                blogSlug: "Techsuite",
+                headline: `A collaboration and social networking app, built for developers.`,
+                imageUrl: "/images/projects/techsuite.png",
+                description: `Techsuite is a web app that supports realtime 
+                group and direct messaging, networking and sharing ideas 🌱. I
+                built it with React, Flask, PostgreSQL and Socket.io.`,
+                demoUrl: "https://techsuite.timz.dev",
+                videoUrl: "https://www.youtube.com/watch?v=C4o2fOCq2cI",
+                githubUrl: "https://github.com/Tymotex/Techsuite/",
                 technologies: [
-                    "JavaScript",
-                    "Next",
                     "React",
-                    "Express",
-                    "Mongodb",
-                    "GraphQL",
-                    "Docker",
-                    "AWS",
+                    "Flask",
+                    "PostgreSQL",
+                    "Python",
+                    "JavaScript",
+                    "Sass",
+                    "SocketIO",
+                    "Nginx",
                 ],
             },
+            {
+                title: "Ink Memories",
+                blogSlug: "InkMemories",
+                headline: `A cloud-powered, eInk, smart photo frame.`,
+                imageUrl: "/images/projects/ink-memories.png",
+                description: `InkMemories is a smart photo frame which
+                integrates with cloud storage services like Google Photos,
+                fetching images from an album and displaying them to the eInk
+                screen`,
+                videoUrl: "https://youtu.be/Rxiik2Z_8as",
+                githubUrl: "https://github.com/Tymotex/InkMemories/",
+                technologies: ["Python", "Raspberry Pi", "Nginx"],
+            },
+        ],
+        other: [
             {
                 title: "Hack & Jack",
                 blogSlug: "Nand2Tetris",
@@ -257,8 +274,6 @@ const portfolio: PortfolioData = {
                     "C++",
                 ],
             },
-        ],
-        other: [
             {
                 title: "Developer Portfolio Site",
                 blogSlug: "timz.dev",
