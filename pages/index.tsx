@@ -79,7 +79,7 @@ const Home: NextPage = () => {
                             colour="primary"
                             text="Wiki"
                             shape="pill"
-                            externalUrl="https://tymotex.github.io/digital-garden/"
+                            externalUrl="https://garden.timz.dev/"
                         />
                     </Stack>
                 </ContentContainer>
