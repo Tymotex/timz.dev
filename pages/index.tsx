@@ -79,7 +79,7 @@ const Home: NextPage = () => {
                             colour="primary"
                             text="Wiki"
                             shape="pill"
-                            externalUrl="https://garden.timz.dev/"
+                            externalUrl="https://wiki.timz.dev/"
                         />
                     </Stack>
                 </ContentContainer>
