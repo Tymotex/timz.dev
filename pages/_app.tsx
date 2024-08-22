@@ -1,4 +1,5 @@
 import "@reach/combobox/styles.css";
+import { Analytics } from "@vercel/analytics/react";
 import portfolio from "content/portfolio/portfolio";
 import { AnimatePresence } from "framer-motion";
 import type { AppProps } from "next/app";
@@ -43,6 +44,7 @@ const App = ({ Component, pageProps, router }: AppProps) => {
                     content={portfolio.meta.ogDescription}
                 />
             </Head>
+            <Analytics />
 
             {/* Only show the particle wallpaper when on blog routes. */}
             <AnimatePresence
