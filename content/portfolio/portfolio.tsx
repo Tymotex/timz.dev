@@ -109,7 +109,6 @@ const portfolio: PortfolioData = {
             "a lifelong learner.",
             "a lover of physics and biology.",
             "a staunch Vim enthusiast.",
-            "a site reliabilty engineer.",
         ],
         elevatorPitch: ElevatorPitch,
         socials: [
@@ -340,10 +339,10 @@ const portfolio: PortfolioData = {
             jobTitle: "Software Engineer",
             company: "Google",
             employmentType: "Full-Time",
-            team: "Storage SRE",
+            team: "Storage SRE, Google Open Source Security Team",
             from: "January 2023",
             to: "Present",
-            technologies: ["C++", "Python", "Bash"],
+            technologies: ["C++", "Python", "Bash", "Go"],
             Description: GoogleSoftwareEngineer,
         },
         {
