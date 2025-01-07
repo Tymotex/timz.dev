@@ -1,6 +1,5 @@
 import "@reach/combobox/styles.css";
 import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import portfolio from "content/portfolio/portfolio";
 import { AnimatePresence } from "framer-motion";
 import type { AppProps } from "next/app";
@@ -46,7 +45,6 @@ const App = ({ Component, pageProps, router }: AppProps) => {
                 />
             </Head>
             <Analytics />
-            <SpeedInsights />
 
             {/* Only show the particle wallpaper when on blog routes. */}
             <AnimatePresence
