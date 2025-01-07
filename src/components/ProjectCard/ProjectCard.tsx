@@ -68,6 +68,7 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
                                     shape="pill"
                                     colour="secondary"
                                     icon={<YouTubeIcon />}
+				    externalUrl={project.videoUrl}
                                 />
                             )}
                         </div>

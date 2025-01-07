@@ -73,6 +73,7 @@ const FeaturedProjectCard: React.FC<Props> = ({
                                 iconPosition="left"
                                 shape="pill"
                                 colour="secondary"
+				externalUrl={project.videoUrl}
                             />
                         )}
                     </div>
